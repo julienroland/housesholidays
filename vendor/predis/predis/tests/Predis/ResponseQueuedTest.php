@@ -11,12 +11,12 @@
 
 namespace Predis;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  *
  */
-class ResponseQueuedTest extends PredisTestCase
+class ResponseQueuedTest extends StandardTestCase
 {
     /**
      * @group disconnected

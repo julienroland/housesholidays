@@ -32,7 +32,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
 	 *
 	 * @var string
 	 */
-	const VERSION = '4.0.10';
+	const VERSION = '4.0.9';
 
 	/**
 	 * Indicates if the application has "booted".
@@ -365,7 +365,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
 	 *
 	 * @param  \Illuminate\Support\ServiceProvider|string  $provider
 	 * @param  array  $options
-	 * @return \Illuminate\Support\ServiceProvider
+	 * @return void
 	 */
 	public function register($provider, $options = array())
 	{
@@ -390,8 +390,6 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
 		$this->serviceProviders[] = $provider;
 
 		$this->loadedProviders[get_class($provider)] = true;
-
-		return $provider;
 	}
 
 	/**
@@ -572,7 +570,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
 
 			if ( ! is_null($response)) return $this->prepareResponse($response, $request);
 		}
-
+		
 		return $this['router']->dispatch($this->prepareRequest($request));
 	}
 

@@ -14,10 +14,10 @@ class CreateUsersLangagesTraductionsTable extends Migration {
 	{
 		Schema::create('users_langages_traductions', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
 			
 			$table->timestamps();
 		});

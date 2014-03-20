@@ -11,12 +11,12 @@
 
 namespace Predis;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  *
  */
-class ResponseErrorTest extends PredisTestCase
+class ResponseErrorTest extends StandardTestCase
 {
     const ERR_WRONG_KEY_TYPE = 'ERR Operation against a key holding the wrong kind of value';
 

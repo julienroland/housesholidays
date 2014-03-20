@@ -11,10 +11,14 @@
 
 namespace Predis\Connection;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
+use Predis\Profile\ServerProfile;
+
 /**
  * @group ext-phpiredis
  */
-class PhpiredisStreamConnectionTest extends PredisConnectionTestCase
+class PhpiredisStreamConnectionTest extends ConnectionTestCase
 {
     /**
      * @group disconnected
@@ -105,7 +109,6 @@ class PhpiredisStreamConnectionTest extends PredisConnectionTestCase
     }
 
     /**
-     * @medium
      * @group connected
      * @expectedException Predis\Protocol\ProtocolException
      * @expectedExceptionMessage Protocol error, got "P" as reply type byte

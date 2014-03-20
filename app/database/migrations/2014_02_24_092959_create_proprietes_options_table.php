@@ -14,10 +14,11 @@ class CreateProprietesOptionsTable extends Migration {
 	{
 		Schema::create('proprietes_options', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
-			$table->integer('options_id')->unsigned();
-			$table->foreign('options_id')->references('id')->on('options');
+			$table->string('valeur');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
+			$table->integer('option_id')->unsigned();
+			$table->foreign('option_id')->references('id')->on('options');
 			
 			$table->timestamps();
 		});

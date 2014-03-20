@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-scripting
  */
-class ServerScriptTest extends PredisCommandTestCase
+class ServerScriptTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

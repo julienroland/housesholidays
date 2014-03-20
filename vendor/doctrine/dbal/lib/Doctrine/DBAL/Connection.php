@@ -548,16 +548,15 @@ class Connection implements DriverConnection
     {
         $this->connect();
 
-        if (empty($data)) {
-            return $this->executeUpdate('INSERT INTO ' . $tableName . ' ()' . ' VALUES ()');
+        if ( ! is_int(key($types))) {
+            $types = $this->extractTypeValues($data, $types);
         }
 
-        return $this->executeUpdate(
-            'INSERT INTO ' . $tableName . ' (' . implode(', ', array_keys($data)) . ')' .
-            ' VALUES (' . implode(', ', array_fill(0, count($data), '?')) . ')',
-            array_values($data),
-            is_int(key($types)) ? $types : $this->extractTypeValues($data, $types)
-        );
+        $query = 'INSERT INTO ' . $tableName
+               . ' (' . implode(', ', array_keys($data)) . ')'
+               . ' VALUES (' . implode(', ', array_fill(0, count($data), '?')) . ')';
+
+        return $this->executeUpdate($query, array_values($data), $types);
     }
 
     /**

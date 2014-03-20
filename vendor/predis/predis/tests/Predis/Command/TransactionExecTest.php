@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-transaction
  */
-class TransactionExecTest extends PredisCommandTestCase
+class TransactionExecTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

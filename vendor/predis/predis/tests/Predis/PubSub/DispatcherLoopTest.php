@@ -11,13 +11,15 @@
 
 namespace Predis\PubSub;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Client;
+use Predis\Profile\ServerProfile;
 
 /**
  * @group realm-pubsub
  */
-class DispatcherLoopTest extends PredisTestCase
+class DispatcherLoopTest extends StandardTestCase
 {
     // ******************************************************************** //
     // ---- INTEGRATION TESTS --------------------------------------------- //

@@ -64,18 +64,15 @@ class Driver implements \Doctrine\DBAL\Driver
                 $dsn .= '(PORT=1521)';
             }
 
-            $database = 'SID=' . $params['dbname'];
-            $pooled   = '';
-
             if (isset($params['service']) && $params['service'] == true) {
-                $database = 'SERVICE_NAME=' . $params['dbname'];
+                $dsn .= '))(CONNECT_DATA=(SERVICE_NAME=' . $params['dbname'] . '))';
+            } else {
+                $dsn .= '))(CONNECT_DATA=(SID=' . $params['dbname'] . '))';
             }
-
             if (isset($params['pooled']) && $params['pooled'] == true) {
-                $pooled = '(SERVER=POOLED)';
+                $dsn .= '(SERVER=POOLED)';
             }
-
-            $dsn .= '))(CONNECT_DATA=(' . $database . ')' . $pooled . '))';
+            $dsn .= ')';
         } else {
             $dsn .= $params['dbname'];
         }

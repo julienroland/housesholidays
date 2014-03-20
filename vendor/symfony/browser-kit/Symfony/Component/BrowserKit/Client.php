@@ -417,7 +417,7 @@ abstract class Client
      *
      * This method returns null if the DomCrawler component is not available.
      *
-     * @param string $uri     A URI
+     * @param string $uri     A uri
      * @param string $content Content for the crawler to use
      * @param string $type    Content type
      *
@@ -539,9 +539,9 @@ abstract class Client
     /**
      * Takes a URI and converts it to absolute if it is not already absolute.
      *
-     * @param string $uri A URI
+     * @param string $uri A uri
      *
-     * @return string An absolute URI
+     * @return string An absolute uri
      */
     protected function getAbsoluteUri($uri)
     {
@@ -557,11 +557,6 @@ abstract class Client
                 isset($this->server['HTTPS']) ? 's' : '',
                 isset($this->server['HTTP_HOST']) ? $this->server['HTTP_HOST'] : 'localhost'
             );
-        }
-
-        // protocol relative URL
-        if (0 === strpos($uri, '//')) {
-            return parse_url($currentUri, PHP_URL_SCHEME).':'.$uri;
         }
 
         // anchor?

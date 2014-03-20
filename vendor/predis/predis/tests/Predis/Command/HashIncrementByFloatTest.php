@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-hash
  */
-class HashIncrementByFloatTest extends PredisCommandTestCase
+class HashIncrementByFloatTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

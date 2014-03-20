@@ -14,8 +14,8 @@ class CreateTop10Table extends Migration {
 	{
 		Schema::create('top10', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
 			
 			$table->timestamps();
 		});

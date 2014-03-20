@@ -13,9 +13,12 @@ class CreatePaysTable extends Migration {
 	public function up()
 	{
 		Schema::create('pays', function(Blueprint $table) {
-			$table->increments('id');
+			$table->increments('id')->unique();
+			$table->string('initial_2',10);
+			$table->string('initial_3',10)->nullable();
+			$table->string('code_telephone',50)->nullable();
+			$table->string('extension_domaine')->nullable();
 			
-			$table->timestamps();
 		});
 	}
 

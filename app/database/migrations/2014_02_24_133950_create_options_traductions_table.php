@@ -15,11 +15,11 @@ class CreateOptionsTraductionsTable extends Migration {
 		Schema::create('options_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('cle');
-			$table->string('valeur');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
-			$table->integer('options_id')->unsigned();
-			$table->foreign('options_id')->references('id')->on('options');
+			$table->string('valeur')->nullable();
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
+			$table->integer('option_id')->unsigned();
+			$table->foreign('option_id')->references('id')->on('options');
 			
 			$table->timestamps();
 		});

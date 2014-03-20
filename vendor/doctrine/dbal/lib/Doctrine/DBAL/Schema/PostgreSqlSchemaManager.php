@@ -343,14 +343,6 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
                 break;
             case 'bool':
             case 'boolean':
-                if ($tableColumn['default'] === 'true') {
-                    $tableColumn['default'] = true;
-                }
-
-                if ($tableColumn['default'] === 'false') {
-                    $tableColumn['default'] = false;
-                }
-
                 $length = null;
                 break;
             case 'text':

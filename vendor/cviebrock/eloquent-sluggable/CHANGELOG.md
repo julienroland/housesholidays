@@ -1,24 +1,5 @@
 # Change Log
 
-## 1.0.7 - 03-Dec-2013
-
-- Really fix issue #15 -- "not in object context" errors.  Previous fix didn't work for PHP 5.3.x
-	(thanks again @mayoz).
-
-
-## 1.0.6 - 02-Dec-2013
-
-- Update composer requirements so that the package installs nicely with the upcoming Laravel 4.1.
-- Updated docs to show how to use package with [Ardent](http://github.com/laravelbook/ardent) models
-	(thanks to @Flynsarmy for the pointers).
-
-
-## 1.0.5 - 15-Nov-2013
-
-- Fix issues where slugs would alternate between "slug" and "slug-1" when `on_update` and `unique` are set
-  (#14, #16, thanks @mikembm, @JoeChilds).
-- Make `isIncremented` method static to solve possible "not in object context" error (#15, thanks @mayoz).
-
 
 ## 1.0.4 - 05-Nov-2013
 

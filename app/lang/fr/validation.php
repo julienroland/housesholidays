@@ -80,7 +80,13 @@ return array(
     |
     */
 
-    'custom' => array(),
+    'custom' => array(
+        'valid'=> 'Votre compte est bien validé et activé.',
+        'invalid'=> 'La clé ne correspond pas',
+        'account_already_active'=> 'Compte déjà activé',
+        'key_invalid'=> 'Format de la clé invalide',
+        'step1'=> 'Vos informations de l\'étape précédente ont bien été enregistrées',
+        ),
 
     /*
     |--------------------------------------------------------------------------
@@ -100,10 +106,16 @@ return array(
         "first_name" => "Prénom",
         "last_name" => "Nom",
         "password" => "Mot de passe",
+        "check_password" => "Vérification Mot de passe",
         "city" => "Ville",
         "country" => "Pays",
+        "postal" => "Code Postal",
         "address" => "Adresse",
+        "locality" => "Localité",
+        "region" => "Région",
+        "sous_region" => "Département/Province",
         "phone" => "Téléphone",
+        "cgv" => "Conditions Générales de Vente",
         "mobile" => "Portable",
         "age" => "Age",
         "sex" => "Sexe",
@@ -121,7 +133,17 @@ return array(
         "date" => "Date",
         "time" => "Heure",
         "available" => "Disponible",
-        "size" => "Taille"
+        "size" => "Taille",
+        "mother_tongue" => "Langue maternelle",
+        "spoken_language" => "Langue maternelle",
+        "property_name" => "Nom du bien",
+        "property_type" => "Type de bien",
+        "title" => "Titre",
+        "many_people" => "Nombre de personne(s)",
+        "room_number" => "Nombre chambre(s)",
+        "number_bathroom" => "Nombre de salle de bains",
+        "floor" => "etage",
+        "interior_size" => "Surface intérieur",
     ),
 
 );

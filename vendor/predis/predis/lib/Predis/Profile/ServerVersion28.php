@@ -111,7 +111,7 @@ class ServerVersion28 extends ServerProfile
             'quit'                      => 'Predis\Command\ConnectionQuit',
 
             /* remote server control commands */
-            'info'                      => 'Predis\Command\ServerInfoV26x',
+            'info'                      => 'Predis\Command\ServerInfo',
             'slaveof'                   => 'Predis\Command\ServerSlaveOf',
             'monitor'                   => 'Predis\Command\ServerMonitor',
             'dbsize'                    => 'Predis\Command\ServerDatabaseSize',
@@ -122,6 +122,7 @@ class ServerVersion28 extends ServerProfile
             'lastsave'                  => 'Predis\Command\ServerLastSave',
             'shutdown'                  => 'Predis\Command\ServerShutdown',
             'bgrewriteaof'              => 'Predis\Command\ServerBackgroundRewriteAOF',
+
 
             /* ---------------- Redis 2.0 ---------------- */
 
@@ -171,6 +172,7 @@ class ServerVersion28 extends ServerProfile
             /* remote server control commands */
             'config'                    => 'Predis\Command\ServerConfig',
 
+
             /* ---------------- Redis 2.2 ---------------- */
 
             /* commands operating on the key space */
@@ -200,10 +202,12 @@ class ServerVersion28 extends ServerProfile
             'object'                    => 'Predis\Command\ServerObject',
             'slowlog'                   => 'Predis\Command\ServerSlowlog',
 
+
             /* ---------------- Redis 2.4 ---------------- */
 
             /* remote server control commands */
             'client'                    => 'Predis\Command\ServerClient',
+
 
             /* ---------------- Redis 2.6 ---------------- */
 
@@ -227,7 +231,9 @@ class ServerVersion28 extends ServerProfile
             'script'                    => 'Predis\Command\ServerScript',
 
             /* remote server control commands */
+            'info'                      => 'Predis\Command\ServerInfoV26x',
             'time'                      => 'Predis\Command\ServerTime',
+
 
             /* ---------------- Redis 2.8 ---------------- */
 

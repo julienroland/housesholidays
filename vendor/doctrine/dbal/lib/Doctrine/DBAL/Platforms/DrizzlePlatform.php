@@ -410,7 +410,7 @@ class DrizzlePlatform extends AbstractPlatform
             $column = $columnDiff->column;
             $columnArray = $column->toArray();
             $columnArray['comment'] = $this->getColumnComment($column);
-            $queryParts[] =  'CHANGE ' . ($columnDiff->getOldColumnName()->getQuotedName($this)) . ' '
+            $queryParts[] =  'CHANGE ' . ($columnDiff->oldColumnName) . ' '
                     . $this->getColumnDeclarationSQL($column->getQuotedName($this), $columnArray);
         }
 

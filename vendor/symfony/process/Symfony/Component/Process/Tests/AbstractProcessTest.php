@@ -19,16 +19,6 @@ use Symfony\Component\Process\Exception\RuntimeException;
  */
 abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
 {
-    public function testThatProcessDoesNotThrowWarningDuringRun()
-    {
-        @trigger_error('Test Error', E_USER_NOTICE);
-        $process = $this->getProcess("php -r 'sleep(3)'");
-        $process->run();
-        $actualError = error_get_last();
-        $this->assertEquals('Test Error', $actualError['message']);
-        $this->assertEquals(E_USER_NOTICE, $actualError['type']);
-    }
-
     /**
      * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
      */
@@ -46,17 +36,12 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
         $p->setTimeout(-1);
     }
 
-    public function testFloatAndNullTimeout()
+    public function testNullTimeout()
     {
         $p = $this->getProcess('');
-
         $p->setTimeout(10);
-        $this->assertSame(10.0, $p->getTimeout());
-
         $p->setTimeout(null);
-        $this->assertNull($p->getTimeout());
 
-        $p->setTimeout(0.0);
         $this->assertNull($p->getTimeout());
     }
 
@@ -440,7 +425,7 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
 
     public function testPhpDeadlock()
     {
-        $this->markTestSkipped('Can course PHP to hang');
+        $this->markTestSkipped('Can course php to hang');
 
         // Sleep doesn't work as it will allow the process to handle signals and close
         // file handles from the other end.
@@ -563,7 +548,7 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException Symfony\Component\Process\Exception\LogicException
      */
     public function testSignalProcessNotRunning()
     {
@@ -575,7 +560,7 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
     private function verifyPosixIsEnabled()
     {
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $this->markTestSkipped('POSIX signals do not work on Windows');
+            $this->markTestSkipped('POSIX signals do not work on windows');
         }
         if (!defined('SIGUSR1')) {
             $this->markTestSkipped('The pcntl extension is not enabled');
@@ -583,12 +568,12 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException Symfony\Component\Process\Exception\RuntimeException
      */
     public function testSignalWithWrongIntSignal()
     {
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $this->markTestSkipped('POSIX signals do not work on Windows');
+            $this->markTestSkipped('POSIX signals do not work on windows');
         }
 
         $process = $this->getProcess('php -r "sleep(3);"');
@@ -597,12 +582,12 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException Symfony\Component\Process\Exception\RuntimeException
      */
     public function testSignalWithWrongNonIntSignal()
     {
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $this->markTestSkipped('POSIX signals do not work on Windows');
+            $this->markTestSkipped('POSIX signals do not work on windows');
         }
 
         $process = $this->getProcess('php -r "sleep(3);"');

@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-zset
  */
-class ZSetReverseRangeTest extends PredisCommandTestCase
+class ZSetReverseRangeTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\HttpKernel\Tests\DependencyInjection;
+namespace Symfony\Component\HttpKernel\Tests;
 
 use Symfony\Component\HttpKernel\DependencyInjection\MergeExtensionConfigurationPass;
 

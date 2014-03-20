@@ -112,7 +112,7 @@ class Link
         if ('?' === $uri[0]) {
             $baseUri = $this->currentUri;
 
-            // remove the query string from the current URI
+            // remove the query string from the current uri
             if (false !== $pos = strpos($baseUri, '?')) {
                 $baseUri = substr($baseUri, 0, $pos);
             }
@@ -140,7 +140,7 @@ class Link
     }
 
     /**
-     * Returns raw URI data.
+     * Returns raw uri data.
      *
      * @return string
      */

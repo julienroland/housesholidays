@@ -11,13 +11,14 @@
 
 namespace Predis\Connection;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Profile\ServerProfile;
 
 /**
  *
  */
-class PredisClusterTest extends PredisTestCase
+class PredisClusterTest extends StandardTestCase
 {
     /**
      * @group disconnected
@@ -380,7 +381,7 @@ class PredisClusterTest extends PredisTestCase
     /**
      * Returns a base mocked connection from Predis\Connection\SingleConnectionInterface.
      *
-     * @param  mixed $parameters Optional parameters.
+     * @param mixed $parameters Optional parameters.
      * @return mixed
      */
     protected function getMockConnection($parameters = null)

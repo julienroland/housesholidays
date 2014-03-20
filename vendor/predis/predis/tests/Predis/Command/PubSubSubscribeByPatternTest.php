@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-pubsub
  */
-class PubSubSubscribeByPatternTest extends PredisCommandTestCase
+class PubSubSubscribeByPatternTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

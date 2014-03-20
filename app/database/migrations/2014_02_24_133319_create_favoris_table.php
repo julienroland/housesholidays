@@ -14,10 +14,10 @@ class CreateFavorisTable extends Migration {
 	{
 		Schema::create('favoris', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

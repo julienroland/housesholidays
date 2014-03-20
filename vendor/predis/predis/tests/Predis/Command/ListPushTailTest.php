@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-list
  */
-class ListPushTailTest extends PredisCommandTestCase
+class ListPushTailTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

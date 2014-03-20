@@ -20,30 +20,31 @@ class CreateProprietesTable extends Migration {
 			$table->string('adresse');
 			$table->string('latlng')->nullable();
 			$table->float('taille_terrain');
-			$table->integer('annonces_payees_id')->unsigned();
-			$table->foreign('annonces_payees_id')->references('id')->on('annonces_payees');
+			$table->integer('annonce_payee_id')->unsigned();
+			$table->foreign('annonce_payee_id')->references('id')->on('annonces_payees');
 			$table->boolean('statut');
 			$table->float('caution')->nullable();
 			$table->integer('nb_visite');
 			$table->string('slug');
+			$table->string('web');
 			$table->boolean('commentaire_statut');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users');
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
 			$table->string('orientation_vue',50);
 			$table->tinyInteger('etage');
-			$table->text('conditions_paiement')->nullable();
+			$table->text('condition_paiement')->nullable();
 			$table->text('note_paiement')->nullable();
-			$table->integer('localites_id')->unsigned();
-			$table->foreign('localites_id')->references('id')->on('localites');
+			$table->integer('localite_id')->unsigned();
+			$table->foreign('localite_id')->references('id')->on('localites');
 			$table->string('titre');
 			$table->integer('pays_id')->unsigned();
 			$table->foreign('pays_id')->references('id')->on('pays');
-			$table->integer('regions_id')->unsigned();
-			$table->foreign('regions_id')->references('id')->on('regions');
-			$table->integer('sous_regions')->unsigned();
-			$table->foreign('sous_regions')->references('id')->on('sous_regions');
-			$table->integer('types_batiments_id')->unsigned();
-			$table->foreign('types_batiments_id')->references('id')->on('types_batiments');
+			$table->integer('region_id')->unsigned();
+			$table->foreign('region_id')->references('id')->on('regions');
+			$table->integer('sous_region')->unsigned();
+			$table->foreign('sous_region')->references('id')->on('sous_regions');
+			$table->integer('type_batiment_id')->unsigned();
+			$table->foreign('type_batiment_id')->references('id')->on('types_batiments');
 
 
 			

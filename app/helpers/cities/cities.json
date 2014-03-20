@@ -1,0 +1,14252 @@
+[
+	{
+		"id": 1,
+		"postal": "9420",
+		"name": "Aaigem"
+	},
+	{
+		"id": 2,
+		"postal": "8511",
+		"name": "Aalbeke"
+	},
+	{
+		"id": 3,
+		"postal": "9300",
+		"name": "Aalst"
+	},
+	{
+		"id": 4,
+		"postal": "3800",
+		"name": "Aalst (Limb.)"
+	},
+	{
+		"id": 5,
+		"postal": "9880",
+		"name": "Aalter"
+	},
+	{
+		"id": 6,
+		"postal": "3200",
+		"name": "Aarschot"
+	},
+	{
+		"id": 7,
+		"postal": "8700",
+		"name": "Aarsele"
+	},
+	{
+		"id": 8,
+		"postal": "8211",
+		"name": "Aartrijke"
+	},
+	{
+		"id": 9,
+		"postal": "2630",
+		"name": "Aartselaar"
+	},
+	{
+		"id": 10,
+		"postal": "4557",
+		"name": "Abée"
+	},
+	{
+		"id": 11,
+		"postal": "4280",
+		"name": "Abolens"
+	},
+	{
+		"id": 12,
+		"postal": "3930",
+		"name": "Achel"
+	},
+	{
+		"id": 13,
+		"postal": "5590",
+		"name": "Achêne"
+	},
+	{
+		"id": 14,
+		"postal": "5362",
+		"name": "Achet"
+	},
+	{
+		"id": 15,
+		"postal": "4219",
+		"name": "Acosse"
+	},
+	{
+		"id": 16,
+		"postal": "6280",
+		"name": "Acoz"
+	},
+	{
+		"id": 17,
+		"postal": "9991",
+		"name": "Adegem"
+	},
+	{
+		"id": 18,
+		"postal": "8660",
+		"name": "Adinkerke"
+	},
+	{
+		"id": 19,
+		"postal": "1790",
+		"name": "Affligem"
+	},
+	{
+		"id": 20,
+		"postal": "9051",
+		"name": "Afsnee"
+	},
+	{
+		"id": 21,
+		"postal": "5544",
+		"name": "Agimont"
+	},
+	{
+		"id": 22,
+		"postal": "4317",
+		"name": "Aineffe"
+	},
+	{
+		"id": 23,
+		"postal": "5310",
+		"name": "Aische-en-Refail"
+	},
+	{
+		"id": 24,
+		"postal": "6250",
+		"name": "Aiseau"
+	},
+	{
+		"id": 25,
+		"postal": "6250",
+		"name": "Aiseau-Presles"
+	},
+	{
+		"id": 26,
+		"postal": "5070",
+		"name": "Aisemont"
+	},
+	{
+		"id": 27,
+		"postal": "3570",
+		"name": "Alken"
+	},
+	{
+		"id": 28,
+		"postal": "5550",
+		"name": "Alle"
+	},
+	{
+		"id": 29,
+		"postal": "4432",
+		"name": "Alleur"
+	},
+	{
+		"id": 30,
+		"postal": "1652",
+		"name": "Alsemberg"
+	},
+	{
+		"id": 31,
+		"postal": "8690",
+		"name": "Alveringem"
+	},
+	{
+		"id": 32,
+		"postal": "4540",
+		"name": "Amay"
+	},
+	{
+		"id": 33,
+		"postal": "6680",
+		"name": "Amberloup"
+	},
+	{
+		"id": 34,
+		"postal": "4770",
+		"name": "Amblève"
+	},
+	{
+		"id": 35,
+		"postal": "6953",
+		"name": "Ambly"
+	},
+	{
+		"id": 36,
+		"postal": "4219",
+		"name": "Ambresin"
+	},
+	{
+		"id": 37,
+		"postal": "4770",
+		"name": "Amel"
+	},
+	{
+		"id": 38,
+		"postal": "6997",
+		"name": "Amonines"
+	},
+	{
+		"id": 39,
+		"postal": "7750",
+		"name": "Amougies"
+	},
+	{
+		"id": 40,
+		"postal": "4540",
+		"name": "Ampsin"
+	},
+	{
+		"id": 41,
+		"postal": "5300",
+		"name": "Andenne"
+	},
+	{
+		"id": 42,
+		"postal": "1070",
+		"name": "Anderlecht"
+	},
+	{
+		"id": 43,
+		"postal": "6150",
+		"name": "Anderlues"
+	},
+	{
+		"id": 44,
+		"postal": "4821",
+		"name": "Andrimont"
+	},
+	{
+		"id": 45,
+		"postal": "4031",
+		"name": "Angleur"
+	},
+	{
+		"id": 46,
+		"postal": "7387",
+		"name": "Angre"
+	},
+	{
+		"id": 47,
+		"postal": "7387",
+		"name": "Angreau"
+	},
+	{
+		"id": 48,
+		"postal": "5537",
+		"name": "Anhée"
+	},
+	{
+		"id": 49,
+		"postal": "6721",
+		"name": "Anlier"
+	},
+	{
+		"id": 50,
+		"postal": "6890",
+		"name": "Anloy"
+	},
+	{
+		"id": 51,
+		"postal": "5537",
+		"name": "Annevoie-Rouillon"
+	},
+	{
+		"id": 52,
+		"postal": "4430",
+		"name": "Ans"
+	},
+	{
+		"id": 53,
+		"postal": "5500",
+		"name": "Anseremme"
+	},
+	{
+		"id": 54,
+		"postal": "7750",
+		"name": "Anseroeul"
+	},
+	{
+		"id": 55,
+		"postal": "5520",
+		"name": "Anthée"
+	},
+	{
+		"id": 56,
+		"postal": "4520",
+		"name": "Antheit"
+	},
+	{
+		"id": 57,
+		"postal": "4160",
+		"name": "Anthisnes"
+	},
+	{
+		"id": 58,
+		"postal": "7640",
+		"name": "Antoing"
+	},
+	{
+		"id": 59,
+		"postal": "2000",
+		"name": "Antwerpen 1"
+	},
+	{
+		"id": 60,
+		"postal": "2018",
+		"name": "Antwerpen 1"
+	},
+	{
+		"id": 61,
+		"postal": "2020",
+		"name": "Antwerpen 2"
+	},
+	{
+		"id": 62,
+		"postal": "2030",
+		"name": "Antwerpen 3"
+	},
+	{
+		"id": 63,
+		"postal": "2040",
+		"name": "Antwerpen 4"
+	},
+	{
+		"id": 64,
+		"postal": "2050",
+		"name": "Antwerpen 5"
+	},
+	{
+		"id": 65,
+		"postal": "2060",
+		"name": "Antwerpen 6"
+	},
+	{
+		"id": 66,
+		"postal": "7910",
+		"name": "Anvaing"
+	},
+	{
+		"id": 67,
+		"postal": "8570",
+		"name": "Anzegem"
+	},
+	{
+		"id": 68,
+		"postal": "9200",
+		"name": "Appels"
+	},
+	{
+		"id": 69,
+		"postal": "9400",
+		"name": "Appelterre-Eichem"
+	},
+	{
+		"id": 70,
+		"postal": "7811",
+		"name": "Arbre (Ht.)"
+	},
+	{
+		"id": 71,
+		"postal": "5170",
+		"name": "Arbre (Nam.)"
+	},
+	{
+		"id": 72,
+		"postal": "4990",
+		"name": "Arbrefontaine"
+	},
+	{
+		"id": 73,
+		"postal": "7910",
+		"name": "Arc-Ainières"
+	},
+	{
+		"id": 74,
+		"postal": "1390",
+		"name": "Archennes"
+	},
+	{
+		"id": 75,
+		"postal": "7910",
+		"name": "Arc-Wattripont"
+	},
+	{
+		"id": 76,
+		"postal": "8850",
+		"name": "Ardooie"
+	},
+	{
+		"id": 77,
+		"postal": "2370",
+		"name": "Arendonk"
+	},
+	{
+		"id": 78,
+		"postal": "4601",
+		"name": "Argenteau"
+	},
+	{
+		"id": 79,
+		"postal": "6700",
+		"name": "Arlon"
+	},
+	{
+		"id": 80,
+		"postal": "7181",
+		"name": "Arquennes"
+	},
+	{
+		"id": 81,
+		"postal": "5060",
+		"name": "Arsimont"
+	},
+	{
+		"id": 82,
+		"postal": "6870",
+		"name": "Arville"
+	},
+	{
+		"id": 83,
+		"postal": "3665",
+		"name": "As"
+	},
+	{
+		"id": 84,
+		"postal": "9404",
+		"name": "Aspelare"
+	},
+	{
+		"id": 85,
+		"postal": "9890",
+		"name": "Asper"
+	},
+	{
+		"id": 86,
+		"postal": "7040",
+		"name": "Asquillies"
+	},
+	{
+		"id": 87,
+		"postal": "1730",
+		"name": "Asse"
+	},
+	{
+		"id": 88,
+		"postal": "8310",
+		"name": "Assebroek"
+	},
+	{
+		"id": 89,
+		"postal": "9960",
+		"name": "Assenede"
+	},
+	{
+		"id": 90,
+		"postal": "6860",
+		"name": "Assenois"
+	},
+	{
+		"id": 91,
+		"postal": "3460",
+		"name": "Assent"
+	},
+	{
+		"id": 92,
+		"postal": "5330",
+		"name": "Assesse"
+	},
+	{
+		"id": 93,
+		"postal": "9800",
+		"name": "Astene"
+	},
+	{
+		"id": 94,
+		"postal": "7800",
+		"name": "Ath"
+	},
+	{
+		"id": 95,
+		"postal": "7387",
+		"name": "Athis"
+	},
+	{
+		"id": 96,
+		"postal": "6791",
+		"name": "Athus"
+	},
+	{
+		"id": 97,
+		"postal": "3404",
+		"name": "Attenhoven"
+	},
+	{
+		"id": 98,
+		"postal": "3384",
+		"name": "Attenrode"
+	},
+	{
+		"id": 99,
+		"postal": "6717",
+		"name": "Attert"
+	},
+	{
+		"id": 100,
+		"postal": "7941",
+		"name": "Attre"
+	},
+	{
+		"id": 101,
+		"postal": "6790",
+		"name": "Aubange"
+	},
+	{
+		"id": 102,
+		"postal": "7972",
+		"name": "Aubechies"
+	},
+	{
+		"id": 103,
+		"postal": "4880",
+		"name": "Aubel"
+	},
+	{
+		"id": 104,
+		"postal": "5660",
+		"name": "Aublain"
+	},
+	{
+		"id": 105,
+		"postal": "6880",
+		"name": "Auby-sur-Semois"
+	},
+	{
+		"id": 106,
+		"postal": "1160",
+		"name": "Auderghem"
+	},
+	{
+		"id": 107,
+		"postal": "7382",
+		"name": "Audregnies"
+	},
+	{
+		"id": 108,
+		"postal": "7040",
+		"name": "Aulnois"
+	},
+	{
+		"id": 109,
+		"postal": "6706",
+		"name": "Autelbas"
+	},
+	{
+		"id": 110,
+		"postal": "1367",
+		"name": "Autre-Eglise"
+	},
+	{
+		"id": 111,
+		"postal": "7387",
+		"name": "Autreppe"
+	},
+	{
+		"id": 112,
+		"postal": "5060",
+		"name": "Auvelais"
+	},
+	{
+		"id": 113,
+		"postal": "5580",
+		"name": "Ave-et-Auffe"
+	},
+	{
+		"id": 114,
+		"postal": "8630",
+		"name": "Avekapelle"
+	},
+	{
+		"id": 115,
+		"postal": "8580",
+		"name": "Avelgem"
+	},
+	{
+		"id": 116,
+		"postal": "4260",
+		"name": "Avennes"
+	},
+	{
+		"id": 117,
+		"postal": "3271",
+		"name": "Averbode"
+	},
+	{
+		"id": 118,
+		"postal": "4280",
+		"name": "Avernas-le-Bauduin"
+	},
+	{
+		"id": 119,
+		"postal": "4280",
+		"name": "Avin"
+	},
+	{
+		"id": 120,
+		"postal": "4340",
+		"name": "Awans"
+	},
+	{
+		"id": 121,
+		"postal": "6870",
+		"name": "Awenne"
+	},
+	{
+		"id": 122,
+		"postal": "4400",
+		"name": "Awirs"
+	},
+	{
+		"id": 123,
+		"postal": "6900",
+		"name": "Aye"
+	},
+	{
+		"id": 124,
+		"postal": "4630",
+		"name": "Ayeneux"
+	},
+	{
+		"id": 125,
+		"postal": "4920",
+		"name": "Aywaille"
+	},
+	{
+		"id": 126,
+		"postal": "9890",
+		"name": "Baaigem"
+	},
+	{
+		"id": 127,
+		"postal": "3128",
+		"name": "Baal"
+	},
+	{
+		"id": 128,
+		"postal": "9310",
+		"name": "Baardegem"
+	},
+	{
+		"id": 129,
+		"postal": "2387",
+		"name": "Baarle-Hertog"
+	},
+	{
+		"id": 130,
+		"postal": "9200",
+		"name": "Baasrode"
+	},
+	{
+		"id": 131,
+		"postal": "9800",
+		"name": "Bachte-Maria-Leerne"
+	},
+	{
+		"id": 132,
+		"postal": "4837",
+		"name": "Baelen (Lg.)"
+	},
+	{
+		"id": 133,
+		"postal": "5550",
+		"name": "Bagimont"
+	},
+	{
+		"id": 134,
+		"postal": "6464",
+		"name": "Baileux"
+	},
+	{
+		"id": 135,
+		"postal": "6460",
+		"name": "Bailièvre"
+	},
+	{
+		"id": 136,
+		"postal": "5555",
+		"name": "Baillamont"
+	},
+	{
+		"id": 137,
+		"postal": "7730",
+		"name": "Bailleul"
+	},
+	{
+		"id": 138,
+		"postal": "5377",
+		"name": "Baillonville"
+	},
+	{
+		"id": 139,
+		"postal": "7380",
+		"name": "Baisieux"
+	},
+	{
+		"id": 140,
+		"postal": "1470",
+		"name": "Baisy-thy"
+	},
+	{
+		"id": 141,
+		"postal": "5190",
+		"name": "Balâtre"
+	},
+	{
+		"id": 142,
+		"postal": "9860",
+		"name": "Balegem"
+	},
+	{
+		"id": 143,
+		"postal": "2490",
+		"name": "Balen"
+	},
+	{
+		"id": 144,
+		"postal": "9420",
+		"name": "Bambrugge"
+	},
+	{
+		"id": 145,
+		"postal": "6951",
+		"name": "Bande"
+	},
+	{
+		"id": 146,
+		"postal": "6500",
+		"name": "Barbençon"
+	},
+	{
+		"id": 147,
+		"postal": "4671",
+		"name": "Barchon"
+	},
+	{
+		"id": 148,
+		"postal": "5570",
+		"name": "Baronville"
+	},
+	{
+		"id": 149,
+		"postal": "7534",
+		"name": "Barry"
+	},
+	{
+		"id": 150,
+		"postal": "5370",
+		"name": "Barvaux-Condroz"
+	},
+	{
+		"id": 151,
+		"postal": "6940",
+		"name": "Barvaux-sur-Ourthe"
+	},
+	{
+		"id": 152,
+		"postal": "7971",
+		"name": "Basècles"
+	},
+	{
+		"id": 153,
+		"postal": "4520",
+		"name": "Bas-Oha"
+	},
+	{
+		"id": 154,
+		"postal": "4983",
+		"name": "Basse-Bodeux"
+	},
+	{
+		"id": 155,
+		"postal": "4690",
+		"name": "Bassenge"
+	},
+	{
+		"id": 156,
+		"postal": "9968",
+		"name": "Bassevelde"
+	},
+	{
+		"id": 157,
+		"postal": "7830",
+		"name": "Bassilly"
+	},
+	{
+		"id": 158,
+		"postal": "6600",
+		"name": "Bastogne"
+	},
+	{
+		"id": 159,
+		"postal": "7784",
+		"name": "Bas-Warneton"
+	},
+	{
+		"id": 160,
+		"postal": "3870",
+		"name": "Batsheers"
+	},
+	{
+		"id": 161,
+		"postal": "4651",
+		"name": "Battice"
+	},
+	{
+		"id": 162,
+		"postal": "7130",
+		"name": "Battignies"
+	},
+	{
+		"id": 163,
+		"postal": "7331",
+		"name": "Baudour"
+	},
+	{
+		"id": 164,
+		"postal": "7870",
+		"name": "Bauffe"
+	},
+	{
+		"id": 165,
+		"postal": "7604",
+		"name": "Baugnies"
+	},
+	{
+		"id": 166,
+		"postal": "1401",
+		"name": "Baulers"
+	},
+	{
+		"id": 167,
+		"postal": "9520",
+		"name": "Bavegem"
+	},
+	{
+		"id": 168,
+		"postal": "8531",
+		"name": "Bavikhove"
+	},
+	{
+		"id": 169,
+		"postal": "9150",
+		"name": "Bazel"
+	},
+	{
+		"id": 170,
+		"postal": "4052",
+		"name": "Beaufays"
+	},
+	{
+		"id": 171,
+		"postal": "6500",
+		"name": "Beaumont"
+	},
+	{
+		"id": 172,
+		"postal": "5570",
+		"name": "Beauraing"
+	},
+	{
+		"id": 173,
+		"postal": "6980",
+		"name": "Beausaint"
+	},
+	{
+		"id": 174,
+		"postal": "1320",
+		"name": "Beauvechain"
+	},
+	{
+		"id": 175,
+		"postal": "6594",
+		"name": "Beauwelz"
+	},
+	{
+		"id": 176,
+		"postal": "7532",
+		"name": "Beclers"
+	},
+	{
+		"id": 177,
+		"postal": "3960",
+		"name": "Beek"
+	},
+	{
+		"id": 178,
+		"postal": "9630",
+		"name": "Beerlegem"
+	},
+	{
+		"id": 179,
+		"postal": "8730",
+		"name": "Beernem"
+	},
+	{
+		"id": 180,
+		"postal": "2340",
+		"name": "Beerse"
+	},
+	{
+		"id": 181,
+		"postal": "1650",
+		"name": "Beersel"
+	},
+	{
+		"id": 182,
+		"postal": "8600",
+		"name": "Beerst"
+	},
+	{
+		"id": 183,
+		"postal": "1673",
+		"name": "Beert"
+	},
+	{
+		"id": 184,
+		"postal": "9080",
+		"name": "Beervelde"
+	},
+	{
+		"id": 185,
+		"postal": "2580",
+		"name": "Beerzel"
+	},
+	{
+		"id": 186,
+		"postal": "5000",
+		"name": "Beez"
+	},
+	{
+		"id": 187,
+		"postal": "6987",
+		"name": "Beffe"
+	},
+	{
+		"id": 188,
+		"postal": "3130",
+		"name": "Begijnendijk"
+	},
+	{
+		"id": 189,
+		"postal": "6672",
+		"name": "Beho"
+	},
+	{
+		"id": 190,
+		"postal": "1852",
+		"name": "Beigem"
+	},
+	{
+		"id": 191,
+		"postal": "8480",
+		"name": "Bekegem"
+	},
+	{
+		"id": 192,
+		"postal": "1730",
+		"name": "Bekkerzeel"
+	},
+	{
+		"id": 193,
+		"postal": "3460",
+		"name": "Bekkevoort"
+	},
+	{
+		"id": 194,
+		"postal": "5001",
+		"name": "Belgrade"
+	},
+	{
+		"id": 195,
+		"postal": "4610",
+		"name": "Bellaire"
+	},
+	{
+		"id": 196,
+		"postal": "7170",
+		"name": "Bellecourt"
+	},
+	{
+		"id": 197,
+		"postal": "6730",
+		"name": "Bellefontaine (Lux.)"
+	},
+	{
+		"id": 198,
+		"postal": "5555",
+		"name": "Bellefontaine (Nam.)"
+	},
+	{
+		"id": 199,
+		"postal": "8510",
+		"name": "Bellegem"
+	},
+	{
+		"id": 200,
+		"postal": "9881",
+		"name": "Bellem"
+	},
+	{
+		"id": 201,
+		"postal": "6834",
+		"name": "Bellevaux"
+	},
+	{
+		"id": 202,
+		"postal": "4960",
+		"name": "Bellevaux-Ligneuville"
+	},
+	{
+		"id": 203,
+		"postal": "1674",
+		"name": "Bellingen"
+	},
+	{
+		"id": 204,
+		"postal": "7970",
+		"name": "Beloeil"
+	},
+	{
+		"id": 205,
+		"postal": "9111",
+		"name": "Belsele"
+	},
+	{
+		"id": 206,
+		"postal": "4500",
+		"name": "Ben-Ahin"
+	},
+	{
+		"id": 207,
+		"postal": "6941",
+		"name": "Bende"
+	},
+	{
+		"id": 208,
+		"postal": "3540",
+		"name": "Berbroek"
+	},
+	{
+		"id": 209,
+		"postal": "2600",
+		"name": "Berchem (Antwerpen)"
+	},
+	{
+		"id": 210,
+		"postal": "9690",
+		"name": "Berchem (O.-Vl.)"
+	},
+	{
+		"id": 211,
+		"postal": "1082",
+		"name": "Berchem-Sainte-Agathe"
+	},
+	{
+		"id": 212,
+		"postal": "2040",
+		"name": "Berendrecht"
+	},
+	{
+		"id": 213,
+		"postal": "1910",
+		"name": "Berg (Bt.)"
+	},
+	{
+		"id": 214,
+		"postal": "3700",
+		"name": "Berg (Limb.)"
+	},
+	{
+		"id": 215,
+		"postal": "4360",
+		"name": "Bergilers"
+	},
+	{
+		"id": 216,
+		"postal": "3580",
+		"name": "Beringen"
+	},
+	{
+		"id": 217,
+		"postal": "2590",
+		"name": "Berlaar"
+	},
+	{
+		"id": 218,
+		"postal": "9290",
+		"name": "Berlare"
+	},
+	{
+		"id": 219,
+		"postal": "3830",
+		"name": "Berlingen"
+	},
+	{
+		"id": 220,
+		"postal": "4257",
+		"name": "Berloz"
+	},
+	{
+		"id": 221,
+		"postal": "4607",
+		"name": "Berneau"
+	},
+	{
+		"id": 222,
+		"postal": "7320",
+		"name": "Bernissart"
+	},
+	{
+		"id": 223,
+		"postal": "6560",
+		"name": "Bersillies-l'Abbaye"
+	},
+	{
+		"id": 224,
+		"postal": "3060",
+		"name": "Bertem"
+	},
+	{
+		"id": 225,
+		"postal": "6687",
+		"name": "Bertogne"
+	},
+	{
+		"id": 226,
+		"postal": "4280",
+		"name": "Bertrée"
+	},
+	{
+		"id": 227,
+		"postal": "6880",
+		"name": "Bertrix"
+	},
+	{
+		"id": 228,
+		"postal": "5651",
+		"name": "Berzée"
+	},
+	{
+		"id": 229,
+		"postal": "8980",
+		"name": "Beselare"
+	},
+	{
+		"id": 230,
+		"postal": "3130",
+		"name": "Betekom"
+	},
+	{
+		"id": 231,
+		"postal": "4300",
+		"name": "Bettincourt"
+	},
+	{
+		"id": 232,
+		"postal": "5030",
+		"name": "Beuzet"
+	},
+	{
+		"id": 233,
+		"postal": "2560",
+		"name": "Bevel"
+	},
+	{
+		"id": 234,
+		"postal": "1547",
+		"name": "Bever"
+	},
+	{
+		"id": 235,
+		"postal": "4960",
+		"name": "Bevercé"
+	},
+	{
+		"id": 236,
+		"postal": "9700",
+		"name": "Bevere"
+	},
+	{
+		"id": 237,
+		"postal": "8791",
+		"name": "Beveren (Leie)"
+	},
+	{
+		"id": 238,
+		"postal": "8800",
+		"name": "Beveren (Roeselare)"
+	},
+	{
+		"id": 239,
+		"postal": "8691",
+		"name": "Beveren-aan-den-Ijzer"
+	},
+	{
+		"id": 240,
+		"postal": "9120",
+		"name": "Beveren-Waas"
+	},
+	{
+		"id": 241,
+		"postal": "3581",
+		"name": "Beverlo"
+	},
+	{
+		"id": 242,
+		"postal": "3740",
+		"name": "Beverst"
+	},
+	{
+		"id": 243,
+		"postal": "4610",
+		"name": "Beyne-Heusay"
+	},
+	{
+		"id": 244,
+		"postal": "6543",
+		"name": "Bienne-lez-Happart"
+	},
+	{
+		"id": 245,
+		"postal": "3360",
+		"name": "Bierbeek"
+	},
+	{
+		"id": 246,
+		"postal": "6533",
+		"name": "Biercée"
+	},
+	{
+		"id": 247,
+		"postal": "1301",
+		"name": "Bierges"
+	},
+	{
+		"id": 248,
+		"postal": "1430",
+		"name": "Bierghes"
+	},
+	{
+		"id": 249,
+		"postal": "4460",
+		"name": "Bierset"
+	},
+	{
+		"id": 250,
+		"postal": "5380",
+		"name": "Bierwart"
+	},
+	{
+		"id": 251,
+		"postal": "5640",
+		"name": "Biesme"
+	},
+	{
+		"id": 252,
+		"postal": "5640",
+		"name": "Biesmerée"
+	},
+	{
+		"id": 253,
+		"postal": "6531",
+		"name": "Biesme-sous-Thuin"
+	},
+	{
+		"id": 254,
+		"postal": "1547",
+		"name": "Biévène"
+	},
+	{
+		"id": 255,
+		"postal": "5555",
+		"name": "Bièvre"
+	},
+	{
+		"id": 256,
+		"postal": "1390",
+		"name": "Biez"
+	},
+	{
+		"id": 257,
+		"postal": "6690",
+		"name": "Bihain"
+	},
+	{
+		"id": 258,
+		"postal": "8920",
+		"name": "Bikschote"
+	},
+	{
+		"id": 259,
+		"postal": "4831",
+		"name": "Bilstain"
+	},
+	{
+		"id": 260,
+		"postal": "3740",
+		"name": "Bilzen"
+	},
+	{
+		"id": 261,
+		"postal": "7130",
+		"name": "Binche"
+	},
+	{
+		"id": 262,
+		"postal": "3850",
+		"name": "Binderveld"
+	},
+	{
+		"id": 263,
+		"postal": "3211",
+		"name": "Binkom"
+	},
+	{
+		"id": 264,
+		"postal": "5537",
+		"name": "Bioul"
+	},
+	{
+		"id": 265,
+		"postal": "8501",
+		"name": "Bissegem"
+	},
+	{
+		"id": 266,
+		"postal": "7783",
+		"name": "Bizet"
+	},
+	{
+		"id": 267,
+		"postal": "2830",
+		"name": "Blaasveld"
+	},
+	{
+		"id": 268,
+		"postal": "5542",
+		"name": "Blaimont"
+	},
+	{
+		"id": 269,
+		"postal": "7522",
+		"name": "Blandain"
+	},
+	{
+		"id": 270,
+		"postal": "3052",
+		"name": "Blanden"
+	},
+	{
+		"id": 271,
+		"postal": "8370",
+		"name": "Blankenberge"
+	},
+	{
+		"id": 272,
+		"postal": "7040",
+		"name": "Blaregnies"
+	},
+	{
+		"id": 273,
+		"postal": "7321",
+		"name": "Blaton"
+	},
+	{
+		"id": 274,
+		"postal": "7370",
+		"name": "Blaugies"
+	},
+	{
+		"id": 275,
+		"postal": "4670",
+		"name": "Blégny"
+	},
+	{
+		"id": 276,
+		"postal": "7620",
+		"name": "Bléharies"
+	},
+	{
+		"id": 277,
+		"postal": "4280",
+		"name": "Blehen"
+	},
+	{
+		"id": 278,
+		"postal": "6760",
+		"name": "Bleid"
+	},
+	{
+		"id": 279,
+		"postal": "4300",
+		"name": "Bleret"
+	},
+	{
+		"id": 280,
+		"postal": "7903",
+		"name": "Blicquy"
+	},
+	{
+		"id": 281,
+		"postal": "3950",
+		"name": "Bocholt"
+	},
+	{
+		"id": 282,
+		"postal": "2530",
+		"name": "Boechout"
+	},
+	{
+		"id": 283,
+		"postal": "3890",
+		"name": "Boekhout"
+	},
+	{
+		"id": 284,
+		"postal": "9961",
+		"name": "Boekhoute"
+	},
+	{
+		"id": 285,
+		"postal": "4250",
+		"name": "Boëlhe"
+	},
+	{
+		"id": 286,
+		"postal": "8904",
+		"name": "Boezinge"
+	},
+	{
+		"id": 287,
+		"postal": "1670",
+		"name": "Bogaarden"
+	},
+	{
+		"id": 288,
+		"postal": "5550",
+		"name": "Bohan"
+	},
+	{
+		"id": 289,
+		"postal": "5140",
+		"name": "Boignée"
+	},
+	{
+		"id": 290,
+		"postal": "4690",
+		"name": "Boirs"
+	},
+	{
+		"id": 291,
+		"postal": "7866",
+		"name": "Bois-de-Lessines"
+	},
+	{
+		"id": 292,
+		"postal": "5170",
+		"name": "Bois-de-Villers"
+	},
+	{
+		"id": 293,
+		"postal": "7170",
+		"name": "Bois-d'Haine"
+	},
+	{
+		"id": 294,
+		"postal": "4560",
+		"name": "Bois-et-Borsu"
+	},
+	{
+		"id": 295,
+		"postal": "5310",
+		"name": "Bolinne"
+	},
+	{
+		"id": 296,
+		"postal": "4653",
+		"name": "Bolland"
+	},
+	{
+		"id": 297,
+		"postal": "1367",
+		"name": "Bomal (Bt.)"
+	},
+	{
+		"id": 298,
+		"postal": "6941",
+		"name": "Bomal-sur-Ourthe"
+	},
+	{
+		"id": 299,
+		"postal": "4607",
+		"name": "Bombaye"
+	},
+	{
+		"id": 300,
+		"postal": "3840",
+		"name": "Bommershoven"
+	},
+	{
+		"id": 301,
+		"postal": "4100",
+		"name": "Boncelles"
+	},
+	{
+		"id": 302,
+		"postal": "5310",
+		"name": "Boneffe"
+	},
+	{
+		"id": 303,
+		"postal": "2820",
+		"name": "Bonheiden"
+	},
+	{
+		"id": 304,
+		"postal": "5021",
+		"name": "Boninne"
+	},
+	{
+		"id": 305,
+		"postal": "1325",
+		"name": "Bonlez"
+	},
+	{
+		"id": 306,
+		"postal": "6700",
+		"name": "Bonnert"
+	},
+	{
+		"id": 307,
+		"postal": "5300",
+		"name": "Bonneville"
+	},
+	{
+		"id": 308,
+		"postal": "7603",
+		"name": "Bon-Secours"
+	},
+	{
+		"id": 309,
+		"postal": "5377",
+		"name": "Bonsin"
+	},
+	{
+		"id": 310,
+		"postal": "2221",
+		"name": "Booischot"
+	},
+	{
+		"id": 311,
+		"postal": "8630",
+		"name": "Booitshoeke"
+	},
+	{
+		"id": 312,
+		"postal": "2850",
+		"name": "Boom"
+	},
+	{
+		"id": 313,
+		"postal": "3631",
+		"name": "Boorsem"
+	},
+	{
+		"id": 314,
+		"postal": "3190",
+		"name": "Boortmeerbeek"
+	},
+	{
+		"id": 315,
+		"postal": "1761",
+		"name": "Borchtlombeek"
+	},
+	{
+		"id": 316,
+		"postal": "2140",
+		"name": "Borgerhout (Antwerpen)"
+	},
+	{
+		"id": 317,
+		"postal": "3840",
+		"name": "Borgloon"
+	},
+	{
+		"id": 318,
+		"postal": "4317",
+		"name": "Borlez"
+	},
+	{
+		"id": 319,
+		"postal": "3891",
+		"name": "Borlo"
+	},
+	{
+		"id": 320,
+		"postal": "6941",
+		"name": "Borlon"
+	},
+	{
+		"id": 321,
+		"postal": "2880",
+		"name": "Bornem"
+	},
+	{
+		"id": 322,
+		"postal": "1404",
+		"name": "Bornival"
+	},
+	{
+		"id": 323,
+		"postal": "2150",
+		"name": "Borsbeek (Antw.)"
+	},
+	{
+		"id": 324,
+		"postal": "9552",
+		"name": "Borsbeke"
+	},
+	{
+		"id": 325,
+		"postal": "5032",
+		"name": "Bossière"
+	},
+	{
+		"id": 326,
+		"postal": "8583",
+		"name": "Bossuit"
+	},
+	{
+		"id": 327,
+		"postal": "1390",
+		"name": "Bossut-Gottechain"
+	},
+	{
+		"id": 328,
+		"postal": "3300",
+		"name": "Bost"
+	},
+	{
+		"id": 329,
+		"postal": "5032",
+		"name": "Bothey"
+	},
+	{
+		"id": 330,
+		"postal": "9820",
+		"name": "Bottelare"
+	},
+	{
+		"id": 331,
+		"postal": "6200",
+		"name": "Bouffioulx"
+	},
+	{
+		"id": 332,
+		"postal": "5004",
+		"name": "Bouge"
+	},
+	{
+		"id": 333,
+		"postal": "7040",
+		"name": "Bougnies"
+	},
+	{
+		"id": 334,
+		"postal": "6830",
+		"name": "Bouillon"
+	},
+	{
+		"id": 335,
+		"postal": "6464",
+		"name": "Bourlers"
+	},
+	{
+		"id": 336,
+		"postal": "5575",
+		"name": "Bourseigne-Neuve"
+	},
+	{
+		"id": 337,
+		"postal": "5575",
+		"name": "Bourseigne-Vieille"
+	},
+	{
+		"id": 338,
+		"postal": "7110",
+		"name": "Boussoit"
+	},
+	{
+		"id": 339,
+		"postal": "7300",
+		"name": "Boussu"
+	},
+	{
+		"id": 340,
+		"postal": "5660",
+		"name": "Boussu-en-Fagne"
+	},
+	{
+		"id": 341,
+		"postal": "6440",
+		"name": "Boussu-lez-Walcourt"
+	},
+	{
+		"id": 342,
+		"postal": "1470",
+		"name": "Bousval"
+	},
+	{
+		"id": 343,
+		"postal": "3370",
+		"name": "Boutersem"
+	},
+	{
+		"id": 344,
+		"postal": "5500",
+		"name": "Bouvignes-sur-Meuse"
+	},
+	{
+		"id": 345,
+		"postal": "7803",
+		"name": "Bouvignies"
+	},
+	{
+		"id": 346,
+		"postal": "2288",
+		"name": "Bouwel"
+	},
+	{
+		"id": 347,
+		"postal": "8680",
+		"name": "Bovekerke"
+	},
+	{
+		"id": 348,
+		"postal": "3870",
+		"name": "Bovelingen"
+	},
+	{
+		"id": 349,
+		"postal": "4300",
+		"name": "Bovenistier"
+	},
+	{
+		"id": 350,
+		"postal": "5081",
+		"name": "Bovesse"
+	},
+	{
+		"id": 351,
+		"postal": "6671",
+		"name": "Bovigny"
+	},
+	{
+		"id": 352,
+		"postal": "4990",
+		"name": "Bra"
+	},
+	{
+		"id": 353,
+		"postal": "7604",
+		"name": "Braffe"
+	},
+	{
+		"id": 354,
+		"postal": "5590",
+		"name": "Braibant"
+	},
+	{
+		"id": 355,
+		"postal": "1420",
+		"name": "Braine-l'Alleud"
+	},
+	{
+		"id": 356,
+		"postal": "1440",
+		"name": "Braine-le-Château"
+	},
+	{
+		"id": 357,
+		"postal": "7090",
+		"name": "Braine-le-Comte"
+	},
+	{
+		"id": 358,
+		"postal": "4260",
+		"name": "Braives"
+	},
+	{
+		"id": 359,
+		"postal": "9660",
+		"name": "Brakel"
+	},
+	{
+		"id": 360,
+		"postal": "5310",
+		"name": "Branchon"
+	},
+	{
+		"id": 361,
+		"postal": "6800",
+		"name": "Bras"
+	},
+	{
+		"id": 362,
+		"postal": "7604",
+		"name": "Brasmenil"
+	},
+	{
+		"id": 363,
+		"postal": "2930",
+		"name": "Brasschaat"
+	},
+	{
+		"id": 364,
+		"postal": "7130",
+		"name": "Bray"
+	},
+	{
+		"id": 365,
+		"postal": "2960",
+		"name": "Brecht"
+	},
+	{
+		"id": 366,
+		"postal": "8450",
+		"name": "Bredene"
+	},
+	{
+		"id": 367,
+		"postal": "3960",
+		"name": "Bree"
+	},
+	{
+		"id": 368,
+		"postal": "2870",
+		"name": "Breendonk"
+	},
+	{
+		"id": 369,
+		"postal": "4020",
+		"name": "Bressoux"
+	},
+	{
+		"id": 370,
+		"postal": "8900",
+		"name": "Brielen"
+	},
+	{
+		"id": 371,
+		"postal": "2520",
+		"name": "Broechem"
+	},
+	{
+		"id": 372,
+		"postal": "3840",
+		"name": "Broekom"
+	},
+	{
+		"id": 373,
+		"postal": "1931",
+		"name": "Brucargo"
+	},
+	{
+		"id": 374,
+		"postal": "7940",
+		"name": "Brugelette"
+	},
+	{
+		"id": 375,
+		"postal": "8000",
+		"name": "Brugge"
+	},
+	{
+		"id": 376,
+		"postal": "5660",
+		"name": "Brûly"
+	},
+	{
+		"id": 377,
+		"postal": "5660",
+		"name": "Brûly-de-Pesche"
+	},
+	{
+		"id": 378,
+		"postal": "7620",
+		"name": "Brunehaut"
+	},
+	{
+		"id": 379,
+		"postal": "1785",
+		"name": "Brussegem"
+	},
+	{
+		"id": 380,
+		"postal": "1000",
+		"name": "Brussel 1"
+	},
+	{
+		"id": 381,
+		"postal": "1120",
+		"name": "Brussel 12"
+	},
+	{
+		"id": 382,
+		"postal": "1130",
+		"name": "Brussel 13"
+	},
+	{
+		"id": 383,
+		"postal": "1140",
+		"name": "Brussel 14"
+	},
+	{
+		"id": 384,
+		"postal": "1150",
+		"name": "Brussel 15"
+	},
+	{
+		"id": 385,
+		"postal": "1160",
+		"name": "Brussel 16"
+	},
+	{
+		"id": 386,
+		"postal": "1170",
+		"name": "Brussel 17"
+	},
+	{
+		"id": 387,
+		"postal": "1180",
+		"name": "Brussel 18"
+	},
+	{
+		"id": 388,
+		"postal": "1190",
+		"name": "Brussel 19"
+	},
+	{
+		"id": 389,
+		"postal": "1020",
+		"name": "Brussel 2"
+	},
+	{
+		"id": 390,
+		"postal": "1200",
+		"name": "Brussel 20"
+	},
+	{
+		"id": 391,
+		"postal": "1210",
+		"name": "Brussel 21"
+	},
+	{
+		"id": 392,
+		"postal": "1030",
+		"name": "Brussel 3"
+	},
+	{
+		"id": 393,
+		"postal": "1040",
+		"name": "Brussel 4"
+	},
+	{
+		"id": 394,
+		"postal": "1050",
+		"name": "Brussel 5"
+	},
+	{
+		"id": 395,
+		"postal": "1060",
+		"name": "Brussel 6"
+	},
+	{
+		"id": 396,
+		"postal": "1070",
+		"name": "Brussel 7"
+	},
+	{
+		"id": 397,
+		"postal": "1080",
+		"name": "Brussel 8"
+	},
+	{
+		"id": 398,
+		"postal": "1090",
+		"name": "Brussel 9"
+	},
+	{
+		"id": 399,
+		"postal": "3800",
+		"name": "Brustem"
+	},
+	{
+		"id": 400,
+		"postal": "1000",
+		"name": "Bruxelles 1"
+	},
+	{
+		"id": 401,
+		"postal": "1120",
+		"name": "Bruxelles 12"
+	},
+	{
+		"id": 402,
+		"postal": "1130",
+		"name": "Bruxelles 13"
+	},
+	{
+		"id": 403,
+		"postal": "1140",
+		"name": "Bruxelles 14"
+	},
+	{
+		"id": 404,
+		"postal": "1150",
+		"name": "Bruxelles 15"
+	},
+	{
+		"id": 405,
+		"postal": "1160",
+		"name": "Bruxelles 16"
+	},
+	{
+		"id": 406,
+		"postal": "1170",
+		"name": "Bruxelles 17"
+	},
+	{
+		"id": 407,
+		"postal": "1180",
+		"name": "Bruxelles 18"
+	},
+	{
+		"id": 408,
+		"postal": "1190",
+		"name": "Bruxelles 19"
+	},
+	{
+		"id": 409,
+		"postal": "1020",
+		"name": "Bruxelles 2"
+	},
+	{
+		"id": 410,
+		"postal": "1200",
+		"name": "Bruxelles 20"
+	},
+	{
+		"id": 411,
+		"postal": "1210",
+		"name": "Bruxelles 21"
+	},
+	{
+		"id": 412,
+		"postal": "1030",
+		"name": "Bruxelles 3"
+	},
+	{
+		"id": 413,
+		"postal": "1040",
+		"name": "Bruxelles 4"
+	},
+	{
+		"id": 414,
+		"postal": "1050",
+		"name": "Bruxelles 5"
+	},
+	{
+		"id": 415,
+		"postal": "1060",
+		"name": "Bruxelles 6"
+	},
+	{
+		"id": 416,
+		"postal": "1070",
+		"name": "Bruxelles 7"
+	},
+	{
+		"id": 417,
+		"postal": "1080",
+		"name": "Bruxelles 8"
+	},
+	{
+		"id": 418,
+		"postal": "1090",
+		"name": "Bruxelles 9"
+	},
+	{
+		"id": 419,
+		"postal": "7641",
+		"name": "Bruyelle"
+	},
+	{
+		"id": 420,
+		"postal": "6222",
+		"name": "Brye"
+	},
+	{
+		"id": 421,
+		"postal": "3440",
+		"name": "Budingen"
+	},
+	{
+		"id": 422,
+		"postal": "9255",
+		"name": "Buggenhout"
+	},
+	{
+		"id": 423,
+		"postal": "7911",
+		"name": "Buissenal"
+	},
+	{
+		"id": 424,
+		"postal": "5580",
+		"name": "Buissonville"
+	},
+	{
+		"id": 425,
+		"postal": "1501",
+		"name": "Buizingen"
+	},
+	{
+		"id": 426,
+		"postal": "1910",
+		"name": "Buken"
+	},
+	{
+		"id": 427,
+		"postal": "4760",
+		"name": "Bullange"
+	},
+	{
+		"id": 428,
+		"postal": "4760",
+		"name": "Büllingen"
+	},
+	{
+		"id": 429,
+		"postal": "8630",
+		"name": "Bulskamp"
+	},
+	{
+		"id": 430,
+		"postal": "3380",
+		"name": "Bunsbeek"
+	},
+	{
+		"id": 431,
+		"postal": "2070",
+		"name": "Burcht"
+	},
+	{
+		"id": 432,
+		"postal": "4210",
+		"name": "Burdinne"
+	},
+	{
+		"id": 433,
+		"postal": "6927",
+		"name": "Bure"
+	},
+	{
+		"id": 434,
+		"postal": "4790",
+		"name": "Burg-Reuland"
+	},
+	{
+		"id": 435,
+		"postal": "9420",
+		"name": "Burst"
+	},
+	{
+		"id": 436,
+		"postal": "7602",
+		"name": "Bury"
+	},
+	{
+		"id": 437,
+		"postal": "4750",
+		"name": "Butgenbach"
+	},
+	{
+		"id": 438,
+		"postal": "4750",
+		"name": "Bütgenbach"
+	},
+	{
+		"id": 439,
+		"postal": "3891",
+		"name": "Buvingen"
+	},
+	{
+		"id": 440,
+		"postal": "7133",
+		"name": "Buvrinnes"
+	},
+	{
+		"id": 441,
+		"postal": "6743",
+		"name": "Buzenol"
+	},
+	{
+		"id": 442,
+		"postal": "6230",
+		"name": "Buzet"
+	},
+	{
+		"id": 443,
+		"postal": "7604",
+		"name": "Callenelle"
+	},
+	{
+		"id": 444,
+		"postal": "7642",
+		"name": "Calonne"
+	},
+	{
+		"id": 445,
+		"postal": "7940",
+		"name": "Cambron-Casteau"
+	},
+	{
+		"id": 446,
+		"postal": "7870",
+		"name": "Cambron-Saint-Vincent"
+	},
+	{
+		"id": 447,
+		"postal": "6850",
+		"name": "Carlsbourg"
+	},
+	{
+		"id": 448,
+		"postal": "7141",
+		"name": "Carnières"
+	},
+	{
+		"id": 449,
+		"postal": "7020",
+		"name": "Casteau (Mons)"
+	},
+	{
+		"id": 450,
+		"postal": "7061",
+		"name": "Casteau (Soignies)"
+	},
+	{
+		"id": 451,
+		"postal": "5650",
+		"name": "Castillon"
+	},
+	{
+		"id": 452,
+		"postal": "7760",
+		"name": "Celles (Ht.)"
+	},
+	{
+		"id": 453,
+		"postal": "4317",
+		"name": "Celles (Lg.)"
+	},
+	{
+		"id": 454,
+		"postal": "5561",
+		"name": "Celles (Nam.)"
+	},
+	{
+		"id": 455,
+		"postal": "4632",
+		"name": "Cerexhe-Heuseux"
+	},
+	{
+		"id": 456,
+		"postal": "5630",
+		"name": "Cerfontaine"
+	},
+	{
+		"id": 457,
+		"postal": "1341",
+		"name": "Céroux-Mousty"
+	},
+	{
+		"id": 458,
+		"postal": "7063",
+		"name": "Ch.-Notre-Dame-Louvignies"
+	},
+	{
+		"id": 459,
+		"postal": "4650",
+		"name": "Chaineux"
+	},
+	{
+		"id": 460,
+		"postal": "5550",
+		"name": "Chairière"
+	},
+	{
+		"id": 461,
+		"postal": "5020",
+		"name": "Champion"
+	},
+	{
+		"id": 462,
+		"postal": "6971",
+		"name": "Champlon"
+	},
+	{
+		"id": 463,
+		"postal": "6921",
+		"name": "Chanly"
+	},
+	{
+		"id": 464,
+		"postal": "6742",
+		"name": "Chantemelle"
+	},
+	{
+		"id": 465,
+		"postal": "7903",
+		"name": "Chapelle-à-Oie"
+	},
+	{
+		"id": 466,
+		"postal": "7903",
+		"name": "Chapelle-à-Wattines"
+	},
+	{
+		"id": 467,
+		"postal": "7160",
+		"name": "Chapelle-lez-Herlaimont"
+	},
+	{
+		"id": 468,
+		"postal": "4537",
+		"name": "Chapon-Seraing"
+	},
+	{
+		"id": 469,
+		"postal": "6000",
+		"name": "Charleroi"
+	},
+	{
+		"id": 470,
+		"postal": "4654",
+		"name": "Charneux"
+	},
+	{
+		"id": 471,
+		"postal": "6824",
+		"name": "Chassepierre"
+	},
+	{
+		"id": 472,
+		"postal": "1450",
+		"name": "Chastre"
+	},
+	{
+		"id": 473,
+		"postal": "5650",
+		"name": "Chastrès"
+	},
+	{
+		"id": 474,
+		"postal": "1450",
+		"name": "Chastre-Villeroux-Blanmont"
+	},
+	{
+		"id": 475,
+		"postal": "6200",
+		"name": "Châtelet"
+	},
+	{
+		"id": 476,
+		"postal": "6200",
+		"name": "Châtelineau"
+	},
+	{
+		"id": 477,
+		"postal": "6747",
+		"name": "Châtillon"
+	},
+	{
+		"id": 478,
+		"postal": "4050",
+		"name": "Chaudfontaine"
+	},
+	{
+		"id": 479,
+		"postal": "1325",
+		"name": "Chaumont-Gistoux"
+	},
+	{
+		"id": 480,
+		"postal": "4032",
+		"name": "Chênée"
+	},
+	{
+		"id": 481,
+		"postal": "6673",
+		"name": "Cherain"
+	},
+	{
+		"id": 482,
+		"postal": "4602",
+		"name": "Cheratte"
+	},
+	{
+		"id": 483,
+		"postal": "7521",
+		"name": "Chercq"
+	},
+	{
+		"id": 484,
+		"postal": "5590",
+		"name": "Chevetogne"
+	},
+	{
+		"id": 485,
+		"postal": "4987",
+		"name": "Chevron"
+	},
+	{
+		"id": 486,
+		"postal": "7950",
+		"name": "Chièvres"
+	},
+	{
+		"id": 487,
+		"postal": "6460",
+		"name": "Chimay"
+	},
+	{
+		"id": 488,
+		"postal": "6810",
+		"name": "Chiny"
+	},
+	{
+		"id": 489,
+		"postal": "4400",
+		"name": "Chokier"
+	},
+	{
+		"id": 490,
+		"postal": "5560",
+		"name": "Ciergnon"
+	},
+	{
+		"id": 491,
+		"postal": "5590",
+		"name": "Ciney"
+	},
+	{
+		"id": 492,
+		"postal": "4260",
+		"name": "Ciplet"
+	},
+	{
+		"id": 493,
+		"postal": "7024",
+		"name": "Ciply"
+	},
+	{
+		"id": 494,
+		"postal": "1480",
+		"name": "Clabecq"
+	},
+	{
+		"id": 495,
+		"postal": "4560",
+		"name": "Clavier"
+	},
+	{
+		"id": 496,
+		"postal": "4890",
+		"name": "Clermont (Lg.)"
+	},
+	{
+		"id": 497,
+		"postal": "5650",
+		"name": "Clermont (Nam.)"
+	},
+	{
+		"id": 498,
+		"postal": "4480",
+		"name": "Clermont-sous-Huy"
+	},
+	{
+		"id": 499,
+		"postal": "5022",
+		"name": "Cognelée"
+	},
+	{
+		"id": 500,
+		"postal": "7340",
+		"name": "Colfontaine"
+	},
+	{
+		"id": 501,
+		"postal": "4170",
+		"name": "Comblain-au-Pont"
+	},
+	{
+		"id": 502,
+		"postal": "4180",
+		"name": "Comblain-Fairon"
+	},
+	{
+		"id": 503,
+		"postal": "4180",
+		"name": "Comblain-la-Tour"
+	},
+	{
+		"id": 504,
+		"postal": "7780",
+		"name": "Comines"
+	},
+	{
+		"id": 505,
+		"postal": "7780",
+		"name": "Comines-Warneton"
+	},
+	{
+		"id": 506,
+		"postal": "5590",
+		"name": "Conneux"
+	},
+	{
+		"id": 507,
+		"postal": "1435",
+		"name": "Corbais"
+	},
+	{
+		"id": 508,
+		"postal": "6838",
+		"name": "Corbion"
+	},
+	{
+		"id": 509,
+		"postal": "7910",
+		"name": "Cordes"
+	},
+	{
+		"id": 510,
+		"postal": "5620",
+		"name": "Corenne"
+	},
+	{
+		"id": 511,
+		"postal": "4860",
+		"name": "Cornesse"
+	},
+	{
+		"id": 512,
+		"postal": "5555",
+		"name": "Cornimont"
+	},
+	{
+		"id": 513,
+		"postal": "5032",
+		"name": "Corroy-le-Château"
+	},
+	{
+		"id": 514,
+		"postal": "1325",
+		"name": "Corroy-le-Grand"
+	},
+	{
+		"id": 515,
+		"postal": "4257",
+		"name": "Corswarem"
+	},
+	{
+		"id": 516,
+		"postal": "1450",
+		"name": "Cortil-Noirmont"
+	},
+	{
+		"id": 517,
+		"postal": "5380",
+		"name": "Cortil-Wodon"
+	},
+	{
+		"id": 518,
+		"postal": "6010",
+		"name": "Couillet"
+	},
+	{
+		"id": 519,
+		"postal": "6180",
+		"name": "Courcelles"
+	},
+	{
+		"id": 520,
+		"postal": "5336",
+		"name": "Courrière"
+	},
+	{
+		"id": 521,
+		"postal": "6120",
+		"name": "Cour-sur-Heure"
+	},
+	{
+		"id": 522,
+		"postal": "1490",
+		"name": "Court-Saint-Etienne"
+	},
+	{
+		"id": 523,
+		"postal": "4218",
+		"name": "Couthuin"
+	},
+	{
+		"id": 524,
+		"postal": "5300",
+		"name": "Coutisse"
+	},
+	{
+		"id": 525,
+		"postal": "1380",
+		"name": "Couture-Saint-Germain"
+	},
+	{
+		"id": 526,
+		"postal": "5660",
+		"name": "Couvin"
+	},
+	{
+		"id": 527,
+		"postal": "4280",
+		"name": "Cras-Avernas"
+	},
+	{
+		"id": 528,
+		"postal": "4280",
+		"name": "Crehen"
+	},
+	{
+		"id": 529,
+		"postal": "4367",
+		"name": "Crisnée"
+	},
+	{
+		"id": 530,
+		"postal": "7120",
+		"name": "Croix-lez-Rouveroy"
+	},
+	{
+		"id": 531,
+		"postal": "4784",
+		"name": "Crombach"
+	},
+	{
+		"id": 532,
+		"postal": "5332",
+		"name": "Crupet"
+	},
+	{
+		"id": 533,
+		"postal": "7033",
+		"name": "Cuesmes"
+	},
+	{
+		"id": 534,
+		"postal": "6880",
+		"name": "Cugnon"
+	},
+	{
+		"id": 535,
+		"postal": "5660",
+		"name": "Cul-des-Sarts"
+	},
+	{
+		"id": 536,
+		"postal": "5562",
+		"name": "Custinne"
+	},
+	{
+		"id": 537,
+		"postal": "8890",
+		"name": "Dadizele"
+	},
+	{
+		"id": 538,
+		"postal": "5660",
+		"name": "Dailly"
+	},
+	{
+		"id": 539,
+		"postal": "9160",
+		"name": "Daknam"
+	},
+	{
+		"id": 540,
+		"postal": "4607",
+		"name": "Dalhem"
+	},
+	{
+		"id": 541,
+		"postal": "8340",
+		"name": "Damme"
+	},
+	{
+		"id": 542,
+		"postal": "6767",
+		"name": "Dampicourt"
+	},
+	{
+		"id": 543,
+		"postal": "6020",
+		"name": "Dampremy"
+	},
+	{
+		"id": 544,
+		"postal": "4253",
+		"name": "Darion"
+	},
+	{
+		"id": 545,
+		"postal": "5630",
+		"name": "Daussois"
+	},
+	{
+		"id": 546,
+		"postal": "5020",
+		"name": "Daussoulx"
+	},
+	{
+		"id": 547,
+		"postal": "5100",
+		"name": "Dave"
+	},
+	{
+		"id": 548,
+		"postal": "6929",
+		"name": "Daverdisse"
+	},
+	{
+		"id": 549,
+		"postal": "8420",
+		"name": "De Haan"
+	},
+	{
+		"id": 550,
+		"postal": "9170",
+		"name": "De Klinge"
+	},
+	{
+		"id": 551,
+		"postal": "8630",
+		"name": "De Moeren"
+	},
+	{
+		"id": 552,
+		"postal": "8660",
+		"name": "De Panne"
+	},
+	{
+		"id": 553,
+		"postal": "9840",
+		"name": "De Pinte"
+	},
+	{
+		"id": 554,
+		"postal": "8540",
+		"name": "Deerlijk"
+	},
+	{
+		"id": 555,
+		"postal": "9570",
+		"name": "Deftinge"
+	},
+	{
+		"id": 556,
+		"postal": "9800",
+		"name": "Deinze"
+	},
+	{
+		"id": 557,
+		"postal": "9280",
+		"name": "Denderbelle"
+	},
+	{
+		"id": 558,
+		"postal": "9450",
+		"name": "Denderhoutem"
+	},
+	{
+		"id": 559,
+		"postal": "9470",
+		"name": "Denderleeuw"
+	},
+	{
+		"id": 560,
+		"postal": "9200",
+		"name": "Dendermonde"
+	},
+	{
+		"id": 561,
+		"postal": "9400",
+		"name": "Denderwindeke"
+	},
+	{
+		"id": 562,
+		"postal": "5537",
+		"name": "Denée"
+	},
+	{
+		"id": 563,
+		"postal": "8720",
+		"name": "Dentergem"
+	},
+	{
+		"id": 564,
+		"postal": "7912",
+		"name": "Dergneau"
+	},
+	{
+		"id": 565,
+		"postal": "2480",
+		"name": "Dessel"
+	},
+	{
+		"id": 566,
+		"postal": "8792",
+		"name": "Desselgem"
+	},
+	{
+		"id": 567,
+		"postal": "9070",
+		"name": "Destelbergen"
+	},
+	{
+		"id": 568,
+		"postal": "9831",
+		"name": "Deurle"
+	},
+	{
+		"id": 569,
+		"postal": "2100",
+		"name": "Deurne (Antwerpen)"
+	},
+	{
+		"id": 570,
+		"postal": "3290",
+		"name": "Deurne (Bt.)"
+	},
+	{
+		"id": 571,
+		"postal": "7864",
+		"name": "Deux-Acren"
+	},
+	{
+		"id": 572,
+		"postal": "5310",
+		"name": "Dhuy"
+	},
+	{
+		"id": 573,
+		"postal": "1831",
+		"name": "Diegem"
+	},
+	{
+		"id": 574,
+		"postal": "3590",
+		"name": "Diepenbeek"
+	},
+	{
+		"id": 575,
+		"postal": "3290",
+		"name": "Diest"
+	},
+	{
+		"id": 576,
+		"postal": "3700",
+		"name": "Diets-Heur"
+	},
+	{
+		"id": 577,
+		"postal": "8900",
+		"name": "Dikkebus"
+	},
+	{
+		"id": 578,
+		"postal": "9630",
+		"name": "Dikkele"
+	},
+	{
+		"id": 579,
+		"postal": "9890",
+		"name": "Dikkelvenne"
+	},
+	{
+		"id": 580,
+		"postal": "8600",
+		"name": "Diksmuide"
+	},
+	{
+		"id": 581,
+		"postal": "1700",
+		"name": "Dilbeek"
+	},
+	{
+		"id": 582,
+		"postal": "3650",
+		"name": "Dilsen"
+	},
+	{
+		"id": 583,
+		"postal": "5500",
+		"name": "Dinant"
+	},
+	{
+		"id": 584,
+		"postal": "5570",
+		"name": "Dion"
+	},
+	{
+		"id": 585,
+		"postal": "1325",
+		"name": "Dion-Valmont"
+	},
+	{
+		"id": 586,
+		"postal": "4820",
+		"name": "Dison"
+	},
+	{
+		"id": 587,
+		"postal": "6960",
+		"name": "Dochamps"
+	},
+	{
+		"id": 588,
+		"postal": "9130",
+		"name": "Doel"
+	},
+	{
+		"id": 589,
+		"postal": "6836",
+		"name": "Dohan"
+	},
+	{
+		"id": 590,
+		"postal": "5680",
+		"name": "Doische"
+	},
+	{
+		"id": 591,
+		"postal": "4140",
+		"name": "Dolembreux"
+	},
+	{
+		"id": 592,
+		"postal": "4357",
+		"name": "Donceel"
+	},
+	{
+		"id": 593,
+		"postal": "1370",
+		"name": "Dongelberg"
+	},
+	{
+		"id": 594,
+		"postal": "3540",
+		"name": "Donk"
+	},
+	{
+		"id": 595,
+		"postal": "6536",
+		"name": "Donstiennes"
+	},
+	{
+		"id": 596,
+		"postal": "5530",
+		"name": "Dorinne"
+	},
+	{
+		"id": 597,
+		"postal": "3440",
+		"name": "Dormaal"
+	},
+	{
+		"id": 598,
+		"postal": "7711",
+		"name": "Dottenijs"
+	},
+	{
+		"id": 599,
+		"postal": "7711",
+		"name": "Dottignies"
+	},
+	{
+		"id": 600,
+		"postal": "7370",
+		"name": "Dour"
+	},
+	{
+		"id": 601,
+		"postal": "5670",
+		"name": "Dourbes"
+	},
+	{
+		"id": 602,
+		"postal": "8951",
+		"name": "Dranouter"
+	},
+	{
+		"id": 603,
+		"postal": "5500",
+		"name": "Dréhance"
+	},
+	{
+		"id": 604,
+		"postal": "8600",
+		"name": "Driekapellen"
+	},
+	{
+		"id": 605,
+		"postal": "3350",
+		"name": "Drieslinter"
+	},
+	{
+		"id": 606,
+		"postal": "1620",
+		"name": "Drogenbos"
+	},
+	{
+		"id": 607,
+		"postal": "9031",
+		"name": "Drongen"
+	},
+	{
+		"id": 608,
+		"postal": "8380",
+		"name": "Dudzele"
+	},
+	{
+		"id": 609,
+		"postal": "2570",
+		"name": "Duffel"
+	},
+	{
+		"id": 610,
+		"postal": "3080",
+		"name": "Duisburg"
+	},
+	{
+		"id": 611,
+		"postal": "3803",
+		"name": "Duras"
+	},
+	{
+		"id": 612,
+		"postal": "6940",
+		"name": "Durbuy"
+	},
+	{
+		"id": 613,
+		"postal": "5530",
+		"name": "Durnal"
+	},
+	{
+		"id": 614,
+		"postal": "1653",
+		"name": "Dworp"
+	},
+	{
+		"id": 615,
+		"postal": "4690",
+		"name": "Eben-Emael"
+	},
+	{
+		"id": 616,
+		"postal": "6860",
+		"name": "Ebly"
+	},
+	{
+		"id": 617,
+		"postal": "7190",
+		"name": "Ecaussinnes"
+	},
+	{
+		"id": 618,
+		"postal": "7190",
+		"name": "Ecaussinnes-d'Enghien"
+	},
+	{
+		"id": 619,
+		"postal": "7191",
+		"name": "Ecaussinnes-Lalaing"
+	},
+	{
+		"id": 620,
+		"postal": "2650",
+		"name": "Edegem"
+	},
+	{
+		"id": 621,
+		"postal": "9700",
+		"name": "Edelare"
+	},
+	{
+		"id": 622,
+		"postal": "7850",
+		"name": "Edingen"
+	},
+	{
+		"id": 623,
+		"postal": "9900",
+		"name": "Eeklo"
+	},
+	{
+		"id": 624,
+		"postal": "8480",
+		"name": "Eernegem"
+	},
+	{
+		"id": 625,
+		"postal": "8740",
+		"name": "Egem"
+	},
+	{
+		"id": 626,
+		"postal": "8630",
+		"name": "Eggewaartskapelle"
+	},
+	{
+		"id": 627,
+		"postal": "5310",
+		"name": "Eghezée"
+	},
+	{
+		"id": 628,
+		"postal": "4480",
+		"name": "Ehein (Engis)"
+	},
+	{
+		"id": 629,
+		"postal": "4120",
+		"name": "Ehein (Neupré)"
+	},
+	{
+		"id": 630,
+		"postal": "3740",
+		"name": "Eigenbilzen"
+	},
+	{
+		"id": 631,
+		"postal": "2430",
+		"name": "Eindhout"
+	},
+	{
+		"id": 632,
+		"postal": "9700",
+		"name": "Eine"
+	},
+	{
+		"id": 633,
+		"postal": "3630",
+		"name": "Eisden"
+	},
+	{
+		"id": 634,
+		"postal": "9810",
+		"name": "Eke"
+	},
+	{
+		"id": 635,
+		"postal": "2180",
+		"name": "Ekeren (Antwerpen)"
+	},
+	{
+		"id": 636,
+		"postal": "9160",
+		"name": "Eksaarde"
+	},
+	{
+		"id": 637,
+		"postal": "3941",
+		"name": "Eksel"
+	},
+	{
+		"id": 638,
+		"postal": "3650",
+		"name": "Elen"
+	},
+	{
+		"id": 639,
+		"postal": "9620",
+		"name": "Elene"
+	},
+	{
+		"id": 640,
+		"postal": "1982",
+		"name": "Elewijt"
+	},
+	{
+		"id": 641,
+		"postal": "3400",
+		"name": "Eliksem"
+	},
+	{
+		"id": 642,
+		"postal": "1671",
+		"name": "Elingen"
+	},
+	{
+		"id": 643,
+		"postal": "4590",
+		"name": "Ellemelle"
+	},
+	{
+		"id": 644,
+		"postal": "7890",
+		"name": "Ellezelles"
+	},
+	{
+		"id": 645,
+		"postal": "7910",
+		"name": "Ellignies-lez-Frasnes"
+	},
+	{
+		"id": 646,
+		"postal": "7972",
+		"name": "Ellignies-Sainte-Anne"
+	},
+	{
+		"id": 647,
+		"postal": "3670",
+		"name": "Ellikom"
+	},
+	{
+		"id": 648,
+		"postal": "7370",
+		"name": "Elouges"
+	},
+	{
+		"id": 649,
+		"postal": "9790",
+		"name": "Elsegem"
+	},
+	{
+		"id": 650,
+		"postal": "4750",
+		"name": "Elsenborn"
+	},
+	{
+		"id": 651,
+		"postal": "1050",
+		"name": "Elsene"
+	},
+	{
+		"id": 652,
+		"postal": "9660",
+		"name": "Elst"
+	},
+	{
+		"id": 653,
+		"postal": "8906",
+		"name": "Elverdinge"
+	},
+	{
+		"id": 654,
+		"postal": "9140",
+		"name": "Elversele"
+	},
+	{
+		"id": 655,
+		"postal": "2520",
+		"name": "Emblem"
+	},
+	{
+		"id": 656,
+		"postal": "4053",
+		"name": "Embourg"
+	},
+	{
+		"id": 657,
+		"postal": "8870",
+		"name": "Emelgem"
+	},
+	{
+		"id": 658,
+		"postal": "5080",
+		"name": "Emines"
+	},
+	{
+		"id": 659,
+		"postal": "5363",
+		"name": "Emptinne"
+	},
+	{
+		"id": 660,
+		"postal": "9700",
+		"name": "Ename"
+	},
+	{
+		"id": 661,
+		"postal": "3800",
+		"name": "Engelmanshoven"
+	},
+	{
+		"id": 662,
+		"postal": "7850",
+		"name": "Enghien"
+	},
+	{
+		"id": 663,
+		"postal": "4480",
+		"name": "Engis"
+	},
+	{
+		"id": 664,
+		"postal": "1350",
+		"name": "Enines"
+	},
+	{
+		"id": 665,
+		"postal": "4800",
+		"name": "Ensival"
+	},
+	{
+		"id": 666,
+		"postal": "7134",
+		"name": "Epinois"
+	},
+	{
+		"id": 667,
+		"postal": "1980",
+		"name": "Eppegem"
+	},
+	{
+		"id": 668,
+		"postal": "5580",
+		"name": "Eprave"
+	},
+	{
+		"id": 669,
+		"postal": "7050",
+		"name": "Erbaut"
+	},
+	{
+		"id": 670,
+		"postal": "7050",
+		"name": "Erbisoeul"
+	},
+	{
+		"id": 671,
+		"postal": "7500",
+		"name": "Ere"
+	},
+	{
+		"id": 672,
+		"postal": "9320",
+		"name": "Erembodegem"
+	},
+	{
+		"id": 673,
+		"postal": "6997",
+		"name": "Erezée"
+	},
+	{
+		"id": 674,
+		"postal": "5644",
+		"name": "Ermeton-sur-Biert"
+	},
+	{
+		"id": 675,
+		"postal": "5030",
+		"name": "Ernage"
+	},
+	{
+		"id": 676,
+		"postal": "6972",
+		"name": "Erneuville"
+	},
+	{
+		"id": 677,
+		"postal": "4920",
+		"name": "Ernonheid"
+	},
+	{
+		"id": 678,
+		"postal": "9420",
+		"name": "Erondegem"
+	},
+	{
+		"id": 679,
+		"postal": "9420",
+		"name": "Erpe"
+	},
+	{
+		"id": 680,
+		"postal": "9420",
+		"name": "Erpe-Mere"
+	},
+	{
+		"id": 681,
+		"postal": "5101",
+		"name": "Erpent"
+	},
+	{
+		"id": 682,
+		"postal": "6441",
+		"name": "Erpion"
+	},
+	{
+		"id": 683,
+		"postal": "3071",
+		"name": "Erps-kwerps"
+	},
+	{
+		"id": 684,
+		"postal": "6560",
+		"name": "Erquelinnes"
+	},
+	{
+		"id": 685,
+		"postal": "7387",
+		"name": "Erquennes"
+	},
+	{
+		"id": 686,
+		"postal": "9940",
+		"name": "Ertvelde"
+	},
+	{
+		"id": 687,
+		"postal": "9620",
+		"name": "Erwetegem"
+	},
+	{
+		"id": 688,
+		"postal": "7760",
+		"name": "Escanaffles"
+	},
+	{
+		"id": 689,
+		"postal": "8600",
+		"name": "Esen"
+	},
+	{
+		"id": 690,
+		"postal": "4130",
+		"name": "Esneux"
+	},
+	{
+		"id": 691,
+		"postal": "8587",
+		"name": "Espierres"
+	},
+	{
+		"id": 692,
+		"postal": "8587",
+		"name": "Espierres-Helchin"
+	},
+	{
+		"id": 693,
+		"postal": "7502",
+		"name": "Esplechin"
+	},
+	{
+		"id": 694,
+		"postal": "7743",
+		"name": "Esquelmes"
+	},
+	{
+		"id": 695,
+		"postal": "2910",
+		"name": "Essen"
+	},
+	{
+		"id": 696,
+		"postal": "1790",
+		"name": "Essene"
+	},
+	{
+		"id": 697,
+		"postal": "7730",
+		"name": "Estaimbourg"
+	},
+	{
+		"id": 698,
+		"postal": "7730",
+		"name": "Estaimpuis"
+	},
+	{
+		"id": 699,
+		"postal": "7120",
+		"name": "Estinnes"
+	},
+	{
+		"id": 700,
+		"postal": "7120",
+		"name": "Estinnes-au-Mont"
+	},
+	{
+		"id": 701,
+		"postal": "7120",
+		"name": "Estinnes-au-Val"
+	},
+	{
+		"id": 702,
+		"postal": "6740",
+		"name": "Etalle"
+	},
+	{
+		"id": 703,
+		"postal": "6760",
+		"name": "Ethe"
+	},
+	{
+		"id": 704,
+		"postal": "9680",
+		"name": "Etikhove"
+	},
+	{
+		"id": 705,
+		"postal": "8460",
+		"name": "Ettelgem"
+	},
+	{
+		"id": 706,
+		"postal": "1040",
+		"name": "Etterbeek"
+	},
+	{
+		"id": 707,
+		"postal": "7340",
+		"name": "Eugies (Colfontaine)"
+	},
+	{
+		"id": 708,
+		"postal": "7080",
+		"name": "Eugies (Frameries)"
+	},
+	{
+		"id": 709,
+		"postal": "4700",
+		"name": "Eupen"
+	},
+	{
+		"id": 710,
+		"postal": "4631",
+		"name": "Evegnée"
+	},
+	{
+		"id": 711,
+		"postal": "5350",
+		"name": "Evelette"
+	},
+	{
+		"id": 712,
+		"postal": "9660",
+		"name": "Everbeek"
+	},
+	{
+		"id": 713,
+		"postal": "3078",
+		"name": "Everberg"
+	},
+	{
+		"id": 714,
+		"postal": "1140",
+		"name": "Evere"
+	},
+	{
+		"id": 715,
+		"postal": "9940",
+		"name": "Evergem"
+	},
+	{
+		"id": 716,
+		"postal": "7730",
+		"name": "Evregnies"
+	},
+	{
+		"id": 717,
+		"postal": "5530",
+		"name": "Evrehailles"
+	},
+	{
+		"id": 718,
+		"postal": "4731",
+		"name": "Eynatten"
+	},
+	{
+		"id": 719,
+		"postal": "3400",
+		"name": "Ezemaal"
+	},
+	{
+		"id": 720,
+		"postal": "5600",
+		"name": "Fagnolle"
+	},
+	{
+		"id": 721,
+		"postal": "4317",
+		"name": "Faimes"
+	},
+	{
+		"id": 722,
+		"postal": "5522",
+		"name": "Falaën"
+	},
+	{
+		"id": 723,
+		"postal": "5060",
+		"name": "Falisolle"
+	},
+	{
+		"id": 724,
+		"postal": "4260",
+		"name": "Fallais"
+	},
+	{
+		"id": 725,
+		"postal": "5500",
+		"name": "Falmagne"
+	},
+	{
+		"id": 726,
+		"postal": "5500",
+		"name": "Falmignoul"
+	},
+	{
+		"id": 727,
+		"postal": "7181",
+		"name": "Familleureux"
+	},
+	{
+		"id": 728,
+		"postal": "6240",
+		"name": "Farciennes"
+	},
+	{
+		"id": 729,
+		"postal": "5340",
+		"name": "Faulx-les-Tombes"
+	},
+	{
+		"id": 730,
+		"postal": "7120",
+		"name": "Fauroeulx"
+	},
+	{
+		"id": 731,
+		"postal": "6637",
+		"name": "Fauvillers"
+	},
+	{
+		"id": 732,
+		"postal": "4950",
+		"name": "Faymonville"
+	},
+	{
+		"id": 733,
+		"postal": "6856",
+		"name": "Fays-les-Veneurs"
+	},
+	{
+		"id": 734,
+		"postal": "7387",
+		"name": "Fayt-le-Franc"
+	},
+	{
+		"id": 735,
+		"postal": "7170",
+		"name": "Fayt-lez-Manage"
+	},
+	{
+		"id": 736,
+		"postal": "5570",
+		"name": "Felenne"
+	},
+	{
+		"id": 737,
+		"postal": "7181",
+		"name": "Feluy"
+	},
+	{
+		"id": 738,
+		"postal": "4607",
+		"name": "Feneur"
+	},
+	{
+		"id": 739,
+		"postal": "5380",
+		"name": "Fernelmont"
+	},
+	{
+		"id": 740,
+		"postal": "4190",
+		"name": "Ferrières"
+	},
+	{
+		"id": 741,
+		"postal": "5570",
+		"name": "Feschaux"
+	},
+	{
+		"id": 742,
+		"postal": "4347",
+		"name": "Fexhe-le-Haut-Clocher"
+	},
+	{
+		"id": 743,
+		"postal": "4458",
+		"name": "Fexhe-Slins"
+	},
+	{
+		"id": 744,
+		"postal": "4181",
+		"name": "Filot"
+	},
+	{
+		"id": 745,
+		"postal": "5560",
+		"name": "Finnevaux"
+	},
+	{
+		"id": 746,
+		"postal": "4530",
+		"name": "Fize-Fontaine"
+	},
+	{
+		"id": 747,
+		"postal": "4367",
+		"name": "Fize-le-Marsal"
+	},
+	{
+		"id": 748,
+		"postal": "6686",
+		"name": "Flamierge"
+	},
+	{
+		"id": 749,
+		"postal": "5620",
+		"name": "Flavion"
+	},
+	{
+		"id": 750,
+		"postal": "5020",
+		"name": "Flawinne"
+	},
+	{
+		"id": 751,
+		"postal": "4400",
+		"name": "Flémalle"
+	},
+	{
+		"id": 752,
+		"postal": "4400",
+		"name": "Flémalle-Grande"
+	},
+	{
+		"id": 753,
+		"postal": "4400",
+		"name": "Flémalle-Haute"
+	},
+	{
+		"id": 754,
+		"postal": "7012",
+		"name": "Flénu"
+	},
+	{
+		"id": 755,
+		"postal": "4620",
+		"name": "Fléron"
+	},
+	{
+		"id": 756,
+		"postal": "6220",
+		"name": "Fleurus"
+	},
+	{
+		"id": 757,
+		"postal": "7880",
+		"name": "Flobecq"
+	},
+	{
+		"id": 758,
+		"postal": "4540",
+		"name": "Flône"
+	},
+	{
+		"id": 759,
+		"postal": "5334",
+		"name": "Florée"
+	},
+	{
+		"id": 760,
+		"postal": "5150",
+		"name": "Floreffe"
+	},
+	{
+		"id": 761,
+		"postal": "5620",
+		"name": "Florennes"
+	},
+	{
+		"id": 762,
+		"postal": "6820",
+		"name": "Florenville"
+	},
+	{
+		"id": 763,
+		"postal": "5150",
+		"name": "Floriffoux"
+	},
+	{
+		"id": 764,
+		"postal": "5370",
+		"name": "Flostoy"
+	},
+	{
+		"id": 765,
+		"postal": "5572",
+		"name": "Focant"
+	},
+	{
+		"id": 766,
+		"postal": "1350",
+		"name": "Folx-les-Caves"
+	},
+	{
+		"id": 767,
+		"postal": "6140",
+		"name": "Fontaine-l'Evêque"
+	},
+	{
+		"id": 768,
+		"postal": "6567",
+		"name": "Fontaine-Valmont"
+	},
+	{
+		"id": 769,
+		"postal": "5650",
+		"name": "Fontenelle"
+	},
+	{
+		"id": 770,
+		"postal": "6820",
+		"name": "Fontenoille"
+	},
+	{
+		"id": 771,
+		"postal": "7643",
+		"name": "Fontenoy"
+	},
+	{
+		"id": 772,
+		"postal": "4340",
+		"name": "Fooz"
+	},
+	{
+		"id": 773,
+		"postal": "6141",
+		"name": "Forchies-la-Marche"
+	},
+	{
+		"id": 774,
+		"postal": "1190",
+		"name": "Forest"
+	},
+	{
+		"id": 775,
+		"postal": "7910",
+		"name": "Forest (Ht.)"
+	},
+	{
+		"id": 776,
+		"postal": "4870",
+		"name": "Forêt"
+	},
+	{
+		"id": 777,
+		"postal": "6596",
+		"name": "Forge-Philippe"
+	},
+	{
+		"id": 778,
+		"postal": "6464",
+		"name": "Forges"
+	},
+	{
+		"id": 779,
+		"postal": "6953",
+		"name": "Forrières"
+	},
+	{
+		"id": 780,
+		"postal": "5380",
+		"name": "Forville"
+	},
+	{
+		"id": 781,
+		"postal": "4980",
+		"name": "Fosse (Lg.)"
+	},
+	{
+		"id": 782,
+		"postal": "5070",
+		"name": "Fosses-la-Ville"
+	},
+	{
+		"id": 783,
+		"postal": "7830",
+		"name": "Fouleng"
+	},
+	{
+		"id": 784,
+		"postal": "6440",
+		"name": "Fourbechies"
+	},
+	{
+		"id": 785,
+		"postal": "3798",
+		"name": "Fouron-le-Comte"
+	},
+	{
+		"id": 786,
+		"postal": "3790",
+		"name": "Fourons"
+	},
+	{
+		"id": 787,
+		"postal": "3790",
+		"name": "Fouron-Saint-Martin"
+	},
+	{
+		"id": 788,
+		"postal": "3792",
+		"name": "Fouron-Saint-Pierre"
+	},
+	{
+		"id": 789,
+		"postal": "5504",
+		"name": "Foy-Notre-Dame"
+	},
+	{
+		"id": 790,
+		"postal": "4870",
+		"name": "Fraipont"
+	},
+	{
+		"id": 791,
+		"postal": "5650",
+		"name": "Fraire"
+	},
+	{
+		"id": 792,
+		"postal": "4557",
+		"name": "Fraiture"
+	},
+	{
+		"id": 793,
+		"postal": "7080",
+		"name": "Frameries"
+	},
+	{
+		"id": 794,
+		"postal": "6853",
+		"name": "Framont"
+	},
+	{
+		"id": 795,
+		"postal": "5600",
+		"name": "Franchimont"
+	},
+	{
+		"id": 796,
+		"postal": "4970",
+		"name": "Francorchamps"
+	},
+	{
+		"id": 797,
+		"postal": "5380",
+		"name": "Franc-Waret"
+	},
+	{
+		"id": 798,
+		"postal": "5150",
+		"name": "Franière"
+	},
+	{
+		"id": 799,
+		"postal": "5660",
+		"name": "Frasnes (Nam.)"
+	},
+	{
+		"id": 800,
+		"postal": "7911",
+		"name": "Frasnes-lez-Buissenal"
+	},
+	{
+		"id": 801,
+		"postal": "6210",
+		"name": "Frasnes-lez-Gosselies"
+	},
+	{
+		"id": 802,
+		"postal": "4347",
+		"name": "Freloux"
+	},
+	{
+		"id": 803,
+		"postal": "6800",
+		"name": "Freux"
+	},
+	{
+		"id": 804,
+		"postal": "6440",
+		"name": "Froidchapelle"
+	},
+	{
+		"id": 805,
+		"postal": "5576",
+		"name": "Froidfontaine"
+	},
+	{
+		"id": 806,
+		"postal": "7504",
+		"name": "Froidmont"
+	},
+	{
+		"id": 807,
+		"postal": "6990",
+		"name": "Fronville"
+	},
+	{
+		"id": 808,
+		"postal": "7503",
+		"name": "Froyennes"
+	},
+	{
+		"id": 809,
+		"postal": "4260",
+		"name": "Fumal"
+	},
+	{
+		"id": 810,
+		"postal": "5500",
+		"name": "Furfooz"
+	},
+	{
+		"id": 811,
+		"postal": "5641",
+		"name": "Furnaux"
+	},
+	{
+		"id": 812,
+		"postal": "1750",
+		"name": "Gaasbeek"
+	},
+	{
+		"id": 813,
+		"postal": "7943",
+		"name": "Gages"
+	},
+	{
+		"id": 814,
+		"postal": "7906",
+		"name": "Gallaix"
+	},
+	{
+		"id": 815,
+		"postal": "1570",
+		"name": "Galmaarden"
+	},
+	{
+		"id": 816,
+		"postal": "1083",
+		"name": "Ganshoren"
+	},
+	{
+		"id": 817,
+		"postal": "7530",
+		"name": "Gaurain-Ramecroix"
+	},
+	{
+		"id": 818,
+		"postal": "9890",
+		"name": "Gavere"
+	},
+	{
+		"id": 819,
+		"postal": "5575",
+		"name": "Gedinne"
+	},
+	{
+		"id": 820,
+		"postal": "2440",
+		"name": "Geel"
+	},
+	{
+		"id": 821,
+		"postal": "4250",
+		"name": "Geer"
+	},
+	{
+		"id": 822,
+		"postal": "1367",
+		"name": "Geest-Gérompont-Pt-Rosière"
+	},
+	{
+		"id": 823,
+		"postal": "3450",
+		"name": "Geetbets"
+	},
+	{
+		"id": 824,
+		"postal": "5024",
+		"name": "Gelbressée"
+	},
+	{
+		"id": 825,
+		"postal": "3800",
+		"name": "Gelinden"
+	},
+	{
+		"id": 826,
+		"postal": "3620",
+		"name": "Gellik"
+	},
+	{
+		"id": 827,
+		"postal": "3200",
+		"name": "Gelrode"
+	},
+	{
+		"id": 828,
+		"postal": "8980",
+		"name": "Geluveld"
+	},
+	{
+		"id": 829,
+		"postal": "8940",
+		"name": "Geluwe"
+	},
+	{
+		"id": 830,
+		"postal": "6929",
+		"name": "Gembes"
+	},
+	{
+		"id": 831,
+		"postal": "5030",
+		"name": "Gembloux"
+	},
+	{
+		"id": 832,
+		"postal": "4851",
+		"name": "Gemmenich"
+	},
+	{
+		"id": 833,
+		"postal": "1470",
+		"name": "Genappe"
+	},
+	{
+		"id": 834,
+		"postal": "3600",
+		"name": "Genk"
+	},
+	{
+		"id": 835,
+		"postal": "7040",
+		"name": "Genly"
+	},
+	{
+		"id": 836,
+		"postal": "3770",
+		"name": "Genoelselderen"
+	},
+	{
+		"id": 837,
+		"postal": "9000",
+		"name": "Gent"
+	},
+	{
+		"id": 838,
+		"postal": "9050",
+		"name": "Gentbrugge"
+	},
+	{
+		"id": 839,
+		"postal": "1450",
+		"name": "Gentinnes"
+	},
+	{
+		"id": 840,
+		"postal": "1332",
+		"name": "Genval"
+	},
+	{
+		"id": 841,
+		"postal": "9500",
+		"name": "Geraardsbergen"
+	},
+	{
+		"id": 842,
+		"postal": "3960",
+		"name": "Gerdingen"
+	},
+	{
+		"id": 843,
+		"postal": "5524",
+		"name": "Gerin"
+	},
+	{
+		"id": 844,
+		"postal": "1367",
+		"name": "Gérompont"
+	},
+	{
+		"id": 845,
+		"postal": "6769",
+		"name": "Gérouville"
+	},
+	{
+		"id": 846,
+		"postal": "6280",
+		"name": "Gerpinnes"
+	},
+	{
+		"id": 847,
+		"postal": "2590",
+		"name": "Gestel"
+	},
+	{
+		"id": 848,
+		"postal": "5340",
+		"name": "Gesves"
+	},
+	{
+		"id": 849,
+		"postal": "7822",
+		"name": "Ghislenghien"
+	},
+	{
+		"id": 850,
+		"postal": "7011",
+		"name": "Ghlin"
+	},
+	{
+		"id": 851,
+		"postal": "7863",
+		"name": "Ghoy"
+	},
+	{
+		"id": 852,
+		"postal": "7823",
+		"name": "Gibecq"
+	},
+	{
+		"id": 853,
+		"postal": "2275",
+		"name": "Gierle"
+	},
+	{
+		"id": 854,
+		"postal": "8691",
+		"name": "Gijverinkhove"
+	},
+	{
+		"id": 855,
+		"postal": "9308",
+		"name": "Gijzegem"
+	},
+	{
+		"id": 856,
+		"postal": "8570",
+		"name": "Gijzelbrechtegem"
+	},
+	{
+		"id": 857,
+		"postal": "9860",
+		"name": "Gijzenzele"
+	},
+	{
+		"id": 858,
+		"postal": "6060",
+		"name": "Gilly (Charleroi)"
+	},
+	{
+		"id": 859,
+		"postal": "5680",
+		"name": "Gimnée"
+	},
+	{
+		"id": 860,
+		"postal": "3890",
+		"name": "Gingelom"
+	},
+	{
+		"id": 861,
+		"postal": "8470",
+		"name": "Gistel"
+	},
+	{
+		"id": 862,
+		"postal": "8830",
+		"name": "Gits"
+	},
+	{
+		"id": 863,
+		"postal": "7041",
+		"name": "Givry"
+	},
+	{
+		"id": 864,
+		"postal": "1473",
+		"name": "Glabais"
+	},
+	{
+		"id": 865,
+		"postal": "3380",
+		"name": "Glabbeek(Zuurbemde)"
+	},
+	{
+		"id": 866,
+		"postal": "4000",
+		"name": "Glain"
+	},
+	{
+		"id": 867,
+		"postal": "4400",
+		"name": "Gleixhe"
+	},
+	{
+		"id": 868,
+		"postal": "1315",
+		"name": "Glimes"
+	},
+	{
+		"id": 869,
+		"postal": "4690",
+		"name": "Glons"
+	},
+	{
+		"id": 870,
+		"postal": "5680",
+		"name": "Gochenée"
+	},
+	{
+		"id": 871,
+		"postal": "7160",
+		"name": "Godarville"
+	},
+	{
+		"id": 872,
+		"postal": "5530",
+		"name": "Godinne"
+	},
+	{
+		"id": 873,
+		"postal": "9620",
+		"name": "Godveerdegem"
+	},
+	{
+		"id": 874,
+		"postal": "4834",
+		"name": "Goé"
+	},
+	{
+		"id": 875,
+		"postal": "9500",
+		"name": "Goeferdinge"
+	},
+	{
+		"id": 876,
+		"postal": "7040",
+		"name": "Goegnies-Chaussée"
+	},
+	{
+		"id": 877,
+		"postal": "5353",
+		"name": "Goesnes"
+	},
+	{
+		"id": 878,
+		"postal": "3300",
+		"name": "Goetsenhoven"
+	},
+	{
+		"id": 879,
+		"postal": "4140",
+		"name": "Gomze-Andoumont"
+	},
+	{
+		"id": 880,
+		"postal": "7830",
+		"name": "Gondregnies"
+	},
+	{
+		"id": 881,
+		"postal": "5660",
+		"name": "Gonrieux"
+	},
+	{
+		"id": 882,
+		"postal": "9090",
+		"name": "Gontrode"
+	},
+	{
+		"id": 883,
+		"postal": "1755",
+		"name": "Gooik"
+	},
+	{
+		"id": 884,
+		"postal": "3803",
+		"name": "Gorsem"
+	},
+	{
+		"id": 885,
+		"postal": "3840",
+		"name": "Gors-Opleeuw"
+	},
+	{
+		"id": 886,
+		"postal": "6041",
+		"name": "Gosselies"
+	},
+	{
+		"id": 887,
+		"postal": "3840",
+		"name": "Gotem"
+	},
+	{
+		"id": 888,
+		"postal": "9800",
+		"name": "Gottem"
+	},
+	{
+		"id": 889,
+		"postal": "7070",
+		"name": "Gottignies"
+	},
+	{
+		"id": 890,
+		"postal": "6280",
+		"name": "Gougnies"
+	},
+	{
+		"id": 891,
+		"postal": "5651",
+		"name": "Gourdinne"
+	},
+	{
+		"id": 892,
+		"postal": "6030",
+		"name": "Goutroux"
+	},
+	{
+		"id": 893,
+		"postal": "6670",
+		"name": "Gouvy"
+	},
+	{
+		"id": 894,
+		"postal": "6181",
+		"name": "Gouy-lez-Piéton"
+	},
+	{
+		"id": 895,
+		"postal": "6534",
+		"name": "Gozée"
+	},
+	{
+		"id": 896,
+		"postal": "4460",
+		"name": "Grâce-Berleur"
+	},
+	{
+		"id": 897,
+		"postal": "4460",
+		"name": "Grâce-Hollogne"
+	},
+	{
+		"id": 898,
+		"postal": "5555",
+		"name": "Graide"
+	},
+	{
+		"id": 899,
+		"postal": "9800",
+		"name": "Grammene"
+	},
+	{
+		"id": 900,
+		"postal": "4300",
+		"name": "Grand-Axhe"
+	},
+	{
+		"id": 901,
+		"postal": "7973",
+		"name": "Grandglise"
+	},
+	{
+		"id": 902,
+		"postal": "4280",
+		"name": "Grand-Hallet"
+	},
+	{
+		"id": 903,
+		"postal": "6698",
+		"name": "Grand-Halleux"
+	},
+	{
+		"id": 904,
+		"postal": "6940",
+		"name": "Grandhan"
+	},
+	{
+		"id": 905,
+		"postal": "5031",
+		"name": "Grand-Leez"
+	},
+	{
+		"id": 906,
+		"postal": "5030",
+		"name": "Grand-Manil"
+	},
+	{
+		"id": 907,
+		"postal": "6960",
+		"name": "Grandmenil"
+	},
+	{
+		"id": 908,
+		"postal": "7900",
+		"name": "Grandmetz"
+	},
+	{
+		"id": 909,
+		"postal": "4650",
+		"name": "Grand-Rechain"
+	},
+	{
+		"id": 910,
+		"postal": "6560",
+		"name": "Grand-Reng"
+	},
+	{
+		"id": 911,
+		"postal": "6470",
+		"name": "Grandrieu"
+	},
+	{
+		"id": 912,
+		"postal": "1367",
+		"name": "Grand-Rosière-Hottomont"
+	},
+	{
+		"id": 913,
+		"postal": "4360",
+		"name": "Grandville"
+	},
+	{
+		"id": 914,
+		"postal": "6840",
+		"name": "Grandvoir"
+	},
+	{
+		"id": 915,
+		"postal": "6840",
+		"name": "Grapfontaine"
+	},
+	{
+		"id": 916,
+		"postal": "7830",
+		"name": "Graty"
+	},
+	{
+		"id": 917,
+		"postal": "5640",
+		"name": "Graux"
+	},
+	{
+		"id": 918,
+		"postal": "3450",
+		"name": "Grazen"
+	},
+	{
+		"id": 919,
+		"postal": "9200",
+		"name": "Grembergen"
+	},
+	{
+		"id": 920,
+		"postal": "1390",
+		"name": "Grez-Doiceau"
+	},
+	{
+		"id": 921,
+		"postal": "1850",
+		"name": "Grimbergen"
+	},
+	{
+		"id": 922,
+		"postal": "9506",
+		"name": "Grimminge"
+	},
+	{
+		"id": 923,
+		"postal": "4030",
+		"name": "Grivegnée (Liège)"
+	},
+	{
+		"id": 924,
+		"postal": "2280",
+		"name": "Grobbendonk"
+	},
+	{
+		"id": 925,
+		"postal": "1702",
+		"name": "Groot-Bijgaarden"
+	},
+	{
+		"id": 926,
+		"postal": "3800",
+		"name": "Groot-Gelmen"
+	},
+	{
+		"id": 927,
+		"postal": "3840",
+		"name": "Groot-Loon"
+	},
+	{
+		"id": 928,
+		"postal": "7950",
+		"name": "Grosage"
+	},
+	{
+		"id": 929,
+		"postal": "5555",
+		"name": "Gros-Fays"
+	},
+	{
+		"id": 930,
+		"postal": "3990",
+		"name": "Grote-Brogel"
+	},
+	{
+		"id": 931,
+		"postal": "9620",
+		"name": "Grotenberge"
+	},
+	{
+		"id": 932,
+		"postal": "3740",
+		"name": "Grote-Spouwen"
+	},
+	{
+		"id": 933,
+		"postal": "3670",
+		"name": "Gruitrode"
+	},
+	{
+		"id": 934,
+		"postal": "6952",
+		"name": "Grune"
+	},
+	{
+		"id": 935,
+		"postal": "6927",
+		"name": "Grupont"
+	},
+	{
+		"id": 936,
+		"postal": "7620",
+		"name": "Guignies"
+	},
+	{
+		"id": 937,
+		"postal": "3723",
+		"name": "Guigoven"
+	},
+	{
+		"id": 938,
+		"postal": "6704",
+		"name": "Guirsch"
+	},
+	{
+		"id": 939,
+		"postal": "8560",
+		"name": "Gullegem"
+	},
+	{
+		"id": 940,
+		"postal": "3870",
+		"name": "Gutschoven"
+	},
+	{
+		"id": 941,
+		"postal": "3150",
+		"name": "Haacht"
+	},
+	{
+		"id": 942,
+		"postal": "9450",
+		"name": "Haaltert"
+	},
+	{
+		"id": 943,
+		"postal": "9120",
+		"name": "Haasdonk"
+	},
+	{
+		"id": 944,
+		"postal": "3053",
+		"name": "Haasrode"
+	},
+	{
+		"id": 945,
+		"postal": "6720",
+		"name": "Habay"
+	},
+	{
+		"id": 946,
+		"postal": "6720",
+		"name": "Habay-la-Neuve"
+	},
+	{
+		"id": 947,
+		"postal": "6723",
+		"name": "Habay-la-Vieille"
+	},
+	{
+		"id": 948,
+		"postal": "6782",
+		"name": "Habergy"
+	},
+	{
+		"id": 949,
+		"postal": "4684",
+		"name": "Haccourt"
+	},
+	{
+		"id": 950,
+		"postal": "6720",
+		"name": "Hachy"
+	},
+	{
+		"id": 951,
+		"postal": "7911",
+		"name": "Hacquegnies"
+	},
+	{
+		"id": 952,
+		"postal": "5351",
+		"name": "Haillot"
+	},
+	{
+		"id": 953,
+		"postal": "7100",
+		"name": "Haine-Saint-Paul"
+	},
+	{
+		"id": 954,
+		"postal": "7100",
+		"name": "Haine-Saint-Pierre"
+	},
+	{
+		"id": 955,
+		"postal": "7350",
+		"name": "Hainin"
+	},
+	{
+		"id": 956,
+		"postal": "3300",
+		"name": "Hakendover"
+	},
+	{
+		"id": 957,
+		"postal": "6792",
+		"name": "Halanzy"
+	},
+	{
+		"id": 958,
+		"postal": "3545",
+		"name": "Halen"
+	},
+	{
+		"id": 959,
+		"postal": "2220",
+		"name": "Hallaar"
+	},
+	{
+		"id": 960,
+		"postal": "1500",
+		"name": "Halle"
+	},
+	{
+		"id": 961,
+		"postal": "2980",
+		"name": "Halle (Kempen)"
+	},
+	{
+		"id": 962,
+		"postal": "3440",
+		"name": "Halle-Booienhoven"
+	},
+	{
+		"id": 963,
+		"postal": "6986",
+		"name": "Halleux"
+	},
+	{
+		"id": 964,
+		"postal": "6922",
+		"name": "Halma"
+	},
+	{
+		"id": 965,
+		"postal": "3800",
+		"name": "Halmaal"
+	},
+	{
+		"id": 966,
+		"postal": "5340",
+		"name": "Haltinne"
+	},
+	{
+		"id": 967,
+		"postal": "3945",
+		"name": "Ham"
+	},
+	{
+		"id": 968,
+		"postal": "6840",
+		"name": "Hamipré"
+	},
+	{
+		"id": 969,
+		"postal": "1785",
+		"name": "Hamme (Bt.)"
+	},
+	{
+		"id": 970,
+		"postal": "9220",
+		"name": "Hamme (O.-Vl.)"
+	},
+	{
+		"id": 971,
+		"postal": "1320",
+		"name": "Hamme-Mille"
+	},
+	{
+		"id": 972,
+		"postal": "4180",
+		"name": "Hamoir"
+	},
+	{
+		"id": 973,
+		"postal": "5360",
+		"name": "Hamois"
+	},
+	{
+		"id": 974,
+		"postal": "3930",
+		"name": "Hamont"
+	},
+	{
+		"id": 975,
+		"postal": "3930",
+		"name": "Hamont-Achel"
+	},
+	{
+		"id": 976,
+		"postal": "6990",
+		"name": "Hampteau"
+	},
+	{
+		"id": 977,
+		"postal": "6120",
+		"name": "Ham-sur-Heure"
+	},
+	{
+		"id": 978,
+		"postal": "6120",
+		"name": "Ham-sur-Heure/Nalinnes"
+	},
+	{
+		"id": 979,
+		"postal": "5190",
+		"name": "Ham-sur-Sambre"
+	},
+	{
+		"id": 980,
+		"postal": "8610",
+		"name": "Handzame"
+	},
+	{
+		"id": 981,
+		"postal": "4357",
+		"name": "Haneffe"
+	},
+	{
+		"id": 982,
+		"postal": "4210",
+		"name": "Hannêche"
+	},
+	{
+		"id": 983,
+		"postal": "4280",
+		"name": "Hannut"
+	},
+	{
+		"id": 984,
+		"postal": "5310",
+		"name": "Hanret"
+	},
+	{
+		"id": 985,
+		"postal": "9850",
+		"name": "Hansbeke"
+	},
+	{
+		"id": 986,
+		"postal": "5580",
+		"name": "Han-sur-Lesse"
+	},
+	{
+		"id": 987,
+		"postal": "6560",
+		"name": "Hantes-Wihéries"
+	},
+	{
+		"id": 988,
+		"postal": "5621",
+		"name": "Hanzinelle"
+	},
+	{
+		"id": 989,
+		"postal": "5621",
+		"name": "Hanzinne"
+	},
+	{
+		"id": 990,
+		"postal": "7321",
+		"name": "Harchies"
+	},
+	{
+		"id": 991,
+		"postal": "8530",
+		"name": "Harelbeke"
+	},
+	{
+		"id": 992,
+		"postal": "3840",
+		"name": "Haren (Borgloon)"
+	},
+	{
+		"id": 993,
+		"postal": "3700",
+		"name": "Haren (Tongeren)"
+	},
+	{
+		"id": 994,
+		"postal": "6900",
+		"name": "Hargimont"
+	},
+	{
+		"id": 995,
+		"postal": "7022",
+		"name": "Harmignies"
+	},
+	{
+		"id": 996,
+		"postal": "6767",
+		"name": "Harnoncourt"
+	},
+	{
+		"id": 997,
+		"postal": "6960",
+		"name": "Harre"
+	},
+	{
+		"id": 998,
+		"postal": "6950",
+		"name": "Harsin"
+	},
+	{
+		"id": 999,
+		"postal": "7022",
+		"name": "Harveng"
+	},
+	{
+		"id": 1000,
+		"postal": "4920",
+		"name": "Harzé"
+	},
+	{
+		"id": 1001,
+		"postal": "3500",
+		"name": "Hasselt"
+	},
+	{
+		"id": 1002,
+		"postal": "5540",
+		"name": "Hastière"
+	},
+	{
+		"id": 1003,
+		"postal": "5540",
+		"name": "Hastière-Lavaux"
+	},
+	{
+		"id": 1004,
+		"postal": "5541",
+		"name": "Hastière-par-Delà"
+	},
+	{
+		"id": 1005,
+		"postal": "6870",
+		"name": "Hatrival"
+	},
+	{
+		"id": 1006,
+		"postal": "7120",
+		"name": "Haulchin"
+	},
+	{
+		"id": 1007,
+		"postal": "4730",
+		"name": "Hauset"
+	},
+	{
+		"id": 1008,
+		"postal": "6929",
+		"name": "Haut-Fays"
+	},
+	{
+		"id": 1009,
+		"postal": "1461",
+		"name": "Haut-Ittre"
+	},
+	{
+		"id": 1010,
+		"postal": "5537",
+		"name": "Haut-le-Wastia"
+	},
+	{
+		"id": 1011,
+		"postal": "7334",
+		"name": "Hautrage"
+	},
+	{
+		"id": 1012,
+		"postal": "7041",
+		"name": "Havay"
+	},
+	{
+		"id": 1013,
+		"postal": "5370",
+		"name": "Havelange"
+	},
+	{
+		"id": 1014,
+		"postal": "5590",
+		"name": "Haversin"
+	},
+	{
+		"id": 1015,
+		"postal": "7531",
+		"name": "Havinnes"
+	},
+	{
+		"id": 1016,
+		"postal": "7021",
+		"name": "Havré"
+	},
+	{
+		"id": 1017,
+		"postal": "3940",
+		"name": "Hechtel"
+	},
+	{
+		"id": 1018,
+		"postal": "5543",
+		"name": "Heer"
+	},
+	{
+		"id": 1019,
+		"postal": "3870",
+		"name": "Heers"
+	},
+	{
+		"id": 1020,
+		"postal": "3740",
+		"name": "Hees"
+	},
+	{
+		"id": 1021,
+		"postal": "8551",
+		"name": "Heestert"
+	},
+	{
+		"id": 1022,
+		"postal": "2801",
+		"name": "Heffen"
+	},
+	{
+		"id": 1023,
+		"postal": "1670",
+		"name": "Heikruis"
+	},
+	{
+		"id": 1024,
+		"postal": "2830",
+		"name": "Heindonk"
+	},
+	{
+		"id": 1025,
+		"postal": "6700",
+		"name": "Heinsch"
+	},
+	{
+		"id": 1026,
+		"postal": "8301",
+		"name": "Heist-aan-Zee"
+	},
+	{
+		"id": 1027,
+		"postal": "2220",
+		"name": "Heist-Op-Den-Berg"
+	},
+	{
+		"id": 1028,
+		"postal": "1790",
+		"name": "Hekelgem"
+	},
+	{
+		"id": 1029,
+		"postal": "3870",
+		"name": "Heks"
+	},
+	{
+		"id": 1030,
+		"postal": "8587",
+		"name": "Helchin"
+	},
+	{
+		"id": 1031,
+		"postal": "3530",
+		"name": "Helchteren"
+	},
+	{
+		"id": 1032,
+		"postal": "9450",
+		"name": "Heldergem"
+	},
+	{
+		"id": 1033,
+		"postal": "1357",
+		"name": "Hélécine"
+	},
+	{
+		"id": 1034,
+		"postal": "3440",
+		"name": "Helen-Bos"
+	},
+	{
+		"id": 1035,
+		"postal": "8587",
+		"name": "Helkijn"
+	},
+	{
+		"id": 1036,
+		"postal": "7830",
+		"name": "Hellebecq"
+	},
+	{
+		"id": 1037,
+		"postal": "9571",
+		"name": "Hemelveerdegem"
+	},
+	{
+		"id": 1038,
+		"postal": "2620",
+		"name": "Hemiksem"
+	},
+	{
+		"id": 1039,
+		"postal": "5380",
+		"name": "Hemptinne (Fernelmont)"
+	},
+	{
+		"id": 1040,
+		"postal": "5620",
+		"name": "Hemptinne-lez-Florennes"
+	},
+	{
+		"id": 1041,
+		"postal": "3840",
+		"name": "Hendrieken"
+	},
+	{
+		"id": 1042,
+		"postal": "3700",
+		"name": "Henis"
+	},
+	{
+		"id": 1043,
+		"postal": "7090",
+		"name": "Hennuyères"
+	},
+	{
+		"id": 1044,
+		"postal": "4841",
+		"name": "Henri-Chapelle"
+	},
+	{
+		"id": 1045,
+		"postal": "7090",
+		"name": "Henripont"
+	},
+	{
+		"id": 1046,
+		"postal": "7350",
+		"name": "Hensies"
+	},
+	{
+		"id": 1047,
+		"postal": "3971",
+		"name": "Heppen"
+	},
+	{
+		"id": 1048,
+		"postal": "4771",
+		"name": "Heppenbach"
+	},
+	{
+		"id": 1049,
+		"postal": "6220",
+		"name": "Heppignies"
+	},
+	{
+		"id": 1050,
+		"postal": "6887",
+		"name": "Herbeumont"
+	},
+	{
+		"id": 1051,
+		"postal": "7050",
+		"name": "Herchies"
+	},
+	{
+		"id": 1052,
+		"postal": "3770",
+		"name": "Herderen"
+	},
+	{
+		"id": 1053,
+		"postal": "9310",
+		"name": "Herdersem"
+	},
+	{
+		"id": 1054,
+		"postal": "3020",
+		"name": "Herent"
+	},
+	{
+		"id": 1055,
+		"postal": "2200",
+		"name": "Herentals"
+	},
+	{
+		"id": 1056,
+		"postal": "2270",
+		"name": "Herenthout"
+	},
+	{
+		"id": 1057,
+		"postal": "1540",
+		"name": "Herfelingen"
+	},
+	{
+		"id": 1058,
+		"postal": "4728",
+		"name": "Hergenrath"
+	},
+	{
+		"id": 1059,
+		"postal": "7742",
+		"name": "Hérinnes-lez-Pecq"
+	},
+	{
+		"id": 1060,
+		"postal": "3540",
+		"name": "Herk-de-Stad"
+	},
+	{
+		"id": 1061,
+		"postal": "4681",
+		"name": "Hermalle-sous-Argenteau"
+	},
+	{
+		"id": 1062,
+		"postal": "4480",
+		"name": "Hermalle-sous-Huy"
+	},
+	{
+		"id": 1063,
+		"postal": "4680",
+		"name": "Hermée"
+	},
+	{
+		"id": 1064,
+		"postal": "5540",
+		"name": "Hermeton-sur-Meuse"
+	},
+	{
+		"id": 1065,
+		"postal": "1540",
+		"name": "Herne"
+	},
+	{
+		"id": 1066,
+		"postal": "4217",
+		"name": "Héron"
+	},
+	{
+		"id": 1067,
+		"postal": "7911",
+		"name": "Herquegies"
+	},
+	{
+		"id": 1068,
+		"postal": "7712",
+		"name": "Herseaux"
+	},
+	{
+		"id": 1069,
+		"postal": "2230",
+		"name": "Herselt"
+	},
+	{
+		"id": 1070,
+		"postal": "4040",
+		"name": "Herstal"
+	},
+	{
+		"id": 1071,
+		"postal": "3717",
+		"name": "Herstappe"
+	},
+	{
+		"id": 1072,
+		"postal": "7522",
+		"name": "Hertain"
+	},
+	{
+		"id": 1073,
+		"postal": "3831",
+		"name": "Herten"
+	},
+	{
+		"id": 1074,
+		"postal": "8020",
+		"name": "Hertsberge"
+	},
+	{
+		"id": 1075,
+		"postal": "4650",
+		"name": "Herve"
+	},
+	{
+		"id": 1076,
+		"postal": "9550",
+		"name": "Herzele"
+	},
+	{
+		"id": 1077,
+		"postal": "8501",
+		"name": "Heule"
+	},
+	{
+		"id": 1078,
+		"postal": "5377",
+		"name": "Heure (Nam.)"
+	},
+	{
+		"id": 1079,
+		"postal": "4682",
+		"name": "Heure-le-Romain"
+	},
+	{
+		"id": 1080,
+		"postal": "9700",
+		"name": "Heurne"
+	},
+	{
+		"id": 1081,
+		"postal": "3550",
+		"name": "Heusden (Limb.)"
+	},
+	{
+		"id": 1082,
+		"postal": "9070",
+		"name": "Heusden (O.-Vl.)"
+	},
+	{
+		"id": 1083,
+		"postal": "3550",
+		"name": "Heusden-Zolder"
+	},
+	{
+		"id": 1084,
+		"postal": "4802",
+		"name": "Heusy"
+	},
+	{
+		"id": 1085,
+		"postal": "3191",
+		"name": "Hever"
+	},
+	{
+		"id": 1086,
+		"postal": "3001",
+		"name": "Heverlee"
+	},
+	{
+		"id": 1087,
+		"postal": "1435",
+		"name": "Hévillers"
+	},
+	{
+		"id": 1088,
+		"postal": "6941",
+		"name": "Heyd"
+	},
+	{
+		"id": 1089,
+		"postal": "9550",
+		"name": "Hillegem"
+	},
+	{
+		"id": 1090,
+		"postal": "2880",
+		"name": "Hingene"
+	},
+	{
+		"id": 1091,
+		"postal": "5380",
+		"name": "Hingeon"
+	},
+	{
+		"id": 1092,
+		"postal": "6984",
+		"name": "Hives"
+	},
+	{
+		"id": 1093,
+		"postal": "2660",
+		"name": "Hoboken (Antwerpen)"
+	},
+	{
+		"id": 1094,
+		"postal": "4351",
+		"name": "Hodeige"
+	},
+	{
+		"id": 1095,
+		"postal": "6987",
+		"name": "Hodister"
+	},
+	{
+		"id": 1096,
+		"postal": "4162",
+		"name": "Hody"
+	},
+	{
+		"id": 1097,
+		"postal": "3320",
+		"name": "Hoegaarden"
+	},
+	{
+		"id": 1098,
+		"postal": "1560",
+		"name": "Hoeilaart"
+	},
+	{
+		"id": 1099,
+		"postal": "8340",
+		"name": "Hoeke"
+	},
+	{
+		"id": 1100,
+		"postal": "3746",
+		"name": "Hoelbeek"
+	},
+	{
+		"id": 1101,
+		"postal": "3471",
+		"name": "Hoeleden"
+	},
+	{
+		"id": 1102,
+		"postal": "3840",
+		"name": "Hoepertingen"
+	},
+	{
+		"id": 1103,
+		"postal": "3730",
+		"name": "Hoeselt"
+	},
+	{
+		"id": 1104,
+		"postal": "2940",
+		"name": "Hoevenen"
+	},
+	{
+		"id": 1105,
+		"postal": "1981",
+		"name": "Hofstade (Bt.)"
+	},
+	{
+		"id": 1106,
+		"postal": "9308",
+		"name": "Hofstade (O.-Vl.)"
+	},
+	{
+		"id": 1107,
+		"postal": "5377",
+		"name": "Hogne"
+	},
+	{
+		"id": 1108,
+		"postal": "4342",
+		"name": "Hognoul"
+	},
+	{
+		"id": 1109,
+		"postal": "7620",
+		"name": "Hollain"
+	},
+	{
+		"id": 1110,
+		"postal": "6637",
+		"name": "Hollange"
+	},
+	{
+		"id": 1111,
+		"postal": "8902",
+		"name": "Hollebeke"
+	},
+	{
+		"id": 1112,
+		"postal": "4460",
+		"name": "Hollogne-aux-Pierres"
+	},
+	{
+		"id": 1113,
+		"postal": "4250",
+		"name": "Hollogne-sur-Geer"
+	},
+	{
+		"id": 1114,
+		"postal": "3220",
+		"name": "Holsbeek"
+	},
+	{
+		"id": 1115,
+		"postal": "2811",
+		"name": "Hombeek"
+	},
+	{
+		"id": 1116,
+		"postal": "4852",
+		"name": "Hombourg"
+	},
+	{
+		"id": 1117,
+		"postal": "6640",
+		"name": "Hompré"
+	},
+	{
+		"id": 1118,
+		"postal": "6780",
+		"name": "Hondelange"
+	},
+	{
+		"id": 1119,
+		"postal": "5570",
+		"name": "Honnay"
+	},
+	{
+		"id": 1120,
+		"postal": "7387",
+		"name": "Honnelles"
+	},
+	{
+		"id": 1121,
+		"postal": "8830",
+		"name": "Hooglede"
+	},
+	{
+		"id": 1122,
+		"postal": "8690",
+		"name": "Hoogstade"
+	},
+	{
+		"id": 1123,
+		"postal": "2320",
+		"name": "Hoogstraten"
+	},
+	{
+		"id": 1124,
+		"postal": "9667",
+		"name": "Horebeke"
+	},
+	{
+		"id": 1125,
+		"postal": "4460",
+		"name": "Horion-Hozémont"
+	},
+	{
+		"id": 1126,
+		"postal": "7301",
+		"name": "Hornu"
+	},
+	{
+		"id": 1127,
+		"postal": "3870",
+		"name": "Horpmaal"
+	},
+	{
+		"id": 1128,
+		"postal": "7060",
+		"name": "Horrues"
+	},
+	{
+		"id": 1129,
+		"postal": "6990",
+		"name": "Hotton"
+	},
+	{
+		"id": 1130,
+		"postal": "6724",
+		"name": "Houdemont"
+	},
+	{
+		"id": 1131,
+		"postal": "7110",
+		"name": "Houdeng-Aimeries"
+	},
+	{
+		"id": 1132,
+		"postal": "7110",
+		"name": "Houdeng-Goegnies"
+	},
+	{
+		"id": 1133,
+		"postal": "5575",
+		"name": "Houdremont"
+	},
+	{
+		"id": 1134,
+		"postal": "6660",
+		"name": "Houffalize"
+	},
+	{
+		"id": 1135,
+		"postal": "5563",
+		"name": "Hour"
+	},
+	{
+		"id": 1136,
+		"postal": "4671",
+		"name": "Housse"
+	},
+	{
+		"id": 1137,
+		"postal": "7812",
+		"name": "Houtaing"
+	},
+	{
+		"id": 1138,
+		"postal": "1476",
+		"name": "Houtain-le-Val"
+	},
+	{
+		"id": 1139,
+		"postal": "4682",
+		"name": "Houtain-Saint-Siméon"
+	},
+	{
+		"id": 1140,
+		"postal": "8377",
+		"name": "Houtave"
+	},
+	{
+		"id": 1141,
+		"postal": "8630",
+		"name": "Houtem (W.-Vl.)"
+	},
+	{
+		"id": 1142,
+		"postal": "3530",
+		"name": "Houthalen"
+	},
+	{
+		"id": 1143,
+		"postal": "3530",
+		"name": "Houthalen-Helchteren"
+	},
+	{
+		"id": 1144,
+		"postal": "7781",
+		"name": "Houthem (Comines)"
+	},
+	{
+		"id": 1145,
+		"postal": "8650",
+		"name": "Houthulst"
+	},
+	{
+		"id": 1146,
+		"postal": "2235",
+		"name": "Houtvenne"
+	},
+	{
+		"id": 1147,
+		"postal": "3390",
+		"name": "Houwaart"
+	},
+	{
+		"id": 1148,
+		"postal": "5530",
+		"name": "Houx"
+	},
+	{
+		"id": 1149,
+		"postal": "5560",
+		"name": "Houyet"
+	},
+	{
+		"id": 1150,
+		"postal": "2540",
+		"name": "Hove"
+	},
+	{
+		"id": 1151,
+		"postal": "7830",
+		"name": "Hoves (Ht.)"
+	},
+	{
+		"id": 1152,
+		"postal": "7624",
+		"name": "Howardries"
+	},
+	{
+		"id": 1153,
+		"postal": "4520",
+		"name": "Huccorgne"
+	},
+	{
+		"id": 1154,
+		"postal": "9750",
+		"name": "Huise"
+	},
+	{
+		"id": 1155,
+		"postal": "7950",
+		"name": "Huissignies"
+	},
+	{
+		"id": 1156,
+		"postal": "1654",
+		"name": "Huizingen"
+	},
+	{
+		"id": 1157,
+		"postal": "3040",
+		"name": "Huldenberg"
+	},
+	{
+		"id": 1158,
+		"postal": "2235",
+		"name": "Hulshout"
+	},
+	{
+		"id": 1159,
+		"postal": "5560",
+		"name": "Hulsonniaux"
+	},
+	{
+		"id": 1160,
+		"postal": "8531",
+		"name": "Hulste"
+	},
+	{
+		"id": 1161,
+		"postal": "6900",
+		"name": "Humain"
+	},
+	{
+		"id": 1162,
+		"postal": "1851",
+		"name": "Humbeek"
+	},
+	{
+		"id": 1163,
+		"postal": "9630",
+		"name": "Hundelgem"
+	},
+	{
+		"id": 1164,
+		"postal": "1367",
+		"name": "Huppaye"
+	},
+	{
+		"id": 1165,
+		"postal": "4500",
+		"name": "Huy"
+	},
+	{
+		"id": 1166,
+		"postal": "7022",
+		"name": "Hyon"
+	},
+	{
+		"id": 1167,
+		"postal": "8480",
+		"name": "Ichtegem"
+	},
+	{
+		"id": 1168,
+		"postal": "9472",
+		"name": "Iddergem"
+	},
+	{
+		"id": 1169,
+		"postal": "9506",
+		"name": "Idegem"
+	},
+	{
+		"id": 1170,
+		"postal": "8900",
+		"name": "Ieper"
+	},
+	{
+		"id": 1171,
+		"postal": "9340",
+		"name": "Impe"
+	},
+	{
+		"id": 1172,
+		"postal": "1315",
+		"name": "Incourt"
+	},
+	{
+		"id": 1173,
+		"postal": "8770",
+		"name": "Ingelmunster"
+	},
+	{
+		"id": 1174,
+		"postal": "8570",
+		"name": "Ingooigem"
+	},
+	{
+		"id": 1175,
+		"postal": "7801",
+		"name": "Irchonwelz"
+	},
+	{
+		"id": 1176,
+		"postal": "7822",
+		"name": "Isières"
+	},
+	{
+		"id": 1177,
+		"postal": "5032",
+		"name": "Isnes"
+	},
+	{
+		"id": 1178,
+		"postal": "2222",
+		"name": "Itegem"
+	},
+	{
+		"id": 1179,
+		"postal": "1701",
+		"name": "Itterbeek"
+	},
+	{
+		"id": 1180,
+		"postal": "1460",
+		"name": "Ittre"
+	},
+	{
+		"id": 1181,
+		"postal": "4400",
+		"name": "Ivoz-Ramet"
+	},
+	{
+		"id": 1182,
+		"postal": "1050",
+		"name": "Ixelles"
+	},
+	{
+		"id": 1183,
+		"postal": "8870",
+		"name": "Izegem"
+	},
+	{
+		"id": 1184,
+		"postal": "6810",
+		"name": "Izel"
+	},
+	{
+		"id": 1185,
+		"postal": "8691",
+		"name": "Izenberge"
+	},
+	{
+		"id": 1186,
+		"postal": "6941",
+		"name": "Izier"
+	},
+	{
+		"id": 1187,
+		"postal": "8490",
+		"name": "Jabbeke"
+	},
+	{
+		"id": 1188,
+		"postal": "4845",
+		"name": "Jalhay"
+	},
+	{
+		"id": 1189,
+		"postal": "5354",
+		"name": "Jallet"
+	},
+	{
+		"id": 1190,
+		"postal": "5600",
+		"name": "Jamagne"
+	},
+	{
+		"id": 1191,
+		"postal": "5100",
+		"name": "Jambes (Namur)"
+	},
+	{
+		"id": 1192,
+		"postal": "5600",
+		"name": "Jamiolle"
+	},
+	{
+		"id": 1193,
+		"postal": "6120",
+		"name": "Jamioulx"
+	},
+	{
+		"id": 1194,
+		"postal": "6810",
+		"name": "Jamoigne"
+	},
+	{
+		"id": 1195,
+		"postal": "1350",
+		"name": "Jandrain-Jandrenouille"
+	},
+	{
+		"id": 1196,
+		"postal": "1350",
+		"name": "Jauche"
+	},
+	{
+		"id": 1197,
+		"postal": "1370",
+		"name": "Jauchelette"
+	},
+	{
+		"id": 1198,
+		"postal": "5570",
+		"name": "Javingue"
+	},
+	{
+		"id": 1199,
+		"postal": "4540",
+		"name": "Jehay"
+	},
+	{
+		"id": 1200,
+		"postal": "6880",
+		"name": "Jehonville"
+	},
+	{
+		"id": 1201,
+		"postal": "7012",
+		"name": "Jemappes"
+	},
+	{
+		"id": 1202,
+		"postal": "5580",
+		"name": "Jemelle"
+	},
+	{
+		"id": 1203,
+		"postal": "4101",
+		"name": "Jemeppe-sur-Meuse"
+	},
+	{
+		"id": 1204,
+		"postal": "5190",
+		"name": "Jemeppe-sur-Sambre"
+	},
+	{
+		"id": 1205,
+		"postal": "4357",
+		"name": "Jeneffe (Lg.)"
+	},
+	{
+		"id": 1206,
+		"postal": "5370",
+		"name": "Jeneffe (Nam.)"
+	},
+	{
+		"id": 1207,
+		"postal": "3840",
+		"name": "Jesseren"
+	},
+	{
+		"id": 1208,
+		"postal": "1090",
+		"name": "Jette"
+	},
+	{
+		"id": 1209,
+		"postal": "3890",
+		"name": "Jeuk"
+	},
+	{
+		"id": 1210,
+		"postal": "1370",
+		"name": "Jodoigne"
+	},
+	{
+		"id": 1211,
+		"postal": "1370",
+		"name": "Jodoigne-Souveraine"
+	},
+	{
+		"id": 1212,
+		"postal": "7620",
+		"name": "Jollain-Merlin"
+	},
+	{
+		"id": 1213,
+		"postal": "6280",
+		"name": "Joncret"
+	},
+	{
+		"id": 1214,
+		"postal": "4650",
+		"name": "Julémont"
+	},
+	{
+		"id": 1215,
+		"postal": "6040",
+		"name": "Jumet (Charleroi)"
+	},
+	{
+		"id": 1216,
+		"postal": "4020",
+		"name": "Jupille-sur-Meuse"
+	},
+	{
+		"id": 1217,
+		"postal": "4450",
+		"name": "Juprelle"
+	},
+	{
+		"id": 1218,
+		"postal": "7050",
+		"name": "Jurbise"
+	},
+	{
+		"id": 1219,
+		"postal": "6642",
+		"name": "Juseret"
+	},
+	{
+		"id": 1220,
+		"postal": "8600",
+		"name": "Kaaskerke"
+	},
+	{
+		"id": 1221,
+		"postal": "8870",
+		"name": "Kachtem"
+	},
+	{
+		"id": 1222,
+		"postal": "3293",
+		"name": "Kaggevinne"
+	},
+	{
+		"id": 1223,
+		"postal": "7540",
+		"name": "Kain (Tournai)"
+	},
+	{
+		"id": 1224,
+		"postal": "9270",
+		"name": "Kalken"
+	},
+	{
+		"id": 1225,
+		"postal": "9120",
+		"name": "Kallo (Beveren-Waas)"
+	},
+	{
+		"id": 1226,
+		"postal": "9130",
+		"name": "Kallo (Kieldrecht)"
+	},
+	{
+		"id": 1227,
+		"postal": "2920",
+		"name": "Kalmthout"
+	},
+	{
+		"id": 1228,
+		"postal": "1910",
+		"name": "Kampenhout"
+	},
+	{
+		"id": 1229,
+		"postal": "8700",
+		"name": "Kanegem"
+	},
+	{
+		"id": 1230,
+		"postal": "3770",
+		"name": "Kanne"
+	},
+	{
+		"id": 1231,
+		"postal": "2950",
+		"name": "Kapellen (Antw.)"
+	},
+	{
+		"id": 1232,
+		"postal": "3381",
+		"name": "Kapellen (Bt.)"
+	},
+	{
+		"id": 1233,
+		"postal": "1880",
+		"name": "Kapelle-op-den-Bos"
+	},
+	{
+		"id": 1234,
+		"postal": "9970",
+		"name": "Kaprijke"
+	},
+	{
+		"id": 1235,
+		"postal": "8572",
+		"name": "Kaster"
+	},
+	{
+		"id": 1236,
+		"postal": "2460",
+		"name": "Kasterlee"
+	},
+	{
+		"id": 1237,
+		"postal": "3950",
+		"name": "Kaulille"
+	},
+	{
+		"id": 1238,
+		"postal": "3140",
+		"name": "Keerbergen"
+	},
+	{
+		"id": 1239,
+		"postal": "8600",
+		"name": "Keiem"
+	},
+	{
+		"id": 1240,
+		"postal": "4720",
+		"name": "Kelmis"
+	},
+	{
+		"id": 1241,
+		"postal": "4367",
+		"name": "Kemexhe"
+	},
+	{
+		"id": 1242,
+		"postal": "8956",
+		"name": "Kemmel"
+	},
+	{
+		"id": 1243,
+		"postal": "9190",
+		"name": "Kemzeke"
+	},
+	{
+		"id": 1244,
+		"postal": "8581",
+		"name": "Kerkhove"
+	},
+	{
+		"id": 1245,
+		"postal": "3370",
+		"name": "Kerkom"
+	},
+	{
+		"id": 1246,
+		"postal": "3800",
+		"name": "Kerkom-bij-Sint-Truiden"
+	},
+	{
+		"id": 1247,
+		"postal": "9451",
+		"name": "Kerksken"
+	},
+	{
+		"id": 1248,
+		"postal": "3510",
+		"name": "Kermt"
+	},
+	{
+		"id": 1249,
+		"postal": "3840",
+		"name": "Kerniel"
+	},
+	{
+		"id": 1250,
+		"postal": "3472",
+		"name": "Kersbeek-Miskom"
+	},
+	{
+		"id": 1251,
+		"postal": "2560",
+		"name": "Kessel"
+	},
+	{
+		"id": 1252,
+		"postal": "3010",
+		"name": "Kessel-Lo"
+	},
+	{
+		"id": 1253,
+		"postal": "3640",
+		"name": "Kessenich"
+	},
+	{
+		"id": 1254,
+		"postal": "1755",
+		"name": "Kester"
+	},
+	{
+		"id": 1255,
+		"postal": "4701",
+		"name": "Kettenis"
+	},
+	{
+		"id": 1256,
+		"postal": "5060",
+		"name": "Keumiée"
+	},
+	{
+		"id": 1257,
+		"postal": "9130",
+		"name": "Kieldrecht (Beveren)"
+	},
+	{
+		"id": 1258,
+		"postal": "3640",
+		"name": "Kinrooi"
+	},
+	{
+		"id": 1259,
+		"postal": "3990",
+		"name": "Kleine-Brogel"
+	},
+	{
+		"id": 1260,
+		"postal": "3740",
+		"name": "Kleine-Spouwen"
+	},
+	{
+		"id": 1261,
+		"postal": "3870",
+		"name": "Klein-Gelmen"
+	},
+	{
+		"id": 1262,
+		"postal": "8420",
+		"name": "Klemskerke"
+	},
+	{
+		"id": 1263,
+		"postal": "8650",
+		"name": "Klerken"
+	},
+	{
+		"id": 1264,
+		"postal": "9690",
+		"name": "Kluisbergen"
+	},
+	{
+		"id": 1265,
+		"postal": "9940",
+		"name": "Kluizen"
+	},
+	{
+		"id": 1266,
+		"postal": "9910",
+		"name": "Knesselare"
+	},
+	{
+		"id": 1267,
+		"postal": "8300",
+		"name": "Knokke"
+	},
+	{
+		"id": 1268,
+		"postal": "8300",
+		"name": "Knokke-Heist"
+	},
+	{
+		"id": 1269,
+		"postal": "1730",
+		"name": "Kobbegem"
+	},
+	{
+		"id": 1270,
+		"postal": "8680",
+		"name": "Koekelare"
+	},
+	{
+		"id": 1271,
+		"postal": "1081",
+		"name": "Koekelberg"
+	},
+	{
+		"id": 1272,
+		"postal": "3582",
+		"name": "Koersel"
+	},
+	{
+		"id": 1273,
+		"postal": "8670",
+		"name": "Koksijde"
+	},
+	{
+		"id": 1274,
+		"postal": "3840",
+		"name": "Kolmont (Borgloon)"
+	},
+	{
+		"id": 1275,
+		"postal": "3700",
+		"name": "Kolmont (Tongeren)"
+	},
+	{
+		"id": 1276,
+		"postal": "7780",
+		"name": "Komen"
+	},
+	{
+		"id": 1277,
+		"postal": "7780",
+		"name": "Komen-Waasten"
+	},
+	{
+		"id": 1278,
+		"postal": "2500",
+		"name": "Koningshooikt"
+	},
+	{
+		"id": 1279,
+		"postal": "3700",
+		"name": "Koninksem"
+	},
+	{
+		"id": 1280,
+		"postal": "2550",
+		"name": "Kontich"
+	},
+	{
+		"id": 1281,
+		"postal": "8510",
+		"name": "Kooigem"
+	},
+	{
+		"id": 1282,
+		"postal": "8000",
+		"name": "Koolkerke"
+	},
+	{
+		"id": 1283,
+		"postal": "8851",
+		"name": "Koolskamp"
+	},
+	{
+		"id": 1284,
+		"postal": "3060",
+		"name": "Korbeek-Dijle"
+	},
+	{
+		"id": 1285,
+		"postal": "3360",
+		"name": "Korbeek-Lo"
+	},
+	{
+		"id": 1286,
+		"postal": "8610",
+		"name": "Kortemark"
+	},
+	{
+		"id": 1287,
+		"postal": "3470",
+		"name": "Kortenaken"
+	},
+	{
+		"id": 1288,
+		"postal": "3070",
+		"name": "Kortenberg"
+	},
+	{
+		"id": 1289,
+		"postal": "3720",
+		"name": "Kortessem"
+	},
+	{
+		"id": 1290,
+		"postal": "3890",
+		"name": "Kortijs"
+	},
+	{
+		"id": 1291,
+		"postal": "8500",
+		"name": "Kortrijk"
+	},
+	{
+		"id": 1292,
+		"postal": "3220",
+		"name": "Kortrijk-Dutsel"
+	},
+	{
+		"id": 1293,
+		"postal": "3850",
+		"name": "Kozen"
+	},
+	{
+		"id": 1294,
+		"postal": "1950",
+		"name": "Kraainem"
+	},
+	{
+		"id": 1295,
+		"postal": "8972",
+		"name": "Krombeke"
+	},
+	{
+		"id": 1296,
+		"postal": "9150",
+		"name": "Kruibeke"
+	},
+	{
+		"id": 1297,
+		"postal": "9770",
+		"name": "Kruishoutem"
+	},
+	{
+		"id": 1298,
+		"postal": "3300",
+		"name": "Kumtich"
+	},
+	{
+		"id": 1299,
+		"postal": "3511",
+		"name": "Kuringen"
+	},
+	{
+		"id": 1300,
+		"postal": "3840",
+		"name": "Kuttekoven"
+	},
+	{
+		"id": 1301,
+		"postal": "8520",
+		"name": "Kuurne"
+	},
+	{
+		"id": 1302,
+		"postal": "3945",
+		"name": "Kwaadmechelen"
+	},
+	{
+		"id": 1303,
+		"postal": "9690",
+		"name": "Kwaremont"
+	},
+	{
+		"id": 1304,
+		"postal": "7080",
+		"name": "La Bouverie"
+	},
+	{
+		"id": 1305,
+		"postal": "4720",
+		"name": "La Calamine"
+	},
+	{
+		"id": 1306,
+		"postal": "7611",
+		"name": "La Glanerie"
+	},
+	{
+		"id": 1307,
+		"postal": "4987",
+		"name": "La Gleize"
+	},
+	{
+		"id": 1308,
+		"postal": "7170",
+		"name": "La Hestre"
+	},
+	{
+		"id": 1309,
+		"postal": "1310",
+		"name": "La Hulpe"
+	},
+	{
+		"id": 1310,
+		"postal": "7100",
+		"name": "La Louvière"
+	},
+	{
+		"id": 1311,
+		"postal": "4910",
+		"name": "La Reid"
+	},
+	{
+		"id": 1312,
+		"postal": "6980",
+		"name": "La Roche-en-Ardenne"
+	},
+	{
+		"id": 1313,
+		"postal": "3400",
+		"name": "Laar"
+	},
+	{
+		"id": 1314,
+		"postal": "9270",
+		"name": "Laarne"
+	},
+	{
+		"id": 1315,
+		"postal": "6567",
+		"name": "Labuissière"
+	},
+	{
+		"id": 1316,
+		"postal": "6821",
+		"name": "Lacuisine"
+	},
+	{
+		"id": 1317,
+		"postal": "7950",
+		"name": "Ladeuze"
+	},
+	{
+		"id": 1318,
+		"postal": "1020",
+		"name": "Laeken"
+	},
+	{
+		"id": 1319,
+		"postal": "5550",
+		"name": "Laforêt"
+	},
+	{
+		"id": 1320,
+		"postal": "7890",
+		"name": "Lahamaide"
+	},
+	{
+		"id": 1321,
+		"postal": "7522",
+		"name": "Lamain"
+	},
+	{
+		"id": 1322,
+		"postal": "4800",
+		"name": "Lambermont"
+	},
+	{
+		"id": 1323,
+		"postal": "6220",
+		"name": "Lambusart"
+	},
+	{
+		"id": 1324,
+		"postal": "4350",
+		"name": "Lamine"
+	},
+	{
+		"id": 1325,
+		"postal": "4210",
+		"name": "Lamontzée"
+	},
+	{
+		"id": 1326,
+		"postal": "6767",
+		"name": "Lamorteau"
+	},
+	{
+		"id": 1327,
+		"postal": "8600",
+		"name": "Lampernisse"
+	},
+	{
+		"id": 1328,
+		"postal": "3620",
+		"name": "Lanaken"
+	},
+	{
+		"id": 1329,
+		"postal": "4600",
+		"name": "Lanaye"
+	},
+	{
+		"id": 1330,
+		"postal": "9850",
+		"name": "Landegem"
+	},
+	{
+		"id": 1331,
+		"postal": "6111",
+		"name": "Landelies"
+	},
+	{
+		"id": 1332,
+		"postal": "3400",
+		"name": "Landen"
+	},
+	{
+		"id": 1333,
+		"postal": "5300",
+		"name": "Landenne"
+	},
+	{
+		"id": 1334,
+		"postal": "9860",
+		"name": "Landskouter"
+	},
+	{
+		"id": 1335,
+		"postal": "5651",
+		"name": "Laneffe"
+	},
+	{
+		"id": 1336,
+		"postal": "3201",
+		"name": "Langdorp"
+	},
+	{
+		"id": 1337,
+		"postal": "8920",
+		"name": "Langemark"
+	},
+	{
+		"id": 1338,
+		"postal": "8920",
+		"name": "Langemark-Poelkapelle"
+	},
+	{
+		"id": 1339,
+		"postal": "3650",
+		"name": "Lanklaar"
+	},
+	{
+		"id": 1340,
+		"postal": "7800",
+		"name": "Lanquesaint"
+	},
+	{
+		"id": 1341,
+		"postal": "4450",
+		"name": "Lantin"
+	},
+	{
+		"id": 1342,
+		"postal": "4300",
+		"name": "Lantremange"
+	},
+	{
+		"id": 1343,
+		"postal": "7622",
+		"name": "Laplaigne"
+	},
+	{
+		"id": 1344,
+		"postal": "8340",
+		"name": "Lapscheure"
+	},
+	{
+		"id": 1345,
+		"postal": "1380",
+		"name": "Lasne"
+	},
+	{
+		"id": 1346,
+		"postal": "1380",
+		"name": "Lasne-Chapelle-St-Lambert"
+	},
+	{
+		"id": 1347,
+		"postal": "1370",
+		"name": "Lathuy"
+	},
+	{
+		"id": 1348,
+		"postal": "4261",
+		"name": "Latinne"
+	},
+	{
+		"id": 1349,
+		"postal": "6761",
+		"name": "Latour"
+	},
+	{
+		"id": 1350,
+		"postal": "3700",
+		"name": "Lauw"
+	},
+	{
+		"id": 1351,
+		"postal": "8930",
+		"name": "Lauwe"
+	},
+	{
+		"id": 1352,
+		"postal": "6681",
+		"name": "Lavacherie"
+	},
+	{
+		"id": 1353,
+		"postal": "5580",
+		"name": "Lavaux-Sainte-Anne"
+	},
+	{
+		"id": 1354,
+		"postal": "4217",
+		"name": "Lavoir"
+	},
+	{
+		"id": 1355,
+		"postal": "5670",
+		"name": "Le Mesnil"
+	},
+	{
+		"id": 1356,
+		"postal": "7070",
+		"name": "Le Roeulx"
+	},
+	{
+		"id": 1357,
+		"postal": "5070",
+		"name": "Le Roux"
+	},
+	{
+		"id": 1358,
+		"postal": "9280",
+		"name": "Lebbeke"
+	},
+	{
+		"id": 1359,
+		"postal": "1320",
+		"name": "L'Ecluse"
+	},
+	{
+		"id": 1360,
+		"postal": "9340",
+		"name": "Lede"
+	},
+	{
+		"id": 1361,
+		"postal": "9050",
+		"name": "Ledeberg (Gent)"
+	},
+	{
+		"id": 1362,
+		"postal": "8880",
+		"name": "Ledegem"
+	},
+	{
+		"id": 1363,
+		"postal": "3061",
+		"name": "Leefdaal"
+	},
+	{
+		"id": 1364,
+		"postal": "1755",
+		"name": "Leerbeek"
+	},
+	{
+		"id": 1365,
+		"postal": "6142",
+		"name": "Leernes"
+	},
+	{
+		"id": 1366,
+		"postal": "6530",
+		"name": "Leers-et-Fosteau"
+	},
+	{
+		"id": 1367,
+		"postal": "7730",
+		"name": "Leers-Nord"
+	},
+	{
+		"id": 1368,
+		"postal": "2811",
+		"name": "Leest"
+	},
+	{
+		"id": 1369,
+		"postal": "9620",
+		"name": "Leeuwergem"
+	},
+	{
+		"id": 1370,
+		"postal": "8432",
+		"name": "Leffinge"
+	},
+	{
+		"id": 1371,
+		"postal": "6860",
+		"name": "Léglise"
+	},
+	{
+		"id": 1372,
+		"postal": "5590",
+		"name": "Leignon"
+	},
+	{
+		"id": 1373,
+		"postal": "8691",
+		"name": "Leisele"
+	},
+	{
+		"id": 1374,
+		"postal": "8600",
+		"name": "Leke"
+	},
+	{
+		"id": 1375,
+		"postal": "1502",
+		"name": "Lembeek"
+	},
+	{
+		"id": 1376,
+		"postal": "9971",
+		"name": "Lembeke"
+	},
+	{
+		"id": 1377,
+		"postal": "9820",
+		"name": "Lemberge"
+	},
+	{
+		"id": 1378,
+		"postal": "8860",
+		"name": "Lendelede"
+	},
+	{
+		"id": 1379,
+		"postal": "1750",
+		"name": "Lennik"
+	},
+	{
+		"id": 1380,
+		"postal": "7870",
+		"name": "Lens"
+	},
+	{
+		"id": 1381,
+		"postal": "4280",
+		"name": "Lens-Saint-Remy"
+	},
+	{
+		"id": 1382,
+		"postal": "4250",
+		"name": "Lens-Saint-Servais"
+	},
+	{
+		"id": 1383,
+		"postal": "4360",
+		"name": "Lens-sur-Geer"
+	},
+	{
+		"id": 1384,
+		"postal": "3970",
+		"name": "Leopoldsburg"
+	},
+	{
+		"id": 1385,
+		"postal": "4560",
+		"name": "Les Avins"
+	},
+	{
+		"id": 1386,
+		"postal": "6811",
+		"name": "Les Bulles"
+	},
+	{
+		"id": 1387,
+		"postal": "6830",
+		"name": "Les Hayons"
+	},
+	{
+		"id": 1388,
+		"postal": "4317",
+		"name": "Les Waleffes"
+	},
+	{
+		"id": 1389,
+		"postal": "6464",
+		"name": "L'Escaillère"
+	},
+	{
+		"id": 1390,
+		"postal": "7621",
+		"name": "Lesdain"
+	},
+	{
+		"id": 1391,
+		"postal": "7860",
+		"name": "Lessines"
+	},
+	{
+		"id": 1392,
+		"postal": "5580",
+		"name": "Lessive"
+	},
+	{
+		"id": 1393,
+		"postal": "6953",
+		"name": "Lesterny"
+	},
+	{
+		"id": 1394,
+		"postal": "5170",
+		"name": "Lesve"
+	},
+	{
+		"id": 1395,
+		"postal": "7850",
+		"name": "Lettelingen"
+	},
+	{
+		"id": 1396,
+		"postal": "9521",
+		"name": "Letterhoutem"
+	},
+	{
+		"id": 1397,
+		"postal": "6500",
+		"name": "Leugnies"
+	},
+	{
+		"id": 1398,
+		"postal": "9700",
+		"name": "Leupegem"
+	},
+	{
+		"id": 1399,
+		"postal": "3630",
+		"name": "Leut"
+	},
+	{
+		"id": 1400,
+		"postal": "3000",
+		"name": "Leuven"
+	},
+	{
+		"id": 1401,
+		"postal": "5310",
+		"name": "Leuze (Nam.)"
+	},
+	{
+		"id": 1402,
+		"postal": "7900",
+		"name": "Leuze-en-Hainaut"
+	},
+	{
+		"id": 1403,
+		"postal": "6500",
+		"name": "Leval-Chaudeville"
+	},
+	{
+		"id": 1404,
+		"postal": "7134",
+		"name": "Leval-Trahegnies"
+	},
+	{
+		"id": 1405,
+		"postal": "6238",
+		"name": "Liberchies"
+	},
+	{
+		"id": 1406,
+		"postal": "6890",
+		"name": "Libin"
+	},
+	{
+		"id": 1407,
+		"postal": "6800",
+		"name": "Libramont-Chevigny"
+	},
+	{
+		"id": 1408,
+		"postal": "2460",
+		"name": "Lichtaart"
+	},
+	{
+		"id": 1409,
+		"postal": "8810",
+		"name": "Lichtervelde"
+	},
+	{
+		"id": 1410,
+		"postal": "1770",
+		"name": "Liedekerke"
+	},
+	{
+		"id": 1411,
+		"postal": "9400",
+		"name": "Lieferinge"
+	},
+	{
+		"id": 1412,
+		"postal": "4000",
+		"name": "Liège 1"
+	},
+	{
+		"id": 1413,
+		"postal": "4020",
+		"name": "Liège 2"
+	},
+	{
+		"id": 1414,
+		"postal": "2500",
+		"name": "Lier"
+	},
+	{
+		"id": 1415,
+		"postal": "9570",
+		"name": "Lierde"
+	},
+	{
+		"id": 1416,
+		"postal": "4990",
+		"name": "Lierneux"
+	},
+	{
+		"id": 1417,
+		"postal": "5310",
+		"name": "Liernu"
+	},
+	{
+		"id": 1418,
+		"postal": "4042",
+		"name": "Liers"
+	},
+	{
+		"id": 1419,
+		"postal": "2870",
+		"name": "Liezele"
+	},
+	{
+		"id": 1420,
+		"postal": "7812",
+		"name": "Ligne"
+	},
+	{
+		"id": 1421,
+		"postal": "4254",
+		"name": "Ligney"
+	},
+	{
+		"id": 1422,
+		"postal": "5140",
+		"name": "Ligny"
+	},
+	{
+		"id": 1423,
+		"postal": "2275",
+		"name": "Lille"
+	},
+	{
+		"id": 1424,
+		"postal": "2040",
+		"name": "Lillo"
+	},
+	{
+		"id": 1425,
+		"postal": "1428",
+		"name": "Lillois-Witterzée"
+	},
+	{
+		"id": 1426,
+		"postal": "1300",
+		"name": "Limal"
+	},
+	{
+		"id": 1427,
+		"postal": "4830",
+		"name": "Limbourg"
+	},
+	{
+		"id": 1428,
+		"postal": "1342",
+		"name": "Limelette"
+	},
+	{
+		"id": 1429,
+		"postal": "6670",
+		"name": "Limerlé"
+	},
+	{
+		"id": 1430,
+		"postal": "4357",
+		"name": "Limont"
+	},
+	{
+		"id": 1431,
+		"postal": "4287",
+		"name": "Lincent"
+	},
+	{
+		"id": 1432,
+		"postal": "3210",
+		"name": "Linden"
+	},
+	{
+		"id": 1433,
+		"postal": "1630",
+		"name": "Linkebeek"
+	},
+	{
+		"id": 1434,
+		"postal": "3560",
+		"name": "Linkhout"
+	},
+	{
+		"id": 1435,
+		"postal": "1357",
+		"name": "Linsmeau"
+	},
+	{
+		"id": 1436,
+		"postal": "2547",
+		"name": "Lint"
+	},
+	{
+		"id": 1437,
+		"postal": "3350",
+		"name": "Linter"
+	},
+	{
+		"id": 1438,
+		"postal": "2890",
+		"name": "Lippelo"
+	},
+	{
+		"id": 1439,
+		"postal": "5501",
+		"name": "Lisogne"
+	},
+	{
+		"id": 1440,
+		"postal": "8380",
+		"name": "Lissewege"
+	},
+	{
+		"id": 1441,
+		"postal": "5101",
+		"name": "Lives-sur-Meuse"
+	},
+	{
+		"id": 1442,
+		"postal": "4600",
+		"name": "Lixhe"
+	},
+	{
+		"id": 1443,
+		"postal": "8647",
+		"name": "Lo"
+	},
+	{
+		"id": 1444,
+		"postal": "6540",
+		"name": "Lobbes"
+	},
+	{
+		"id": 1445,
+		"postal": "9080",
+		"name": "Lochristi"
+	},
+	{
+		"id": 1446,
+		"postal": "6042",
+		"name": "Lodelinsart"
+	},
+	{
+		"id": 1447,
+		"postal": "2990",
+		"name": "Loenhout"
+	},
+	{
+		"id": 1448,
+		"postal": "8958",
+		"name": "Loker"
+	},
+	{
+		"id": 1449,
+		"postal": "9160",
+		"name": "Lokeren"
+	},
+	{
+		"id": 1450,
+		"postal": "3545",
+		"name": "Loksbergen"
+	},
+	{
+		"id": 1451,
+		"postal": "8434",
+		"name": "Lombardsijde"
+	},
+	{
+		"id": 1452,
+		"postal": "7870",
+		"name": "Lombise"
+	},
+	{
+		"id": 1453,
+		"postal": "3920",
+		"name": "Lommel"
+	},
+	{
+		"id": 1454,
+		"postal": "4783",
+		"name": "Lommersweiler"
+	},
+	{
+		"id": 1455,
+		"postal": "6463",
+		"name": "Lompret"
+	},
+	{
+		"id": 1456,
+		"postal": "6924",
+		"name": "Lomprez"
+	},
+	{
+		"id": 1457,
+		"postal": "4431",
+		"name": "Loncin"
+	},
+	{
+		"id": 1458,
+		"postal": "1840",
+		"name": "Londerzeel"
+	},
+	{
+		"id": 1459,
+		"postal": "6688",
+		"name": "Longchamps (Lux.)"
+	},
+	{
+		"id": 1460,
+		"postal": "5310",
+		"name": "Longchamps (Nam.)"
+	},
+	{
+		"id": 1461,
+		"postal": "6840",
+		"name": "Longlier"
+	},
+	{
+		"id": 1462,
+		"postal": "1325",
+		"name": "Longueville"
+	},
+	{
+		"id": 1463,
+		"postal": "6600",
+		"name": "Longvilly"
+	},
+	{
+		"id": 1464,
+		"postal": "4710",
+		"name": "Lontzen"
+	},
+	{
+		"id": 1465,
+		"postal": "5030",
+		"name": "Lonzée"
+	},
+	{
+		"id": 1466,
+		"postal": "3040",
+		"name": "Loonbeek"
+	},
+	{
+		"id": 1467,
+		"postal": "8210",
+		"name": "Loppem"
+	},
+	{
+		"id": 1468,
+		"postal": "4987",
+		"name": "Lorcé"
+	},
+	{
+		"id": 1469,
+		"postal": "8647",
+		"name": "Lo-Reninge"
+	},
+	{
+		"id": 1470,
+		"postal": "1651",
+		"name": "Lot"
+	},
+	{
+		"id": 1471,
+		"postal": "9880",
+		"name": "Lotenhulle"
+	},
+	{
+		"id": 1472,
+		"postal": "5575",
+		"name": "Louette-Saint-Denis"
+	},
+	{
+		"id": 1473,
+		"postal": "5575",
+		"name": "Louette-Saint-Pierre"
+	},
+	{
+		"id": 1474,
+		"postal": "1471",
+		"name": "Loupoigne"
+	},
+	{
+		"id": 1475,
+		"postal": "1348",
+		"name": "Louvain-la-Neuve"
+	},
+	{
+		"id": 1476,
+		"postal": "4920",
+		"name": "Louveigné (Aywaille)"
+	},
+	{
+		"id": 1477,
+		"postal": "4141",
+		"name": "Louveigné (Sprimont)"
+	},
+	{
+		"id": 1478,
+		"postal": "9920",
+		"name": "Lovendegem"
+	},
+	{
+		"id": 1479,
+		"postal": "3360",
+		"name": "Lovenjoel"
+	},
+	{
+		"id": 1480,
+		"postal": "6280",
+		"name": "Loverval"
+	},
+	{
+		"id": 1481,
+		"postal": "5101",
+		"name": "Loyers"
+	},
+	{
+		"id": 1482,
+		"postal": "3210",
+		"name": "Lubbeek"
+	},
+	{
+		"id": 1483,
+		"postal": "7700",
+		"name": "Luingne"
+	},
+	{
+		"id": 1484,
+		"postal": "3560",
+		"name": "Lummen"
+	},
+	{
+		"id": 1485,
+		"postal": "5170",
+		"name": "Lustin"
+	},
+	{
+		"id": 1486,
+		"postal": "6238",
+		"name": "Luttre"
+	},
+	{
+		"id": 1487,
+		"postal": "L121",
+		"name": "LUXEMBOURG (BEGGEN)"
+	},
+	{
+		"id": 1488,
+		"postal": "9680",
+		"name": "Maarkedal"
+	},
+	{
+		"id": 1489,
+		"postal": "9680",
+		"name": "Maarke-Kerkem"
+	},
+	{
+		"id": 1490,
+		"postal": "3680",
+		"name": "Maaseik"
+	},
+	{
+		"id": 1491,
+		"postal": "3630",
+		"name": "Maasmechelen"
+	},
+	{
+		"id": 1492,
+		"postal": "6663",
+		"name": "Mabompré"
+	},
+	{
+		"id": 1493,
+		"postal": "1830",
+		"name": "Machelen (Bt)"
+	},
+	{
+		"id": 1494,
+		"postal": "9870",
+		"name": "Machelen (O.-Vl.)"
+	},
+	{
+		"id": 1495,
+		"postal": "6591",
+		"name": "Macon"
+	},
+	{
+		"id": 1496,
+		"postal": "6593",
+		"name": "Macquenoise"
+	},
+	{
+		"id": 1497,
+		"postal": "5374",
+		"name": "Maffe"
+	},
+	{
+		"id": 1498,
+		"postal": "7810",
+		"name": "Maffle"
+	},
+	{
+		"id": 1499,
+		"postal": "4623",
+		"name": "Magnée"
+	},
+	{
+		"id": 1500,
+		"postal": "5330",
+		"name": "Maillen"
+	},
+	{
+		"id": 1501,
+		"postal": "7812",
+		"name": "Mainvault"
+	},
+	{
+		"id": 1502,
+		"postal": "7020",
+		"name": "Maisières"
+	},
+	{
+		"id": 1503,
+		"postal": "6852",
+		"name": "Maissin"
+	},
+	{
+		"id": 1504,
+		"postal": "5300",
+		"name": "Maizeret"
+	},
+	{
+		"id": 1505,
+		"postal": "3700",
+		"name": "Mal"
+	},
+	{
+		"id": 1506,
+		"postal": "9990",
+		"name": "Maldegem"
+	},
+	{
+		"id": 1507,
+		"postal": "1840",
+		"name": "Malderen"
+	},
+	{
+		"id": 1508,
+		"postal": "6960",
+		"name": "Malempré"
+	},
+	{
+		"id": 1509,
+		"postal": "1360",
+		"name": "Malèves-Ste-Marie-Wastines"
+	},
+	{
+		"id": 1510,
+		"postal": "2390",
+		"name": "Malle"
+	},
+	{
+		"id": 1511,
+		"postal": "4960",
+		"name": "Malmédy"
+	},
+	{
+		"id": 1512,
+		"postal": "5020",
+		"name": "Malonne"
+	},
+	{
+		"id": 1513,
+		"postal": "5575",
+		"name": "Malvoisin"
+	},
+	{
+		"id": 1514,
+		"postal": "7170",
+		"name": "Manage"
+	},
+	{
+		"id": 1515,
+		"postal": "4760",
+		"name": "Manderfeld"
+	},
+	{
+		"id": 1516,
+		"postal": "6960",
+		"name": "Manhay"
+	},
+	{
+		"id": 1517,
+		"postal": "8433",
+		"name": "Mannekensvere"
+	},
+	{
+		"id": 1518,
+		"postal": "1380",
+		"name": "Maransart"
+	},
+	{
+		"id": 1519,
+		"postal": "1495",
+		"name": "Marbais (Bt.)"
+	},
+	{
+		"id": 1520,
+		"postal": "6120",
+		"name": "Marbaix (Ht.)"
+	},
+	{
+		"id": 1521,
+		"postal": "6900",
+		"name": "Marche-en-Famenne"
+	},
+	{
+		"id": 1522,
+		"postal": "5024",
+		"name": "Marche-les-Dames"
+	},
+	{
+		"id": 1523,
+		"postal": "7190",
+		"name": "Marche-lez-Ecaussinnes"
+	},
+	{
+		"id": 1524,
+		"postal": "6030",
+		"name": "Marchienne-au-Pont"
+	},
+	{
+		"id": 1525,
+		"postal": "4570",
+		"name": "Marchin"
+	},
+	{
+		"id": 1526,
+		"postal": "7387",
+		"name": "Marchipont"
+	},
+	{
+		"id": 1527,
+		"postal": "5380",
+		"name": "Marchovelette"
+	},
+	{
+		"id": 1528,
+		"postal": "6001",
+		"name": "Marcinelle"
+	},
+	{
+		"id": 1529,
+		"postal": "6987",
+		"name": "Marcourt"
+	},
+	{
+		"id": 1530,
+		"postal": "7850",
+		"name": "Marcq"
+	},
+	{
+		"id": 1531,
+		"postal": "6990",
+		"name": "Marenne"
+	},
+	{
+		"id": 1532,
+		"postal": "9030",
+		"name": "Mariakerke (Gent)"
+	},
+	{
+		"id": 1533,
+		"postal": "2880",
+		"name": "Mariekerke (Bornem)"
+	},
+	{
+		"id": 1534,
+		"postal": "5660",
+		"name": "Mariembourg"
+	},
+	{
+		"id": 1535,
+		"postal": "1350",
+		"name": "Marilles"
+	},
+	{
+		"id": 1536,
+		"postal": "7850",
+		"name": "Mark"
+	},
+	{
+		"id": 1537,
+		"postal": "8510",
+		"name": "Marke (Kortrijk)"
+	},
+	{
+		"id": 1538,
+		"postal": "8720",
+		"name": "Markegem"
+	},
+	{
+		"id": 1539,
+		"postal": "4210",
+		"name": "Marneffe"
+	},
+	{
+		"id": 1540,
+		"postal": "7522",
+		"name": "Marquain"
+	},
+	{
+		"id": 1541,
+		"postal": "6630",
+		"name": "Martelange"
+	},
+	{
+		"id": 1542,
+		"postal": "3742",
+		"name": "Martenslinde"
+	},
+	{
+		"id": 1543,
+		"postal": "5573",
+		"name": "Martouzin-Neuville"
+	},
+	{
+		"id": 1544,
+		"postal": "6953",
+		"name": "Masbourg"
+	},
+	{
+		"id": 1545,
+		"postal": "7020",
+		"name": "Masnuy-Saint-Jean (Mons)"
+	},
+	{
+		"id": 1546,
+		"postal": "7050",
+		"name": "Masnuy-Saint-Pierre"
+	},
+	{
+		"id": 1547,
+		"postal": "7050",
+		"name": "Masnuy-St-Jean (Jurbise)"
+	},
+	{
+		"id": 1548,
+		"postal": "9230",
+		"name": "Massemen"
+	},
+	{
+		"id": 1549,
+		"postal": "2240",
+		"name": "Massenhoven"
+	},
+	{
+		"id": 1550,
+		"postal": "5680",
+		"name": "Matagne-la-Grande"
+	},
+	{
+		"id": 1551,
+		"postal": "5680",
+		"name": "Matagne-la-Petite"
+	},
+	{
+		"id": 1552,
+		"postal": "9700",
+		"name": "Mater"
+	},
+	{
+		"id": 1553,
+		"postal": "7640",
+		"name": "Maubray"
+	},
+	{
+		"id": 1554,
+		"postal": "7534",
+		"name": "Maulde"
+	},
+	{
+		"id": 1555,
+		"postal": "7110",
+		"name": "Maurage"
+	},
+	{
+		"id": 1556,
+		"postal": "5670",
+		"name": "Mazée"
+	},
+	{
+		"id": 1557,
+		"postal": "1745",
+		"name": "Mazenzele"
+	},
+	{
+		"id": 1558,
+		"postal": "5032",
+		"name": "Mazy"
+	},
+	{
+		"id": 1559,
+		"postal": "5372",
+		"name": "Méan"
+	},
+	{
+		"id": 1560,
+		"postal": "2800",
+		"name": "Mechelen"
+	},
+	{
+		"id": 1561,
+		"postal": "3630",
+		"name": "Mechelen-aan-de-Maas"
+	},
+	{
+		"id": 1562,
+		"postal": "3870",
+		"name": "Mechelen-Bovelingen"
+	},
+	{
+		"id": 1563,
+		"postal": "4219",
+		"name": "Meeffe"
+	},
+	{
+		"id": 1564,
+		"postal": "3391",
+		"name": "Meensel-Kiezegem"
+	},
+	{
+		"id": 1565,
+		"postal": "2321",
+		"name": "Meer"
+	},
+	{
+		"id": 1566,
+		"postal": "3078",
+		"name": "Meerbeek"
+	},
+	{
+		"id": 1567,
+		"postal": "9402",
+		"name": "Meerbeke"
+	},
+	{
+		"id": 1568,
+		"postal": "9170",
+		"name": "Meerdonk"
+	},
+	{
+		"id": 1569,
+		"postal": "2450",
+		"name": "Meerhout"
+	},
+	{
+		"id": 1570,
+		"postal": "2328",
+		"name": "Meerle"
+	},
+	{
+		"id": 1571,
+		"postal": "3630",
+		"name": "Meeswijk"
+	},
+	{
+		"id": 1572,
+		"postal": "8377",
+		"name": "Meetkerke"
+	},
+	{
+		"id": 1573,
+		"postal": "3670",
+		"name": "Meeuwen"
+	},
+	{
+		"id": 1574,
+		"postal": "3670",
+		"name": "Meeuwen-Gruitrode"
+	},
+	{
+		"id": 1575,
+		"postal": "5310",
+		"name": "Mehaigne"
+	},
+	{
+		"id": 1576,
+		"postal": "9800",
+		"name": "Meigem"
+	},
+	{
+		"id": 1577,
+		"postal": "9630",
+		"name": "Meilegem"
+	},
+	{
+		"id": 1578,
+		"postal": "1860",
+		"name": "Meise"
+	},
+	{
+		"id": 1579,
+		"postal": "6769",
+		"name": "Meix-devant-Virton"
+	},
+	{
+		"id": 1580,
+		"postal": "6747",
+		"name": "Meix-le-Tige"
+	},
+	{
+		"id": 1581,
+		"postal": "9700",
+		"name": "Melden"
+	},
+	{
+		"id": 1582,
+		"postal": "3320",
+		"name": "Meldert (Bt.)"
+	},
+	{
+		"id": 1583,
+		"postal": "3560",
+		"name": "Meldert (Limb.)"
+	},
+	{
+		"id": 1584,
+		"postal": "9310",
+		"name": "Meldert (O.-Vl.)"
+	},
+	{
+		"id": 1585,
+		"postal": "4633",
+		"name": "Melen"
+	},
+	{
+		"id": 1586,
+		"postal": "1370",
+		"name": "Mélin"
+	},
+	{
+		"id": 1587,
+		"postal": "3350",
+		"name": "Melkwezer"
+	},
+	{
+		"id": 1588,
+		"postal": "9090",
+		"name": "Melle"
+	},
+	{
+		"id": 1589,
+		"postal": "1495",
+		"name": "Mellery"
+	},
+	{
+		"id": 1590,
+		"postal": "7540",
+		"name": "Melles"
+	},
+	{
+		"id": 1591,
+		"postal": "6211",
+		"name": "Mellet"
+	},
+	{
+		"id": 1592,
+		"postal": "6860",
+		"name": "Mellier"
+	},
+	{
+		"id": 1593,
+		"postal": "1820",
+		"name": "Melsbroek"
+	},
+	{
+		"id": 1594,
+		"postal": "9120",
+		"name": "Melsele"
+	},
+	{
+		"id": 1595,
+		"postal": "9820",
+		"name": "Melsen"
+	},
+	{
+		"id": 1596,
+		"postal": "4837",
+		"name": "Membach"
+	},
+	{
+		"id": 1597,
+		"postal": "5550",
+		"name": "Membre"
+	},
+	{
+		"id": 1598,
+		"postal": "3770",
+		"name": "Membruggen"
+	},
+	{
+		"id": 1599,
+		"postal": "9042",
+		"name": "Mendonk"
+	},
+	{
+		"id": 1600,
+		"postal": "8930",
+		"name": "Menen"
+	},
+	{
+		"id": 1601,
+		"postal": "6567",
+		"name": "Merbes-le-Château"
+	},
+	{
+		"id": 1602,
+		"postal": "6567",
+		"name": "Merbes-Sainte-Marie"
+	},
+	{
+		"id": 1603,
+		"postal": "1785",
+		"name": "Merchtem"
+	},
+	{
+		"id": 1604,
+		"postal": "4280",
+		"name": "Merdorp"
+	},
+	{
+		"id": 1605,
+		"postal": "9420",
+		"name": "Mere"
+	},
+	{
+		"id": 1606,
+		"postal": "9820",
+		"name": "Merelbeke"
+	},
+	{
+		"id": 1607,
+		"postal": "9850",
+		"name": "Merendree"
+	},
+	{
+		"id": 1608,
+		"postal": "8650",
+		"name": "Merkem"
+	},
+	{
+		"id": 1609,
+		"postal": "2170",
+		"name": "Merksem (Antwerpen)"
+	},
+	{
+		"id": 1610,
+		"postal": "2330",
+		"name": "Merksplas"
+	},
+	{
+		"id": 1611,
+		"postal": "5600",
+		"name": "Merlemont"
+	},
+	{
+		"id": 1612,
+		"postal": "8957",
+		"name": "Mesen"
+	},
+	{
+		"id": 1613,
+		"postal": "7822",
+		"name": "Meslin-l'Evêque"
+	},
+	{
+		"id": 1614,
+		"postal": "5560",
+		"name": "Mesnil-Eglise"
+	},
+	{
+		"id": 1615,
+		"postal": "5560",
+		"name": "Mesnil-Saint-Blaise"
+	},
+	{
+		"id": 1616,
+		"postal": "9200",
+		"name": "Mespelare"
+	},
+	{
+		"id": 1617,
+		"postal": "6780",
+		"name": "Messancy"
+	},
+	{
+		"id": 1618,
+		"postal": "3272",
+		"name": "Messelbroek"
+	},
+	{
+		"id": 1619,
+		"postal": "8957",
+		"name": "Messines"
+	},
+	{
+		"id": 1620,
+		"postal": "7022",
+		"name": "Mesvin"
+	},
+	{
+		"id": 1621,
+		"postal": "3870",
+		"name": "Mettekoven"
+	},
+	{
+		"id": 1622,
+		"postal": "5640",
+		"name": "Mettet"
+	},
+	{
+		"id": 1623,
+		"postal": "8760",
+		"name": "Meulebeke"
+	},
+	{
+		"id": 1624,
+		"postal": "5081",
+		"name": "Meux"
+	},
+	{
+		"id": 1625,
+		"postal": "7942",
+		"name": "Mévergnies-lez-Lens"
+	},
+	{
+		"id": 1626,
+		"postal": "4770",
+		"name": "Meyrode"
+	},
+	{
+		"id": 1627,
+		"postal": "9660",
+		"name": "Michelbeke"
+	},
+	{
+		"id": 1628,
+		"postal": "4630",
+		"name": "Micheroux"
+	},
+	{
+		"id": 1629,
+		"postal": "9992",
+		"name": "Middelburg"
+	},
+	{
+		"id": 1630,
+		"postal": "8430",
+		"name": "Middelkerke"
+	},
+	{
+		"id": 1631,
+		"postal": "5376",
+		"name": "Miécret"
+	},
+	{
+		"id": 1632,
+		"postal": "3891",
+		"name": "Mielen-boven-Aalst"
+	},
+	{
+		"id": 1633,
+		"postal": "7070",
+		"name": "Mignault"
+	},
+	{
+		"id": 1634,
+		"postal": "3770",
+		"name": "Millen"
+	},
+	{
+		"id": 1635,
+		"postal": "4041",
+		"name": "Milmort"
+	},
+	{
+		"id": 1636,
+		"postal": "2322",
+		"name": "Minderhout"
+	},
+	{
+		"id": 1637,
+		"postal": "6870",
+		"name": "Mirwart"
+	},
+	{
+		"id": 1638,
+		"postal": "4577",
+		"name": "Modave"
+	},
+	{
+		"id": 1639,
+		"postal": "3790",
+		"name": "Moelingen"
+	},
+	{
+		"id": 1640,
+		"postal": "8552",
+		"name": "Moen"
+	},
+	{
+		"id": 1641,
+		"postal": "9500",
+		"name": "Moerbeke"
+	},
+	{
+		"id": 1642,
+		"postal": "9180",
+		"name": "Moerbeke-Waas"
+	},
+	{
+		"id": 1643,
+		"postal": "8470",
+		"name": "Moere"
+	},
+	{
+		"id": 1644,
+		"postal": "8340",
+		"name": "Moerkerke"
+	},
+	{
+		"id": 1645,
+		"postal": "9220",
+		"name": "Moerzeke"
+	},
+	{
+		"id": 1646,
+		"postal": "7700",
+		"name": "Moeskroen"
+	},
+	{
+		"id": 1647,
+		"postal": "4520",
+		"name": "Moha"
+	},
+	{
+		"id": 1648,
+		"postal": "5361",
+		"name": "Mohiville"
+	},
+	{
+		"id": 1649,
+		"postal": "5060",
+		"name": "Moignelée"
+	},
+	{
+		"id": 1650,
+		"postal": "6800",
+		"name": "Moircy"
+	},
+	{
+		"id": 1651,
+		"postal": "2400",
+		"name": "Mol"
+	},
+	{
+		"id": 1652,
+		"postal": "7760",
+		"name": "Molenbaix"
+	},
+	{
+		"id": 1653,
+		"postal": "1080",
+		"name": "Molenbeek-Saint-Jean"
+	},
+	{
+		"id": 1654,
+		"postal": "3461",
+		"name": "Molenbeek-Wersbeek"
+	},
+	{
+		"id": 1655,
+		"postal": "3640",
+		"name": "Molenbeersel"
+	},
+	{
+		"id": 1656,
+		"postal": "3294",
+		"name": "Molenstede"
+	},
+	{
+		"id": 1657,
+		"postal": "1730",
+		"name": "Mollem"
+	},
+	{
+		"id": 1658,
+		"postal": "4350",
+		"name": "Momalle"
+	},
+	{
+		"id": 1659,
+		"postal": "6590",
+		"name": "Momignies"
+	},
+	{
+		"id": 1660,
+		"postal": "5555",
+		"name": "Monceau-en-Ardenne"
+	},
+	{
+		"id": 1661,
+		"postal": "6592",
+		"name": "Monceau-Imbrechies"
+	},
+	{
+		"id": 1662,
+		"postal": "6031",
+		"name": "Monceau-sur-Sambre"
+	},
+	{
+		"id": 1663,
+		"postal": "7000",
+		"name": "Mons"
+	},
+	{
+		"id": 1664,
+		"postal": "4400",
+		"name": "Mons-lez-Liège"
+	},
+	{
+		"id": 1665,
+		"postal": "1400",
+		"name": "Monstreux"
+	},
+	{
+		"id": 1666,
+		"postal": "6661",
+		"name": "Mont (Lux.)"
+	},
+	{
+		"id": 1667,
+		"postal": "5530",
+		"name": "Mont (Nam.)"
+	},
+	{
+		"id": 1668,
+		"postal": "6470",
+		"name": "Montbliart"
+	},
+	{
+		"id": 1669,
+		"postal": "7750",
+		"name": "Mont-de-l'Enclus"
+	},
+	{
+		"id": 1670,
+		"postal": "4420",
+		"name": "Montegnée"
+	},
+	{
+		"id": 1671,
+		"postal": "3890",
+		"name": "Montenaken"
+	},
+	{
+		"id": 1672,
+		"postal": "5580",
+		"name": "Mont-Gauthier"
+	},
+	{
+		"id": 1673,
+		"postal": "7870",
+		"name": "Montignies-lez-Lens"
+	},
+	{
+		"id": 1674,
+		"postal": "6560",
+		"name": "Montignies-St-Christophe"
+	},
+	{
+		"id": 1675,
+		"postal": "7387",
+		"name": "Montignies-sur-Roc"
+	},
+	{
+		"id": 1676,
+		"postal": "6061",
+		"name": "Montignies-sur-Sambre"
+	},
+	{
+		"id": 1677,
+		"postal": "6110",
+		"name": "Montigny-le-Tilleul"
+	},
+	{
+		"id": 1678,
+		"postal": "6674",
+		"name": "Montleban"
+	},
+	{
+		"id": 1679,
+		"postal": "7911",
+		"name": "Montroeul-au-Bois"
+	},
+	{
+		"id": 1680,
+		"postal": "7350",
+		"name": "Montroeul-sur-Haine"
+	},
+	{
+		"id": 1681,
+		"postal": "1367",
+		"name": "Mont-Saint-André"
+	},
+	{
+		"id": 1682,
+		"postal": "7542",
+		"name": "Mont-Saint-Aubert"
+	},
+	{
+		"id": 1683,
+		"postal": "7141",
+		"name": "Mont-Sainte-Aldegonde"
+	},
+	{
+		"id": 1684,
+		"postal": "6540",
+		"name": "Mont-Sainte-Geneviève"
+	},
+	{
+		"id": 1685,
+		"postal": "1435",
+		"name": "Mont-Saint-Guibert"
+	},
+	{
+		"id": 1686,
+		"postal": "6032",
+		"name": "Mont-sur-Marchienne"
+	},
+	{
+		"id": 1687,
+		"postal": "4850",
+		"name": "Montzen"
+	},
+	{
+		"id": 1688,
+		"postal": "9310",
+		"name": "Moorsel"
+	},
+	{
+		"id": 1689,
+		"postal": "8560",
+		"name": "Moorsele"
+	},
+	{
+		"id": 1690,
+		"postal": "8890",
+		"name": "Moorslede"
+	},
+	{
+		"id": 1691,
+		"postal": "9860",
+		"name": "Moortsele"
+	},
+	{
+		"id": 1692,
+		"postal": "3740",
+		"name": "Mopertingen"
+	},
+	{
+		"id": 1693,
+		"postal": "9790",
+		"name": "Moregem"
+	},
+	{
+		"id": 1694,
+		"postal": "4850",
+		"name": "Moresnet"
+	},
+	{
+		"id": 1695,
+		"postal": "6640",
+		"name": "Morhet"
+	},
+	{
+		"id": 1696,
+		"postal": "5621",
+		"name": "Morialmé"
+	},
+	{
+		"id": 1697,
+		"postal": "2200",
+		"name": "Morkhoven"
+	},
+	{
+		"id": 1698,
+		"postal": "7140",
+		"name": "Morlanwelz"
+	},
+	{
+		"id": 1699,
+		"postal": "7140",
+		"name": "Morlanwelz-Mariemont"
+	},
+	{
+		"id": 1700,
+		"postal": "6997",
+		"name": "Mormont"
+	},
+	{
+		"id": 1701,
+		"postal": "5190",
+		"name": "Mornimont"
+	},
+	{
+		"id": 1702,
+		"postal": "4670",
+		"name": "Mortier"
+	},
+	{
+		"id": 1703,
+		"postal": "4607",
+		"name": "Mortroux"
+	},
+	{
+		"id": 1704,
+		"postal": "2640",
+		"name": "Mortsel"
+	},
+	{
+		"id": 1705,
+		"postal": "5620",
+		"name": "Morville"
+	},
+	{
+		"id": 1706,
+		"postal": "3790",
+		"name": "Mouland"
+	},
+	{
+		"id": 1707,
+		"postal": "7812",
+		"name": "Moulbaix"
+	},
+	{
+		"id": 1708,
+		"postal": "7543",
+		"name": "Mourcourt"
+	},
+	{
+		"id": 1709,
+		"postal": "7700",
+		"name": "Mouscron"
+	},
+	{
+		"id": 1710,
+		"postal": "7911",
+		"name": "Moustier (Ht.)"
+	},
+	{
+		"id": 1711,
+		"postal": "5190",
+		"name": "Moustier-sur-Sambre"
+	},
+	{
+		"id": 1712,
+		"postal": "5550",
+		"name": "Mouzaive"
+	},
+	{
+		"id": 1713,
+		"postal": "4280",
+		"name": "Moxhe"
+	},
+	{
+		"id": 1714,
+		"postal": "5340",
+		"name": "Mozet"
+	},
+	{
+		"id": 1715,
+		"postal": "3891",
+		"name": "Muizen (Limb.)"
+	},
+	{
+		"id": 1716,
+		"postal": "2812",
+		"name": "Muizen (Mechelen)"
+	},
+	{
+		"id": 1717,
+		"postal": "9700",
+		"name": "Mullem"
+	},
+	{
+		"id": 1718,
+		"postal": "9630",
+		"name": "Munkzwalm"
+	},
+	{
+		"id": 1719,
+		"postal": "6820",
+		"name": "Muno"
+	},
+	{
+		"id": 1720,
+		"postal": "3740",
+		"name": "Munsterbilzen"
+	},
+	{
+		"id": 1721,
+		"postal": "9820",
+		"name": "Munte"
+	},
+	{
+		"id": 1722,
+		"postal": "6750",
+		"name": "Musson"
+	},
+	{
+		"id": 1723,
+		"postal": "6750",
+		"name": "Mussy-la-Ville"
+	},
+	{
+		"id": 1724,
+		"postal": "4190",
+		"name": "My"
+	},
+	{
+		"id": 1725,
+		"postal": "7062",
+		"name": "Naast"
+	},
+	{
+		"id": 1726,
+		"postal": "6660",
+		"name": "Nadrin"
+	},
+	{
+		"id": 1727,
+		"postal": "5550",
+		"name": "Nafraiture"
+	},
+	{
+		"id": 1728,
+		"postal": "6120",
+		"name": "Nalinnes"
+	},
+	{
+		"id": 1729,
+		"postal": "5300",
+		"name": "Namêche"
+	},
+	{
+		"id": 1730,
+		"postal": "5000",
+		"name": "Namur"
+	},
+	{
+		"id": 1731,
+		"postal": "4550",
+		"name": "Nandrin"
+	},
+	{
+		"id": 1732,
+		"postal": "5100",
+		"name": "Naninne"
+	},
+	{
+		"id": 1733,
+		"postal": "5555",
+		"name": "Naomé"
+	},
+	{
+		"id": 1734,
+		"postal": "6950",
+		"name": "Nassogne"
+	},
+	{
+		"id": 1735,
+		"postal": "5360",
+		"name": "Natoye"
+	},
+	{
+		"id": 1736,
+		"postal": "9810",
+		"name": "Nazareth"
+	},
+	{
+		"id": 1737,
+		"postal": "7730",
+		"name": "Néchin"
+	},
+	{
+		"id": 1738,
+		"postal": "1120",
+		"name": "Neder-over-Heembeek"
+	},
+	{
+		"id": 1739,
+		"postal": "9500",
+		"name": "Nederboelare"
+	},
+	{
+		"id": 1740,
+		"postal": "9660",
+		"name": "Nederbrakel"
+	},
+	{
+		"id": 1741,
+		"postal": "9700",
+		"name": "Nederename"
+	},
+	{
+		"id": 1742,
+		"postal": "9400",
+		"name": "Nederhasselt"
+	},
+	{
+		"id": 1743,
+		"postal": "1910",
+		"name": "Nederokkerzeel"
+	},
+	{
+		"id": 1744,
+		"postal": "9636",
+		"name": "Nederzwalm-Hermelgem"
+	},
+	{
+		"id": 1745,
+		"postal": "3670",
+		"name": "Neerglabbeek"
+	},
+	{
+		"id": 1746,
+		"postal": "3620",
+		"name": "Neerharen"
+	},
+	{
+		"id": 1747,
+		"postal": "3350",
+		"name": "Neerhespen"
+	},
+	{
+		"id": 1748,
+		"postal": "1357",
+		"name": "Neerheylissem"
+	},
+	{
+		"id": 1749,
+		"postal": "3040",
+		"name": "Neerijse"
+	},
+	{
+		"id": 1750,
+		"postal": "3404",
+		"name": "Neerlanden"
+	},
+	{
+		"id": 1751,
+		"postal": "3350",
+		"name": "Neerlinter"
+	},
+	{
+		"id": 1752,
+		"postal": "3680",
+		"name": "Neeroeteren"
+	},
+	{
+		"id": 1753,
+		"postal": "3910",
+		"name": "Neerpelt"
+	},
+	{
+		"id": 1754,
+		"postal": "3700",
+		"name": "Neerrepen"
+	},
+	{
+		"id": 1755,
+		"postal": "3370",
+		"name": "Neervelp"
+	},
+	{
+		"id": 1756,
+		"postal": "7784",
+		"name": "Neerwaasten"
+	},
+	{
+		"id": 1757,
+		"postal": "3400",
+		"name": "Neerwinden"
+	},
+	{
+		"id": 1758,
+		"postal": "9403",
+		"name": "Neigem"
+	},
+	{
+		"id": 1759,
+		"postal": "3700",
+		"name": "Nerem"
+	},
+	{
+		"id": 1760,
+		"postal": "4870",
+		"name": "Nessonvaux"
+	},
+	{
+		"id": 1761,
+		"postal": "1390",
+		"name": "Nethen"
+	},
+	{
+		"id": 1762,
+		"postal": "5377",
+		"name": "Nettinne"
+	},
+	{
+		"id": 1763,
+		"postal": "6840",
+		"name": "Neufchâteau"
+	},
+	{
+		"id": 1764,
+		"postal": "4608",
+		"name": "Neufchâteau (Lg.)"
+	},
+	{
+		"id": 1765,
+		"postal": "7332",
+		"name": "Neufmaison"
+	},
+	{
+		"id": 1766,
+		"postal": "7063",
+		"name": "Neufvilles"
+	},
+	{
+		"id": 1767,
+		"postal": "4721",
+		"name": "Neu-Moresnet"
+	},
+	{
+		"id": 1768,
+		"postal": "4120",
+		"name": "Neupré"
+	},
+	{
+		"id": 1769,
+		"postal": "5600",
+		"name": "Neuville (Philippeville)"
+	},
+	{
+		"id": 1770,
+		"postal": "4121",
+		"name": "Neuville-en-Condroz"
+	},
+	{
+		"id": 1771,
+		"postal": "9850",
+		"name": "Nevele"
+	},
+	{
+		"id": 1772,
+		"postal": "2845",
+		"name": "Niel"
+	},
+	{
+		"id": 1773,
+		"postal": "3668",
+		"name": "Niel-bij-As"
+	},
+	{
+		"id": 1774,
+		"postal": "3890",
+		"name": "Niel-bij-Sint-Truiden"
+	},
+	{
+		"id": 1775,
+		"postal": "9506",
+		"name": "Nieuwenhove"
+	},
+	{
+		"id": 1776,
+		"postal": "1880",
+		"name": "Nieuwenrode"
+	},
+	{
+		"id": 1777,
+		"postal": "9320",
+		"name": "Nieuwerkerken (Aalst)"
+	},
+	{
+		"id": 1778,
+		"postal": "3850",
+		"name": "Nieuwerkerken (Limb.)"
+	},
+	{
+		"id": 1779,
+		"postal": "8600",
+		"name": "Nieuwkapelle"
+	},
+	{
+		"id": 1780,
+		"postal": "8950",
+		"name": "Nieuwkerke"
+	},
+	{
+		"id": 1781,
+		"postal": "9100",
+		"name": "Nieuwkerken-Waas"
+	},
+	{
+		"id": 1782,
+		"postal": "8377",
+		"name": "Nieuwmunster"
+	},
+	{
+		"id": 1783,
+		"postal": "8620",
+		"name": "Nieuwpoort"
+	},
+	{
+		"id": 1784,
+		"postal": "3221",
+		"name": "Nieuwrode"
+	},
+	{
+		"id": 1785,
+		"postal": "2560",
+		"name": "Nijlen"
+	},
+	{
+		"id": 1786,
+		"postal": "1457",
+		"name": "Nil-St-Vincent-St-Martin"
+	},
+	{
+		"id": 1787,
+		"postal": "7020",
+		"name": "Nimy (Mons)"
+	},
+	{
+		"id": 1788,
+		"postal": "9400",
+		"name": "Ninove"
+	},
+	{
+		"id": 1789,
+		"postal": "5670",
+		"name": "Nismes"
+	},
+	{
+		"id": 1790,
+		"postal": "1400",
+		"name": "Nivelles"
+	},
+	{
+		"id": 1791,
+		"postal": "5680",
+		"name": "Niverlée"
+	},
+	{
+		"id": 1792,
+		"postal": "6640",
+		"name": "Nives"
+	},
+	{
+		"id": 1793,
+		"postal": "6717",
+		"name": "Nobressart"
+	},
+	{
+		"id": 1794,
+		"postal": "1320",
+		"name": "Nodebais"
+	},
+	{
+		"id": 1795,
+		"postal": "1350",
+		"name": "Noduwez"
+	},
+	{
+		"id": 1796,
+		"postal": "7080",
+		"name": "Noirchain"
+	},
+	{
+		"id": 1797,
+		"postal": "6831",
+		"name": "Noirefontaine"
+	},
+	{
+		"id": 1798,
+		"postal": "5377",
+		"name": "Noiseux"
+	},
+	{
+		"id": 1799,
+		"postal": "9771",
+		"name": "Nokere"
+	},
+	{
+		"id": 1800,
+		"postal": "6851",
+		"name": "Nollevaux"
+	},
+	{
+		"id": 1801,
+		"postal": "2200",
+		"name": "Noorderwijk"
+	},
+	{
+		"id": 1802,
+		"postal": "8647",
+		"name": "Noordschote"
+	},
+	{
+		"id": 1803,
+		"postal": "1930",
+		"name": "Nossegem"
+	},
+	{
+		"id": 1804,
+		"postal": "6717",
+		"name": "Nothomb"
+	},
+	{
+		"id": 1805,
+		"postal": "7022",
+		"name": "Nouvelles"
+	},
+	{
+		"id": 1806,
+		"postal": "4347",
+		"name": "Noville (Lg.)"
+	},
+	{
+		"id": 1807,
+		"postal": "6600",
+		"name": "Noville (Lux.)"
+	},
+	{
+		"id": 1808,
+		"postal": "5380",
+		"name": "Noville-les-Bois"
+	},
+	{
+		"id": 1809,
+		"postal": "5310",
+		"name": "Noville-sur-Méhaigne"
+	},
+	{
+		"id": 1810,
+		"postal": "9681",
+		"name": "Nukerke"
+	},
+	{
+		"id": 1811,
+		"postal": "6230",
+		"name": "Obaix"
+	},
+	{
+		"id": 1812,
+		"postal": "7743",
+		"name": "Obigies"
+	},
+	{
+		"id": 1813,
+		"postal": "7034",
+		"name": "Obourg"
+	},
+	{
+		"id": 1814,
+		"postal": "6890",
+		"name": "Ochamps"
+	},
+	{
+		"id": 1815,
+		"postal": "4560",
+		"name": "Ocquier"
+	},
+	{
+		"id": 1816,
+		"postal": "6960",
+		"name": "Odeigne"
+	},
+	{
+		"id": 1817,
+		"postal": "4367",
+		"name": "Odeur"
+	},
+	{
+		"id": 1818,
+		"postal": "8730",
+		"name": "Oedelem"
+	},
+	{
+		"id": 1819,
+		"postal": "8800",
+		"name": "Oekene"
+	},
+	{
+		"id": 1820,
+		"postal": "2520",
+		"name": "Oelegem"
+	},
+	{
+		"id": 1821,
+		"postal": "8690",
+		"name": "Oeren"
+	},
+	{
+		"id": 1822,
+		"postal": "8720",
+		"name": "Oeselgem"
+	},
+	{
+		"id": 1823,
+		"postal": "1755",
+		"name": "Oetingen"
+	},
+	{
+		"id": 1824,
+		"postal": "7911",
+		"name": "Oeudeghien"
+	},
+	{
+		"id": 1825,
+		"postal": "2260",
+		"name": "Oevel"
+	},
+	{
+		"id": 1826,
+		"postal": "6850",
+		"name": "Offagne"
+	},
+	{
+		"id": 1827,
+		"postal": "7862",
+		"name": "Ogy"
+	},
+	{
+		"id": 1828,
+		"postal": "1380",
+		"name": "Ohain"
+	},
+	{
+		"id": 1829,
+		"postal": "5350",
+		"name": "Ohey"
+	},
+	{
+		"id": 1830,
+		"postal": "5670",
+		"name": "Oignies-en-Thiérache"
+	},
+	{
+		"id": 1831,
+		"postal": "1480",
+		"name": "Oisquercq"
+	},
+	{
+		"id": 1832,
+		"postal": "5555",
+		"name": "Oizy"
+	},
+	{
+		"id": 1833,
+		"postal": "9400",
+		"name": "Okegem"
+	},
+	{
+		"id": 1834,
+		"postal": "2250",
+		"name": "Olen"
+	},
+	{
+		"id": 1835,
+		"postal": "4300",
+		"name": "Oleye"
+	},
+	{
+		"id": 1836,
+		"postal": "7866",
+		"name": "Ollignies"
+	},
+	{
+		"id": 1837,
+		"postal": "5670",
+		"name": "Olloy-sur-Viroin"
+	},
+	{
+		"id": 1838,
+		"postal": "2491",
+		"name": "Olmen"
+	},
+	{
+		"id": 1839,
+		"postal": "4877",
+		"name": "Olne"
+	},
+	{
+		"id": 1840,
+		"postal": "9870",
+		"name": "Olsene"
+	},
+	{
+		"id": 1841,
+		"postal": "4252",
+		"name": "Omal"
+	},
+	{
+		"id": 1842,
+		"postal": "4540",
+		"name": "Ombret"
+	},
+	{
+		"id": 1843,
+		"postal": "5600",
+		"name": "Omezée"
+	},
+	{
+		"id": 1844,
+		"postal": "6900",
+		"name": "On"
+	},
+	{
+		"id": 1845,
+		"postal": "5520",
+		"name": "Onhaye"
+	},
+	{
+		"id": 1846,
+		"postal": "9500",
+		"name": "Onkerzele"
+	},
+	{
+		"id": 1847,
+		"postal": "7387",
+		"name": "Onnezies"
+	},
+	{
+		"id": 1848,
+		"postal": "5190",
+		"name": "Onoz"
+	},
+	{
+		"id": 1849,
+		"postal": "1760",
+		"name": "Onze-Lieve-Vrouw-Lombeek"
+	},
+	{
+		"id": 1850,
+		"postal": "2861",
+		"name": "Onze-Lieve-Vrouw-Waver"
+	},
+	{
+		"id": 1851,
+		"postal": "8710",
+		"name": "Ooigem"
+	},
+	{
+		"id": 1852,
+		"postal": "9700",
+		"name": "Ooike (Oudenaarde)"
+	},
+	{
+		"id": 1853,
+		"postal": "9790",
+		"name": "Ooike (Wortegem-Petegem)"
+	},
+	{
+		"id": 1854,
+		"postal": "9520",
+		"name": "Oomb.(St-Lievens-Houtem)"
+	},
+	{
+		"id": 1855,
+		"postal": "9620",
+		"name": "Oombergen (Zottegem)"
+	},
+	{
+		"id": 1856,
+		"postal": "3300",
+		"name": "Oorbeek"
+	},
+	{
+		"id": 1857,
+		"postal": "9340",
+		"name": "Oordegem"
+	},
+	{
+		"id": 1858,
+		"postal": "9041",
+		"name": "Oostakker"
+	},
+	{
+		"id": 1859,
+		"postal": "8670",
+		"name": "Oostduinkerke"
+	},
+	{
+		"id": 1860,
+		"postal": "9968",
+		"name": "Oosteeklo"
+	},
+	{
+		"id": 1861,
+		"postal": "8400",
+		"name": "Oostende"
+	},
+	{
+		"id": 1862,
+		"postal": "9860",
+		"name": "Oosterzele"
+	},
+	{
+		"id": 1863,
+		"postal": "3945",
+		"name": "Oostham"
+	},
+	{
+		"id": 1864,
+		"postal": "8020",
+		"name": "Oostkamp"
+	},
+	{
+		"id": 1865,
+		"postal": "8340",
+		"name": "Oostkerke (Damme)"
+	},
+	{
+		"id": 1866,
+		"postal": "8600",
+		"name": "Oostkerke (Diksmuide)"
+	},
+	{
+		"id": 1867,
+		"postal": "2390",
+		"name": "Oostmalle"
+	},
+	{
+		"id": 1868,
+		"postal": "8840",
+		"name": "Oostnieuwkerke"
+	},
+	{
+		"id": 1869,
+		"postal": "8780",
+		"name": "Oostrozebeke"
+	},
+	{
+		"id": 1870,
+		"postal": "8640",
+		"name": "Oostvleteren"
+	},
+	{
+		"id": 1871,
+		"postal": "9931",
+		"name": "Oostwinkel"
+	},
+	{
+		"id": 1872,
+		"postal": "9660",
+		"name": "Opbrakel"
+	},
+	{
+		"id": 1873,
+		"postal": "9255",
+		"name": "Opdorp"
+	},
+	{
+		"id": 1874,
+		"postal": "3660",
+		"name": "Opglabbeek"
+	},
+	{
+		"id": 1875,
+		"postal": "3630",
+		"name": "Opgrimbie"
+	},
+	{
+		"id": 1876,
+		"postal": "1421",
+		"name": "Ophain-Bois-Seigneur-Isaac"
+	},
+	{
+		"id": 1877,
+		"postal": "9500",
+		"name": "Ophasselt"
+	},
+	{
+		"id": 1878,
+		"postal": "3870",
+		"name": "Opheers"
+	},
+	{
+		"id": 1879,
+		"postal": "1357",
+		"name": "Opheylissem"
+	},
+	{
+		"id": 1880,
+		"postal": "3640",
+		"name": "Ophoven"
+	},
+	{
+		"id": 1881,
+		"postal": "3960",
+		"name": "Opitter"
+	},
+	{
+		"id": 1882,
+		"postal": "3300",
+		"name": "Oplinter"
+	},
+	{
+		"id": 1883,
+		"postal": "3680",
+		"name": "Opoeteren"
+	},
+	{
+		"id": 1884,
+		"postal": "6852",
+		"name": "Opont"
+	},
+	{
+		"id": 1885,
+		"postal": "1315",
+		"name": "Opprebais"
+	},
+	{
+		"id": 1886,
+		"postal": "2890",
+		"name": "Oppuurs"
+	},
+	{
+		"id": 1887,
+		"postal": "3360",
+		"name": "Opvelp"
+	},
+	{
+		"id": 1888,
+		"postal": "1745",
+		"name": "Opwijk"
+	},
+	{
+		"id": 1889,
+		"postal": "1360",
+		"name": "Orbais"
+	},
+	{
+		"id": 1890,
+		"postal": "5550",
+		"name": "Orchimont"
+	},
+	{
+		"id": 1891,
+		"postal": "7501",
+		"name": "Orcq"
+	},
+	{
+		"id": 1892,
+		"postal": "3800",
+		"name": "Ordingen"
+	},
+	{
+		"id": 1893,
+		"postal": "5640",
+		"name": "Oret"
+	},
+	{
+		"id": 1894,
+		"postal": "4360",
+		"name": "Oreye"
+	},
+	{
+		"id": 1895,
+		"postal": "6880",
+		"name": "Orgeo"
+	},
+	{
+		"id": 1896,
+		"postal": "7802",
+		"name": "Ormeignies"
+	},
+	{
+		"id": 1897,
+		"postal": "1350",
+		"name": "Orp-Jauche"
+	},
+	{
+		"id": 1898,
+		"postal": "1350",
+		"name": "Orp-le-Grand"
+	},
+	{
+		"id": 1899,
+		"postal": "7750",
+		"name": "Orroir"
+	},
+	{
+		"id": 1900,
+		"postal": "3350",
+		"name": "Orsmaal-Gussenhoven"
+	},
+	{
+		"id": 1901,
+		"postal": "6983",
+		"name": "Ortho"
+	},
+	{
+		"id": 1902,
+		"postal": "7804",
+		"name": "Ostiches"
+	},
+	{
+		"id": 1903,
+		"postal": "8553",
+		"name": "Otegem"
+	},
+	{
+		"id": 1904,
+		"postal": "4210",
+		"name": "Oteppe"
+	},
+	{
+		"id": 1905,
+		"postal": "4340",
+		"name": "Othée"
+	},
+	{
+		"id": 1906,
+		"postal": "4360",
+		"name": "Otrange"
+	},
+	{
+		"id": 1907,
+		"postal": "3040",
+		"name": "Ottenburg"
+	},
+	{
+		"id": 1908,
+		"postal": "9420",
+		"name": "Ottergem"
+	},
+	{
+		"id": 1909,
+		"postal": "1340",
+		"name": "Ottignies"
+	},
+	{
+		"id": 1910,
+		"postal": "9200",
+		"name": "Oudegem"
+	},
+	{
+		"id": 1911,
+		"postal": "8600",
+		"name": "Oudekapelle"
+	},
+	{
+		"id": 1912,
+		"postal": "9700",
+		"name": "Oudenaarde"
+	},
+	{
+		"id": 1913,
+		"postal": "1600",
+		"name": "Oudenaken"
+	},
+	{
+		"id": 1914,
+		"postal": "8460",
+		"name": "Oudenburg"
+	},
+	{
+		"id": 1915,
+		"postal": "1160",
+		"name": "Oudergem"
+	},
+	{
+		"id": 1916,
+		"postal": "3050",
+		"name": "Oud-Heverlee"
+	},
+	{
+		"id": 1917,
+		"postal": "2360",
+		"name": "Oud-Turnhout"
+	},
+	{
+		"id": 1918,
+		"postal": "4590",
+		"name": "Ouffet"
+	},
+	{
+		"id": 1919,
+		"postal": "4102",
+		"name": "Ougrée"
+	},
+	{
+		"id": 1920,
+		"postal": "4680",
+		"name": "Oupeye"
+	},
+	{
+		"id": 1921,
+		"postal": "9406",
+		"name": "Outer"
+	},
+	{
+		"id": 1922,
+		"postal": "3321",
+		"name": "Outgaarden"
+	},
+	{
+		"id": 1923,
+		"postal": "4577",
+		"name": "Outrelouxhe"
+	},
+	{
+		"id": 1924,
+		"postal": "8582",
+		"name": "Outrijve"
+	},
+	{
+		"id": 1925,
+		"postal": "9750",
+		"name": "Ouwegem"
+	},
+	{
+		"id": 1926,
+		"postal": "9500",
+		"name": "Overboelare"
+	},
+	{
+		"id": 1927,
+		"postal": "3350",
+		"name": "Overhespen"
+	},
+	{
+		"id": 1928,
+		"postal": "3090",
+		"name": "Overijse"
+	},
+	{
+		"id": 1929,
+		"postal": "9290",
+		"name": "Overmere"
+	},
+	{
+		"id": 1930,
+		"postal": "3900",
+		"name": "Overpelt"
+	},
+	{
+		"id": 1931,
+		"postal": "3700",
+		"name": "Overrepen"
+	},
+	{
+		"id": 1932,
+		"postal": "3400",
+		"name": "Overwinden"
+	},
+	{
+		"id": 1933,
+		"postal": "3583",
+		"name": "Paal"
+	},
+	{
+		"id": 1934,
+		"postal": "4452",
+		"name": "Paifve"
+	},
+	{
+		"id": 1935,
+		"postal": "4560",
+		"name": "Pailhe"
+	},
+	{
+		"id": 1936,
+		"postal": "6850",
+		"name": "Paliseul"
+	},
+	{
+		"id": 1937,
+		"postal": "1760",
+		"name": "Pamel"
+	},
+	{
+		"id": 1938,
+		"postal": "7861",
+		"name": "Papignies"
+	},
+	{
+		"id": 1939,
+		"postal": "9661",
+		"name": "Parike"
+	},
+	{
+		"id": 1940,
+		"postal": "7500",
+		"name": "PARIS"
+	},
+	{
+		"id": 1941,
+		"postal": "8980",
+		"name": "Passendale"
+	},
+	{
+		"id": 1942,
+		"postal": "5575",
+		"name": "Patignies"
+	},
+	{
+		"id": 1943,
+		"postal": "7340",
+		"name": "Pâturages"
+	},
+	{
+		"id": 1944,
+		"postal": "9630",
+		"name": "Paulatem"
+	},
+	{
+		"id": 1945,
+		"postal": "7740",
+		"name": "Pecq"
+	},
+	{
+		"id": 1946,
+		"postal": "3990",
+		"name": "Peer"
+	},
+	{
+		"id": 1947,
+		"postal": "7120",
+		"name": "Peissant"
+	},
+	{
+		"id": 1948,
+		"postal": "4287",
+		"name": "Pellaines"
+	},
+	{
+		"id": 1949,
+		"postal": "3212",
+		"name": "Pellenberg"
+	},
+	{
+		"id": 1950,
+		"postal": "1670",
+		"name": "Pepingen"
+	},
+	{
+		"id": 1951,
+		"postal": "4860",
+		"name": "Pepinster"
+	},
+	{
+		"id": 1952,
+		"postal": "1820",
+		"name": "Perk"
+	},
+	{
+		"id": 1953,
+		"postal": "7640",
+		"name": "Péronnes-lez-Antoing"
+	},
+	{
+		"id": 1954,
+		"postal": "7134",
+		"name": "Péronnes-lez-Binche"
+	},
+	{
+		"id": 1955,
+		"postal": "7600",
+		"name": "Péruwelz"
+	},
+	{
+		"id": 1956,
+		"postal": "8600",
+		"name": "Pervijze"
+	},
+	{
+		"id": 1957,
+		"postal": "1360",
+		"name": "Perwez"
+	},
+	{
+		"id": 1958,
+		"postal": "5352",
+		"name": "Perwez-Haillot"
+	},
+	{
+		"id": 1959,
+		"postal": "5660",
+		"name": "Pesche"
+	},
+	{
+		"id": 1960,
+		"postal": "5590",
+		"name": "Pessoux"
+	},
+	{
+		"id": 1961,
+		"postal": "9800",
+		"name": "Petegem-aan-de-Leie"
+	},
+	{
+		"id": 1962,
+		"postal": "9790",
+		"name": "Petegem-aan-de-Schelde"
+	},
+	{
+		"id": 1963,
+		"postal": "5660",
+		"name": "Petigny"
+	},
+	{
+		"id": 1964,
+		"postal": "5660",
+		"name": "Petite-Chapelle"
+	},
+	{
+		"id": 1965,
+		"postal": "7850",
+		"name": "Petit-Enghien"
+	},
+	{
+		"id": 1966,
+		"postal": "5555",
+		"name": "Petit-Fays"
+	},
+	{
+		"id": 1967,
+		"postal": "4280",
+		"name": "Petit-Hallet"
+	},
+	{
+		"id": 1968,
+		"postal": "4800",
+		"name": "Petit-Rechain"
+	},
+	{
+		"id": 1969,
+		"postal": "7090",
+		"name": "Petit-Roeulx-lez-Braine"
+	},
+	{
+		"id": 1970,
+		"postal": "7181",
+		"name": "Petit-Roeulx-lez-Nivelles"
+	},
+	{
+		"id": 1971,
+		"postal": "6692",
+		"name": "Petit-Thier"
+	},
+	{
+		"id": 1972,
+		"postal": "1800",
+		"name": "Peutie"
+	},
+	{
+		"id": 1973,
+		"postal": "5600",
+		"name": "Philippeville"
+	},
+	{
+		"id": 1974,
+		"postal": "7160",
+		"name": "Piéton"
+	},
+	{
+		"id": 1975,
+		"postal": "1370",
+		"name": "Piétrain"
+	},
+	{
+		"id": 1976,
+		"postal": "1315",
+		"name": "Piètrebais"
+	},
+	{
+		"id": 1977,
+		"postal": "7904",
+		"name": "Pipaix"
+	},
+	{
+		"id": 1978,
+		"postal": "3700",
+		"name": "Piringen"
+	},
+	{
+		"id": 1979,
+		"postal": "6240",
+		"name": "Pironchamps"
+	},
+	{
+		"id": 1980,
+		"postal": "8740",
+		"name": "Pittem"
+	},
+	{
+		"id": 1981,
+		"postal": "4122",
+		"name": "Plainevaux"
+	},
+	{
+		"id": 1982,
+		"postal": "1380",
+		"name": "Plancenoit"
+	},
+	{
+		"id": 1983,
+		"postal": "7782",
+		"name": "Ploegsteert"
+	},
+	{
+		"id": 1984,
+		"postal": "4850",
+		"name": "Plombières"
+	},
+	{
+		"id": 1985,
+		"postal": "2275",
+		"name": "Poederlee"
+	},
+	{
+		"id": 1986,
+		"postal": "9880",
+		"name": "Poeke"
+	},
+	{
+		"id": 1987,
+		"postal": "8920",
+		"name": "Poelkapelle"
+	},
+	{
+		"id": 1988,
+		"postal": "9850",
+		"name": "Poesele"
+	},
+	{
+		"id": 1989,
+		"postal": "9401",
+		"name": "Pollare"
+	},
+	{
+		"id": 1990,
+		"postal": "4910",
+		"name": "Polleur (Theux)"
+	},
+	{
+		"id": 1991,
+		"postal": "4800",
+		"name": "Polleur (Verviers)"
+	},
+	{
+		"id": 1992,
+		"postal": "8647",
+		"name": "Pollinkhove"
+	},
+	{
+		"id": 1993,
+		"postal": "7322",
+		"name": "Pommeroeul"
+	},
+	{
+		"id": 1994,
+		"postal": "5574",
+		"name": "Pondrôme"
+	},
+	{
+		"id": 1995,
+		"postal": "6230",
+		"name": "Pont-à-Celles"
+	},
+	{
+		"id": 1996,
+		"postal": "6250",
+		"name": "Pont-de-Loup"
+	},
+	{
+		"id": 1997,
+		"postal": "5380",
+		"name": "Pontillas"
+	},
+	{
+		"id": 1998,
+		"postal": "8970",
+		"name": "Poperinge"
+	},
+	{
+		"id": 1999,
+		"postal": "2382",
+		"name": "Poppel"
+	},
+	{
+		"id": 2000,
+		"postal": "7760",
+		"name": "Popuelles"
+	},
+	{
+		"id": 2001,
+		"postal": "6929",
+		"name": "Porcheresse (Lux.)"
+	},
+	{
+		"id": 2002,
+		"postal": "5370",
+		"name": "Porcheresse (Nam.)"
+	},
+	{
+		"id": 2003,
+		"postal": "7760",
+		"name": "Pottes"
+	},
+	{
+		"id": 2004,
+		"postal": "4280",
+		"name": "Poucet"
+	},
+	{
+		"id": 2005,
+		"postal": "4171",
+		"name": "Poulseur"
+	},
+	{
+		"id": 2006,
+		"postal": "6830",
+		"name": "Poupehan"
+	},
+	{
+		"id": 2007,
+		"postal": "4350",
+		"name": "Pousset"
+	},
+	{
+		"id": 2008,
+		"postal": "5660",
+		"name": "Presgaux"
+	},
+	{
+		"id": 2009,
+		"postal": "6250",
+		"name": "Presles"
+	},
+	{
+		"id": 2010,
+		"postal": "5170",
+		"name": "Profondeville"
+	},
+	{
+		"id": 2011,
+		"postal": "8972",
+		"name": "Proven"
+	},
+	{
+		"id": 2012,
+		"postal": "5650",
+		"name": "Pry"
+	},
+	{
+		"id": 2013,
+		"postal": "2242",
+		"name": "Pulderbos"
+	},
+	{
+		"id": 2014,
+		"postal": "2243",
+		"name": "Pulle"
+	},
+	{
+		"id": 2015,
+		"postal": "5530",
+		"name": "Purnode"
+	},
+	{
+		"id": 2016,
+		"postal": "5550",
+		"name": "Pussemange"
+	},
+	{
+		"id": 2017,
+		"postal": "2580",
+		"name": "Putte"
+	},
+	{
+		"id": 2018,
+		"postal": "2870",
+		"name": "Puurs"
+	},
+	{
+		"id": 2019,
+		"postal": "7390",
+		"name": "Quaregnon"
+	},
+	{
+		"id": 2020,
+		"postal": "7540",
+		"name": "Quartes"
+	},
+	{
+		"id": 2021,
+		"postal": "1430",
+		"name": "Quenast"
+	},
+	{
+		"id": 2022,
+		"postal": "4610",
+		"name": "Queue-du-Bois"
+	},
+	{
+		"id": 2023,
+		"postal": "7972",
+		"name": "Quevaucamps"
+	},
+	{
+		"id": 2024,
+		"postal": "7040",
+		"name": "Quévy-le-Grand"
+	},
+	{
+		"id": 2025,
+		"postal": "7040",
+		"name": "Quévy-le-Petit"
+	},
+	{
+		"id": 2026,
+		"postal": "7380",
+		"name": "Quiévrain"
+	},
+	{
+		"id": 2027,
+		"postal": "6792",
+		"name": "Rachecourt"
+	},
+	{
+		"id": 2028,
+		"postal": "4287",
+		"name": "Racour"
+	},
+	{
+		"id": 2029,
+		"postal": "4730",
+		"name": "Raeren"
+	},
+	{
+		"id": 2030,
+		"postal": "6532",
+		"name": "Ragnies"
+	},
+	{
+		"id": 2031,
+		"postal": "4987",
+		"name": "Rahier"
+	},
+	{
+		"id": 2032,
+		"postal": "7971",
+		"name": "Ramegnies"
+	},
+	{
+		"id": 2033,
+		"postal": "7520",
+		"name": "Ramegnies-Chin"
+	},
+	{
+		"id": 2034,
+		"postal": "4557",
+		"name": "Ramelot"
+	},
+	{
+		"id": 2035,
+		"postal": "1367",
+		"name": "Ramillies"
+	},
+	{
+		"id": 2036,
+		"postal": "1880",
+		"name": "Ramsdonk"
+	},
+	{
+		"id": 2037,
+		"postal": "2230",
+		"name": "Ramsel"
+	},
+	{
+		"id": 2038,
+		"postal": "8301",
+		"name": "Ramskapelle (Knokke-Heist)"
+	},
+	{
+		"id": 2039,
+		"postal": "8620",
+		"name": "Ramskapelle (Nieuwpoort)"
+	},
+	{
+		"id": 2040,
+		"postal": "6470",
+		"name": "Rance"
+	},
+	{
+		"id": 2041,
+		"postal": "6043",
+		"name": "Ransart"
+	},
+	{
+		"id": 2042,
+		"postal": "3470",
+		"name": "Ransberg"
+	},
+	{
+		"id": 2043,
+		"postal": "2520",
+		"name": "Ranst"
+	},
+	{
+		"id": 2044,
+		"postal": "2380",
+		"name": "Ravels"
+	},
+	{
+		"id": 2045,
+		"postal": "7804",
+		"name": "Rebaix"
+	},
+	{
+		"id": 2046,
+		"postal": "1430",
+		"name": "Rebecq"
+	},
+	{
+		"id": 2047,
+		"postal": "1430",
+		"name": "Rebecq-Rognon"
+	},
+	{
+		"id": 2048,
+		"postal": "4780",
+		"name": "Recht"
+	},
+	{
+		"id": 2049,
+		"postal": "6800",
+		"name": "Recogne"
+	},
+	{
+		"id": 2050,
+		"postal": "6890",
+		"name": "Redu"
+	},
+	{
+		"id": 2051,
+		"postal": "2840",
+		"name": "Reet"
+	},
+	{
+		"id": 2052,
+		"postal": "3621",
+		"name": "Rekem"
+	},
+	{
+		"id": 2053,
+		"postal": "8930",
+		"name": "Rekkem"
+	},
+	{
+		"id": 2054,
+		"postal": "1731",
+		"name": "Relegem"
+	},
+	{
+		"id": 2055,
+		"postal": "6800",
+		"name": "Remagne"
+	},
+	{
+		"id": 2056,
+		"postal": "3791",
+		"name": "Remersdaal"
+	},
+	{
+		"id": 2057,
+		"postal": "4350",
+		"name": "Remicourt"
+	},
+	{
+		"id": 2058,
+		"postal": "9600",
+		"name": "Renaix"
+	},
+	{
+		"id": 2059,
+		"postal": "6987",
+		"name": "Rendeux"
+	},
+	{
+		"id": 2060,
+		"postal": "8647",
+		"name": "Reninge"
+	},
+	{
+		"id": 2061,
+		"postal": "8970",
+		"name": "Reningelst"
+	},
+	{
+		"id": 2062,
+		"postal": "6500",
+		"name": "Renlies"
+	},
+	{
+		"id": 2063,
+		"postal": "3950",
+		"name": "Reppel"
+	},
+	{
+		"id": 2064,
+		"postal": "7134",
+		"name": "Ressaix"
+	},
+	{
+		"id": 2065,
+		"postal": "9551",
+		"name": "Ressegem"
+	},
+	{
+		"id": 2066,
+		"postal": "6927",
+		"name": "Resteigne"
+	},
+	{
+		"id": 2067,
+		"postal": "2470",
+		"name": "Retie"
+	},
+	{
+		"id": 2068,
+		"postal": "4621",
+		"name": "Retinne"
+	},
+	{
+		"id": 2069,
+		"postal": "4790",
+		"name": "Reuland"
+	},
+	{
+		"id": 2070,
+		"postal": "6210",
+		"name": "Rèves"
+	},
+	{
+		"id": 2071,
+		"postal": "5080",
+		"name": "Rhisnes"
+	},
+	{
+		"id": 2072,
+		"postal": "1640",
+		"name": "Rhode-Saint-Genèse"
+	},
+	{
+		"id": 2073,
+		"postal": "4600",
+		"name": "Richelle"
+	},
+	{
+		"id": 2074,
+		"postal": "3770",
+		"name": "Riemst"
+	},
+	{
+		"id": 2075,
+		"postal": "5575",
+		"name": "Rienne"
+	},
+	{
+		"id": 2076,
+		"postal": "6464",
+		"name": "Rièzes"
+	},
+	{
+		"id": 2077,
+		"postal": "3840",
+		"name": "Rijkel"
+	},
+	{
+		"id": 2078,
+		"postal": "2310",
+		"name": "Rijkevorsel"
+	},
+	{
+		"id": 2079,
+		"postal": "3740",
+		"name": "Rijkhoven"
+	},
+	{
+		"id": 2080,
+		"postal": "2820",
+		"name": "Rijmenam"
+	},
+	{
+		"id": 2081,
+		"postal": "3700",
+		"name": "Riksingen"
+	},
+	{
+		"id": 2082,
+		"postal": "3202",
+		"name": "Rillaar"
+	},
+	{
+		"id": 2083,
+		"postal": "5170",
+		"name": "Rivière"
+	},
+	{
+		"id": 2084,
+		"postal": "1330",
+		"name": "Rixensart"
+	},
+	{
+		"id": 2085,
+		"postal": "6460",
+		"name": "Robechies"
+	},
+	{
+		"id": 2086,
+		"postal": "6769",
+		"name": "Robelmont"
+	},
+	{
+		"id": 2087,
+		"postal": "4950",
+		"name": "Robertville"
+	},
+	{
+		"id": 2088,
+		"postal": "9630",
+		"name": "Roborst"
+	},
+	{
+		"id": 2089,
+		"postal": "5580",
+		"name": "Rochefort"
+	},
+	{
+		"id": 2090,
+		"postal": "6830",
+		"name": "Rochehaut"
+	},
+	{
+		"id": 2091,
+		"postal": "4761",
+		"name": "Rocherath"
+	},
+	{
+		"id": 2092,
+		"postal": "4690",
+		"name": "Roclenge-sur-Geer"
+	},
+	{
+		"id": 2093,
+		"postal": "4000",
+		"name": "Rocourt"
+	},
+	{
+		"id": 2094,
+		"postal": "8972",
+		"name": "Roesbrugge-Haringe"
+	},
+	{
+		"id": 2095,
+		"postal": "8800",
+		"name": "Roeselare"
+	},
+	{
+		"id": 2096,
+		"postal": "5651",
+		"name": "Rognée"
+	},
+	{
+		"id": 2097,
+		"postal": "7387",
+		"name": "Roisin"
+	},
+	{
+		"id": 2098,
+		"postal": "8460",
+		"name": "Roksem"
+	},
+	{
+		"id": 2099,
+		"postal": "8510",
+		"name": "Rollegem"
+	},
+	{
+		"id": 2100,
+		"postal": "8880",
+		"name": "Rollegem-Kapelle"
+	},
+	{
+		"id": 2101,
+		"postal": "4347",
+		"name": "Roloux"
+	},
+	{
+		"id": 2102,
+		"postal": "5600",
+		"name": "Roly"
+	},
+	{
+		"id": 2103,
+		"postal": "5600",
+		"name": "Romedenne"
+	},
+	{
+		"id": 2104,
+		"postal": "5680",
+		"name": "Romerée"
+	},
+	{
+		"id": 2105,
+		"postal": "3730",
+		"name": "Romershoven"
+	},
+	{
+		"id": 2106,
+		"postal": "4624",
+		"name": "Romsée"
+	},
+	{
+		"id": 2107,
+		"postal": "7623",
+		"name": "Rongy"
+	},
+	{
+		"id": 2108,
+		"postal": "7090",
+		"name": "Ronquières"
+	},
+	{
+		"id": 2109,
+		"postal": "9600",
+		"name": "Ronse"
+	},
+	{
+		"id": 2110,
+		"postal": "9932",
+		"name": "Ronsele"
+	},
+	{
+		"id": 2111,
+		"postal": "3370",
+		"name": "Roosbeek"
+	},
+	{
+		"id": 2112,
+		"postal": "1760",
+		"name": "Roosdaal"
+	},
+	{
+		"id": 2113,
+		"postal": "4012",
+		"name": "ROQUEFORT"
+	},
+	{
+		"id": 2114,
+		"postal": "5620",
+		"name": "Rosée"
+	},
+	{
+		"id": 2115,
+		"postal": "6250",
+		"name": "Roselies"
+	},
+	{
+		"id": 2116,
+		"postal": "1331",
+		"name": "Rosières"
+	},
+	{
+		"id": 2117,
+		"postal": "3740",
+		"name": "Rosmeer"
+	},
+	{
+		"id": 2118,
+		"postal": "4257",
+		"name": "Rosoux-Crenwick"
+	},
+	{
+		"id": 2119,
+		"postal": "6730",
+		"name": "Rossignol"
+	},
+	{
+		"id": 2120,
+		"postal": "3650",
+		"name": "Rotem"
+	},
+	{
+		"id": 2121,
+		"postal": "4120",
+		"name": "Rotheux-Rimière"
+	},
+	{
+		"id": 2122,
+		"postal": "3110",
+		"name": "Rotselaar"
+	},
+	{
+		"id": 2123,
+		"postal": "7601",
+		"name": "Roucourt"
+	},
+	{
+		"id": 2124,
+		"postal": "7120",
+		"name": "Rouveroy (Ht.)"
+	},
+	{
+		"id": 2125,
+		"postal": "4140",
+		"name": "Rouvreux"
+	},
+	{
+		"id": 2126,
+		"postal": "6767",
+		"name": "Rouvroy"
+	},
+	{
+		"id": 2127,
+		"postal": "6044",
+		"name": "Roux"
+	},
+	{
+		"id": 2128,
+		"postal": "1315",
+		"name": "Roux-Miroir"
+	},
+	{
+		"id": 2129,
+		"postal": "6900",
+		"name": "Roy"
+	},
+	{
+		"id": 2130,
+		"postal": "9630",
+		"name": "Rozebeke"
+	},
+	{
+		"id": 2131,
+		"postal": "8020",
+		"name": "Ruddervoorde"
+	},
+	{
+		"id": 2132,
+		"postal": "6760",
+		"name": "Ruette"
+	},
+	{
+		"id": 2133,
+		"postal": "9690",
+		"name": "Ruien"
+	},
+	{
+		"id": 2134,
+		"postal": "2870",
+		"name": "Ruisbroek (Antw.)"
+	},
+	{
+		"id": 2135,
+		"postal": "1601",
+		"name": "Ruisbroek (Bt.)"
+	},
+	{
+		"id": 2136,
+		"postal": "8755",
+		"name": "Ruiselede"
+	},
+	{
+		"id": 2137,
+		"postal": "3870",
+		"name": "Rukkelingen-Loon"
+	},
+	{
+		"id": 2138,
+		"postal": "6724",
+		"name": "Rulles"
+	},
+	{
+		"id": 2139,
+		"postal": "8800",
+		"name": "Rumbeke"
+	},
+	{
+		"id": 2140,
+		"postal": "7610",
+		"name": "Rumes"
+	},
+	{
+		"id": 2141,
+		"postal": "7540",
+		"name": "Rumillies"
+	},
+	{
+		"id": 2142,
+		"postal": "3454",
+		"name": "Rummen"
+	},
+	{
+		"id": 2143,
+		"postal": "3400",
+		"name": "Rumsdorp"
+	},
+	{
+		"id": 2144,
+		"postal": "2840",
+		"name": "Rumst"
+	},
+	{
+		"id": 2145,
+		"postal": "3803",
+		"name": "Runkelen"
+	},
+	{
+		"id": 2146,
+		"postal": "9150",
+		"name": "Rupelmonde"
+	},
+	{
+		"id": 2147,
+		"postal": "7750",
+		"name": "Russeignies"
+	},
+	{
+		"id": 2148,
+		"postal": "3700",
+		"name": "Rutten"
+	},
+	{
+		"id": 2149,
+		"postal": "3798",
+		"name": "'s Gravenvoeren"
+	},
+	{
+		"id": 2150,
+		"postal": "2970",
+		"name": "'s Gravenwezel"
+	},
+	{
+		"id": 2151,
+		"postal": "3700",
+		"name": "'s Herenelderen"
+	},
+	{
+		"id": 2152,
+		"postal": "6221",
+		"name": "Saint-Amand"
+	},
+	{
+		"id": 2153,
+		"postal": "4606",
+		"name": "Saint-André"
+	},
+	{
+		"id": 2154,
+		"postal": "5620",
+		"name": "Saint-Aubin"
+	},
+	{
+		"id": 2155,
+		"postal": "7034",
+		"name": "Saint-Denis (Ht.)"
+	},
+	{
+		"id": 2156,
+		"postal": "5081",
+		"name": "Saint-Denis-Bovesse"
+	},
+	{
+		"id": 2157,
+		"postal": "6820",
+		"name": "Sainte-Cécile"
+	},
+	{
+		"id": 2158,
+		"postal": "6800",
+		"name": "Sainte-Marie-Chevigny"
+	},
+	{
+		"id": 2159,
+		"postal": "6740",
+		"name": "Sainte-Marie-sur-Semois"
+	},
+	{
+		"id": 2160,
+		"postal": "6680",
+		"name": "Sainte-Ode"
+	},
+	{
+		"id": 2161,
+		"postal": "1480",
+		"name": "Saintes"
+	},
+	{
+		"id": 2162,
+		"postal": "4470",
+		"name": "Saint-Georges-sur-Meuse"
+	},
+	{
+		"id": 2163,
+		"postal": "5640",
+		"name": "Saint-Gérard"
+	},
+	{
+		"id": 2164,
+		"postal": "5310",
+		"name": "Saint-Germain"
+	},
+	{
+		"id": 2165,
+		"postal": "1450",
+		"name": "Saint-Géry"
+	},
+	{
+		"id": 2166,
+		"postal": "7330",
+		"name": "Saint-Ghislain"
+	},
+	{
+		"id": 2167,
+		"postal": "1060",
+		"name": "Saint-Gilles"
+	},
+	{
+		"id": 2168,
+		"postal": "6870",
+		"name": "Saint-Hubert"
+	},
+	{
+		"id": 2169,
+		"postal": "1370",
+		"name": "Saint-Jean-Geest"
+	},
+	{
+		"id": 2170,
+		"postal": "1210",
+		"name": "Saint-Josse-ten-Noode"
+	},
+	{
+		"id": 2171,
+		"postal": "7730",
+		"name": "Saint-Léger (Ht.)"
+	},
+	{
+		"id": 2172,
+		"postal": "6747",
+		"name": "Saint-Léger (Lux.)"
+	},
+	{
+		"id": 2173,
+		"postal": "5003",
+		"name": "Saint-Marc"
+	},
+	{
+		"id": 2174,
+		"postal": "6762",
+		"name": "Saint-Mard"
+	},
+	{
+		"id": 2175,
+		"postal": "5190",
+		"name": "Saint-Martin"
+	},
+	{
+		"id": 2176,
+		"postal": "7500",
+		"name": "Saint-Maur"
+	},
+	{
+		"id": 2177,
+		"postal": "6887",
+		"name": "Saint-Médard"
+	},
+	{
+		"id": 2178,
+		"postal": "4420",
+		"name": "Saint-Nicolas (Lg.)"
+	},
+	{
+		"id": 2179,
+		"postal": "6800",
+		"name": "Saint-Pierre"
+	},
+	{
+		"id": 2180,
+		"postal": "6460",
+		"name": "Saint-Remy (Ht.)"
+	},
+	{
+		"id": 2181,
+		"postal": "4672",
+		"name": "Saint-Remy (Lg.)"
+	},
+	{
+		"id": 2182,
+		"postal": "1370",
+		"name": "Saint-Remy-Geest"
+	},
+	{
+		"id": 2183,
+		"postal": "7912",
+		"name": "Saint-Sauveur"
+	},
+	{
+		"id": 2184,
+		"postal": "5002",
+		"name": "Saint-Servais"
+	},
+	{
+		"id": 2185,
+		"postal": "4550",
+		"name": "Saint-Séverin"
+	},
+	{
+		"id": 2186,
+		"postal": "7030",
+		"name": "Saint-Symphorien"
+	},
+	{
+		"id": 2187,
+		"postal": "7100",
+		"name": "Saint-Vaast"
+	},
+	{
+		"id": 2188,
+		"postal": "6730",
+		"name": "Saint-Vincent"
+	},
+	{
+		"id": 2189,
+		"postal": "4780",
+		"name": "Saint-Vith"
+	},
+	{
+		"id": 2190,
+		"postal": "4671",
+		"name": "Saive"
+	},
+	{
+		"id": 2191,
+		"postal": "6460",
+		"name": "Salles"
+	},
+	{
+		"id": 2192,
+		"postal": "5600",
+		"name": "Samart"
+	},
+	{
+		"id": 2193,
+		"postal": "5060",
+		"name": "Sambreville"
+	},
+	{
+		"id": 2194,
+		"postal": "6982",
+		"name": "Samrée"
+	},
+	{
+		"id": 2195,
+		"postal": "4780",
+		"name": "Sankt Vith"
+	},
+	{
+		"id": 2196,
+		"postal": "7080",
+		"name": "Sars-la-Bruyère"
+	},
+	{
+		"id": 2197,
+		"postal": "6542",
+		"name": "Sars-la-Buissière"
+	},
+	{
+		"id": 2198,
+		"postal": "5330",
+		"name": "Sart-Bernard"
+	},
+	{
+		"id": 2199,
+		"postal": "5575",
+		"name": "Sart-Custinne"
+	},
+	{
+		"id": 2200,
+		"postal": "1495",
+		"name": "Sart-Dames-Avelines"
+	},
+	{
+		"id": 2201,
+		"postal": "5600",
+		"name": "Sart-en-Fagne"
+	},
+	{
+		"id": 2202,
+		"postal": "5070",
+		"name": "Sart-Eustache"
+	},
+	{
+		"id": 2203,
+		"postal": "4845",
+		"name": "Sart-lez-Spa"
+	},
+	{
+		"id": 2204,
+		"postal": "5070",
+		"name": "Sart-Saint-Laurent"
+	},
+	{
+		"id": 2205,
+		"postal": "6470",
+		"name": "Sautin"
+	},
+	{
+		"id": 2206,
+		"postal": "5600",
+		"name": "Sautour"
+	},
+	{
+		"id": 2207,
+		"postal": "5030",
+		"name": "Sauvenière"
+	},
+	{
+		"id": 2208,
+		"postal": "1030",
+		"name": "Schaarbeek"
+	},
+	{
+		"id": 2209,
+		"postal": "1030",
+		"name": "Schaerbeek"
+	},
+	{
+		"id": 2210,
+		"postal": "3290",
+		"name": "Schaffen"
+	},
+	{
+		"id": 2211,
+		"postal": "3732",
+		"name": "Schalkhoven"
+	},
+	{
+		"id": 2212,
+		"postal": "5364",
+		"name": "Schaltin"
+	},
+	{
+		"id": 2213,
+		"postal": "9820",
+		"name": "Schelderode"
+	},
+	{
+		"id": 2214,
+		"postal": "9860",
+		"name": "Scheldewindeke"
+	},
+	{
+		"id": 2215,
+		"postal": "2627",
+		"name": "Schelle"
+	},
+	{
+		"id": 2216,
+		"postal": "9260",
+		"name": "Schellebelle"
+	},
+	{
+		"id": 2217,
+		"postal": "9506",
+		"name": "Schendelbeke"
+	},
+	{
+		"id": 2218,
+		"postal": "1703",
+		"name": "Schepdaal"
+	},
+	{
+		"id": 2219,
+		"postal": "3270",
+		"name": "Scherpenheuvel"
+	},
+	{
+		"id": 2220,
+		"postal": "2970",
+		"name": "Schilde"
+	},
+	{
+		"id": 2221,
+		"postal": "4782",
+		"name": "Schoenberg"
+	},
+	{
+		"id": 2222,
+		"postal": "4782",
+		"name": "Schönberg"
+	},
+	{
+		"id": 2223,
+		"postal": "9200",
+		"name": "Schoonaarde"
+	},
+	{
+		"id": 2224,
+		"postal": "8433",
+		"name": "Schore"
+	},
+	{
+		"id": 2225,
+		"postal": "9688",
+		"name": "Schorisse"
+	},
+	{
+		"id": 2226,
+		"postal": "2900",
+		"name": "Schoten"
+	},
+	{
+		"id": 2227,
+		"postal": "2223",
+		"name": "Schriek"
+	},
+	{
+		"id": 2228,
+		"postal": "8700",
+		"name": "Schuiferskapelle"
+	},
+	{
+		"id": 2229,
+		"postal": "3540",
+		"name": "Schulen"
+	},
+	{
+		"id": 2230,
+		"postal": "5300",
+		"name": "Sclayn"
+	},
+	{
+		"id": 2231,
+		"postal": "5361",
+		"name": "Scy"
+	},
+	{
+		"id": 2232,
+		"postal": "5300",
+		"name": "Seilles"
+	},
+	{
+		"id": 2233,
+		"postal": "6781",
+		"name": "Sélange"
+	},
+	{
+		"id": 2234,
+		"postal": "6596",
+		"name": "Seloignes"
+	},
+	{
+		"id": 2235,
+		"postal": "9890",
+		"name": "Semmerzake"
+	},
+	{
+		"id": 2236,
+		"postal": "7180",
+		"name": "Seneffe"
+	},
+	{
+		"id": 2237,
+		"postal": "6832",
+		"name": "Sensenruth"
+	},
+	{
+		"id": 2238,
+		"postal": "4557",
+		"name": "Seny"
+	},
+	{
+		"id": 2239,
+		"postal": "5630",
+		"name": "Senzeille"
+	},
+	{
+		"id": 2240,
+		"postal": "6940",
+		"name": "Septon"
+	},
+	{
+		"id": 2241,
+		"postal": "4100",
+		"name": "Seraing"
+	},
+	{
+		"id": 2242,
+		"postal": "4537",
+		"name": "Seraing-le-Château"
+	},
+	{
+		"id": 2243,
+		"postal": "5590",
+		"name": "Serinchamps"
+	},
+	{
+		"id": 2244,
+		"postal": "9260",
+		"name": "Serskamp"
+	},
+	{
+		"id": 2245,
+		"postal": "5521",
+		"name": "Serville"
+	},
+	{
+		"id": 2246,
+		"postal": "6640",
+		"name": "Sibret"
+	},
+	{
+		"id": 2247,
+		"postal": "6750",
+		"name": "Signeulx"
+	},
+	{
+		"id": 2248,
+		"postal": "8340",
+		"name": "Sijsele"
+	},
+	{
+		"id": 2249,
+		"postal": "5630",
+		"name": "Silenrieux"
+	},
+	{
+		"id": 2250,
+		"postal": "7830",
+		"name": "Silly"
+	},
+	{
+		"id": 2251,
+		"postal": "9112",
+		"name": "Sinaai-Waas"
+	},
+	{
+		"id": 2252,
+		"postal": "5377",
+		"name": "Sinsin"
+	},
+	{
+		"id": 2253,
+		"postal": "1080",
+		"name": "Sint-Agatha-Berchem"
+	},
+	{
+		"id": 2254,
+		"postal": "3040",
+		"name": "Sint-Agatha-Rode"
+	},
+	{
+		"id": 2255,
+		"postal": "2890",
+		"name": "Sint-Amands"
+	},
+	{
+		"id": 2256,
+		"postal": "9040",
+		"name": "Sint-Amandsberg"
+	},
+	{
+		"id": 2257,
+		"postal": "8200",
+		"name": "Sint-Andries"
+	},
+	{
+		"id": 2258,
+		"postal": "9550",
+		"name": "Sint-Antelinks"
+	},
+	{
+		"id": 2259,
+		"postal": "8710",
+		"name": "Sint-Baafs-Vijve"
+	},
+	{
+		"id": 2260,
+		"postal": "9630",
+		"name": "Sint-Blasius-Boekel"
+	},
+	{
+		"id": 2261,
+		"postal": "8554",
+		"name": "Sint-Denijs"
+	},
+	{
+		"id": 2262,
+		"postal": "9630",
+		"name": "Sint-Denijs-Boekel"
+	},
+	{
+		"id": 2263,
+		"postal": "9051",
+		"name": "Sint-Denijs-Westrem"
+	},
+	{
+		"id": 2264,
+		"postal": "8793",
+		"name": "Sint-Eloois-Vijve"
+	},
+	{
+		"id": 2265,
+		"postal": "8880",
+		"name": "Sint-Eloois-Winkel"
+	},
+	{
+		"id": 2266,
+		"postal": "1640",
+		"name": "Sint-Genesius-Rode"
+	},
+	{
+		"id": 2267,
+		"postal": "1060",
+		"name": "Sint-Gillis"
+	},
+	{
+		"id": 2268,
+		"postal": "9170",
+		"name": "Sint-Gillis-Waas"
+	},
+	{
+		"id": 2269,
+		"postal": "9620",
+		"name": "Sint-Goriks-Oudenhove"
+	},
+	{
+		"id": 2270,
+		"postal": "3730",
+		"name": "Sint-Huibrechts-Hern"
+	},
+	{
+		"id": 2271,
+		"postal": "3910",
+		"name": "Sint-Huibrechts-Lille"
+	},
+	{
+		"id": 2272,
+		"postal": "8600",
+		"name": "Sint-Jacobs-Kapelle"
+	},
+	{
+		"id": 2273,
+		"postal": "8900",
+		"name": "Sint-Jan"
+	},
+	{
+		"id": 2274,
+		"postal": "9982",
+		"name": "Sint-Jan-in-Eremo"
+	},
+	{
+		"id": 2275,
+		"postal": "1080",
+		"name": "Sint-Jans-Molenbeek"
+	},
+	{
+		"id": 2276,
+		"postal": "2960",
+		"name": "Sint-Job-in-'t-Goor"
+	},
+	{
+		"id": 2277,
+		"postal": "1210",
+		"name": "Sint-Joost-ten-Node"
+	},
+	{
+		"id": 2278,
+		"postal": "8730",
+		"name": "Sint-Joris (Beernem)"
+	},
+	{
+		"id": 2279,
+		"postal": "8620",
+		"name": "Sint-Joris (Nieuwpoort)"
+	},
+	{
+		"id": 2280,
+		"postal": "3051",
+		"name": "Sint-Joris-Weert"
+	},
+	{
+		"id": 2281,
+		"postal": "3390",
+		"name": "Sint-Joris-Winge"
+	},
+	{
+		"id": 2282,
+		"postal": "2860",
+		"name": "Sint-Katelijne-Waver"
+	},
+	{
+		"id": 2283,
+		"postal": "1742",
+		"name": "Sint-Katherina-lombeek"
+	},
+	{
+		"id": 2284,
+		"postal": "9667",
+		"name": "Sint-Kornelis-Horebeke"
+	},
+	{
+		"id": 2285,
+		"postal": "8310",
+		"name": "Sint-Kruis (Brugge)"
+	},
+	{
+		"id": 2286,
+		"postal": "9042",
+		"name": "Sint-Kruis-Winkel"
+	},
+	{
+		"id": 2287,
+		"postal": "1750",
+		"name": "Sint-Kwintens-Lennik"
+	},
+	{
+		"id": 2288,
+		"postal": "3500",
+		"name": "Sint-Lambrechts-Herk"
+	},
+	{
+		"id": 2289,
+		"postal": "1200",
+		"name": "Sint-Lambrechts-Woluwe"
+	},
+	{
+		"id": 2290,
+		"postal": "9980",
+		"name": "Sint-Laureins"
+	},
+	{
+		"id": 2291,
+		"postal": "1600",
+		"name": "Sint-Laureins-Berchem"
+	},
+	{
+		"id": 2292,
+		"postal": "2960",
+		"name": "Sint-Lenaerts"
+	},
+	{
+		"id": 2293,
+		"postal": "9550",
+		"name": "Sint-Lievens-Esse"
+	},
+	{
+		"id": 2294,
+		"postal": "9520",
+		"name": "Sint-Lievens-Houtem"
+	},
+	{
+		"id": 2295,
+		"postal": "9981",
+		"name": "Sint-Margriete"
+	},
+	{
+		"id": 2296,
+		"postal": "9667",
+		"name": "Sint-Maria-Horebeke"
+	},
+	{
+		"id": 2297,
+		"postal": "9630",
+		"name": "Sint-Maria-Latem"
+	},
+	{
+		"id": 2298,
+		"postal": "9570",
+		"name": "Sint-Maria-Lierde"
+	},
+	{
+		"id": 2299,
+		"postal": "1700",
+		"name": "Sint-Martens-Bodegem"
+	},
+	{
+		"id": 2300,
+		"postal": "9830",
+		"name": "Sint-Martens-Latem"
+	},
+	{
+		"id": 2301,
+		"postal": "9800",
+		"name": "Sint-Martens-Leerne"
+	},
+	{
+		"id": 2302,
+		"postal": "1750",
+		"name": "Sint-Martens-Lennik"
+	},
+	{
+		"id": 2303,
+		"postal": "9572",
+		"name": "Sint-Martens-Lierde"
+	},
+	{
+		"id": 2304,
+		"postal": "3790",
+		"name": "Sint-Martens-Voeren"
+	},
+	{
+		"id": 2305,
+		"postal": "8200",
+		"name": "Sint-Michiels"
+	},
+	{
+		"id": 2306,
+		"postal": "9100",
+		"name": "Sint-Niklaas"
+	},
+	{
+		"id": 2307,
+		"postal": "9170",
+		"name": "Sint-Pauwels"
+	},
+	{
+		"id": 2308,
+		"postal": "1541",
+		"name": "Sint-Pieters-Kapelle (Bt.)"
+	},
+	{
+		"id": 2309,
+		"postal": "1600",
+		"name": "Sint-Pieters-Leeuw"
+	},
+	{
+		"id": 2310,
+		"postal": "3220",
+		"name": "Sint-Pieters-Rode"
+	},
+	{
+		"id": 2311,
+		"postal": "3792",
+		"name": "Sint-Pieters-Voeren"
+	},
+	{
+		"id": 2312,
+		"postal": "1150",
+		"name": "Sint-Pieters-Woluwe"
+	},
+	{
+		"id": 2313,
+		"postal": "8690",
+		"name": "Sint-Rijkers"
+	},
+	{
+		"id": 2314,
+		"postal": "1932",
+		"name": "Sint-Stevens-Woluwe"
+	},
+	{
+		"id": 2315,
+		"postal": "3800",
+		"name": "Sint-Truiden"
+	},
+	{
+		"id": 2316,
+		"postal": "1700",
+		"name": "Sint-Ulriks-Kapelle"
+	},
+	{
+		"id": 2317,
+		"postal": "4851",
+		"name": "Sippenaeken"
+	},
+	{
+		"id": 2318,
+		"postal": "7332",
+		"name": "Sirault"
+	},
+	{
+		"id": 2319,
+		"postal": "6470",
+		"name": "Sivry"
+	},
+	{
+		"id": 2320,
+		"postal": "6470",
+		"name": "Sivry-Rance"
+	},
+	{
+		"id": 2321,
+		"postal": "9940",
+		"name": "Sleidinge"
+	},
+	{
+		"id": 2322,
+		"postal": "8433",
+		"name": "Slijpe"
+	},
+	{
+		"id": 2323,
+		"postal": "4450",
+		"name": "Slins"
+	},
+	{
+		"id": 2324,
+		"postal": "3700",
+		"name": "Sluizen"
+	},
+	{
+		"id": 2325,
+		"postal": "9506",
+		"name": "Smeerebbe-Vloerzegem"
+	},
+	{
+		"id": 2326,
+		"postal": "9340",
+		"name": "Smetlede"
+	},
+	{
+		"id": 2327,
+		"postal": "6890",
+		"name": "Smuid"
+	},
+	{
+		"id": 2328,
+		"postal": "8470",
+		"name": "Snaaskerke"
+	},
+	{
+		"id": 2329,
+		"postal": "8490",
+		"name": "Snellegem"
+	},
+	{
+		"id": 2330,
+		"postal": "4557",
+		"name": "Soheit-Tinlot"
+	},
+	{
+		"id": 2331,
+		"postal": "6920",
+		"name": "Sohier"
+	},
+	{
+		"id": 2332,
+		"postal": "7060",
+		"name": "Soignies"
+	},
+	{
+		"id": 2333,
+		"postal": "4861",
+		"name": "Soiron"
+	},
+	{
+		"id": 2334,
+		"postal": "6500",
+		"name": "Solre-Saint-Géry"
+	},
+	{
+		"id": 2335,
+		"postal": "6560",
+		"name": "Solre-sur-Sambre"
+	},
+	{
+		"id": 2336,
+		"postal": "5140",
+		"name": "Sombreffe"
+	},
+	{
+		"id": 2337,
+		"postal": "5377",
+		"name": "Somme-Leuze"
+	},
+	{
+		"id": 2338,
+		"postal": "6769",
+		"name": "Sommethonne"
+	},
+	{
+		"id": 2339,
+		"postal": "5523",
+		"name": "Sommière"
+	},
+	{
+		"id": 2340,
+		"postal": "5651",
+		"name": "Somzée"
+	},
+	{
+		"id": 2341,
+		"postal": "5340",
+		"name": "Sorée"
+	},
+	{
+		"id": 2342,
+		"postal": "5333",
+		"name": "Sorinne-la-Longue"
+	},
+	{
+		"id": 2343,
+		"postal": "5503",
+		"name": "Sorinnes"
+	},
+	{
+		"id": 2344,
+		"postal": "5537",
+		"name": "Sosoye"
+	},
+	{
+		"id": 2345,
+		"postal": "4920",
+		"name": "Sougné-Remouchamps"
+	},
+	{
+		"id": 2346,
+		"postal": "5680",
+		"name": "Soulme"
+	},
+	{
+		"id": 2347,
+		"postal": "4630",
+		"name": "Soumagne"
+	},
+	{
+		"id": 2348,
+		"postal": "5630",
+		"name": "Soumoy"
+	},
+	{
+		"id": 2349,
+		"postal": "4950",
+		"name": "Sourbrodt"
+	},
+	{
+		"id": 2350,
+		"postal": "6182",
+		"name": "Souvret"
+	},
+	{
+		"id": 2351,
+		"postal": "5590",
+		"name": "Sovet"
+	},
+	{
+		"id": 2352,
+		"postal": "6997",
+		"name": "Soy"
+	},
+	{
+		"id": 2353,
+		"postal": "5150",
+		"name": "Soye (Nam.)"
+	},
+	{
+		"id": 2354,
+		"postal": "4900",
+		"name": "Spa"
+	},
+	{
+		"id": 2355,
+		"postal": "3510",
+		"name": "Spalbeek"
+	},
+	{
+		"id": 2356,
+		"postal": "7032",
+		"name": "Spiennes"
+	},
+	{
+		"id": 2357,
+		"postal": "8587",
+		"name": "Spiere"
+	},
+	{
+		"id": 2358,
+		"postal": "8587",
+		"name": "Spiere-Helkijn"
+	},
+	{
+		"id": 2359,
+		"postal": "5530",
+		"name": "Spontin"
+	},
+	{
+		"id": 2360,
+		"postal": "4140",
+		"name": "Sprimont"
+	},
+	{
+		"id": 2361,
+		"postal": "5190",
+		"name": "Spy"
+	},
+	{
+		"id": 2362,
+		"postal": "2940",
+		"name": "Stabroek"
+	},
+	{
+		"id": 2363,
+		"postal": "8840",
+		"name": "Staden"
+	},
+	{
+		"id": 2364,
+		"postal": "8490",
+		"name": "Stalhille"
+	},
+	{
+		"id": 2365,
+		"postal": "7973",
+		"name": "Stambruges"
+	},
+	{
+		"id": 2366,
+		"postal": "5646",
+		"name": "Stave"
+	},
+	{
+		"id": 2367,
+		"postal": "8691",
+		"name": "Stavele"
+	},
+	{
+		"id": 2368,
+		"postal": "4970",
+		"name": "Stavelot"
+	},
+	{
+		"id": 2369,
+		"postal": "9140",
+		"name": "Steendorp"
+	},
+	{
+		"id": 2370,
+		"postal": "1840",
+		"name": "Steenhuffel"
+	},
+	{
+		"id": 2371,
+		"postal": "9550",
+		"name": "Steenhuize-Wijnhuize"
+	},
+	{
+		"id": 2372,
+		"postal": "8630",
+		"name": "Steenkerke (W.-VL.)"
+	},
+	{
+		"id": 2373,
+		"postal": "7090",
+		"name": "Steenkerque (Ht.)"
+	},
+	{
+		"id": 2374,
+		"postal": "1820",
+		"name": "Steenokkerzeel"
+	},
+	{
+		"id": 2375,
+		"postal": "9190",
+		"name": "Stekene"
+	},
+	{
+		"id": 2376,
+		"postal": "4801",
+		"name": "Stembert"
+	},
+	{
+		"id": 2377,
+		"postal": "8400",
+		"name": "Stene"
+	},
+	{
+		"id": 2378,
+		"postal": "1933",
+		"name": "Sterrebeek"
+	},
+	{
+		"id": 2379,
+		"postal": "3512",
+		"name": "Stevoort"
+	},
+	{
+		"id": 2380,
+		"postal": "9200",
+		"name": "St-Gillis-bij-Dendermonde"
+	},
+	{
+		"id": 2381,
+		"postal": "3470",
+		"name": "St-Margriete (Kortenaken)"
+	},
+	{
+		"id": 2382,
+		"postal": "3300",
+		"name": "St-Margriete-Houtem(Tien.)"
+	},
+	{
+		"id": 2383,
+		"postal": "9660",
+		"name": "St-Maria-Oudenhove(Brakel)"
+	},
+	{
+		"id": 2384,
+		"postal": "9620",
+		"name": "St-Maria-Oudenhove(Zott.)"
+	},
+	{
+		"id": 2385,
+		"postal": "3650",
+		"name": "Stokkem"
+	},
+	{
+		"id": 2386,
+		"postal": "3511",
+		"name": "Stokrooie"
+	},
+	{
+		"id": 2387,
+		"postal": "4987",
+		"name": "Stoumont"
+	},
+	{
+		"id": 2388,
+		"postal": "8433",
+		"name": "St-Pieters-Kapelle(W.-Vl.)"
+	},
+	{
+		"id": 2389,
+		"postal": "6887",
+		"name": "Straimont"
+	},
+	{
+		"id": 2390,
+		"postal": "6511",
+		"name": "Strée (Ht.)"
+	},
+	{
+		"id": 2391,
+		"postal": "4577",
+		"name": "Strée-lez-Huy"
+	},
+	{
+		"id": 2392,
+		"postal": "7110",
+		"name": "Strépy-Bracquegnies"
+	},
+	{
+		"id": 2393,
+		"postal": "9620",
+		"name": "Strijpen"
+	},
+	{
+		"id": 2394,
+		"postal": "1760",
+		"name": "Strijtem"
+	},
+	{
+		"id": 2395,
+		"postal": "1853",
+		"name": "Strombeek-Bever"
+	},
+	{
+		"id": 2396,
+		"postal": "8600",
+		"name": "Stuivekenskerke"
+	},
+	{
+		"id": 2397,
+		"postal": "5020",
+		"name": "Suarlée"
+	},
+	{
+		"id": 2398,
+		"postal": "5550",
+		"name": "Sugny"
+	},
+	{
+		"id": 2399,
+		"postal": "5600",
+		"name": "Surice"
+	},
+	{
+		"id": 2400,
+		"postal": "6812",
+		"name": "Suxy"
+	},
+	{
+		"id": 2401,
+		"postal": "6661",
+		"name": "Tailles"
+	},
+	{
+		"id": 2402,
+		"postal": "7618",
+		"name": "Taintignies"
+	},
+	{
+		"id": 2403,
+		"postal": "5060",
+		"name": "Tamines"
+	},
+	{
+		"id": 2404,
+		"postal": "5651",
+		"name": "Tarcienne"
+	},
+	{
+		"id": 2405,
+		"postal": "4163",
+		"name": "Tavier"
+	},
+	{
+		"id": 2406,
+		"postal": "5310",
+		"name": "Taviers (Nam.)"
+	},
+	{
+		"id": 2407,
+		"postal": "6662",
+		"name": "Tavigny"
+	},
+	{
+		"id": 2408,
+		"postal": "6927",
+		"name": "Tellin"
+	},
+	{
+		"id": 2409,
+		"postal": "7520",
+		"name": "Templeuve"
+	},
+	{
+		"id": 2410,
+		"postal": "5020",
+		"name": "Temploux"
+	},
+	{
+		"id": 2411,
+		"postal": "9140",
+		"name": "Temse"
+	},
+	{
+		"id": 2412,
+		"postal": "6970",
+		"name": "Tenneville"
+	},
+	{
+		"id": 2413,
+		"postal": "1790",
+		"name": "Teralfene"
+	},
+	{
+		"id": 2414,
+		"postal": "2840",
+		"name": "Terhagen"
+	},
+	{
+		"id": 2415,
+		"postal": "6813",
+		"name": "Termes"
+	},
+	{
+		"id": 2416,
+		"postal": "1740",
+		"name": "Ternat"
+	},
+	{
+		"id": 2417,
+		"postal": "7333",
+		"name": "Tertre"
+	},
+	{
+		"id": 2418,
+		"postal": "3080",
+		"name": "Tervuren"
+	},
+	{
+		"id": 2419,
+		"postal": "4560",
+		"name": "Terwagne"
+	},
+	{
+		"id": 2420,
+		"postal": "3980",
+		"name": "Tessenderlo"
+	},
+	{
+		"id": 2421,
+		"postal": "3272",
+		"name": "Testelt"
+	},
+	{
+		"id": 2422,
+		"postal": "3793",
+		"name": "Teuven"
+	},
+	{
+		"id": 2423,
+		"postal": "4910",
+		"name": "Theux"
+	},
+	{
+		"id": 2424,
+		"postal": "6717",
+		"name": "Thiaumont"
+	},
+	{
+		"id": 2425,
+		"postal": "7070",
+		"name": "Thieu"
+	},
+	{
+		"id": 2426,
+		"postal": "7901",
+		"name": "Thieulain"
+	},
+	{
+		"id": 2427,
+		"postal": "7061",
+		"name": "Thieusies"
+	},
+	{
+		"id": 2428,
+		"postal": "6230",
+		"name": "Thiméon"
+	},
+	{
+		"id": 2429,
+		"postal": "4890",
+		"name": "Thimister"
+	},
+	{
+		"id": 2430,
+		"postal": "4890",
+		"name": "Thimister-Clermont"
+	},
+	{
+		"id": 2431,
+		"postal": "7533",
+		"name": "Thimougies"
+	},
+	{
+		"id": 2432,
+		"postal": "1402",
+		"name": "Thines"
+	},
+	{
+		"id": 2433,
+		"postal": "6500",
+		"name": "Thirimont"
+	},
+	{
+		"id": 2434,
+		"postal": "4280",
+		"name": "Thisnes"
+	},
+	{
+		"id": 2435,
+		"postal": "4791",
+		"name": "Thommen"
+	},
+	{
+		"id": 2436,
+		"postal": "5300",
+		"name": "Thon"
+	},
+	{
+		"id": 2437,
+		"postal": "1360",
+		"name": "Thorembais-les-Béguines"
+	},
+	{
+		"id": 2438,
+		"postal": "1360",
+		"name": "Thorembais-Saint-Trond"
+	},
+	{
+		"id": 2439,
+		"postal": "7830",
+		"name": "Thoricourt"
+	},
+	{
+		"id": 2440,
+		"postal": "6536",
+		"name": "Thuillies"
+	},
+	{
+		"id": 2441,
+		"postal": "6530",
+		"name": "Thuin"
+	},
+	{
+		"id": 2442,
+		"postal": "7350",
+		"name": "Thulin"
+	},
+	{
+		"id": 2443,
+		"postal": "7971",
+		"name": "Thumaide"
+	},
+	{
+		"id": 2444,
+		"postal": "5621",
+		"name": "Thy-le-Bauduin"
+	},
+	{
+		"id": 2445,
+		"postal": "5651",
+		"name": "Thy-le-Château"
+	},
+	{
+		"id": 2446,
+		"postal": "5502",
+		"name": "Thynes"
+	},
+	{
+		"id": 2447,
+		"postal": "4367",
+		"name": "Thys"
+	},
+	{
+		"id": 2448,
+		"postal": "8573",
+		"name": "Tiegem"
+	},
+	{
+		"id": 2449,
+		"postal": "2460",
+		"name": "Tielen"
+	},
+	{
+		"id": 2450,
+		"postal": "9140",
+		"name": "Tielrode"
+	},
+	{
+		"id": 2451,
+		"postal": "8700",
+		"name": "Tielt"
+	},
+	{
+		"id": 2452,
+		"postal": "3390",
+		"name": "Tielt (Bt.)"
+	},
+	{
+		"id": 2453,
+		"postal": "3300",
+		"name": "Tienen"
+	},
+	{
+		"id": 2454,
+		"postal": "4630",
+		"name": "Tignée"
+	},
+	{
+		"id": 2455,
+		"postal": "4500",
+		"name": "Tihange"
+	},
+	{
+		"id": 2456,
+		"postal": "3150",
+		"name": "Tildonk"
+	},
+	{
+		"id": 2457,
+		"postal": "4130",
+		"name": "Tilff"
+	},
+	{
+		"id": 2458,
+		"postal": "6680",
+		"name": "Tillet"
+	},
+	{
+		"id": 2459,
+		"postal": "4420",
+		"name": "Tilleur"
+	},
+	{
+		"id": 2460,
+		"postal": "5380",
+		"name": "Tillier"
+	},
+	{
+		"id": 2461,
+		"postal": "1495",
+		"name": "Tilly"
+	},
+	{
+		"id": 2462,
+		"postal": "4557",
+		"name": "Tinlot"
+	},
+	{
+		"id": 2463,
+		"postal": "6637",
+		"name": "Tintange"
+	},
+	{
+		"id": 2464,
+		"postal": "6730",
+		"name": "Tintigny"
+	},
+	{
+		"id": 2465,
+		"postal": "2830",
+		"name": "Tisselt"
+	},
+	{
+		"id": 2466,
+		"postal": "6700",
+		"name": "Toernich"
+	},
+	{
+		"id": 2467,
+		"postal": "6941",
+		"name": "Tohogne"
+	},
+	{
+		"id": 2468,
+		"postal": "1570",
+		"name": "Tollembeek"
+	},
+	{
+		"id": 2469,
+		"postal": "3700",
+		"name": "Tongeren"
+	},
+	{
+		"id": 2470,
+		"postal": "2260",
+		"name": "Tongerlo (Antw.)"
+	},
+	{
+		"id": 2471,
+		"postal": "3960",
+		"name": "Tongerlo (Limb.)"
+	},
+	{
+		"id": 2472,
+		"postal": "7951",
+		"name": "Tongre-Notre-Dame"
+	},
+	{
+		"id": 2473,
+		"postal": "7950",
+		"name": "Tongre-Saint-Martin"
+	},
+	{
+		"id": 2474,
+		"postal": "5140",
+		"name": "Tongrinne"
+	},
+	{
+		"id": 2475,
+		"postal": "6717",
+		"name": "Tontelange"
+	},
+	{
+		"id": 2476,
+		"postal": "6767",
+		"name": "Torgny"
+	},
+	{
+		"id": 2477,
+		"postal": "8820",
+		"name": "Torhout"
+	},
+	{
+		"id": 2478,
+		"postal": "4263",
+		"name": "Tourinne (Lg.)"
+	},
+	{
+		"id": 2479,
+		"postal": "1320",
+		"name": "Tourinnes-la-Grosse"
+	},
+	{
+		"id": 2480,
+		"postal": "1457",
+		"name": "Tourinnes-Saint-Lambert"
+	},
+	{
+		"id": 2481,
+		"postal": "7500",
+		"name": "Tournai"
+	},
+	{
+		"id": 2482,
+		"postal": "6840",
+		"name": "Tournay"
+	},
+	{
+		"id": 2483,
+		"postal": "7904",
+		"name": "Tourpes"
+	},
+	{
+		"id": 2484,
+		"postal": "6890",
+		"name": "Transinne"
+	},
+	{
+		"id": 2485,
+		"postal": "6183",
+		"name": "Trazegnies"
+	},
+	{
+		"id": 2486,
+		"postal": "5670",
+		"name": "Treignes"
+	},
+	{
+		"id": 2487,
+		"postal": "4670",
+		"name": "Trembleur"
+	},
+	{
+		"id": 2488,
+		"postal": "3120",
+		"name": "Tremelo"
+	},
+	{
+		"id": 2489,
+		"postal": "7100",
+		"name": "Trivières"
+	},
+	{
+		"id": 2490,
+		"postal": "4280",
+		"name": "Trognée"
+	},
+	{
+		"id": 2491,
+		"postal": "4980",
+		"name": "Trois-Ponts"
+	},
+	{
+		"id": 2492,
+		"postal": "4870",
+		"name": "Trooz"
+	},
+	{
+		"id": 2493,
+		"postal": "1480",
+		"name": "Tubize"
+	},
+	{
+		"id": 2494,
+		"postal": "2300",
+		"name": "Turnhout"
+	},
+	{
+		"id": 2495,
+		"postal": "1180",
+		"name": "Uccle"
+	},
+	{
+		"id": 2496,
+		"postal": "6833",
+		"name": "Ucimont"
+	},
+	{
+		"id": 2497,
+		"postal": "3631",
+		"name": "Uikhoven"
+	},
+	{
+		"id": 2498,
+		"postal": "9290",
+		"name": "Uitbergen"
+	},
+	{
+		"id": 2499,
+		"postal": "8370",
+		"name": "Uitkerke"
+	},
+	{
+		"id": 2500,
+		"postal": "1180",
+		"name": "Ukkel"
+	},
+	{
+		"id": 2501,
+		"postal": "3832",
+		"name": "Ulbeek"
+	},
+	{
+		"id": 2502,
+		"postal": "5310",
+		"name": "Upigny"
+	},
+	{
+		"id": 2503,
+		"postal": "9910",
+		"name": "Ursel"
+	},
+	{
+		"id": 2504,
+		"postal": "3054",
+		"name": "Vaalbeek"
+	},
+	{
+		"id": 2505,
+		"postal": "3770",
+		"name": "Val-Meer"
+	},
+	{
+		"id": 2506,
+		"postal": "6741",
+		"name": "Vance"
+	},
+	{
+		"id": 2507,
+		"postal": "2431",
+		"name": "Varendonk"
+	},
+	{
+		"id": 2508,
+		"postal": "8490",
+		"name": "Varsenare"
+	},
+	{
+		"id": 2509,
+		"postal": "5680",
+		"name": "Vaucelles"
+	},
+	{
+		"id": 2510,
+		"postal": "7536",
+		"name": "Vaulx (Tournai)"
+	},
+	{
+		"id": 2511,
+		"postal": "6462",
+		"name": "Vaulx-lez-Chimay"
+	},
+	{
+		"id": 2512,
+		"postal": "6960",
+		"name": "Vaux-Chavanne"
+	},
+	{
+		"id": 2513,
+		"postal": "4530",
+		"name": "Vaux-et-Borset"
+	},
+	{
+		"id": 2514,
+		"postal": "6640",
+		"name": "Vaux-lez-Rosières"
+	},
+	{
+		"id": 2515,
+		"postal": "4051",
+		"name": "Vaux-sous-Chèvremont"
+	},
+	{
+		"id": 2516,
+		"postal": "6640",
+		"name": "Vaux-sur-Sûre"
+	},
+	{
+		"id": 2517,
+		"postal": "3870",
+		"name": "Vechmaal"
+	},
+	{
+		"id": 2518,
+		"postal": "5020",
+		"name": "Vedrin"
+	},
+	{
+		"id": 2519,
+		"postal": "2431",
+		"name": "Veerle"
+	},
+	{
+		"id": 2520,
+		"postal": "7760",
+		"name": "Velaines"
+	},
+	{
+		"id": 2521,
+		"postal": "5060",
+		"name": "Velaine-sur-Sambre"
+	},
+	{
+		"id": 2522,
+		"postal": "8210",
+		"name": "Veldegem"
+	},
+	{
+		"id": 2523,
+		"postal": "3620",
+		"name": "Veldwezelt"
+	},
+	{
+		"id": 2524,
+		"postal": "7120",
+		"name": "Vellereille-les-Brayeux"
+	},
+	{
+		"id": 2525,
+		"postal": "7120",
+		"name": "Vellereille-le-Sec"
+	},
+	{
+		"id": 2526,
+		"postal": "3806",
+		"name": "Velm"
+	},
+	{
+		"id": 2527,
+		"postal": "4460",
+		"name": "Velroux"
+	},
+	{
+		"id": 2528,
+		"postal": "3020",
+		"name": "Veltem-Beisem"
+	},
+	{
+		"id": 2529,
+		"postal": "9620",
+		"name": "Velzeke-Ruddershove"
+	},
+	{
+		"id": 2530,
+		"postal": "5575",
+		"name": "Vencimont"
+	},
+	{
+		"id": 2531,
+		"postal": "6440",
+		"name": "Vergnies"
+	},
+	{
+		"id": 2532,
+		"postal": "4537",
+		"name": "Verlaine"
+	},
+	{
+		"id": 2533,
+		"postal": "5370",
+		"name": "Verlée"
+	},
+	{
+		"id": 2534,
+		"postal": "9130",
+		"name": "Verrebroek"
+	},
+	{
+		"id": 2535,
+		"postal": "3370",
+		"name": "Vertrijk"
+	},
+	{
+		"id": 2536,
+		"postal": "4800",
+		"name": "Verviers"
+	},
+	{
+		"id": 2537,
+		"postal": "6870",
+		"name": "Vesqueville"
+	},
+	{
+		"id": 2538,
+		"postal": "3870",
+		"name": "Veulen"
+	},
+	{
+		"id": 2539,
+		"postal": "8630",
+		"name": "Veurne"
+	},
+	{
+		"id": 2540,
+		"postal": "5300",
+		"name": "Vezin"
+	},
+	{
+		"id": 2541,
+		"postal": "7538",
+		"name": "Vezon"
+	},
+	{
+		"id": 2542,
+		"postal": "9500",
+		"name": "Viane"
+	},
+	{
+		"id": 2543,
+		"postal": "8570",
+		"name": "Vichte"
+	},
+	{
+		"id": 2544,
+		"postal": "6690",
+		"name": "Vielsalm"
+	},
+	{
+		"id": 2545,
+		"postal": "4317",
+		"name": "Viemme"
+	},
+	{
+		"id": 2546,
+		"postal": "2240",
+		"name": "Viersel"
+	},
+	{
+		"id": 2547,
+		"postal": "4577",
+		"name": "Vierset-Barse"
+	},
+	{
+		"id": 2548,
+		"postal": "5670",
+		"name": "Vierves-sur-Viroin"
+	},
+	{
+		"id": 2549,
+		"postal": "6230",
+		"name": "Viesville"
+	},
+	{
+		"id": 2550,
+		"postal": "1472",
+		"name": "Vieux-Genappe"
+	},
+	{
+		"id": 2551,
+		"postal": "4190",
+		"name": "Vieuxville"
+	},
+	{
+		"id": 2552,
+		"postal": "4530",
+		"name": "Vieux-Waleffe"
+	},
+	{
+		"id": 2553,
+		"postal": "6890",
+		"name": "Villance"
+	},
+	{
+		"id": 2554,
+		"postal": "4260",
+		"name": "Ville-en-Hesbaye"
+	},
+	{
+		"id": 2555,
+		"postal": "7322",
+		"name": "Ville-Pommeroeul"
+	},
+	{
+		"id": 2556,
+		"postal": "7334",
+		"name": "Villerot"
+	},
+	{
+		"id": 2557,
+		"postal": "4161",
+		"name": "Villers-aux-Tours"
+	},
+	{
+		"id": 2558,
+		"postal": "5630",
+		"name": "Villers-Deux-Eglises"
+	},
+	{
+		"id": 2559,
+		"postal": "6823",
+		"name": "Villers-devant-Orval"
+	},
+	{
+		"id": 2560,
+		"postal": "5600",
+		"name": "Villers-en-Fagne"
+	},
+	{
+		"id": 2561,
+		"postal": "6600",
+		"name": "Villers-la-Bonne-Eau"
+	},
+	{
+		"id": 2562,
+		"postal": "6769",
+		"name": "Villers-la-Loue"
+	},
+	{
+		"id": 2563,
+		"postal": "6460",
+		"name": "Villers-la-Tour"
+	},
+	{
+		"id": 2564,
+		"postal": "1495",
+		"name": "Villers-la-Ville"
+	},
+	{
+		"id": 2565,
+		"postal": "4530",
+		"name": "Villers-le-Bouillet"
+	},
+	{
+		"id": 2566,
+		"postal": "5600",
+		"name": "Villers-le-Gambon"
+	},
+	{
+		"id": 2567,
+		"postal": "4280",
+		"name": "Villers-le-Peuplier"
+	},
+	{
+		"id": 2568,
+		"postal": "4550",
+		"name": "Villers-le-Temple"
+	},
+	{
+		"id": 2569,
+		"postal": "4340",
+		"name": "Villers-l'Evêque"
+	},
+	{
+		"id": 2570,
+		"postal": "5080",
+		"name": "Villers-lez-Heest"
+	},
+	{
+		"id": 2571,
+		"postal": "7812",
+		"name": "Villers-Notre-Dame"
+	},
+	{
+		"id": 2572,
+		"postal": "6210",
+		"name": "Villers-Perwin"
+	},
+	{
+		"id": 2573,
+		"postal": "6280",
+		"name": "Villers-Poterie"
+	},
+	{
+		"id": 2574,
+		"postal": "7812",
+		"name": "Villers-Saint-Amand"
+	},
+	{
+		"id": 2575,
+		"postal": "6941",
+		"name": "Villers-Sainte-Gertrude"
+	},
+	{
+		"id": 2576,
+		"postal": "7031",
+		"name": "Villers-Saint-Ghislain"
+	},
+	{
+		"id": 2577,
+		"postal": "4453",
+		"name": "Villers-Saint-Siméon"
+	},
+	{
+		"id": 2578,
+		"postal": "5580",
+		"name": "Villers-sur-Lesse"
+	},
+	{
+		"id": 2579,
+		"postal": "6740",
+		"name": "Villers-sur-Semois"
+	},
+	{
+		"id": 2580,
+		"postal": "7021",
+		"name": "Ville-sur-Haine (Mons)"
+	},
+	{
+		"id": 2581,
+		"postal": "7070",
+		"name": "Ville-sur-Haine(Le Roeulx)"
+	},
+	{
+		"id": 2582,
+		"postal": "1800",
+		"name": "Vilvoorde"
+	},
+	{
+		"id": 2583,
+		"postal": "4520",
+		"name": "Vinalmont"
+	},
+	{
+		"id": 2584,
+		"postal": "9921",
+		"name": "Vinderhoute"
+	},
+	{
+		"id": 2585,
+		"postal": "8630",
+		"name": "Vinkem"
+	},
+	{
+		"id": 2586,
+		"postal": "9800",
+		"name": "Vinkt"
+	},
+	{
+		"id": 2587,
+		"postal": "6461",
+		"name": "Virelles"
+	},
+	{
+		"id": 2588,
+		"postal": "1460",
+		"name": "Virginal-Samme"
+	},
+	{
+		"id": 2589,
+		"postal": "5670",
+		"name": "Viroinval"
+	},
+	{
+		"id": 2590,
+		"postal": "6760",
+		"name": "Virton"
+	},
+	{
+		"id": 2591,
+		"postal": "4600",
+		"name": "Visé"
+	},
+	{
+		"id": 2592,
+		"postal": "3300",
+		"name": "Vissenaken"
+	},
+	{
+		"id": 2593,
+		"postal": "5070",
+		"name": "Vitrival"
+	},
+	{
+		"id": 2594,
+		"postal": "4683",
+		"name": "Vivegnis"
+	},
+	{
+		"id": 2595,
+		"postal": "6833",
+		"name": "Vivy"
+	},
+	{
+		"id": 2596,
+		"postal": "8600",
+		"name": "Vladslo"
+	},
+	{
+		"id": 2597,
+		"postal": "8908",
+		"name": "Vlamertinge"
+	},
+	{
+		"id": 2598,
+		"postal": "9420",
+		"name": "Vlekkem"
+	},
+	{
+		"id": 2599,
+		"postal": "8640",
+		"name": "Vleteren"
+	},
+	{
+		"id": 2600,
+		"postal": "1602",
+		"name": "Vlezenbeek"
+	},
+	{
+		"id": 2601,
+		"postal": "3724",
+		"name": "Vliermaal"
+	},
+	{
+		"id": 2602,
+		"postal": "3721",
+		"name": "Vliermaalroot"
+	},
+	{
+		"id": 2603,
+		"postal": "9520",
+		"name": "Vlierzele"
+	},
+	{
+		"id": 2604,
+		"postal": "3770",
+		"name": "Vlijtingen"
+	},
+	{
+		"id": 2605,
+		"postal": "2340",
+		"name": "Vlimmeren"
+	},
+	{
+		"id": 2606,
+		"postal": "8421",
+		"name": "Vlissegem"
+	},
+	{
+		"id": 2607,
+		"postal": "7880",
+		"name": "Vloesberg"
+	},
+	{
+		"id": 2608,
+		"postal": "5600",
+		"name": "Vodecée"
+	},
+	{
+		"id": 2609,
+		"postal": "5680",
+		"name": "Vodelée"
+	},
+	{
+		"id": 2610,
+		"postal": "3790",
+		"name": "Voeren"
+	},
+	{
+		"id": 2611,
+		"postal": "5650",
+		"name": "Vogenée"
+	},
+	{
+		"id": 2612,
+		"postal": "9700",
+		"name": "Volkegem"
+	},
+	{
+		"id": 2613,
+		"postal": "1570",
+		"name": "Vollezele"
+	},
+	{
+		"id": 2614,
+		"postal": "5570",
+		"name": "Vonêche"
+	},
+	{
+		"id": 2615,
+		"postal": "9400",
+		"name": "Voorde"
+	},
+	{
+		"id": 2616,
+		"postal": "8902",
+		"name": "Voormezele"
+	},
+	{
+		"id": 2617,
+		"postal": "3840",
+		"name": "Voort"
+	},
+	{
+		"id": 2618,
+		"postal": "4347",
+		"name": "Voroux-Goreux"
+	},
+	{
+		"id": 2619,
+		"postal": "4451",
+		"name": "Voroux-lez-Liers"
+	},
+	{
+		"id": 2620,
+		"postal": "2290",
+		"name": "Vorselaar"
+	},
+	{
+		"id": 2621,
+		"postal": "3890",
+		"name": "Vorsen"
+	},
+	{
+		"id": 2622,
+		"postal": "1190",
+		"name": "Vorst"
+	},
+	{
+		"id": 2623,
+		"postal": "2430",
+		"name": "Vorst (Kempen)"
+	},
+	{
+		"id": 2624,
+		"postal": "2350",
+		"name": "Vosselaar"
+	},
+	{
+		"id": 2625,
+		"postal": "9850",
+		"name": "Vosselare"
+	},
+	{
+		"id": 2626,
+		"postal": "3080",
+		"name": "Vossem"
+	},
+	{
+		"id": 2627,
+		"postal": "4041",
+		"name": "Vottem"
+	},
+	{
+		"id": 2628,
+		"postal": "9120",
+		"name": "Vrasene"
+	},
+	{
+		"id": 2629,
+		"postal": "2531",
+		"name": "Vremde"
+	},
+	{
+		"id": 2630,
+		"postal": "3700",
+		"name": "Vreren"
+	},
+	{
+		"id": 2631,
+		"postal": "5550",
+		"name": "Vresse-sur-Semois"
+	},
+	{
+		"id": 2632,
+		"postal": "3770",
+		"name": "Vroenhoven"
+	},
+	{
+		"id": 2633,
+		"postal": "3630",
+		"name": "Vucht"
+	},
+	{
+		"id": 2634,
+		"postal": "9890",
+		"name": "Vurste"
+	},
+	{
+		"id": 2635,
+		"postal": "4570",
+		"name": "Vyle-et-Tharoul"
+	},
+	{
+		"id": 2636,
+		"postal": "3473",
+		"name": "Waanrode"
+	},
+	{
+		"id": 2637,
+		"postal": "9506",
+		"name": "Waarbeke"
+	},
+	{
+		"id": 2638,
+		"postal": "8020",
+		"name": "Waardamme"
+	},
+	{
+		"id": 2639,
+		"postal": "2550",
+		"name": "Waarloos"
+	},
+	{
+		"id": 2640,
+		"postal": "8581",
+		"name": "Waarmaarde"
+	},
+	{
+		"id": 2641,
+		"postal": "9950",
+		"name": "Waarschoot"
+	},
+	{
+		"id": 2642,
+		"postal": "3401",
+		"name": "Waasmont"
+	},
+	{
+		"id": 2643,
+		"postal": "9250",
+		"name": "Waasmunster"
+	},
+	{
+		"id": 2644,
+		"postal": "7784",
+		"name": "Waasten"
+	},
+	{
+		"id": 2645,
+		"postal": "9185",
+		"name": "Wachtebeke"
+	},
+	{
+		"id": 2646,
+		"postal": "7971",
+		"name": "Wadelincourt"
+	},
+	{
+		"id": 2647,
+		"postal": "6223",
+		"name": "Wagnelée"
+	},
+	{
+		"id": 2648,
+		"postal": "6900",
+		"name": "Waha"
+	},
+	{
+		"id": 2649,
+		"postal": "5377",
+		"name": "Waillet"
+	},
+	{
+		"id": 2650,
+		"postal": "4950",
+		"name": "Waimes"
+	},
+	{
+		"id": 2651,
+		"postal": "8720",
+		"name": "Wakken"
+	},
+	{
+		"id": 2652,
+		"postal": "5650",
+		"name": "Walcourt"
+	},
+	{
+		"id": 2653,
+		"postal": "2800",
+		"name": "Walem"
+	},
+	{
+		"id": 2654,
+		"postal": "1457",
+		"name": "Walhain"
+	},
+	{
+		"id": 2655,
+		"postal": "1457",
+		"name": "Walhain-Saint-Paul"
+	},
+	{
+		"id": 2656,
+		"postal": "4711",
+		"name": "Walhorn"
+	},
+	{
+		"id": 2657,
+		"postal": "3401",
+		"name": "Walsbets"
+	},
+	{
+		"id": 2658,
+		"postal": "3401",
+		"name": "Walshoutem"
+	},
+	{
+		"id": 2659,
+		"postal": "3740",
+		"name": "Waltwilder"
+	},
+	{
+		"id": 2660,
+		"postal": "1741",
+		"name": "Wambeek"
+	},
+	{
+		"id": 2661,
+		"postal": "5570",
+		"name": "Wancennes"
+	},
+	{
+		"id": 2662,
+		"postal": "4020",
+		"name": "Wandre"
+	},
+	{
+		"id": 2663,
+		"postal": "6224",
+		"name": "Wanfercée-Baulet"
+	},
+	{
+		"id": 2664,
+		"postal": "3400",
+		"name": "Wange"
+	},
+	{
+		"id": 2665,
+		"postal": "6220",
+		"name": "Wangenies"
+	},
+	{
+		"id": 2666,
+		"postal": "5564",
+		"name": "Wanlin"
+	},
+	{
+		"id": 2667,
+		"postal": "4980",
+		"name": "Wanne"
+	},
+	{
+		"id": 2668,
+		"postal": "7861",
+		"name": "Wannebecq"
+	},
+	{
+		"id": 2669,
+		"postal": "9772",
+		"name": "Wannegem-Lede"
+	},
+	{
+		"id": 2670,
+		"postal": "4280",
+		"name": "Wansin"
+	},
+	{
+		"id": 2671,
+		"postal": "4520",
+		"name": "Wanze"
+	},
+	{
+		"id": 2672,
+		"postal": "9340",
+		"name": "Wanzele"
+	},
+	{
+		"id": 2673,
+		"postal": "7548",
+		"name": "Warchin"
+	},
+	{
+		"id": 2674,
+		"postal": "7740",
+		"name": "Warcoing"
+	},
+	{
+		"id": 2675,
+		"postal": "6600",
+		"name": "Wardin"
+	},
+	{
+		"id": 2676,
+		"postal": "8790",
+		"name": "Waregem"
+	},
+	{
+		"id": 2677,
+		"postal": "4300",
+		"name": "Waremme"
+	},
+	{
+		"id": 2678,
+		"postal": "5310",
+		"name": "Waret-la-Chaussée"
+	},
+	{
+		"id": 2679,
+		"postal": "4217",
+		"name": "Waret-l'Evêque"
+	},
+	{
+		"id": 2680,
+		"postal": "5080",
+		"name": "Warisoulx"
+	},
+	{
+		"id": 2681,
+		"postal": "5537",
+		"name": "Warnant"
+	},
+	{
+		"id": 2682,
+		"postal": "4530",
+		"name": "Warnant-Dreye"
+	},
+	{
+		"id": 2683,
+		"postal": "7784",
+		"name": "Warneton"
+	},
+	{
+		"id": 2684,
+		"postal": "7340",
+		"name": "Warquignies"
+	},
+	{
+		"id": 2685,
+		"postal": "4608",
+		"name": "Warsage"
+	},
+	{
+		"id": 2686,
+		"postal": "4590",
+		"name": "Warzée"
+	},
+	{
+		"id": 2687,
+		"postal": "7340",
+		"name": "Wasmes"
+	},
+	{
+		"id": 2688,
+		"postal": "7604",
+		"name": "Wasmes-Audemez-Briffoeil"
+	},
+	{
+		"id": 2689,
+		"postal": "7390",
+		"name": "Wasmuel"
+	},
+	{
+		"id": 2690,
+		"postal": "4219",
+		"name": "Wasseiges"
+	},
+	{
+		"id": 2691,
+		"postal": "9988",
+		"name": "Waterland-Oudeman"
+	},
+	{
+		"id": 2692,
+		"postal": "1410",
+		"name": "Waterloo"
+	},
+	{
+		"id": 2693,
+		"postal": "1170",
+		"name": "Watermaal-Bosvoorde"
+	},
+	{
+		"id": 2694,
+		"postal": "1170",
+		"name": "Watermael-Boitsfort"
+	},
+	{
+		"id": 2695,
+		"postal": "9988",
+		"name": "Watervliet"
+	},
+	{
+		"id": 2696,
+		"postal": "8978",
+		"name": "Watou"
+	},
+	{
+		"id": 2697,
+		"postal": "7910",
+		"name": "Wattripont"
+	},
+	{
+		"id": 2698,
+		"postal": "7131",
+		"name": "Waudrez"
+	},
+	{
+		"id": 2699,
+		"postal": "5540",
+		"name": "Waulsort"
+	},
+	{
+		"id": 2700,
+		"postal": "1440",
+		"name": "Wauthier-Braine"
+	},
+	{
+		"id": 2701,
+		"postal": "1300",
+		"name": "Wavre"
+	},
+	{
+		"id": 2702,
+		"postal": "5580",
+		"name": "Wavreille"
+	},
+	{
+		"id": 2703,
+		"postal": "6210",
+		"name": "Wayaux"
+	},
+	{
+		"id": 2704,
+		"postal": "1474",
+		"name": "Ways"
+	},
+	{
+		"id": 2705,
+		"postal": "3290",
+		"name": "Webbekom"
+	},
+	{
+		"id": 2706,
+		"postal": "2275",
+		"name": "Wechelderzande"
+	},
+	{
+		"id": 2707,
+		"postal": "2381",
+		"name": "Weelde"
+	},
+	{
+		"id": 2708,
+		"postal": "1982",
+		"name": "Weerde"
+	},
+	{
+		"id": 2709,
+		"postal": "2880",
+		"name": "Weert"
+	},
+	{
+		"id": 2710,
+		"postal": "4860",
+		"name": "Wegnez"
+	},
+	{
+		"id": 2711,
+		"postal": "5523",
+		"name": "Weillen"
+	},
+	{
+		"id": 2712,
+		"postal": "4950",
+		"name": "Weismes"
+	},
+	{
+		"id": 2713,
+		"postal": "9700",
+		"name": "Welden"
+	},
+	{
+		"id": 2714,
+		"postal": "4840",
+		"name": "Welkenraedt"
+	},
+	{
+		"id": 2715,
+		"postal": "9473",
+		"name": "Welle"
+	},
+	{
+		"id": 2716,
+		"postal": "3830",
+		"name": "Wellen"
+	},
+	{
+		"id": 2717,
+		"postal": "6920",
+		"name": "Wellin"
+	},
+	{
+		"id": 2718,
+		"postal": "1780",
+		"name": "Wemmel"
+	},
+	{
+		"id": 2719,
+		"postal": "8420",
+		"name": "Wenduine"
+	},
+	{
+		"id": 2720,
+		"postal": "5100",
+		"name": "Wépion"
+	},
+	{
+		"id": 2721,
+		"postal": "4190",
+		"name": "Werbomont"
+	},
+	{
+		"id": 2722,
+		"postal": "3118",
+		"name": "Werchter"
+	},
+	{
+		"id": 2723,
+		"postal": "6940",
+		"name": "Wéris"
+	},
+	{
+		"id": 2724,
+		"postal": "8610",
+		"name": "Werken"
+	},
+	{
+		"id": 2725,
+		"postal": "3730",
+		"name": "Werm"
+	},
+	{
+		"id": 2726,
+		"postal": "8940",
+		"name": "Wervik"
+	},
+	{
+		"id": 2727,
+		"postal": "3150",
+		"name": "Wespelaar"
+	},
+	{
+		"id": 2728,
+		"postal": "8434",
+		"name": "Westende"
+	},
+	{
+		"id": 2729,
+		"postal": "2260",
+		"name": "Westerlo"
+	},
+	{
+		"id": 2730,
+		"postal": "8300",
+		"name": "Westkapelle"
+	},
+	{
+		"id": 2731,
+		"postal": "8460",
+		"name": "Westkerke"
+	},
+	{
+		"id": 2732,
+		"postal": "2390",
+		"name": "Westmalle"
+	},
+	{
+		"id": 2733,
+		"postal": "2235",
+		"name": "Westmeerbeek"
+	},
+	{
+		"id": 2734,
+		"postal": "8954",
+		"name": "Westouter"
+	},
+	{
+		"id": 2735,
+		"postal": "9230",
+		"name": "Westrem"
+	},
+	{
+		"id": 2736,
+		"postal": "8840",
+		"name": "Westrozebeke"
+	},
+	{
+		"id": 2737,
+		"postal": "8640",
+		"name": "Westvleteren"
+	},
+	{
+		"id": 2738,
+		"postal": "9230",
+		"name": "Wetteren"
+	},
+	{
+		"id": 2739,
+		"postal": "8560",
+		"name": "Wevelgem"
+	},
+	{
+		"id": 2740,
+		"postal": "3111",
+		"name": "Wezemaal"
+	},
+	{
+		"id": 2741,
+		"postal": "1970",
+		"name": "Wezembeek-Oppem"
+	},
+	{
+		"id": 2742,
+		"postal": "3401",
+		"name": "Wezeren"
+	},
+	{
+		"id": 2743,
+		"postal": "7620",
+		"name": "Wez-Velvain"
+	},
+	{
+		"id": 2744,
+		"postal": "6666",
+		"name": "Wibrin"
+	},
+	{
+		"id": 2745,
+		"postal": "9260",
+		"name": "Wichelen"
+	},
+	{
+		"id": 2746,
+		"postal": "3700",
+		"name": "Widooie"
+	},
+	{
+		"id": 2747,
+		"postal": "2222",
+		"name": "Wiekevorst"
+	},
+	{
+		"id": 2748,
+		"postal": "8710",
+		"name": "Wielsbeke"
+	},
+	{
+		"id": 2749,
+		"postal": "5100",
+		"name": "Wierde"
+	},
+	{
+		"id": 2750,
+		"postal": "7608",
+		"name": "Wiers"
+	},
+	{
+		"id": 2751,
+		"postal": "5571",
+		"name": "Wiesme"
+	},
+	{
+		"id": 2752,
+		"postal": "9280",
+		"name": "Wieze"
+	},
+	{
+		"id": 2753,
+		"postal": "7370",
+		"name": "Wihéries"
+	},
+	{
+		"id": 2754,
+		"postal": "4452",
+		"name": "Wihogne"
+	},
+	{
+		"id": 2755,
+		"postal": "3990",
+		"name": "Wijchmaal"
+	},
+	{
+		"id": 2756,
+		"postal": "3850",
+		"name": "Wijer"
+	},
+	{
+		"id": 2757,
+		"postal": "3018",
+		"name": "Wijgmaal (Bt.)"
+	},
+	{
+		"id": 2758,
+		"postal": "2110",
+		"name": "Wijnegem"
+	},
+	{
+		"id": 2759,
+		"postal": "3670",
+		"name": "Wijshagen"
+	},
+	{
+		"id": 2760,
+		"postal": "8953",
+		"name": "Wijtschate"
+	},
+	{
+		"id": 2761,
+		"postal": "3803",
+		"name": "Wilderen"
+	},
+	{
+		"id": 2762,
+		"postal": "7904",
+		"name": "Willaupuis"
+	},
+	{
+		"id": 2763,
+		"postal": "3370",
+		"name": "Willebringen"
+	},
+	{
+		"id": 2764,
+		"postal": "2830",
+		"name": "Willebroek"
+	},
+	{
+		"id": 2765,
+		"postal": "7506",
+		"name": "Willemeau"
+	},
+	{
+		"id": 2766,
+		"postal": "5575",
+		"name": "Willerzie"
+	},
+	{
+		"id": 2767,
+		"postal": "2610",
+		"name": "Wilrijk (Antwerpen)"
+	},
+	{
+		"id": 2768,
+		"postal": "3012",
+		"name": "Wilsele"
+	},
+	{
+		"id": 2769,
+		"postal": "8431",
+		"name": "Wilskerke"
+	},
+	{
+		"id": 2770,
+		"postal": "3501",
+		"name": "Wimmertingen"
+	},
+	{
+		"id": 2771,
+		"postal": "5570",
+		"name": "Winenne"
+	},
+	{
+		"id": 2772,
+		"postal": "8750",
+		"name": "Wingene"
+	},
+	{
+		"id": 2773,
+		"postal": "3020",
+		"name": "Winksele"
+	},
+	{
+		"id": 2774,
+		"postal": "3722",
+		"name": "Wintershoven"
+	},
+	{
+		"id": 2775,
+		"postal": "6860",
+		"name": "Witry"
+	},
+	{
+		"id": 2776,
+		"postal": "7890",
+		"name": "Wodecq"
+	},
+	{
+		"id": 2777,
+		"postal": "8640",
+		"name": "Woesten"
+	},
+	{
+		"id": 2778,
+		"postal": "6780",
+		"name": "Wolkrange"
+	},
+	{
+		"id": 2779,
+		"postal": "1200",
+		"name": "Woluwé-Saint-Lambert"
+	},
+	{
+		"id": 2780,
+		"postal": "1150",
+		"name": "Woluwé-Saint-Pierre"
+	},
+	{
+		"id": 2781,
+		"postal": "1861",
+		"name": "Wolvertem"
+	},
+	{
+		"id": 2782,
+		"postal": "2160",
+		"name": "Wommelgem"
+	},
+	{
+		"id": 2783,
+		"postal": "3350",
+		"name": "Wommersom"
+	},
+	{
+		"id": 2784,
+		"postal": "4690",
+		"name": "Wonck"
+	},
+	{
+		"id": 2785,
+		"postal": "9032",
+		"name": "Wondelgem"
+	},
+	{
+		"id": 2786,
+		"postal": "9800",
+		"name": "Wontergem"
+	},
+	{
+		"id": 2787,
+		"postal": "9790",
+		"name": "Wortegem"
+	},
+	{
+		"id": 2788,
+		"postal": "9790",
+		"name": "Wortegem-Petegem"
+	},
+	{
+		"id": 2789,
+		"postal": "2323",
+		"name": "Wortel"
+	},
+	{
+		"id": 2790,
+		"postal": "9550",
+		"name": "Woubrechtegem"
+	},
+	{
+		"id": 2791,
+		"postal": "8600",
+		"name": "Woumen"
+	},
+	{
+		"id": 2792,
+		"postal": "8670",
+		"name": "Wulpen"
+	},
+	{
+		"id": 2793,
+		"postal": "8952",
+		"name": "Wulvergem"
+	},
+	{
+		"id": 2794,
+		"postal": "8630",
+		"name": "Wulveringem"
+	},
+	{
+		"id": 2795,
+		"postal": "2990",
+		"name": "Wuustwezel"
+	},
+	{
+		"id": 2796,
+		"postal": "4652",
+		"name": "Xhendelesse"
+	},
+	{
+		"id": 2797,
+		"postal": "4432",
+		"name": "Xhendremael"
+	},
+	{
+		"id": 2798,
+		"postal": "4190",
+		"name": "Xhoris"
+	},
+	{
+		"id": 2799,
+		"postal": "4550",
+		"name": "Yernée-Fraineux"
+	},
+	{
+		"id": 2800,
+		"postal": "5650",
+		"name": "Yves-Gomezée"
+	},
+	{
+		"id": 2801,
+		"postal": "5530",
+		"name": "Yvoir"
+	},
+	{
+		"id": 2802,
+		"postal": "9080",
+		"name": "Zaffelare"
+	},
+	{
+		"id": 2803,
+		"postal": "9506",
+		"name": "Zandbergen"
+	},
+	{
+		"id": 2804,
+		"postal": "8680",
+		"name": "Zande"
+	},
+	{
+		"id": 2805,
+		"postal": "2240",
+		"name": "Zandhoven"
+	},
+	{
+		"id": 2806,
+		"postal": "2040",
+		"name": "Zandvliet"
+	},
+	{
+		"id": 2807,
+		"postal": "8400",
+		"name": "Zandvoorde (Oostende)"
+	},
+	{
+		"id": 2808,
+		"postal": "8980",
+		"name": "Zandvoorde (Zonnebeke)"
+	},
+	{
+		"id": 2809,
+		"postal": "9500",
+		"name": "Zarlardinge"
+	},
+	{
+		"id": 2810,
+		"postal": "8610",
+		"name": "Zarren"
+	},
+	{
+		"id": 2811,
+		"postal": "1930",
+		"name": "Zaventem"
+	},
+	{
+		"id": 2812,
+		"postal": "8210",
+		"name": "Zedelgem"
+	},
+	{
+		"id": 2813,
+		"postal": "8380",
+		"name": "Zeebrugge (Brugge)"
+	},
+	{
+		"id": 2814,
+		"postal": "9660",
+		"name": "Zegelsem"
+	},
+	{
+		"id": 2815,
+		"postal": "9240",
+		"name": "Zele"
+	},
+	{
+		"id": 2816,
+		"postal": "3545",
+		"name": "Zelem"
+	},
+	{
+		"id": 2817,
+		"postal": "1731",
+		"name": "Zellik"
+	},
+	{
+		"id": 2818,
+		"postal": "9060",
+		"name": "Zelzate"
+	},
+	{
+		"id": 2819,
+		"postal": "1980",
+		"name": "Zemst"
+	},
+	{
+		"id": 2820,
+		"postal": "3800",
+		"name": "Zepperen"
+	},
+	{
+		"id": 2821,
+		"postal": "8490",
+		"name": "Zerkegem"
+	},
+	{
+		"id": 2822,
+		"postal": "1370",
+		"name": "Zétrud-Lumay"
+	},
+	{
+		"id": 2823,
+		"postal": "8470",
+		"name": "Zevekote"
+	},
+	{
+		"id": 2824,
+		"postal": "9080",
+		"name": "Zeveneken"
+	},
+	{
+		"id": 2825,
+		"postal": "9800",
+		"name": "Zeveren"
+	},
+	{
+		"id": 2826,
+		"postal": "9840",
+		"name": "Zevergem"
+	},
+	{
+		"id": 2827,
+		"postal": "3271",
+		"name": "Zichem"
+	},
+	{
+		"id": 2828,
+		"postal": "3770",
+		"name": "Zichen-Zussen-Bolder"
+	},
+	{
+		"id": 2829,
+		"postal": "8902",
+		"name": "Zillebeke"
+	},
+	{
+		"id": 2830,
+		"postal": "9750",
+		"name": "Zingem"
+	},
+	{
+		"id": 2831,
+		"postal": "2260",
+		"name": "Zoerle-Parwijs"
+	},
+	{
+		"id": 2832,
+		"postal": "2980",
+		"name": "Zoersel"
+	},
+	{
+		"id": 2833,
+		"postal": "3550",
+		"name": "Zolder"
+	},
+	{
+		"id": 2834,
+		"postal": "9930",
+		"name": "Zomergem"
+	},
+	{
+		"id": 2835,
+		"postal": "3520",
+		"name": "Zonhoven"
+	},
+	{
+		"id": 2836,
+		"postal": "8980",
+		"name": "Zonnebeke"
+	},
+	{
+		"id": 2837,
+		"postal": "9520",
+		"name": "Zonnegem"
+	},
+	{
+		"id": 2838,
+		"postal": "9620",
+		"name": "Zottegem"
+	},
+	{
+		"id": 2839,
+		"postal": "8630",
+		"name": "Zoutenaaie"
+	},
+	{
+		"id": 2840,
+		"postal": "3440",
+		"name": "Zoutleeuw"
+	},
+	{
+		"id": 2841,
+		"postal": "8904",
+		"name": "Zuidschote"
+	},
+	{
+		"id": 2842,
+		"postal": "8377",
+		"name": "Zuienkerke"
+	},
+	{
+		"id": 2843,
+		"postal": "9870",
+		"name": "Zulte"
+	},
+	{
+		"id": 2844,
+		"postal": "9690",
+		"name": "Zulzeke"
+	},
+	{
+		"id": 2845,
+		"postal": "3690",
+		"name": "Zutendaal"
+	},
+	{
+		"id": 2846,
+		"postal": "9630",
+		"name": "Zwalm"
+	},
+	{
+		"id": 2847,
+		"postal": "8550",
+		"name": "Zwevegem"
+	},
+	{
+		"id": 2848,
+		"postal": "8750",
+		"name": "Zwevezele"
+	},
+	{
+		"id": 2849,
+		"postal": "9052",
+		"name": "Zwijnaarde"
+	},
+	{
+		"id": 2850,
+		"postal": "2070",
+		"name": "Zwijndrecht"
+	}
+]

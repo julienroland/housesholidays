@@ -11,13 +11,14 @@
 
 namespace Predis\Option;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Connection\ConnectionFactory;
 
 /**
  *
  */
-class ClientConnectionFactoryTest extends PredisTestCase
+class ClientConnectionFactoryTest extends StandardTestCase
 {
     /**
      * @group disconnected

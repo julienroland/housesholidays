@@ -1,0 +1,705 @@
+[
+	{
+		"country":"Belgium",
+		"country_id":"32",
+		"regions":[
+			{
+			 "name":"Wallonia",
+			 "translations":
+				 {
+				 "de":"Wallonien",
+				 "es":"Valonia",
+				 "fr":"Région Wallonne",
+				 "nl":"Wallonië",
+				 },
+			"description":
+				{
+				"en":"Wallonia may range approximately from the river Meuse basin, European river. With the exception of the province of Walloon Brabant, south of Brussels, and a large part of Hainaut in the west, adjacent to France, the rest of Wallonia - but two or three enclaves, including the side of the Grand-Luxembourg - belongs to the Meuse basin.",
+				"de":"Wallonien kann etwa aus der Maas-Becken, europäischen Fluss liegen. Mit Ausnahme der Provinz Wallonisch-Brabant südlich von Brüssel, und ein großer Teil von Hennegau im Westen, neben Frankreich, den Rest der Wallonie - aber zwei oder drei Enklaven einschließlich der Seite des Grand-Luxemburg - gehört zur Maas-Einzugsgebiet.",
+				"es":"Valonia puede variar aproximadamente desde la cuenca del Mosa río, río europeo. Con la excepción de la provincia de Brabante Valón, al sur de Bruselas, y una gran parte de Hainaut en el oeste, junto a Francia, el resto de Valonia - pero dos o tres enclaves, incluyendo el lado de la Grand-Luxemburgo - pertenece a la cuenca del Mosa.",
+				"fr":"La Wallonie peut se situer approximativement à partir du bassin hydrographique de la Meuse, fleuve européen. À l'exception de la province du Brabant wallon, au sud de Bruxelles, et une grande partie du Hainaut à l'ouest, qui jouxte la France, le reste de la Wallonie — sauf deux ou trois enclaves, notamment du côté du Grand-Duché de Luxembourg — appartient au bassin mosan.",
+				"nl":"Wallonië kan ongeveer variëren van de rivier de Maas, Europese rivier. Met uitzondering van de provincie Waals-Brabant, ten zuiden van Brussel, en een groot deel van Henegouwen in het westen, grenzend aan Frankrijk, de rest van Wallonië - maar twee of drie enclaves, met inbegrip van de kant van de Grand-Luxemburg - behoort tot het Maasbekken.",
+				},
+			},
+			{
+			 "name":"Flanders",
+			 "translations":
+				 {
+				 "de":"Flandern",
+				 "es":"Flandes",
+				 "fr":"Région Flamande",
+				 "nl":"Vlaanderen",
+				 },
+				 "description":
+					{
+					"en":"Flanders is the front door of Europe. Besides its productive highly skilled population and climate studies and investments, it has a large rail and road network, plus several major ports. Find below the major seaports and the airport of Zaventem.",
+					"de":"Flandern ist die Haustür Europas. Neben seiner produktiven hoch qualifizierten Bevölkerung und Klimastudien und Investitionen, hat es eine große Eisenbahn-und Straßennetz, sowie mehrere große Häfen. Nachstehend finden Sie die großen Seehäfen und dem Flughafen von Zaventem.",
+					"es":"Flandes es la puerta de entrada de Europa. Además de sus estudios de la población y el clima altamente cualificados productivas e inversiones, tiene una red de ferrocarril y carretera grande, además de varios puertos importantes. Ponemos a los principales puertos y el aeropuerto de Zaventem.",
+					"fr":"La Flandre est la porte d’entrée de l’Europe. Outre sa population productive hautement qualifiée et son climat propice aux études et investissements, elle dispose d’un large réseau ferroviaire et autoroutier, sans oublier plusieurs ports majeurs. Découvrez ci-dessous les principaux ports maritimes et l’aéroport de Zaventem.",
+					"nl":"Vlaanderen is de voordeur van Europa. Naast de productieve hoogopgeleide bevolking en klimaat studies en investeringen, het heeft een grote spoor-en wegennet, plus een aantal grote havens. Hieronder vindt u de grote zeehavens en de luchthaven van Zaventem.",
+					},
+			},
+			{
+			 "name":"brussels",
+			 "translations":
+				 {
+				 "de":"Region Brüssel-Hauptstadt",
+				 "es":"Región de Bruselas-Capital",
+				 "fr":"Région de Bruxelles-Capitale",
+				 "nl":"Gebied Brussel-Hoofdstad",
+				 },
+				 "description":
+					{
+					"en":"FCompared to most parts of Europe, it has a relatively small 161 km2 enclave in Flemish territory, but distinct from it. By cons, if one considers that this is an urban complex whose parts are closely integrated with each other in a single district called Brussels, size appears respectable as all form one city which is 1.6 times the area of ​​Paris inside the beltway.",
+					"de":"Im Vergleich zu den meisten Teilen Europas, hat es eine relativ kleine 161 km2 Enklave im flämischen Gebiet, aber von ihm unterscheidet. Durch die Nachteile, wenn man bedenkt, dass es sich um eine städtische Komplex, dessen Teile sind eng miteinander in einem einzigen Bezirk namens Brüssel integriert ist, erscheint als respektable Größe aller Form einer Stadt das ist 1,6 mal der Fläche von Paris innerhalb der Umgehungsstraße.",
+					"es":"Flandes es la puerta de entrada de Europa. Además de sus estudios de la población y el clima altamente cualificados productivas e inversiones, tiene una red de ferrocarril y carretera grande, además de varios puertos importantes. Ponemos a los principales puertos y el aeropuerto de Zaventem.",
+					"fr":"Si on la compare à la plupart des régions d'Europe, elle dispose d'un territoire relativement réduit de 161 km2 enclavé en Région flamande, mais distinct de celle-ci. Par contre, si l'on considère qu'il s'agit d'un ensemble urbain dont les parties sont étroitement intégrées les unes aux autres, dans un arrondissement unique dénommé Bruxelles-Capitale, sa taille apparaît respectable puisque le tout forme une seule ville qui représente 1,6 fois la surface de Paris à l'intérieur du boulevard périphérique.",
+					"nl":"Vergeleken met de meeste delen van Europa, heeft het een relatief kleine 161 km2 enclave in Vlaams grondgebied, maar van hem onderscheiden. Door nadelen, als je bedenkt dat dit een stedelijk complex waarvan de onderdelen zijn nauw met elkaar geïntegreerd in een wijk genaamd Brussel, verschijnt respectabele als alle vormen een grootte van de stad dat is 1,6 keer de oppervlakte van Parijs binnen de ringweg.",
+					},
+			},
+		],
+	}
+]/*,
+	{
+
+		"country":"France",
+		"country_id":"77",
+		"regions":[
+			{
+			 "name":"Alsace",
+			 "translations":
+				 {
+				 "de":"Elsass",
+				 "es":"Alsacia",
+				 "fr":"Alsace",
+				 "nl":"Elzas",
+				 }
+			},
+			{
+			 "name":"Aquitaine",
+			 "translations":
+				 {
+				 "de":"Aquitaine",
+				 "es":"Aquitania",
+				 "fr":"Aquitaine",
+				 "nl":"Aquitaine",
+				 }
+			},
+			{
+			 "name":"Auvergne",
+			 "translations":
+				 {
+				 "de":"Auvergne",
+				 "es":"Auvergne",
+				 "fr":"Auvergne",
+				 "nl":"Auvergne",
+				 }
+			},
+			{
+			 "name":"Bourgogne",
+			 "translations":
+				 {
+				 "de":"Burgund",
+				 "es":"borgoña",
+				 "fr":"Bourgogne",
+				 "nl":"Bourgondië",
+				 }
+			},
+			{
+			 "name":"Bretagne",
+			 "translations":
+				 {
+				 "de":"Bretagne",
+				 "es":"Bretaña",
+				 "fr":"Bretagne",
+				 "nl":"Bretagne",
+				 }
+			},
+			{
+			 "name":"Center",
+			 "translations":
+				 {
+				 "de":"Zentrum",
+				 "es":"centro",
+				 "fr":"Centre",
+				 "nl":"centrum",
+				 }
+			},
+			{
+			 "name":"Champagne-Ardenne",
+			 "translations":
+				 {
+				 "de":"Champagne-Ardenne",
+				 "es":"Champagne-Ardenne",
+				 "fr":"Champagne-Ardenne",
+				 "nl":"Champagne-Ardenne",
+				 }
+			},
+			{
+			"name":"Corsica",
+			 "translations":
+				 {
+				 "de":"Korsika",
+				 "es":"Córcega",
+				 "fr":"Corse",
+				 "nl":"Corsica",
+				 }
+			},
+			{
+			 "name":"Franche-Comté",
+			 "translations":
+				 {
+				 "de":"Franche-Comté",
+				 "es":"Franche-Comté",
+				 "fr":"Franche-Comté",
+				 "nl":"Franche-Comte",
+				 }
+			},
+			{
+			 "name":"Guadeloupe",
+			 "translations":
+				 {
+				 "de":"Guadeloupe",
+				 "es":"Guadalupe",
+				 "fr":"Guadeloupe",
+				 "nl":"Guadeloupe",
+				 }
+			},
+			{
+			 "name":"Guyana",
+			 "translations":
+				 {
+				 "de":"Guyana",
+				 "es":"Guayana",
+				 "fr":"Guyane",
+				 "nl":"Guyane",
+				 }
+			},
+			{
+			 "name":"Île-de-France",
+			 "translations":
+				 {
+				 "de":"Ile-de-France",
+				 "es":"Ile-de-France",
+				 "fr":"Île-de-France",
+				 "nl":"Ile-de-France",
+				 }
+			},
+			{
+			 "name":"Languedoc-Roussillon",
+			 "translations":
+				 {
+				 "de":"Languedoc-Roussillon",
+				 "es":"Languedoc-Roussillon",
+				 "fr":"Languedoc-Roussillon",
+				 "nl":"Languedoc-Roussillon",
+				 }
+			},
+			{
+			 "name":"Limousin",
+			 "translations":
+				 {
+				 "de":"Limousin",
+				 "es":"Limousin",
+				 "fr":"Limousin",
+				 "nl":"Limousin",
+				 }
+			},
+			{
+			 "name":"Lorraine",
+			 "translations":
+				 {
+				 "de":"Lorraine",
+				 "es":"Lorraine",
+				 "fr":"Lorraine",
+				 "nl":"Lotharingen",
+				 }
+			},
+			{
+			 "name":"Martinique",
+			 "translations":
+				 {
+				 "de":"Martinique",
+				 "es":"Martinica",
+				 "fr":"Martinique",
+				 "nl":"Martinique",
+				 }
+			},
+			{
+			 "name":"Mayotte",
+			 "translations":
+				 {
+				 "de":"Mayotte",
+				 "es":"Mayotte",
+				 "fr":"Mayotte",
+				 "nl":"Mayotte",
+				 }
+			},
+			{
+			 "name":"Midi-Pyrenees",
+			 "translations":
+				 {
+				 "de":"Midi-Pyrenees",
+				 "es":"Midi-Pyrénées",
+				 "fr":"Midi-Pyrénées",
+				 "nl":"Midi-Pyrenees",
+				 }
+			},
+			{
+			 "name":"Nord-Pas-de-Calais",
+			 "translations":
+				 {
+				 "de":"Nord-Pas-de-Calais",
+				 "es":"Nord-Pas-de-Calais",
+				 "fr":"Nord-Pas-de-Calais",
+				 "nl":"Nord-Pas-de-Calais",
+				 }
+			},
+			{
+			 "name":"Basse-Normandie",
+			 "translations":
+				 {
+				 "de":"Basse-Normandie",
+				 "es":"Basse-Normandie",
+				 "fr":"Basse-Normandie",
+				 "nl":"Lotharingen",
+				 }
+			},
+			{
+			 "name":"Haute-Normandie",
+			 "translations":
+				 {
+				 "de":"Haute-Normandie",
+				 "es":"Haute-Normandie",
+				 "fr":"Haute-Normandie",
+				 "nl":"Haute-Normandie",
+				 }
+			},
+			{
+			 "name":"Pays de la Loire",
+			 "translations":
+				 {
+				 "de":"Pays de la Loire",
+				 "es":"Pays de la Loire",
+				 "fr":"Pays de la Loire",
+				 "nl":"Pays de la Loire",
+				 }
+			},
+			{
+			 "name":"Picardie",
+			 "translations":
+				 {
+				 "de":"Picardie",
+				 "es":"Picardie",
+				 "fr":"Picardie",
+				 "nl":"Picardie",
+				 }
+			},
+			{
+			 "name":"Poitou-Charentes",
+			 "translations":
+				 {
+				 "de":"Poitou-Charentes",
+				 "es":"Poitou-Charentes",
+				 "fr":"Poitou-Charentes",
+				 "nl":"Poitou-Charentes",
+				 }
+			},
+			{
+			 "name":"Provence-Alpes-Côte d'Azur",
+			 "translations":
+				 {
+				 "de":"Provence-Alpes-Côte d'Azur",
+				 "es":"Provence-Alpes-Côte d'Azur",
+				 "fr":"Provence-Alpes-Côte d'Azur",
+				 "nl":"Provence-Alpes-Côte d'Azur",
+				 }
+			},
+			{
+			 "name":"Reunion Island",
+			 "translations":
+				 {
+				 "de":"Insel La Réunion",
+				 "es":"Isla de la Reunión",
+				 "fr":"Île de La Réunion",
+				 "nl":"Reunion Island",
+				 }
+			},
+			{
+			"name": "Rhône-Alpes",
+			 "translations":
+				 {
+				 "de":"Rhône-Alpes",
+				 "es":"Ródano-Alpes",
+				 "fr":"Rhône-Alpes",
+				 "nl":"Rhône-Alpes",
+				 }
+			},
+		],
+	},
+	{
+
+		"country":"Spain",
+		"country_id":"212",
+		"regions":[
+			{
+			 "name":"Andalucia",
+			 "translations":
+				 {
+				 "de":"Andalucia",
+				 "es":"Andalucia",
+				 "fr":"Andalousie",
+				 "nl":"Andalucia",
+				 }
+			},
+			{
+			 "name":"Aragon",
+			 "translations":
+				 {
+				 "de":"Aragon",
+				 "es":"Aragón",
+				 "fr":"Aragon",
+				 "nl":"Aragon",
+				 }
+			},
+			{
+			 "name":"Balearic Islands",
+			 "translations":
+				 {
+				 "de":"Balearen",
+				 "es":"Islas Baleares",
+				 "fr":"Îles Baléares",
+				 "nl":"Balearen",
+				 }
+			},
+			{
+			 "name":"Canary Islands",
+			 "translations":
+				 {
+				 "de":"Kanarische Inseln",
+				 "es":"Canarias",
+				 "fr":"Îles Canaries",
+				 "nl":"Canarische eilanden",
+				 }
+			},
+			{
+			 "name":"Cantabria",
+			 "translations":
+				 {
+				 "de":"Cantabria",
+				 "es":"Cantabria",
+				 "fr":"Cantabria",
+				 "nl":"Cantabria",
+				 }
+			},
+			{
+			 "name":"Castilla la Mancha",
+			 "translations":
+				 {
+				 "de":"Kastilien-La Mancha",
+				 "es":"Castilla la Mancha",
+				 "fr":"Castilla la Mancha",
+				 "nl":"Castilla la Mancha",
+				 }
+			},
+			{
+			 "name":"Castile and Leon",
+			 "translations":
+				 {
+				 "de":"Kastilien und Leon",
+				 "es":"Castilla y León",
+				 "fr":"Castille-et-León",
+				 "nl":"Castilië en León",
+				 }
+			},
+			{
+			 "name":"Catalona",
+			 "translations":
+				 {
+				 "de":"Catalona",
+				 "es":"Catalona",
+				 "fr":"Catalona",
+				 "nl":"Catalona",
+				 }
+			},
+			{
+			 "name":"Community of Valencia",
+			 "translations":
+				 {
+				 "de":"Gemeinschaft Valencia",
+				 "es":"Comunidad de Valencia",
+				 "fr":"Communauté de Valence",
+				 "nl":"Valencia",
+				 }
+			},
+			{
+			 "name":"Extremadura",
+			 "translations":
+				 {
+				 "de":"Extremadura",
+				 "es":"Extremadura",
+				 "fr":"Estrémadure",
+				 "nl":"Extremadura",
+				 }
+			},
+			{
+			 "name":"Galicia",
+			 "translations":
+				 {
+				 "de":"Galicien",
+				 "es":"Galicia",
+				 "fr":"Galice",
+				 "nl":"Galicië",
+				 }
+			},
+			{
+			 "name":"Madrid",
+			 "translations":
+				 {
+				 "de":"Madrid",
+				 "es":"Madrid",
+				 "fr":"Madrid",
+				 "nl":"Madrid",
+				 }
+			},
+			{
+			 "name":"Region of Murcia",
+			 "translations":
+				 {
+				 "de":"Region Murcia",
+				 "es":"Región de Murcia",
+				 "fr":"Région de Murcie",
+				 "nl":"Murcia",
+				 }
+			},
+			{
+			 "name":"Navarre",
+			 "translations":
+				 {
+				 "de":"Navarra",
+				 "es":"Navarra",
+				 "fr":"Navarre",
+				 "nl":"Navarre",
+				 }
+			},
+			{
+			 "name":"Pais Vasco",
+			 "translations":
+				 {
+				 "de":"Pais Vasco",
+				 "es":"Pais Vasco",
+				 "fr":"Pais Vasco",
+				 "nl":"Pais Vasco",
+				 }
+			},
+			{
+			 "name":"Rioja",
+			 "translations":
+				 {
+				 "de":"Rioja",
+				 "es":"Rioja",
+				 "fr":"Rioja",
+				 "nl":"Rioja",
+				 }
+			},
+			
+		],
+	},{
+
+		"country":"Italy",
+		"country_id":"112",
+		"regions":[
+			{
+			 "name":"Basilicata",
+			 "translations":
+				 {
+				 "de":"Basilicata",
+				 "es":"Basilicata",
+				 "fr":"Basilicate",
+				 "nl":"Basilicata",
+				 }
+			},
+			{
+			 "name":"Calabria",
+			 "translations":
+				 {
+				 "de":"Calabria",
+				 "es":"Calabria",
+				 "fr":"Calabrie",
+				 "nl":"Calabria",
+				 }
+			},
+			{
+			 "name":"Campania",
+			 "translations":
+				 {
+				 "de":"Campania",
+				 "es":"Campania",
+				 "fr":"Campagnie",
+				 "nl":"Campania",
+				 }
+			},
+			{
+			 "name":"Emilia-Romagna",
+			 "translations":
+				 {
+				 "de":"Emilia-Romagna",
+				 "es":"Emilia-Romagna",
+				 "fr":"Emilia-Romagne",
+				 "nl":"Emilia-Romagna",
+				 }
+			},
+			{
+			 "name":"Friuli-Venezia Giulia",
+			 "translations":
+				 {
+				 "de":"Friuli-Venezia Giulia",
+				 "es":"Friuli-Venezia Giulia",
+				 "fr":"Frioul-Vénétie Julienne",
+				 "nl":"Friuli-Venezia Giulia",
+				 }
+			},
+			{
+			 "name":"Lazio",
+			 "translations":
+				 {
+				 "de":"Lazio",
+				 "es":"Lazio",
+				 "fr":"Latium",
+				 "nl":"Lazio",
+				 }
+			},
+			{
+			 "name":"Liguria",
+			 "translations":
+				 {
+				 "de":"Liguria",
+				 "es":"Liguria",
+				 "fr":"Ligurie",
+				 "nl":"Liguria",
+				 }
+			},
+			{
+			 "name":"Lombardy",
+			 "translations":
+				 {
+				 "de":"Lombardy",
+				 "es":"Lombardía",
+				 "fr":"Lombardie",
+				 "nl":"Lombardy",
+				 }
+			},
+			{
+			 "name":"Marcas",
+			 "translations":
+				 {
+				 "de":"Marche",
+				 "es":"Marche",
+				 "fr":"Marches",
+				 "nl":"Marche",
+				 }
+			},
+			{
+			 "name":"Molise",
+			 "translations":
+				 {
+				 "de":"Molise",
+				 "es":"Molise",
+				 "fr":"Molise",
+				 "nl":"Molise",
+				 }
+			},
+			{
+			 "name":"Umbria",
+			 "translations":
+				 {
+				 "de":"Umbria",
+				 "es":"Umbria",
+				 "fr":"Ombrie",
+				 "nl":"Umbria",
+				 }
+			},
+			{
+			 "name":"Piemonte",
+			 "translations":
+				 {
+				 "de":"Piemonte",
+				 "es":"Piemonte",
+				 "fr":"Piémont",
+				 "nl":"Piemonte",
+				 }
+			},
+			{
+			 "name":"Puglia",
+			 "translations":
+				 {
+				 "de":"Puglia",
+				 "es":"Puglia",
+				 "fr":"Pouilles",
+				 "nl":"Puglia",
+				 }
+			},
+			{
+			 "name":"Sardinia",
+			 "translations":
+				 {
+				 "de":"Sardinia",
+				 "es":"Cerdeña",
+				 "fr":"Sardaigne",
+				 "nl":"Sardinië",
+				 }
+			},
+			{
+			 "name":"Sicily",
+			 "translations":
+				 {
+				 "de":"Sicily",
+				 "es":"Sicilia",
+				 "fr":"Sicile",
+				 "nl":"Sicilië",
+				 }
+			},
+			{
+			 "name":"Tuscany",
+			 "translations":
+				 {
+				 "de":"Tuscany",
+				 "es":"Toscana",
+				 "fr":"Toscane",
+				 "nl":"Toscane",
+				 }
+			},
+			{
+			 "name":"Trentino Alto Adigo",
+			 "translations":
+				 {
+				 "de":"Trentino Alto Adigo",
+				 "es":"Trentino Alto Adigo",
+				 "fr":"Trentin-Haut-Adige",
+				 "nl":"Trentino Alto Adigo",
+				 }
+			},
+			{
+			 "name":"Valle de Aosta",
+			 "translations":
+				 {
+				 "de":"Valle d'Aosta",
+				 "es":"Valle d'Aosta",
+				 "fr":"Vallée d'Aoste",
+				 "nl":"Valle d'Aosta",
+				 }
+			},
+			{
+			 "name":"Veneto",
+			 "translations":
+				 {
+				 "de":"Veneto",
+				 "es":"Veneto",
+				 "fr":"Veneto",
+				 "nl":"Veneto",
+				 }
+			},
+			
+		],
+	},
+]*/

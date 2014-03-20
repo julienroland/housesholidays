@@ -15,8 +15,8 @@ class CreateAnnoncesPayeesTable extends Migration {
 		Schema::create('annonces_payees', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('paiements_statuts_id')->unsigned();
-			$table->foreign('paiements_statuts_id')->references('id')->on('paiements_statuts');
+			$table->integer('paiement_statut_id')->unsigned();
+			$table->foreign('paiement_statut_id')->references('id')->on('paiements_statuts');
 			
 			$table->timestamps();
 		});

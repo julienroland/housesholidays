@@ -11,14 +11,15 @@
 
 namespace Predis\Collection\Iterator;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Client;
 use Predis\Profile\ServerProfile;
 
 /**
  * @group realm-iterators
  */
-class SetKeyTest extends PredisTestCase
+class SetKeyTest extends StandardTestCase
 {
     /**
      * @group disconnected

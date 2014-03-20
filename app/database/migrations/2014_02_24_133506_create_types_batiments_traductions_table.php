@@ -15,10 +15,10 @@ class CreateTypesBatimentsTraductionsTable extends Migration {
 		Schema::create('types_batiments_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('types_batiments_id')->unsigned();
-			$table->foreign('types_batiments_id')->references('id')->on('types_batiments');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
+			$table->integer('type_batiment_id')->unsigned();
+			$table->foreign('type_batiment_id')->references('id')->on('types_batiments');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
 			
 			$table->timestamps();
 		});

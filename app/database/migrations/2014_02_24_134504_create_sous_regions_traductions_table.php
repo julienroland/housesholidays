@@ -15,10 +15,10 @@ class CreateSousRegionsTraductionsTable extends Migration {
 		Schema::create('sous_regions_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
-			$table->integer('sous_regions_id')->unsigned();
-			$table->foreign('sous_regions_id')->references('id')->on('sous_regions');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
+			$table->integer('sous_region_id')->unsigned();
+			$table->foreign('sous_region_id')->references('id')->on('sous_regions');
 			
 			$table->timestamps();
 		});

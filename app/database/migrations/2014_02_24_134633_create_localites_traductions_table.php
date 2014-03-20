@@ -15,10 +15,10 @@ class CreateLocalitesTraductionsTable extends Migration {
 		Schema::create('localites_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
-			$table->integer('localites_id')->unsigned();
-			$table->foreign('localites_id')->references('id')->on('localites');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
+			$table->integer('localite_id')->unsigned();
+			$table->foreign('localite_id')->references('id')->on('localites');
 			
 			$table->timestamps();
 		});

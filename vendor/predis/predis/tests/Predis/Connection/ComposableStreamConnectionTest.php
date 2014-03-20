@@ -11,10 +11,14 @@
 
 namespace Predis\Connection;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
+use Predis\Profile\ServerProfile;
+
 /**
  *
  */
-class ComposableStreamConnectionTest extends PredisConnectionTestCase
+class ComposableStreamConnectionTest extends ConnectionTestCase
 {
     /**
      * @group disconnected

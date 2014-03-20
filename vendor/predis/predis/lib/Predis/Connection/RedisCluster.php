@@ -11,46 +11,24 @@
 
 namespace Predis\Connection;
 
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-use OutOfBoundsException;
+use Predis\ClientException;
+use Predis\Cluster\CommandHashStrategyInterface;
 use Predis\NotSupportedException;
 use Predis\ResponseErrorInterface;
-use Predis\Cluster\CommandHashStrategyInterface;
 use Predis\Cluster\RedisClusterHashStrategy;
 use Predis\Command\CommandInterface;
-use Predis\Command\RawCommand;
 
 /**
- * Abstraction for a Redis-backed cluster of nodes (Redis >= 3.0.0).
- *
- * This connection backend offers smart support for redis-cluster by handling
- * automatic slots map (re)generation upon -MOVE or -ASK responses returned by
- * Redis when redirecting a client to a different node.
- *
- * The cluster can be pre-initialized using only a subset of the actual nodes in
- * the cluster, Predis will do the rest by adjusting the slots map and creating
- * the missing underlying connection instances on the fly.
- *
- * It is possible to pre-associate connections to a slots range with the "slots"
- * parameter in the form "$first-$last". This can greatly reduce runtime node
- * guessing and redirections.
- *
- * It is also possible to ask for the full and updated slots map directly to one
- * of the nodes and optionally enable such a behaviour upon -MOVED redirections.
- * Asking for the cluster configuration to Redis is actually done by issuing a
- * CLUSTER NODES command to a random node in the pool.
+ * Abstraction for Redis cluster (Redis v3.0).
  *
  * @author Daniele Alessandri <suppakilla@gmail.com>
  */
-class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Countable
+class RedisCluster implements ClusterConnectionInterface, \IteratorAggregate, \Countable
 {
-    private $askClusterNodes = false;
-    private $defaultParameters = array();
-    private $pool = array();
-    private $slots = array();
+    private $pool;
+    private $slots;
     private $slotsMap;
+    private $slotsPerNode;
     private $strategy;
     private $connections;
 
@@ -59,6 +37,8 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
      */
     public function __construct(ConnectionFactoryInterface $connections = null)
     {
+        $this->pool = array();
+        $this->slots = array();
         $this->strategy = new RedisClusterHashStrategy();
         $this->connections = $connections ?: new ConnectionFactory();
     }
@@ -82,7 +62,7 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
      */
     public function connect()
     {
-        if ($connection = $this->getRandomConnection()) {
+        foreach ($this->pool as $connection) {
             $connection->connect();
         }
     }
@@ -103,7 +83,10 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     public function add(SingleConnectionInterface $connection)
     {
         $this->pool[(string) $connection] = $connection;
-        unset($this->slotsMap);
+        unset(
+            $this->slotsMap,
+            $this->slotsPerNode
+        );
     }
 
     /**
@@ -111,10 +94,11 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
      */
     public function remove(SingleConnectionInterface $connection)
     {
-        if (false !== $id = array_search($connection, $this->pool, true)) {
+        if (($id = array_search($connection, $this->pool, true)) !== false) {
             unset(
                 $this->pool[$id],
-                $this->slotsMap
+                $this->slotsMap,
+                $this->slotsPerNode
             );
 
             return true;
@@ -124,17 +108,18 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     }
 
     /**
-     * Removes a connection instance by using its identifier.
+     * Removes a connection instance using its alias or index.
      *
-     * @param  string $connectionID Connection identifier.
-     * @return bool   True if the connection was in the pool.
+     * @param string $connectionId Alias or index of a connection.
+     * @return Boolean Returns true if the connection was in the pool.
      */
-    public function removeById($connectionID)
+    public function removeById($connectionId)
     {
-        if (isset($this->pool[$connectionID])) {
+        if (isset($this->pool[$connectionId])) {
             unset(
-                $this->pool[$connectionID],
-                $this->slotsMap
+                $this->pool[$connectionId],
+                $this->slotsMap,
+                $this->slotsPerNode
             );
 
             return true;
@@ -144,17 +129,14 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     }
 
     /**
-     * Generates the current slots map by guessing the cluster configuration out
-     * of the connection parameters of the connections in the pool.
+     * Builds the slots map for the cluster.
      *
-     * Generation is based on the same algorithm used by Redis to generate the
-     * cluster, so it is most effective when all of the connections supplied on
-     * initialization have the "slots" parameter properly set accordingly to the
-     * current cluster configuration.
+     * @return array
      */
     public function buildSlotsMap()
     {
         $this->slotsMap = array();
+        $this->slotsPerNode = (int) (16384 / count($this->pool));
 
         foreach ($this->pool as $connectionID => $connection) {
             $parameters = $connection->getParameters();
@@ -163,37 +145,11 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
                 continue;
             }
 
-            $slots = explode('-', $parameters->slots, 2);
-            $this->setSlots($slots[0], $slots[1], $connectionID);
-        }
-    }
-
-    /**
-     * Generates the current slots map by fetching the cluster configuration to
-     * one of the nodes by leveraging the CLUSTER NODES command.
-     */
-    public function askClusterNodes()
-    {
-        if (!$connection = $this->getRandomConnection()) {
-            return array();
+            list($first, $last) = explode('-', $parameters->slots, 2);
+            $this->setSlots($first, $last, $connectionID);
         }
 
-        $cmdCluster = RawCommand::create('CLUSTER', 'NODES');
-        $response = $connection->executeCommand($cmdCluster);
-
-        $nodes = explode("\n", $response, -1);
-        $count = count($nodes);
-
-        for ($i = 0; $i < $count; $i++) {
-            $node = explode(' ', $nodes[$i], 9);
-            $slots = explode('-', $node[8], 2);
-
-            if ($node[1] === ':0') {
-                $this->setSlots($slots[0], $slots[1], (string) $connection);
-            } else {
-                $this->setSlots($slots[0], $slots[1], $node[1]);
-            }
-        }
+        return $this->slotsMap;
     }
 
     /**
@@ -211,34 +167,79 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     }
 
     /**
-     * Pre-associates a connection to a slots range to avoid runtime guessing.
+     * Preassociate a connection to a set of slots to avoid runtime guessing.
      *
-     * @param int                              $first      Initial slot of the range.
-     * @param int                              $last       Last slot of the range.
+     * @todo Check type or existence of the specified connection.
+     * @todo Cluster loses the slots assigned with this methods when adding / removing connections.
+     *
+     * @param int $first Initial slot.
+     * @param int $last Last slot.
      * @param SingleConnectionInterface|string $connection ID or connection instance.
      */
     public function setSlots($first, $last, $connection)
     {
-        if ($first < 0x0000 || $first > 0x3FFF ||
-            $last < 0x0000 || $last > 0x3FFF ||
-            $last < $first
-        ) {
-            throw new OutOfBoundsException(
-                "Invalid slot range for $connection: [$first-$last]"
-            );
+        if ($first < 0x0000 || $first > 0x3FFF || $last < 0x0000 || $last > 0x3FFF || $last < $first) {
+            throw new \OutOfBoundsException("Invalid slot values for $connection: [$first-$last]");
         }
 
-        $slots = array_fill($first, $last - $first + 1, (string) $connection);
-        $this->slotsMap = $this->getSlotsMap() + $slots;
+        $this->slotsMap = $this->getSlotsMap() + array_fill($first, $last - $first + 1, (string) $connection);
     }
 
     /**
-     * Guesses the correct node associated to a given slot using a precalculated
-     * slots map, falling back to the same logic used by Redis to initialize a
-     * cluster (best-effort).
+     * {@inheritdoc}
+     */
+    public function getConnection(CommandInterface $command)
+    {
+        $hash = $this->strategy->getHash($command);
+
+        if (!isset($hash)) {
+            throw new NotSupportedException("Cannot use {$command->getId()} with redis-cluster");
+        }
+
+        $slot = $hash & 0x3FFF;
+
+        if (isset($this->slots[$slot])) {
+            return $this->slots[$slot];
+        }
+
+        $this->slots[$slot] = $connection = $this->pool[$this->guessNode($slot)];
+
+        return $connection;
+    }
+
+    /**
+     * Returns the connection associated to the specified slot.
      *
-     * @param  int    $slot Slot index.
-     * @return string Connection ID.
+     * @param int $slot Slot ID.
+     * @return SingleConnectionInterface
+     */
+    public function getConnectionBySlot($slot)
+    {
+        if ($slot < 0x0000 || $slot > 0x3FFF) {
+            throw new \OutOfBoundsException("Invalid slot value [$slot]");
+        }
+
+        if (isset($this->slots[$slot])) {
+            return $this->slots[$slot];
+        }
+
+        return $this->pool[$this->guessNode($slot)];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConnectionById($connectionId)
+    {
+        return isset($this->pool[$connectionId]) ? $this->pool[$connectionId] : null;
+    }
+
+    /**
+     * Tries guessing the correct node associated to the given slot using a precalculated
+     * slots map or the same logic used by redis-trib to initialize a redis cluster.
+     *
+     * @param int $slot Slot ID.
+     * @return string
      */
     protected function guessNode($slot)
     {
@@ -250,109 +251,51 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
             return $this->slotsMap[$slot];
         }
 
-        $count = count($this->pool);
-        $index = min((int) ($slot / (int) (16384 / $count)), $count - 1);
+        $index = min((int) ($slot / $this->slotsPerNode), count($this->pool) - 1);
         $nodes = array_keys($this->pool);
 
         return $nodes[$index];
     }
 
     /**
-     * Creates a new connection instance from the given connection ID.
+     * Handles -MOVED or -ASK replies by re-executing the command on the server
+     * specified by the Redis reply.
      *
-     * @param  string                    $connectionID Identifier for the connection.
-     * @return SingleConnectionInterface
+     * @param CommandInterface $command Command that generated the -MOVE or -ASK reply.
+     * @param string $request Type of request (either 'MOVED' or 'ASK').
+     * @param string $details Parameters of the MOVED/ASK request.
+     * @return mixed
      */
-    protected function createConnection($connectionID)
+    protected function onMoveRequest(CommandInterface $command, $request, $details)
     {
-        $host = explode(':', $connectionID, 2);
+        list($slot, $host) = explode(' ', $details, 2);
+        $connection = $this->getConnectionById($host);
 
-        $parameters = array_merge($this->defaultParameters, array(
-            'host' => $host[0],
-            'port' => $host[1],
-        ));
-
-        $connection = $this->connections->create($parameters);
-
-        return $connection;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getConnection(CommandInterface $command)
-    {
-        $hash = $this->strategy->getHash($command);
-
-        if (!isset($hash)) {
-            throw new NotSupportedException(
-                "Cannot use {$command->getId()} with redis-cluster"
-            );
+        if (!isset($connection)) {
+            $parameters = array('host' => null, 'port' => null);
+            list($parameters['host'], $parameters['port']) = explode(':', $host, 2);
+            $connection = $this->connections->create($parameters);
         }
 
-        $slot = $hash & 0x3FFF;
+        switch ($request) {
+            case 'MOVED':
+                $this->move($connection, $slot);
+                return $this->executeCommand($command);
 
-        if (isset($this->slots[$slot])) {
-            return $this->slots[$slot];
-        } else {
-            return $this->getConnectionBySlot($slot);
+            case 'ASK':
+                return $connection->executeCommand($command);
+
+            default:
+                throw new ClientException("Unexpected request type for a move request: $request");
         }
     }
 
     /**
-     * Returns the connection currently associated to a given slot.
+     * Assign the connection instance to a new slot and adds it to the
+     * pool if the connection was not already part of the pool.
      *
-     * @param  int                       $slot Slot index.
-     * @return SingleConnectionInterface
-     */
-    public function getConnectionBySlot($slot)
-    {
-        if ($slot < 0x0000 || $slot > 0x3FFF) {
-            throw new OutOfBoundsException("Invalid slot [$slot]");
-        }
-
-        if (isset($this->slots[$slot])) {
-            return $this->slots[$slot];
-        }
-
-        $connectionID = $this->guessNode($slot);
-
-        if (!$connection = $this->getConnectionById($connectionID)) {
-            $connection = $this->createConnection($connectionID);
-            $this->pool[$connectionID] = $connection;
-        }
-
-        return $this->slots[$slot] = $connection;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getConnectionById($connectionID)
-    {
-        if (isset($this->pool[$connectionID])) {
-            return $this->pool[$connectionID];
-        }
-    }
-
-    /**
-     * Returns a random connection from the pool.
-     *
-     * @return SingleConnectionInterface
-     */
-    protected function getRandomConnection()
-    {
-        if ($this->pool) {
-            return $this->pool[array_rand($this->pool)];
-        }
-    }
-
-    /**
-     * Permanently associates the connection instance to a new slot.
-     * The connection is added to the connections pool if not yet included.
-     *
-     * @param SingleConnectionInterface $connection Connection instance.
-     * @param int                       $slot       Target slot index.
+     * @param SingleConnectionInterface $connection Connection instance
+     * @param int $slot Target slot.
      */
     protected function move(SingleConnectionInterface $connection, $slot)
     {
@@ -361,74 +304,51 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     }
 
     /**
-     * Handles -ERR responses returned by Redis.
+     * Returns the underlying command hash strategy used to hash
+     * commands by their keys.
      *
-     * @param  CommandInterface       $command Command that generated the -ERR response.
-     * @param  ResponseErrorInterface $error   Redis error response object.
+     * @return CommandHashStrategyInterface
+     */
+    public function getCommandHashStrategy()
+    {
+        return $this->strategy;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function count()
+    {
+        return count($this->pool);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator(array_values($this->pool));
+    }
+
+    /**
+     * Handles -ERR replies from Redis.
+     *
+     * @param CommandInterface $command Command that generated the -ERR reply.
+     * @param ResponseErrorInterface $error Redis error reply object.
      * @return mixed
      */
-    protected function onErrorResponse(CommandInterface $command, ResponseErrorInterface $error)
+    protected function handleServerError(CommandInterface $command, ResponseErrorInterface $error)
     {
-        $details = explode(' ', $error->getMessage(), 2);
+        list($type, $details) = explode(' ', $error->getMessage(), 2);
 
-        switch ($details[0]) {
+        switch ($type) {
             case 'MOVED':
-                return $this->onMovedResponse($command, $details[1]);
-
             case 'ASK':
-                return $this->onAskResponse($command, $details[1]);
+                return $this->onMoveRequest($command, $type, $details);
 
             default:
                 return $error;
         }
-    }
-
-    /**
-     * Handles -MOVED responses by executing again the command against the node
-     * indicated by the Redis response.
-     *
-     * @param  CommandInterface $command Command that generated the -MOVED response.
-     * @param  string           $details Parameters of the -MOVED response.
-     * @return mixed
-     */
-    protected function onMovedResponse(CommandInterface $command, $details)
-    {
-        list($slot, $connectionID) = explode(' ', $details, 2);
-
-        if (!$connection = $this->getConnectionById($connectionID)) {
-            $connection = $this->createConnection($connectionID);
-        }
-
-        if ($this->askClusterNodes) {
-            $this->askClusterNodes();
-        }
-
-        $this->move($connection, $slot);
-        $response = $this->executeCommand($command);
-
-        return $response;
-    }
-
-    /**
-     * Handles -ASK responses by executing again the command against the node
-     * indicated by the Redis response.
-     *
-     * @param  CommandInterface $command Command that generated the -ASK response.
-     * @param  string           $details Parameters of the -ASK response.
-     * @return mixed
-     */
-    protected function onAskResponse(CommandInterface $command, $details)
-    {
-        list($slot, $connectionID) = explode(' ', $details, 2);
-
-        if (!$connection = $this->getConnectionById($connectionID)) {
-            $connection = $this->createConnection($connectionID);
-        }
-
-        $connection->executeCommand(RawCommand::create('ASKING'));
-        $response = $connection->executeCommand($command);
-
-        return $response;
     }
 
     /**
@@ -453,74 +373,12 @@ class RedisCluster implements ClusterConnectionInterface, IteratorAggregate, Cou
     public function executeCommand(CommandInterface $command)
     {
         $connection = $this->getConnection($command);
-        $response = $connection->executeCommand($command);
+        $reply = $connection->executeCommand($command);
 
-        if ($response instanceof ResponseErrorInterface) {
-            return $this->onErrorResponse($command, $response);
+        if ($reply instanceof ResponseErrorInterface) {
+            return $this->handleServerError($command, $reply);
         }
 
-        return $response;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function count()
-    {
-        return count($this->pool);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator(array_values($this->pool));
-    }
-
-    /**
-     * Returns the underlying hash strategy used to hash commands by their keys.
-     *
-     * @return CommandHashStrategyInterface
-     */
-    public function getCommandHashStrategy()
-    {
-        return $this->strategy;
-    }
-
-    /**
-     * Enables automatic fetching of the current slots map from one of the nodes
-     * using the CLUSTER NODES command. This option is disabled by default but
-     * asking the current slots map to Redis upon -MOVE responses may reduce
-     * overhead by eliminating the trial-and-error nature of the node guessing
-     * procedure, mostly when targeting many keys that would end up in a lot of
-     * redirections.
-     *
-     * The slots map can still be manually fetched using the askClusterNodes()
-     * method whether or not this option is enabled.
-     *
-     * @param bool $value Enable or disable the use of CLUSTER NODES.
-     */
-    public function enableClusterNodes($value)
-    {
-        $this->askClusterNodes = (bool) $value;
-    }
-
-    /**
-     * Sets a default array of connection parameters to be applied when creating
-     * new connection instances on the fly when they are not part of the initial
-     * pool supplied upon cluster initialization.
-     *
-     * These parameters are not applied to connections added to the pool using
-     * the add() method.
-     *
-     * @param array $parameters Array of connection parameters.
-     */
-    public function setDefaultParameters(array $parameters)
-    {
-        $this->defaultParameters = array_merge(
-            $this->defaultParameters,
-            $parameters ?: array()
-        );
+        return $reply;
     }
 }

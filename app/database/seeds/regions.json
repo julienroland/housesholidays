@@ -1,0 +1,2076 @@
+[
+	{
+		"country":"Belgium",
+		"country_id":"23",
+		"regions":[
+			{
+			 "name":"Wallonia",
+			 "translations":
+				 {
+				 "de":"Wallonien",
+				 "es":"Valonia",
+				 "fr":"Région Wallonne",
+				 "nl":"Wallonië"
+				 },
+			"description":
+				{
+				"en":"Wallonia may range approximately from the river Meuse basin, European river. With the exception of the province of Walloon Brabant, south of Brussels, and a large part of Hainaut in the west, adjacent to France, the rest of Wallonia - but two or three enclaves, including the side of the Grand-Luxembourg - belongs to the Meuse basin.",
+				"de":"Wallonien kann etwa aus der Maas-Becken, europäischen Fluss liegen. Mit Ausnahme der Provinz Wallonisch-Brabant südlich von Brüssel, und ein großer Teil von Hennegau im Westen, neben Frankreich, den Rest der Wallonie - aber zwei oder drei Enklaven einschließlich der Seite des Grand-Luxemburg - gehört zur Maas-Einzugsgebiet.",
+				"es":"Valonia puede variar aproximadamente desde la cuenca del Mosa río, río europeo. Con la excepción de la provincia de Brabante Valón, al sur de Bruselas, y una gran parte de Hainaut en el oeste, junto a Francia, el resto de Valonia - pero dos o tres enclaves, incluyendo el lado de la Grand-Luxemburgo - pertenece a la cuenca del Mosa.",
+				"fr":"La Wallonie peut se situer approximativement à partir du bassin hydrographique de la Meuse, fleuve européen. À l'exception de la province du Brabant wallon, au sud de Bruxelles, et une grande partie du Hainaut à l'ouest, qui jouxte la France, le reste de la Wallonie — sauf deux ou trois enclaves, notamment du côté du Grand-Duché de Luxembourg — appartient au bassin mosan.",
+				"nl":"Wallonië kan ongeveer variëren van de rivier de Maas, Europese rivier. Met uitzondering van de provincie Waals-Brabant, ten zuiden van Brussel, en een groot deel van Henegouwen in het westen, grenzend aan Frankrijk, de rest van Wallonië - maar twee of drie enclaves, met inbegrip van de kant van de Grand-Luxemburg - behoort tot het Maasbekken."
+				},
+				"subregions":
+				[
+					{
+						"name":"Namur",
+						"translations":
+						{
+							"de":"Namur",
+							"es":"Namur",
+							"fr":"Namur",
+							"nl":"Namen"
+						}
+					},
+					{
+						"name":"Liege",
+						"translations":
+						{
+							"de":"Liege",
+							"es":"Liege",
+							"fr":"Liège",
+							"nl":"Luik"
+						}
+					},
+					{
+						"name":"Luxembourg",
+						"translations":
+						{
+							"de":"Luxemburg",
+							"es":"Luxemburgo",
+							"fr":"Luxembourg",
+							"nl":"Luxemburg"
+						}
+					},
+					{
+						"name":"Hainaut",
+						"translations":
+						{
+							"de":"Hainaut",
+							"es":"Hainaut",
+							"fr":"Hainaut",
+							"nl":"Henegouwen"
+						}
+					},
+					{
+						"name":"Brabant Wallon",
+						"translations":
+						{
+							"de":"Brabant Wallon",
+							"es":"Brabant Wallon",
+							"fr":"Brabant Wallon",
+							"nl":"Brabant Wallon"
+						}
+					}
+				]	
+			},
+			{
+			 "name":"Flanders",
+			 "translations":
+				 {
+				 "de":"Flandern",
+				 "es":"Flandes",
+				 "fr":"Région Flamande",
+				 "nl":"Vlaanderen"
+				 },
+				 "description":
+					{
+					"en":"Flanders is the front door of Europe. Besides its productive highly skilled population and climate studies and investments, it has a large rail and road network, plus several major ports. Find below the major seaports and the airport of Zaventem.",
+					"de":"Flandern ist die Haustür Europas. Neben seiner produktiven hoch qualifizierten Bevölkerung und Klimastudien und Investitionen, hat es eine große Eisenbahn-und Straßennetz, sowie mehrere große Häfen. Nachstehend finden Sie die großen Seehäfen und dem Flughafen von Zaventem.",
+					"es":"Flandes es la puerta de entrada de Europa. Además de sus estudios de la población y el clima altamente cualificados productivas e inversiones, tiene una red de ferrocarril y carretera grande, además de varios puertos importantes. Ponemos a los principales puertos y el aeropuerto de Zaventem.",
+					"fr":"La Flandre est la porte d’entrée de l’Europe. Outre sa population productive hautement qualifiée et son climat propice aux études et investissements, elle dispose d’un large réseau ferroviaire et autoroutier, sans oublier plusieurs ports majeurs. Découvrez ci-dessous les principaux ports maritimes et l’aéroport de Zaventem.",
+					"nl":"Vlaanderen is de voordeur van Europa. Naast de productieve hoogopgeleide bevolking en klimaat studies en investeringen, het heeft een grote spoor-en wegennet, plus een aantal grote havens. Hieronder vindt u de grote zeehavens en de luchthaven van Zaventem."
+					},
+					"subregions":
+					[		
+						{
+							"name":"Antwerp",
+							"translations":
+							{
+								"de":"Antwerpen",
+								"es":"Amberes",
+								"fr":"Anvers",
+								"nl":"Antwerpen"
+							}
+						},	
+						{
+							"name":"Brabant Flamand",
+							"translations":
+							{
+								"de":"Brabant Flamand",
+								"es":"Brabante Flamand",
+								"fr":"Brabant Flamand",
+								"nl":"Brabant Flamand"
+							}
+						},	
+						{
+							"name":"West Flanders",
+							"translations":
+							{
+								"de":"West-Flandern",
+								"es":"Flandes Occidental",
+								"fr":"Flandre Occidentale",
+								"nl":"West-Vlaanderen"
+							}
+						},
+						{
+							"name":"East Flanders",
+							"translations":
+							{
+								"de":"Ost-Flandern",
+								"es":"Flandes Oriental",
+								"fr":"Flandre Orientale",
+								"nl":"Oost-Vlaanderen"
+							}
+						},
+						{
+							"name":"Limburg",
+							"translations":
+							{
+								"de":"Limburg",
+								"es":"Limburg",
+								"fr":"Limbourg",
+								"nl":"Limburg"
+							}
+						}
+					]
+			},
+			{
+			 "name":"brussels",
+			 "translations":
+				 {
+				 "de":"Region Brüssel-Hauptstadt",
+				 "es":"Región de Bruselas-Capital",
+				 "fr":"Région de Bruxelles-Capitale",
+				 "nl":"Gebied Brussel-Hoofdstad"
+				 },
+				 "description":
+					{
+					"en":"FCompared to most parts of Europe, it has a relatively small 161 km2 enclave in Flemish territory, but distinct from it. By cons, if one considers that this is an urban complex whose parts are closely integrated with each other in a single district called Brussels, size appears respectable as all form one city which is 1.6 times the area of ​​Paris inside the beltway.",
+					"de":"Im Vergleich zu den meisten Teilen Europas, hat es eine relativ kleine 161 km2 Enklave im flämischen Gebiet, aber von ihm unterscheidet. Durch die Nachteile, wenn man bedenkt, dass es sich um eine städtische Komplex, dessen Teile sind eng miteinander in einem einzigen Bezirk namens Brüssel integriert ist, erscheint als respektable Größe aller Form einer Stadt das ist 1,6 mal der Fläche von Paris innerhalb der Umgehungsstraße.",
+					"es":"Flandes es la puerta de entrada de Europa. Además de sus estudios de la población y el clima altamente cualificados productivas e inversiones, tiene una red de ferrocarril y carretera grande, además de varios puertos importantes. Ponemos a los principales puertos y el aeropuerto de Zaventem.",
+					"fr":"Si on la compare à la plupart des régions d'Europe, elle dispose d'un territoire relativement réduit de 161 km2 enclavé en Région flamande, mais distinct de celle-ci. Par contre, si l'on considère qu'il s'agit d'un ensemble urbain dont les parties sont étroitement intégrées les unes aux autres, dans un arrondissement unique dénommé Bruxelles-Capitale, sa taille apparaît respectable puisque le tout forme une seule ville qui représente 1,6 fois la surface de Paris à l'intérieur du boulevard périphérique.",
+					"nl":"Vergeleken met de meeste delen van Europa, heeft het een relatief kleine 161 km2 enclave in Vlaams grondgebied, maar van hem onderscheiden. Door nadelen, als je bedenkt dat dit een stedelijk complex waarvan de onderdelen zijn nauw met elkaar geïntegreerd in een wijk genaamd Brussel, verschijnt respectabele als alle vormen een grootte van de stad dat is 1,6 keer de oppervlakte van Parijs binnen de ringweg."
+					},
+					"subregions":
+					[
+						{
+							"name":"Brussels",
+							"translations":
+							{
+								"de":"Brüssel",
+								"es":"Bruselas",
+								"fr":"Bruxelles",
+								"nl":"Brussel"
+							}
+						}
+					]
+			}
+		]
+	},
+	{
+
+		"country":"France",
+		"country_id":"77",
+		"regions":[
+			{
+			 "name":"Alsace",
+			 "translations":
+				 {
+				 "de":"Elsass",
+				 "es":"Alsacia",
+				 "fr":"Alsace",
+				 "nl":"Elzas"
+				 },
+				 "description":
+					{
+					"en":"Alsace has always been a crossroads of Europe, was a land rich so coveted and often mistreated ... Roman and Merovingian alamane ... then German and French Alsace retains a strong identity and customs very special ...Consists of the departments of Bas-Rhin and Haut-Rhin between Wissembourg and Ferrette with the Rhine natural border, enjoy spectacular scenery, roads to explore this theme re the region contrasts so pretty ...Strasbourg, Colmar, Mulhouse, historic towns; Koenisbourg The High and the European Parliament, essential strategic sites; Mutzig or Obernai, cities brewers; Ribeauvillé Guebwiller villages vineyards ...Not to mention the many gastronomic specialties, sauerkraut, kougelhopf, flammekueche ...Alsace will seduce you and hold you ...<a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>",
+					"de":"Alsace war schon immer ein Knotenpunkt zwischen Europa, war ein Land, das reich so begehrt und oft misshandelt ... R&ouml;mischen und merowingischen alamane ... dann Deutsch und Franz&ouml;sisch Alsace beh&auml;lt eine starke Identit&auml;t und Br&auml;uche very special ...Besteht aus den Departements Bas-Rhin und Haut-Rhin zwischen Wissembourg und Ferrette mit dem Rhein nat&uuml;rliche Grenze, genie&szlig;en spektakul&auml;re Landschaft, Stra&szlig;en, dieses Thema neu entdecken die Region kontrastiert so pretty ...Strasbourg, Colmar, Mulhouse, historische St&auml;dte, Koenisbourg Die Hoch-und das Europ&auml;ische Parlament, wesentliche strategische Standorte, Mutzig oder Obernai, St&auml;dte Brauer; Ribeauvill&eacute; Guebwiller D&ouml;rfer Weinberge ...Nicht zu vergessen die vielen kulinarischen Spezialit&auml;ten, Sauerkraut, Gugelhupf, Flammkuchen ...Alsace wird Sie verf&uuml;hren und halten Sie ...<a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>",
+					"es":"Alsacia ha sido siempre una encrucijada de Europa, era una tierra rica tan codiciado y maltratados a menudo ... Romana y merovingia alamane ... entonces Alsacia alemana y francesa conserva una fuerte identidad y costumbres muy especiales ...Consta de los departamentos de Bas-Rhin y Haut-Rhin entre Wissembourg y Ferrette con la frontera del Rin natural, disfrutar de paisajes espectaculares, caminos para explorar este nuevo tema la regi&oacute;n contrasta tan bonito ...Estrasburgo, Colmar, Mulhouse, ciudades hist&oacute;ricas; Koenisbourg El Alto y el Parlamento Europeo, esenciales sitios estrat&eacute;gicos; Mutzig o Obernai, las ciudades cerveceros; Ribeauvill&eacute; pueblos Guebwiller vi&ntilde;edos ...Por no hablar de las muchas especialidades gastron&oacute;micas, chucrut, kougelhopf, Flammekueche ...Alsacia, le seducir&aacute; y abrazarte ...<a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>",
+					"fr":"Depuis toujours l'Alsace, carrefour de l'Europe, fut une terre riche donc convoit&eacute;e et souvent malmen&eacute;e... Romaine, alamane et m&eacute;rovingienne... puis germanique et fran&ccedil;aise, l'Alsace conserve une identit&eacute; tr&egrave;s forte et des coutumes fort particuli&egrave;res...Constitu&eacute;e des d&eacute;partements du Bas-Rhin et du Haut-Rhin, entre Wissembourg et Ferrette, avec le Rhin pour fronti&egrave;re naturelle, profitez de paysages exceptionnels, de routes &agrave; th&egrave;mes pour d&eacute;couvrir cette r&eacute;gion aux si jolis contrastes... Strasbourg, Colmar, Mulhouse, villes historiques ; Le Haut Koenisbourg ou le Parlement europ&eacute;en, sites strat&eacute;giques incontournables ; Mutzig ou Obernai, villes de brasseurs ; Ribeauvill&eacute; ou Guebwiller, villages de vignobles...Sans oublier les nombreuses sp&eacute;cialit&eacute;s gastronomiques, choucroute, kougelhopf, flammekueche...L'Alsace ne pourra que vous s&eacute;duire et vous retenir...<a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>",
+					"nl":"Elzas is altijd een kruispunt van Europa, was een land dat rijk is zo begeerde en vaak mishandeld ... Romeinse en Merovingische alamane ... dan Duitse en Franse Elzas behoudt een sterke identiteit en gewoontes heel bijzonder ... Bestaat uit de departementen Bas-Rhin en Haut-Rhin tussen Wissembourg en Ferrette met de Rijn natuurlijke grens, genieten van een spectaculair landschap, wegen te verkennen dit thema opnieuw de regio contrasteert zo mooi ... Straatsburg, Colmar, Mulhouse, historische steden; Koenisbourg De Hoge en het Europees Parlement, essentiële strategische sites, of Mutzig Obernai, steden brouwers; Ribeauville Guebwiller dorpen wijngaarden ... Niet te vergeten de vele gastronomische specialiteiten, zuurkool, kougelhopf, flammekueche noemen ... Elzas zal u verleiden en houd je ... . <a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Bas Rhin",
+							"translations":
+							{
+								"de":"Bas Rhin",
+								"es":"Bas Rhin",
+								"fr":"Bas Rhin",
+								"nl":"Bas Rhin"
+							}
+						},
+						{
+							"name":"Haut Rhin",
+							"translations":
+							{
+								"de":"Haut Rhin",
+								"es":"Haut Rhin",
+								"fr":"Haut Rhin",
+								"nl":"Haut Rhin"
+							}
+						}
+					]
+
+			},
+			{
+			 "name":"Aquitaine",
+			 "translations":
+				 {
+				 "de":"Aquitaine",
+				 "es":"Aquitania",
+				 "fr":"Aquitaine",
+				 "nl":"Aquitaine"
+				 },
+				 "description":
+					{
+					"en":"Aquitaine is divided into five departments responsible names spray, forests and mountains of flavors and a certain lifestyle. Gironde, Landes and Pyrenees Atlantiques total well over 270 kilometers of coastline. From north to south, from the mouth of the Gironde to the Bidasoa extend the widest beaches in France. Veritable inland sea, the Bay of Arcachon punctuates the coast, well protected from the vagaries of the Atlantic Ocean. Then beyond the Adour, is the estate of a multitude of bays, inlets and harbors, nestling at the foot of the Pyrenees ...These names also evoke the most famous vineyards in the world, those of Bordeaux, of course, one of the largest forests in Europe, the Landes de Gascogne and a strong identity and pride, the Basque Country. Land in the heart of Dordogne and Lot et Garonne are carriers of the ancestral history of the region. Evidenced by exceptional caves and prehistoric sites, and many castles and country houses. Finally, how to Aquitaine without addressing its huge range of flavors and specialties ... Foie gras, Armagnac, Bayonne ham, prunes, canelets, Landes pastis, Floc de Gascogne, pie and wine: Medoc, Graves, Sauternes ... <a rel='nofollow' href='http://www.aquitaine.jedecouvrelafrance.com/r-1.html'>source</a>",
+					"de":"Aquitaine ist in f&uuml;nf Abteilungen, die Namen Spray, W&auml;lder und Berge von Aromen und eine bestimmte Lebensweise unterteilt.Gironde, Landes und Pyr&eacute;n&eacute;es Atlantiques insgesamt weit &uuml;ber 270 Kilometer K&uuml;ste. Von Norden nach S&uuml;den, von der M&uuml;ndung der Gironde zum Bidasoa erweitern die breitesten Str&auml;nde in Frankreich. Veritable Binnenmeer, die Bucht von Arcachon durchbricht die K&uuml;ste, auch von den Launen des Atlantiks gesch&uuml;tzt. Dann &uuml;ber die Adour, ist das Anwesen von einer Vielzahl von Buchten und H&auml;fen, am Fusse der Pyren&auml;en ...Diese Namen erinnern auch an die ber&uuml;hmtesten Weinberge der Welt, jene von Bordeaux, nat&uuml;rlich, einer der gr&ouml;&szlig;ten W&auml;lder in Europa, der Landes de Gascogne und eine starke Identit&auml;t und FIE , re, das Baskenland.Im Herzen des Landes, Dordogne und Lot-et-Garonne sind Tr&auml;ger des angestammten Geschichte der Region. Belegt durch au&szlig;ergew&ouml;hnliche H&ouml;hlen und pr&auml;historischen St&auml;tten und viele Burgen und Landh&auml;user.Schlie&szlig;lich, wie Aquitaine ohne Ber&uuml;cksichtigung ihrer riesigen Palette von Aromen und Spezialit&auml;ten ... Foie gras, Armagnac, Bayonne-Schinken, Pflaumen, canelets, Landes Pastis, Floc de Gascogne, pie und Wein: Medoc, Graves, Sauternes ...<a rel='nofollow' href='http://www.aquitaine.jedecouvrelafrance.com/r-1.html'>source</a>",
+					"es":"Aquitania se divide en cinco departamentos de pulverizaci&oacute;n nombres de responsables, los bosques y las monta&ntilde;as de sabores y un cierto estilo de vida. Atlantiques Gironda, Landas y los Pirineos as&iacute; un total de m&aacute;s de 270 kil&oacute;metros de costa. De norte a sur, desde la desembocadura de la Gironde hasta el Bidasoa se extienden las playas m&aacute;s amplias en Francia. Veritable mar interior, la bah&iacute;a de Arcachon punt&uacute;a la costa, bien protegida de los vaivenes del oc&eacute;ano Atl&aacute;ntico. Entonces m&aacute;s all&aacute; del Adour, es la herencia de un gran n&uacute;mero de bah&iacute;as, ensenadas y puertos, ubicado al pie de los Pirineos ... Estos nombres evocan tambi&eacute;n los vi&ntilde;edos m&aacute;s famosos del mundo, los de Burdeos, por supuesto, uno de los bosques m&aacute;s grandes de Europa, las Landas de Gascu&ntilde;a y una fuerte identidad y FIE , re, el Pa&iacute;s Vasco. En el coraz&oacute;n de la tierra Garona, Dordo&ntilde;a y Lot y son portadores de la historia ancestral de la regi&oacute;n. Demostrado por cuevas y yacimientos prehist&oacute;ricos excepcionales, y muchos castillos y casas de campo. Por &uacute;ltimo, la forma de Aquitania sin tener en cuenta su amplia gama de sabores y especialidades ... Foie gras, Armagnac, jam&oacute;n de Bayona, ciruelas pasas, canelets, pastis Landes, Floc de Gascogne, pastel y vino Medoc, Graves, Sauternes ...<a rel='nofollow' href='http://www.aquitaine.jedecouvrelafrance.com/r-1.html'>source</a>",
+					"fr":"L&rsquo;Aquitaine se r&eacute;partie en 5 d&eacute;partements aux noms charg&eacute;s d&rsquo;embruns, de for&ecirc;ts et de montagnes, de saveurs du terroir et d&rsquo;un certain art de vivre.Gironde, Landes et Pyr&eacute;n&eacute;es Atlantiques totalisent ainsi plus de 270 kilom&egrave;tres de c&ocirc;te. Du nord au sud, de l&rsquo;embouchure de la Gironde &agrave; celle de la Bidasoa, s&rsquo;&eacute;tendent les plus vastes plages de France. V&eacute;ritable mer int&eacute;rieure, le Bassin d&rsquo;Arcachon ponctue la c&ocirc;te, bien &agrave; l&rsquo;abri des caprices de l&rsquo;oc&eacute;an Atlantique. Puis au del&agrave; de l&rsquo;Adour, c&rsquo;est la succession d&rsquo;une multitude de baies, criques et ports, blottis au pied des Pyr&eacute;n&eacute;es&hellip;Ces noms &eacute;voquent aussi les plus c&eacute;l&egrave;bres vignobles du monde, ceux de Bordeaux bien s&ucirc;r,  l'une des plus vastes for&ecirc;ts d&rsquo;Europe, celle des Landes de Gascogne et  une identit&eacute; forte et fi&egrave;re, celle du Pays Basque.Au c&oelig;ur des terres, Dordogne et Lot et Garonne sont porteurs de l&rsquo;histoire ancestrale de la r&eacute;gion. En t&eacute;moignent des grottes et sites pr&eacute;historiques exceptionnels, ainsi que de nombreux ch&acirc;teaux forts et bastides. Enfin, comment pr&eacute;senter l&rsquo;Aquitaine sans aborder son immense palette de saveurs et de sp&eacute;cialit&eacute;s&hellip; Foie gras, Armagnac, jambon de Bayonne, pruneaux d&rsquo;Agen, canelets, pastis landais, Floc de Gascogne, tourti&egrave;re et ses vins : M&eacute;doc, Graves, Sauternes&hellip;<a rel='nofollow' href='http://www.aquitaine.jedecouvrelafrance.com/r-1.html'>source</a>",
+					"nl":"Aquitaine is onderverdeeld in vijf afdelingen die verantwoordelijk zijn namen spray, bossen en bergen van smaken en een bepaalde levensstijl.Gironde, Landes en de Pyrenees Atlantiques totaal ruim 270 kilometer kustlijn. Van noord naar zuid, vanaf de monding van de Gironde tot de Bidasoa de breedste stranden in Frankrijk. Veritable binnenzee, de baai van Arcachon punctuates de kust, goed beschermd tegen de grillen van de Atlantische Oceaan. Dan voorbij de Adour, is het landgoed van een veelheid van baaien, inhammen en havens, genesteld aan de voet van de Pyrenee&euml;n ...Deze namen roepen ook de beroemdste wijngaarden ter wereld, die van Bordeaux, natuurlijk, een van de grootste bossen in Europa, de Landes de Gascogne en een sterke identiteit en FIE , re, het Baskenland. In het hart van het land, Dordogne en Lot-et-Garonne zijn dragers van het voorouderlijke geschiedenis van de regio. Blijkt uit uitzonderlijke grotten en prehistorische sites, en vele kastelen en landhuizen. Tot slot, hoe Aquitaine, zonder het aanpakken van de enorme waaier van smaken en specialiteiten ... Foie gras, Armagnac, Bayonne ham, gedroogde pruimen, canelets, Landes pastis, Floc de Gascogne, taart en wijn: Medoc, Graves, Sauternes ...<a rel='nofollow' href='http://www.aquitaine.jedecouvrelafrance.com/r-1.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Dordogne",
+							"translations":
+							{
+								"de":"Dordogne",
+								"es":"Dordogne",
+								"fr":"Dordogne",
+								"nl":"Dordogne"
+							}
+						},
+						{
+							"name":"Gironde",
+							"translations":
+							{
+								"de":"Gironde",
+								"es":"Gironde",
+								"fr":"Gironde",
+								"nl":"Gironde"
+							}
+						},
+						{
+							"name":"Landes",
+							"translations":
+							{
+								"de":"Landes",
+								"es":"Landes",
+								"fr":"Landes",
+								"nl":"Landes"
+							}
+						},
+						{
+							"name":" Haute-Garonne",
+							"translations":
+							{
+								"de":" Haute-Garonne",
+								"es":" Haute-Garonne",
+								"fr":" Haute-Garonne",
+								"nl":" Haute-Garonne"
+							}
+						},
+						{
+							"name":"Pyrenees-Atlantiques",
+							"translations":
+							{
+								"de":"Pyrénées-Atlantiques",
+								"es":"Pyrénées-Atlantiques",
+								"fr":"Pyrénées-Atlantiques",
+								"nl":"Pyrenees-Atlantiques"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Auvergne",
+			 "translations":
+				 {
+				 "de":"Auvergne",
+				 "es":"Auvergne",
+				 "fr":"Auvergne",
+				 "nl":"Auvergne"
+				 },
+				 "description":
+					{
+					"en":"At the heart of France, the Auvergne is the land of wide open spaces and volcanism par excellence. The banks of the Allier Cantal peaks, woodlands reliefs Haute-Loire Puy-de-Dome, Auvergne offers the mysterious striking contrasts. Land of fire, but also countries with eleven water spas: Volvic, Saint Yorre Ch&acirc;tel Guyon, Royat ... Its inhabitants, as strong and whole, live in the hollow of volcanic mountains, villages perched on rocky cliffs, dotted with abbeys and castles beautiful. Want to drunkenness and air of authenticity, respond to the invitation Auvergne and discover the pastures, ancient forests, plains and enchanting giant of the Massif Central: volcanoes.<a rel='nofollow' href='http://www.auvergne.jedecouvrelafrance.com/r-22.html'>source</a>",
+					"de":"In het hart van Frankrijk, de Auvergne is het land van grote open ruimten en vulkanisme bij uitstek. De oevers van de Allier Cantal pieken, bossen reli&euml;fs Haute-Loire Puy-de-Dome, Auvergne biedt de mysterieuze opvallende contrasten. Land van vuur, maar ook landen met elf water spa's: Volvic, Saint Yorre Ch&acirc;tel Guyon, Royat ... De bewoners, zo sterk en hele, live in de holte van vulkanische bergen, dorpjes op rotsachtige kliffen, bezaaid met kloosters en kastelen mooi. Wil je dronkenschap en sfeer van authenticiteit, reageren op de uitnodiging Auvergne en ontdek de weiden, oude bossen, vlakten en betoverende reus van het Centraal Massief: vulkanen.<a rel='nofollow' href='http://www.auvergne.jedecouvrelafrance.com/r-22.html'>source</a>",
+					"es":"En el coraz&oacute;n de Francia, Auvernia es la tierra de los grandes espacios abiertos y excelencia vulcanismo.Los bancos de los picos Allier Cantal, relieves bosques Haute-Loire Puy-de-D&ocirc;me, Auvernia ofrece los contrastes misteriosas. Tierra de fuego, pero tambi&eacute;n pa&iacute;ses con once balnearios de aguas: Volvic, Saint Yorre Ch&acirc;tel-Guyon, Royat ... Sus habitantes, como fuerte y entero, en vivo en el hueco de las monta&ntilde;as volc&aacute;nicas, los pueblos se alza sobre los acantilados rocosos, salpicada de abad&iacute;as y castillos hermosos. &iquest;Quieres embriaguez y el aire de autenticidad, responder a la invitaci&oacute;n Auvernia y descubrir los pastos, bosques, llanuras y antiguos gigantes encantador del Macizo Central: volcanes.<a rel='nofollow' href='http://www.auvergne.jedecouvrelafrance.com/r-22.html'>source</a>",
+					"fr":"Au c&oelig;ur de la France, l&rsquo;Auvergne est la terre des grands espaces et du volcanisme par excellence. Des rives de l&rsquo;Allier aux sommets du Cantal, des terres bois&eacute;es de Haute-Loire aux reliefs du Puy-de-D&ocirc;me, la myst&eacute;rieuse Auvergne offre des contrastes saisissants. Terre de feu, mais aussi pays des eaux avec ses onze stations thermales : Volvic, Saint Yorre, Ch&acirc;tel Guyon, Royat&hellip; Ses habitants, au caract&egrave;re fort et entier, vivent aux creux de massifs volcaniques, dans des villages perch&eacute;s sur des pics rocheux, parsem&eacute;s d&rsquo;abbayes romanes et de ch&acirc;teaux splendides. Envie d&rsquo;ivresse a&eacute;rienne et d&rsquo;authenticit&eacute;, r&eacute;pondez &agrave; l&rsquo;invitation auvergnate et partez &agrave; la d&eacute;couverte des alpages, des for&ecirc;ts s&eacute;culaires, des plaines enchanteresses et des g&eacute;ants du Massif Central : les volcans.<a rel='nofollow' href='http://www.auvergne.jedecouvrelafrance.com/r-22.html'>source</a>",
+					"nl":"Elzas is altijd een kruispunt van Europa, was een land dat rijk is zo begeerde en vaak mishandeld ... Romeinse en Merovingische alamane ... dan Duitse en Franse Elzas behoudt een sterke identiteit en gewoontes heel bijzonder ... Bestaat uit de departementen Bas-Rhin en Haut-Rhin tussen Wissembourg en Ferrette met de Rijn natuurlijke grens, genieten van een spectaculair landschap, wegen te verkennen dit thema opnieuw de regio contrasteert zo mooi ... Straatsburg, Colmar, Mulhouse, historische steden; Koenisbourg De Hoge en het Europees Parlement, essentiële strategische sites, of Mutzig Obernai, steden brouwers; Ribeauville Guebwiller dorpen wijngaarden ... Niet te vergeten de vele gastronomische specialiteiten, zuurkool, kougelhopf, flammekueche noemen ... Elzas zal u verleiden en houd je ... . <a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Allier",
+							"translations":
+							{
+								"de":"Allier",
+								"es":"Allier",
+								"fr":"Allier",
+								"nl":"Allier"
+							}
+						},
+						{
+							"name":"Cantal",
+							"translations":
+							{
+								"de":"Cantal",
+								"es":"Cantal",
+								"fr":"Cantal",
+								"nl":"Cantal"
+							}
+						},
+						{
+							"name":"Haute-Loire",
+							"translations":
+							{
+								"de":"Haute-Loire",
+								"es":"Haute-Loire",
+								"fr":"Haute-Loire",
+								"nl":"Haute-Loire"
+							}
+						},
+						{
+							"name":"Puy-de-Dôme",
+							"translations":
+							{
+								"de":"Puy-de-Dôme",
+								"es":"Puy-de-Dôme",
+								"fr":"Puy-de-Dôme",
+								"nl":"Puy-de-Dôme"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Bourgogne",
+			 "translations":
+				 {
+				 "de":"Burgund",
+				 "es":"borgoña",
+				 "fr":"Bourgogne",
+				 "nl":"Bourgondië"
+				 },
+				 "description":
+					{
+					"en":"Land of history at the crossroads of major highways river and land, economic and cultural French and European Burgundy awaits you. Powerful duchy who stood up to the kingdom of France before join it, Burgundy us his treasures: medieval villages Sémur-en-Auxois or Flavigny ... Castles extraordinary Cormatin Tanlay Pierreclos ... Also spiritual treasures through prestigious abbeys, Cluny, Fontenay ... that appreciate with time ... The time required to enjoy the Burgundy Canal, one of the center, and do a little way on or near the water unless you prefer a walk in heart of the Morvan ... And the time to enjoy fine wines, a Chablis or Cote de Nuits, Epoisses cheese or a great piece of Charolais beef after taking that stroll through the streets of cities famous Dijon, Beaune ... or enjoy charming countryside.<a rel='nofollow' href='http://www.bourgogne.jedecouvrelafrance.com/r-21.html'>source</a>",
+					"de":"Land van geschiedenis op het kruispunt van de belangrijkste snelwegen rivier en land, economische en culturele Franse en Europese Bourgondi&euml; voor u klaar. Krachtige hertogdom die opstonden om het koninkrijk van Frankrijk v&oacute;&oacute;r join it, Bourgondi&euml; ons zijn schatten: middeleeuwse dorpen Semur-en-Auxois of Flavigny ... Kastelen buitengewone Cormatin Tanlay Pierreclos ... Ook geestelijke schatten door middel van prestigieuze abdijen, Cluny, Fontenay ... dat waarderen met de tijd ... De tijd die nodig is om het Canal de Bourgogne, een van het centrum te genieten, en doe een eindje op of nabij het ??water, tenzij u liever een wandeling in hart van de Morvan ... En de tijd om goede wijnen, een Chablis of C&ocirc;te de Nuits, genieten van Epoisses kaas of een groot stuk van Charolais rundvlees na het nemen van dat wandeling door de straten van de steden beroemde Dijon, Beaune ... of genieten van mooie landschap. <a rel='nofollow' href='http://www.bourgogne.jedecouvrelafrance.com/r-21.html'>source</a>",
+					"es":"Tierra de historia en el cruce de las principales autopistas del r&iacute;o y de la tierra, econ&oacute;mica y cultural de Francia y Borgo&ntilde;a Europea le espera. Ducado de gran alcance que se enfrent&oacute; al reino de Francia, antes de unirse a ella, Borgo&ntilde;a nosotros sus tesoros: pueblos medievales Semur-en-Auxois o Flavigny ... Castillos extraordinarias Cormatin Tanlay Pierreclos ... Tambi&eacute;n tesoros espirituales a trav&eacute;s de las abad&iacute;as de prestigio, Cluny, Fontenay ... apreciar que con el tiempo ... El tiempo necesario para disfrutar del Canal de Borgo&ntilde;a, uno de los centros, y hacer un poco m&aacute;s en o cerca del agua, a menos que prefiera un paseo por coraz&oacute;n del Morvan ... Y el momento de disfrutar de excelentes vinos, un Chablis o Cote de Nuits, Epoisses queso o una gran pieza de carne Charolais despu&eacute;s de tener que pasear por las calles de las ciudades famoso Dijon, Beaune ... o disfrutar de campo con encanto. <a rel='nofollow' href='http://www.bourgogne.jedecouvrelafrance.com/r-21.html'>source</a>",
+					"fr":"Terre d'histoire au carrefour des grandes routes fluviales et terrestres, &eacute;conomiques et culturelles, fran&ccedil;aises et europ&eacute;ennes, la Bourgogne vous tend les bras. Puissant duch&eacute; qui tint t&ecirc;te au royaume de France avant de s'y rallier, la Bourgogne nous livre ses tr&eacute;sors : villages m&eacute;di&eacute;vaux &agrave; S&eacute;mur-en-Auxois ou &agrave; Flavigny... Des ch&acirc;teaux extraordinaires : Cormatin, Tanlay, Pierreclos... Tr&eacute;sors spirituels &eacute;galement par le biais de prestigieuses abbayes, Cluny, Fontenay... qui ne s'appr&eacute;cient qu'avec du temps... Le temps n&eacute;cessaire pour profiter du canal de Bourgogne, de celui du centre, et faire un bout de chemin sur ou &agrave; c&ocirc;t&eacute; de l'eau ; &agrave; moins que vous ne pr&eacute;f&eacute;reriez une balade au coeur du Morvan...Et le temps pour d&eacute;guster des vins d'exception, un Chablis ou un C&ocirc;te de Nuits, un fromage d'Epoisses ou un excellent morceau de boeuf charolais apr&egrave;s avoir pris celui de fl&acirc;ner dans les rues de villes renomm&eacute;es Dijon, Beaune... ou de profiter de campagnes accueillantes.<a rel='nofollow' href='http://www.bourgogne.jedecouvrelafrance.com/r-21.html'>source</a>",
+					"nl":"Elzas is altijd een kruispunt van Europa, was een land dat rijk is zo begeerde en vaak mishandeld ... Romeinse en Merovingische alamane ... dan Duitse en Franse Elzas behoudt een sterke identiteit en gewoontes heel bijzonder ... Bestaat uit de departementen Bas-Rhin en Haut-Rhin tussen Wissembourg en Ferrette met de Rijn natuurlijke grens, genieten van een spectaculair landschap, wegen te verkennen dit thema opnieuw de regio contrasteert zo mooi ... Straatsburg, Colmar, Mulhouse, historische steden; Koenisbourg De Hoge en het Europees Parlement, essentiële strategische sites, of Mutzig Obernai, steden brouwers; Ribeauville Guebwiller dorpen wijngaarden ... Niet te vergeten de vele gastronomische specialiteiten, zuurkool, kougelhopf, flammekueche noemen ... Elzas zal u verleiden en houd je ... . <a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Côte-d'Or",
+							"translations":
+							{
+								"de":"Côte-d'Or",
+								"es":"Côte-d'Or",
+								"fr":"Côte-d'Or",
+								"nl":"Côte-d'Or"
+							}
+						},
+						{
+							"name":"Nièvre",
+							"translations":
+							{
+								"de":"Nièvre",
+								"es":"Nièvre",
+								"fr":"Nièvre",
+								"nl":"Nièvre"
+							}
+						},
+						{
+							"name":"Saône-et-Loire",
+							"translations":
+							{
+								"de":"Saône-et-Loire",
+								"es":"Saône-et-Loire",
+								"fr":"Saône-et-Loire",
+								"nl":"Saône-et-Loire"
+							}
+						},
+						{
+							"name":"Yonne",
+							"translations":
+							{
+								"de":"Yonne",
+								"es":"Yonne",
+								"fr":"Yonne",
+								"nl":"Yonne"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Bretagne",
+			 "translations":
+				 {
+				 "de":"Bretagne",
+				 "es":"Bretaña",
+				 "fr":"Bretagne",
+				 "nl":"Bretagne"
+				 },
+				 "description":
+					{
+					"en":"Brittany coastline, impressive in its confrontation with the Atlantic Ocean and the Channel alternate caps, sandy beaches, rocky peninsulas, granite cliffs dotted with lighthouses and ports. The piece is made from nature: fauna and flora are often protected by numerous nature reserves. Inland Brittany, aptly called &quot;green&quot; was born in the heart of moors, marshes and forests of many legends. Check it out over the water from the banks of canals and rivers ... Finally, the cultural Britain ... It is the heart of each village, here taking the form of a dolmen, there pens or parochial chapels, a walkway on the walls of an entire city or fortified. Taste the flavors of iodine products sins off its coasts: Jacques scallops, oysters, fish and varied. But also the famous buckwheat pancakes, cider and chouchenn the kouign amann and cocos de Paimpol ...<a rel='nofollow' href='http://www.bretagne.jedecouvrelafrance.com/r-4.html'>source</a>",
+					"de":"Brittany K&uuml;ste, beeindruckend in ihrer Konfrontation mit dem Atlantischen Ozean und dem Kanal alternativen M&uuml;tzen, Sandstr&auml;nde, felsige Halbinseln, Granitfelsen mit Leuchtt&uuml;rmen und H&auml;fen punktiert. Das St&uuml;ck ist aus der Natur: Flora und Fauna sind oft durch zahlreiche Naturschutzgebiete gesch&uuml;tzt. Inland Bretagne, treffend als &quot;gr&uuml;n&quot; wurde im Herzen von Mooren, S&uuml;mpfen und W&auml;ldern von vielen Legenden geboren. Check it out &uuml;ber das Wasser von den Ufern der Fl&uuml;sse und Kan&auml;le ... Schlie&szlig;lich ist die kulturelle Britain ... Es ist das Herz eines jeden Dorfes, hier in Form eines Dolmen gibt Stifte oder kirchlichen Kapellen, ein Gehweg an den W&auml;nden einer ganzen Stadt oder befestigt. Die Geschm&auml;cker von Jod-Produkte S&uuml;nden vor ihren K&uuml;sten: Jacques Jakobsmuscheln, Austern, Fisch und abwechslungsreich. Aber auch die ber&uuml;hmten Buchweizenpfannkuchen, Apfelwein und chouchenn die kouign amann und Kokos de Paimpol ...<a rel='nofollow' href='http://www.bretagne.jedecouvrelafrance.com/r-4.html'>source</a>",
+					"es":"Brittany costa, impresionante en su confrontaci&oacute;n con el Oc&eacute;ano Atl&aacute;ntico y el Canal de tapas alternativas, playas, pen&iacute;nsulas rocosas, acantilados de granito salpicado de faros y puertos. La pieza est&aacute; hecha a partir de la naturaleza: fauna y flora est&aacute;n a menudo protegidos por numerosas reservas naturales. Inland Breta&ntilde;a, llamado acertadamente &quot;verde&quot;, naci&oacute; en el coraz&oacute;n de los p&aacute;ramos, pantanos y bosques de muchas leyendas. Compru&eacute;belo usted mismo en el agua de las orillas de los canales y r&iacute;os ... Por &uacute;ltimo, la cultura brit&aacute;nica ... Es el coraz&oacute;n de cada pueblo, aqu&iacute; toma la forma de un dolmen, hay plumas o capillas parroquiales, una pasarela sobre las murallas de una ciudad entera o fortificado. Degustar los sabores de productos de yodo pecados de sus costas: Jacques vieiras, ostras, peces y variada. Pero tambi&eacute;n los panqueques de trigo sarraceno famosos, la sidra y el chouchenn amann kouign y coco de Paimpol ...<a rel='nofollow' href='http://www.bretagne.jedecouvrelafrance.com/r-4.html'>source</a>",
+					"fr":"La Bretagne littorale, impressionnante dans sa confrontation avec l&rsquo;oc&eacute;an Atlantique et la Manche alterne caps, plages de sable fin, presqu&rsquo;&icirc;les rocheuses, falaises de granit ponctu&eacute;es de phares et ports. La part belle est faite &agrave; la nature : faune et flore sont souvent prot&eacute;g&eacute;es par de nombreuses r&eacute;serves naturelles. La Bretagne int&eacute;rieure, tr&egrave;s justement dite &quot;verte&quot;, a vu na&icirc;tre au c&oelig;ur de ses landes, marais et for&ecirc;ts bon nombre de l&eacute;gendes. D&eacute;couvrez-la au fil de l&rsquo;eau, depuis les rives de ses canaux et rivi&egrave;res&hellip; Enfin la Bretagne culturelle&hellip; Elle est au c&oelig;ur de chaque village, prenant ici la forme d&rsquo;un dolmen, l&agrave; d&rsquo;enclos paroissiaux ou de chapelles, d&rsquo;un chemin de ronde sur des remparts ou d&rsquo;une ville enti&egrave;re fortifi&eacute;e. Go&ucirc;tez les saveurs iod&eacute;es des produits p&eacute;ch&eacute;s au large de ses c&ocirc;tes : coquilles Saint Jacques, hu&icirc;tres, poissons divers et vari&eacute;s. Mais aussi les fameuses galettes de bl&eacute; noir, le cidre et le chouchenn, le kouign amann et les cocos de Paimpol&hellip;<a rel='nofollow' href='http://www.bretagne.jedecouvrelafrance.com/r-4.html'>source</a>",
+					"nl":"Bretonse kust, indrukwekkend in zijn confrontatie met de Atlantische Oceaan en het Kanaal alternatieve caps, zandstranden, rotsachtige schiereilanden, granieten rotsen bezaaid met vuurtorens en havens. Het stuk is gemaakt van de natuur: flora en fauna, worden vaak beschermd door talrijke natuurgebieden. Inland Bretagne, treffend noemde &quot;groene&quot; werd geboren in het hart van de heide, moerassen en bossen van vele legenden. Check it out op het water van de oevers van kanalen en rivieren ... Ten slotte is de culturele Groot-Brittanni&euml; ... Het is het hart van elk dorp, hier in de vorm van een dolmen, er pennen of parochiale kapellen, een wandelpad op de muren van een hele stad of versterkt. Proef de smaken van jodium-bevattende producten zonden uit haar kusten: Jacques coquilles, oesters, vis en gevarieerd. Maar ook de beroemde boekweit pannenkoeken, cider en chouchenn de Kouign Amann en cocos de Paimpol ...<a rel='nofollow' href='http://www.bretagne.jedecouvrelafrance.com/r-4.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Côtes-d'Armor",
+							"translations":
+							{
+								"de":"Côtes-d'Armor",
+								"es":"Côtes-d'Armor",
+								"fr":"Côtes-d'Armor",
+								"nl":"Côtes-d'Armor"
+							}
+						},
+						{
+							"name":"Finistère",
+							"translations":
+							{
+								"de":"Finistère",
+								"es":"Finistère",
+								"fr":"Finistère",
+								"nl":"Finistère"
+							}
+						},
+						{
+							"name":"Ille-et-Vilaine",
+							"translations":
+							{
+								"de":"Ille-et-Vilaine",
+								"es":"Ille-et-Vilaine",
+								"fr":"Ille-et-Vilaine",
+								"nl":"Ille-et-Vilaine"
+							}
+						},
+						{
+							"name":"Morbihan",
+							"translations":
+							{
+								"de":"Morbihan",
+								"es":"Morbihan",
+								"fr":"Morbihan",
+								"nl":"Morbihan"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Center",
+			 "translations":
+				 {
+				 "de":"Zentrum",
+				 "es":"centro",
+				 "fr":"Centre",
+				 "nl":"centrum"
+				 },
+				 "description":
+					{
+					"en":"Cher, Eure-et-Loir Indre, Indre-et-Loire, Loir-et-Cher and Loiret up the Centre region. Crossed by history, this &quot;Garden of France&quot; remains a treasure, a symbol of the wealth and diversity of our heritage ... Her jewels, of course the castles of the Loire: Chambord Chenonceau through to Villandry, Blois and Azay le Rideau ... It is also the garden of the French literature, cradle or companion great authors as Ronsard, Rabelais, Marcel Proust, George Sand ... The region offers an unusual religious heritage, style and evidence of successive periods, the Royal Chapel of Dreux to majestic cathedrals of Chartres and Orleans. This is also a range of multiple and varied landscapes bathed in a soft light, full of terroir etiquette and culinary traditions and delicious Berry, Sologne, Touraine, Sancerre, Vouvray.<a rel='nofollow' href='http://www.centre-val-de-loire.jedecouvrelafrance.com/r-19.html'>source</a>",
+					"de":"Cher, Eure-et-Loir Indre, Indre-et-Loire, Loir-et-Cher und Loiret up der Region Centre. Gekreuzt von der Geschichte, dieser &quot;Garten Frankreichs&quot; bleibt ein Schatz, ein Symbol des Reichtums und der Vielfalt unseres kulturellen Erbes ... Ihren Schmuck, nat&uuml;rlich die Schl&ouml;sser der Loire: Chambord Chenonceau bis Villandry, Blois und Azay le Rideau ... Es ist auch der Garten der Franz&ouml;sisch Literatur, Wiege oder Begleiter gro&szlig;er Autoren wie Ronsard, Rabelais, Marcel Proust, George Sand ... Die Region bietet eine ungew&ouml;hnliche religi&ouml;se Erbe, Stil und der Nachweis der aufeinanderfolgenden Perioden, die k&ouml;nigliche Kapelle von Dreux zu majest&auml;tischen Kathedralen von Chartres und Orleans. Dies ist auch eine Reihe von vielf&auml;ltigen und abwechslungsreichen Landschaft in ein sanftes Licht, voller Terroir Etikette und kulinarischen Traditionen und leckere Beere, Sologne, Touraine, Sancerre, Vouvray gebadet.<a rel='nofollow' href='http://www.centre-val-de-loire.jedecouvrelafrance.com/r-19.html'>source</a>",
+					"es":"Cher, Eure-et-Loir Indre, Indre-et-Loire, Loir-et-Cher y Loiret hasta la regi&oacute;n Centro. Recorrido por la historia, este &quot;Jard&iacute;n de Francia&quot; sigue siendo un tesoro, un s&iacute;mbolo de la riqueza y diversidad de nuestro patrimonio ... Sus joyas, por supuesto, los castillos del Loira: Chambord Chenonceau a trav&eacute;s de Villandry, Blois y Azay-le-Rideau ... Es tambi&eacute;n el huerto de los autores franceses literatura, cuna o compa&ntilde;ero de la talla de Ronsard, Rabelais, Marcel Proust, George Sand ... La regi&oacute;n ofrece un patrimonio religioso inusual, el estilo y la evidencia de per&iacute;odos sucesivos, la Capilla Real de Dreux a majestuosas catedrales de Chartres y Orleans. Esto es tambi&eacute;n una gran variedad de paisajes m&uacute;ltiples y variadas ba&ntilde;ados en una luz suave, llena de etiqueta terroir y las tradiciones culinarias y delicioso Berry, Sologne, Touraine, Sancerre, Vouvray.<a rel='nofollow' href='http://www.centre-val-de-loire.jedecouvrelafrance.com/r-19.html'>source</a>",
+					"fr":"Le Cher, l&rsquo;Eure-et-Loir, l&rsquo;Indre, l&rsquo;Indre-et-Loire, le Loir-et-Cher et le Loiret composent la r&eacute;gion Centre. Travers&eacute; par l'Histoire, ce &quot;Jardin de la France&quot; demeure un tr&eacute;sor, symbole de la richesse et de la diversit&eacute; de notre patrimoine... Ses joyaux, bien &eacute;videmment les ch&acirc;teaux de la Loire : de Chambord &agrave; Chenonceau en passant par Villandry, Blois ou Azay le Rideau... C'est &eacute;galement le jardin de la litterature fran&ccedil;aise, berceau ou compagnon de grands auteurs, tels Ronsard, Rabelais, Marcel Proust, George Sand... La r&eacute;gion propose un patrimoine religieux hors du commun, t&eacute;moignage des style et &eacute;poques successives, de la chapelle royale de Dreux  jusqu&rsquo;aux majestueuses cath&eacute;drales de Chartres et d'Orl&eacute;ans. C&rsquo;est enfin une palette de paysages multiples et vari&eacute;s baign&eacute;s d'une lumi&egrave;re douce, de terroirs empreints de savoir-vivre et de traditions culinaires et gourmandes : Berry, Sologne, Touraine, Sancerre, Vouvray.<a rel='nofollow' href='http://www.centre-val-de-loire.jedecouvrelafrance.com/r-19.html'>source</a>",
+					"nl":"Cher, Eure-et-Loir Indre, Indre-et-Loire, Loir-et-Cher en Loiret de regio Centre. Doorkruist door de geschiedenis, deze &quot;Tuin van Frankrijk&quot; blijft een schat, een symbool van de rijkdom en verscheidenheid van ons erfgoed ... Haar juwelen, natuurlijk de kastelen van de Loire: Chambord Chenonceau tot Villandry, Blois en Azay le Rideau ... Het is ook de tuin van de Franse literatuur, wieg of metgezel grote schrijvers als Ronsard, Rabelais, Marcel Proust, George Sand ... De regio biedt een ongewone religieus erfgoed, de stijl en het bewijs van opeenvolgende periodes, de Koninklijke Kapel van Dreux naar majestueuze kathedralen van Chartres en Orleans. Dit is ook een scala aan verschillende en gevarieerde landschappen badend in een zacht licht, vol van terroir etiquette en culinaire tradities en heerlijke Berry, Sologne, Touraine, Sancerre, Vouvray.<a rel='nofollow' href='http://www.centre-val-de-loire.jedecouvrelafrance.com/r-19.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Cher",
+							"translations":
+							{
+								"de":"Cher",
+								"es":"Cher",
+								"fr":"Cher",
+								"nl":"Cher"
+							}
+						},
+						{
+							"name":"Eure-et-Loir",
+							"translations":
+							{
+								"de":"Eure-et-Loir",
+								"es":"Eure-et-Loir",
+								"fr":"Eure-et-Loir",
+								"nl":"Eure-et-Loir"
+							}
+						},
+						{
+							"name":"Indre",
+							"translations":
+							{
+								"de":"Indre",
+								"es":"Indre",
+								"fr":"Indre",
+								"nl":"Indre"
+							}
+						},
+						{
+							"name":"Indre-et-Loire",
+							"translations":
+							{
+								"de":"Indre-et-Loire",
+								"es":"Indre-et-Loire",
+								"fr":"Indre-et-Loire",
+								"nl":"Indre-et-Loire"
+							}
+						},
+						{
+							"name":"Loir-et-Cher",
+							"translations":
+							{
+								"de":"Loir-et-Cher",
+								"es":"Loir-et-Cher",
+								"fr":"Loir-et-Cher",
+								"nl":"Loir-et-Cher"
+							}
+						},
+						{
+							"name":"Loiret",
+							"translations":
+							{
+								"de":"Loiret",
+								"es":"Loiret",
+								"fr":"Loiret",
+								"nl":"Loiret"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Champagne-Ardenne",
+			 "translations":
+				 {
+				 "de":"Champagne-Ardenne",
+				 "es":"Champagne-Ardenne",
+				 "fr":"Champagne-Ardenne",
+				 "nl":"Champagne-Ardenne"
+				 },
+				 "description":
+					{
+					"en":"Cradle of major historical events, the Champagne-Ardenne region is also one of the greenest regions of France. For bucolic walks along the rivers in the heart of rolling hills and lush valleys, the department of Haute-Marne awaits you. Territories 'wine of kings', Aube and Marne offer tours to discover very wonderful sparkling champagnes. The rich architectural and historical heritage of the Ardennes department make this an authentic open-air museum: castles, citadels, fortified churches ... It is also the country of peaks with its mosaic of landscapes in a maze of forests, valleys and groves. A secret treasure region still unknown and varied, not to be missed in back lanes. <a rel='nofollow' href='http://www.champagne-ardenne.jedecouvrelafrance.com/r-9.html'>source</a>",
+					"de":"Cradle of wichtigsten historischen Ereignisse, die Region Champagne-Ardenne auch eine der gr&uuml;nsten Regionen Frankreichs. F&uuml;r bukolischen Spazierg&auml;ngen entlang der Fl&uuml;sse im Herzen von sanften H&uuml;geln und gr&uuml;nen T&auml;lern, erwartet Sie das Departement Haute-Marne Sie. Territories 'Wein der K&ouml;nige', Aube und Marne bieten Touren auf sehr wunderbare Sekt Champagner entdecken. Die reiche architektonische und historische Erbe der Ardennen-Abteilung machen es zu einem echten Open-Air-Museum: Schl&ouml;sser, Burgen, Wehrkirchen ... Es ist auch das Land der Berge mit seinem Mosaik von Landschaften in einem Labyrinth aus W&auml;ldern, T&auml;lern und W&auml;ldern. Ein geheimer Schatz Region noch unbekannt und abwechslungsreich, nicht im R&uuml;cken Gassen entgehen lassen. <a rel='nofollow' href='http://www.champagne-ardenne.jedecouvrelafrance.com/r-9.html'>source</a>",
+					"es":"Cuna de importantes acontecimientos hist&oacute;ricos, la regi&oacute;n de Champagne-Ardenne es tambi&eacute;n una de las m&aacute;s verdes de las regiones de Francia. Para los paseos buc&oacute;licos a lo largo de los r&iacute;os en el coraz&oacute;n de colinas y valles, el departamento de Haute-Marne le espera. 'Vino de reyes' Territorios, Aube y Marne ofrecen excursiones para descubrir champagnes muy brillantes maravillosos. El rico patrimonio arquitect&oacute;nico e hist&oacute;rico del departamento de Ardennes convierten en un aut&eacute;ntico museo al aire libre: castillos, ciudadelas, iglesias fortificadas ... Tambi&eacute;n es el pa&iacute;s de los picos con su mosaico de paisajes en un laberinto de bosques, valles y arboledas. Una regi&oacute;n tesoro secreto a&uacute;n desconocida y variada, no hay que perderse en callejuelas. <a rel='nofollow' href='http://www.champagne-ardenne.jedecouvrelafrance.com/r-9.html'>source</a>",
+					"fr":"Berceau d&rsquo;&eacute;v&egrave;nements historiques majeurs, la r&eacute;gion Champagne-Ardenne est aussi l&rsquo;une des r&eacute;gions les plus vertes de France. Pour des balades bucoliques le long des rivi&egrave;res au c&oelig;ur de collines et de vall&eacute;es verdoyantes, le d&eacute;partement de la Haute-Marne vous attend. Territoires du 'vin des rois', l&rsquo;Aube et la Marne offrent des circuits tr&egrave;s p&eacute;tillants pour d&eacute;couvrir de formidables champagnes. Le riche h&eacute;ritage architectural et historique des Ardennes font de ce d&eacute;partement un authentique mus&eacute;e &agrave; ciel ouvert : ch&acirc;teaux forts, citadelles, &eacute;glises fortifi&eacute;es&hellip; C&rsquo;est aussi le pays des Cr&ecirc;tes avec sa mosa&iuml;que de paysages dans un labyrinthe de for&ecirc;ts, de vallons et de bocages. Une r&eacute;gion secr&egrave;te aux tr&eacute;sors encore m&eacute;connus et tr&egrave;s vari&eacute;s, &agrave; d&eacute;couvrir absolument aux d&eacute;tours des chemins. <a rel='nofollow' href='http://www.champagne-ardenne.jedecouvrelafrance.com/r-9.html'>source</a>",
+					"nl":"Cradle of belangrijke historische gebeurtenissen, de regio Champagne-Ardenne is ook een van de groenste regio's van Frankrijk. Voor landelijke wandelingen langs de rivieren in het hart van glooiende heuvels en weelderige valleien, het departement Haute-Marne voor u klaar. Gebieden 'wijn der koningen ', de Aube en Marne bieden reizen naar zeer mooie sprankelende champagnes te ontdekken. De rijke architecturale en historische erfgoed van de Franse Ardennen is dit een authentiek openluchtmuseum: kastelen, burchten, versterkte kerken ... Het is ook het land van de pieken met zijn mozaïek van landschappen in een doolhof van bossen, valleien en bossen. Een geheime schat regio nog onbekend en gevarieerd, niet te missen in de rug rijstroken. <a rel='nofollow' href='http://www.champagne-ardenne.jedecouvrelafrance.com/r-9.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Ardennes",
+							"translations":
+							{
+								"de":"Ardennes",
+								"es":"Ardennes",
+								"fr":"Ardennes",
+								"nl":"Ardennes"
+							}
+						},
+						{
+							"name":"Aube",
+							"translations":
+							{
+								"de":"Aube",
+								"es":"Aube",
+								"fr":"Aube",
+								"nl":"Aube"
+							}
+						},
+						{
+							"name":"Marne",
+							"translations":
+							{
+								"de":"Marne",
+								"es":"Marne",
+								"fr":"Marne",
+								"nl":"Marne"
+							}
+						},
+						{
+							"name":"Haute-Marne",
+							"translations":
+							{
+								"de":"Haute-Marne",
+								"es":"Haute-Marne",
+								"fr":"Haute-Marne",
+								"nl":"Haute-Marne"
+							}
+						}
+					]
+			},
+			{
+			"name":"Corsica",
+			 "translations":
+				 {
+				 "de":"Korsika",
+				 "es":"Córcega",
+				 "fr":"Corse",
+				 "nl":"Corsica"
+				 },
+				 "description":
+					{
+					"en":"Upper Corsica and Corsica South are two departments in Corsica, as attractive as the other one. 183 km long, 80 wide, which is more than 1,000 km of coastline. Nicknamed the Island of Beauty, Corsica is proud of its identity and claims his strong character. Magical as there exists no other, it offers amazing scenery, the cove of Piana, the Restonica valley, great cities, Calvi, Bonifacio, Bastia, Porto Vecchio, white sandy beaches to Palombaggia and Balagne, small coves along the Cap Corse, small mountain villages charm formidable Speluncato, Centuri, Bastelica ...Corsica has not finished seduce you. Sea or mountain, there is no choice, we pass from one to the other in a flash! It depends on your needs: relaxation, water sports, GR20 ... Enjoy, Corsica every moment counts",
+					"de":"Haute-Corse und Corse S&uuml;den sind zwei Abteilungen in Korsika, so attraktiv wie der andere. 183 km lang, 80 breit, die mehr als 1.000 km langen K&uuml;ste ist. Den Spitznamen Insel der Sch&ouml;nheit Korsika ist stolz auf seine Identit&auml;t und behauptet, seine starken Charakter. Magisch wie es kein anderes, bietet es atemberaubende Landschaft, die Bucht von Piana, die Restonica Tal, gro&szlig;e St&auml;dte, Calvi, Bonifacio, Bastia, Porto Vecchio, wei&szlig;en Sandstr&auml;nden Palombaggia und Balagne, kleinen Buchten entlang der Cap Corse, kleine Bergd&ouml;rfer Charme formidable Speluncato, Centuri, Bastelica ... Korsika ist noch nicht abgeschlossen verf&uuml;hren. Meer oder die Berge, gibt es keine Wahl geben wir von einem zum anderen in einem Flash! Es h&auml;ngt von Ihren Bed&uuml;rfnissen: Entspannung, Wassersport, GR20 ... Genie&szlig;en, Korsika jedem Augenblick z&auml;hlt!",
+					"es":"Alta C&oacute;rcega y C&oacute;rcega del Sur son dos departamentos en C&oacute;rcega, tan atractivo como el otro. 183 kilometros de largo, 80 de ancho, que es m&aacute;s de 1.000 km de costa. Apodado la Isla de la Belleza, C&oacute;rcega est&aacute; orgullosa de su identidad y afirma que su car&aacute;cter fuerte. Magical como no existe ning&uacute;n otro, ofrece un paisaje asombroso, la cala de Piana, el valle del Restonica, las grandes ciudades, Calvi, Bonifacio, Bastia, Porto Vecchio, playas de arena blanca de Palombaggia y Balagne, peque&ntilde;as calas a lo largo del Cap Corse, monta&ntilde;a peque&ntilde;o encanto aldeas formidable Speluncato, Centuri, Bastelica ... C&oacute;rcega no ha terminado de seducir a usted. Mar o monta&ntilde;a, no hay otra opci&oacute;n, se pasa de una a la otra en un flash! Depende de sus necesidades: relajaci&oacute;n, deportes acu&aacute;ticos, GR20 ... Disfruta, C&oacute;rcega cada momento cuenta!",
+					"fr":"La Haute Corse et la Corse du Sud sont les deux d&eacute;partements de la Corse, aussi attirants l'un que l'autre. 183 km de long, 80 de large, ce qui repr&eacute;sente plus de 1.000 km de c&ocirc;tes. Surnomm&eacute;e l'Ile de Beaut&eacute;, la Corse est fi&egrave;re de son identit&eacute; et revendique son caract&egrave;re bien tremp&eacute;. Endroit magique comme il n'en existe pas d'autre, elle offre des paysages &eacute;tonnants, les calanche de Piana, la vall&eacute;e de la Restonica, des villes extraordinaires, Calvi, Bonifaccio, Bastia, Porto Vecchio, des plages de sable blanc &agrave; Palombaggia et en Balagne, des petites criques isol&eacute;es tout le long du Cap Corse, des petits villages de montagne au charme redoutable, Speluncato, Centuri, Bastelica... La Corse n'a pas fini de vous s&eacute;duire. Mer ou montagne, il n'y a pas &agrave; choisir, on passe de l'un &agrave; l'autre en un &eacute;clair ! C'est fonction de vos envies : farniente, activit&eacute;s nautiques, GR20... Profitez-en, en Corse chaque instant compte !",
+					"nl":"Hoog-Corsica en Corsica Zuid zijn twee afdelingen in Corsica, zo aantrekkelijk als de andere.183 km lang, 80 breed, dat is meer dan 1.000 km kust. Bijgenaamd de eiland van de schoonheid, Corsica is trots op zijn identiteit en beweert dat zijn sterke karakter. Magical omdat er geen ander bestaat, biedt een prachtig landschap, de baai van Piana, de Restonica vallei, grote steden, Calvi, Bonifacio, Bastia, Porto Vecchio, witte zandstranden aan Palombaggia en Balagne, kleine baaien langs de Cap Corse, kleine bergdorpjes charme formidabele Speluncato, Centuri, Bastelica ... Corsica is nog niet klaar verleiden. Zee of de bergen, er is geen keuze, we gaan van de ene naar de andere in een handomdraai! Het hangt af van uw behoeften: ontspanning, watersporten, GR20 ... Geniet, Corsica elk moment telt!"
+					},
+					"subregions":
+					[
+						{
+							"name":"Haute-Corse",
+							"translations":
+							{
+								"de":"Haute-Corse",
+								"es":"Haute-Corse",
+								"fr":"Haute-Corse",
+								"nl":"Haute-Corse"
+							}
+						},
+						{
+							"name":"Corse-du-Sud",
+							"translations":
+							{
+								"de":"Corse-du-Sud",
+								"es":"Corse-du-Sud",
+								"fr":"Corse-du-Sud",
+								"nl":"Corse-du-Sud"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Franche-Comté",
+			 "translations":
+				 {
+				 "de":"Franche-Comté",
+				 "es":"Franche-Comté",
+				 "fr":"Franche-Comté",
+				 "nl":"Franche-Comte"
+				 },
+				 "description":
+					{
+					"en":"Franche Comt&eacute; region is composed of the departments of Doubs, Jura, Haute-Saone and Territoire de Belfort. Country of forests and wide open spaces, rolling plains and mountains, it is a region rich in history and proud of its heritage, today renowned for the quality its tourism ... The borders of Switzerland, Germany and Italy, Franche Comt&eacute; is fed by numerous influences throughout the history, character and forging foolproof! Besan&ccedil;on to the Lake District, the citadel of Belfort to the mountains of Jura and Doubs High, Vosges in Val de Sa&ocirc;ne, Franche Comt&eacute; is multiple ... Thousand faces to a single identity, a thousand and one treasures for which love linger ... Franche-Comt&eacute; is summer or winter, ensuring an authentic destination, real and rewarding. <a rel='nofollow' href='http://www.franche-comte.jedecouvrelafrance.com/r-12.html'>source</a>",
+					"de":"Franche Comt&eacute; wird von den Dienststellen der Doubs, Jura, Haute-Saone und Territoire de Belfort zusammen. Land der W&auml;lder und weiten, offenen Fl&auml;chen, gr&uuml;nen H&uuml;geln und Bergen, ist es eine Region, die reich an Geschichte und stolz auf ihr Erbe, heute bekannt f&uuml;r die Qualit&auml;t den Tourismus ... Die Grenzen der Schweiz, Deutschland und Italien, Franche Comt&eacute; durch zahlreiche Einfl&uuml;sse in der Geschichte, Charakter und Schmieden narrensicher satt! Besan&ccedil;on in den Lake District, die Zitadelle von Belfort zu den Bergen des Jura und Doubs High, Vosges in Val de Sa&ocirc;ne ist Franche Comt&eacute; mehrere ...Tausend Gesichter einer einzigen Identit&auml;t, tausend und ein Schatz f&uuml;r die Liebe Verweilen ... Franche-Comt&eacute; ist Sommer oder Winter, wodurch ein authentisches Reiseziel, real und lohnend. <a rel='nofollow' href='http://www.franche-comte.jedecouvrelafrance.com/r-12.html'>source</a>",
+					"es":"Franco Condado regi&oacute;n est&aacute; compuesta por los departamentos de Doubs, Jura, Haute Saone y Territorio de Belfort. Pa&iacute;s de bosques y espacios abiertos, llanuras onduladas y monta&ntilde;as, es una regi&oacute;n rica en historia y orgullosa de su patrimonio, hoy reconocida por la calidad el turismo ... Las fronteras de Suiza, Alemania e Italia, Franco Condado se alimenta de numerosas influencias largo de la historia, el car&aacute;cter y forjar a toda prueba! Besan&ccedil;on para el Distrito de los Lagos, la ciudadela de Belfort a las monta&ntilde;as del Jura y Doubs Alto, Vosges en Val de Sa&ocirc;ne, Franche Comt&eacute; es m&uacute;ltiple ... Mil caras a una sola identidad, mil y un tesoros de amor que perduran ... Franche-Comt&eacute; es verano o invierno, lo que garantiza un destino aut&eacute;ntico, real y gratificante. <a rel='nofollow' href='http://www.franche-comte.jedecouvrelafrance.com/r-12.html'>source</a>",
+					"fr":"La r&eacute;gion Franche Comt&eacute; est compos&eacute;e des d&eacute;partements du Doubs, du Jura, de la Haute-Sa&ocirc;ne et du Territoire de Belfort. Pays de for&ecirc;ts et de grands espaces, de plaines vallonn&eacute;es et de montagnes, c'est une r&eacute;gion riche de son histoire et fi&egrave;re de son patrimoine, aujourd'hui r&eacute;put&eacute;e pour la qualit&eacute; de son tourisme... Aux confins de la Suisse, de l'Allemagne et de l'Italie, la Franche Comt&eacute; s'est nourrie de nombreuses influences tout au long de l'histoire, se forgeant ainsi un caract&egrave;re &agrave; toute &eacute;preuve ! De Besan&ccedil;on &agrave; la r&eacute;gion des lacs, de la citadelle de Belfort aux montagnes du Haut Jura et du Hauts Doubs, des Vosges au Val de Sa&ocirc;ne, la Franche Comt&eacute; est multiple... Mille visages pour une m&ecirc;me identit&eacute;, mille et un tr&eacute;sors pour qui aimera s'attarder... La Franche Comt&eacute;, c'est, &eacute;t&eacute; comme hiver, l'assurance d'une destination authentique, vraie et enrichissante. <a rel='nofollow' href='http://www.franche-comte.jedecouvrelafrance.com/r-12.html'>source</a>",
+					"nl":"Franche Comte regio bestaat uit de departementen Doubs, Jura, Haute-Sa&ocirc;ne en Territoire de Belfort. Land van bossen en grote open ruimten, glooiende vlaktes en bergen, het is een regio rijk aan geschiedenis en trots op haar erfgoed, heeft vandaag bekend om de kwaliteit het toerisme ... De grenzen van Zwitserland, Duitsland en Itali&euml;, wordt Franche Comte gevoed door tal van invloeden in de geschiedenis, het karakter en het smeden van waterdicht! Besan&ccedil;on naar het Lake District, de citadel van Belfort naar de bergen van de Jura en Doubs Hoog, Vogezen in Val de Sa&ocirc;ne, Franche Comte is meerdere ... Duizend gezichten op een enkele identiteit, duizend en een schatten waarvoor de liefde blijven hangen ... Franche-Comte is zomer of winter, zorgen voor een authentieke bestemming, echte en belonen. <a rel='nofollow' href='http://www.franche-comte.jedecouvrelafrance.com/r-12.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Doubs",
+							"translations":
+							{
+								"de":"Doubs",
+								"es":"Doubs",
+								"fr":"Doubs",
+								"nl":"Doubs"
+							}
+						},
+						{
+							"name":"Jura",
+							"translations":
+							{
+								"de":"Jura",
+								"es":"Jura",
+								"fr":"Jura",
+								"nl":"Jura"
+							}
+						},
+						{
+							"name":"Haute-Saône",
+							"translations":
+							{
+								"de":"Haute-Saône",
+								"es":"Haute-Saône",
+								"fr":"Haute-Saône",
+								"nl":"Haute-Saône"
+							}
+						},
+						{
+							"name":"Territoire de Belfort",
+							"translations":
+							{
+								"de":"Territoire de Belfort",
+								"es":"Territoire de Belfort",
+								"fr":"Territoire de Belfort",
+								"nl":"Territoire de Belfort"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Guadeloupe",
+			 "translations":
+				 {
+				 "de":"Guadeloupe",
+				 "es":"Guadalupe",
+				 "fr":"Guadeloupe",
+				 "nl":"Guadeloupe"
+				 },
+				 "description":
+					{
+					"en":"",
+					"de":"",
+					"es":"",
+					"fr":"",
+					"nl":""
+					},
+					"subregions":
+					[
+						
+					]
+			},
+			{
+			 "name":"Guyana",
+			 "translations":
+				 {
+				 "de":"Guyana",
+				 "es":"Guayana",
+				 "fr":"Guyane",
+				 "nl":"Guyane"
+				 },
+				 "description":
+					{
+					"en":"",
+					"de":"",
+					"es":"",
+					"fr":"",
+					"nl":""
+					},
+					"subregions":
+					[
+						
+					]
+			},
+			{
+			 "name":"Île-de-France",
+			 "translations":
+				 {
+				 "de":"Ile-de-France",
+				 "es":"Ile-de-France",
+				 "fr":"Île-de-France",
+				 "nl":"Ile-de-France"
+				 },
+				 "description":
+					{
+					"en":"The Ile de France region is composed of Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Val d'Oise, Seine-et-Marne Yvelines Paris and of course, true love! Island she has never been, the region owes its name to the river and cross the river, giving it richness and abundance since the dawn of time ... Men do not make a mistake in settling there, turning it into 2,000 years in the third economic region in the world after New York and Tokyo. Economic area, certainly, but above all, the crucible of history and heritage of France ... Always playing a role as a crossroads: we trade, we learn, we saw, there goes ... you enjoy it! If the beautiful Paris tends to overshadow its neighbors ... They do no less serious advantages: the magnificence of Versailles and Vaux le Vicomte, Saint Denis, the heart of France with the Basilica of kings and the stadium, Chevreuse Valley, Paradise Impressionist Forest Saint Germain for nature lovers, the Bois de Vincennes on the outskirts of Paris ...<a rel='nofollow' href='http://www.ile-de-france.jedecouvrelafrance.com/r-20.html'>source</a>",
+					"de":"Die Region Ile de France ist der Hauts-de-Seine zusammen, Seine-Saint-Denis, Val-de-Marne, Essonne, Val d'Oise, Seine-et-Marne Yvelines Paris und nat&uuml;rlich die wahre Liebe! Insel hat sie nie, verdankt die Region ihren Namen dem Fluss und den Fluss &uuml;berqueren, so dass es Reichtum und &Uuml;berfluss seit Anbeginn der Zeit ... M&auml;nner nicht einen Fehler machen, in sich dort, verwandelte sie in 2.000 Jahre in der dritten Wirtschaftsregion der Welt nach New York und Tokio. Wirtschaftsraum, gewiss, aber vor allem die Schmelztiegel der Geschichte und das Erbe von Frankreich ... Spielt immer eine Rolle als einem Scheideweg: wir handeln, lernen wir, wir sahen, es geht ... es gef&auml;llt euch! Wenn das sch&ouml;ne Paris neigt dazu, seine Nachbarn zu &uuml;berschatten ... Sie tun nicht weniger gravierende Vorteile: die Pracht von Versailles und Vaux le Vicomte, Saint Denis, das Herz von Frankreich mit der Basilika der K&ouml;nige und des Stadions, Chevreuse Valley, Paradise Impressionist Wald Saint Germain f&uuml;r Naturliebhaber, Vincennes der Bois de am Stadtrand von Paris ...<a rel='nofollow' href='http://www.ile-de-france.jedecouvrelafrance.com/r-20.html'>source</a>",
+					"es":"La regi&oacute;n de Ile de France se compone de Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Val d'Oise, Seine-et-Marne Yvelines Par&iacute;s y, por supuesto, el amor verdadero! Isla que nunca ha sido, la regi&oacute;n debe su nombre al r&iacute;o y cruzar el r&iacute;o, d&aacute;ndole riqueza y abundancia desde los albores del tiempo ... Los hombres no cometer un error en la resoluci&oacute;n de all&iacute;, convirti&eacute;ndola en 2.000 a&ntilde;os en la tercera regi&oacute;n econ&oacute;mica del mundo despu&eacute;s de Nueva York y Tokio. &Aacute;rea econ&oacute;mica, sin duda, pero sobre todo, el crisol de la historia y el patrimonio de Francia ... Siempre jugando un papel como una encrucijada: el comercio, aprendemos, como vimos, va all&iacute; ... que lo disfruten! Si el bello Par&iacute;s tiende a eclipsar a sus vecinos ... Lo hacen sin ventajas menos graves: la magnificencia de Versalles y Vaux-le-Vicomte, Saint Denis, en el coraz&oacute;n de Francia, con la Bas&iacute;lica de reyes y el estadio, Valle de Chevreuse, Paradise impresionista Bosque Saint Germain para los amantes de la naturaleza, el de Bois de Vincennes, a las afueras de Par&iacute;s ...<a rel='nofollow' href='http://www.ile-de-france.jedecouvrelafrance.com/r-20.html'>source</a>",
+					"fr":"La r&eacute;gion Ile de France est compos&eacute;e des d&eacute;partements des Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Val d'Oise, Seine-et-Marne, Yvelines et bien s&ucirc;r Paris, v&eacute;ritable aimant ! Ile qu'elle n'a jamais &eacute;t&eacute;, la r&eacute;gion doit son nom aux rivi&egrave;res et fleuve qui la traversent, lui assurant richesse et abondance depuis la nuit des temps... Les hommes ne s'y sont pas tromp&eacute;s en s'y installant, la transformant en 2.000 ans en troisi&egrave;me r&eacute;gion &eacute;conomique du monde apr&egrave;s New York et Tokyo. Bassin &eacute;conomique, certes, mais avant tout, le creuset historique et patrimonial de la France... Jouant depuis toujours un r&ocirc;le de carrefour : on y commerce, on y apprend, on y vit, on y passe... on en profite ! Si Paris la magnifique a tendance &agrave; occulter ses voisins... Ils n'en ont pas moins de s&eacute;rieux atouts : la magnificence de Versailles et Vaux le Vicomte, Saint Denis, coeur de la France avec la basilique des rois et le stade, la Vall&eacute;e de Chevreuse, paradis des impressionnistes, la For&ecirc;t de Saint Germain pour les amoureux de la nature, le Bois de Vincennes aux portes de Paris...<a rel='nofollow' href='http://www.ile-de-france.jedecouvrelafrance.com/r-20.html'>source</a>",
+					"nl":"De regio Ile de France is samengesteld uit Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Val d'Oise, Seine-et-Marne Yvelines Parijs en natuurlijk, ware liefde! Island ze nooit is geweest, het gebied dankt zijn naam aan de rivier en steken de rivier, waardoor het rijkdom en overvloed sinds het begin der tijden ... Men doet een fout maken bij het oplossen van daar, om te zetten in 2.000 jaar in de derde economische regio in de wereld na New York en Tokio. Economische ruimte, zeker, maar vooral, de smeltkroes van de geschiedenis en het erfgoed van Frankrijk ... Altijd een rol spelen als een tweesprong: we ruilen, we leren, we zagen, daar gaat ... je het leuk vindt! Als het mooie Parijs heeft de neiging om overschaduwen zijn buren ... Ze doen niet minder ernstig voordelen: de pracht van Versailles en Vaux le Vicomte, Saint Denis, het hart van Frankrijk met de Basiliek van koningen en het stadion, Chevreuse Valley, Paradise impressionistische Bos Saint Germain voor natuurliefhebbers, het Bois de Vincennes aan de rand van Parijs ...<a rel='nofollow' href='http://www.ile-de-france.jedecouvrelafrance.com/r-20.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Paris",
+							"translations":
+							{
+								"de":"Paris",
+								"es":"Paris",
+								"fr":"Paris",
+								"nl":"Paris"
+							}
+						},
+						{
+							"name":"Seine-et-Marne",
+							"translations":
+							{
+								"de":"Seine-et-Marne",
+								"es":"Seine-et-Marne",
+								"fr":"Seine-et-Marne",
+								"nl":"Seine-et-Marne"
+							}
+						},
+						{
+							"name":"Yvelines",
+							"translations":
+							{
+								"de":"Yvelines",
+								"es":"Yvelines",
+								"fr":"Yvelines",
+								"nl":"Yvelines"
+							}
+						},
+						{
+							"name":"Essonne",
+							"translations":
+							{
+								"de":"Essonne",
+								"es":"Essonne",
+								"fr":"Essonne",
+								"nl":"Essonne"
+							}
+						},
+						{
+							"name":"Hauts-de-Seine",
+							"translations":
+							{
+								"de":"Hauts-de-Seine",
+								"es":"Hauts-de-Seine",
+								"fr":"Hauts-de-Seine",
+								"nl":"Hauts-de-Seine"
+							}
+						},
+						{
+							"name":"Seine-Saint-Denis",
+							"translations":
+							{
+								"de":"Seine-Saint-Denis",
+								"es":"Seine-Saint-Denis",
+								"fr":"Seine-Saint-Denis",
+								"nl":"Seine-Saint-Denis"
+							}
+						},
+						{
+							"name":"Val-de-Marne",
+							"translations":
+							{
+								"de":"Val-de-Marne",
+								"es":"Val-de-Marne",
+								"fr":"Val-de-Marne",
+								"nl":"Val-de-Marne"
+							}
+						},
+						{
+							"name":"Val-d'Oise",
+							"translations":
+							{
+								"de":"Val-d'Oise",
+								"es":"Val-d'Oise",
+								"fr":"Val-d'Oise",
+								"nl":"Val-d'Oise"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Languedoc-Roussillon",
+			 "translations":
+				 {
+				 "de":"Languedoc-Roussillon",
+				 "es":"Languedoc-Roussillon",
+				 "fr":"Languedoc-Roussillon",
+				 "nl":"Languedoc-Roussillon"
+				 },
+				 "description":
+					{
+					"en":"If you are looking for a land of contrasts, the Languedoc Roussillon brings you. The five departments that make up this region are as different as complementary. Gard, H&eacute;rault, Aude and Pyrenees Orientales oriented Big Blue ... Some 200 kilometers of coastline housing as well as the modern marinas Grande Motte and small towns of character: S&egrave;te or Aigues Mortes. Only Loz&egrave;re has no coastline, but retains some small treasures and the Aven Armand and the Gorges du Tarn. Rich in history, the region cultivates its differences flirting with Provence and the Pays Catalan ... The Cathar castles, the university Montpellier, N&icirc;mes Roman, anchovies from Collioure, Canigou ... This is the Languedoc Roussillon!<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>",
+					"de":"Wenn Sie ein Land der Kontraste sucht, bringt das Languedoc Roussillon Sie. Die f&uuml;nf Abteilungen, aus denen sich diese Region sind so unterschiedlich wie komplement&auml;r. Gard, H&eacute;rault, Aude und Pyrenees Orientales orientierten Big Blue ... Rund 200 Kilometer K&uuml;ste Geh&auml;use sowie das moderne Marinas Grande Motte und Kleinst&auml;dten des Charakters: S&egrave;te oder Aigues Mortes. Nur Loz&egrave;re hat keine K&uuml;ste, beh&auml;lt aber einige kleine Sch&auml;tze und die Aven Armand und die Gorges du Tarn. Reich an Geschichte, pflegt die Region ihre Unterschiede flirtet mit der Provence und der Region Pays Katalanisch ... Die Burgen der Katharer, die Universit&auml;t Montpellier, N&icirc;mes Roman, Sardellen aus Collioure, Canigou ... Dies ist das Languedoc Roussillon!<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>",
+					"es":"Si usted est&aacute; en busca de una tierra de contrastes, el Languedoc-Rosell&oacute;n le trae. Los cinco departamentos que conforman esta regi&oacute;n son tan diferentes como complementarias. Gard, H&eacute;rault, Aude y Pirineos Orientales orientado Big Blue ... Unos 200 kil&oacute;metros de costa de alojamiento, as&iacute; como modernos puertos deportivos Grande Motte y ciudades peque&ntilde;as de car&aacute;cter: Mortes S&egrave;te o Aigues. S&oacute;lo Loz&egrave;re no tiene costa, pero conserva algunos peque&ntilde;os tesoros y el Aven Armand y las Gorges du Tarn. Rica en historia, la regi&oacute;n cultiva sus diferencias coqueteando con la Provenza y el Pa&iacute;s Catal&aacute;n ... Los castillos c&aacute;taros, la Universidad de Montpellier, Nimes romana, anchoas de Collioure, Canigou ... Este es el Languedoc Roussillon!<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>",
+					"fr":"Si vous cherchiez une terre de contraste, le Languedoc Roussillon vous l'apporte. Les cinq d&eacute;partements qui composent cette r&eacute;gion sont aussi diff&eacute;rents que compl&eacute;mentaires. Le Gard, l'H&eacute;rault, l'Aude et les Pyr&eacute;n&eacute;es Orientales sont orient&eacute;s vers la Grande Bleue... Quelques 200 kilom&egrave;tres de littoral abritant aussi bien des marinas modernes comme la Grande Motte que des petites cit&eacute;s de caract&egrave;re : S&egrave;te ou Aigues Mortes. Seule la Loz&egrave;re n'a pas de fa&ccedil;ade maritime, mais conserve quelques petits tr&eacute;sors ainsi l'Aven Armand ou les gorges du Tarn. Riche de son histoire, la r&eacute;gion cultive ses diff&eacute;rences flirtant avec la Provence et le Pays Catalan... Les ch&acirc;teaux cathares, Montpellier l'universitaire, N&icirc;mes la romaine, les anchois de Collioure, le Canigou... C'est le Languedoc Roussillon !<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>",
+					"nl":"Als u op zoek bent naar een land van contrasten, de Languedoc Roussillon brengt u. De vijf afdelingen die deel uitmaken van deze regio zijn zo verschillend als complementair. Gard, Herault, Aude en Pyrenees Orientales gericht Big Blue ... Zo'n 200 kilometer kustlijn behuizing en de moderne jachthavens Grande Motte en kleine steden van karakter: S&egrave;te of Aigues Mortes. Alleen Loz&egrave;re heeft geen kustlijn, maar behoudt een aantal kleine schatten en de Aven Armand en de Gorges du Tarn. Rijk aan geschiedenis, de regio zich te onderscheiden flirten met de Provence en de Pays Catalaanse ... De kastelen van de Katharen, de universiteit Montpellier, N&icirc;mes Romeinse, ansjovis van Collioure, Canigou ... Dit is de Languedoc Roussillon!<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Aude",
+							"translations":
+							{
+								"de":"Aude",
+								"es":"Aude",
+								"fr":"Aude",
+								"nl":"Aude"
+							}
+						},
+						{
+							"name":"Gard",
+							"translations":
+							{
+								"de":"Gard",
+								"es":"Gard",
+								"fr":"Gard",
+								"nl":"Gard"
+							}
+						},
+						{
+							"name":"Hérault",
+							"translations":
+							{
+								"de":"Hérault",
+								"es":"Hérault",
+								"fr":"Hérault",
+								"nl":"Hérault"
+							}
+						},
+						{
+							"name":"Lozère",
+							"translations":
+							{
+								"de":"Lozère",
+								"es":"Lozère",
+								"fr":"Lozère",
+								"nl":"Lozère"
+							}
+						},
+						{
+							"name":"Pyrénées-Orientales",
+							"translations":
+							{
+								"de":"Pyrénées-Orientales",
+								"es":"Pyrénées-Orientales",
+								"fr":"Pyrénées-Orientales",
+								"nl":"Pyrénées-Orientales"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Limousin",
+			 "translations":
+				 {
+				 "de":"Limousin",
+				 "es":"Limousin",
+				 "fr":"Limousin",
+				 "nl":"Limousin"
+				 },
+				 "description":
+					{
+					"en":"Limousin is composed of Corr&egrave;ze, Creuse and Haute-Vienne, three departments which have preserved their charm and authenticity. Located on the steps of the Massif Central, Limousin is a land of trees and water, oaks and chestnut trees, meadows and deep valleys, springs and secret paths. The Millevaches Vassivi&egrave;re Lake through the valleys of the Dordogne and the Vezere, Limousin offers the spectacle of a plural nature paradise for hikers and fishermen. Romanesque churches, medieval villages, Collonges-la-Rouge, Curemonte ... not fail to seduce lovers of heritage. Limousin is also a land of gastronomy. The region that gave birth to the clafoutis welcomes its generous kitchen tables where the piece is made with beef Limousin! It offers a warm welcome, fun walks in the fresh air is combined with the pleasures of the table.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>",
+					"de":"Limousin ist der Corr&egrave;ze, Creuse und Haute-Vienne, drei Abteilungen, die ihren Charme und ihre Authentizit&auml;t bewahrt haben zusammensetzt. Das Hotel liegt auf den Stufen des Massif Central ist Limousin ein Land der B&auml;ume und Wasser, Eichen und Kastanien, Wiesen und tiefen T&auml;lern, Quellen und geheime Pfade. Die Millevaches Vassivi&egrave;re See durch die T&auml;ler der Dordogne und der Vezere bietet Limousin das Schauspiel einer pluralen Naturparadies f&uuml;r Wanderer und Angler. Romanische Kirchen, mittelalterliche D&ouml;rfer, Collonges-la-Rouge, Curemonte ... nicht umhin, Liebhaber des kulturellen Erbes zu verf&uuml;hren. Limousin ist auch ein Land der Gastronomie. Die Region, die Geburt des clafoutis gab begr&uuml;&szlig;t seine gro&szlig;z&uuml;gige K&uuml;che Tische, an denen das St&uuml;ck mit Rindfleisch Limousin gemacht wird! Es bietet einen herzlichen Empfang, macht Spa&szlig; Spazierg&auml;nge an der frischen Luft mit den Freuden der Tafel zusammen.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>",
+					"es":"Limousin se compone de Corr&egrave;ze, Creuse y Haute-Vienne, tres departamentos que han conservado su encanto y autenticidad. Situado en la escalinata del Macizo Central, Limousin es una tierra de &aacute;rboles y el agua, los &aacute;rboles robles y casta&ntilde;os, prados y valles profundos, manantiales y caminos secretos. El Millevaches Vassivi&egrave;re lago a trav&eacute;s de los valles de la Dordogne y el V&eacute;z&egrave;re, Limousin ofrece el espect&aacute;culo de una naturaleza plural para&iacute;so para los excursionistas y pescadores. Iglesias rom&aacute;nicas, pueblos medievales, Collonges-la-Rouge, Curemonte ... No dej&eacute;is seducir a los amantes del patrimonio. Limousin es tambi&eacute;n una tierra de la gastronom&iacute;a. La regi&oacute;n que dio origen a la clafoutis la bienvenida a sus mesas de cocina generoso donde la pieza est&aacute; hecha con carne de vaca Limousin! Ofrece una c&aacute;lida bienvenida, paseos de la diversi&oacute;n en el aire fresco se combina con los placeres de la mesa.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>",
+					"fr":"Le Limousin est compos&eacute; de la Corr&egrave;ze, de la Creuse et de la Haute-Vienne, trois d&eacute;partements qui ont su pr&eacute;server leur charme et leur authenticit&eacute;. Situ&eacute; sur les marches du Massif Central, le Limousin est le pays de l'arbre et de l'eau, des ch&ecirc;nes et des ch&acirc;taigniers, des prairies et des vall&eacute;es profondes, des sources et des chemins secrets. Du plateau de Millevaches au lac de Vassivi&egrave;re en passant par les vall&eacute;es de la Dordogne et de la V&eacute;z&egrave;re, le Limousin offre le spectacle d'une nature plurielle, paradis des randonneurs et des p&ecirc;cheurs. Les &eacute;glises romanes, les villages m&eacute;di&eacute;vaux, Collonges-la-Rouge, Curemonte... ne manqueront pas de s&eacute;duire les amateurs de patrimoine. Le Limousin est aussi terre de gastronomie. La r&eacute;gion qui a donn&eacute; naissance au clafoutis accueille sur ses tables une cuisine g&eacute;n&eacute;reuse o&ugrave; la part belle est faite au boeuf limousin ! On vous r&eacute;serve un accueil chaleureux o&ugrave; le plaisir des balades au grand air se conjugue avec celui des plaisirs de la table.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>",
+					"nl":"Limousin is samengesteld uit Corr&egrave;ze, Creuse en Haute-Vienne, drie afdelingen die hebben behouden hun charme en authenticiteit. Gelegen op de stappen van het Centraal Massief, Limousin is een land van bomen en water, eiken en kastanjebomen, weiden en diepe valleien, bronnen en geheime paden. De Millevaches Vassivi&egrave;re meer doorheen de valleien van de Dordogne en de Vezere, Limousin biedt het schouwspel van een pluriforme aard paradijs voor wandelaars en vissers. Romaanse kerken, middeleeuwse dorpen, Collonges-la-Rouge, Curemonte ... niet anders dan liefhebbers van erfgoed te verleiden. Limousin is ook een land van de gastronomie. De regio die geboorte gaf aan de clafoutis verwelkomt zijn ruime keuken tafels waar het stuk is gemaakt met rundvlees Limousin! Het biedt een warm welkom, is leuk wandelen in de frisse lucht in combinatie met de geneugten van de tafel.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Corrèze",
+							"translations":
+							{
+								"de":"Corrèze",
+								"es":"Corrèze",
+								"fr":"Corrèze",
+								"nl":"Corrèze"
+							}
+						},
+						{
+							"name":"Creuse",
+							"translations":
+							{
+								"de":"Creuse",
+								"es":"Creuse",
+								"fr":"Creuse",
+								"nl":"Creuse"
+							}
+						},
+						{
+							"name":"Haute-Vienne",
+							"translations":
+							{
+								"de":"Haute-Vienne",
+								"es":"Haute-Vienne",
+								"fr":"Haute-Vienne",
+								"nl":"Haute-Vienne"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Lorraine",
+			 "translations":
+				 {
+				 "de":"Lorraine",
+				 "es":"Lorraine",
+				 "fr":"Lorraine",
+				 "nl":"Lotharingen"
+				 },
+				 "description":
+					{
+					"en":"Through the Lorraine ... we discover a region shaped by the deeds of history. Traces of the past have left impressive fortified sites such as artillery works of the Maginot Line or the underground citadel of Verdun. Nature employs more than 600,000 hectares of flourishing in regional parks such as Parc de Lorraine or the Northern Vosges. Water is everywhere with a huge network of rivers, ponds, lakes and miles of navigable canals. Land of ancient traditions with crafts such as Baccarat crystal, it is also the host of an architectural and historical richness. Moselle, Vosges, Meuse, Meurthe-et-Moselle four departments for a multi-faceted region, Lorraine. <a rel='nofollow' href='http://www.lorraine.jedecouvrelafrance.com/r-10.html'>source</a>",
+					"de":"Durch das Lorraine ... wir entdecken eine Region von den Taten der Geschichte gepr&auml;gt. Die Spuren der Vergangenheit haben beeindruckende Festungen wie Artillerie Werke der Maginot-Linie oder dem unterirdischen Zitadelle von Verdun verlassen. Natur besch&auml;ftigt mehr als 600.000 Hektar gedeihen in Regionalparks wie Parc de Lorraine oder der Nordvogesen. Wasser ist &uuml;berall mit einem riesigen Netz von Fl&uuml;ssen, Teichen, Seen und Meilen von schiffbaren Kan&auml;len. Land der alten Traditionen mit Kunsthandwerk wie Baccarat-Kristall, ist es auch der Host eines architektonischen und historischen Reichtum. Moselle, Vosges, Meuse, Meurthe-et-Moselle vier Abteilungen f&uuml;r eine facettenreiche Region Lothringen. <a rel='nofollow' href='http://www.lorraine.jedecouvrelafrance.com/r-10.html'>source</a>",
+					"es":"A trav&eacute;s de la Lorena ... descubrimos una regi&oacute;n conformada por las obras de la historia. Las huellas del pasado han dejado impresionantes sitios fortificados, tales como obras de artiller&iacute;a de la L&iacute;nea Maginot o la ciudadela subterr&aacute;nea de Verd&uacute;n. La naturaleza emplea a m&aacute;s de 600.000 hect&aacute;reas de florecimiento en los parques regionales como el Parc de Lorena o los Vosgos del Norte. El agua est&aacute; en todas partes con una gran red de r&iacute;os, lagunas, lagos y kil&oacute;metros de canales navegables. Tierra de tradiciones antiguas con artesan&iacute;as tales como cristal de Baccarat, es tambi&eacute;n el anfitri&oacute;n de una riqueza arquitect&oacute;nica e hist&oacute;rica. Moselle, Vosges, Meuse, Meurthe-et-Moselle cuatro departamentos para una regi&oacute;n de m&uacute;ltiples facetas, Lorraine. <a rel='nofollow' href='http://www.lorraine.jedecouvrelafrance.com/r-10.html'>source</a>",
+					"fr":"En passant par&hellip; la Lorraine, on d&eacute;couvre une r&eacute;gion fa&ccedil;onn&eacute;e par les hauts faits de l&rsquo;Histoire. Ces traces de pass&eacute; ont laiss&eacute; d&rsquo;impressionnants sites fortifi&eacute;s comme les ouvrages d&rsquo;artillerie de la Ligne Maginot ou la citadelle souterraine de Verdun. La Nature occupe plus de 600.000 hectares s&rsquo;&eacute;panouissant dans des parcs naturels r&eacute;gionaux comme le Parc de Lorraine ou celui des Vosges du Nord. L&rsquo;eau est partout avec un r&eacute;seau immense de fleuves, rivi&egrave;res, &eacute;tangs, lacs et des kilom&egrave;tres de canaux navigables. Terre de traditions ancestrales avec des m&eacute;tiers d&rsquo;art comme la cristallerie de Baccarat, c&rsquo;est aussi un pays abritant un patrimoine architectural et historique d&rsquo;une grande richesse. La Moselle, les Vosges, la Meuse, la Meurthe-et-Moselle : quatre d&eacute;partements pour une r&eacute;gion aux multiples facettes, la Lorraine. <a rel='nofollow' href='http://www.lorraine.jedecouvrelafrance.com/r-10.html'>source</a>",
+					"nl":"Door de Lorraine ... ontdekken we een regio gevormd door de daden van de geschiedenis. Sporen van het verleden hebben indrukwekkende versterkte sites zoals artillerie werken van de Maginotlinie of de ondergrondse citadel van Verdun. Natuur heeft meer dan 600.000 hectare bloeiende in de regionale parken zoals Parc de Lorraine of de Noordelijke Vogezen. Water is overal met een groot netwerk van rivieren, vijvers, meren en mijlen van bevaarbare kanalen. Land van oude tradities met ambachten zoals Baccarat kristal, het is ook de gastheer van een architecturale en historische rijkdom. Moselle, Vosges, Meuse, Meurthe-et-Moselle vier afdelingen voor een veelzijdige regio, Lorraine. <a rel='nofollow' href='http://www.lorraine.jedecouvrelafrance.com/r-10.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Meurthe-et-Moselle",
+							"translations":
+							{
+								"de":"Meurthe-et-Moselle",
+								"es":"Meurthe-et-Moselle",
+								"fr":"Meurthe-et-Moselle",
+								"nl":"Meurthe-et-Moselle"
+							}
+						},
+						{
+							"name":"Meuse",
+							"translations":
+							{
+								"de":"Meuse",
+								"es":"Meuse",
+								"fr":"Meuse",
+								"nl":"Meuse"
+							}
+						},
+						{
+							"name":"Moselle",
+							"translations":
+							{
+								"de":"Moselle",
+								"es":"Moselle",
+								"fr":"Moselle",
+								"nl":"Moselle"
+							}
+						},
+						{
+							"name":"Vosges",
+							"translations":
+							{
+								"de":"Vosges",
+								"es":"Vosges",
+								"fr":"Vosges",
+								"nl":"Vosges"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Martinique",
+			 "translations":
+				 {
+				 "de":"Martinique",
+				 "es":"Martinica",
+				 "fr":"Martinique",
+				 "nl":"Martinique"
+				 },
+				 "description":
+					{
+					"en":"",
+					"de":"",
+					"es":"",
+					"fr":"",
+					"nl":""
+					},
+					"subregions":
+					[
+					]
+			},
+			{
+			 "name":"Mayotte",
+			 "translations":
+				 {
+				 "de":"Mayotte",
+				 "es":"Mayotte",
+				 "fr":"Mayotte",
+				 "nl":"Mayotte"
+				 },
+				 "description":
+					{
+					"en":"",
+					"de":"",
+					"es":"",
+					"fr":"",
+					"nl":""
+					},
+					"subregions":
+					[
+						
+					]
+			},
+			{
+			 "name":"Midi-Pyrenees",
+			 "translations":
+				 {
+				 "de":"Midi-Pyrenees",
+				 "es":"Midi-Pyrénées",
+				 "fr":"Midi-Pyrénées",
+				 "nl":"Midi-Pyrenees"
+				 },
+				 "description":
+					{
+					"en":"The Midi Pyr&eacute;n&eacute;es region combined with a wild talent breathtaking, historical heritage of immense wealth and the art of living well ... av&eacute; the accent! Ariege Aveyron Gers Haute-Garonne Hautes-Pyrenees, Lot, Tarn, Tarn et Garonne, the eight departments that make up the region inevitably recall other names, sounding fresh and sun-drenched Toulouse, &quot;pink city&quot; , Canal du Midi, Causse du Quercy ... The list is long! Discover the valleys of the Lot and Cele the leisurely pace of the barges, the gorges of the Tarn and appeasing to the more sustained the kayaks. Wander the infinite spaces of plateaus that stretch of Aubrac Pyrenean peaks. Step back in time by visiting the caves or the Niaux Pech Merle, follow the road of the Cathars or the road to St Jacques de Compostela. Do not miss to taste the specialties of this region: foie gras in the Gers, Castelnaudary cassoulet, truffle Lot aligot in Aveyron. Then cheeses: Roquefort, Rocamadour, Blue Causses ... All these flavors marry happily wines produced in the region: Cahors, Moissac, Madiran and many others.<a rel='nofollow' href='http://www.midi-pyrenees.jedecouvrelafrance.com/r-17.html'>source</a>",
+					"de":"Der Midi Pyr&eacute;n&eacute;es Region mit einer wilden Talent atemberaubend historische Erbe der immensen Reichtum und die Kunst gut zu leben ... av&eacute; der Akzent kombiniert! Ariege Aveyron Gers Haute-Garonne Hautes-Pyrenees, Lot, Tarn, Tarn-et-Garonne, die acht Abteilungen, aus denen sich die Region unweigerlich wieder zu anderen Namen, klingt frisch und sonnenverw&ouml;hnten Toulouse, &quot;rosa Stadt&quot; , Canal du Midi, Causse du Quercy ... Die Liste ist lang! Entdecken Sie die T&auml;ler des Lot und Cele das gem&auml;chliche Tempo der Lastk&auml;hne, die Schluchten des Tarn und des Verst&auml;ndnisses f&uuml;r die weitere nachhaltige den Kajaks. Schlendern Sie durch die unendlichen Weiten der Hochebenen, die Strecke von Aubrac Gipfel der Pyren&auml;en. Schritt zur&uuml;ck in der Zeit durch den Besuch der H&ouml;hlen oder die Niaux Pech Merle, folgen Sie der Stra&szlig;e der Katharer oder die Stra&szlig;e zu St Jacques de Compostela. Verpassen Sie nicht die Spezialit&auml;ten der Region probieren: foie gras in den Gers, Castelnaudary Cassoulet, Tr&uuml;ffel Lot aligot in Aveyron. Dann K&auml;se: Roquefort, Rocamadour, Blue Causses ... All diese Aromen zu heiraten gerne Weine aus der Region: Cahors, Moissac, Madiran und viele andere.<a rel='nofollow' href='http://www.midi-pyrenees.jedecouvrelafrance.com/r-17.html'>source</a>",
+					"es":"La regi&oacute;n de Mediod&iacute;a-Pirineos combinado con un talento salvaje herencia impresionante e hist&oacute;rica de inmensa riqueza y el arte de vivir bien ... Ave el acento! Ariege Aveyron Gers Haute-Garonne Hautes-Pyr&eacute;n&eacute;es, Lot, Tarn, Tarn et Garonne, los ocho departamentos que conforman la regi&oacute;n inevitablemente recordar otros nombres, sonando fresca y soleada Toulouse, &quot;ciudad rosa&quot; , Canal du Midi, Causse du Quercy ... La lista es larga! Descubre los valles del Lot y Cele el ritmo pausado de las barcazas, las gargantas del Tarn y apaciguar a los m&aacute;s sostenidos de los kayaks. Pasee por los espacios infinitos de mesetas que se extienden de Aubrac picos pirenaicos. Paso atr&aacute;s en el tiempo visitando las cuevas o la Pech Merle Niaux, siga el camino de los c&aacute;taros o la carretera a San Santiago de Compostela. No deje de probar las especialidades de la regi&oacute;n: foie gras en la regi&oacute;n de Gers, Castelnaudary cassoulet, aligot trufa Lote en Aveyron. A continuaci&oacute;n, los quesos: Roquefort, Rocamadour, Causses azules ... Todos estos sabores casarse felizmente vinos producidos en la regi&oacute;n: Cahors, Moissac, Madiran y muchos otros.<a rel='nofollow' href='http://www.midi-pyrenees.jedecouvrelafrance.com/r-17.html'>source</a>",
+					"fr":"La r&eacute;gion Midi Pyr&eacute;n&eacute;es conjugue avec talent une nature sauvage &agrave; couper le souffle, un patrimoine historique d&rsquo;une immense richesse et l&rsquo;art de bien vivre&hellip;av&eacute; l&rsquo;accent ! Ari&egrave;ge, Aveyron, Gers, Haute-Garonne, Hautes-Pyr&eacute;n&eacute;es, Lot, Tarn, Tarn et Garonne, les huit d&eacute;partements qui composent la r&eacute;gion &eacute;voquent immanquablement d&rsquo;autres noms, aux sonorit&eacute;s douces et gorg&eacute;es de soleil : Toulouse, &quot;ville rose&quot;, Canal du Midi, Causses du Quercy&hellip; La liste est longue ! D&eacute;couvrez les vall&eacute;es du Lot et du C&eacute;l&eacute; au rythme tranquille des gabares ; les gorges du Tarn et de la Truy&egrave;re &agrave; celui, plus soutenu, des cano&euml;-kayaks. Arpentez les espaces infinis des causses qui s&rsquo;&eacute;tirent de l&rsquo;Aubrac aux pics Pyr&eacute;n&eacute;ens. Remontez le temps en visitant les grottes de Niaux ou celle de Pech Merle, suivez la route des Cathares ou bien les chemins de St Jacques de Compostelle. Ne manquez pas de go&ucirc;ter aux sp&eacute;cialit&eacute;s de ce terroir : foie gras dans le Gers, cassoulet &agrave; Castelnaudary, truffe dans le Lot, aligot en Aveyron. Puis les fromages : Roquefort, Rocamadour, Bleu des Causses&hellip; Toutes ces saveurs se marient avec bonheur aux vins produits dans la r&eacute;gion : Cahors, Moissac, Madiran et tant d&rsquo;autres.<a rel='nofollow' href='http://www.midi-pyrenees.jedecouvrelafrance.com/r-17.html'>source</a>",
+					"nl":"De Midi Pyrenees in combinatie met een wild talent adembenemende, historische erfgoed van de immense rijkdom en de kunst van het goede leven ... Ave de accent! Ari&egrave;ge Aveyron Gers Haute-Garonne Hautes-Pyrenees, Lot, Tarn, Tarn et Garonne, de acht departementen die deel uitmaken van de regio onvermijdelijk herinneren andere namen, klinkt fris en zonovergoten Toulouse, &quot;roze stad&quot; , Canal du Midi, Causse du Quercy ... De lijst is lang! Ontdek de valleien van de Lot en Cele de rustige tempo van de schepen, de kloven van de Tarn en sussen om de meer duurzame de kajaks. Dwaal de oneindige ruimten van plateaus die zich uitstrekken van de Aubrac Pyreneese pieken. Stap terug in de tijd door een bezoek aan de grotten of de Niaux Pech Merle, volg de weg van de Katharen of de weg naar St Jacques de Compostella. Vergeet niet om de specialiteiten van deze regio proeven: foie gras in de Gers, Castelnaudary cassoulet, truffel Lot aligot in Aveyron. Dan kazen: Roquefort, Rocamadour, Blue Causses ... Al deze smaken te trouwen gelukkig wijnen die in de regio: Cahors, Moissac, Madiran en vele anderen.<a rel='nofollow' href='http://www.midi-pyrenees.jedecouvrelafrance.com/r-17.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Ariège",
+							"translations":
+							{
+								"de":"Ariège",
+								"es":"Ariège",
+								"fr":"Ariège",
+								"nl":"Ariège"
+							}
+						},
+						{
+							"name":"Aveyron",
+							"translations":
+							{
+								"de":"Aveyron",
+								"es":"Aveyron",
+								"fr":"Aveyron",
+								"nl":"Aveyron"
+							}
+						},
+						{
+							"name":"Haute-Garonne",
+							"translations":
+							{
+								"de":"Haute-Garonne",
+								"es":"Haute-Garonne",
+								"fr":"Haute-Garonne",
+								"nl":"Haute-Garonne"
+							}
+						},
+						{
+							"name":"Gers",
+							"translations":
+							{
+								"de":"Gers",
+								"es":"Gers",
+								"fr":"Gers",
+								"nl":"Gers"
+							}
+						},
+						{
+							"name":"Hautes-Pyrénées",
+							"translations":
+							{
+								"de":"Hautes-Pyrénées",
+								"es":"Hautes-Pyrénées",
+								"fr":"Hautes-Pyrénées",
+								"nl":"Hautes-Pyrénées"
+							}
+						},
+						{
+							"name":"Tarn",
+							"translations":
+							{
+								"de":"Tarn",
+								"es":"Tarn",
+								"fr":"Tarn",
+								"nl":"Tarn"
+							}
+						},
+						{
+							"name":"Tarn-et-Garonne",
+							"translations":
+							{
+								"de":"Tarn-et-Garonne",
+								"es":"Tarn-et-Garonne",
+								"fr":"Tarn-et-Garonne",
+								"nl":"Tarn-et-Garonne"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Nord-Pas-de-Calais",
+			 "translations":
+				 {
+				 "de":"Nord-Pas-de-Calais",
+				 "es":"Nord-Pas-de-Calais",
+				 "fr":"Nord-Pas-de-Calais",
+				 "nl":"Nord-Pas-de-Calais"
+				 },
+				 "description":
+					{
+					"en":"Northernmost region, the Nord Pas de Calais is a land of meeting and sharing: the Nord department turned to Belgium, Holland and Germany, in the Pas de Calais to England ... Despite a lot of ideas, the Nord Pas de Calais is one of the most visited regions: the stations &quot;Belle Epoque&quot; of the sea, Le Touquet, Merlimont; architectural treasures in cities like Lille, Arras and the importance port cities, Calais, Dunkirk and the weight of history, annexations in the county of Flanders and at home in Spain, the German occupation ... The landscapes of farmland in Avesnois those heaps around Lens ... Everything is important, nothing is superficial ... This depth, you'll also find in &quot;People of the North&quot;: they give you a warm welcome, the sense of fun that you transmit, and friendship ... unwavering ... Are there more wealth?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>",
+					"de":"N&ouml;rdlichste Region ist die Region Nord-Pas de Calais ein Land der Begegnung und Austausch: die Nord-Abteilung wandte sich an Belgien, Holland und Deutschland, im Pas de Calais nach England ... Trotz vieler Ideen, ist die Nord Pas de Calais eine der am meisten besuchten Regionen: die Stationen &quot;Belle Epoque&quot; des Meeres, Le Touquet, Merlimont; architektonischen Sch&auml;tze in St&auml;dten wie Lille, Arras und die Bedeutung Hafenst&auml;dte, Calais, D&uuml;nkirchen und das Gewicht der Geschichte, Annexionen in der Grafschaft Flandern und zu Hause in Spanien, die deutsche Besatzung ... Die Landschaften von Ackerland in Avesnois diese Haufen rund Lens ... Alles ist wichtig, nichts ist oberfl&auml;chlich ... Diese Tiefe, werden Sie auch in &quot;Menschen des Nordens&quot; zu finden: sie geben Ihnen einen herzlichen Empfang, der Sinn f&uuml;r Spa&szlig;, dass Sie &uuml;bertragen und Freundschaft ... unersch&uuml;tterliche ... Gibt es mehr Wohlstand?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>",
+					"es":"Regi&oacute;n m&aacute;s septentrional, la regi&oacute;n de Nord Pas de Calais es una tierra de encuentro y de intercambio: el departamento del Norte volvi&oacute; a B&eacute;lgica, Holanda y Alemania, en el Pas de Calais a Inglaterra ... A pesar de una gran cantidad de ideas, el Nord Pas de Calais es una de las regiones m&aacute;s visitadas: las estaciones de &quot;Belle Epoque&quot; del mar, Le Touquet, Merlimont; tesoros arquitect&oacute;nicos de ciudades como Lille, Arras y la importancia ciudades, puertos de Calais, Dunkerque y el peso de la historia, anexiones en el condado de Flandes y en casa en Espa&ntilde;a, la ocupaci&oacute;n alemana ... Los paisajes de las tierras agr&iacute;colas en Avesnois esos montones alrededor de la lente ... Todo es importante, nada es superficial ... Esta profundidad, tambi&eacute;n se encontrar&aacute; en el &quot;Pueblo del Norte&quot;: te dan una c&aacute;lida bienvenida, el sentido de la diversi&oacute;n que usted transmita, y la amistad ... inquebrantable ... &iquest;Son riqueza hay m&aacute;s?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>",
+					"fr":"R&eacute;gion la plus septentrionale, le Nord Pas de Calais est une terre de partage et de rencontres : le d&eacute;partement du Nord tourn&eacute; vers la Belgique, la Hollande et l'Allemagne, celui du Pas de Calais vers l'Angleterre... Malgr&eacute; pas mal d'id&eacute;es re&ccedil;ues, le Nord Pas de Calais compte parmi les r&eacute;gions les plus visit&eacute;es : les stations &quot;Belle Epoque&quot; du bord de mer, Le Touquet, Merlimont ; les richesses architecturales de villes comme Lille, Arras ; l'importance des villes portuaires, Calais, Dunkerque ; le poids de l'histoire, annexions au comt&eacute; de Flandre puis &agrave; la maison d'Espagne, l'occupation allemande... ; les paysages de bocage en Avesnois, ceux des terrils autour de Lens... Tout est important, rien n'est superficiel... Cette profondeur, vous la retrouverez &eacute;galement chez &quot;les Gens du Nord&quot; : l'accueil qu'ils vous r&eacute;serveront, le sens de la f&ecirc;te qu'ils vous transmettront, et l'amiti&eacute;... ind&eacute;fectible... Existe-t-il plus grande richesse ?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>",
+					"nl":"Noordelijke regio, de regio Nord Pas de Calais is een land van de vergadering en het delen: het departement Nord wendde zich tot Belgi&euml;, Holland en Duitsland, in de Pas de Calais naar Engeland ... Ondanks een heleboel idee&euml;n, de Nord Pas de Calais is een van de meest bezochte regio's: de stations &quot;Belle Epoque&quot; van de zee, Le Touquet, Merlimont, architectonische schatten in steden als Lille, Arras en het belang havensteden, Calais, Duinkerken en het gewicht van de geschiedenis, annexaties in het graafschap Vlaanderen en thuis in Spanje, de Duitse bezetting ... De landschappen van landbouwgrond in Avesnois die hopen rond Lens ... Alles is belangrijk, niets is oppervlakkig ... Deze diepte, vindt u ook in de &quot;Mensen van het Noorden&quot;: ze geven je een warm welkom, het gevoel van plezier dat u verzendt, en vriendschap ... aflatende ... Zijn er meer rijkdom?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Nord",
+							"translations":
+							{
+								"de":"Nord",
+								"es":"Nord",
+								"fr":"Nord",
+								"nl":"Nord"
+							}
+						},
+						{
+							"name":"Pas-de-Calais",
+							"translations":
+							{
+								"de":"Pas-de-Calais",
+								"es":"Pas-de-Calais",
+								"fr":"Pas-de-Calais",
+								"nl":"Pas-de-Calais"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Basse-Normandie",
+			 "translations":
+				 {
+				 "de":"Basse-Normandie",
+				 "es":"Basse-Normandie",
+				 "fr":"Basse-Normandie",
+				 "nl":"Lotharingen"
+				 },
+				 "description":
+					{
+					"en":"Lower Normandy region consists of three departments. The history of Calvados and Manche is largely related to the sea, windows on the world: invasions, conquests, discoveries ... The Orne is itself a department crossroads has always welcomed travelers and visitors in a setting of greenery where gastronomy and history are inseparable! It is also an area of appointment! With history, those of William the Conqueror and the landing ... With geography: the Suisse Normande, the Cotentin Peninsula, C&ocirc;te flowers ... With equestrian sports, sailing, fishing ... And of course the food: apple or cheese. Lower Normandy has everything to seduce you.<a rel='nofollow' href='http://www.basse-normandie.jedecouvrelafrance.com/r-5.html'>source</a>",
+					"de":"Region Basse-Normandie besteht aus drei Abteilungen. Die Geschichte des Calvados und Manche weitgehend auf dem Meer verbunden, Fenster zur Welt: Invasionen, Eroberungen, Entdeckungen ... Die Orne ist selbst eine Abteilung Kreuzung schon immer Reisende und Besucher in einer Umgebung von Gr&uuml;nen begr&uuml;&szlig;t, wo die Gastronomie und Geschichte untrennbar miteinander verbunden sind! Es ist auch ein Bereich, der Termin! Mit der Geschichte, die von Wilhelm dem Eroberer und die Landung ... Mit der Geographie: Die Suisse Normande, die Halbinsel Cotentin, C&ocirc;te Blumen ... Mit Pferdesport, Segeln, Angeln ... Und nat&uuml;rlich das Essen: Apfel-oder K&auml;sekuchen. Basse-Normandie hat alles, um Sie zu verf&uuml;hren.<a rel='nofollow' href='http://www.basse-normandie.jedecouvrelafrance.com/r-5.html'>source</a>",
+					"es":"Regi&oacute;n de Baja Normand&iacute;a se compone de tres departamentos. La historia de Calvados y Manche est&aacute; muy relacionada con el mar, ventanas en el mundo: invasiones, conquistas, descubrimientos ... El Orne en s&iacute; es una encrucijada departamento siempre ha acogido a los viajeros y visitantes en un entorno de verdor donde la gastronom&iacute;a y la historia son inseparables! Tambi&eacute;n es un &aacute;rea de cita! Con la historia, los de Guillermo el Conquistador y el aterrizaje ... Con la geograf&iacute;a: la Normanda Suisse, la pen&iacute;nsula de Cotentin, flores ... Con C&ocirc;te h&iacute;pica, vela, pesca ... Y, por supuesto, la comida: manzana o queso. Baja Normand&iacute;a tiene todo para seducirte.<a rel='nofollow' href='http://www.basse-normandie.jedecouvrelafrance.com/r-5.html'>source</a>",
+					"fr":"La r&eacute;gion Basse Normandie se compose de trois d&eacute;partements. L&rsquo;histoire du Calvados et de la Manche est largement li&eacute;e &agrave; la mer, ouvertures sur le monde : invasions, conqu&ecirc;tes, d&eacute;couvertes&hellip; L&rsquo;Orne est quant &agrave; lui, un d&eacute;partement carrefour qui accueille depuis toujours voyageurs et visiteurs dans un d&eacute;cor de verdure o&ugrave; histoire et gastronomie sont indissociables! C&rsquo;est aussi un territoire de rendez-vous ! Avec l&rsquo;Histoire, celles de Guillaume le Conqu&eacute;rant et du D&eacute;barquement&hellip; Avec la g&eacute;ographie : la Suisse Normande, la presqu&rsquo;&icirc;le du Cotentin, la C&ocirc;te fleurie&hellip; Avec les sports hippiques, la voile, la p&ecirc;che... Et bien s&ucirc;r avec la gastronomie : la pomme ou le fromage. La Basse Normandie a tout pour vous s&eacute;duire.<a rel='nofollow' href='http://www.basse-normandie.jedecouvrelafrance.com/r-5.html'>source</a>",
+					"nl":"Regio Basse-Normandie bestaat uit drie afdelingen. De geschiedenis van de Calvados en Manche is grotendeels gerelateerd aan de zee, vensters op de wereld: invasies, veroveringen, ontdekkingen ... De Orne is zelf een afdeling kruispunt is altijd reizigers en bezoekers in een groene omgeving verwelkomd, waar gastronomie en geschiedenis zijn onlosmakelijk met elkaar verbonden! Het is ook een gebied van afspraak! Met geschiedenis, die van Willem de Veroveraar en de landing ... Met geografie: de Suisse Normande, het schiereiland Cotentin, C&ocirc;te bloemen ... Met paardensport, zeilen, vissen ... En natuurlijk het eten: appel of kaas. Basse-Normandie heeft alles om u te verleiden.<a rel='nofollow' href='http://www.basse-normandie.jedecouvrelafrance.com/r-5.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Calvados",
+							"translations":
+							{
+								"de":"Calvados",
+								"es":"Calvados",
+								"fr":"Calvados",
+								"nl":"Calvados"
+							}
+						},
+						{
+							"name":"Manche",
+							"translations":
+							{
+								"de":"Manche",
+								"es":"Manche",
+								"fr":"Manche",
+								"nl":"Manche"
+							}
+						},
+						{
+							"name":"Orne",
+							"translations":
+							{
+								"de":"Orne",
+								"es":"Orne",
+								"fr":"Orne",
+								"nl":"Orne"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Haute-Normandie",
+			 "translations":
+				 {
+				 "de":"Haute-Normandie",
+				 "es":"Haute-Normandie",
+				 "fr":"Haute-Normandie",
+				 "nl":"Haute-Normandie"
+				 },
+				 "description":
+					{
+					"en":"If the Upper Normandy only two departments, Eure and Seine-Maritime, it is nonetheless a powerful economic region. Its advantages are many: grain production, industrial area, commercial ports, advanced technology ... Also predominant are its cultural, environmental and recreational activities: many museums and theaters, parks and gardens, exploiting forests, restoration of architectural heritage ... In addition to being economically powerful, it is essential touristically! The foundation of the great abbeys at birth of Impressionism, through Etretat, Dieppe, Rouen and Evreux, without neglecting the beautiful countryside, its apples and dairy products; Upper Normandy is a guarantee of quality. Nature, culture, history and friendliness await you!<a rel='nofollow' href='http://www.haute-normandie.jedecouvrelafrance.com/r-6.html'>source</a>",
+					"de":"Als de Haute-Normandie slechts twee afdelingen, Eure en Seine-Maritime, is het toch een krachtige economische regio. De voordelen zijn legio: de graanproductie, industriegebied, commerci&euml;le havens, geavanceerde technologie ... Ook overheersende zijn de culturele, ecologische en recreatieve activiteiten: vele musea en theaters, parken en tuinen, valorisatie van de bossen, de restauratie van het architectonisch erfgoed ... Naast dit economisch krachtig is het essentieel toeristisch! De stichting van de grote abdijen bij de geboorte van het impressionisme, door middel van Etretat, Dieppe, Rouen en Evreux, zonder daarbij het ??prachtige landschap, de appels en zuivelproducten; Haute-Normandie is een garantie voor kwaliteit. Natuur, cultuur, geschiedenis en vriendelijkheid staan ??je te wachten! <a rel='nofollow' href='http://www.haute-normandie.jedecouvrelafrance.com/r-6.html'>source</a>",
+					"es":"Si la Alta Normand&iacute;a s&oacute;lo dos departamentos, Eure y Seine-Maritime, no obstante es una regi&oacute;n econ&oacute;mica de gran alcance. Sus ventajas son muchas: la producci&oacute;n de granos, &aacute;rea industrial, puertos comerciales, la tecnolog&iacute;a avanzada ... Tambi&eacute;n predominante son sus actividades culturales, ambientales y recreativas: museos y teatros, parques y jardines, los bosques, la explotaci&oacute;n de la restauraci&oacute;n del patrimonio arquitect&oacute;nico ... Adem&aacute;s de ser econ&oacute;micamente poderoso, es esencial tur&iacute;sticamente! La fundaci&oacute;n de las grandes abad&iacute;as en el nacimiento del impresionismo, a trav&eacute;s de Etretat, Dieppe, Rouen y Evreux, sin dejar de lado la hermosa campi&ntilde;a, sus manzanas y productos l&aacute;cteos; Alta Normand&iacute;a es una garant&iacute;a de calidad. Naturaleza, cultura, historia y amistad le aguardan!<a rel='nofollow' href='http://www.haute-normandie.jedecouvrelafrance.com/r-6.html'>source</a>",
+					"fr":"Si la Haute Normandie ne compte que deux d&eacute;partements, l'Eure et la Seine Maritime, elle n'en est pas moins une puissante r&eacute;gion &eacute;conomique. Ses atouts sont nombreux : production c&eacute;r&eacute;ali&egrave;re, bassin industriel, ports de commerce, technologie de pointe... Pr&eacute;pond&eacute;rants &eacute;galement sont ses atouts culturels, environnementaux et ludiques  : de nombreux mus&eacute;es et th&eacute;&acirc;tres, des parcs et jardins, la valorisation des for&ecirc;ts, la restauration de son patrimoine architectural... En plus d'&ecirc;tre &eacute;conomiquement puissante, elle est touristiquement incontournable ! De la fondation des grandes abbayes &agrave; la naissance de l'impressionisme, en passant par Etretat, Dieppe, Rouen ou Evreux, sans n&eacute;gliger la belle campagne, ses pommes et ses produits laitiers ; la Haute Normandie est gage de qualit&eacute;. Nature, culture, histoire et convivialit&eacute; sont au rendez-vous ! <a rel='nofollow' href='http://www.haute-normandie.jedecouvrelafrance.com/r-6.html'>source</a>",
+					"nl":"Elzas is altijd een kruispunt van Europa, was een land dat rijk is zo begeerde en vaak mishandeld ... Romeinse en Merovingische alamane ... dan Duitse en Franse Elzas behoudt een sterke identiteit en gewoontes heel bijzonder ... Bestaat uit de departementen Bas-Rhin en Haut-Rhin tussen Wissembourg en Ferrette met de Rijn natuurlijke grens, genieten van een spectaculair landschap, wegen te verkennen dit thema opnieuw de regio contrasteert zo mooi ... Straatsburg, Colmar, Mulhouse, historische steden; Koenisbourg De Hoge en het Europees Parlement, essentiële strategische sites, of Mutzig Obernai, steden brouwers; Ribeauville Guebwiller dorpen wijngaarden ... Niet te vergeten de vele gastronomische specialiteiten, zuurkool, kougelhopf, flammekueche noemen ... Elzas zal u verleiden en houd je ... . <a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Seine-Maritime",
+							"translations":
+							{
+								"de":"Seine-Maritime",
+								"es":"Seine-Maritime",
+								"fr":"Seine-Maritime",
+								"nl":"Seine-Maritime"
+							}
+						},
+						{
+							"name":"Eure",
+							"translations":
+							{
+								"de":"Eure",
+								"es":"Eure",
+								"fr":"Eure",
+								"nl":"Eure"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Pays de la Loire",
+			 "translations":
+				 {
+				 "de":"Pays de la Loire",
+				 "es":"Pays de la Loire",
+				 "fr":"Pays de la Loire",
+				 "nl":"Pays de la Loire"
+				 },
+				 "description":
+					{
+					"en":"<p>The Pays de Loire region has five departments: Maine et Loire, Mayenne, Sarthe, Loire Atlantique and Vend&eacute;e ... These last two totaling 450 km of coastline or alternate resorts, fishing ports, islands and peninsulas, marshes ... Like La Baule Les Sables d'Olonne and Pornichet and St-Gilles-Croix-de-life, the island of Yeu and Noirmoutier Island and finally Gu&eacute;rande! The region also offers over 400 miles of waterways on the Loire, Erdre, Mayenne, Maine, Sarthe and channels Nantes-Brest and La Martiniere. Everywhere castles of all ages as a timeline: those Tiffauges, Talmont St Hilaire and Machecoul or the Castle of the Dukes of Brittany in Nantes, one of Clisson and Chateaubriant ... The soft light that bathes these treasures accompany images and memories of the Loire.<a rel='nofollow' href='http://www.pays-de-loire.jedecouvrelafrance.com/r-3.html'>source</a>",
+					"de":"Das Pays de Loire-Region hat f&uuml;nf Abteilungen: Maine-et-Loire, Mayenne, Sarthe, Loire-Atlantique und Vend&eacute;e ... Die letzten beiden von insgesamt 450 km langen K&uuml;ste oder alternative Resorts, Fischereih&auml;fen, Inseln und Halbinseln, S&uuml;mpfe ... Wie La Baule Les Sables d'Olonne und Pornichet und St-Gilles-Croix-de-Leben, die Insel Yeu und Noirmoutier Insel und schlie&szlig;lich Gu&eacute;rande! Die Region bietet auch mehr als 400 Meilen von Wasserstra&szlig;en an der Loire, Erdre, Mayenne, Maine, Sarthe und Kan&auml;le Nantes-Brest und La Martiniere. &Uuml;berall Schl&ouml;ssern aller Altersgruppen auf einer Zeitachse: die Tiffauges, Talmont St Hilaire und Machecoul oder das Schloss der Herz&ouml;ge der Bretagne in Nantes, die de Clisson und Chateaubriant ... Das weiche Licht badet, die diese Sch&auml;tze zu begleiten Bilder und Erinnerungen an die Loire.<a rel='nofollow' href='http://www.pays-de-loire.jedecouvrelafrance.com/r-3.html'>source</a>",
+					"es":"El Pays de Loire regi&oacute;n cuenta con cinco departamentos: Maine et Loire, Mayenne, Sarthe, Loira Atl&aacute;ntico y Vend&eacute;e ... Estos dos &uacute;ltimos por un total de 450 km de costa resorts o suplente, puertos pesqueros, islas y pen&iacute;nsulas, pantanos ... Al igual que La Baule Les Sables d'Olonne y Pornichet y-St-Gilles-Croix-de vida, la isla de Yeu y la isla de Noirmoutier y Gu&eacute;rande &iexcl;por fin! La regi&oacute;n tambi&eacute;n ofrece m&aacute;s de 400 kil&oacute;metros de v&iacute;as navegables en el Loira, Erdre, Mayenne, Maine, Sarthe y canales de Nantes-Brest y La Martiniere. En todas partes castillos de todas las edades como una l&iacute;nea de tiempo: los Tiffauges, Talmont St Hilaire y Machecoul o el Castillo de los Duques de Breta&ntilde;a en Nantes, una de Clisson y Chateaubriant ... La suave luz que ba&ntilde;a estos tesoros acompa&ntilde;ar las im&aacute;genes y los recuerdos de la Loire.<a rel='nofollow' href='http://www.pays-de-loire.jedecouvrelafrance.com/r-3.html'>source</a>",
+					"fr":"La r&eacute;gion des Pays de Loire compte cinq d&eacute;partements : Maine et Loire, Mayenne, Sarthe, Loire Atlantique et Vend&eacute;e&hellip; Ces deux derniers totalisent 450 km de c&ocirc;tes ou alternent stations baln&eacute;aires, ports de p&ecirc;che, &icirc;les et presqu&rsquo;&icirc;les, marais salants&hellip; A l'image de La Baule, Les Sables d&rsquo;Olonne et Pornichet et St-Gilles-Croix-de-Vie, l'&icirc;le d&rsquo;Yeu et l'&icirc;le de Noirmoutier et enfin Gu&eacute;rande ! La r&eacute;gion propose aussi plus de 400 kilom&egrave;tres de voies navigables sur la Loire, l&rsquo;Erdre, la Mayenne, le Maine, la Sarthe et les canaux de Nantes &agrave; Brest et de la Martini&egrave;re. Partout, des ch&acirc;teaux de tous &acirc;ges comme une frise chronologique : ceux de Tiffauges, de Talmont St Hilaire et de Machecoul ou bien le ch&acirc;teau des Ducs de Bretagne &agrave; Nantes, celui de Clisson et de Chateaubriant&hellip; La douce lumi&egrave;re qui baigne tous ces tr&eacute;sors accompagneront images et souvenirs des Pays de Loire.<a rel='nofollow' href='http://www.pays-de-loire.jedecouvrelafrance.com/r-3.html'>source</a>",
+					"nl":"De streek Pays de Loire heeft vijf afdelingen: Maine et Loire, Mayenne, Sarthe, Loire Atlantique en Vendee ... Deze laatste twee van in totaal 450 km aan kustlijn of alternatieve resorts, vissershavens, eilanden en schiereilanden, moerassen ... Net als La Baule Les Sables d'Olonne en Pornichet en St-Gillis-Croix-de-het leven, het eiland van Yeu en Noirmoutier en tenslotte Guerande! De regio biedt meer dan 400 mijl van waterwegen uitkomend op de Loire, Erdre, Mayenne, Maine, Sarthe en kanalen Nantes-Brest en La Martiniere. Overal kastelen van alle leeftijden als een tijdslijn: die Tiffauges, Talmont St Hilaire en Machecoul of het kasteel van de hertogen van Bretagne in Nantes, een van Clisson en Chateaubriant ... Het zachte licht dat baadt deze schatten te begeleiden beelden en herinneringen van de Loire.<a rel='nofollow' href='http://www.pays-de-loire.jedecouvrelafrance.com/r-3.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Loire-Atlantique",
+							"translations":
+							{
+								"de":"Loire-Atlantique",
+								"es":"Loire-Atlantique",
+								"fr":"Loire-Atlantique",
+								"nl":"Loire-Atlantique"
+							}
+						},
+						{
+							"name":"Maine-et-Loire",
+							"translations":
+							{
+								"de":"Maine-et-Loire",
+								"es":"Maine-et-Loire",
+								"fr":"Maine-et-Loire",
+								"nl":"Maine-et-Loire"
+							}
+						},
+						{
+							"name":"Mayenne",
+							"translations":
+							{
+								"de":"Mayenne",
+								"es":"Mayenne",
+								"fr":"Mayenne",
+								"nl":"Mayenne"
+							}
+						},
+						{
+							"name":"Sarthe",
+							"translations":
+							{
+								"de":"Sarthe",
+								"es":"Sarthe",
+								"fr":"Sarthe",
+								"nl":"Sarthe"
+							}
+						},
+						{
+							"name":"Vendée",
+							"translations":
+							{
+								"de":"Vendée",
+								"es":"Vendée",
+								"fr":"Vendée",
+								"nl":"Vendée"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Picardie",
+			 "translations":
+				 {
+				 "de":"Picardie",
+				 "es":"Picardie",
+				 "fr":"Picardie",
+				 "nl":"Picardie"
+				 },
+				 "description":
+					{
+					"en":"Tourist Guide Picardy Picardy is comprised of the departments of Aisne, the Oise and the Somme. This historically rich land has experienced all the great times, more or less glorious in the history of France. Aisne and its cities as Laon and Soissons, capital of the kingdom of France, large farmlands have been destroyed during the first war. Tour to England, the Somme is a land of marshes in protected coastal areas, with large spaces with the Somme Bay and Bay Authie. The Oise is a land of castles, Chantilly and cathedrals Ermenonville, Noyon and Beauvais, also land of kings since Clovis at Soissons to Napoleon III Compi&egrave;gne ... and forests, among the most beautiful in France ... Whichever way one turns, as long as you have a little time, Picardy likes to be discovered: its wealth and its world-famous treasures hidden nature of the sea and windswept campaign experienced by the wounds of war ...<a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>",
+					"de":"Tourist Guide Picardie Picardie wird von den Abteilungen der Aisne, Oise und Somme zusammen. Diese historisch reiche Land hat alle gro&szlig;en Zeiten mehr oder weniger glorreichen in der Geschichte Frankreichs erlebt. Aisne und seine St&auml;dte Laon und Soissons, Hauptstadt des K&ouml;nigreiches von Frankreich, haben gro&szlig;e Ackerland w&auml;hrend des ersten Krieges zerst&ouml;rt worden. Tour nach England, ist der Somme ein Land der S&uuml;mpfe in gesch&uuml;tzten K&uuml;stengebieten, mit gro&szlig;en R&auml;umen mit der Somme-Bucht und Bay Authie. Die Oise ist ein Land der Burgen, Chantilly und Kathedralen Ermenonville, Noyon und Beauvais auch Land der K&ouml;nige seit Clovis in Soissons an Napoleon III Compi&egrave;gne ... und W&auml;ldern, die zu den sch&ouml;nsten in Frankreich ... Welchen Weg ein Umdrehungen, solange Sie ein wenig Zeit haben, mag Picardie zu entdecken: seinen Reichtum und seine weltber&uuml;hmten Sch&auml;tze verborgene Natur des Meeres und windgepeitschten Kampagne von den Wunden des Krieges erlebt ...<a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>",
+					"es":"Gu&iacute;a Tur&iacute;stica de Picard&iacute;a Picard&iacute;a est&aacute; compuesta por los departamentos de Aisne, Oise y Somme. Esta tierra rica en historia ha experimentado todos los buenos momentos, m&aacute;s o menos glorioso en la historia de Francia. Aisne y sus ciudades como Laon y Soissons, capital del reino de Francia, granjas de gran tama&ntilde;o han sido destruidas durante la primera guerra. Tour a Inglaterra, el Somme es una tierra de pantanos en zonas costeras protegidas, con grandes espacios con la Bah&iacute;a de Somme y de Authie Bay. El Oise es una tierra de castillos, catedrales y Chantilly Ermenonville, Noyon y Beauvais, tambi&eacute;n tierra de los reyes desde Clovis en Soissons a Napole&oacute;n III Compi&egrave;gne ... y los bosques, entre los m&aacute;s bellos de Francia ... Cualquiera que sea la manera en que uno se convierte, siempre y cuando tenga un poco de tiempo, Picard&iacute;a le gusta ser descubierto: su riqueza natural y sus tesoros de fama mundial oculta del mar y azotado por el viento campa&ntilde;a experimentada por las heridas de la guerra ...<a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>",
+					"fr":"Guide de tourisme de la Picardie La Picardie est constitu&eacute;e des d&eacute;partements de l'Aisne, de l'Oise et de la Somme. Cette terre historiquement riche a v&eacute;cu toutes les grandes heures, plus ou moins glorieuses, de l'histoire de France. L'Aisne et ses villes comme Laon ou Soissons, capitales du royaume de France, ses grandes terres de cultures qui ont &eacute;t&eacute; ravag&eacute;es pendant la premi&egrave;re guerre. Tourn&eacute;e vers l'Angleterre, la Somme est une terre de mar&eacute;cages au  littoral prot&eacute;g&eacute;, offrant de grands espaces avec la baie de Somme et la baie d'Authie. L'Oise est  terre de ch&acirc;teaux, Chantilly ou Ermenonville et de cath&eacute;drales, Beauvais ou Noyon, &eacute;galement terre de rois depuis Clovis &agrave; Soissons jusqu'&agrave; Napol&eacute;on III &agrave; Compi&egrave;gne... et de for&ecirc;ts, parmi les plus belles de France... De quelque c&ocirc;t&eacute; que l'on se tourne, pour peu que l'on ait un peu de temps, la Picardie aime &agrave; se laisser d&eacute;couvrir : ses richesses mondialement connues et ses tr&eacute;sors cach&eacute;s, sa nature de bord de mer balay&eacute;e par les vents et sa campagne &eacute;prouv&eacute;e par les blessures de la guerre... <a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>",
+					"nl":"Tourist Guide Picardi&euml; Picardi&euml; bestaat uit de departementen Aisne, de Oise en de Somme. Dit historisch rijke land heeft ervaren alle grote tijden, meer of minder glorieuze in de geschiedenis van Frankrijk. Aisne en haar steden als Laon en Soissons, de hoofdstad van het koninkrijk van Frankrijk, zijn grote landerijen verwoest tijdens de eerste oorlog. Tour naar Engeland, de Somme is een land van moerassen in beschermde kustgebieden, met grote ruimtes met de Baai van de Somme en de Baai van Authie. De Oise is een land van kastelen, Chantilly en kathedralen Ermenonville, Noyon en Beauvais, ook het land van de koningen sinds Clovis in Soissons tot Napoleon III Compi&egrave;gne ... en bossen, een van de mooiste in Frankrijk ... Hoe men bochten, zo lang als je een beetje tijd hebt, Picardi&euml; graag om ontdekt te worden: haar rijkdom en haar wereldberoemde schatten verborgen aard van de zee en winderige campagne ervaren door de wonden van de oorlog ...<a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Aisne",
+							"translations":
+							{
+								"de":"Aisne",
+								"es":"Aisne",
+								"fr":"Aisne",
+								"nl":"Aisne"
+							}
+						},
+						{
+							"name":"Oise",
+							"translations":
+							{
+								"de":"Oise",
+								"es":"Oise",
+								"fr":"Oise",
+								"nl":"Oise"
+							}
+						},
+						{
+							"name":"Somme",
+							"translations":
+							{
+								"de":"Somme",
+								"es":"Somme",
+								"fr":"Somme",
+								"nl":"Somme"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Poitou-Charentes",
+			 "translations":
+				 {
+				 "de":"Poitou-Charentes",
+				 "es":"Poitou-Charentes",
+				 "fr":"Poitou-Charentes",
+				 "nl":"Poitou-Charentes"
+				 },
+				 "description":
+					{
+					"en":"Poitou Charentes, is composed of four departments: Vienna, Deux-Sevres, Charente and Charente Maritime ... Places with names full of poetry ... Bocage Bressuire, G&acirc;tine Parthenay, Green Venice ... Light ocean unparalleled historical heritage impressive, more than a thousand Romanesque churches, castles hundreds, towers, forts, prehistoric sites that bring us back to our origins. Shadows of famous people hanging over the region ... Francis, Eleanor of Aquitaine, Richelieu, Pierre Loti, Fran&ccedil;oise d'Aubign&eacute; become Madame de Maintenon. And the kitchen of Poitou Charentes, simple, harmonious, which enhances the inimitable flavors of local produce. Marennes oysters, mussels Charron, lambs and goat cheese Deux-S&egrave;vres, sun-ripened melons, Pineau, and the glory of the Charente, Cognac. Then you come? ... Iodized weekend in La Rochelle, biking on the island of R&eacute;, a boat ride in the Marais Poitevin ... Wide plan, you will not want to leave ...<a rel='nofollow' href='http://www.poitou-charentes.jedecouvrelafrance.com/r-2.html'>source</a>",
+					"de":"Poitou Charentes, besteht aus vier Abteilungen: Wien, Deux-S&egrave;vres, Charente und Charente Maritime ... Orte mit Namen voller Poesie ... Bocage Bressuire, G&acirc;tine Parthenay, Gr&uuml;n Venedig ... Light ocean beispiellose historische Erbe beeindruckend, mehr als tausend romanischen Kirchen, Burgen Hunderte, T&uuml;rme, Festungen, pr&auml;historische St&auml;tten, die uns zur&uuml;ck zu unseren Urspr&uuml;ngen. Shadows of ber&uuml;hmte Leute h&auml;ngen &uuml;ber der Region ... Francis, Eleonore von Aquitanien, Richelieu, Pierre Loti, Fran&ccedil;oise d'Aubign&eacute; geworden Madame de Maintenon. Und die K&uuml;che der Region Poitou Charentes, einfach, harmonisch, die die unnachahmlichen Geschmack von lokalen Produkten erh&ouml;ht. Marennes Austern, Muscheln Charron, L&auml;mmer und Ziegenk&auml;se Deux-S&egrave;vres, sonnengereiften Melonen, Pineau, und die Herrlichkeit des Charente, Cognac. Dann kommen Sie? ... Jodiertes Wochenende in La Rochelle, Radfahren auf der Insel R&eacute;, eine Bootsfahrt im Marais Poitevin ... Gro&szlig;er Plan, werden Sie nicht verlassen wollen ...<a rel='nofollow' href='http://www.poitou-charentes.jedecouvrelafrance.com/r-2.html'>source</a>",
+					"es":"Poitou-Charentes, est&aacute; compuesta por cuatro departamentos: Viena, Deux-Sevres, Charente y Charente Maritime ... Lugares con nombres llenos de poes&iacute;a ... Bocage Bressuire, G&acirc;tine Parthenay, Green Venecia ... Luz al mar incomparable patrimonio hist&oacute;rico impresionante, m&aacute;s de un millar de iglesias rom&aacute;nicas, castillos, torres de cientos, fortalezas, lugares prehist&oacute;ricos que nos traen de vuelta a nuestros or&iacute;genes.  Las sombras de la gente famosa se ??ciernen sobre la regi&oacute;n ... Francisco, Leonor de Aquitania, Richelieu, Pierre Loti, Fran&ccedil;oise d'Aubign&eacute; convertido Madame de Maintenon. Y la cocina de Poitou-Charentes, simple y armoniosa, que realza los sabores inimitables de productos locales. Marennes ostras, mejillones Charron, corderos y queso de cabra Deux-S&egrave;vres, maduradas al sol melones, Pineau, y la gloria de la Charente, Cognac. Entonces has venido? ... Yodada fin de semana en La Rochelle, andar en bicicleta en la isla de R&eacute;, un paseo en barco en el Marais Poitevin ... Amplio plan, usted no querr&aacute; irse ...<a rel='nofollow' href='http://www.poitou-charentes.jedecouvrelafrance.com/r-2.html'>source</a>",
+					"fr":"Le Poitou Charentes, est compos&eacute; de quatre d&eacute;partements : Vienne, Deux-S&egrave;vres, Charente et Charente Maritime ... Des lieux aux noms charg&eacute;s de po&eacute;sie&hellip;Bocage de Bressuire, G&acirc;tine de Parthenay, Venise verte&hellip; Une lumi&egrave;re oc&eacute;ane sans &eacute;gale, un patrimoine historique impressionnant, plus de mille &eacute;glises romanes, des ch&acirc;teaux par centaines, des tours, des forts, des sites pr&eacute;historiques qui nous ram&egrave;nent &agrave; nos origines. Les ombres de personnages c&eacute;l&egrave;bres planent sur la r&eacute;gion&hellip; Fran&ccedil;ois Ier, Ali&eacute;nor d&rsquo;Aquitaine, Richelieu, Pierre Loti, Fran&ccedil;oise d&rsquo;Aubign&eacute; devenue Madame de Maintenon. Et la cuisine du Poitou Charentes, simple, harmonieuse, qui sublime les inimitables saveurs des produits du terroir. Hu&icirc;tres de Marennes, moules de Charron, agneaux et fromages de ch&egrave;vre des Deux-S&egrave;vres, melons gorg&eacute;s de soleil, le Pineau, et gloire de la Charente, le Cognac. Alors, vous venez ?... Un week-end iod&eacute; &agrave; La Rochelle, du v&eacute;lo dans l&rsquo;&icirc;le de R&eacute;, une promenade en barque dans le Marais Poitevin... Pr&eacute;voyez large, vous aurez du mal &agrave; repartir&hellip;<a rel='nofollow' href='http://www.poitou-charentes.jedecouvrelafrance.com/r-2.html'>source</a>",
+					"nl":"Poitou Charentes, bestaat uit vier afdelingen: Wenen, Deux-S&egrave;vres, Charente en Charente Maritime ... Plaatsen met namen vol po&euml;zie ... Bocage Bressuire, G&acirc;tine Parthenay, Groene Veneti&euml; ... Licht oceaan onge&euml;venaarde historische erfgoed indrukwekkend, meer dan duizend romaanse kerken, kastelen honderden, torens, forten, prehistorische vindplaatsen, die ons terug te brengen naar onze oorsprong. Schaduwen van beroemde mensen opknoping over de regio ... Francis, Eleonora van Aquitani&euml;, Richelieu, Pierre Loti, Fran&ccedil;oise d'Aubigne geworden Madame de Maintenon. En de keuken van Poitou Charentes, eenvoudige, harmonieuze, dat de onnavolgbare smaak van lokale producten verbetert. Marennes oesters, mosselen Charron, lammeren en geitenkaas Deux-S&egrave;vres, zongerijpte meloenen, Pineau, en de heerlijkheid van de Charente, Cognac. Dan kom je? ... Gejodeerd weekend in La Rochelle, fietsen op het eiland Re, een boottocht in de Marais Poitevin ... Brede plan, zult u niet willen verlaten ...<a rel='nofollow' href='http://www.poitou-charentes.jedecouvrelafrance.com/r-2.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Charente",
+							"translations":
+							{
+								"de":"Charente",
+								"es":"Charente",
+								"fr":"Charente",
+								"nl":"Charente"
+							}
+						},
+						{
+							"name":"Charente-Maritime",
+							"translations":
+							{
+								"de":"Charente-Maritime",
+								"es":"Charente-Maritime",
+								"fr":"Charente-Maritime",
+								"nl":"Charente-Maritime"
+							}
+						},
+						{
+							"name":"Deux-Sèvres",
+							"translations":
+							{
+								"de":"Deux-Sèvres",
+								"es":"Deux-Sèvres",
+								"fr":"Deux-Sèvres",
+								"nl":"Deux-Sèvres"
+							}
+						},
+						{
+							"name":"Vienne",
+							"translations":
+							{
+								"de":"Vienne",
+								"es":"Vienne",
+								"fr":"Vienne",
+								"nl":"Vienne"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Provence-Alpes-Côte d'Azur",
+			 "translations":
+				 {
+				 "de":"Provence-Alpes-Côte d'Azur",
+				 "es":"Provence-Alpes-Côte d'Azur",
+				 "fr":"Provence-Alpes-Côte d'Azur",
+				 "nl":"Provence-Alpes-Côte d'Azur"
+				 },
+				 "description":
+					{
+					"en":"Provence Alpes C&ocirc;te d'Azur, there is just ask. The sun, the whole year! Beaches: there are spoiled for choice: Juan les Pins, Cassis, Hy&egrave;res ... North, Hautes-Alpes offers the joys of snow in winter and hiking in summer or in Serre-Chevalier in the Champsaur Valgaudemar ... This generous nature but fragile resulted in the establishment of national parks, Ecrins, Mercantour, Port-Cros ... PACA is also great festive events and mundane in Cannes, Nice, Saint Tropez ... And large gatherings as the Saintes Maries de la Mer And then there is also a more intimate Provence and small villages of the Luberon, its heritage and its beautiful Romanesque abbeys. Provencal cuisine will surprise you ... I must say that with such a variety of products from the land and sea fruits and vegetables, fish and crustaceans, there is plenty to do!<a rel='nofollow' href='http://www.provence-alpes-cote-azur.jedecouvrelafrance.com/r-14.html'>source</a>",
+					"de":"Provence Alpes C&ocirc;te d'Azur gibt es einfach fragen. Die Sonne, das ganze Jahr! Str&auml;nde: Es gibt die Qual der Wahl: Juan les Pins, Cassis, Hy&egrave;res ... Nord bietet Hautes-Alpes, die Freuden des Schnees im Winter und Wandern im Sommer oder in Serre-Chevalier in der Champsaur Valgaudemar ... Diese gro&szlig;z&uuml;gige Natur, sondern fragile f&uuml;hrte zur Gr&uuml;ndung von Nationalparks, Ecrins, Mercantour, Port-Cros ...PACA ist auch toll, festliche Anl&auml;sse und banal in Cannes, Nizza, Saint Tropez ... Und gro&szlig;e Versammlungen als Saintes Maries de la Mer Und dann gibt es auch eine intimere Provence und kleinen D&ouml;rfern des Luberon, sein Erbe und seine sch&ouml;ne romanische Abteien. Provenzalische K&uuml;che wird Sie &uuml;berraschen ... Ich muss sagen, dass mit einer solchen Vielzahl von Produkten aus den Land-und Seeweg Obst und Gem&uuml;se, Fisch und Krustentiere, es gibt viel zu tun!<a rel='nofollow' href='http://www.provence-alpes-cote-azur.jedecouvrelafrance.com/r-14.html'>source</a>",
+					"es":"Provenza-Alpes-C&ocirc;te d'Azur, hay solo pregunte. El sol, todo el a&ntilde;o! Las playas: hay mucho donde elegir: Juan-les-Pins, Cassis, Hy&egrave;res ...Norte, Altos Alpes ofrece los placeres de la nieve en invierno y senderismo en verano o en Serre-Chevalier en el Valgaudemar Champsaur ... Esta naturaleza generosa, pero fr&aacute;gil como resultado el establecimiento de parques nacionales, Ecrins, Mercantour, Port-Cros ... PACA es tambi&eacute;n grandes eventos festivos y mundanos en Cannes, Niza, Saint Tropez ... Y las grandes reuniones como la de Saintes Maries de la MerY luego tambi&eacute;n hay una forma m&aacute;s &iacute;ntima Provenza y peque&ntilde;os pueblos del Luberon, su patrimonio y sus abad&iacute;as rom&aacute;nicas hermosas. Cocina provenzal le sorprender&aacute; ... Hay que decir que con tal variedad de productos a partir de los frutos de la tierra y el mar y las verduras, el pescado y los crust&aacute;ceos, hay mucho que hacer! <a rel='nofollow' href='http://www.provence-alpes-cote-azur.jedecouvrelafrance.com/r-14.html'>source</a>",
+					"fr":"En Provence Alpes C&ocirc;te d'Azur, il n'y a qu'&agrave; demander. Du soleil, c'est toute l'ann&eacute;e ! Des plages : il n'y a que l'embarras du choix : Juan les pins, Cassis, Hy&egrave;res... Au nord, les Hautes-Alpes vous offrent les joies de la neige en hiver et de la randonn&eacute;e en &eacute;t&eacute; comme &agrave; Serre-Chevalier ou dans le Champsaur Valgaudemar... Cette nature g&eacute;n&eacute;reuse mais fragile a donn&eacute; lieu &agrave; la mise en place de parcs nationaux, les Ecrins, le Mercantour, Port-Cros...PACA, c'est aussi de grands rendez-vous festifs et mondains &agrave; Cannes, Nice, Saint Tropez... Et des grands rassemblements comme aux Saintes Marie de la Mer. Et puis il existe aussi une Provence plus intimiste et ses petits villages du Luberon, son patrimoine roman et ses belles abbayes. La gastronomie proven&ccedil;ale vous &eacute;tonnera... Il faut dire qu'avec une telle diversit&eacute; de produits issus de la terre et de la mer : fruits et l&eacute;gumes, poissons et crustac&eacute;s, il y a de quoi faire !<a rel='nofollow' href='http://www.provence-alpes-cote-azur.jedecouvrelafrance.com/r-14.html'>source</a>",
+					"nl":"Provence Alpes C&ocirc;te d'Azur, is er slechts te vragen. De zon, het hele jaar door! Stranden: er zijn verwend: Juan les Pins, Cassis, Hy&egrave;res ... Noord, Hautes-Alpes biedt de geneugten van sneeuw in de winter en wandelen in de zomer of in Serre-Chevalier in de Champsaur Valgaudemar ... Deze gulle natuur maar kwetsbare resulteerde in de oprichting van nationale parken, Ecrins, Mercantour, Port-Cros ... PACA is ook geweldig feestelijke evenementen en alledaagse in Cannes, Nice, Saint Tropez ... En grote bijeenkomsten als de Saintes Maries de la Mer En dan is er ook een meer intieme Provence en kleine dorpjes van de Luberon, het erfgoed en de prachtige Romaanse abdijen. Proven&ccedil;aalse keuken zal u verrassen ... Ik moet zeggen dat met zo'n verscheidenheid aan producten uit de land en zee vruchten en groenten, vis en schaaldieren, er is genoeg te doen!<a rel='nofollow' href='http://www.provence-alpes-cote-azur.jedecouvrelafrance.com/r-14.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Alpes-de-Haute-Provence",
+							"translations":
+							{
+								"de":"Alpes-de-Haute-Provence",
+								"es":"Alpes-de-Haute-Provence",
+								"fr":"Alpes-de-Haute-Provence",
+								"nl":"Alpes-de-Haute-Provence"
+							}
+						},
+						{
+							"name":"Hautes-Alpes",
+							"translations":
+							{
+								"de":"Hautes-Alpes",
+								"es":"Hautes-Alpes",
+								"fr":"Hautes-Alpes",
+								"nl":"Hautes-Alpes"
+							}
+						},
+						{
+							"name":"Alpes-Maritimes",
+							"translations":
+							{
+								"de":"Alpes-Maritimes",
+								"es":"Alpes-Maritimes",
+								"fr":"Alpes-Maritimes",
+								"nl":"Alpes-Maritimes"
+							}
+						},
+						{
+							"name":"Bouches-du-Rhône",
+							"translations":
+							{
+								"de":"Bouches-du-Rhône",
+								"es":"Bouches-du-Rhône",
+								"fr":"Bouches-du-Rhône",
+								"nl":"Bouches-du-Rhône"
+							}
+						},
+						{
+							"name":"Var",
+							"translations":
+							{
+								"de":"Var",
+								"es":"Var",
+								"fr":"Var",
+								"nl":"Var"
+							}
+						},
+						{
+							"name":"Vaucluse",
+							"translations":
+							{
+								"de":"Vaucluse",
+								"es":"Vaucluse",
+								"fr":"Vaucluse",
+								"nl":"Vaucluse"
+							}
+						}
+					]
+			},
+			{
+			 "name":"Reunion Island",
+			 "translations":
+				 {
+				 "de":"Insel La Réunion",
+				 "es":"Isla de la Reunión",
+				 "fr":"Île de La Réunion",
+				 "nl":"Reunion Island"
+				 },
+				 "description":
+					{
+					"en":"Réunion is an island in the southwest Indian Ocean which forms a department and overseas French region (DROM). It is located in the Mascarene archipelago about 700 kilometers east of Madagascar and 170 kilometers south-west of Mauritius, the nearest land island.",
+					"de":"Réunion ist eine Insel im Südwesten des Indischen Ozeans, die eine Abteilung und Übersee Französisch Region (DROM) bildet. Es ist in der Maskarenen Archipels etwa 700 Kilometer östlich von Madagaskar und 170 Kilometer südwestlich von Mauritius, der nächstgelegenen Land Insel.",
+					"es":"Alsacia ha sido siempre una encrucijada de Europa, era una tierra rica tan codiciado y maltratados a menudo ... Romana y merovingia alamane ... entonces Alsacia alemana y francesa conserva una fuerte identidad y costumbres muy especiales ...Consta de los departamentos de Bas-Rhin y Haut-Rhin entre Wissembourg y Ferrette con la frontera del Rin natural, disfrutar de paisajes espectaculares, caminos para explorar este nuevo tema la regi&oacute;n contrasta tan bonito ...Estrasburgo, Colmar, Mulhouse, ciudades hist&oacute;ricas; Koenisbourg El Alto y el Parlamento Europeo, esenciales sitios estrat&eacute;gicos; Mutzig o Obernai, las ciudades cerveceros; Ribeauvill&eacute; pueblos Guebwiller vi&ntilde;edos ...Por no hablar de las muchas especialidades gastron&oacute;micas, chucrut, kougelhopf, Flammekueche ...Alsacia, le seducir&aacute; y abrazarte ...<a rel='nofollow' href='http://www.alsace.jedecouvrelafrance.com/r-11.html'>source</a>",
+					"fr":"La Réunion est une île du sud-ouest de l'océan Indien qui forme un département et région d'outre-mer français (DROM). Elle est située dans l'archipel des Mascareignes à environ 700 kilomètres à l'est de Madagascar et à 170 kilomètres au sud-ouest de l'île Maurice, terre la plus proche.",
+					"nl":"Reunion is een eiland in het zuidwesten Indische Oceaan, die een afdeling en overzeese Franse regio (DROM) vormt. Het is gelegen in het Mascarene archipel ongeveer 700 kilometer ten oosten van Madagaskar en 170 kilometer ten zuidwesten van Mauritius, het dichtstbijzijnde land eiland."
+					},
+					"subregions":
+					[
+
+					]
+			},
+			{
+			"name":"Rhône-Alpes",
+			 "translations":
+				 {
+				 "de":"Rhône-Alpes",
+				 "es":"Ródano-Alpes",
+				 "fr":"Rhône-Alpes",
+				 "nl":"Rhône-Alpes"
+				 },
+				 "description":
+					{
+					"en":"The Rh&ocirc;ne-Alpes Region is one of superlatives, 8 departments of Ain, Ardeche, Drome, Isere, Loire, Rhone, Savoie and Haute Savoie ... This list is itself evokes the diversity of landscapes, city, Lyon, major cities, Saint Etienne, Grenoble ... Mountains busiest and highest, with their stations and natural areas, including 3 of 7 national parks ... mountain lakes, 7,000 km of waterways, including the Rh&ocirc;ne and the Loire are openings on the commercial and cultural exchanges. That our ancestors had long since integrated enabling the development and prosperity of the region. Economically powerful, Rh&ocirc;ne Alpes is also rich in history, and you will not be surprised to find here and there a religious building, a castle or fortified village, a museum ... The Rh&ocirc;ne-Alpes loves to tell, she has much to say.<a rel='nofollow' href='http://www.rhone-alpes.jedecouvrelafrance.com/r-13.html'>source</a>",
+					"de":"Die Region Rh&ocirc;ne-Alpes ist eine der Superlative, 8 Departementen Ain, Ardeche, Drome, Isere, Loire, Rhone, Savoie und Haute Savoie ... Diese Liste ist selbst erinnert an die Vielfalt der Landschaften, Stadt, Lyon, Gro&szlig;st&auml;dte, Saint Etienne, Grenoble ...Mountains belebtesten und h&ouml;chsten, mit ihren Stationen und Naturr&auml;ume, darunter 3 von 7 Nationalparks ... Bergseen, 7.000 km Wasserstra&szlig;en, einschlie&szlig;lich der Rh&ocirc;ne und der Loire sind &Ouml;ffnungen an den kommerziellen und kulturellen Austausch. Dass unsere Vorfahren schon l&auml;ngst integrierte Entwicklung und Wohlstand in der Region erm&ouml;glicht. Wirtschaftlich m&auml;chtig ist, ist Rh&ocirc;ne Alpes auch reich an Geschichte, und Sie werden nicht &uuml;berrascht sein, hier und dort ein religi&ouml;ses Geb&auml;ude, eine Burg oder befestigtes Dorf, ein Museum werden ... Die Region Rh&ocirc;ne-Alpes liebt zu sagen, sie hat viel zu sagen.<a rel='nofollow' href='http://www.rhone-alpes.jedecouvrelafrance.com/r-13.html'>source</a>",
+					"es":"La regi&oacute;n de Rh&ocirc;ne-Alpes es uno de los superlativos, 8 departamentos de Ain, Ard&egrave;che, Dr&ocirc;me, Is&egrave;re, Loire, Rhone, Saboya y Alta Saboya ... Esta lista no es en s&iacute; evoca la diversidad de paisajes, ciudades, Lyon, principales ciudades, Saint Etienne, Grenoble ... Monta&ntilde;as m&aacute;s ocupados y m&aacute;s alto, con sus estaciones y espacios naturales, incluidos 3 de 7 parques nacionales ... lagos de monta&ntilde;a, de 7.000 km de v&iacute;as fluviales, incluido el R&oacute;dano y Loira son aberturas en los intercambios comerciales y culturales. Que nuestros antepasados ??hac&iacute;a tiempo que hab&iacute;a integrado que permita el desarrollo y la prosperidad de la regi&oacute;n. Econ&oacute;micamente poderoso, R&oacute;dano-Alpes tambi&eacute;n es rica en historia, y no se sorprenda de encontrar aqu&iacute; y all&aacute;, un edificio religioso, un castillo o pueblo fortificado, un museo ... El R&oacute;dano-Alpes encanta contar, ella tiene mucho que decir.<a rel='nofollow' href='http://www.rhone-alpes.jedecouvrelafrance.com/r-13.html'>source</a>",
+					"fr":"La R&eacute;gion Rh&ocirc;ne Alpes est celle des superlatifs, 8 d&eacute;partements, l'Ain, l'Ard&egrave;che, la Dr&ocirc;me, l'Is&egrave;re, la Loire, le Rh&ocirc;ne, la Savoie et la Haute Savoie... Cette &eacute;num&eacute;ration &eacute;voque d'elle-m&ecirc;me la diversit&eacute; des paysages, une m&eacute;tropole, Lyon, des grandes villes, Saint Etienne, Grenoble... Les montagnes les plus fr&eacute;quent&eacute;es et les plus hautes, avec leurs stations et leurs espaces naturels dont 3 des 7 parcs nationaux... des lacs de montagne, 7.000 km de cours d'eau dont le Rh&ocirc;ne ou la Loire qui sont des ouvertures sur les &eacute;changes commerciaux et culturels. Ce que nos anc&ecirc;tres avaient int&eacute;gr&eacute; depuis bien longtemps permettant ainsi le d&eacute;veloppement et la prosp&eacute;rit&eacute; de la R&eacute;gion. Economiquement puissante, Rh&ocirc;ne Alpes est aussi riche historiquement, et vous ne serez pas &eacute;tonn&eacute; de trouver &ccedil;a et l&agrave; un &eacute;difice religieux, un ch&acirc;teau ou un village fortifi&eacute;, un mus&eacute;e... La r&eacute;gion Rh&ocirc;ne-Alpes aime &agrave; se raconter, elle a tant &agrave; dire.<a rel='nofollow' href='http://www.rhone-alpes.jedecouvrelafrance.com/r-13.html'>source</a>",
+					"nl":"De regio Rh&ocirc;ne-Alpes is een van de superlatieven, 8 departementen Ain, Ard&egrave;che, Dr&ocirc;me, Is&egrave;re, Loire, Rh&ocirc;ne, Savoie en Haute Savoie ... Deze lijst is zelf doet denken aan de diversiteit van de landschappen, de stad, Lyon, grote steden, Saint Etienne, Grenoble ... Bergen drukste en grootste, met hun stations en natuurgebieden, waaronder 3 van 7 nationale parken ... bergmeren, 7.000 km waterwegen, met inbegrip van de Rh&ocirc;ne en de Loire zijn openingen aan de commerci&euml;le en culturele uitwisselingen. Dat onze voorouders al lang ge&iuml;ntegreerde de ontwikkeling en de welvaart van de regio mogelijk. Economisch machtige, Rh&ocirc;ne Alpes is ook rijk aan geschiedenis, en u zult niet worden verrast om hier en daar een religieus gebouw, een kasteel of versterkt dorp, een museum ... De Rh&ocirc;ne-Alpes houdt van te zeggen, ze heeft veel te zeggen.<a rel='nofollow' href='http://www.rhone-alpes.jedecouvrelafrance.com/r-13.html'>source</a>"
+					},
+					"subregions":
+					[
+						{
+							"name":"Ain",
+							"translations":
+							{
+								"de":"Ain",
+								"es":"Ain",
+								"fr":"Ain",
+								"nl":"Ain"
+							}
+						},
+						{
+							"name":"Ardèche",
+							"translations":
+							{
+								"de":"Ardèche",
+								"es":"Ardèche",
+								"fr":"Ardèche",
+								"nl":"Ardèche"
+							}
+						},
+						{
+							"name":"Drôme",
+							"translations":
+							{
+								"de":"Drôme",
+								"es":"Drôme",
+								"fr":"Drôme",
+								"nl":"Drôme"
+							}
+						},
+						{
+							"name":"Isère",
+							"translations":
+							{
+								"de":"Isère",
+								"es":"Isère",
+								"fr":"Isère",
+								"nl":"Isère"
+							}
+						},
+						{
+							"name":"Loire",
+							"translations":
+							{
+								"de":"Loire",
+								"es":"Loire",
+								"fr":"Loire",
+								"nl":"Loire"
+							}
+						},
+						{
+							"name":"Rhône",
+							"translations":
+							{
+								"de":"Rhône",
+								"es":"Rhône",
+								"fr":"Rhône",
+								"nl":"Rhône"
+							}
+						},
+						{
+							"name":"Savoie",
+							"translations":
+							{
+								"de":"Savoie",
+								"es":"Savoie",
+								"fr":"Savoie",
+								"nl":"Savoie"
+							}
+						},
+						{
+							"name":"Haute-Savoie",
+							"translations":
+							{
+								"de":"Haute-Savoie",
+								"es":"Haute-Savoie",
+								"fr":"Haute-Savoie",
+								"nl":"Haute-Savoie"
+							}
+						}
+					]
+			}
+		]
+	},
+	{
+
+		"country":"Spain",
+		"country_id":"212",
+		"regions":[
+			{
+			 "name":"Andalucia",
+			 "translations":
+				 {
+				 "de":"Andalucia",
+				 "es":"Andalucia",
+				 "fr":"Andalousie",
+				 "nl":"Andalucia"
+				 }
+			},
+			{
+			 "name":"Aragon",
+			 "translations":
+				 {
+				 "de":"Aragon",
+				 "es":"Aragón",
+				 "fr":"Aragon",
+				 "nl":"Aragon"
+				 }
+			},
+			{
+			 "name":"Balearic Islands",
+			 "translations":
+				 {
+				 "de":"Balearen",
+				 "es":"Islas Baleares",
+				 "fr":"Îles Baléares",
+				 "nl":"Balearen"
+				 }
+			},
+			{
+			 "name":"Canary Islands",
+			 "translations":
+				 {
+				 "de":"Kanarische Inseln",
+				 "es":"Canarias",
+				 "fr":"Îles Canaries",
+				 "nl":"Canarische eilanden"
+				 }
+			},
+			{
+			 "name":"Cantabria",
+			 "translations":
+				 {
+				 "de":"Cantabria",
+				 "es":"Cantabria",
+				 "fr":"Cantabria",
+				 "nl":"Cantabria"
+				 }
+			},
+			{
+			 "name":"Castilla la Mancha",
+			 "translations":
+				 {
+				 "de":"Kastilien-La Mancha",
+				 "es":"Castilla la Mancha",
+				 "fr":"Castilla la Mancha",
+				 "nl":"Castilla la Mancha"
+				 }
+			},
+			{
+			 "name":"Castile and Leon",
+			 "translations":
+				 {
+				 "de":"Kastilien und Leon",
+				 "es":"Castilla y León",
+				 "fr":"Castille-et-León",
+				 "nl":"Castilië en León"
+				 }
+			},
+			{
+			 "name":"Catalona",
+			 "translations":
+				 {
+				 "de":"Catalona",
+				 "es":"Catalona",
+				 "fr":"Catalona",
+				 "nl":"Catalona"
+				 }
+			},
+			{
+			 "name":"Community of Valencia",
+			 "translations":
+				 {
+				 "de":"Gemeinschaft Valencia",
+				 "es":"Comunidad de Valencia",
+				 "fr":"Communauté de Valence",
+				 "nl":"Valencia"
+				 }
+			},
+			{
+			 "name":"Extremadura",
+			 "translations":
+				 {
+				 "de":"Extremadura",
+				 "es":"Extremadura",
+				 "fr":"Estrémadure",
+				 "nl":"Extremadura"
+				 }
+			},
+			{
+			 "name":"Galicia",
+			 "translations":
+				 {
+				 "de":"Galicien",
+				 "es":"Galicia",
+				 "fr":"Galice",
+				 "nl":"Galicië"
+				 }
+			},
+			{
+			 "name":"Madrid",
+			 "translations":
+				 {
+				 "de":"Madrid",
+				 "es":"Madrid",
+				 "fr":"Madrid",
+				 "nl":"Madrid"
+				 }
+			},
+			{
+			 "name":"Region of Murcia",
+			 "translations":
+				 {
+				 "de":"Region Murcia",
+				 "es":"Región de Murcia",
+				 "fr":"Région de Murcie",
+				 "nl":"Murcia"
+				 }
+			},
+			{
+			 "name":"Navarre",
+			 "translations":
+				 {
+				 "de":"Navarra",
+				 "es":"Navarra",
+				 "fr":"Navarre",
+				 "nl":"Navarre"
+				 }
+			},
+			{
+			 "name":"Pais Vasco",
+			 "translations":
+				 {
+				 "de":"Pais Vasco",
+				 "es":"Pais Vasco",
+				 "fr":"Pais Vasco",
+				 "nl":"Pais Vasco"
+				 }
+			},
+			{
+			 "name":"Rioja",
+			 "translations":
+				 {
+				 "de":"Rioja",
+				 "es":"Rioja",
+				 "fr":"Rioja",
+				 "nl":"Rioja"
+				 }
+			}
+			
+		]
+	},
+	{
+
+		"country":"Italy",
+		"country_id":"112",
+		"regions":[
+			{
+			 "name":"Basilicata",
+			 "translations":
+				 {
+				 "de":"Basilicata",
+				 "es":"Basilicata",
+				 "fr":"Basilicate",
+				 "nl":"Basilicata"
+				 }
+			},
+			{
+			 "name":"Calabria",
+			 "translations":
+				 {
+				 "de":"Calabria",
+				 "es":"Calabria",
+				 "fr":"Calabrie",
+				 "nl":"Calabria"
+				 }
+			},
+			{
+			 "name":"Campania",
+			 "translations":
+				 {
+				 "de":"Campania",
+				 "es":"Campania",
+				 "fr":"Campagnie",
+				 "nl":"Campania"
+				 }
+			},
+			{
+			 "name":"Emilia-Romagna",
+			 "translations":
+				 {
+				 "de":"Emilia-Romagna",
+				 "es":"Emilia-Romagna",
+				 "fr":"Emilia-Romagne",
+				 "nl":"Emilia-Romagna"
+				 }
+			},
+			{
+			 "name":"Friuli-Venezia Giulia",
+			 "translations":
+				 {
+				 "de":"Friuli-Venezia Giulia",
+				 "es":"Friuli-Venezia Giulia",
+				 "fr":"Frioul-Vénétie Julienne",
+				 "nl":"Friuli-Venezia Giulia"
+				 }
+			},
+			{
+			 "name":"Lazio",
+			 "translations":
+				 {
+				 "de":"Lazio",
+				 "es":"Lazio",
+				 "fr":"Latium",
+				 "nl":"Lazio"
+				 }
+			},
+			{
+			 "name":"Liguria",
+			 "translations":
+				 {
+				 "de":"Liguria",
+				 "es":"Liguria",
+				 "fr":"Ligurie",
+				 "nl":"Liguria"
+				 }
+			},
+			{
+			 "name":"Lombardy",
+			 "translations":
+				 {
+				 "de":"Lombardy",
+				 "es":"Lombardía",
+				 "fr":"Lombardie",
+				 "nl":"Lombardy"
+				 }
+			},
+			{
+			 "name":"Marcas",
+			 "translations":
+				 {
+				 "de":"Marche",
+				 "es":"Marche",
+				 "fr":"Marches",
+				 "nl":"Marche"
+				 }
+			},
+			{
+			 "name":"Molise",
+			 "translations":
+				 {
+				 "de":"Molise",
+				 "es":"Molise",
+				 "fr":"Molise",
+				 "nl":"Molise"
+				 }
+			},
+			{
+			 "name":"Umbria",
+			 "translations":
+				 {
+				 "de":"Umbria",
+				 "es":"Umbria",
+				 "fr":"Ombrie",
+				 "nl":"Umbria"
+				 }
+			},
+			{
+			 "name":"Piemonte",
+			 "translations":
+				 {
+				 "de":"Piemonte",
+				 "es":"Piemonte",
+				 "fr":"Piémont",
+				 "nl":"Piemonte"
+				 }
+			},
+			{
+			 "name":"Puglia",
+			 "translations":
+				 {
+				 "de":"Puglia",
+				 "es":"Puglia",
+				 "fr":"Pouilles",
+				 "nl":"Puglia"
+				 }
+			},
+			{
+			 "name":"Sardinia",
+			 "translations":
+				 {
+				 "de":"Sardinia",
+				 "es":"Cerdeña",
+				 "fr":"Sardaigne",
+				 "nl":"Sardinië"
+				 }
+			},
+			{
+			 "name":"Sicily",
+			 "translations":
+				 {
+				 "de":"Sicily",
+				 "es":"Sicilia",
+				 "fr":"Sicile",
+				 "nl":"Sicilië"
+				 }
+			},
+			{
+			 "name":"Tuscany",
+			 "translations":
+				 {
+				 "de":"Tuscany",
+				 "es":"Toscana",
+				 "fr":"Toscane",
+				 "nl":"Toscane"
+				 }
+			},
+			{
+			 "name":"Trentino Alto Adigo",
+			 "translations":
+				 {
+				 "de":"Trentino Alto Adigo",
+				 "es":"Trentino Alto Adigo",
+				 "fr":"Trentin-Haut-Adige",
+				 "nl":"Trentino Alto Adigo"
+				 }
+			},
+			{
+			 "name":"Valle de Aosta",
+			 "translations":
+				 {
+				 "de":"Valle d'Aosta",
+				 "es":"Valle d'Aosta",
+				 "fr":"Vallée d'Aoste",
+				 "nl":"Valle d'Aosta"
+				 }
+			},
+			{
+			 "name":"Veneto",
+			 "translations":
+				 {
+				 "de":"Veneto",
+				 "es":"Veneto",
+				 "fr":"Veneto",
+				 "nl":"Veneto"
+				 }
+			}
+			
+		]
+	}
+]

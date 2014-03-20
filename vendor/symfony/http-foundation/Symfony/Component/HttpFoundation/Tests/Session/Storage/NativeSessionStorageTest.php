@@ -85,11 +85,7 @@ class NativeSessionStorageTest extends \PHPUnit_Framework_TestCase
     {
         $storage = $this->getStorage();
         $this->assertEquals('', $storage->getId());
-
         $storage->start();
-        $this->assertNotEquals('', $storage->getId());
-
-        $storage->save();
         $this->assertNotEquals('', $storage->getId());
     }
 

@@ -27,7 +27,7 @@ class ContextErrorException extends \ErrorException
     }
 
     /**
-     * @return array Array of variables that existed when the exception occurred
+     * @return array Array of variables that existed when the exception occured
      */
     public function getContext()
     {

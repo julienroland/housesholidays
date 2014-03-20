@@ -14,8 +14,9 @@ class CreateLocalitesTable extends Migration {
 	{
 		Schema::create('localites', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('sous_regions_id')->unsigned();
-			$table->foreign('sous_regions_id')->references('id')->on('sous_regions');
+			$table->string('nom');
+			$table->integer('pays_id')->unsigned();
+			$table->foreign('pays_id')->references('id')->on('pays');
 			$table->timestamps();
 		});
 	}

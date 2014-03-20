@@ -21,8 +21,7 @@ interface OptionInterface
     /**
      * Filters (and optionally converts) the passed value.
      *
-     * @param  ClientOptionsInterface $options Options container.
-     * @param  mixed                  $value   Input value.
+     * @param mixed $value Input value.
      * @return mixed
      */
     public function filter(ClientOptionsInterface $options, $value);
@@ -30,17 +29,16 @@ interface OptionInterface
     /**
      * Returns a default value for the option.
      *
-     * @param  ClientOptionsInterface $options Options container.
+     * @param mixed $value Input value.
      * @return mixed
      */
     public function getDefault(ClientOptionsInterface $options);
 
     /**
-     * Filters a value and, if no value is specified, returns the default one
-     * defined by the option.
+     * Filters a value and, if no value is specified, returns
+     * the default one defined by the option.
      *
-     * @param  ClientOptionsInterface $options Options container.
-     * @param  mixed                  $value   Input value.
+     * @param mixed $value Input value.
      * @return mixed
      */
     public function __invoke(ClientOptionsInterface $options, $value);

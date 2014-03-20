@@ -39,7 +39,6 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
     private $wrappedListeners;
     private $firstCalledEvent;
     private $id;
-    private $lastEventId = 0;
 
     /**
      * Constructor.
@@ -125,7 +124,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
             $event = new Event();
         }
 
-        $this->id = $eventId = ++$this->lastEventId;
+        $this->id = spl_object_hash($event);
 
         $this->preDispatch($eventName, $event);
 
@@ -140,7 +139,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
         $this->dispatcher->dispatch($eventName, $event);
 
         // reset the id as another event might have been dispatched during the dispatching of this event
-        $this->id = $eventId;
+        $this->id = spl_object_hash($event);
 
         unset($this->firstCalledEvent[$eventName]);
 
@@ -258,7 +257,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
      * @param object $listener  The listener
      * @param string $eventName The event name
      *
-     * @return array Information about the listener
+     * @return array Informations about the listener
      */
     private function getListenerInfo($listener, $eventName)
     {
@@ -428,7 +427,7 @@ class TraceableEventDispatcher implements EventDispatcherInterface, TraceableEve
                 } catch (\LogicException $e) {}
                 // The children profiles have been updated by the previous 'kernel.response'
                 // event. Only the root profile need to be updated with the 'kernel.terminate'
-                // timing information.
+                // timing informations.
                 $this->updateProfiles($token, false);
                 break;
         }

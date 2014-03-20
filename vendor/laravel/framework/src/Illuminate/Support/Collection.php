@@ -220,10 +220,9 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 	 * Sort the collection using the given Closure.
 	 *
 	 * @param  \Closure  $callback
-	 * @param  int  $options
 	 * @return \Illuminate\Support\Collection
 	 */
-	public function sortBy(Closure $callback, $options = SORT_REGULAR)
+	public function sortBy(Closure $callback)
 	{
 		$results = array();
 
@@ -235,7 +234,7 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 			$results[$key] = $callback($value);
 		}
 
-		asort($results, $options);
+		asort($results);
 
 		// Once we have sorted all of the keys in the array, we will loop through them
 		// and grab the corresponding model so we can set the underlying items list

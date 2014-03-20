@@ -11,12 +11,12 @@
 
 namespace Predis\Cluster\Distribution;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  * @todo Not really useful right now.
  */
-class EmptyRingExceptionTest extends PredisTestCase
+class EmptyRingExceptionTest extends StandardTestCase
 {
     /**
      * @group disconnected

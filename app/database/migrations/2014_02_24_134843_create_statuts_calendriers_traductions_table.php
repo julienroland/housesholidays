@@ -15,10 +15,10 @@ class CreateStatutsCalendriersTraductionsTable extends Migration {
 		Schema::create('statuts_calendriers_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
-			$table->integer('statuts_calendriers_id')->unsigned();
-			$table->foreign('statuts_calendriers_id')->references('id')->on('statuts_calendriers');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
+			$table->integer('statut_calendrier_id')->unsigned();
+			$table->foreign('statut_calendrier_id')->references('id')->on('statuts_calendriers');
 			$table->timestamps();
 		});
 	}

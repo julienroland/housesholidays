@@ -11,12 +11,12 @@
 
 namespace Predis\Option;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  *
  */
-class ClientClusterTest extends PredisTestCase
+class ClientClusterTest extends StandardTestCase
 {
     /**
      * @group disconnected

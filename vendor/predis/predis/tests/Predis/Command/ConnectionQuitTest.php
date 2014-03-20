@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-connection
  */
-class ConnectionQuitTest extends PredisCommandTestCase
+class ConnectionQuitTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}

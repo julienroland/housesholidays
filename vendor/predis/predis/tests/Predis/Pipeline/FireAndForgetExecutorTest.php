@@ -11,14 +11,15 @@
 
 namespace Predis\Pipeline;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use SplQueue;
-use PredisTestCase;
 use Predis\Profile\ServerProfile;
 
 /**
  *
  */
-class FireAndForgetExecutorTest extends PredisTestCase
+class FireAndForgetExecutorTest extends StandardTestCase
 {
     /**
      * @group disconnected

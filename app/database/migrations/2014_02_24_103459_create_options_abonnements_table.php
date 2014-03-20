@@ -15,7 +15,7 @@ class CreateOptionsAbonnementsTable extends Migration {
 		Schema::create('options_abonnements', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->string('status');
+			$table->string('statut');
 			
 			$table->timestamps();
 		});

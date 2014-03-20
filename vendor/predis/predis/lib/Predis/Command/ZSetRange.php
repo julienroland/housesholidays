@@ -41,7 +41,6 @@ class ZSetRange extends PrefixableCommand
 
             if ($lastType === 'array') {
                 $options = $this->prepareOptions(array_pop($arguments));
-
                 return array_merge($arguments, $options);
             }
         }
@@ -52,7 +51,7 @@ class ZSetRange extends PrefixableCommand
     /**
      * Returns a list of options and modifiers compatible with Redis.
      *
-     * @param  array $options List of options.
+     * @param array $options List of options.
      * @return array
      */
     protected function prepareOptions($options)
@@ -70,7 +69,7 @@ class ZSetRange extends PrefixableCommand
     /**
      * Checks for the presence of the WITHSCORES modifier.
      *
-     * @return bool
+     * @return Boolean
      */
     protected function withScores()
     {

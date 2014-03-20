@@ -53,11 +53,10 @@ class Driver implements \Doctrine\DBAL\Driver
      */
     private function _constructPdoDsn(array $params)
     {
-        $dsn = 'oci:dbname=';
-
+        $dsn = 'oci:';
         if (isset($params['host']) && $params['host'] != '') {
-            $dsn .= '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)' .
-                '(HOST=' . $params['host'] . ')';
+            $dsn .= 'dbname=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)' .
+                   '(HOST=' . $params['host'] . ')';
 
             if (isset($params['port'])) {
                 $dsn .= '(PORT=' . $params['port'] . ')';
@@ -65,20 +64,13 @@ class Driver implements \Doctrine\DBAL\Driver
                 $dsn .= '(PORT=1521)';
             }
 
-            $database = 'SID=' . $params['dbname'];
-            $pooled   = '';
-
             if (isset($params['service']) && $params['service'] == true) {
-                $database = 'SERVICE_NAME=' . $params['dbname'];
+                $dsn .= '))(CONNECT_DATA=(SERVICE_NAME=' . $params['dbname'] . ')))';
+            } else {
+                $dsn .= '))(CONNECT_DATA=(SID=' . $params['dbname'] . ')))';
             }
-
-            if (isset($params['pooled']) && $params['pooled'] == true) {
-                $pooled = '(SERVER=POOLED)';
-            }
-
-            $dsn .= '))(CONNECT_DATA=(' . $database . ')' . $pooled . '))';
         } else {
-            $dsn .= $params['dbname'];
+            $dsn .= 'dbname=' . $params['dbname'];
         }
 
         if (isset($params['charset'])) {

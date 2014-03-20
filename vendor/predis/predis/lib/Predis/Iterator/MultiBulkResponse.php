@@ -96,5 +96,5 @@ abstract class MultiBulkResponse implements \Iterator, \Countable, ResponseObjec
     /**
      * {@inheritdoc}
      */
-    abstract protected function getValue();
+    protected abstract function getValue();
 }

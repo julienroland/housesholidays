@@ -12,6 +12,29 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
+	protected $fillable = array('nom','prenom','email','password');
+
+	public static $rules = array(
+		'prenom'=>'required|min:2',
+		'nom'=>'required|min:2',
+		'email'=>'email|required', //unique:users,email|
+		'pays'=>'required',
+		'password'=>'required|min:3',
+		);
+
+	public static $sluggable = array(
+		'build_from' => 'fullname',
+		'save_to'    => 'slug',
+		);
+
+	public function pays(){
+
+		return $this->belongsTo('Pays');
+		
+	}
+	public function getFullnameAttribute() {
+		return $this->prenom . ' ' . $this->nom;
+	}
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -25,18 +48,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @return mixed
 	 */
 
-	public function kot(){
-
-		return $this->hasMany('Kot');
-	}
-	public function chambre()
-	{
-		return $this->hasMany('Chambre');
-	}
-	public function message()
-	{
-		return $this->hasMany('Message');
-	}
 
 	public function getAuthIdentifier()
 	{

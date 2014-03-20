@@ -13,13 +13,7 @@
 
 App::before(function($request)
 {
-    if ( in_array(Request::segment(1), Config::get('app.languages')) ) {
-        Session::put('locale', Request::segment(1));
-        return Redirect::to(substr(Request::path(), 3));
-    }
-    if ( Session::has('locale') ) {
-        App::setLocale(Session::get('locale'));
-    }
+
 });
 
 
@@ -28,6 +22,63 @@ App::after(function($request, $response)
 	//
 });
 
+Route::filter('lang', function(){
+
+$lang = Request::segment(1);
+
+if (in_array($lang, Config::get('app.available_locales')))
+{
+
+	Session::put('lang',$lang );
+	Session::put('langId', Langage::whereInitial($lang)->first(['id'])->id);	
+	if(App::getLocale() !== $lang){
+
+		App::setLocale($lang);
+		dd(Route::currentRouteName());
+		if(Helpers::isOk(Route::currentRouteName()))
+		{
+
+		return Redirect::to($lang.'/'.Lang::get('routes.'.Route::currentRouteName()));
+
+		}
+		else{
+			return Redirect::to('/');
+		}
+	}
+
+
+}
+else 
+{
+	$langNav = Request::server('HTTP_ACCEPT_LANGUAGE');
+
+	if (helpers::isOk($langNav)) 
+	{
+		$langue = explode(',',$langNav);
+		$langue = strtolower(substr(chop($langue[1]),0,2));
+
+		if (in_array($langue, Config::get('app.available_locales')))
+		{
+			Session::put('lang',$langue );
+			Session::put('langId',Langage::whereInitial($langue)->first(['id'])->id);
+			App::setLocale($langue);
+			$lang = null;
+		}
+		else
+		{
+			$lang = null;
+		}
+
+	}
+	else
+	{
+
+		$lang = null;
+
+	}
+}
+
+});
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters

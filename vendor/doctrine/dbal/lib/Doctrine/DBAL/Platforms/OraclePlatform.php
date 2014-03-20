@@ -505,8 +505,7 @@ LEFT JOIN user_cons_columns r_cols
       AND cols.position = r_cols.position
     WHERE alc.constraint_name = cols.constraint_name
       AND alc.constraint_type = 'R'
-      AND alc.table_name = '".$table."'
- ORDER BY alc.constraint_name ASC, cols.position ASC";
+      AND alc.table_name = '".$table."'";
     }
 
     /**
@@ -614,13 +613,7 @@ LEFT JOIN user_cons_columns r_cols
              * Do not add query part if only comment has changed
              */
             if ( ! ($columnHasChangedComment && count($columnDiff->changedProperties) === 1)) {
-                $columnInfo = $column->toArray();
-
-                if ( ! $columnDiff->hasChanged('notnull')) {
-                    $columnInfo['notnull'] = false;
-                }
-
-                $fields[] = $column->getQuotedName($this) . ' ' . $this->getColumnDeclarationSQL('', $columnInfo);
+                $fields[] = $column->getQuotedName($this). ' ' . $this->getColumnDeclarationSQL('', $column->toArray());
             }
 
             if ($columnHasChangedComment) {

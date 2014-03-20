@@ -50,8 +50,7 @@ abstract class AbstractConnection implements SingleConnectionInterface
     /**
      * Checks some of the parameters used to initialize the connection.
      *
-     * @param  ConnectionParametersInterface $parameters Initialization parameters for the connection.
-     * @return ConnectionParametersInterface
+     * @param ConnectionParametersInterface $parameters Parameters used to initialize the connection.
      */
     protected function checkParameters(ConnectionParametersInterface $parameters)
     {
@@ -74,7 +73,7 @@ abstract class AbstractConnection implements SingleConnectionInterface
      *
      * @return mixed
      */
-    abstract protected function createResource();
+    protected abstract function createResource();
 
     /**
      * {@inheritdoc}
@@ -118,7 +117,6 @@ abstract class AbstractConnection implements SingleConnectionInterface
     public function executeCommand(CommandInterface $command)
     {
         $this->writeCommand($command);
-
         return $this->readResponse($command);
     }
 
@@ -134,7 +132,7 @@ abstract class AbstractConnection implements SingleConnectionInterface
      * Helper method to handle connection errors.
      *
      * @param string $message Error message.
-     * @param int    $code    Error code.
+     * @param int $code Error code.
      */
     protected function onConnectionError($message, $code = null)
     {
@@ -154,8 +152,8 @@ abstract class AbstractConnection implements SingleConnectionInterface
     /**
      * Helper method to handle not supported connection parameters.
      *
-     * @param string $option     Name of the option.
-     * @param mixed  $parameters Parameters used to initialize the connection.
+     * @param string $option Name of the option.
+     * @param mixed $parameters Parameters used to initialize the connection.
      */
     protected function onInvalidOption($option, $parameters = null)
     {

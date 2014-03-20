@@ -11,12 +11,12 @@
 
 namespace Predis\Command;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  * @group realm-scripting
  */
-class ScriptedCommandTest extends PredisTestCase
+class ScriptedCommandTest extends StandardTestCase
 {
     const LUA_SCRIPT = 'return { KEYS[1], KEYS[2], ARGV[1], ARGV[2] }';
     const LUA_SCRIPT_SHA1 = '6e07f61f502e36d123fe28523076af588f5c315e';
@@ -36,6 +36,7 @@ class ScriptedCommandTest extends PredisTestCase
                 ->method('getKeysCount')
                 ->will($this->returnValue(2));
         $command->setArguments($arguments);
+
 
         $this->assertSame(array_merge(array(self::LUA_SCRIPT_SHA1, 2), $arguments), $command->getArguments());
     }

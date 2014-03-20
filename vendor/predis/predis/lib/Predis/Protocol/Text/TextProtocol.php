@@ -72,7 +72,7 @@ class TextProtocol implements ProtocolInterface
         $payload = substr($chunk, 1);
 
         switch ($prefix) {
-            case '+':
+            case '+':    // inline
                 switch ($payload) {
                     case 'OK':
                         return true;
@@ -84,15 +84,14 @@ class TextProtocol implements ProtocolInterface
                         return $payload;
                 }
 
-            case '$':
+            case '$':    // bulk
                 $size = (int) $payload;
                 if ($size === -1) {
                     return null;
                 }
-
                 return substr($connection->readBytes($size + 2), 0, -2);
 
-            case '*':
+            case '*':    // multi bulk
                 $count = (int) $payload;
 
                 if ($count === -1) {
@@ -110,10 +109,10 @@ class TextProtocol implements ProtocolInterface
 
                 return $multibulk;
 
-            case ':':
+            case ':':    // integer
                 return (int) $payload;
 
-            case '-':
+            case '-':    // error
                 return new ResponseError($payload);
 
             default:

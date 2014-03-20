@@ -14,8 +14,8 @@ class CreateSousRegionsTable extends Migration {
 	{
 		Schema::create('sous_regions', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('regions_id')->unsigned();
-			$table->foreign('regions_id')->references('id')->on('regions');
+			$table->integer('region_id')->unsigned();
+			$table->foreign('region_id')->references('id')->on('regions');
 			
 			$table->timestamps();
 		});

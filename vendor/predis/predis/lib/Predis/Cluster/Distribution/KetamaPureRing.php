@@ -55,7 +55,6 @@ class KetamaPureRing extends HashRing
     public function hash($value)
     {
         $hash = unpack('V', md5($value, true));
-
         return $hash[1];
     }
 

@@ -11,12 +11,12 @@
 
 namespace Predis\Option;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
 
 /**
  *
  */
-class AbstractOptionTest extends PredisTestCase
+class AbstractOptionTest extends StandardTestCase
 {
     /**
      * @group disconnected

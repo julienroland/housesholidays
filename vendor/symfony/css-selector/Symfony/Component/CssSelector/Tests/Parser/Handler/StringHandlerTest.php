@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\CssSelector\Tests\Parser\Handler;
+namespace Symfony\Component\CssSelector\Tests\Handler;
 
 use Symfony\Component\CssSelector\Parser\Handler\StringHandler;
 use Symfony\Component\CssSelector\Parser\Token;

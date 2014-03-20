@@ -118,22 +118,6 @@ class MySqlPlatform extends AbstractPlatform
     /**
      * {@inheritDoc}
      */
-    public function getDateAddHourExpression($date, $hours)
-    {
-        return 'DATE_ADD(' . $date . ', INTERVAL ' . $hours . ' HOUR)';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDateSubHourExpression($date, $hours)
-    {
-        return 'DATE_SUB(' . $date . ', INTERVAL ' . $hours . ' HOUR)';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getDateAddDaysExpression($date, $days)
     {
         return 'DATE_ADD(' . $date . ', INTERVAL ' . $days . ' DAY)';
@@ -557,7 +541,7 @@ class MySqlPlatform extends AbstractPlatform
             $column = $columnDiff->column;
             $columnArray = $column->toArray();
             $columnArray['comment'] = $this->getColumnComment($column);
-            $queryParts[] =  'CHANGE ' . ($columnDiff->getOldColumnName()->getQuotedName($this)) . ' '
+            $queryParts[] =  'CHANGE ' . ($columnDiff->oldColumnName) . ' '
                     . $this->getColumnDeclarationSQL($column->getQuotedName($this), $columnArray);
         }
 
@@ -570,12 +554,6 @@ class MySqlPlatform extends AbstractPlatform
             $columnArray['comment'] = $this->getColumnComment($column);
             $queryParts[] =  'CHANGE ' . $oldColumnName . ' '
                     . $this->getColumnDeclarationSQL($column->getQuotedName($this), $columnArray);
-        }
-
-        if (isset($diff->addedIndexes['primary'])) {
-            $keyColumns = array_unique(array_values($diff->addedIndexes['primary']->getColumns()));
-            $queryParts[] = 'ADD PRIMARY KEY (' . implode(', ', $keyColumns) . ')';
-            unset($diff->addedIndexes['primary']);
         }
 
         $sql = array();
@@ -604,33 +582,17 @@ class MySqlPlatform extends AbstractPlatform
         $table = $diff->name;
 
         foreach ($diff->removedIndexes as $remKey => $remIndex) {
-            // Dropping primary keys requires to unset autoincrement attribute on the particular column first.
-            if ($remIndex->isPrimary() && $diff->fromTable instanceof Table) {
-                foreach ($remIndex->getColumns() as $columnName) {
-                    $column = $diff->fromTable->getColumn($columnName);
-
-                    if ($column->getAutoincrement() === true) {
-                        $column->setAutoincrement(false);
-
-                        $sql[] = 'ALTER TABLE ' . $table . ' MODIFY ' .
-                            $this->getColumnDeclarationSQL($column->getQuotedName($this), $column->toArray());
-                    }
-                }
-            }
 
             foreach ($diff->addedIndexes as $addKey => $addIndex) {
                 if ($remIndex->getColumns() == $addIndex->getColumns()) {
 
-                    $indexClause = 'INDEX ' . $addIndex->getName();
-
-                    if ($addIndex->isPrimary()) {
-                        $indexClause = 'PRIMARY KEY';
-                    } elseif ($addIndex->isUnique()) {
-                        $indexClause = 'UNIQUE INDEX ' . $addIndex->getName();
+                    $type = '';
+                    if ($addIndex->isUnique()) {
+                        $type = 'UNIQUE ';
                     }
 
                     $query = 'ALTER TABLE ' . $table . ' DROP INDEX ' . $remIndex->getName() . ', ';
-                    $query .= 'ADD ' . $indexClause;
+                    $query .= 'ADD ' . $type . 'INDEX ' . $addIndex->getName();
                     $query .= ' (' . $this->getIndexFieldDeclarationListSQL($addIndex->getQuotedColumns($this)) . ')';
 
                     $sql[] = $query;

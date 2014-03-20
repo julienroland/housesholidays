@@ -11,13 +11,14 @@
 
 namespace Predis\Iterator;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Client;
 
 /**
  * @group realm-iterators
  */
-class MultiBulkResponseSimpleTest extends PredisTestCase
+class MultiBulkResponseSimpleTest extends StandardTestCase
 {
     /**
      * @group connected
@@ -116,13 +117,23 @@ class MultiBulkResponseSimpleTest extends PredisTestCase
      */
     protected function getClient()
     {
-        $parameters = $this->getParametersArray(array(
+        $parameters = array(
+            'host' => REDIS_SERVER_HOST,
+            'port' => REDIS_SERVER_PORT,
             'iterable_multibulk' => true,
             'read_write_timeout' => 2,
-        ));
+        );
 
-        $client = $this->createClient($parameters);
+        $options = array(
+            'profile' => REDIS_SERVER_VERSION,
+        );
+
+        $client = new Client($parameters, $options);
+        $client->connect();
+        $client->select(REDIS_SERVER_DBNUM);
+        $client->flushdb();
 
         return $client;
     }
+
 }

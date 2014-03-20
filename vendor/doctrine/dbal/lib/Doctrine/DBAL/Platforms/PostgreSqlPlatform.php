@@ -300,7 +300,7 @@ class PostgreSqlPlatform extends AbstractPlatform
             list($schema, $table) = explode(".", $table);
             $schema = "'" . $schema . "'";
         } else {
-            $schema = "ANY(string_to_array((select replace(replace(setting,'\"\$user\"',user),' ','') from pg_catalog.pg_settings where name = 'search_path'),','))";
+            $schema = "ANY(string_to_array((select replace(setting,'\"\$user\"',user) from pg_catalog.pg_settings where name = 'search_path'),','))";
         }
         $whereClause .= "$classAlias.relname = '" . $table . "' AND $namespaceAlias.nspname = $schema";
 
@@ -418,10 +418,10 @@ class PostgreSqlPlatform extends AbstractPlatform
                 continue;
             }
 
-            $oldColumnName = $columnDiff->getOldColumnName()->getQuotedName($this);
+            $oldColumnName = $columnDiff->oldColumnName;
             $column = $columnDiff->column;
 
-            if ($columnDiff->hasChanged('type') || $columnDiff->hasChanged('precision') || $columnDiff->hasChanged('scale')) {
+            if ($columnDiff->hasChanged('type')) {
                 $type = $column->getType();
 
                 // here was a server version check before, but DBAL API does not support this anymore.
@@ -430,10 +430,7 @@ class PostgreSqlPlatform extends AbstractPlatform
             }
 
             if ($columnDiff->hasChanged('default')) {
-                $defaultClause = null === $column->getDefault()
-                    ? ' DROP DEFAULT'
-                    : ' SET' . $this->getDefaultValueDeclarationSQL($column->toArray());
-                $query = 'ALTER ' . $oldColumnName . $defaultClause;
+                $query = 'ALTER ' . $oldColumnName . ' SET ' . $this->getDefaultValueDeclarationSQL($column->toArray());
                 $sql[] = 'ALTER TABLE ' . $diff->name . ' ' . $query;
             }
 
@@ -487,7 +484,7 @@ class PostgreSqlPlatform extends AbstractPlatform
                 $sql[] = 'ALTER TABLE ' . $diff->name . ' RENAME TO ' . $diff->newName;
             }
 
-            $sql = array_merge($this->getPreAlterTableIndexForeignKeySQL($diff), $sql, $this->getPostAlterTableIndexForeignKeySQL($diff), $commentsSQL);
+            $sql = array_merge($sql, $this->_getAlterTableIndexForeignKeySQL($diff), $commentsSQL);
         }
 
         return array_merge($sql, $tableSql, $columnSql);

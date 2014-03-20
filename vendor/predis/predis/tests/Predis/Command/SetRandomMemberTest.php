@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-set
  */
-class SetRandomMemberTest extends PredisCommandTestCase
+class SetRandomMemberTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}
@@ -38,8 +40,8 @@ class SetRandomMemberTest extends PredisCommandTestCase
      */
     public function testFilterArguments()
     {
-        $arguments = array('key', 1);
-        $expected = array('key', 1);
+        $arguments = array('key');
+        $expected = array('key');
 
         $command = $this->getCommand();
         $command->setArguments($arguments);

@@ -51,7 +51,7 @@ return array(
 	| to any of the locales which will be supported by the application.
 	|
 	*/
-	'languages' => array('en', 'fr', 'nl'),
+	'available_locales' => array('fr', 'en', 'nl', 'es', 'de'),
 	
 	'locale' => 'fr',
 
@@ -115,7 +115,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Way\Generators\GeneratorsServiceProvider'
+		'Way\Generators\GeneratorsServiceProvider',
 
 	),
 
@@ -181,7 +181,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable'
+		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 
 	),
 

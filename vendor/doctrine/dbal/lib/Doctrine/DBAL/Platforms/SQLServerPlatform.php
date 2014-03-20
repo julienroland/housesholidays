@@ -202,8 +202,10 @@ class SQLServerPlatform extends AbstractPlatform
                 $column['notnull'] = true;
             }
 
-            // Build default constraints SQL statements.
-            if (isset($column['default'])) {
+            /**
+             * Build default constraints SQL statements
+             */
+            if ( ! empty($column['default']) || is_numeric($column['default'])) {
                 $defaultConstraintsSql[] = 'ALTER TABLE ' . $tableName .
                     ' ADD' . $this->getDefaultConstraintDeclarationSQL($tableName, $column);
             }
@@ -274,7 +276,7 @@ class SQLServerPlatform extends AbstractPlatform
      */
     public function getDefaultConstraintDeclarationSQL($table, array $column)
     {
-        if ( ! isset($column['default'])) {
+        if (empty($column['default']) && ! is_numeric($column['default'])) {
             throw new \InvalidArgumentException("Incomplete column definition. 'default' required.");
         }
 
@@ -367,7 +369,7 @@ class SQLServerPlatform extends AbstractPlatform
             $columnDef = $column->toArray();
             $queryParts[] = 'ADD ' . $this->getColumnDeclarationSQL($column->getQuotedName($this), $columnDef);
 
-            if (isset($columnDef['default'])) {
+            if ( ! empty($columnDef['default']) || is_numeric($columnDef['default'])) {
                 $columnDef['name'] = $column->getQuotedName($this);
                 $queryParts[] = 'ADD' . $this->getDefaultConstraintDeclarationSQL($diff->name, $columnDef);
             }
@@ -398,7 +400,7 @@ class SQLServerPlatform extends AbstractPlatform
              * if default value has changed and another
              * default constraint already exists for the column.
              */
-            if ($columnDefaultHasChanged && null !== $fromColumnDefault) {
+            if ($columnDefaultHasChanged && ( ! empty($fromColumnDefault) || is_numeric($fromColumnDefault))) {
                 $queryParts[] = 'DROP CONSTRAINT ' .
                     $this->generateDefaultConstraintName($diff->name, $columnDiff->oldColumnName);
             }
@@ -406,7 +408,7 @@ class SQLServerPlatform extends AbstractPlatform
             $queryParts[] = 'ALTER COLUMN ' .
                     $this->getColumnDeclarationSQL($column->getQuotedName($this), $columnDef);
 
-            if ($columnDefaultHasChanged && isset($columnDef['default'])) {
+            if ($columnDefaultHasChanged && (! empty($columnDef['default']) || is_numeric($columnDef['default']))) {
                 $columnDef['name'] = $column->getQuotedName($this);
                 $queryParts[] = 'ADD' . $this->getDefaultConstraintDeclarationSQL($diff->name, $columnDef);
             }
@@ -425,7 +427,7 @@ class SQLServerPlatform extends AbstractPlatform
              * Drop existing default constraint for the old column name
              * if column has default value.
              */
-            if (isset($columnDef['default'])) {
+            if ( ! empty($columnDef['default']) || is_numeric($columnDef['default'])) {
                 $queryParts[] = 'DROP CONSTRAINT ' .
                     $this->generateDefaultConstraintName($diff->name, $oldColumnName);
             }
@@ -436,7 +438,7 @@ class SQLServerPlatform extends AbstractPlatform
             /**
              * Readd default constraint for the new column name.
              */
-            if (isset($columnDef['default'])) {
+            if ( ! empty($columnDef['default']) || is_numeric($columnDef['default'])) {
                 $columnDef['name'] = $column->getQuotedName($this);
                 $queryParts[] = 'ADD' . $this->getDefaultConstraintDeclarationSQL($diff->name, $columnDef);
             }

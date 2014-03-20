@@ -15,12 +15,11 @@ class CreatePaysTraductionsTable extends Migration {
 		Schema::create('pays_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
+			$table->integer('langage_id')->unsigned()->nullable();
+			$table->foreign('langage_id')->references('id')->on('langages')->onDelete('cascade');
 			$table->integer('pays_id')->unsigned();
-			$table->foreign('pays_id')->references('id')->on('pays');
+			$table->foreign('pays_id')->references('id')->on('pays')->onDelete('cascade');
 			
-			$table->timestamps();
 		});
 	}
 

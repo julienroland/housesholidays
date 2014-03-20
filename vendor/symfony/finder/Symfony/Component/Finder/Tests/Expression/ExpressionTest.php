@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Finder\Tests\Expression;
+namespace Symfony\Component\Finder\Tests;
 
 use Symfony\Component\Finder\Expression\Expression;
 

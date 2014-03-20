@@ -14,7 +14,7 @@ class CreateTarifsSpeciauxWeekendsTable extends Migration {
 	{
 		Schema::create('tarifs_speciaux_weekends', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('max_nuits');
+			$table->string('max_nuit');
 			
 			$table->timestamps();
 		});

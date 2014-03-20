@@ -14,10 +14,10 @@ class CreateOptionsAbonnementsAbonnementsTable extends Migration {
 	{
 		Schema::create('options_abonnements_abonnements', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('abonnements_id')->unsigned();
-			$table->foreign('abonnements_id')->references('id')->on('abonnements');
-			$table->integer('options_abonnements_id')->unsigned();
-			$table->foreign('options_abonnements_id')->references('id')->on('options_abonnements');
+			$table->integer('abonnement_id')->unsigned();
+			$table->foreign('abonnement_id')->references('id')->on('abonnements');
+			$table->integer('option_abonnement_id')->unsigned();
+			$table->foreign('option_abonnement_id')->references('id')->on('options_abonnements');
 			$table->timestamps();
 		});
 	}

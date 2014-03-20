@@ -46,7 +46,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         $this->event = null;
-        $this->dispatcher = null;
+        $this->eventDispatcher = null;
     }
 
     public function testIsPropagationStopped()

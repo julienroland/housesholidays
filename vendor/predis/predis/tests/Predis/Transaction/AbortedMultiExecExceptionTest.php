@@ -11,13 +11,14 @@
 
 namespace Predis\Transaction;
 
-use PredisTestCase;
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 use Predis\Client;
 
 /**
  *
  */
-class AbortedMultiExecExceptionTest extends PredisTestCase
+class AbortedMultiExecExceptionTest extends StandardTestCase
 {
     /**
      * @group disconnected

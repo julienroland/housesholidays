@@ -17,14 +17,14 @@ class CreateMessagesTable extends Migration {
 			$table->string('titre');
 			$table->text('texte');
 			$table->date('date');
-			$table->integer('de_users_id')->unsigned();
-			$table->foreign('de_users_id')->references('id')->on('users');
-			$table->integer('vers_users_id')->unsigned();
-			$table->foreign('vers_users_id')->references('id')->on('users');
+			$table->integer('de_user_id')->unsigned();
+			$table->foreign('de_user_id')->references('id')->on('users');
+			$table->integer('vers_user_id')->unsigned();
+			$table->foreign('vers_user_id')->references('id')->on('users');
 			$table->integer('reponse_id')->unsigned();
 			$table->foreign('reponse_id')->references('id')->on('messages');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
 			$table->timestamps();
 		});
 	}

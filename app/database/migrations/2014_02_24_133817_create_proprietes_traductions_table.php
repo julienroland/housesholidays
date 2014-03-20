@@ -16,11 +16,11 @@ class CreateProprietesTraductionsTable extends Migration {
 			$table->increments('id');
 			$table->string('cle');
 			$table->string('valeur');
-			$table->string('conditions_paiement');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
+			$table->string('condition_paiement');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
 			
 			$table->timestamps();
 		});

@@ -15,10 +15,10 @@ class CreateJoursSemainesTraductionsTable extends Migration {
 		Schema::create('jours_semaines_traductions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nom');
-			$table->integer('langages_id')->unsigned();
-			$table->foreign('langages_id')->references('id')->on('langages');
-			$table->integer('jours_semaines_id')->unsigned();
-			$table->foreign('jours_semaines_id')->references('id')->on('jours_semaines');
+			$table->integer('langage_id')->unsigned();
+			$table->foreign('langage_id')->references('id')->on('langages');
+			$table->integer('jour_semaine_id')->unsigned();
+			$table->foreign('jour_semaine_id')->references('id')->on('jours_semaines');
 			$table->timestamps();
 		});
 	}

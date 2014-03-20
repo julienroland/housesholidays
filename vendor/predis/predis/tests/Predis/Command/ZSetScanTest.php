@@ -11,11 +11,13 @@
 
 namespace Predis\Command;
 
+use \PHPUnit_Framework_TestCase as StandardTestCase;
+
 /**
  * @group commands
  * @group realm-zset
  */
-class ZSetScanTest extends PredisCommandTestCase
+class ZSetScanTest extends CommandTestCase
 {
     /**
      * {@inheritdoc}
@@ -127,8 +129,8 @@ class ZSetScanTest extends PredisCommandTestCase
         $response = $redis->zscan('key', 0);
 
         $this->assertSame(0, $response[0]);
-        $this->assertSame($expectedMembers, array_map(function ($e) { return $e[0]; }, $response[1]));
-        $this->assertSame($expectedScores, array_map(function ($e) { return $e[1]; }, $response[1]));
+        $this->assertSame($expectedMembers, array_map(function($e) { return $e[0]; }, $response[1]));
+        $this->assertSame($expectedScores, array_map(function($e) { return $e[1]; }, $response[1]));
     }
 
     /**
@@ -141,8 +143,8 @@ class ZSetScanTest extends PredisCommandTestCase
 
         $response = $redis->zscan('key', 0, 'MATCH', 'member:t*');
 
-        $this->assertSame(array('member:two', 'member:three'), array_map(function ($e) { return $e[0]; }, $response[1]));
-        $this->assertSame(array(2.0, 3.0), array_map(function ($e) { return $e[1]; }, $response[1]));
+        $this->assertSame(array('member:two', 'member:three'), array_map(function($e) { return $e[0]; }, $response[1]));
+        $this->assertSame(array(2.0, 3.0), array_map(function($e) { return $e[1]; }, $response[1]));
     }
 
     /**
