@@ -16,6 +16,7 @@ class CreatePaysTable extends Migration {
 			$table->increments('id')->unique();
 			$table->string('initial_2',10);
 			$table->string('initial_3',10)->nullable();
+			$table->integer('nb_vue');
 			$table->string('code_telephone',50)->nullable();
 			$table->string('extension_domaine')->nullable();
 			

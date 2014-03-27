@@ -13,9 +13,12 @@ return array(
     
     'index'=>'/',
     'inscription' =>'inscription',
-
+    'connexion' =>'connexion',
+    'deconnexion' =>'deconnexion',
+    'compte'=>'compte',
     //inscription
-    'i_etape1'=>'informations-personnelles',
+    'i_etape1'=>'inscription-du-bien',
+    'i_etape2'=>'localisation-du-bien',
 
 
     );

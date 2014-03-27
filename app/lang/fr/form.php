@@ -1,13 +1,17 @@
 <?php return array(
 
 	'enter_firstname' => 'Entrez votre prénom',
-		'enter_name' => 'Entrez votre nom',
+	'enter_name' => 'Entrez votre nom',
 	'enter_email' => 'Entrez votre email',
 	'enter_country' => 'Choisissez votre pays',
+	'enter_region' => 'Choisissez votre région',
+	'enter_sousRegion' => 'Choisissez votre sous-région',
+	'enter_localite' => 'Choisissez votre localité',
 	'enter_password' => 'Entrez votre mot de passe',
 	'enter_password_ag' => 'Entrez votre mot de passe à nouveau',
 	'enter_cgv' => 'Acceptez-vous les conditions général de vente',
 	'button_valid' => 'Valider',
+	'remember' => 'Se souvenir de moi',
 	//inscription etape2
 	'enter_batiment_name' => 'Entrez le nom du bien',
 	'enter_annonce_name' => 'Entrez le titre de l\'annonce',
@@ -23,30 +27,10 @@
 	'title_lit' => 'Literie',
 	'title_interieur' => 'Equipement intérieur',
 	'title_exterieur' => 'Equipement extérieur',
-	'nb_chambre' => 'Nombre de chambres',
-	'nb_dbl_lit' => 'Nombre de lits doubles',
-	'nb_kid_lit' => 'Nombre de lit enfant',
-	'nb_couchage' => 'Nombre de couchages',
-	'nb_lit_simple' => 'Nombre de lits simples',
-	'nb_canape_lit' => 'Nombre de canapé-lit',
-	//interieure
-	//col1
-	'cuisine_inde'=> 'Cuisine indépendante',
-	'cuisine_americaine'=> 'Cuisine américaine',
-	'kitchenette'=> 'Kitchenette',
-	's_a_m'=> 'Salle à manger',
-	'salon'=> 'Salon',
-	'mezzanine'=> 'Mezzanine',
-	'lodge'=> 'Lodge',
-	'debarras'=> 'Débarras',
-	//col2
-	'coin_cabine'=> 'Coin cabine',
-	'balcon'=> 'Balcon',
-	'terrasse'=> 'Terrasse',
-	'veranda'=> 'Véranda',
-	'cour'=> 'Cour',
-	'jardin'=> 'Jardin',
-	'garage'=> 'Garage',
-	//3
+	//Select
+	'choissir_option'=> 'Choissisez le type d\'option',
+	//etapes
+	'etape'=> 'Etape n°:numero',
+	'revenir_etape'=> 'Revenir à l\'étape :numero',
 	
 	);

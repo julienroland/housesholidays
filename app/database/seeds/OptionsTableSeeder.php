@@ -17,19 +17,19 @@ class OptionsTableSeeder extends Seeder {
 
 			if( $i >= 1 && $i <=5 ){
 
+				$t = 10;
+
+			}elseif( $i >= 6 && $i <= 37 ){
+
+				$t = 11;
+
+			}elseif( $i >= 38 && $i <= 43 ){
+
 				$t = 12;
 
-			}elseif( $i >= 6 && $i <= 32 ){
+			}elseif( $i >= 44 && $i <= 46  ){
 
 				$t = 13;
-
-			}elseif( $i >= 33 && $i <= 40 ){
-
-				$t = 14;
-
-			}elseif( $i >= 41 && $i <= 44  ){
-
-				$t = 15;
 
 			}
 			array_push($options, array(

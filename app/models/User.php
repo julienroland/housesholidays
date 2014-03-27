@@ -15,9 +15,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $fillable = array('nom','prenom','email','password');
 
 	public static $rules = array(
-		'prenom'=>'required|min:2',
-		'nom'=>'required|min:2',
-		'email'=>'email|required', //unique:users,email|
+		'prenom'=>'required|min:2|alpha',
+		'nom'=>'required|min:2|alpha',
+		'email'=>'unique:users,email|email|required', 
 		'pays'=>'required',
 		'password'=>'required|min:3',
 		);
@@ -26,6 +26,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'build_from' => 'fullname',
 		'save_to'    => 'slug',
 		);
+
+	public function propriete(){
+
+		return $this->hasMany('Propriete');
+		
+	}
 
 	public function pays(){
 

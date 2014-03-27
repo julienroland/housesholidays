@@ -22,6 +22,12 @@ class Pays extends Eloquent {
 
 	}
 
+	public function region(){
+
+		return $this->hasMany('Region');
+
+	}
+
 	/**
 	*
 	* Avoir la liste des pays sous forme d'array associative $key => value
@@ -36,24 +42,23 @@ class Pays extends Eloquent {
 	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
 	*
 	**/
-	$paysDump = Pays::with(array('paysTraduction'=>function($query) use( $orderBy, $orderWay ){
-
-		$query
-		->where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay );
-	}
-	))->get();
+	$paysDump = PaysTraduction::
+		  where(Config::get('var.lang_col'),Session::get('langId'))
+		->orderBy( $orderBy , $orderWay )
+		->get();
 
 	/**
 	*
 	* Retravaille l'output de manière à avoir id => nom
 	*
 	**/
-	$paysList = array();
+	$paysList = array(
+		''=>''
+		);
 
 	foreach($paysDump as $pays){
 
-		$paysList[$pays->id] = $pays->paysTraduction[0]->nom;
+		$paysList[$pays->pays_id] = $pays->nom;
 
 	}
 

@@ -21,48 +21,91 @@ class Region extends Eloquent {
 
 	}
 
+	public function pays(){
+
+		return $this->belongsTo('Pays');
+
+	}
+
 	/**
 	*
 	* Avoir la liste des pays sous forme d'array associative $key => value
 	*
 	**/
-	public static function getListForm( $orderBy = 'nom', $orderWay = 'asc' )
-	{
+	public static function getListForm( $where = null, $whereId = null, $json = false, $orderBy = 'nom', $orderWay = 'asc' ){
 
 	/**
 	*
 	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
 	*
 	**/
-	$regionDump = Region::with(array('regionTraduction'=>function($query) use( $orderBy, $orderWay ){
+	if(Helpers::isNotOk($where) && Helpers::isNotOk($whereId)) {
 
-		$query
+		$regionDump = DB::table('regions')
+		->join('regions_traductions','regions.id','=','region_id')
 		->where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay );
+		->orderBy( $orderBy , $orderWay )
+		->get(array('nom','region_id'));
 
 	}
-	))->get();
+	else{
 
+		$regionDump = DB::table('regions')
+		->join('regions_traductions','regions.id','=','region_id')
+		->where($where.'_id', $whereId) 
+		->where(Config::get('var.lang_col'),Session::get('langId'))
+		->orderBy( $orderBy , $orderWay )
+		->get(array('nom','region_id'));
+	}
+	/*dd(DB::getQueryLog());*/
+	
 	/**
 	*
 	* Retravaille l'output de manière à avoir id => nom
 	*
 	**/
-	$regionList = array();
+	if(Helpers::isOk($json) && $json === true){
 
-	foreach($regionDump as $region){
+		$regionList = array();
 
-		$regionList[$region->id] = $region->regionTraduction[0]->nom;
+		foreach($regionDump as $region){
+
+			array_push($regionList , array(
+				'id'=>$region->region_id,
+				'val'=>$region->nom
+				));
+		}
 
 	}
+	else{
+
+		$regionList = array(
+			''=>''
+			);
+
+		foreach($regionDump as $region){
+
+			$regionList[$region->region_id]  = $region->nom;
+
+		}
+	}
+
+	
 
 	/**
 	*
 	* Return une array pour les selects dans les formulaires
 	*
 	**/
+	if(Helpers::isOk($json) && $json === true){
 
-	return $regionList;
+		return json_encode($regionList);
+
+	}else{
+
+		return $regionList;
+
 	}
+}
 
 }

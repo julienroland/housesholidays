@@ -18,9 +18,19 @@ class RegionsTraductionsTableSeeder extends Seeder {
 
 				for($m=0; $m < count($lang); $m++){
 
+					if(isset($data['description'][$lang[$m]])){
+
+						$description = $data['description'][$lang[$m]];
+
+					}else{
+
+						$description = "";
+					}
+					
 					if($lang[$m] === 'en'){
 
 						$langage = $data['name'];
+
 
 					}else{
 
@@ -31,10 +41,11 @@ class RegionsTraductionsTableSeeder extends Seeder {
 						}else{
 
 							$langage = "";
+
 						}
 					}
 
-					array_push($regions_traductions,['nom'=>$langage, 'region_id'=>$i, 'langage_id'=>$m+1]);
+					array_push($regions_traductions,['nom'=>$langage, 'region_id'=>$i,'description'=>$description,'langage_id'=>$m+1]);
 				}
 				$i++;
 			}

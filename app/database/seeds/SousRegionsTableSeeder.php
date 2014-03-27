@@ -12,61 +12,23 @@ class SousRegionsTableSeeder extends Seeder {
 
 		$lang = array('fr','en','nl','de','es');
 		$sous_regions_traductions = array();
-		$i = 1;
 		$p=1;
 		foreach($oData as $data){
-			
-			foreach($data['regions'] as $region){	
 
+			foreach($data['regions'] as $region){	
+				
 				if(isset($region['subregions'])){
 					
 					foreach($region['subregions'] as $subregions){
 
-						for($m=0; $m < count($lang); $m++){
-
-							if($lang[$m] === 'en'){
-
-								$nom = $subregions['name'];
-
-								if(isset($region['description'][$lang[$m]])){
-
-									$description = $region['description'][$lang[$m]];
-
-								}else{
-
-									$description = "";
-								}
-
-							}else{
-
-								if(isset($subregions['translations'][$lang[$m]]) && !empty($subregions['translations'][$lang[$m]])){
-
-									$nom = $subregions['translations'][$lang[$m]];
-
-								}else{
-
-									$nom = "";
-								}
-								if(isset($region['description'][$lang[$m]])){
-
-									$description = $region['description'][$lang[$m]];
-
-								}else{
-
-									$description = "";
-								}
-							}
-
 							array_push($sous_regions_traductions,array('region_id'=>$p));
-						}
 
-						
-					}
+					}//end foreach subregion
 					$p++;
-				}
-				
-			}
-			$i++;
+
+				}//endif
+
+			}//end foreach
 		}
 
 		// Uncomment the below to run the seeder

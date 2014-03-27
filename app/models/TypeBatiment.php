@@ -49,7 +49,8 @@ class TypeBatiment extends Eloquent {
 	* Retravaille l'output de manière à avoir id => nom
 	*
 	**/
-	$typeBatimentList = array();
+	$typeBatimentList = array(
+		''=>trans('form.choissir_option'));
 
 	foreach($typeBatimentDump as $typeBatiment){
 

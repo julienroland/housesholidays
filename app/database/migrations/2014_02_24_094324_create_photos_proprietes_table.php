@@ -12,7 +12,7 @@ class CreatePhotosProprietesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('photos_proprietes', function(Blueprint $table) {
+		Schema::create('photo_propriete', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('propriete_id')->unsigned();
 			$table->foreign('propriete_id')->references('id')->on('proprietes');
@@ -32,7 +32,7 @@ class CreatePhotosProprietesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('photos_proprietes');
+		Schema::drop('photo_propriete');
 	}
 
 }

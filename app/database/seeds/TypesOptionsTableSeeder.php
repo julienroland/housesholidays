@@ -11,7 +11,7 @@ class TypesOptionsTableSeeder extends Seeder {
 			array(
 				'id' => 1,
 				'nom'=>'batiment',
-				'parent_id'=> 1,
+				'parent_id'=> null,
 				),
 			array(
 				'id' => 2,
@@ -55,31 +55,21 @@ class TypesOptionsTableSeeder extends Seeder {
 				),
 			array(
 				'id'=> 10,
-				'nom' => 'b_base',
-				'parent_id'=> 1,
+				'nom' =>'b_exterieur',
+				'parent_id'=> 3,
 				),
 			array(
 				'id'=> 11,
-				'nom' => 'b_equipement',
+				'nom' =>'b_interieur',
 				'parent_id'=> 3,
 				),
 			array(
 				'id'=> 12,
-				'nom' =>'b_exterieur',
-				'parent_id'=> 11,
-				),
-			array(
-				'id'=> 13,
-				'nom' =>'b_interieur',
-				'parent_id'=> 11,
-				),
-			array(
-				'id'=> 14,
 				'nom' =>'b_literie',
 				'parent_id'=> 3,
 				),
 			array(
-				'id'=> 15,
+				'id'=> 13,
 				'nom' =>'b_situation_geographique',
 				'parent_id'=> 4,
 				));

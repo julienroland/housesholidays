@@ -15,4 +15,10 @@ class SousRegionTraduction extends Eloquent {
 		return $this->belongsTo('SousRegion');
 
 	}
+	
+	public function langage(){
+
+		return $this->belongsTo('Langage');
+
+	}
 }

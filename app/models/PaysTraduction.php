@@ -15,4 +15,10 @@ class PaysTraduction extends Eloquent {
 		return $this->belongsTo('Pays');
 
 	}
+
+	public function langage(){
+
+		return $this->belongsTo('Langage');
+
+	}
 }

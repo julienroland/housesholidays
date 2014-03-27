@@ -15,4 +15,10 @@ class RegionTraduction extends Eloquent {
 		return $this->belongsTo('Region');
 
 	}
+	
+	public function langage(){
+
+		return $this->belongsTo('Langage');
+
+	}
 }
