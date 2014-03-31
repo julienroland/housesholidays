@@ -178,8 +178,8 @@ class InscriptionController extends BaseController {
 
 			$data = array(
 
-				'titre_propriete'=> $input['titre_propriete'],
 				'nom_propriete'=> $input['nom_propriete'],
+				'titre_propriete'=> $input['titre_propriete'],
 				'type_propriete'=> $input['type_propriete'],
 				'nb_personne'=> $input['nb_personne'],
 				'nb_chambre'=> $input['nb_chambre'],
@@ -193,10 +193,10 @@ class InscriptionController extends BaseController {
 
 			Session::put('input_2', $input );
 
-			$validation = Validator::make($data, Propriete::$rules);
+			$validation = Validator::make($data, Propriete::$rules1);
 
 			if( $validation->passes() ) {
-				/*dd($input);*/
+				
 
 			/**
 			*
@@ -221,8 +221,8 @@ class InscriptionController extends BaseController {
 			$propriete->etage = $input['etage'];
 			$propriete->type_batiment_id = $input['type_propriete'];
 			$propriete->annonce_payee_id = 1;
-			$user->commentaire_statut = 1;
-			$user->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 1;
+			$propriete->commentaire_statut = 1;
+			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 1;
 			$propriete->nom = $input['nom_propriete'];
 
 			/**
@@ -353,15 +353,165 @@ class InscriptionController extends BaseController {
 
 			Session::put('etape2',false);
 			Session::put('currentEtape', 2 );
-			return Redirect::route( 'etape2Index', Auth::user()->slug )
+			return Redirect::route( 'etape1Index', Auth::user()->slug )
 			->withInput()
 			->withErrors($validation);
 
 		}
 
 	}
-	public function updateLocalisation(){
-		dd(Input::all());
+	public function updateBatiment( $Propriete_id ){
+
+		$input = Input::all();
+
+		$data = array(
+
+			'nom_propriete'=> $input['nom_propriete'],
+			'titre_propriete'=> $input['titre_propriete'],
+			'type_propriete'=> $input['type_propriete'],
+			'nb_personne'=> $input['nb_personne'],
+			'nb_chambre'=> $input['nb_chambre'],
+			'etage'=> $input['etage'],
+			'taille_interieur'=> $input['taille_interieur'],
+			'nb_sdb'=> $input['nb_sdb'],
+			'taille_exterieur'=> $input['taille_exterieur'],
+			'literie'=> (int)$input['literie'],
+
+			);
+
+		Session::put('input_2', $input );
+
+		$validation = Validator::make($data, Propriete::$rules1);
+
+		if( $validation->passes() ) {
+			dd('toto');
+			$propriete = Propriete::find( $Propriete_id );
+
+			$propriete->nb_personne = $input['nb_personne'];
+			$propriete->nb_chambre = $input['nb_chambre'];
+			$propriete->nb_sdb = $input['nb_sdb'];
+			$propriete->taille_bien = $input['taille_interieur'];
+			$propriete->taille_terrain = $input['taille_exterieur'];
+			$propriete->etage = $input['etage'];
+			$propriete->type_batiment_id = $input['type_propriete'];
+			$propriete->annonce_payee_id = 1;
+			$user->commentaire_statut = 1;
+			$user->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 1;
+			$propriete->nom = $input['nom_propriete'];
+
+			$propriete->save();
+
+
+			/**
+			*
+			* Recup des arrays, suppression des lignes vides pour certains plus ajout de type integer
+			*
+			**/
+			
+			$literies = array_filter(array_map('intval',$input['literie']));
+			$interieurs = array_filter($input['interieur']);
+			$exterieurs = array_filter($input['exterieur']);
+			$descriptions = $input['description'];
+			$titres = $input['titre_propriete'];
+
+			/**
+			*
+			* Boucle sur les titres pour les ajouters dans la table de traduction
+			*
+			**/
+			ProprieteTraduction::whereProprieteId($id)->whereKey('titre')->delete();
+			
+			foreach($titres as $key => $titre){
+
+				$proprieteTraduction = new ProprieteTraduction();
+				$proprieteTraduction->cle = "titre";
+				$proprieteTraduction->valeur = $titre;
+				$proprieteTraduction->langage_id = $key;
+
+				/**
+				*
+				* On crée la relation entre propriete et proprieteTraduction
+				* @propriete hasMany proprieteTraduction
+				* @proprieteTraduction belongsTo propriete
+				*
+				**/
+				
+				$proprieteTraduction = $propriete->proprieteTraduction()->save($proprieteTraduction);
+			}	
+			/**
+			*
+			* Boucle sur les descriptions pour les ajouters dans la table de traduction
+			*
+			**/
+			ProprieteTraduction::whereProprieteId($id)->whereKey('description')->delete();
+
+			foreach($descriptions as $key => $description){
+
+				$proprieteTraduction = new ProprieteTraduction();
+				$proprieteTraduction->cle = "description";
+				$proprieteTraduction->valeur = $description;
+				$proprieteTraduction->langage_id = $key;
+				$proprieteTraduction = $propriete->proprieteTraduction()->save($proprieteTraduction);
+			}
+
+			/**
+			*
+			* Boucle sur les options de type lit pour ajouter leurs relation à la table pivot
+			* @propriete belongsToMany option
+			* @option belongsToMany propriete
+			* @propriete_id
+			* @option_id
+			* @valeur
+			*
+			**/
+			$propriete->option()->detach();
+
+
+			foreach( $literies as $key => $literie){
+
+				$propriete->option()->attach($key , array('valeur'=>$literie) );
+			}
+
+			/**
+			*
+			* Boucle sur les options de type interieur pour ajouter leurs relation à la table pivot
+			*
+			**/
+
+			foreach( $interieurs as $key => $interieur){
+
+				$propriete->option()->attach($key );
+			}
+
+			/**
+			*
+			* Boucle sur les options de type exterieur pour ajouter leurs relation à la table pivot
+			* @propriete belongsToMany option
+			* @option belongsToMany propriete
+			* @propriete_id
+			* @option_id
+			* @valeur
+			*
+			**/
+
+			foreach( $exterieurs as $key => $exterieur){
+
+				$propriete->option()->attach($key);
+			}
+
+			Session::put('etape2',true);
+			Session::put('currentEtape', 2 );
+
+			return Redirect::route( 'etape2Index' , Auth::user()->slug )
+			->with(array('success',Lang::get('validation.custom.step2')));
+		}else{
+
+			Session::put('etape1',false);
+			Session::put('currentEtape', 2 );
+			return Redirect::route( 'etape1Index', Auth::user()->slug )
+			->withInput()
+			->withErrors($validation);
+		}
 	}
 	/*-----  End of ETAPE 2  ------*/
 		/*==============================
@@ -369,7 +519,6 @@ class InscriptionController extends BaseController {
 		==============================*/
 		
 		public function indexLocalisation(){
-
 
 			$paysList = Pays::getListForm();
 
@@ -379,11 +528,13 @@ class InscriptionController extends BaseController {
 
 			$localiteList = Localite::getListForm();
 
+			$situationList = Option::getListForm('etape_3')->situation;
+
 			Session::put('currentEtape', 3 );
 
 			return View::make('inscription.etape3', array('page'=>'inscription_etape3'))
 
-			->with(compact(array('paysList','regionList','sousRegionList','localiteList')));
+			->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList')));
 
 		}
 		public function saveLocalisation(){
@@ -394,7 +545,31 @@ class InscriptionController extends BaseController {
 
 			Session::put('currentEtape', 3);
 
+			$validation = Validator::make( $input , Propriete::$rules2 );
 			dd($input);
+			if( $validation->passes() ){
+
+				$propriete = Propriete::find( Session::get('proprieteId') );
+
+				$propriete->pays_id = $input['pays'];
+				$propriete->region_id = $input['region'];
+				$propriete->sous_region = $input['sous_region'];
+				$propriete->localite_id = $input['localite'];
+				$propriete->adresse = $input['adresse'];
+
+				$propriete->save();
+				dd($propriete);
+			}
+			else
+			{
+				dd('pasok');
+				Session::put('etape3',false);
+				Session::put('currentEtape', 3 );
+				return Redirect::route( 'etape2Index', Auth::user()->slug )
+				->withInput()
+				->withErrors($validation);
+			}
+			
 		}
 		
 		/*-----  End of ETAPE3  ------*/

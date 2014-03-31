@@ -8,10 +8,10 @@
 	</ul>
 </div>
 @endif
-{{Form::open(array('route'=>'connexion'))}}
 
+{{Form::open(array('route'=>'connexion'))}}
 {{Form::label('email',trans('form.enter_email'))}}
-{{Form::text('email',Cookie::get('remember') ? Cookie::get('remember')['email'] : '', array('required'))}}
+{{Form::text('email',Cookie::get('email') ? Cookie::get('email') : '', array('required'))}}
 <br>
 
 {{Form::label('password',trans('form.enter_password'))}}

@@ -14,9 +14,9 @@
 
 @endif
 
-@if(Session::get('etape3') && $page != 'inscription_etape3')
+@if(Session::get('etape3') && $page != 'inscription_etape3' || $page != 'inscription_etape3' && Session::get('etape2'))
 
-{{link_to_route('etape2Index', trans('form.revenir_etape',array('numero'=>2)),Auth::user()->slug)}}
+{{link_to_route('etape2Index', trans('form.revenir_etape',array('numero'=>3)),Auth::user()->slug)}}
 
 @elseif( $page === 'inscription_etape3')
 

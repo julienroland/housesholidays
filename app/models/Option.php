@@ -23,7 +23,7 @@ class Option extends Eloquent {
 
 	}
 
-/*	public function typeOptionParent(){
+	/*	public function typeOptionParent(){
 
 		return $this->belongsTo('TypeOption');
 
@@ -41,58 +41,74 @@ class Option extends Eloquent {
 	*
 	**/
 
-	public static function getListForm( $orderBy = 'id', $orderWay = 'asc' )
+	public static function getListForm( $etape = 'etape_2', $orderBy = 'valeur', $orderWay = 'asc' )
 	{
 
-	/**
-	*
-	* Select les option AVEC les traductions en fonction du type d'option, fetch un tableau (laravel collection)
-	*
-	**/
-	$optionDump = TypeOption::with(array('enfant.option.optionTraduction'=>function($query){
+		/**
+		*
+		* Select les option AVEC les traductions en fonction du type d'option, fetch un tableau (laravel collection)
+		*
+		**/
+		$optionDump = TypeOption::with(array('enfant.option.optionTraduction'=>function( $query ) use( $orderBy, $orderWay ){
 
-		$query->where(Config::get('var.lang_col'),Session::get('langId'));
+			$query->where(Config::get('var.lang_col'),Session::get('langId'))
+			->orderBy( $orderBy , $orderWay );
 
-	}))->whereNom('etape_2')->get();
+		}))->whereNom($etape)->get();
 
-	$t= array();
+		$t= array();
 
-	foreach($optionDump as $options){
-		
-		foreach($options->enfant as $enfant){
-			$t[$enfant->nom] = array();
-			if(Helpers::isOk($enfant->option)){
-				foreach($enfant->option as $option){
-					array_push($t[$enfant->nom], $option->optionTraduction);
+		foreach($optionDump as $options){
+
+			foreach($options->enfant as $enfant){
+				$t[$enfant->nom] = array();
+				if(Helpers::isOk($enfant->option)){
+					foreach($enfant->option as $option){
+						array_push($t[$enfant->nom], $option->optionTraduction);
+					}
 				}
+
+			}
+		}
+		if($etape === 'etape_2'){
+
+			$data = array(
+				'exterieur'=> array(
+					),
+				'interieur'=> array(
+					),
+				);
+
+			foreach($t['b_exterieur'] as $dataArr){
+
+
+				$data['exterieur'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' =>$dataArr[0]->valeur);
 			}
 
-		}
-	}
+			foreach($t['b_interieur'] as $dataArr){
 
-	$data = array(
-			'exterieur'=> array(
-				),
-			'interieur'=> array(
-				),
-		);
+				$data['interieur'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' => $dataArr[0]->valeur);
+			}
 
-	foreach($t['b_exterieur'] as $dataArr){
-		
+			foreach($t['b_literie'] as $dataArr){
 
-		$data['exterieur'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' =>$dataArr[0]->valeur);
-	}
+				$data['literie'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' => $dataArr[0]->valeur);
+			}
 
-	foreach($t['b_interieur'] as $dataArr){
+		}elseif($etape === 'etape_3'){
 
-		$data['interieur'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' => $dataArr[0]->valeur);
-	}
+				$data = array(
+					'situation'=> array(
+						''=>''
+						),
+					);
 
-	foreach($t['b_literie'] as $dataArr){
+				foreach($t['b_situation_geographique'][0] as $dataArr){
 
-		$data['literie'][$dataArr[0]->cle] = (object)array('id'=>$dataArr[0]->option_id,'valeur' => $dataArr[0]->valeur);
-	}
-
+					$data['situation'][$dataArr->id]  = $dataArr->valeur ;
+				}
+				
+			}
 	/**
 	*
 	* Return une array pour les selects dans les formulaires

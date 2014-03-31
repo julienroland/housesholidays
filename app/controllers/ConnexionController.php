@@ -51,7 +51,8 @@ class ConnexionController extends BaseController {
 
 				return Redirect::route('compte', Auth::user()->slug)
 				->with('success',trans('validation.custom.connect'))
-				->withCookie(Cookie::forever('remember', $input));
+				->withCookie(Cookie::forever('remember', $input))
+                ->withCookie(Cookie::forever('email', $input['email']));
 			}
 			else{
 				

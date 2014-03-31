@@ -70,5 +70,47 @@ class Pays extends Eloquent {
 
 	return $paysList;
 	}
+	/**
+	*
+	* Avoir la liste d'enfants des pays sous forme d'array associative $key => value
+	*
+	**/
+
+	public static function getChildListForm( $orderBy = 'nom', $orderWay = 'asc' )
+	{
+
+	/**
+	*
+	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
+	*
+	**/
+	$paysDump = PaysTraduction::
+		  where(Config::get('var.lang_col'),Session::get('langId'))
+		->orderBy( $orderBy , $orderWay )
+		->get();
+
+	/**
+	*
+	* Retravaille l'output de manière à avoir id => nom
+	*
+	**/
+	$paysList = array(
+		''=>''
+		);
+
+	foreach($paysDump as $pays){
+
+		$paysList[$pays->pays_id] = $pays->nom;
+
+	}
+
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return $paysList;
+	}
 
 }

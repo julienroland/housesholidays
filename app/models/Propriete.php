@@ -8,7 +8,7 @@ class Propriete extends Eloquent {
 	 *
 	 * @var string
 	 */
-	public static $rules =  array(
+	public static $rules1 =  array(
 
 		'titre_propriete'=> 'required',
 		'nom_propriete'=> 'required|alpha',
@@ -21,6 +21,16 @@ class Propriete extends Eloquent {
 		'dimension_exterieur'=> 'numeric',
 		'literie'=> 'numeric',
 
+		);
+	public static $rules2 = array(
+		'pays'=> 'required|integer',
+		'region'=> 'required|integer',
+		'sous_region'=>'required|integer',
+		'localite'=>'required|integer',
+		'adresse'=>'required',
+		'situation'=>'required|integer',
+		'distance'=>'required|integer',
+		'region_touristique'=>'required',
 		);
 
 	public static $sluggable = array(

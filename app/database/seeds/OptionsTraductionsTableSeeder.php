@@ -277,7 +277,12 @@ class OptionsTraductionsTableSeeder extends Seeder {
 					),
 
 				),
-				//en
+				/**
+				*
+				* EN
+				*
+				**/
+				
 				'en' => array(
 
 					array(

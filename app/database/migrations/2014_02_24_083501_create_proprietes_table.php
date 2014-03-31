@@ -44,8 +44,8 @@ class CreateProprietesTable extends Migration {
 			$table->foreign('pays_id')->references('id')->on('pays');
 			$table->integer('region_id')->unsigned()->nullable();
 			$table->foreign('region_id')->references('id')->on('regions');
-			$table->integer('sous_region')->unsigned()->nullable();
-			$table->foreign('sous_region')->references('id')->on('sous_regions');
+			$table->integer('sous_region_id')->unsigned()->nullable();
+			$table->foreign('sous_region_id')->references('id')->on('sous_regions');
 			$table->integer('type_batiment_id')->unsigned();
 			$table->foreign('type_batiment_id')->references('id')->on('types_batiments');
 

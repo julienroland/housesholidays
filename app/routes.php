@@ -160,6 +160,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		
 		Route::post(Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape1'), array('as'=>'inscription_etape1','uses'=>'InscriptionController@saveBatiment'));
 
+		Route::put( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape1').'/{id}', array('as'=>'inscription_etape1_update', 'uses'=>'InscriptionController@updateBatiment'));
 		/**
 		*
 		* Localisation du batiment
@@ -169,7 +170,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape2'), array('as'=>'inscription_etape2', 'uses'=>'InscriptionController@saveLocalisation'));
 
-		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape2').'/{id}', array('as'=>'inscription_etape2_update', 'uses'=>'InscriptionController@updateLocalisation'));
+		
 		
 
 

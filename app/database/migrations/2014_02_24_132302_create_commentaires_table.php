@@ -16,7 +16,9 @@ class CreateCommentairesTable extends Migration {
 			$table->increments('id');
 			$table->string('titre');
 			$table->text('text');
-			$table->date('date');
+			$table->date('date_sejour');
+			$table->boolean('statut');
+			$table->integer('note');
 			$table->integer('users_id')->unsigned();
 			$table->foreign('users_id')->references('id')->on('users');
 			$table->integer('proprietes_id')->unsigned();

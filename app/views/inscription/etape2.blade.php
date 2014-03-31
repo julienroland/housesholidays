@@ -26,7 +26,7 @@
 
 @if(Session::get('etape2') && Helpers::isOk(Session::get('proprieteId')))
 
-{{Form::open(array('method'=>'put','route'=>array('inscription_etape2_update',Auth::user()->slug,Session::get('proprieteId'))))}}
+{{Form::open(array('method'=>'put','route'=>array('inscription_etape1_update',Auth::user()->slug,Session::get('proprieteId'))))}}
 
 @else
 
@@ -48,23 +48,23 @@
 	</ul>
 	<div id="fragment-1">
 		<span>{{trans('general.fr')}}</span>
-		{{Form::text('titre_propriete[1]', Session::has('input_2') && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][1]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder'),'required'))}}
+		{{Form::text('titre_propriete[1]', Session::has('input_2') && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][1]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-2">
 		<span>{{trans('general.en')}}</span>
-		{{Form::text('titre_propriete[2]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][2]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder'),'required'))}}
+		{{Form::text('titre_propriete[2]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][2]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-3">
 		<span>{{trans('general.nl')}}</span>
-		{{Form::text('titre_propriete[3]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][3]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder'),'required'))}}
+		{{Form::text('titre_propriete[3]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][3]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-4">
 		<span>{{trans('general.de')}}</span>
-		{{Form::text('titre_propriete[4]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][4]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder'),'required'))}}
+		{{Form::text('titre_propriete[4]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][4]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-5">
 		<span>{{trans('general.es')}}</span>
-		{{Form::text('titre_propriete[5]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][5]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder'),'required'))}}
+		{{Form::text('titre_propriete[5]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][5]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 </div>
 <br/>
@@ -128,8 +128,6 @@
 <h2 aria-level="2" role="heading">{{trans('form.title_lit')}}</h2>
 
 
-
-
 @foreach( $listOption->literie as $key => $literie )
 
 {{Form::label('literie_'.$literie->id,$literie->valeur)}}
@@ -161,6 +159,6 @@
 
 @endforeach
 <br/>
-{{Form::submit('valider')}}
+{{Form::submit(trans('form.button_valid'))}}
 {{Form::close()}}
 @stop

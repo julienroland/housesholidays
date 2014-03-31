@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
   {{HTML::style('css/chosen.css')}}
-	{{HTML::style('css/ui-lightness/jquery-ui-1.10.4.custom.css')}}
+  {{HTML::style('css/ui-lightness/jquery-ui-1.10.4.custom.css')}}
 </head>
 <body id="{{isset($page) ? $page : ''}}">
 
@@ -22,18 +22,23 @@
   {{link_to(Lang::get('routes.connexion'),trans('general.connexion'))}}
 
   @endif
+
   @yield('container')
 
-  {{HTML::script('js/jquery.js')}}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  @if(isset($page) && $page ==='inscription_etape3')
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDTG91JrczloADLMwqPBbgPEGjOjOTX9o&sensor=false"></script>
+  {{HTML::script('js/map.js')}}
+  @endif
   {{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
 
   {{HTML::script('js/chosen.jquery.js')}}
   {{HTML::script('js/modernizr.js')}}
   {{HTML::script('js/js-webshim/minified/polyfiller.js')}}
   {{HTML::script('js/main.js')}}
+  
 
-
-    <script> $( ".tabs" ).tabs();</script>
+  <script> $( ".tabs" ).tabs();</script>
 
   <script>
 
