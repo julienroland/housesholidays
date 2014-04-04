@@ -2,6 +2,7 @@
 
 use Orchestra\Testbench\TestCase;
 
+
 class SluggableTest extends TestCase {
 
   /**
@@ -53,6 +54,7 @@ class SluggableTest extends TestCase {
 					'database' => ':memory:',
 					'prefix'   => '',
 			));
+
 	}
 
 
@@ -333,6 +335,55 @@ class SluggableTest extends TestCase {
 		));
 		$post2->save();
 		$this->assertEquals($post2->slug, 'a-post-title-1');
+	}
+
+	/**
+	 * Test ignoring current model when generating unique slugs (issue #16)
+	 *
+	 * @test
+	 */
+	public function testIssue16()
+	{
+		$this->settings(array(
+			'unique' => true,
+			'on_update' => true,
+		));
+		$post = $this->post('My first post');
+		$this->assertEquals($post->slug, 'my-first-post');
+
+		$post->dummy = 'Dummy data';
+		$post->save();
+		$this->assertEquals($post->slug, 'my-first-post');
+	}
+
+	/**
+	 * Test ignoring current model when generating unique slugs (issue #16)
+	 *
+	 * @test
+	 */
+	public function testArdent()
+	{
+		$post = PostArdent::create(array(
+			'title'    => 'My First Post'
+		));
+		$post->save();
+		// \Sluggable::make($post, true);
+		$this->assertEquals($post->slug, 'my-first-post');
+	}
+
+	/**
+	 * Test model replication (issue #20)
+	 *
+	 * @test
+	 */
+	public function testIssue20()
+	{
+		$post = $this->post('My first post');
+		$this->assertEquals($post->slug, 'my-first-post');
+
+		$new_post = $post->replicate();
+		\Sluggable::make($new_post,true);
+		$this->assertEquals($new_post->slug, 'my-first-post-1');
 	}
 
 }

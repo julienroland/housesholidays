@@ -90,6 +90,7 @@ return array(
         'key_invalid'=> 'Format de la clé invalide',
         'step1'=> 'Vos informations de l\'étape précédente ont bien été enregistrées',
         'step2'=> 'Vos informations sur votre batiment de l\'étape précédente ont bien été enregistrées',
+        'step3'=> 'Vos informations sur la localisation de votre batiment de l\'étape précédente ont bien été enregistrées',
         ),
 
     /*

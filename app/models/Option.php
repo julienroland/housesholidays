@@ -97,18 +97,25 @@ class Option extends Eloquent {
 
 		}elseif($etape === 'etape_3'){
 
-				$data = array(
-					'situation'=> array(
-						''=>''
-						),
-					);
+			$data = array(
 
-				foreach($t['b_situation_geographique'][0] as $dataArr){
+				'situation'=> array(
+					'' => '',
+					),
+				'situationId'=>array(
+					'id'=>$t['b_situation_geographique'][0][0]->option_id
+					),
+				'distanceId'=>array(
+					'id'=>$t['b_situation_geographique'][1][0]->option_id
+					),
+				);
 
-					$data['situation'][$dataArr->id]  = $dataArr->valeur ;
-				}
-				
+			foreach($t['b_situation_geographique'][0] as $dataArr){
+
+				$data['situation'][$dataArr->id] = $dataArr->valeur ;
 			}
+
+		}
 	/**
 	*
 	* Return une array pour les selects dans les formulaires

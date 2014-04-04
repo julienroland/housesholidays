@@ -2,20 +2,86 @@
     "use strict";
 
     var sBasePath = 'http://localhost/pix/housesholidays/public/',
-    oLang;
+    oLang,
+    upload_dir = sBasePath+'uploads/',
+    propriete_dir = 'proprietes',
+    $supprimerImage = $('.supprimerImage'),
+    settingsUpload;
 
     webshims.polyfill('forms dom-support');
 
     $(function() {
 
-        getTraductions(  );
+     getTraductions(  );
 
-        var visualReplacement = $('.chosen-container');
+     if($('#inscription_etape4').length !== 0){
 
-        $(this).after(visualReplacement).hide();
+         uploadFile(  );
+
+     }
+
+     $('#addTarif').submit( function(e){
+        e.preventDefault();
+        addTarif( $(this) );
+    } );
+
+     $supprimerImage.on('click', function( e ){
+        e.preventDefault();
+        deleteImage( $(this) );
+
+    });
+     var addTarif = function( $that ){
+        var sData = $that.serialize();
+        console.log(sData);
+        $.ajax({
+          type: "get", 
+          data:sData,
+          url: sBasePath + 'addTarif',
+          dataType: "json",
+          success:function( oData ){
+            console.log(oData);
+          }
+      });
+        
+
+    }
+    var visualReplacement = $('.chosen-container');
+
+    $(this).after(visualReplacement).hide();
             //bind the visual element to the API element
             webshims.addShadowDom(this, visualReplacement);
         });
+
+    /**
+    
+        TODO:
+        - ajouter au fichiers de lang les trucs du bas
+        - Second todo item
+    
+        **/
+
+
+
+        $('.submit_form').click(function() {
+
+            var validate = $("#myform").validationEngine('validate');
+            var has_file = $(".ajax-file-upload-statusbar").length //check if there files need upload
+
+            if(validate){
+
+                if(has_file != false){
+
+                    settingsUpload.startUpload();
+
+                }else{
+
+                    $('#myform').submit();
+
+                }
+            }
+        });
+
+        /*$('#file').on('change', saveFile );*/
 
     /**
     *
@@ -44,6 +110,7 @@
     * Get les sous_regions en fonction dde la region
     *
     **/
+
     $(".regionAjax").chosen().change( function(){
 
         loadChildSelect( 'region', $(this) );
@@ -52,21 +119,132 @@
 
     /**
     *
+    * Supprimer l'image 
+    *
+    **/
+    
+    var deleteImage = function( $that ){
+        $.ajax({
+            type: "get", 
+            async:   false,
+            url: sBasePath + 'deleteImage/'+ $that.attr('data-id'),
+            dataType: "json",
+            success:function( oData ){
+
+                if( oData ==='success'){
+                    $that.parent().fadeOut( 'fast', function(){
+                        $(this).remove();   
+                    });
+                }
+            }
+        });
+    }
+    /**
+    *
     * Chope tous les fichier de traductions 
     *
     **/
     var getTraductions = function(  ) {
 
-       $.ajax({
+     $.ajax({
 
         type: "get", 
+        async:   false,
         url: sBasePath+'getAllLang',
         dataType: "json",
         success:function( oData ){
             oLang = oData;
+            return true;
         }
     });
-   };
+ };
+ var getProprietePhoto = function( userId, proprieteId ){
+
+    if( userId && proprieteId ){
+
+        $.ajax({
+         type: "get", 
+         url: sBasePath+'getPhotoPropriete/'+ proprieteId,
+         dataType: "json",
+         success:function( oData ){
+            oData = oData.data;
+            if( oData ){
+
+                if($('#images').length == 0){
+
+                    $('#baseForm').after('<div id="images"><ul></ul></div>');
+
+                }
+                $('#images').find('li').remove();
+
+            }
+            for( var i in oData ){
+
+                $('#images ul').append('<li><div class="image"><img src="'+ upload_dir + userId + '/' + propriete_dir + '/' + proprieteId + '/' + oData[i].url +'"></div><a href="" class="supprimerImage" data-id="'+oData[i].id+'" title="'+oLang.form.supp+'">'+oLang.form.supp_image+'</a></li>'); //userId/ProprieteId/
+                console.log($(this));
+                $('.supprimerImage').on('click', function( e ){
+                    e.preventDefault();
+                    deleteImage( $(this) );
+
+                });
+            }
+
+        }
+    });
+
+}
+
+}
+   /**
+   *
+   * Param du plugins uploadFile
+   *
+   **/
+   
+   var uploadFile = function(){
+
+    settingsUpload = $("#mulitplefileuploader").uploadFile({
+        url: sBasePath + "ajax/uploadImage",
+        method: "post",
+        allowedTypes:"jpg,gif,bmp",
+        fileName: "file",
+        autoSubmit:true,
+        multiple:true,
+        showStatusAfterSuccess:true,
+        dragDropStr: "<span><b>"+oLang.form.dragDrop+"</b></span>",
+        abortStr:oLang.form.abandonner,
+        cancelStr:oLang.form.stop,
+        doneStr:oLang.form.ok,
+        multiDragErrorStr:oLang.form.multiDrag,
+        extErrorStr:oLang.form.ext_pas_autorise,
+        sizeErrorStr:oLang.form.taille_pas_autorise,
+        uploadErrorStr:oLang.form.upload_pas_autorise,
+        onSubmit:function(files)
+        {
+            $('<input>').attr({
+                type: 'text',
+                name: 'file[]',
+                value: files
+            }).appendTo('#myform');
+
+            
+        },
+
+        onSuccess:function(files,data,xhr)
+        {
+            $('#myform').submit();
+
+            getProprietePhoto( $('form').attr('data-userId'), $('form').attr('data-proprieteId') );
+        },
+
+        onError: function(files,status,errMsg)
+        {
+            $("#status").html("<font color='green'>Something Wrong</font>");
+        }
+
+    });
+
+}
 
     /**
     *

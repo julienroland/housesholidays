@@ -116,6 +116,16 @@ Route::filter('auth', function()
 	};
 });
 
+Route::filter('inscription_propriete', function()
+{	
+
+	if (!Session::has('proprieteId') && Helpers::isNotOk( Session::get('proprieteId'))){ 
+
+		return Redirect::to(Lang::get('routes.compte')); 
+
+	}
+});
+
 
 Route::filter('auth.basic', function()
 {
@@ -164,7 +174,7 @@ Route::filter('guest', function()
 				*
 				**/
 				Cookie::forget('remember');
-				return Redirect::to(Lang::get('routes.connexion'));
+
 			}
 
 		};

@@ -3,44 +3,99 @@
 use Carbon\Carbon;
 
 class Helpers {
+	
+	/**
+	*
+	* Convertis une date fr format dd/mm/yy vers une date serveur format yy-mm-dd
+	*
+	**/
+	
+	public static function toServerDate( $date ){
+
+		if( explode('-', $date) ){
+
+			$dateEx = explode('-', $date);
+
+			return $dateEx[2].'-'.$dateEx[1].'-'.$dateEx[0];
+
+		}
+		elseif( explode('/', $date) )
+		{
+			$dateEx = explode('/', $date);
+
+			return $dateEx[2].'-'.$dateEx[1].'-'.$dateEx[0];
+		}
+	}
+	/**
+	*
+	* Images
+	*
+	**/
+	public static function replaceExtension( $string, $extension ){
+
+		$stringEx = explode( '.', $string );
+
+		return $stringEx[0].'.'.$extension;
+	}
+
 	public static function getLangRoute( $route ){
 
 		return Lang::get('routes.'.str_replace(App::getLocale().'/','',$route));
 	}
+
+	public static function addBeforeExtension( $stringWithExt, $string ){
+
+		$stringEx = explode( '.', $stringWithExt );
+
+		return Helpers::toSlug( $stringEx[0].' '.$string.'.'.$stringEx[1] );
+
+	}
 	/**
 	*
-	* Si il n'y a aucune session de langue, on refait le parcous pour en définir une
+	* Ajoute le timestamp dans le nom de l'image
 	*
 	**/
-	public static function ifNotSessionLangId(){
 
-		/*if(Helpers::isNotOk(Session::get('langId'))){
+	public static function addTimestamp( $image , $type = null , $ext = null, $timestamp = null ){
 
-			$langNav = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+		if(Helpers::isOk( $image )  &&  explode( '.', $image )){
 
-			if (helpers::isOk($langNav)) 
-			{
-				$langue = explode(',',$langNav);
-				$langue = strtolower(substr(chop($langue[1]),0,2));
+			$imageEx = explode( '.', $image );
 
-				if (in_array($langue, Config::get('app.available_locales')))
-				{
-					Session::put('lang',$langue );
-					Session::put('langId',Langage::whereInitial($langue)->first(['id'])->id);
-					\App::setLocale($langue);
-				}
-				else
-				{
+			if( Helpers::isNotOk( $timestamp )){
 
-					Session::put('langId', Langage::whereInitial(Config::get('app.locale'))->first(['id'])->id);
-				}
+				$name = $imageEx[0].date('dmYhis'); 
+			}
+			else{
+				
+				$name = $imageEx[0].$timestamp; 
+			}
+
+			if( Helpers::isOk( $ext )){
+
+				$extension = $ext;
 			}
 			else
 			{
-				Session::put('langId', Langage::whereInitial(Config::get('app.locale'))->first(['id'])->id);
-			}
+				$extension = $imageEx[1]; 
 
-		}*/
+			}
+			if( Helpers::isOk( $type )){
+
+				return $name.$type. '.' .$extension;
+			}
+			else
+			{
+				return $name. '.' .$extension;	
+			}
+			
+		}
+		else
+		{
+
+			return false;
+
+		}
 	}
 
 	
@@ -276,16 +331,16 @@ public static function createCarbonDate( $date , $type = 'us', $separator = '-' 
 
 	if($type === 'us'){
 
-	$dateExplode = explode($separator,$date);
+		$dateExplode = explode($separator,$date);
 
-	return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
+		return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
 
 	}
 	elseif( $type === 'eu'){
 
 		$dateExplode = explode($separator,$date);
 
-	return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
+		return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
 	}
 
 }

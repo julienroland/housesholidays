@@ -6,7 +6,15 @@
 <span class="success">{{$success}}</span>
 @endif
 
+@if(Session::get('etape2') && Helpers::isOk(Session::get('proprieteId')))
+
+{{Form::open(array('method'=>'put','route'=>array('inscription_etape2',Auth::user()->slug)))}}
+
+@else 
+
 {{Form::open(array('route'=>array('inscription_etape2',Auth::user()->slug)))}}
+
+@endif
 
 {{Form::label('pays',trans('form.enter_country'))}}
 {{Form::select('pays',$paysList, Session::has('input_3') ? Session::get('input_3')['pays']: '',array('class'=>'select paysAjax','data-placeholder'=>trans('form.enter_country')))}}
@@ -29,14 +37,17 @@
 <br/>
 
 {{Form::label('situation',trans('form.enter_situation'))}}
-{{Form::select('situation', $situationList,Session::has('input_3') ? Session::get('input_3')['situation']: '',array('class'=>'select','data-placeholder'=>trans('form.enter_situation')))}}
+{{Form::select('situation[]', $situationList, Session::has('input_3') ? Session::get('input_3')['situation']: '',array('class'=>'select','data-placeholder'=>trans('form.enter_situation'),'multiple'=>'true'))}}
 
 {{Form::label('distance',trans('form.enter_distance'))}}
 {{Form::text('distance',Session::has('input_3') ? Session::get('input_3')['distance']: '',array('placeholder'=>trans('form.enter_distance')))}}
 <br/>
+<button id="rechercheMap">Rechercher sur la carte</button>
 <div id="gmap" style="width:100%;height:400px;"></div>
 
 {{Form::hidden('latlng','',array('id'=>'latlng'))}}
+{{Form::hidden('situationId', $situationId['id'])}}
+{{Form::hidden('distanceId', $distanceId['id'])}}
 {{Form::submit(trans('form.button_valid'))}}
 {{Form::close()}}
 

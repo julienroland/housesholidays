@@ -25,12 +25,12 @@ class CreateTarifsTable extends Migration {
 			$table->float('prix-weekend');
 			$table->integer('jour_arrive_id')->unsigned();
 			$table->foreign('jour_arrive_id')->references('id')->on('jours_semaines');
-			$table->integer('tarif_special_weekend_id')->unsigned();
+			$table->integer('tarif_special_weekend_id')->unsigned()->nullable();
 			$table->foreign('tarif_special_weekend_id')->references('id')->on('tarifs_speciaux_weekends');
-			$table->integer('monnaies_id')->unsigned();
-			$table->foreign('monnaies_id')->references('id')->on('monnaies');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
+			$table->integer('monnaie_id')->unsigned();
+			$table->foreign('monnaie_id')->references('id')->on('monnaies');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
 
 			
 			$table->timestamps();

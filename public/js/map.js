@@ -38,15 +38,23 @@
  	$(function(){
 
  		
+ 		
 
  	});
 
  	var initialize = function(){
 
  		displayGoogleMap();
- 		sPosition = $adresse.val();
 
- 		/*getPosition( geocoder,  sPosition );*/
+ 		$('#rechercheMap').on('click', function( e ){
+ 			e.preventDefault();
+ 			getPosition( 'geocoder' );
+ 		});
+ 		/*if( $adresse.val() !== "" && $adresse.val() !== null){
+
+ 			sPosition = $adresse.val();
+ 			getPosition( geocoder,  sPosition, 'adresse' );
+ 		}*/
 
  		$adresse.on('change', function(){
 
@@ -137,9 +145,28 @@
  				sPays = $('#pays option:selected').text();
 
  			}
- 			else if(!sLocalite){
+ 			if(!sRegion){
+
+ 				sRegion = $('#region option:selected').text();
+
+ 			}
+ 			if(!sSousRegion){
+
+ 				sSousRegion = $('#sous_region option:selected').text();
+
+ 			}
+ 			if(!sSousRegion){
+
+ 				sSousRegion = $('#sous_region option:selected').text();
+
+ 			}
+ 			if(!sLocalite){
 
  				sLocalite = $('#localite option:selected').text();
+ 			}
+ 			if(!sAdresse){
+
+ 				sAdresse = $('#adresse').val();
  			}
 
  			var aMapOptions = {
@@ -152,7 +179,7 @@
 
  				},function(aResults,sStatus)
  				{
- 					if(sStatus ===google.maps.GeocoderStatus.OK)
+ 					if(sStatus === google.maps.GeocoderStatus.OK)
  					{
  						oData = aResults[0];
 
@@ -236,7 +263,7 @@ else
 {	
 
 	$latlng.val( " " );
-	$latlng.val( sPosition );
+	$latlng.val( sPosition.lat() + ',' + sPosition.lng() );
 	gMap.panTo( sPosition );
 	gMap.setZoom( nZoomAdresse );
 }
@@ -253,8 +280,9 @@ var createMarker = function( gLatLng ){
 	});
 
 	google.maps.event.addListener(gMarker, 'dragend', function( e ) {
-		console.log(e);
+
 		getPosition ( "latlng" , new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
+		
 	});
 
 

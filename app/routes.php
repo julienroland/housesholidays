@@ -63,10 +63,60 @@ Route::get('getChildDataSelect/{form}/{to1}/{to2}/{to3}/{id}',array('uses'=>'For
 
 /**
 *
+* Upload d'image
+* @ajax
+*
+**/
+
+Route::any( 'ajax/uploadImage', array('as'=>'ajax_upload_image', 'uses'=>'ImageController@postImage'));
+
+/**
+*
+* Get photos de la propriete
+* @ajax
+*
+**/
+
+Route::any( 'getPhotoPropriete/{proprieteId}', array('as'=>'ajax_photo_propriete', 'uses'=>'ProprieteController@getPhoto'));
+
+/**
+*
+* Delete
+* @ajax
+*
+**/
+
+Route::get( 'deleteImage/{photoId}', array( 'as'=>'ajax_delete_photo_propriete', 'uses'=>'ImageController@deletePhoto' ));
+
+/**
+*
+* Ajout de tarif
+* @ajax
+*
+**/
+///{proprieteId}/{saison}/{debut}/{fin}/{duree_min}/{nuit}/{semaine}/{mois}/
+Route::get('addTarif', array('as'=>'addTarif', 'uses'=>'InscriptionController@addTarif'));
+/**
+*
 * Lang ajax
 *
 **/
 Route::get('getAllLang',array('uses'=>'LangController@getAll'));
+
+/*============================
+=            test            =
+============================*/
+Route::get('toto', function(){
+	$image = Image::make(file_get_contents('./uploads/justin.jpg'));
+	File::exists(public_path().'/uploads/'.Auth::user()->id.'/proprietes/33/') or File::makeDirectory(public_path().'/uploads/'.Auth::user()->id.'/proprietes/33/');
+
+	$image->resize(800, null)->crop(300,200)->greyScale()->save(public_path().'/uploads/'.Auth::user()->id.'/proprietes/33/justin.jpg');
+	return Response::make($image, 200, array('Content-Type' => 'image/jpeg'));
+});
+
+
+
+/*-----  End of test  ------*/
 
 
 /**
@@ -102,21 +152,14 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		});
 
-	/**
-	*
-	* Test si la session est vide, si oui je sais qu'il n'y a pas de prefix dans l'url. Je cherche donc la langue locale et je la charge.
-	*
-	**/
-	helpers::ifNotSessionLangId();
 
-	
-	Route::get('/',function(){
-		return View::make('index');
+		Route::get('/',function(){
+			return View::make('index');
 
-		/*return Redirect::route('inscription');*/
-		/*dd(Session::get('langId'));*/
+			/*return Redirect::route('inscription');*/
+			/*dd(Session::get('langId'));*/
 
-	});
+		});
 
 		/**
 		*
@@ -147,9 +190,17 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		/*-----  End of DECONNEXION  ------*/
 		
+		
 		/*==============================
 		=            PROFIL            =
 		==============================*/
+
+		Route::get(Lang::get('routes.compte').'/{slug}', array('as'=>'compte','uses'=>'CompteController@index'));
+
+		Route::get(Lang::get('routes.compte'), function(){
+
+			return Redirect::to( Lang::get('routes.compte').'/'. Auth::user()->slug );
+		});
 
 		/**
 		*
@@ -161,31 +212,58 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		Route::post(Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape1'), array('as'=>'inscription_etape1','uses'=>'InscriptionController@saveBatiment'));
 
 		Route::put( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape1').'/{id}', array('as'=>'inscription_etape1_update', 'uses'=>'InscriptionController@updateBatiment'));
+
+		/**
+		*
+		* Test si on a la session de la propriete crée 
+		*
+		**/
+		
+		Route::group(array('before'=>'inscription_propriete'), function(){
+
 		/**
 		*
 		* Localisation du batiment
 		*
 		**/
+
 		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape2'), array('as'=>'etape2Index', 'uses'=>'InscriptionController@indexLocalisation'));
 
 		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape2'), array('as'=>'inscription_etape2', 'uses'=>'InscriptionController@saveLocalisation'));
 
-		
-		
+		Route::put( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape2'), array('as'=>'inscription_etape2_update', 'uses'=>'InscriptionController@updateLocalisation'));
 
-
-		Route::get(Lang::get('routes.compte').'/{slug}', array('as'=>'compte','uses'=>'CompteController@index'));
-
-		Route::get(Lang::get('routes.compte'), function(){
-
-			return Redirect::to( Lang::get('routes.compte').'/'. Auth::user()->slug );
-		});
+		/**
+		*
+		* Photos
+		*
+		**/
 		
+		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('as'=>'etape3Index', 'uses'=>'InscriptionController@indexPhoto'));
+
+		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('as'=>'inscription_etape3', 'uses'=>'UploadController@postImage'));
+
+		/**
+		*
+		* Tarif
+		*
+		**/
 		
+		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape4'), array('as'=>'etape4Index', 'uses'=>'InscriptionController@indexTarif'));
+
+	});
+
+		/**
+		*
+		* Inscriptions incomplètes
+		*
+		**/
+
+		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_list_pasfinie'), array('as'=>'listInscriptionPasFinie', 'uses'=>'CompteController@listInscriptionIncomplete'));
 		/*-----  End of PROFIL  ------*/
-		
-		
-		
+
+
+
 	});
 
 		/*==================================================

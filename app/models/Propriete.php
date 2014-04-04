@@ -1,6 +1,6 @@
 <?php
 
-
+use Carbon\Carbon;
 class Propriete extends Eloquent {
 
 	/**
@@ -28,9 +28,7 @@ class Propriete extends Eloquent {
 		'sous_region'=>'required|integer',
 		'localite'=>'required|integer',
 		'adresse'=>'required',
-		'situation'=>'required|integer',
 		'distance'=>'required|integer',
-		'region_touristique'=>'required',
 		);
 
 	public static $sluggable = array(
@@ -40,9 +38,22 @@ class Propriete extends Eloquent {
 
 	public function proprieteTraduction(){
 
-		return $this->hasMany('proprieteTraduction');
+		return $this->hasMany('ProprieteTraduction');
 
 	}
+
+	public function tarif(){
+
+		return $this->hasMany('Tarif');
+
+	}
+
+	public function photoPropriete(){
+
+		return $this->hasMany('PhotoPropriete');
+
+	}
+
 	public function option(){
 
 		return $this->belongsToMany('Option')
@@ -91,4 +102,51 @@ class Propriete extends Eloquent {
 		return Session::has('currentEtape') ? Session::get('currentEtape') : 1;
 
 	}
+	public static function getPhoto( $proprieteId , $type = null, $output = null ) {
+
+		if(!isset($type) && Helpers::isNotOk( $type ))
+		{
+			$type = Config::get('var.image_thumbnail');
+		}
+		
+        /**
+        *
+        * Get propriete par son id et le user
+        *
+        **/
+
+        $proprietes = Propriete::find( $proprieteId )->photoPropriete()->orderBy('created_at','desc')->get();
+
+        $extension = ImageType::where('nom',Config::get('var.image_thumbnail'))->pluck('extension');
+
+        $data = array(
+        	'data'=>array());
+
+        foreach( $proprietes as $propriete){
+
+        	array_push($data['data'], (object)array( 
+
+        		'url'=>Helpers::addBeforeExtension($propriete->url, $type),
+        		'date'=>$propriete->created_at->toDateTimeString(),
+        		'propriete_id'=>$propriete->propriete_id,
+        		'alt'=>$propriete->alt,
+        		'extension'=>$extension,
+        		'id'=>$propriete->id,
+        		) );
+
+
+        }
+
+        $data['count'] = count( $proprietes );
+        
+        if( $output==='json' ){
+
+        	return json_encode((object)$data);
+        	
+        }
+        else
+        {
+        	return (object)$data;
+        }
+    }
 }

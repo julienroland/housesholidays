@@ -100,12 +100,12 @@ class InscriptionController extends BaseController {
 			* Envoie de l'email de confirmation
 			*
 			**/
-			Mail::queue('emails.bienvenue', array($input, $user), function($message) use($user)
+			/*Mail::queue('emails.bienvenue', array($input, $user), function($message) use($user)
 			{
 				$message->from('noreply@Housesholidays.com', 'Housesholidays');
 				$message->to($user->email, $user->prenom . ' ' . $user->nom)
 				->subject('Bienvenue sur Housesholidays!');
-			});
+			});*/
 
 			/**
 			*
@@ -419,6 +419,7 @@ class InscriptionController extends BaseController {
 			* Boucle sur les titres pour les ajouters dans la table de traduction
 			*
 			**/
+
 			ProprieteTraduction::whereProprieteId($id)->whereKey('titre')->delete();
 			
 			foreach($titres as $key => $titre){
@@ -514,12 +515,19 @@ class InscriptionController extends BaseController {
 		}
 	}
 	/*-----  End of ETAPE 2  ------*/
+
 		/*==============================
 		=            ETAPE3            =
 		==============================*/
 		
 		public function indexLocalisation(){
 
+			/**
+			*
+			* Preparation des listes pour les selects
+			*
+			**/
+			
 			$paysList = Pays::getListForm();
 
 			$regionList = Region::getListForm();
@@ -527,42 +535,257 @@ class InscriptionController extends BaseController {
 			$sousRegionList = SousRegion::getListForm();
 
 			$localiteList = Localite::getListForm();
-
+			
 			$situationList = Option::getListForm('etape_3')->situation;
 
+			/**
+			*
+			* Avoir les id des options pour situations et distances
+			*
+			**/
+
+			$situationId = Option::getListForm('etape_3')->situationId;
+
+			$distanceId = Option::getListForm('etape_3')->distanceId;
+
+			/**
+			*
+			* On est toujours à l'étape 3
+			*
+			**/
+			
 			Session::put('currentEtape', 3 );
 
 			return View::make('inscription.etape3', array('page'=>'inscription_etape3'))
 
-			->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList')));
+			->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList','situationId','distanceId')));
 
 		}
+
 		public function saveLocalisation(){
 
+			/**
+			*
+			* Get all input
+			*
+			**/
+			
 			$input = Input::all();
 
+			/**
+			*
+			* On ajout les inputs à la session
+			*
+			**/
+			
 			Session::put('input_3', $input );
 
+			/**
+			*
+			* On est toujours à l'étape 3
+			*
+			**/
+			
 			Session::put('currentEtape', 3);
 
 			$validation = Validator::make( $input , Propriete::$rules2 );
-			dd($input);
+
 			if( $validation->passes() ){
+
+				/**
+				*
+				* Trouvé la propriete en question via l'id stocké
+				*
+				**/
 
 				$propriete = Propriete::find( Session::get('proprieteId') );
 
+				/**
+				*
+				* On met à jour
+				*
+				**/
+				
 				$propriete->pays_id = $input['pays'];
 				$propriete->region_id = $input['region'];
-				$propriete->sous_region = $input['sous_region'];
+				$propriete->sous_region_id = $input['sous_region'];
 				$propriete->localite_id = $input['localite'];
 				$propriete->adresse = $input['adresse'];
+				$propriete->latlng = $input['latlng'];
+				$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 2;
 
+				/**
+				*
+				* On sauvegarde les modifications
+				*
+				**/
+				
 				$propriete->save();
-				dd($propriete);
+
+				/**
+				*
+				* On attach les clés étrangère dans la table pivot option_propriete
+				*
+				**/
+				
+				$propriete->option()->attach( $input['distanceId'] , array('valeur'=> $input['distance'] ) );
+
+				foreach( $input['situation'] as $situation){
+
+					$propriete->option()->attach( $input['situationId'] , array('valeur'=> $situation ) );
+
+				}
+
+				/**
+				*
+				* Si a resort bien quelque chose
+				*
+				**/
+				
+				if(Helpers::isOk( $propriete )){
+
+					/**
+					*
+					* L'étape est finie
+					*
+					**/
+					
+					Session::put('etape3', true);
+
+					/**
+					*
+					* Etape suivante avec message de success
+					*
+					**/
+					
+					return Redirect::route('etape3Index', Auth::user()->slug)
+					->with(array('success',Lang::get('validation.custom.step3')));
+				}
 			}
 			else
 			{
-				dd('pasok');
+
+				Session::put('etape3',false);
+				Session::put('currentEtape', 3 );
+				return Redirect::route( 'etape2Index', Auth::user()->slug )
+				->withInput()
+				->withErrors($validation);
+			}
+			
+		}
+
+		public function updateLocalisation(){
+
+			/**
+			*
+			* Get all input
+			*
+			**/
+			
+			$input = Input::all();
+
+			/**
+			*
+			* On ajout les inputs à la session
+			*
+			**/
+			
+			Session::put('input_3', $input );
+
+			/**
+			*
+			* On est toujours à l'étape 3
+			*
+			**/
+			
+			Session::put('currentEtape', 3);
+
+			$validation = Validator::make( $input , Propriete::$rules2 );
+
+			if( $validation->passes() ){
+
+				/**
+				*
+				* Trouvé la propriete en question via l'id stocké
+				*
+				**/
+				
+				$propriete = Propriete::find( Session::get('proprieteId') );
+
+				/**
+				*
+				* On met à jour
+				*
+				**/
+				
+				$propriete->pays_id = $input['pays'];
+				$propriete->region_id = $input['region'];
+				$propriete->sous_region_id = $input['sous_region'];
+				$propriete->localite_id = $input['localite'];
+				$propriete->adresse = $input['adresse'];
+				$propriete->latlng = $input['latlng'];
+				$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 2;
+
+				/**
+				*
+				* On sauvegarde les modifications
+				*
+				**/
+				
+				$propriete->save();
+
+				/**
+				*
+				* On attach les clés étrangère dans la table pivot option_propriete
+				*
+				**/
+				//id 13 = localisation
+				$typeOption  = TypeOption::find(13);
+
+				$listOption = $typeOption->option()->get();
+
+				foreach($listOption as $option){
+
+					$propriete->option()->detach( $option->id );
+				}
+				
+				$propriete->option()->attach( $input['distanceId'] , array('valeur'=> $input['distance'] ) );
+
+				foreach( $input['situation'] as $situation){
+
+					$propriete->option()->attach( $input['situationId'] , array('valeur'=> $situation ) );
+
+				}
+
+				/**
+				*
+				* Si a resort bien quelque chose
+				*
+				**/
+				
+				if(Helpers::isOk( $propriete )){
+
+					/**
+					*
+					* L'étape est finie
+					*
+					**/
+					
+					Session::put('etape3', true);
+
+					/**
+					*
+					* Etape suivante avec message de success
+					*
+					**/
+					
+					return Redirect::route('etape3Index', Auth::user()->slug)
+					->with(array('success',Lang::get('validation.custom.step3')));
+				}
+			}
+			else
+			{
+
 				Session::put('etape3',false);
 				Session::put('currentEtape', 3 );
 				return Redirect::route( 'etape2Index', Auth::user()->slug )
@@ -573,8 +796,138 @@ class InscriptionController extends BaseController {
 		}
 		
 		/*-----  End of ETAPE3  ------*/
+
+
+		/*===============================
+		=            ETAPE 4            =
+		===============================*/
+		public function indexPhoto(){
+
+			$photosPropriete = Propriete::getPhoto( Session::get('proprieteId'), Config::get('var.image_thumbnail'));
+
+			Session::put('currentEtape', 4 );
+
+			return View::make('inscription.etape4', array('page'=>'inscription_etape4'))
+			->with(compact('photosPropriete'));
+		}
 		
 		
+		/*-----  End of ETAPE 4  ------*/
+		
+		/*==============================
+		=            ETAPE5            =
+		==============================*/
+		
+		public function indexTarif(){
+
+			$nuits = array(
+				''=>''
+				);
+
+			for( $i = 1; $i < Config::get('var.nb_nuits'); $i++){
+				$nuits[$i] = $i.' '.Lang::get('general.nuits');
+			}
+
+			$monnaies = Monnaie::getList(  );
+
+			$jours = JourSemaine::getList();
+
+			Session::put('currentEtape', 5 );
+
+			return View::make('inscription.etape5', array('page'=>'inscription_etape5') )
+			->with(compact('nuits','monnaies','jours'));
+		}
+		/**
+		*
+		* Ajout des tarifs
+		* @ajax
+		*
+		**/
+		
+		public function addTarif(  ){			
+
+			$input = Input::all();
+
+			/**
+			*
+			* On ajout les inputs à la session
+			*
+			**/
+			
+			Session::put('input_4', $input );
+
+			/**
+			*
+			* On est toujours à l'étape 5
+			*
+			**/
+			
+			Session::put('currentEtape', 5);
+
+
+			$propriete = Propriete::find(Session::get('proprieteId'));
+			$monnaie = Monnaie::find( (int)$input['monnaie'] );
+
+			$tarif = new Tarif;
+
+			$tarif->date_debut = Helpers::toServerDate( $input['debut'] );
+			$tarif->date_fin = Helpers::toServerDate( $input['fin'] );
+			$tarif->duree_min = $input['min_nuit'];
+			$tarif->saison = $input['nom_saison'];
+			$tarif->prix_nuit = $input['nuit'];
+			$tarif->prix_semaine = $input['semaine'];
+			$tarif->prix_mois = $input['mois'];
+			/*$tarif->prix_weekend = $input['prix_weekend']; */
+			$tarif->jour_arrive_id = $input['arrive'];
+			$tarif->monnaie_id = $input['monnaie'];
+
+			if(Helpers::isOk( $tarif->weekend )){
+
+				$tarif->prix_weekend = $input['prix_weekend'];
+
+			}
+
+			
+			$tarifSpeciaux = new TarifSpeciauxWeekend;
+
+			if(Helpers::isOK( $input['duree_supp'] )){
+
+				$tarifSpeciaux->max_nuit = $input['nuit_max'];
+				$tarifSpeciaux->save();
+			}
+
+			foreach( $input['jour_weekend'] as $key => $jour ){
+
+				$tarifSpeciaux->jourSemaine()->attach( $key );
+
+			}
+
+			$tarif = $propriete->tarif()->save($tarif);
+			$tarif = $monnaie->tarif()->save($tarif);
+			$tarif = $tarifSpeciaux->tarif()->save($tarif);
+			$tarif->save();
+
+			$propriete = Propriete::find(Session::get('proprieteId'));
+
+			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 5;
+
+			$propriete->save();
+			
+			if(Helpers::isOk($tarif)){
+
+				return Response::json('success', 200);
+
+			} else {
+
+				return Response::json('error', 400);
+			}
+
+		}
+		/*-----  End of ETAPE5  ------*/
+
+
+
+
 		public function activation( $key ){
 
 		/**

@@ -12,7 +12,7 @@ class CreateTarifsSpeciauxWeekendsJoursTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tarifs_speciaux_weekends_jours', function(Blueprint $table) {
+		Schema::create('jour_semaine_tarif_speciaux_weekend', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('tarif_id')->unsigned();
 			$table->foreign('tarif_id')->references('id')->on('tarifs_speciaux_weekends');
@@ -31,7 +31,7 @@ class CreateTarifsSpeciauxWeekendsJoursTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('tarifs_speciaux_weekends_jours_semaines');
+		Schema::drop('jour_semaine_tarif_speciaux_weekend');
 	}
 
 }

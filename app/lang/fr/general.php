@@ -11,6 +11,7 @@ return array(
 'comment'=>'Commmentaires',
 'demande'=>'Delandes',
 'index'=>'Accueil',
+'nuits'=>'nuits',
 'introuvable'=>'Page introuvable',
 //lang
 'fr'=>'Français',
