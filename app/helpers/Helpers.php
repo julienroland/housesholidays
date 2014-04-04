@@ -3,7 +3,14 @@
 use Carbon\Carbon;
 
 class Helpers {
-	
+
+	public static function toEuShortDate( $date ){
+
+		$ex = explode( '-', $date );
+		$mois_id =(int)($ex['1']);
+		return (int)($ex['2']).' '.trans('general.mois')[$mois_id].' '.$ex['0'];
+
+	}
 	/**
 	*
 	* Convertis une date fr format dd/mm/yy vers une date serveur format yy-mm-dd

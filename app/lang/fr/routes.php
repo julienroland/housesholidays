@@ -21,6 +21,7 @@ return array(
     'i_etape2'=>'localisation-du-bien',
     'i_etape3'=>'photos-videos',
     'i_etape4'=>'tarifs',
+    'i_etape5'=>'disponibilites',
     'i_list_pasfinie'=>'inscription-incomplete',
 
 

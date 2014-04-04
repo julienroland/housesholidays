@@ -251,7 +251,17 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		
 		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape4'), array('as'=>'etape4Index', 'uses'=>'InscriptionController@indexTarif'));
 
-	});
+		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape4'), array('as'=>'inscription_etape4', 'uses'=>'InscriptionController@saveTarif'));
+
+		/**
+		*
+		* Disponibilités
+		*
+		**/
+
+		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape5'), array('as'=>'etape5Index', 'uses'=>'InscriptionController@indexDisponibilite'));
+		
+	});//filtre sur l'inscription (check si Session::get('proprieteId') est toujours présente
 
 		/**
 		*

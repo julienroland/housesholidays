@@ -832,10 +832,12 @@ class InscriptionController extends BaseController {
 
 			$jours = JourSemaine::getList();
 
+			$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->get();
+
 			Session::put('currentEtape', 5 );
 
 			return View::make('inscription.etape5', array('page'=>'inscription_etape5') )
-			->with(compact('nuits','monnaies','jours'));
+			->with(compact('nuits','monnaies','jours','tarifs'));
 		}
 		/**
 		*
@@ -912,10 +914,10 @@ class InscriptionController extends BaseController {
 			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 5;
 
 			$propriete->save();
-			
+
 			if(Helpers::isOk($tarif)){
 
-				return Response::json('success', 200);
+				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->get(), 200);
 
 			} else {
 
@@ -923,8 +925,81 @@ class InscriptionController extends BaseController {
 			}
 
 		}
+		public function saveTarif(  ){
+
+			$input = Input::all();
+
+			/**
+			*
+			* On ajout les inputs à la session
+			*
+			**/
+			
+			Session::put('input_4bis', $input );
+
+			/**
+			*
+			* On est toujours à l'étape 5
+			*
+			**/
+			
+			Session::put('currentEtape', 5);
+
+			$rules = array(
+				'nettoyage'=>'numeric',
+				'acompte'=>'numeric',
+				);
+
+			$validation = Validator::make( $input, $rules );
+
+			if( $validation ){
+
+				$propriete = Propriete::find(Session::get('proprieteId'));
+
+				$propriete->caution = $input['accompte'];
+				$propriete->condition_paiement = $input['conditions'];
+				$propriete->nettoyage = $input['nettoyage'];
+
+				$propriete->save();
+
+				Session::put('etape5',true);
+
+				if( $propriete ){
+
+					return Redirect::route('etape5Index',Auth::user()->slug)
+					->with(array('success'=>trans('validation.custom.step5')));
+				}
+				else
+				{	
+					Session::put('etape5',false);
+
+					return Redirect::route('etape5Index',Auth::user()->slug)
+					->withInput()
+					->withErrors($validation);
+				}
+			}
+		}
+
 		/*-----  End of ETAPE5  ------*/
 
+
+		/*===============================
+		=            ETAPE 6            =
+		===============================*/
+		public function indexDisponibilite(){
+			/**
+			
+				TODO:
+				- ajouter lien youtube dans savePhoto
+				- Ajouter orientation dans saveBatiment
+			
+			**/
+			
+			return View::make('inscription.etape6', array('page'=>'inscription_etape1'));
+		}
+
+
+		/*-----  End of ETAPE 6  ------*/
 
 
 

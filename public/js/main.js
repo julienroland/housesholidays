@@ -12,27 +12,39 @@
 
     $(function() {
 
-     getTraductions(  );
+       getTraductions(  );
 
-     if($('#inscription_etape4').length !== 0){
+       if($('#inscription_etape4').length !== 0){
 
-         uploadFile(  );
+           uploadFile(  );
 
-     }
+       }
 
-     $('#addTarif').submit( function(e){
+       $('#addTarif').submit( function(e){
         e.preventDefault();
         addTarif( $(this) );
     } );
 
-     $supprimerImage.on('click', function( e ){
+       $supprimerImage.on('click', function( e ){
         e.preventDefault();
         deleteImage( $(this) );
 
     });
-     var addTarif = function( $that ){
+       var toEuNumDate = function( $date ){
+        var sSplit = $date.split('-');
+        return sSplit['2']+'/'+sSplit['1']+'/'+sSplit['0'];
+    };
+    var toEuShortDate = function( $date ){
+
+        var sSplit = $date.split('-');
+        console.log(sSplit);
+        var mois_id =parseInt(sSplit['1']);
+        return parseInt(sSplit['2'])+' '+oLang.general.mois[mois_id]+' '+sSplit['0'];
+
+    };
+    var addTarif = function( $that ){
         var sData = $that.serialize();
-        console.log(sData);
+
         $.ajax({
           type: "get", 
           data:sData,
@@ -40,14 +52,29 @@
           dataType: "json",
           success:function( oData ){
             console.log(oData);
-          }
-      });
-        
+            if( $('#tarifTable').length == 0 ){
 
-    }
-    var visualReplacement = $('.chosen-container');
+                $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
 
-    $(this).after(visualReplacement).hide();
+            }
+            else{
+                $('#tarifTable').remove();
+                $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
+            }
+
+            for(var i in oData){
+                
+                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td></td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td></tr>');
+
+            }
+        }
+    });
+
+
+}
+var visualReplacement = $('.chosen-container');
+
+$(this).after(visualReplacement).hide();
             //bind the visual element to the API element
             webshims.addShadowDom(this, visualReplacement);
         });
@@ -146,7 +173,7 @@
     **/
     var getTraductions = function(  ) {
 
-     $.ajax({
+       $.ajax({
 
         type: "get", 
         async:   false,
@@ -154,19 +181,20 @@
         dataType: "json",
         success:function( oData ){
             oLang = oData;
+            console.log(oData);
             return true;
         }
     });
- };
- var getProprietePhoto = function( userId, proprieteId ){
+   };
+   var getProprietePhoto = function( userId, proprieteId ){
 
     if( userId && proprieteId ){
 
         $.ajax({
-         type: "get", 
-         url: sBasePath+'getPhotoPropriete/'+ proprieteId,
-         dataType: "json",
-         success:function( oData ){
+           type: "get", 
+           url: sBasePath+'getPhotoPropriete/'+ proprieteId,
+           dataType: "json",
+           success:function( oData ){
             oData = oData.data;
             if( oData ){
 
@@ -343,5 +371,4 @@
             });
         }
     }; 
-
 }).call( this, jQuery );

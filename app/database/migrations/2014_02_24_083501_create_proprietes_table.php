@@ -30,6 +30,7 @@ class CreateProprietesTable extends Migration {
 			$table->string('slug');
 			$table->string('web');
 			$table->string('etape');
+			$table->float('nettoyage');
 			$table->boolean('commentaire_statut');
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
