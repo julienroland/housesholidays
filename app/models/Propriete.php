@@ -38,7 +38,8 @@ class Propriete extends Eloquent {
 
 	public function proprieteTraduction(){
 
-		return $this->hasMany('ProprieteTraduction');
+		return $this->hasMany('ProprieteTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 
@@ -97,11 +98,18 @@ class Propriete extends Eloquent {
 
 	}
 
+	public function calendrier(){
+
+		return $this->hasMany('Calendrier');
+
+	}
+
 	public static function getCurrentStep(){
 
 		return Session::has('currentEtape') ? Session::get('currentEtape') : 1;
 
 	}
+	
 	public static function getPhoto( $proprieteId , $type = null, $output = null ) {
 
 		if(!isset($type) && Helpers::isNotOk( $type ))

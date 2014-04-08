@@ -9,6 +9,7 @@ class CompteController extends BaseController {
         return View::make('compte.index')
         ->with(compact('nbInscriptionProprietePasFinie'));
     }
+
     public function listInscriptionIncomplete(  ){
 
         //todo afficher la liste des locations pas finie, voir requete au dessus

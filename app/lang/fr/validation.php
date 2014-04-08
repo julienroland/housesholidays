@@ -34,7 +34,7 @@ return array(
     "digits"           => "Le champ :attribute doit avoir :digits chiffres.",
     "digits_between"   => "Le champ :attribute doit avoir entre :min and :max chiffres.",
     "email"            => "Le format du champ :attribute est invalide.",
-    "exists"           => "Le champ :attribute sélectionné est invalide.",
+    "exists"           => "Le champ :attribute sélectionné n'existe pas.",
     "image"            => "Le champ :attribute doit être une image.",
     "in"               => "Le champ :attribute est invalide.",
     "integer"          => "Le champ :attribute doit être un entier.",

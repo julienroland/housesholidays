@@ -18,7 +18,8 @@ class TypeBatiment extends Eloquent {
 
 	public function typeBatimentTraduction(){
 
-		return $this->hasMany('TypeBatimentTraduction');
+		return $this->hasMany('TypeBatimentTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 

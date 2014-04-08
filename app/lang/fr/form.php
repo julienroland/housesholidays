@@ -22,7 +22,8 @@
 	'duree_min' => 'Durée min.',
 	'nom_saison' => 'Nom de la saison',
 	'debut' => 'Début',
-	'fin' => 'Fin',
+	'date_debut' => 'Date de début',
+	'date_fin' => 'Date de fin',
 	'by_nuit' => 'Par nuit',
 	'nuit' => 'nuit(s)',
 	'semaine' => 'Par semaine',
@@ -49,6 +50,7 @@
 	//etapes
 	'etape'=> 'Etape n°:numero',
 	'revenir_etape'=> 'Revenir à l\'étape :numero',
+	'aller_etape'=> 'Aller à l\'étape :numero',
 	'dragDrop'=> 'Faites glisser et déposez les fichiers',
 	'abandonner'=> 'abandonner',
 	'stoper'=> 'stoper',
@@ -67,5 +69,7 @@
 	'tarif_4'=>'Semaine',
 	'tarif_5'=>'Mois',
 	'tarif_6'=>'Durée minimun de séjour',
+	'flexible'=>'Flexible',
+	'video'=>'Ajouter le lien de votre video de présentation',
 	
 	);

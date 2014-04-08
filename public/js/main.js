@@ -6,19 +6,33 @@
     upload_dir = sBasePath+'uploads/',
     propriete_dir = 'proprietes',
     $supprimerImage = $('.supprimerImage'),
+    $calendar = $('.calendar'),
+    $dispoPopup = $('.dispoPopup'),
+    $overlay = $('.overlay'),
+    $popup = $('.popup'),
     settingsUpload;
 
     webshims.polyfill('forms dom-support');
 
     $(function() {
 
-       getTraductions(  );
+        $overlay.on('click', function(e){
+            e.stopPropagation();
+            hidePopup($(this));
+        } );
 
-       if($('#inscription_etape4').length !== 0){
+        getTraductions(  );
+
+        if($('#inscription_etape4').length !== 0){
 
            uploadFile(  );
 
        }
+
+       $calendar.on('click','a', function(e){
+        e.preventDefault();
+        showDispo( $(this) , e);
+    } );
 
        $('#addTarif').submit( function(e){
         e.preventDefault();
@@ -30,45 +44,138 @@
         deleteImage( $(this) );
 
     });
-       var toEuNumDate = function( $date ){
-        var sSplit = $date.split('-');
-        return sSplit['2']+'/'+sSplit['1']+'/'+sSplit['0'];
+
+       $('#addDispo').submit( function(e){
+        e.preventDefault();
+        addDispo( $(this) );
+    });
+       var hidePopup = function( ){
+
+        $popup.fadeOut(function(){
+            $overlay.fadeOut();
+        });
+        
     };
-    var toEuShortDate = function( $date ){
+    var addDispo = function( $that ){
 
-        var sSplit = $date.split('-');
-        console.log(sSplit);
-        var mois_id =parseInt(sSplit['1']);
-        return parseInt(sSplit['2'])+' '+oLang.general.mois[mois_id]+' '+sSplit['0'];
+       var sData = $that.serialize();
 
-    };
-    var addTarif = function( $that ){
-        var sData = $that.serialize();
-
-        $.ajax({
+       $.ajax({
           type: "get", 
           data:sData,
-          url: sBasePath + 'addTarif',
+          url: sBasePath + 'addDispo',
           dataType: "json",
           success:function( oData ){
-            console.log(oData);
-            if( $('#tarifTable').length == 0 ){
 
-                $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
+           for(var i in oData ){
 
-            }
-            else{
-                $('#tarifTable').remove();
-                $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
-            }
+            var between = [],
+            start = oData[i].date_debut,
+            currentDate = new Date(start),
+            end = new Date(oData[i].date_fin);
+            
+            while (currentDate <= end) {
+            var date = {};
+               var today  = toPhpDate( currentDate );
+               date['date'] = today;
+               date['id'] = oData[i].id;
+               between.push(date);
+               currentDate.setDate(currentDate.getDate() + 1);
+           }
+           showDispoBusy( between );
 
-            for(var i in oData){
-                
-                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td></td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td></tr>');
+       }
+       hidePopup();
+   }
+});
+   };
+   var showDispoBusy = function( between ){
+    console.log(between);
+    for( var i in between ){
+        $('.calendar a[data-date="'+between[i].date+'"]').attr('data-id',between[i].id).parent().addClass('busy');
 
-            }
+    }
+};
+var toPhpDate = function( jDate ){
+  var dd = jDate.getDate();
+  var mm = jDate.getMonth()+1;
+  var yyyy = jDate.getFullYear();
+  if(dd<10){dd='0'+dd}
+    if(mm<10){mm='0'+mm}
+        return dd+'-'+mm+'-'+yyyy;
+};
+var parseDate  = function(input, format) {
+  format = format || 'yyyy-mm-dd'; 
+  var parts = input.match(/(\d+)/g), 
+  i = 0, fmt = {};
+  // extract date-part indexes from the format
+  format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
+
+  return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+}
+var showDispo = function( $that, e ){
+
+    showDatePopup(  $that.attr('data-date') ,e);
+
+};
+var showDatePopup = function( sParam, e){
+
+    $overlay.show();
+    $dispoPopup.css({
+        left:e.pageX + 24,
+        top:e.pageY - 50,
+    }).fadeIn();
+    $dispoPopup.find('.date_debut ').val( sParam );
+       /* var dates = $(".date_fin").datepicker({
+            dateFormat: "yy-mm-dd",
+            minDate: sParam,
+
+        });*/
+};
+var toEuNumDate = function( $date ){
+
+    var sSplit = $date.split('-');
+    return sSplit['2']+'/'+sSplit['1']+'/'+sSplit['0'];
+
+};
+var toEuShortDate = function( $date ){
+
+    var sSplit = $date.split('-');
+
+    var mois_id =parseInt(sSplit['1']);
+    return parseInt(sSplit['2'])+' '+oLang.general.mois[mois_id]+' '+sSplit['0'];
+
+};
+var addTarif = function( $that ){
+
+    var sData = $that.serialize();
+
+    $.ajax({
+      type: "get", 
+      data:sData,
+      url: sBasePath + 'addTarif',
+      dataType: "json",
+      success:function( oData ){
+
+        if( $('#tarifTable').length == 0 ){
+
+            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
+
         }
-    });
+        else{
+
+            $('#tarifTable').remove();
+            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
+
+        }
+
+        for(var i in oData){
+            if(oData[i].prix_weekend != null){var prix_weekend = oData[i].prix_weekend}else{var prix_weekend = ''}
+                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td>'+prix_weekend+'</td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td></tr>');
+
+        }
+    }
+});
 
 
 }
@@ -120,7 +227,7 @@ $(this).after(visualReplacement).hide();
             //remove native validation
             return false;
         });
-
+    if($(".paysAjax").length !== 0){
     /**
     *
     * Get les régions en fonction du pays
@@ -131,7 +238,8 @@ $(this).after(visualReplacement).hide();
         loadChildSelect( 'pays', $(this) );
 
     });
-
+}
+if($(".regionAjax").length !== 0){
     /**
     *
     * Get les sous_regions en fonction dde la region
@@ -143,7 +251,7 @@ $(this).after(visualReplacement).hide();
         loadChildSelect( 'region', $(this) );
 
     });
-
+}
     /**
     *
     * Supprimer l'image 
@@ -151,6 +259,7 @@ $(this).after(visualReplacement).hide();
     **/
     
     var deleteImage = function( $that ){
+
         $.ajax({
             type: "get", 
             async:   false,
@@ -209,7 +318,7 @@ $(this).after(visualReplacement).hide();
             for( var i in oData ){
 
                 $('#images ul').append('<li><div class="image"><img src="'+ upload_dir + userId + '/' + propriete_dir + '/' + proprieteId + '/' + oData[i].url +'"></div><a href="" class="supprimerImage" data-id="'+oData[i].id+'" title="'+oLang.form.supp+'">'+oLang.form.supp_image+'</a></li>'); //userId/ProprieteId/
-                console.log($(this));
+
                 $('.supprimerImage').on('click', function( e ){
                     e.preventDefault();
                     deleteImage( $(this) );
@@ -220,7 +329,7 @@ $(this).after(visualReplacement).hide();
         }
     });
 
-}
+    }
 
 }
    /**
@@ -238,7 +347,7 @@ $(this).after(visualReplacement).hide();
         fileName: "file",
         autoSubmit:true,
         multiple:true,
-        showStatusAfterSuccess:true,
+        showStatusAfterSuccess:false,
         dragDropStr: "<span><b>"+oLang.form.dragDrop+"</b></span>",
         abortStr:oLang.form.abandonner,
         cancelStr:oLang.form.stop,

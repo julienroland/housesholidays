@@ -18,13 +18,16 @@ class JourSemaine extends Eloquent {
 
 	public function jourSemaineTraduction(){
 
-		return $this->hasMany('jourSemaineTraduction');
+		return $this->hasMany('jourSemaineTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 
 	public function tarifSpeciauxWeekend(){
 
-		return $this->belongsToMany('TarifSpeciauxWeekend','jour_semaine_tarif_speciaux_weekend','tarif_id','jour_semaine_id');
+		return $this->belongsToMany('TarifSpeciauxWeekend','jour_semaine_tarif_speciaux_weekend','tarif_weekend_id','jour_semaine_id');
+		/*->withPivot('tarif_speciaux_weekend_id')
+		->join('tarifs_speciaux_weekends', 'tarif_speciaux_weekend_id', 'tarifs_speciaux_weekends.id');*/
 
 	}
 	
@@ -36,7 +39,7 @@ class JourSemaine extends Eloquent {
 
 		$jours = array(
 			'data'=>array(
-				''=>''),
+				''=>Lang::get('form.flexible')),
 			
 			);
 

@@ -18,6 +18,7 @@ class TarifSpeciauxWeekend extends Eloquent {
 
 	public function jourSemaine(){
 
-		return $this->belongsToMany('JourSemaine','jour_semaine_tarif_speciaux_weekend','tarif_id','jour_semaine_id');
+		return $this->belongsToMany('JourSemaine','jour_semaine_tarif_speciaux_weekend','tarif_weekend_id','jour_semaine_id');
+
 	}
 }

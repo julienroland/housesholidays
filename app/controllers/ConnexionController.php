@@ -48,11 +48,17 @@ class ConnexionController extends BaseController {
 			if(Auth::attempt(array('email'=>$input['email'], 'password'=> $input['password']), isset($input['remember']) ? true: false)) {
 
 				
-
-				return Redirect::route('compte', Auth::user()->slug)
-				->with('success',trans('validation.custom.connect'))
-				->withCookie(Cookie::forever('remember', $input))
-                ->withCookie(Cookie::forever('email', $input['email']));
+				if(isset($input['remember'])){
+					return Redirect::route('compte', Auth::user()->slug)
+					->with('success',trans('validation.custom.connect'))
+					->withCookie(Cookie::forever('remember', $input))
+					->withCookie(Cookie::forever('email', $input['email']));
+				}
+				else
+				{
+					return Redirect::route('compte', Auth::user()->slug)
+					->with('success',trans('validation.custom.connect'));
+				}
 			}
 			else{
 				

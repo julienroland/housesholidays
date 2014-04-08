@@ -7,75 +7,72 @@ class ImageController extends BaseController {
 	public function postImage()
 	{
 
-        if(Session::has('proprieteId')){
+    if(Session::has('proprieteId')){
 
-          $destinationPath = Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.Session::get('proprieteId').'/';
+      $destinationPath = Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.Session::get('proprieteId').'/';
 
-          $timestamp = date('dmYhis');
-      } 
-      else
-      {
-         $destinationPath = public_path(). '/'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/';
-     }
+      $timestamp = date('dmYhis');
+    } 
+    else
+    {
+     $destinationPath = public_path(). '/'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/';
+   }
 
+   File::exists( $destinationPath ) or File::makeDirectory( $destinationPath , 0777, true);
+   
+   if(Input::hasFile('file')){
 
-     if(Input::hasFile('file')){
-
-        $file = Input::file('file'); 
+    $file = Input::file('file'); 
 
                 // Declare the rules for the form validation.
-        $rules = array('file'  => 'image|max:2000,mimes:jpg,jpeg,bmp');
+    $rules = array('file'  => 'image|max:2000,mimes:jpg,jpeg,bmp');
 
-        $data = array('file' => Input::file('file'));
+    $data = array('file' => Input::file('file'));
 
                 // Validate the inputs.
-        $validation = Validator::make($data, $rules);
+    $validation = Validator::make($data, $rules);
 
-        if ($validation->fails())
-        {	
-         return Response::json('error', 400);
-     }
+    if ($validation->fails())
+    {	
+     return Response::json('error', 400);
+   }
 
-     if(is_array($file))
-     {	
+   if(is_array($file))
+   {	
 
-         foreach($file as $part) {
+     foreach($file as $part) {
 
-          $imageType = ImageType::orderBy('width','desc')->get();
+      $imageType = ImageType::orderBy('width','desc')->get();
 
-          $extension = ImageType::where('nom',Config::get('var.image_thumbnail'))->pluck('extension');
+      $extension = ImageType::where('nom',Config::get('var.image_thumbnail'))->pluck('extension');
 
-          File::exists( $destinationPath ) or File::makeDirectory( $destinationPath , 0777, true );
+      $image = Image::make( Input::file('file')->getRealPath() );
 
-          $image = Image::make( Input::file('file')->getRealPath() );
+      $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(), null, $extension,  $timestamp ));
 
-          $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(), null, $extension,  $timestamp ));
+      $photoPropriete = new PhotoPropriete;
 
-          $photoPropriete = new PhotoPropriete;
+      $photoPropriete->url = $filename;
 
-          $photoPropriete->url = $filename;
+      $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
 
-          $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
+      $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
 
-          $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
+      foreach( $imageType as $type){
 
-          foreach( $imageType as $type){
+        $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-            $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
+        $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
 
-            $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
-
-        }
+      }
     }
-}
+  }
 else //single file
 {   
 
   $imageType = ImageType::orderBy('width','desc')->get();
 
   $extension = ImageType::where('nom',Config::get('var.image_thumbnail'))->pluck('extension');
-
-  File::exists( $destinationPath ) or File::makeDirectory( $destinationPath , 0777, true);
 
   $image = Image::make( Input::file('file')->getRealPath() );
 
@@ -95,19 +92,19 @@ else //single file
 
     $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
 
-}
+  }
 
 }
 
 if( Helpers::isOk($image) ) {
 
-    $propriete = Propriete::find(Session::get('proprieteId'));
+  $propriete = Propriete::find(Session::get('proprieteId'));
 
-    $propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 3;
+  $propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 3;
 
-    $propriete->save();
+  $propriete->save();
 
-	return Response::json('success', 200);
+  return Response::json('success', 200);
 
 } else {
 
@@ -119,7 +116,7 @@ if( Helpers::isOk($image) ) {
 
 public function deletePhoto( $imageId ){
 
-    $photo = PhotoPropriete::find($imageId);
+  $photo = PhotoPropriete::find($imageId);
 
 /**
 *
@@ -174,7 +171,7 @@ foreach( $types as $type ){
 
     File::delete( $destinationPath.Helpers::addBeforeExtension($photo->url, $type->nom) );
 
-}
+  }
 }
 
 $photo->delete();

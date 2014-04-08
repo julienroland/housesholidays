@@ -18,6 +18,9 @@ class CreateCalendriersTable extends Migration {
 			$table->date('date_fin');
 			$table->integer('statut_calendrier_id')->unsigned();
 			$table->foreign('statut_calendrier_id')->references('id')->on('statuts_calendriers');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
+
 			$table->timestamps();
 		});
 	}

@@ -9,6 +9,8 @@ return array(
 'image_thumbnail'=>'small',
 'image_standard'=>'medium',
 'image_slide'=>'lightbox',
+'etape'=>8,
+'mois'=>12,
 
 
 );		

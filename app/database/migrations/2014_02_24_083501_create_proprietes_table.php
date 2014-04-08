@@ -50,7 +50,6 @@ class CreateProprietesTable extends Migration {
 			$table->integer('type_batiment_id')->unsigned();
 			$table->foreign('type_batiment_id')->references('id')->on('types_batiments');
 
-
 			
 			$table->timestamps();
 		});

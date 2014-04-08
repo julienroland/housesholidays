@@ -28,7 +28,8 @@
   @yield('container')
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+  
+  @if( isset($widget) && Helpers::isOk($widget) && in_array('select', $widget) )
   {{HTML::script('js/chosen.jquery.js')}}
 
   <script>
@@ -45,6 +46,8 @@
     }
     
   </script>
+  @endif
+
   @if(isset($page) && $page ==='inscription_etape3')
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDTG91JrczloADLMwqPBbgPEGjOjOTX9o&sensor=false"></script>
   {{HTML::script('js/map.js')}}
@@ -55,11 +58,11 @@
   {{HTML::script('js/jquery.validationEngine.js')}}
   {{HTML::script('js/jquery.validationEngine-fr.js')}}
   @endif
-  @if( isset( $page ) && $page === 'inscription_etape5')
+  @if( isset($widget) && Helpers::isOk($widget) && in_array('datepicker', $widget) )
   <script>
     $(function() {
-    $( ".date" ).datepicker({ dateFormat: "dd-mm-yy" } );
-  });
+      $( ".date" ).datepicker({ dateFormat: "dd-mm-yy" } );
+    });
   </script>
   @endif
   {{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
@@ -69,8 +72,10 @@
   {{HTML::script('js/main.js')}}
 
 
-
+  @if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
   <script> $( ".tabs" ).tabs();</script>
+  script>
+  @endif
 
 
 

@@ -6,7 +6,6 @@
 <span class="success">{{$success}}</span>
 @endif
 
-
 {{Form::open(array('url'=>'ajax/uploadImage','files'=>true,'data-proprieteId'=>Session::get('proprieteId'),'data-userId'=>Auth::user()->id))}}
 <div id="mulitplefileuploader">Upload</div>
 
@@ -37,5 +36,12 @@
 </div>
 
 @endif
-{{link_to_route('etape4Index',trans('form.button_valid'),Auth::user()->slug)}}
+{{Form::open(array('route'=>array('inscription_etape3',Auth::user()->slug)))}}
+
+{{Form::label('video',trans('form.video'))}}
+{{Form::text('video','',array('placeholder'=>trans('form.video')))}}
+{{Form::submit(trans('form.button_valid'))}}
+
+{{Form::close()}}
+
 @stop

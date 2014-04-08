@@ -96,6 +96,14 @@ Route::get( 'deleteImage/{photoId}', array( 'as'=>'ajax_delete_photo_propriete',
 **/
 ///{proprieteId}/{saison}/{debut}/{fin}/{duree_min}/{nuit}/{semaine}/{mois}/
 Route::get('addTarif', array('as'=>'addTarif', 'uses'=>'InscriptionController@addTarif'));
+
+/**
+*
+* Ajout de disponibilité
+*
+**/
+
+Route::get('addDispo', array('as'=>'addDispo', 'uses'=>'InscriptionController@addDispo'));
 /**
 *
 * Lang ajax
@@ -241,7 +249,9 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		
 		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('as'=>'etape3Index', 'uses'=>'InscriptionController@indexPhoto'));
 
-		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('as'=>'inscription_etape3', 'uses'=>'UploadController@postImage'));
+		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('uses'=>'UploadController@postImage'));
+
+		Route::post( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape3'), array('as'=>'inscription_etape3', 'uses'=>'InscriptionController@savePhoto'));
 
 		/**
 		*

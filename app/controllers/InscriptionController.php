@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 class InscriptionController extends BaseController {
 
 	/**
@@ -29,7 +31,7 @@ class InscriptionController extends BaseController {
 
 		Session::put('currentEtape', 1 );
 
-		return View::make('inscription.index', array('page'=>'inscription_etape1'))
+		return View::make('inscription.index', array('page'=>'inscription_etape1','widget'=>array('select')))
 		->with(compact(array('paysList', 'regionList', 'sousRegionList')));
 
 	}
@@ -160,7 +162,7 @@ class InscriptionController extends BaseController {
 
 				Session::put('currentEtape', 2 );
 
-				return View::make('inscription.etape2',array('page'=>'inscription_etape2'))
+				return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
 				->with(compact(array('typeBatimentList','listOption')));
 			}
 			else{
@@ -556,7 +558,7 @@ class InscriptionController extends BaseController {
 			
 			Session::put('currentEtape', 3 );
 
-			return View::make('inscription.etape3', array('page'=>'inscription_etape3'))
+			return View::make('inscription.etape3', array('page'=>'inscription_etape3','widget'=>array('select')))
 
 			->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList','situationId','distanceId')));
 
@@ -811,6 +813,37 @@ class InscriptionController extends BaseController {
 			->with(compact('photosPropriete'));
 		}
 		
+		public function savePhoto(){
+
+			$input = Input::all();
+
+			$rules = array('video'=>'url');
+
+			$validation  = Validator::make($input, $rules);
+
+			if( $validation ){
+
+				$propriete = Propriete::find(Session::get('proprieteId'));
+				$propriete->video = $input['video'];
+				$propriete->save();
+
+				Session::put('input_4', $input);
+				Session::put('etape4',true);
+				Session::put('currentEtape', 4 );
+
+				return Redirect::route('etape4Index',Auth::user()->slug)
+				->with(array('success',Lang::get('validation.custom.step4')));
+			}
+			else
+			{
+				Session::put('etape4',false);
+				Session::put('currentEtape', 4 );
+				return Redirect::route( 'etape3Index', Auth::user()->slug )
+				->withInput()
+				->withErrors($validation);
+			}
+
+		}
 		
 		/*-----  End of ETAPE 4  ------*/
 		
@@ -832,11 +865,11 @@ class InscriptionController extends BaseController {
 
 			$jours = JourSemaine::getList();
 
-			$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->get();
+			$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','asc')->get();
 
 			Session::put('currentEtape', 5 );
 
-			return View::make('inscription.etape5', array('page'=>'inscription_etape5') )
+			return View::make('inscription.etape5', array('page'=>'inscription_etape5','widget'=>array('datepicker','select')))
 			->with(compact('nuits','monnaies','jours','tarifs'));
 		}
 		/**
@@ -868,7 +901,12 @@ class InscriptionController extends BaseController {
 
 
 			$propriete = Propriete::find(Session::get('proprieteId'));
-			$monnaie = Monnaie::find( (int)$input['monnaie'] );
+
+			if(isset($input['monnaie']) && Helpers::isOk($input['monnaie'])){
+
+				$monnaie = Monnaie::find( (int)$input['monnaie'] );
+
+			}
 
 			$tarif = new Tarif;
 
@@ -879,8 +917,12 @@ class InscriptionController extends BaseController {
 			$tarif->prix_nuit = $input['nuit'];
 			$tarif->prix_semaine = $input['semaine'];
 			$tarif->prix_mois = $input['mois'];
-			/*$tarif->prix_weekend = $input['prix_weekend']; */
-			$tarif->jour_arrive_id = $input['arrive'];
+			$tarif->prix_weekend = $input['prix_weekend']; 
+			if(isset($input['arrive']) && Helpers::isOk( $input['arrive'])){
+
+				$tarif->jour_arrive_id = $input['arrive'];
+
+			}
 			$tarif->monnaie_id = $input['monnaie'];
 
 			if(Helpers::isOk( $tarif->weekend )){
@@ -892,16 +934,21 @@ class InscriptionController extends BaseController {
 			
 			$tarifSpeciaux = new TarifSpeciauxWeekend;
 
-			if(Helpers::isOK( $input['duree_supp'] )){
+			if(isset($input['duree_supp']) && Helpers::isOK( $input['duree_supp'] )){
 
 				$tarifSpeciaux->max_nuit = $input['nuit_max'];
-				$tarifSpeciaux->save();
+				
 			}
+			$tarifSpeciaux->save();
 
-			foreach( $input['jour_weekend'] as $key => $jour ){
+			if(isset( $input['jour_weekend'] ) && Helpers::isOk( $input['jour_weekend'] )){
 
-				$tarifSpeciaux->jourSemaine()->attach( $key );
+				foreach( $input['jour_weekend'] as $key => $jour ){
 
+					$tarifSpeciaux->jourSemaine()->save( $tarifSpeciaux , array('jour_semaine_id'=>$key));
+
+
+				}
 			}
 
 			$tarif = $propriete->tarif()->save($tarif);
@@ -917,7 +964,7 @@ class InscriptionController extends BaseController {
 
 			if(Helpers::isOk($tarif)){
 
-				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->get(), 200);
+				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get(), 200);
 
 			} else {
 
@@ -990,20 +1037,65 @@ class InscriptionController extends BaseController {
 			/**
 			
 				TODO:
-				- ajouter lien youtube dans savePhoto
 				- Ajouter orientation dans saveBatiment
 			
-			**/
-			
-			return View::make('inscription.etape6', array('page'=>'inscription_etape1'));
-		}
+				**/
+				//$calendrier = Calendrier::whereProprieteId( Session::get('proprieteId'))->get();
+
+				$currentDate = Carbon::now(); 
+				$date = date('n');
+				return View::make('inscription.etape6', array('page'=>'inscription_etape6','widget'=>array('datepicker')))
+				->with(compact(array('date','currentDate')));
+			}
+
+			public function addDispo(){
+
+				$input = Input::all();
+				$rules = array(
+					'date_debut'=>'date',
+					'date_fin'=>'date|min:'.$input['date_debut'],
+					);
+
+				$validation = Validator::make($input, $rules);
+
+				if( $validation ){
+					
+					$propriete = Propriete::find( Session::get('proprieteId') );
+					$statutCalendrier = StatutCalendrier::find(1);
+
+					$calendrier = new Calendrier;
+
+					$calendrier->date_debut = Helpers::toServerDate($input['date_debut']);
+					$calendrier->date_fin = Helpers::toServerDate($input['date_fin']);
+					$calendrier->propriete_id = Session::get('proprieteId');
+					$calendrier->statut_calendrier_id = 1;
+					$calendrier->save();
+
+					Session::put('etape5',true);
+
+					if($calendrier){
+
+						return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+
+					} else {
+
+						return Response::json('error', 400);
+					}
+				}
+
+		/*		$calendrier->propriete()->save( $calendrier );
+		$calendrier->statutCalendrier()->save( $calendrier );*/
+
+		dd($calendrier);
+
+		dd('pasok');
+
+	}
+	/*-----  End of ETAPE 6  ------*/
 
 
-		/*-----  End of ETAPE 6  ------*/
 
-
-
-		public function activation( $key ){
+	public function activation( $key ){
 
 		/**
 		*

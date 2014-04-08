@@ -17,7 +17,8 @@ class SousRegion extends Eloquent {
 
 	public function sousRegionTraduction(){
 
-		return $this->hasMany('SousRegionTraduction');
+		return $this->hasMany('SousRegionTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 

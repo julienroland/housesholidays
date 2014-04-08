@@ -18,7 +18,8 @@ class Pays extends Eloquent {
 
 	public function paysTraduction(){
 
-		return $this->hasMany('PaysTraduction');
+		return $this->hasMany('PaysTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 

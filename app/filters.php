@@ -105,7 +105,7 @@ Route::filter('lang', function(){
 
 Route::filter('auth', function()
 {	
-
+	
 	if (Auth::guest() && Helpers::isNotOk(Cookie::get('remember'))){ 
 
 		return Redirect::guest(Lang::get('routes.connexion')); 

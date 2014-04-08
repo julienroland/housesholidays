@@ -31,7 +31,8 @@ class Option extends Eloquent {
 
 	public function optionTraduction(){
 
-		return $this->hasMany('OptionTraduction');
+		return $this->hasMany('OptionTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 

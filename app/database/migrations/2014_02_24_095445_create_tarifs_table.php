@@ -22,8 +22,8 @@ class CreateTarifsTable extends Migration {
 			$table->float('prix_semaine');
 			$table->float('prix_mois');
 			$table->boolean('disponibilite');
-			$table->float('prix-weekend');
-			$table->integer('jour_arrive_id')->unsigned();
+			$table->float('prix_weekend')->nullable();
+			$table->integer('jour_arrive_id')->unsigned()->nullable();
 			$table->foreign('jour_arrive_id')->references('id')->on('jours_semaines');
 			$table->integer('tarif_special_weekend_id')->unsigned()->nullable();
 			$table->foreign('tarif_special_weekend_id')->references('id')->on('tarifs_speciaux_weekends');
