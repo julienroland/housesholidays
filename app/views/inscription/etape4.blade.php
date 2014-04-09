@@ -5,7 +5,8 @@
 @if(isset($success))
 <span class="success">{{$success}}</span>
 @endif
-
+<p>{{('max 15 images')}}</p>
+<p>{{('Le premier element serra l image d\'accroche')}}</p>
 {{Form::open(array('url'=>'ajax/uploadImage','files'=>true,'data-proprieteId'=>Session::get('proprieteId'),'data-userId'=>Auth::user()->id))}}
 <div id="mulitplefileuploader">Upload</div>
 
@@ -18,12 +19,14 @@
 {{Form::submit('envoyer', array('class'=>'baseFile'))}}
 {{Form::close()}}
 
+{{Form::open(array('route'=>array('inscription_etape3',Auth::user()->slug)))}}
+
 @if(isset($photosPropriete->data) && Helpers::isOk( $photosPropriete->data))
-<div id="images">
-	<ul>
+<div id="images" >
+	<ul id="sortable">
 		@foreach( $photosPropriete->data as $photo)
 		
-		<li>
+		<li >
 			<div class="image">
 
 				<img src="{{'../../'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.$photo->propriete_id.'/'.Helpers::replaceExtension( $photo->url, $photo->extension)}}" alt="{{$photo->alt}}">
@@ -36,10 +39,11 @@
 </div>
 
 @endif
-{{Form::open(array('route'=>array('inscription_etape3',Auth::user()->slug)))}}
 
 {{Form::label('video',trans('form.video'))}}
 {{Form::text('video','',array('placeholder'=>trans('form.video')))}}
+
+{{Form::hidden('image_order','')}}
 {{Form::submit(trans('form.button_valid'))}}
 
 {{Form::close()}}

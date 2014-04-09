@@ -178,7 +178,7 @@ class Helpers {
 				foreach($datesBetween as $dateBetween){
 					$dateBetween  = Helpers::createCarbonDate($dateBetween);
 					if($dateCarbon->eq($dateBetween)){
-						print_r($dateBetween);
+
 						$class='busy';
 						$dataId = $calendrier->id;
 

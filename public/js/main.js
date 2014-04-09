@@ -8,13 +8,33 @@
     $supprimerImage = $('.supprimerImage'),
     $calendar = $('.calendar'),
     $dispoPopup = $('.dispoPopup'),
+    $dispoUpdatePopup = $('.dispoUpdatePopup'),
+    $tarifUpdatePopup = $('.tarifUpdatePopup'),
     $overlay = $('.overlay'),
     $popup = $('.popup'),
+    $updateTarif = $('.updateTarif'),
+    $deleteTarif = $('.deleteTarif'),
+    $linkOpAvance = $('.linkOpAvance'),
     settingsUpload;
 
-    webshims.polyfill('forms dom-support');
 
     $(function() {
+        $linkOpAvance.on('click', function(e){
+            e.preventDefault();
+            displayNext( $(this) );
+        });
+
+        $updateTarif.on('click', function(e){
+            e.preventDefault();
+            var sId = $(this).attr('data-id');
+            showUpdateTarifPopup( sId);
+        });
+
+        $deleteTarif.on('click', function(e){
+            e.preventDefault();
+            var sId = $(this).attr('data-id');
+            deleteTarif( sId);
+        });
 
         $overlay.on('click', function(e){
             e.stopPropagation();
@@ -32,11 +52,17 @@
        $calendar.on('click','a', function(e){
         e.preventDefault();
         showDispo( $(this) , e);
-    } );
+    });
+
 
        $('#addTarif').submit( function(e){
         e.preventDefault();
         addTarif( $(this) );
+    } );
+
+       $('#updateTarif').submit( function(e){
+        e.preventDefault();
+        updateTarif( $(this) );
     } );
 
        $supprimerImage.on('click', function( e ){
@@ -48,15 +74,155 @@
        $('#addDispo').submit( function(e){
         e.preventDefault();
         addDispo( $(this) );
+    }); 
+       $('#updateDispo').submit( function(e){
+        e.preventDefault();
+        updateDispo( $(this) );
     });
-       var hidePopup = function( ){
+       $('#deleteDispo').submit( function(e){
+        e.preventDefault();
+        deleteDispo( $(this) );
+    });
+       var appendTarif = function( oData ){
+
+          if( $('#tarifTable').length == 0 ){
+
+            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
+
+        }
+        else{
+
+            $('#tarifTable').remove();
+            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
+
+        }
+
+        for(var i in oData){
+            if(oData[i].prix_weekend != null){var prix_weekend = oData[i].prix_weekend}else{var prix_weekend = ''}
+                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td>'+prix_weekend+'</td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td><td><a href='+sBasePath+'updateTarif data-id="'+oData[i].id+'" class="updateTarif">'+oLang.form.modifier+'</a> - <a href='+sBasePath+'deleteTarif class="deleteTarif" data-id="'+oData[i].id+'" >'+oLang.form.supprimer+'</a></td></tr>');
+
+        }
+        $('.updateTarif').on('click', function(e){
+            e.preventDefault();
+            var sId = $(this).attr('data-id');
+            showUpdateTarifPopup( sId);
+        });
+
+        $('.deleteTarif').on('click', function(e){
+            e.preventDefault();
+            var sId = $(this).attr('data-id');
+            deleteTarif( sId);
+        });
+    };
+    var deleteTarif = function( sId ){
+
+        $.ajax({
+          type: "get", 
+          url: sBasePath + 'deleteTarif/'+ sId,
+          dataType: "json",
+          success:function( oData ){
+
+            console.log( oData );
+
+            appendTarif( oData );
+
+        }
+    });
+    };
+    var displayNext = function($that){
+        $that.next('.opAvance').slideToggle();
+    };
+    var hidePopup = function( ){
 
         $popup.fadeOut(function(){
             $overlay.fadeOut();
         });
-        
+
     };
-    var addDispo = function( $that ){
+    var deleteDispo = function( $that ){
+
+       var sData = $that.serialize();
+       $.ajax({
+          type: "get", 
+          data:sData,
+          url: sBasePath + 'deleteDispo',
+          dataType: "json",
+          success:function( oData ){
+
+            $('.calendar td').removeClass('busy');
+
+            for(var i in oData ){
+
+                var between = [],
+                start = oData[i].date_debut,
+                currentDate = new Date(start),
+                end = new Date(oData[i].date_fin);
+
+                while (currentDate <= end) {
+                    var date = {};
+                    var today  = toPhpDate( currentDate );
+                    date['date'] = today;
+                    date['id'] = oData[i].id;
+                    between.push(date);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                showDispoBusy( between );
+
+            }
+            hidePopup();
+        }
+    });
+   };
+   var updateTarif = function( $that ){
+
+       var sData = $that.serialize();
+       $.ajax({
+          type: "get", 
+          data:sData,
+          url: sBasePath + 'updateTarif',
+          dataType: "json",
+          success:function( oData ){
+
+              appendTarif( oData );
+              hidePopup();
+          }
+      });
+   };
+   var updateDispo = function( $that ){
+
+       var sData = $that.serialize();
+       $.ajax({
+          type: "get", 
+          data:sData,
+          url: sBasePath + 'updateDispo',
+          dataType: "json",
+          success:function( oData ){
+            $('.calendar td').removeClass('busy');
+            for(var i in oData ){
+
+                var between = [],
+                start = oData[i].date_debut,
+                currentDate = new Date(start),
+                end = new Date(oData[i].date_fin);
+
+                while (currentDate <= end) {
+                    var date = {};
+                    var today  = toPhpDate( currentDate );
+                    date['date'] = today;
+                    date['id'] = oData[i].id;
+                    between.push(date);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                showDispoBusy( between );
+
+            }
+            hidePopup();
+        }
+    });
+   };
+   var addDispo = function( $that ){
 
        var sData = $that.serialize();
 
@@ -66,31 +232,33 @@
           url: sBasePath + 'addDispo',
           dataType: "json",
           success:function( oData ){
+            $('.calendar td').removeClass('busy');
+            for(var i in oData ){
 
-           for(var i in oData ){
+                var between = [],
+                start = oData[i].date_debut,
+                currentDate = new Date(start),
+                end = new Date(oData[i].date_fin);
 
-            var between = [],
-            start = oData[i].date_debut,
-            currentDate = new Date(start),
-            end = new Date(oData[i].date_fin);
-            
-            while (currentDate <= end) {
-            var date = {};
-               var today  = toPhpDate( currentDate );
-               date['date'] = today;
-               date['id'] = oData[i].id;
-               between.push(date);
-               currentDate.setDate(currentDate.getDate() + 1);
-           }
-           showDispoBusy( between );
+                while (currentDate <= end) {
+                    var date = {};
+                    var today  = toPhpDate( currentDate );
+                    date['date'] = today;
+                    date['id'] = oData[i].id;
+                    between.push(date);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
 
-       }
-       hidePopup();
-   }
-});
+
+                showDispoBusy( between );
+
+            }
+            hidePopup();
+        }
+    });
    };
    var showDispoBusy = function( between ){
-    console.log(between);
+
     for( var i in between ){
         $('.calendar a[data-date="'+between[i].date+'"]').attr('data-id',between[i].id).parent().addClass('busy');
 
@@ -115,15 +283,115 @@ var parseDate  = function(input, format) {
 }
 var showDispo = function( $that, e ){
 
-    showDatePopup(  $that.attr('data-date') ,e);
+    if($that.attr('data-id').length > 0){
+
+        showUpdateDatePopup( $that.attr('data-id'), e );
+    }
+    else{
+
+        showDatePopup(  $that.attr('data-date') ,e);
+
+    }
+
+};
+var showUpdateTarifPopup = function( sId ){
+
+ $.ajax({
+     type: "get", 
+     url: sBasePath + 'ajax/getOneTarif/'+sId,
+     dataType: "json",
+     success:function( oData ){
+
+        $tarifUpdatePopup.find('.tarifId').val( oData.id );
+        $tarifUpdatePopup.find('.weekendId').val( oData.tarif_special_weekend_id );
+        
+        $tarifUpdatePopup.find('select[name="monnaie"]').val( oData.monnaie_id );
+        $tarifUpdatePopup.find('input[name="nom_saison"]').val( oData.saison );
+        $tarifUpdatePopup.find('input[name="debut"]').val( toEuNumDate( oData.date_debut,'-') );
+        $tarifUpdatePopup.find('input[name="fin"]').val( toEuNumDate( oData.date_fin,'-' ) );
+        $tarifUpdatePopup.find('select[name="min_nuit"]').val( oData.duree_min );
+        $tarifUpdatePopup.find('input[name="nuit"]').val( oData.prix_nuit );
+        $tarifUpdatePopup.find('input[name="semaine"]').val( oData.prix_semaine );
+        $tarifUpdatePopup.find('input[name="mois"]').val( oData.prix_mois );
+        $tarifUpdatePopup.find('select[name="arrive_popup"]').val( oData.jour_arrive_id );
+        $tarifUpdatePopup.find('.monnaie').html( oData.monnaie.icon );
+
+
+
+        if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null  || oData.prix_weekend!==null && oData.prix_weekend!=="" ){
+
+            $tarifUpdatePopup.find('input[name="weekend_popup"]').attr('checked', true) ;
+
+            $tarifUpdatePopup.find('input[name="prix_weekend_popup"]').val( oData.prix_weekend ) ;
+            if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null ){
+                if( oData.tarif_speciaux_weekend.jour_semaine !== "" && oData.tarif_speciaux_weekend.jour_semaine!== null ){
+
+                    for( var i in oData.tarif_speciaux_weekend.jour_semaine ){
+
+                        $tarifUpdatePopup.find('input[name="jour_weekend_popup['+oData.tarif_speciaux_weekend.jour_semaine[i].id+']"]').attr('checked', true) ;
+
+                    }
+
+                }
+
+                if( oData.tarif_speciaux_weekend.max_nuit !=="" && oData.tarif_speciaux_weekend !==null ){
+
+                    $tarifUpdatePopup.find('input[name="duree_supp_popup"]').attr('checked', true);
+                    $tarifUpdatePopup.find('select[name="nuit_max_popup"] ').val( oData.tarif_speciaux_weekend.max_nuit );
+
+                }
+            }
+            
+            
+        }
+        else
+        {
+
+            $tarifUpdatePopup.find('.opAvance').hide();
+        }
+
+        $("select").trigger("chosen:updated");
+        $overlay.show();
+        var height = $tarifUpdatePopup.height();
+        $tarifUpdatePopup.css({
+            left:0,
+            top:0 +  height/2,
+        }).fadeIn();
+        $tarifUpdatePopup.find('.date_debut ').val();
+        $tarifUpdatePopup.find('.date_fin ').val();
+        $tarifUpdatePopup.find('.tarif_id ').val();
+    }
+});
+
+
+};
+var showUpdateDatePopup = function( sId, e){
+    $.ajax({
+     type: "get", 
+     url: sBasePath + 'ajax/getOneDispo/'+sId,
+     dataType: "json",
+     success:function( oData ){
+
+        $overlay.show();
+        var height = $dispoPopup.height();
+        $dispoUpdatePopup.css({
+            left:e.pageX + 24,
+            top:e.pageY - height/2,
+        }).fadeIn();
+        $dispoUpdatePopup.find('.date_debut ').val( toEuNumDate(oData.date_debut, '-') );
+        $dispoUpdatePopup.find('.date_fin ').val( toEuNumDate(oData.date_fin, '-') );
+        $dispoUpdatePopup.find('.tarif_id ').val( oData.id );
+    }
+});
 
 };
 var showDatePopup = function( sParam, e){
 
     $overlay.show();
+    var height = $dispoPopup.height();
     $dispoPopup.css({
         left:e.pageX + 24,
-        top:e.pageY - 50,
+        top:e.pageY - height/2,
     }).fadeIn();
     $dispoPopup.find('.date_debut ').val( sParam );
        /* var dates = $(".date_fin").datepicker({
@@ -132,10 +400,15 @@ var showDatePopup = function( sParam, e){
 
         });*/
 };
-var toEuNumDate = function( $date ){
+var toEuNumDate = function( $date, sSeprateur ){
+
+    if(typeof sSeprateur === "undefined"){
+
+        var sSeprateur = '/';
+    }
 
     var sSplit = $date.split('-');
-    return sSplit['2']+'/'+sSplit['1']+'/'+sSplit['0'];
+    return sSplit['2']+sSeprateur+sSplit['1']+sSeprateur+sSplit['0'];
 
 };
 var toEuShortDate = function( $date ){
@@ -157,25 +430,9 @@ var addTarif = function( $that ){
       dataType: "json",
       success:function( oData ){
 
-        if( $('#tarifTable').length == 0 ){
-
-            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
-
-        }
-        else{
-
-            $('#tarifTable').remove();
-            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td></tr></thead></table>');
-
-        }
-
-        for(var i in oData){
-            if(oData[i].prix_weekend != null){var prix_weekend = oData[i].prix_weekend}else{var prix_weekend = ''}
-                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td>'+prix_weekend+'</td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td></tr>');
-
-        }
-    }
-});
+         appendTarif( oData );
+     }
+ });
 
 
 }
@@ -186,19 +443,9 @@ $(this).after(visualReplacement).hide();
             webshims.addShadowDom(this, visualReplacement);
         });
 
-    /**
-    
-        TODO:
-        - ajouter au fichiers de lang les trucs du bas
-        - Second todo item
-    
-        **/
+$('.submit_form').click(function() {
 
-
-
-        $('.submit_form').click(function() {
-
-            var validate = $("#myform").validationEngine('validate');
+    var validate = $("#myform").validationEngine('validate');
             var has_file = $(".ajax-file-upload-statusbar").length //check if there files need upload
 
             if(validate){
@@ -215,7 +462,7 @@ $(this).after(visualReplacement).hide();
             }
         });
 
-        /*$('#file').on('change', saveFile );*/
+/*$('#file').on('change', saveFile );*/
 
     /**
     *
@@ -304,6 +551,7 @@ if($(".regionAjax").length !== 0){
            url: sBasePath+'getPhotoPropriete/'+ proprieteId,
            dataType: "json",
            success:function( oData ){
+            console.log('ok');
             oData = oData.data;
             if( oData ){
 
@@ -324,12 +572,33 @@ if($(".regionAjax").length !== 0){
                     deleteImage( $(this) );
 
                 });
+                /*$("#sortable").sortable("refresh");*/
+
             }
+            sortable();
+
 
         }
     });
 
-    }
+}
+
+}
+var sortable = function(){
+
+    console.log($('#sortable').sortable({
+       create: function(event, ui) {
+          var data = {};
+
+          $("#sortable li").each(function(i, el){
+            var p = $(el).find('a').attr('data-id');
+            data[p]=$(el).index()+1;
+        });
+
+          $("form > [name='image_order']").val(JSON.stringify(data));
+
+      }
+  }));
 
 }
    /**
@@ -364,11 +633,11 @@ if($(".regionAjax").length !== 0){
                 value: files
             }).appendTo('#myform');
 
-            
         },
 
         onSuccess:function(files,data,xhr)
         {
+
             $('#myform').submit();
 
             getProprietePhoto( $('form').attr('data-userId'), $('form').attr('data-proprieteId') );
@@ -376,6 +645,7 @@ if($(".regionAjax").length !== 0){
 
         onError: function(files,status,errMsg)
         {
+            console.log(files+'.'+status+'.'+errMsg);
             $("#status").html("<font color='green'>Something Wrong</font>");
         }
 

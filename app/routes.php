@@ -97,6 +97,12 @@ Route::get( 'deleteImage/{photoId}', array( 'as'=>'ajax_delete_photo_propriete',
 ///{proprieteId}/{saison}/{debut}/{fin}/{duree_min}/{nuit}/{semaine}/{mois}/
 Route::get('addTarif', array('as'=>'addTarif', 'uses'=>'InscriptionController@addTarif'));
 
+Route::get('updateTarif', array('as'=>'updateTarif', 'uses'=>'InscriptionController@updateTarif'));
+
+Route::get('deleteTarif/{id}', array('as'=>'deleteTarif', 'uses'=>'InscriptionController@deleteTarif'));
+
+Route::get('ajax/getOneTarif/{id}', array('as'=>'getOneTarif', 'uses'=>'InscriptionController@getOneTarif'));
+
 /**
 *
 * Ajout de disponibilité
@@ -104,9 +110,23 @@ Route::get('addTarif', array('as'=>'addTarif', 'uses'=>'InscriptionController@ad
 **/
 
 Route::get('addDispo', array('as'=>'addDispo', 'uses'=>'InscriptionController@addDispo'));
+
+Route::get('updateDispo', array('as'=>'updateDispo', 'uses'=>'InscriptionController@updateDispo'));
+
+Route::get('deleteDispo', array('as'=>'deleteDispo', 'uses'=>'InscriptionController@deleteDispo'));
+
 /**
 *
-* Lang ajax
+* Get une dispo (id);
+* @ajax
+*
+**/
+
+Route::get('ajax/getOneDispo/{id}', array('as'=>'getOneDispo', 'uses'=>'InscriptionController@getOneDispo'));
+/**
+*
+* Recup des langues (pour js)
+* @ajax
 *
 **/
 Route::get('getAllLang',array('uses'=>'LangController@getAll'));
@@ -270,6 +290,14 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		**/
 
 		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape5'), array('as'=>'etape5Index', 'uses'=>'InscriptionController@indexDisponibilite'));
+
+		/**
+		*
+		* Paiement
+		*
+		**/
+		
+		Route::get( Lang::get('routes.compte').'/{slug}/'.Lang::get('routes.i_etape6'), array('as'=>'etape6Index', 'uses'=>'InscriptionController@indexPaiement'));
 		
 	});//filtre sur l'inscription (check si Session::get('proprieteId') est toujours présente
 

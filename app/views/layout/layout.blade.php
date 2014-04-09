@@ -31,7 +31,9 @@
   
   @if( isset($widget) && Helpers::isOk($widget) && in_array('select', $widget) )
   {{HTML::script('js/chosen.jquery.js')}}
-
+  {{HTML::script('js/modernizr.js')}}
+  {{HTML::script('js/js-webshim/minified/polyfiller.js')}}
+  <script>webshims.polyfill('forms dom-support');</script>
   <script>
 
     var config = {
@@ -52,12 +54,14 @@
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDTG91JrczloADLMwqPBbgPEGjOjOTX9o&sensor=false"></script>
   {{HTML::script('js/map.js')}}
   @endif
-  @if( isset( $page ) && $page === 'inscription_etape4')
+  
+  @if(isset($widget) && Helpers::isOk($widget) && in_array('upload', $widget))
   <script>$('.baseFile').remove();</script>
   {{HTML::script('js/jquery.uploadfile.min.js')}}
   {{HTML::script('js/jquery.validationEngine.js')}}
   {{HTML::script('js/jquery.validationEngine-fr.js')}}
   @endif
+
   @if( isset($widget) && Helpers::isOk($widget) && in_array('datepicker', $widget) )
   <script>
     $(function() {
@@ -65,17 +69,49 @@
     });
   </script>
   @endif
-  {{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
-  {{HTML::script('js/modernizr.js')}}
-  {{HTML::script('js/js-webshim/minified/polyfiller.js')}}
+  @if(isset($widget) && Helpers::isOk($widget) && in_array('sortable', $widget))
+  <script>
+    $(function(){
+      $("#sortable").sortable({
+        stop: function(event, ui) {
+          var data = {};
 
-  {{HTML::script('js/main.js')}}
+           $("#sortable li").each(function(i, el){
+            var p = $(el).find('a').attr('data-id');
+            data[p]=$(el).index()+1;
+          });
+
+          $("form > [name='image_order']").val(JSON.stringify(data));
+
+        },
+        create: function(event, ui) {
+          var data = {};
+
+          $("#sortable li").each(function(i, el){
+            var p = $(el).find('a').attr('data-id');
+            data[p]=$(el).index()+1;
+          });
+
+          $("form > [name='image_order']").val(JSON.stringify(data));
+
+        }
+        
+      }).disableSelection();
 
 
-  @if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
-  <script> $( ".tabs" ).tabs();</script>
-  script>
-  @endif
+});
+</script>
+@endif
+{{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
+
+
+{{HTML::script('js/main.js')}}
+
+
+@if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
+<script> $( ".tabs" ).tabs();</script>
+
+@endif
 
 
 

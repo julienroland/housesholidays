@@ -123,7 +123,7 @@ class Propriete extends Eloquent {
         *
         **/
 
-        $proprietes = Propriete::find( $proprieteId )->photoPropriete()->orderBy('created_at','desc')->get();
+        $proprietes = Propriete::find( $proprieteId )->photoPropriete()->orderBy('ordre','asc')->get();
 
         $extension = ImageType::where('nom',Config::get('var.image_thumbnail'))->pluck('extension');
 
@@ -135,6 +135,7 @@ class Propriete extends Eloquent {
         	array_push($data['data'], (object)array( 
 
         		'url'=>Helpers::addBeforeExtension($propriete->url, $type),
+        		'ordre'=>$propriete->ordre,
         		'date'=>$propriete->created_at->toDateTimeString(),
         		'propriete_id'=>$propriete->propriete_id,
         		'alt'=>$propriete->alt,

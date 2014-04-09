@@ -809,19 +809,32 @@ class InscriptionController extends BaseController {
 
 			Session::put('currentEtape', 4 );
 
-			return View::make('inscription.etape4', array('page'=>'inscription_etape4'))
+			return View::make('inscription.etape4', array('page'=>'inscription_etape4','widget'=>array('sortable','upload')))
 			->with(compact('photosPropriete'));
 		}
 		
 		public function savePhoto(){
 
 			$input = Input::all();
-
+			$orders = (array)json_decode($input['image_order']);
 			$rules = array('video'=>'url');
 
 			$validation  = Validator::make($input, $rules);
 
 			if( $validation ){
+				
+				foreach($orders as $key => $order){
+
+					$photo = PhotoPropriete::find($key);	
+
+					if($order == 1){
+
+						$photo->accroche = 1;
+					}
+					
+					$photo->ordre = $order;
+					$photo->save();
+				}
 
 				$propriete = Propriete::find(Session::get('proprieteId'));
 				$propriete->video = $input['video'];
@@ -836,6 +849,7 @@ class InscriptionController extends BaseController {
 			}
 			else
 			{
+
 				Session::put('etape4',false);
 				Session::put('currentEtape', 4 );
 				return Redirect::route( 'etape3Index', Auth::user()->slug )
@@ -918,6 +932,7 @@ class InscriptionController extends BaseController {
 			$tarif->prix_semaine = $input['semaine'];
 			$tarif->prix_mois = $input['mois'];
 			$tarif->prix_weekend = $input['prix_weekend']; 
+
 			if(isset($input['arrive']) && Helpers::isOk( $input['arrive'])){
 
 				$tarif->jour_arrive_id = $input['arrive'];
@@ -931,15 +946,17 @@ class InscriptionController extends BaseController {
 
 			}
 
-			
-			$tarifSpeciaux = new TarifSpeciauxWeekend;
-
+			$tarif = $propriete->tarif()->save($tarif);
+			$tarif = $monnaie->tarif()->save($tarif);
 			if(isset($input['duree_supp']) && Helpers::isOK( $input['duree_supp'] )){
+				$tarifSpeciaux = new TarifSpeciauxWeekend;
 
 				$tarifSpeciaux->max_nuit = $input['nuit_max'];
-				
+
+				$tarifSpeciaux->save();	
+
+				$tarif = $tarifSpeciaux->tarif()->save($tarif);
 			}
-			$tarifSpeciaux->save();
 
 			if(isset( $input['jour_weekend'] ) && Helpers::isOk( $input['jour_weekend'] )){
 
@@ -951,9 +968,6 @@ class InscriptionController extends BaseController {
 				}
 			}
 
-			$tarif = $propriete->tarif()->save($tarif);
-			$tarif = $monnaie->tarif()->save($tarif);
-			$tarif = $tarifSpeciaux->tarif()->save($tarif);
 			$tarif->save();
 
 			$propriete = Propriete::find(Session::get('proprieteId'));
@@ -971,6 +985,149 @@ class InscriptionController extends BaseController {
 				return Response::json('error', 400);
 			}
 
+		}
+		public function updateTarif(  ){			
+
+			$input = Input::all();
+
+			$propriete = Propriete::find(Session::get('proprieteId'));
+
+			if(isset($input['monnaie']) && Helpers::isOk($input['monnaie'])){
+
+				$monnaie = Monnaie::find( (int)$input['monnaie'] );
+
+			}
+
+			$tarif = Tarif::find($input['tarifId']);
+
+			$tarif->date_debut = Helpers::toServerDate( $input['debut'] );
+			$tarif->date_fin = Helpers::toServerDate( $input['fin'] );
+			$tarif->duree_min = $input['min_nuit'];
+			$tarif->saison = $input['nom_saison'];
+			$tarif->prix_nuit = $input['nuit'];
+			$tarif->prix_semaine = $input['semaine'];
+			$tarif->prix_mois = $input['mois'];
+			$tarif->prix_weekend = $input['prix_weekend_popup']; 
+
+			if(isset($input['arrive_popup']) && Helpers::isOk( $input['arrive_popup'])){
+
+				$tarif->jour_arrive_id = $input['arrive_popup'];
+
+			}
+			$tarif->monnaie_id = $input['monnaie'];
+
+			$tarif = $propriete->tarif()->save($tarif);
+			$tarif = $monnaie->tarif()->save($tarif);
+
+			$tarifSpeciaux = TarifSpeciauxWeekend::find($input['weekendId']);
+			/*dd($input);*/
+			if(isset($input['weekend_popup']) && Helpers::isOK( $input['weekend_popup'] )){
+
+				
+				if(isset($input['duree_supp_popup']) && Helpers::isOK( $input['duree_supp_popup'] ) || isset( $input['jour_weekend_popup'] ) && Helpers::isOk( $input['jour_weekend_popup'] )){
+
+					if(Helpers::isNotOk( $tarifSpeciaux )){
+
+						$tarifSpeciaux = new TarifSpeciauxWeekend;
+
+						$tarifSpeciaux->save();
+
+					}
+
+				}else{
+
+					$tarif->tarif_special_weekend_id = null;
+
+					if(Helpers::isOk( $tarifSpeciaux )){
+
+						if(Helpers::isOk($tarifSpeciaux) && $tarifSpeciaux->jourSemaine()->get()){
+
+							$tarifSpeciaux->jourSemaine()->detach();
+						}
+
+						$tarifSpeciaux->delete();
+					}
+				}
+				if(isset($input['duree_supp_popup']) && Helpers::isOK( $input['duree_supp_popup'] )){
+
+					$tarifSpeciaux->max_nuit = $input['nuit_max_popup'];
+
+					$tarifSpeciaux->save();	
+
+					$tarif = $tarifSpeciaux->tarif()->save($tarif);
+				}
+
+				if(isset( $input['jour_weekend_popup'] ) && Helpers::isOk( $input['jour_weekend_popup'] )){
+
+					$tarifSpeciaux->jourSemaine()->detach();
+
+					foreach( $input['jour_weekend_popup'] as $key => $jour ){
+
+						$tarifSpeciaux->jourSemaine()->save( $tarifSpeciaux , array('jour_semaine_id'=>$key));
+
+
+					}
+				}
+				
+				
+			}
+			else{
+
+				$tarif->tarif_special_weekend_id = null;
+				
+				$tarif->save();
+
+				if(Helpers::isOk($tarifSpeciaux) && $tarifSpeciaux->jourSemaine()->get()){
+
+					$tarifSpeciaux->jourSemaine()->detach();
+				}
+
+
+				$tarifSpeciaux->delete();
+			}
+
+			
+
+			$propriete = Propriete::find(Session::get('proprieteId'));
+
+			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 5;
+
+			$propriete->save();
+
+			if(Helpers::isOk($tarif)){
+
+				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get(), 200);
+
+			} else {
+
+				return Response::json('error', 400);
+			}
+
+		}
+		public function deleteTarif( $id ){
+			
+			$tarif = Tarif::find($id);
+			
+			$tarifSpeciauxWeekend = $tarif->tarifSpeciauxWeekend()->first();
+			$tarifSpeciauxWeekend->jourSemaine()->detach();
+			$tarif = $tarif->delete();
+			$tarifSpeciauxWeekend->delete();
+
+			if(Helpers::isOk($tarif)){
+
+				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get();
+				if(Helpers::isOk( $tarifs )){
+
+					return Response::json($tarifs, 200);	
+
+				}
+
+				return Response::json('', 200);
+			}
+			else{
+
+				return Response::json('error',400);
+			}
 		}
 		public function saveTarif(  ){
 
@@ -1006,6 +1163,7 @@ class InscriptionController extends BaseController {
 				$propriete->caution = $input['accompte'];
 				$propriete->condition_paiement = $input['conditions'];
 				$propriete->nettoyage = $input['nettoyage'];
+				$propriete->etape = Propriete::getCurrentStep();
 
 				$propriete->save();
 
@@ -1025,6 +1183,12 @@ class InscriptionController extends BaseController {
 					->withErrors($validation);
 				}
 			}
+		}
+
+		public function getOneTarif( $id ){
+
+			return Tarif::with(array('monnaie','tarifSpeciauxWeekend.jourSemaine'))->whereId($id)->first();
+
 		}
 
 		/*-----  End of ETAPE5  ------*/
@@ -1059,9 +1223,6 @@ class InscriptionController extends BaseController {
 				$validation = Validator::make($input, $rules);
 
 				if( $validation ){
-					
-					$propriete = Propriete::find( Session::get('proprieteId') );
-					$statutCalendrier = StatutCalendrier::find(1);
 
 					$calendrier = new Calendrier;
 
@@ -1071,24 +1232,108 @@ class InscriptionController extends BaseController {
 					$calendrier->statut_calendrier_id = 1;
 					$calendrier->save();
 
-					Session::put('etape5',true);
+					$propriete = Propriete::find( Session::get('proprieteId') );
+					$propriete->etape = Propriete::getCurrentStep();
+					$propriete->save();
+
+					Session::put('etape6',true);
 
 					if($calendrier){
 
 						return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
 
-					} else {
-
-						return Response::json('error', 400);
 					}
+					
 				}
 
-		/*		$calendrier->propriete()->save( $calendrier );
-		$calendrier->statutCalendrier()->save( $calendrier );*/
+				return Response::json('error', 400);
+			}
 
-		dd($calendrier);
+	/**
+	*
+	* Get une ligne du calendrier
+	*
+	**/
+	
+	public function getOneDispo( $id ){
 
-		dd('pasok');
+		if(isset($id) && Helpers::isOk( $id )){
+
+			$calendrier = Calendrier::find($id);
+
+			if($calendrier){
+
+				return Response::json($calendrier, 200);
+
+			}
+		}
+
+		return Response::json('error', 400);
+
+
+	}
+
+	public function updateDispo(){
+		$input = Input::all();
+
+		$date_debut = Helpers::createCarbonDate(Helpers::toServerDate($input['date_debut']));
+		$date_fin = Helpers::createCarbonDate(Helpers::toServerDate($input['date_fin']));
+		$diff = $date_debut->diffInDays( $date_fin, false );
+
+		$rules = array(
+			'date_debut'=>'date',
+			'date_fin'=>'date',
+			'tarif_id'=>'integer',
+			);
+
+		$validation = Validator::make($input, $rules);
+
+		if( $validation->passes() && $diff > 0){
+
+			$calendrier = Calendrier::find($input['tarif_id']);
+
+			$calendrier->date_debut = Helpers::toServerDate($input['date_debut']);
+			$calendrier->date_fin = Helpers::toServerDate($input['date_fin']);
+
+			$calendrier->save();
+
+			if($calendrier){
+
+				return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+
+			} 
+			
+		}
+		return Response::json('error', 400);
+
+	}
+	public function deleteDispo(){
+		$input = Input::all();
+		
+		$rules = array(
+			'tarif_id'=>'integer',
+			);
+
+		$validation = Validator::make($input, $rules);
+
+		if( $validation ){
+
+			/*$propriete = Propriete::find( Session::get('proprieteId') );
+			$statutCalendrier = StatutCalendrier::find(1);*/
+
+			$calendrier = Calendrier::find($input['tarif_id']);
+
+			$calendrier->delete();
+
+
+			if($calendrier){
+
+				return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+
+			} 
+			
+		}
+		return Response::json('error', 400);
 
 	}
 	/*-----  End of ETAPE 6  ------*/

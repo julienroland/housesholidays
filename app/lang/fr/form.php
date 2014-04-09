@@ -22,6 +22,7 @@
 	'duree_min' => 'Durée min.',
 	'nom_saison' => 'Nom de la saison',
 	'debut' => 'Début',
+	'fin' => 'Fin',
 	'date_debut' => 'Date de début',
 	'date_fin' => 'Date de fin',
 	'by_nuit' => 'Par nuit',
@@ -70,6 +71,9 @@
 	'tarif_5'=>'Mois',
 	'tarif_6'=>'Durée minimun de séjour',
 	'flexible'=>'Flexible',
+	'actions'=>'Actions',
+	'modifier'=>'Modifier',
+	'supprimer'=>'Supprimer',
 	'video'=>'Ajouter le lien de votre video de présentation',
 	
 	);

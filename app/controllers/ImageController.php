@@ -9,6 +9,13 @@ class ImageController extends BaseController {
 
     if(Session::has('proprieteId')){
 
+      $nb_photos = Propriete::find(Session::get('proprieteId'))->photoPropriete()->count();
+       
+      if( $nb_photos >= 15 ){
+
+        return Response::json(trans('validation.custom.tropImage'),500);
+      }
+
       $destinationPath = Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.Session::get('proprieteId').'/';
 
       $timestamp = date('dmYhis');
@@ -50,9 +57,13 @@ class ImageController extends BaseController {
 
       $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(), null, $extension,  $timestamp ));
 
+      $nb_ordre = Propriete::find(Session::get('proprieteId'))->photoPropriete()->max('ordre') + 1;
+
       $photoPropriete = new PhotoPropriete;
 
       $photoPropriete->url = $filename;
+
+      $photoPropriete->ordre = $nb_ordre;
 
       $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
 
@@ -78,9 +89,13 @@ else //single file
 
   $filename = Helpers::toSlug(Helpers::addTimestamp( $file->getClientOriginalName(), null, $extension,  $timestamp ));
 
+  $nb_ordre = Propriete::find(Session::get('proprieteId'))->photoPropriete()->max('ordre') + 1;
+
   $photoPropriete = new PhotoPropriete;
 
   $photoPropriete->url = $filename;
+
+  $photoPropriete->ordre = $nb_ordre;
 
   $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
 
