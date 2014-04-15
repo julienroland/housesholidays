@@ -12,7 +12,9 @@ class InscriptionController extends BaseController {
 	public function index(){
 
 		$paysList = Pays::getListForm();
-		dd(Page::with(array('pageTraduction'))->whereHook('login')->get());
+
+		$post = Page::with('pageTraduction')->whereHook('login')->first();
+
 		/*$regionList = Region::getListForm();
 
 		$sousRegionList = SousRegion::getListForm();*/
@@ -32,7 +34,7 @@ class InscriptionController extends BaseController {
 		Session::put('currentEtape', 1 );
 
 		return View::make('inscription.index', array('page'=>'inscription_etape1','widget'=>array('select')))
-		->with(compact(array('paysList')));
+		->with(compact(array('paysList','post')));
 
 	}
 
@@ -618,6 +620,7 @@ class InscriptionController extends BaseController {
 
 		public function saveLocalisation(){
 
+
 			/**
 			*
 			* Get all input
@@ -721,6 +724,7 @@ class InscriptionController extends BaseController {
 			else
 			{
 
+
 				Session::put('etape3',false);
 				Session::put('currentEtape', 3 );
 				return Redirect::route( 'etape2Index', Auth::user()->slug )
@@ -759,7 +763,7 @@ class InscriptionController extends BaseController {
 			$validation = Validator::make( $input , Propriete::$rules2 );
 
 			if( $validation->passes() ){
-
+				
 				/**
 				*
 				* Trouvé la propriete en question via l'id stocké
@@ -1300,7 +1304,7 @@ class InscriptionController extends BaseController {
 					$calendrier->date_debut = Helpers::toServerDate($input['date_debut']);
 					$calendrier->date_fin = Helpers::toServerDate($input['date_fin']);
 					$calendrier->propriete_id = Session::get('proprieteId');
-					$calendrier->statut_calendrier_id = 1;
+					// $calendrier->statut_calendrier_id = 1;
 					$calendrier->save();
 
 					$propriete = Propriete::find( Session::get('proprieteId') );

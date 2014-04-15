@@ -108,7 +108,7 @@ Route::filter('auth', function()
 	
 	if (Auth::guest() && Helpers::isNotOk(Cookie::get('remember'))){ 
 
-		return Redirect::guest(Lang::get('routes.connexion')); 
+		return Redirect::guest('/'); 
 
 	}elseif(Auth::guest() && Helpers::isOk(Cookie::get('remember'))){
 

@@ -33,7 +33,7 @@
  	sLocalite,
  	lat,
  	lng,
- 	icon_marker = '/img/marker.png',
+ 	icon_marker = '/images/marker.png',
  	geocoder = new google.maps.Geocoder();
 
  	$(function(){

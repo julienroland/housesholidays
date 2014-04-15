@@ -39,8 +39,12 @@ class Propriete extends Eloquent {
 	public function getFullnameAttribute() {
 
 		$propriete = Propriete::getLocations(Session::get('proprieteId'));
-		
-		return $propriete->nom . ' ' . $propriete->pays->paysTraduction[0]->nom . '  ' . $propriete->region->regionTraduction[0]->nom . ' ' . $propriete->sousRegion->sousRegionTraduction[0]->nom . ' ' .$propriete->localite->nom;
+
+		if(isset( $propriete->nom ) && isset( $propriete->pays->paysTraduction[0]->nom ) && isset( $propriete->region->regionTraduction[0]->nom ) && isset( $propriete->sousRegion->sousRegionTraduction[0] ) && isset( $propriete->localite->nom )){
+
+			return $propriete->nom . ' ' . $propriete->pays->paysTraduction[0]->nom . '  ' . $propriete->region->regionTraduction[0]->nom . ' ' . $propriete->sousRegion->sousRegionTraduction[0]->nom . ' ' .$propriete->localite->nom;
+			
+		}
 
 	}
 

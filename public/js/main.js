@@ -471,41 +471,20 @@ var showDatePopup = function( sParam, e){
   }).fadeIn();
 
   $dispoPopup.find('.date_debut ').val( sParam );
-  console.log(parseDate(sParam));
 
-  $('body').on('focus',".date_fin", function(){
-    console.log($(this).datepicker({ minDate: -20 }));
-  });
 
-  console.log($dispoPopup.find('.date_fin ').datepicker({ minDate: parseDate(sParam) }));
-  var dates = $(".date_fin").datepicker({
-    dateFormat: "yy-mm-dd",
-    minDate: -20,
+ /* $('body').on('focus',".date_fin", function(){
+    $(this).datepicker({ minDate: -20 });
+  });*/
 
-  });
+$dispoPopup.find('.date_fin ').datepicker({ 
+  dateFormat: "dd-mm-yy",
+  minDate:parseDate( $(".date_debut").val(),"dd-mm-yyyy"),
+  onSelect: function(selected) {
+    $(".date_debut").datepicker("option","mDate", selected);
+  }
+});
 
-/*  $( ".date_debut" ).datepicker({
-    dateFormat: "dd/mm/yy",
-    defaultDate: "+1w",
-    minDate:0,
-    onClose: function( selectedDate ) {
-     $( ".date_fin" ).datepicker( "option", "minDate", selectedDate );
-     var from = $(this).val();
-     var startdatum = from.substr(6,4)+'-'+from.substr(3,2)+'-'+from.substr(0,2);
-     $(".date_debut").val(startdatum);
-   }
- });
-  $( ".date_fin" ).datepicker({
-    dateFormat: "dd/mm/yy",
-    defaultDate: "+1w",
-    minDate:+1,
-    onClose: function( selectedDate ) {
-     $( ".date_debut" ).datepicker( "option", "maxDate", selectedDate );
-     var to = $(this).val();
-     var einddatum = to.substr(6,4)+'-'+to.substr(3,2)+'-'+to.substr(0,2);
-     $(".date_fin").val(einddatum);
-   }
- });*/
 };
 var toEuNumDate = function( $date, sSeprateur ){
 
@@ -664,7 +643,7 @@ $('.submit_form').click(function() {
 
           if($('#images').length == 0){
 
-            $('#baseForm').after('<div id="images"><ul></ul></div>');
+            $('#baseForm').after('<div id="images"><ul id="sortable" class="ui-sortable"></ul></div>');
 
           }
           $('#images').find('li').remove();
@@ -679,33 +658,34 @@ $('.submit_form').click(function() {
                   deleteImage( $(this) );
 
                 });
-                /*$("#sortable").sortable("refresh");*/
-                sortable();
+
               }
               sortable();
             }
+
           });
 
-}
 
-}
-var sortable = function(){
-
-  $('#sortable').sortable({
-   create: function(event, ui) {
-    var data = {};
-
-    $("#sortable li").each(function(i, el){
-      var p = $(el).find('a').attr('data-id');
-      data[p]=$(el).index()+1;
-    });
-
-    $("form > [name='image_order']").val(JSON.stringify(data));
+    }
 
   }
-});
+  var sortable = function(){
 
-}
+    $('#sortable').sortable({
+     create: function(event, ui) {
+      var data = {};
+
+      $("#sortable li").each(function(i, el){
+        var p = $(el).find('a').attr('data-id');
+        data[p]=$(el).index()+1;
+      });
+
+      $("form > [name='image_order']").val(JSON.stringify(data));
+
+    }
+  });
+
+  }
    /**
    *
    * Param du plugins uploadFile
@@ -750,7 +730,7 @@ var sortable = function(){
 
       onError: function(files,status,errMsg)
       {
-        console.log(files+'.'+status+'.'+errMsg);
+        /*console.log(files+'.'+status+'.'+errMsg);*/
         $("#status").html("<font color='green'>Something Wrong</font>");
       }
 

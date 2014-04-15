@@ -449,7 +449,11 @@ div#nav-login li #login-content {
 #login #actions {
 	margin: 10px 0 0 0;
 }
-
+#login #actions label{
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
 #login #submit {
 	background-color: #fec314;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd65c), to(#fec007));
@@ -2886,7 +2890,7 @@ p#arrianne5 a:hover{
 		text-align: left;
 	}
 	.overlay{
-		display: block;
+		display: none;
 		pointer-events:none;
 		position: fixed;
 		top:0;

@@ -48,23 +48,23 @@
 		<li><a href="#fragment-5">ES</a></li>
 	</ul>
 	<div id="fragment-1">
-		<span>{{trans('general.fr')}}</span>
+		<span>{{trans('general.lang.fr')}}</span>
 		{{Form::text('titre_propriete[1]', Session::has('input_2') && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][1]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-2">
-		<span>{{trans('general.en')}}</span>
+		<span>{{trans('general.lang.en')}}</span>
 		{{Form::text('titre_propriete[2]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][2]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-3">
-		<span>{{trans('general.nl')}}</span>
+		<span>{{trans('general.lang.nl')}}</span>
 		{{Form::text('titre_propriete[3]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][3]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-4">
-		<span>{{trans('general.de')}}</span>
+		<span>{{trans('general.lang.de')}}</span>
 		{{Form::text('titre_propriete[4]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][4]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-5">
-		<span>{{trans('general.es')}}</span>
+		<span>{{trans('general.lang.es')}}</span>
 		{{Form::text('titre_propriete[5]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][5]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 </div>
@@ -105,23 +105,23 @@
 		<li><a href="#fragment-5">ES</a></li>
 	</ul>
 	<div id="fragment-1">
-		<span>{{trans('general.fr')}}</span>
+		<span>{{trans('general.lang.fr')}}</span>
 		{{Form::textarea('description[1]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][1]: '')}}
 	</div>
 	<div id="fragment-2">
-		<span>{{trans('general.en')}}</span>
+		<span>{{trans('general.lang.en')}}</span>
 		{{Form::textarea('description[2]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][2]: '')}}
 	</div>
 	<div id="fragment-3">
-		<span>{{trans('general.nl')}}</span>
+		<span>{{trans('general.lang.nl')}}</span>
 		{{Form::textarea('description[3]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][3]: '')}}
 	</div> 
 	<div id="fragment-4">
-		<span>{{trans('general.de')}}</span>
+		<span>{{trans('general.lang.de')}}</span>
 		{{Form::textarea('description[4]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][4]: '')}}
 	</div> 
 	<div id="fragment-5">
-		<span>{{trans('general.es')}}</span>
+		<span>{{trans('general.lang.es')}}</span>
 		{{Form::textarea('description[5]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][5]: '')}}
 	</div>
 </div>

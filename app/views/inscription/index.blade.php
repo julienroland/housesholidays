@@ -8,7 +8,10 @@
 			<tbody>
 				<tr>
 					<td width="539" height="400" align="left" valign="top" style="padding-right:15px">
-						
+
+						@if($post->count())
+							{{$post->pageTraduction[0]->texte}}
+						@endif
 						</td>
 						<td width="321" align="left" valign="top" style=" border-left:1px solid #CCCCCC; padding-left:15px">
 							<div id="signup_int" style="display: block;">
