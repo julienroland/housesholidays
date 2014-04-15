@@ -32,9 +32,17 @@ class Propriete extends Eloquent {
 		);
 
 	public static $sluggable = array(
-		'build_from' => 'nom',
+		'build_from' => 'fullname',
 		'save_to'    => 'slug',
 		);
+
+	public function getFullnameAttribute() {
+
+		$propriete = Propriete::getLocations(Session::get('proprieteId'));
+		
+		return $propriete->nom . ' ' . $propriete->pays->paysTraduction[0]->nom . '  ' . $propriete->region->regionTraduction[0]->nom . ' ' . $propriete->sousRegion->sousRegionTraduction[0]->nom . ' ' .$propriete->localite->nom;
+
+	}
 
 	public function proprieteTraduction(){
 
@@ -92,6 +100,12 @@ class Propriete extends Eloquent {
 
 	}
 
+	public function localite(){
+
+		return $this->belongsTo('Localite');
+
+	}
+
 	public function annoncePaye(){
 
 		return $this->belongsTo('AnnoncePaye');
@@ -109,7 +123,52 @@ class Propriete extends Eloquent {
 		return Session::has('currentEtape') ? Session::get('currentEtape') : 1;
 
 	}
-	
+
+	public static function getLocations( $proprieteId = null){
+
+		if(Helpers::isNotOk( $proprieteId)){
+
+			$proprieteDump = User::find( Auth::user()->id )
+			->propriete(  )
+			->with(array(
+				'proprieteTraduction',
+				'localite',
+				'sousRegion.sousRegionTraduction',
+				'region.regionTraduction',
+				'pays.paysTraduction',
+				'tarif',
+				'typeBatiment.typeBatimentTraduction',
+				'photoPropriete'=>function($query){
+					$query->whereAccroche('1');
+				},
+				))
+			->where( 'etape','!=','' )
+			->get(  );
+
+		}else{
+
+			$proprieteDump = Propriete::
+			with(array(
+				'proprieteTraduction',
+				'localite',
+				'sousRegion.sousRegionTraduction',
+				'region.regionTraduction',
+				'pays.paysTraduction',
+				'tarif',
+				'typeBatiment.typeBatimentTraduction',
+				'photoPropriete'=>function($query){
+					$query->whereAccroche('1');
+				},
+				))
+			->where( 'etape','!=','' )
+			->whereId($proprieteId)
+			->first(  );
+
+		}
+
+		return $proprieteDump;
+	}
+
 	public static function getPhoto( $proprieteId , $type = null, $output = null ) {
 
 		if(!isset($type) && Helpers::isNotOk( $type ))
@@ -158,4 +217,58 @@ class Propriete extends Eloquent {
         	return (object)$data;
         }
     }
+
+    public static function getOption($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+/**
+		*
+		* Select les option AVEC les traductions en fonction du type d'option, fetch un tableau (laravel collection)
+		*
+		**/
+		$data = array(
+			'exterieur'=> array(
+				),
+			'interieur'=> array(
+				),
+			'literie'=> array(
+				),
+			);
+
+		$d = array('b_literie','b_interieur','b_exterieur');
+
+
+		foreach($d as $typeOption){
+
+			$optionDump = Propriete::find( $proprieteId )->with(array('option.typeOption'=>function($query) use($typeOption){
+
+				$query->whereNom($typeOption);
+
+			}))->get();
+			/*->whereNom('b_interieur')->whereNom('b_exterieur')*/
+
+			$t= array();
+
+			foreach($optionDump as $options){
+
+				$t[$typeOption] = $options->option;
+
+			}
+
+			foreach($t[$typeOption] as $dataArr){
+
+				
+				$data[str_replace('b_','',$typeOption)][$dataArr->pivot->option_id] = (object)array('id'=>$dataArr->pivot->option_id,'valeur' =>$dataArr->pivot->valeur);
+			}
+
+
+			
+		}
+		dd($data);	
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
 }

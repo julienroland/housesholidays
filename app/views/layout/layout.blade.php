@@ -3,28 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+  @if(isset($widget) && Helpers::isOk($widget) && in_array('select', $widget))
   {{HTML::style('css/chosen.css')}}
+  @endif
+
   {{HTML::style('css/ui-lightness/jquery-ui-1.10.4.custom.css')}}
+
+
+  @if(isset($widget) && Helpers::isOk($widget) && in_array('upload', $widget))
   {{HTML::style('css/uploadfile.css')}}
-  {{HTML::style('css/main.css')}}
+  @endif
+
+  {{HTML::style('css/style.css')}}
+
 </head>
+
+@include('layout.top')
+
 <body id="{{isset($page) ? $page : ''}}">
 
-  {{link_to(Lang::get('routes.index'),trans('general.index'))}}
-
-  @if(Auth::check())
-
-  {{link_to(Lang::get('routes.deconnexion'),trans('general.deconnexion'))}}
-
-  {{link_to_route('compte', trans('general.compte'),array(Auth::user()->slug))}}
-
-  @else
-
-  {{link_to(Lang::get('routes.inscription'),trans('general.inscription'))}}
-  {{link_to(Lang::get('routes.connexion'),trans('general.connexion'))}}
-
-  @endif
-  
   @yield('container')
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -76,7 +74,7 @@
         stop: function(event, ui) {
           var data = {};
 
-           $("#sortable li").each(function(i, el){
+          $("#sortable li").each(function(i, el){
             var p = $(el).find('a').attr('data-id');
             data[p]=$(el).index()+1;
           });
@@ -99,20 +97,26 @@
       }).disableSelection();
 
 
-});
-</script>
-@endif
-{{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
+    });
+  </script>
+  @endif
+  
+  @if( isset($widget) && Helpers::isOk($widget) && in_array('carte', $widget)  )
+  
+  {{HTML::script('js/carte.js')}}
+  
+  @endif
+
+  {{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
 
 
-{{HTML::script('js/main.js')}}
+  {{HTML::script('js/main.js')}}
 
 
-@if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
-<script> $( ".tabs" ).tabs();</script>
+  @if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
+  <script> $( ".tabs" ).tabs();</script>
 
-@endif
-
+  @endif
 
 
 </body>

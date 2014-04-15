@@ -11,15 +11,15 @@
 
 {{Form::open(array('route'=>'connexion'))}}
 {{Form::label('email',trans('form.enter_email'))}}
-{{Form::text('email',Cookie::get('email') ? Cookie::get('email') : '', array('required'))}}
+{{Form::text('email',Cookie::get('rememberEmail')['email'] ? Cookie::get('rememberEmail')['email'] : '', array('autocomplete'=>'false','required',Helpers::isOk(Cookie::get('rememberEmail')['email'])?'':'autofocus'))}}
 <br>
 
 {{Form::label('password',trans('form.enter_password'))}}
-{{Form::password('password', array('required'))}}
+{{Form::password('password', array('required', Helpers::isOk(Cookie::get('rememberEmail')['email'])?'autofocus':''))}}
 <br>
 
 {{Form::label('remember',trans('form.remember'))}}
-{{Form::checkbox('remember','ok', Helpers::isOk(Cookie::get('remember')) ? true  : false)}}
+{{Form::checkbox('remember','ok', Helpers::isOk(Cookie::get('rememberEmail')['remember']) ? true  : false)}}
 <br>
 {{Form::submit(trans('form.button_valid'))}}
 

@@ -20,6 +20,7 @@ class LocalitesTableSeeder extends Seeder {
 				array_push($localites, array(
 					'id'=>$data['id'],
 					'pays_id'=> (int)$data["country_id"],
+					'statut'=>1,
 					'nom'=> $data["name"],
 					));
 

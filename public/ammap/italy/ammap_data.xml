@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map map_file="ammap/italy/italy.swf" tl_long="6.6254" tl_lat="47.0925" br_long="18.52" br_lat="35.4913" zoom="110%" zoom_x="50%" zoom_y="0%">
+  <areas>
+    <area mc_name="ITA_abruzzo" title="Abruzzo" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Abruzos&Destination=&pax=&action=5+logements"></area>
+    <area mc_name="ITA_aosta_valley" title="Aosta Valley" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Valle+de+Aosta&Destination=&pax=&action=2+logements"></area>
+    <area mc_name="ITA_apulia" title="Apulia" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Apulia&Destination=&pax=&action=19+logements"></area>
+    <area mc_name="ITA_basilicata" title="Basilicata" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Basilicata&Destination=&pax=&action=1+logements"></area>
+    <area mc_name="ITA_calabria" title="Calabria" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Calabria&Destination=&pax=&action=3+logements"></area>
+    <area mc_name="ITA_campania" title="Campania" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Campania&Destination=&pax=&action=16+logements"></area>
+    <area mc_name="ITA_emilia_romagna" title="Emilia-Romagna" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Emilia+Roma%C3%B1a&Destination=&pax=&action=11+logements"></area>
+    <area mc_name="ITA_friuli_venezia_giulia" title="Friuli-Venezia Giulia" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Friuli+Venecia+Julia&Destination=&pax=&action=2+logements"></area>
+    <area mc_name="ITA_lazio" title="Lazio" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Lacio&Destination=&pax=&action=24+logements"></area>
+    <area mc_name="ITA_liguria" title="Liguria" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Liguria&Destination=&pax=&action=13+logements"></area>
+    <area mc_name="ITA_lombardy" title="Lombardy" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Lombardia&Destination=&pax=&action=20+logements"></area>
+    <area mc_name="ITA_marche" title="Marche" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Marcas&Destination=&pax=&action=14+logements"></area>
+    <area mc_name="ITA_molise" title="Molise" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Molise&Destination=&pax=&action=1+logements"></area>
+    <area mc_name="ITA_piedmont" title="Piedmont" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Piamonte&Destination=&pax=&action=9+logements"></area>
+    <area mc_name="ITA_sardinia" title="Sardinia" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Sardegna&Destination=&pax=&action=36+logements"></area>
+    <area mc_name="ITA_sicily" title="Sicily" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Sicilia&Destination=&pax=&action=37+logements"></area>
+    <area mc_name="ITA_trentino_alto" title="Trentino-Alto" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Trentino+Alto+Adigio&pax=&action=4+logements"></area>
+    <area mc_name="ITA_tuscany" title="Tuscany" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Toscana&Destination=&pax=&action=49+logements"></area>
+    <area mc_name="ITA_umbria" title="Umbria" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Umbria&Destination=&pax=&action=30+logements"></area>
+    <area mc_name="ITA_veneto" title="Veneto" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Italy&Province=Veneto&Destination=&pax=&action=24+logements"></area>
+    <!-- Other areas -->
+    <area mc_name="VAT" title="Vatican City (Holy See)" color="#696969" alpha="0"></area><!-- Change alpha value to see Vatican City area-->
+    <area mc_name="SMR" title="San Marino" color="#696969" alpha="0" balloon="false"></area>
+    <area mc_name="FR_H" title="Corse" color="#696969" alpha="0" balloon="false"></area>
+    <area mc_name="MLT" title="Malta" color="#696969" alpha="0" balloon="false"></area>
+  </areas>
+  <movies>
+    <movie title="Rome" file="target" color="#e77d28" width="10" height="10" long="12.496078" lat="41.902342" fixed_size="true"></movie>
+    <!--<movie title="Vatican City" file="circle" color="#CC0000" width="5" height="5" long="12.452476" lat="41.903619" fixed_size="true"></movie>--><!--Vatican City is so small it is the same size as a #5 circle symbol-->
+  </movies>
+  <labels>
+    <label x="8" y="20" text_size="14" color="#696969" remain="false">
+      <text>Italy</text>
+    </label>
+  </labels>
+</map>

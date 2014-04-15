@@ -15,6 +15,7 @@ class CreateRegionsTable extends Migration {
 		Schema::create('regions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('nb_vue');
+			$table->boolean('statut');
 			$table->integer('pays_id')->unsigned();
 			$table->foreign('pays_id')->references('id')->on('pays');
 			

@@ -24,7 +24,7 @@
 </div>
 @endif
 
-@if(Session::get('etape2') && Helpers::isOk(Session::get('proprieteId')))
+@if(Session::get('etape2') && Helpers::isOk(Session::get('proprieteId') || isset($data) && Helpers::isOk( $data )))
 
 {{Form::open(array('method'=>'put','route'=>array('inscription_etape1_update',Auth::user()->slug,Session::get('proprieteId'))))}}
 
@@ -33,8 +33,9 @@
 {{Form::open(array('route'=>array('inscription_etape1',Auth::user()->slug)))}}
 
 @endif
+
 {{Form::label('nom_propriete',trans('form.enter_batiment_name'))}}
-{{Form::text('nom_propriete', Session::has('input_2') ? Session::get('input_2')['nom_propriete']: '' ,array('placeholder'=>'Avana Mostra','required'))}}
+{{Form::text('nom_propriete', isset($data->nom) && Helpers::isOk($data->nom) ? $data->nom : (Session::has('input_2') ? Session::get('input_2')['nom_propriete']: '') ,array('placeholder'=>'Avana Mostra','required'))}}
 <br/>
 
 {{Form::label('titre_propriete',trans('form.enter_annonce_name'))}}
@@ -70,28 +71,28 @@
 <br/>
 
 {{Form::label('type_propriete',trans('form.enter_batiement_type'))}}
-{{Form::select('type_propriete',$typeBatimentList,Session::has('input_2') ? Session::get('input_2')['type_propriete']: '',array('class'=>'select','required'))}}
+{{Form::select('type_propriete',$typeBatimentList,isset($data->type_batiment_id) && Helpers::isOk($data->type_batiment_id) ? $data->type_batiment_id : ( Session::has('input_2') ? Session::get('input_2')['type_propriete']: ''),array('class'=>'select','required'))}}
 
 <br/>
 {{Form::label('nb_personne',trans('form.enter_nb_personne'))}}
-{{Form::input('number','nb_personne',Session::has('input_2') ? Session::get('input_2')['nb_personne']: '',array('min'=>'1','max'=>'20','required'))}}
+{{Form::input('number','nb_personne',isset($data->nb_personne) && Helpers::isOk($data->nb_personne) ? $data->nb_personne : (Session::has('input_2') ? Session::get('input_2')['nb_personne']: ''),array('min'=>'1','max'=>'20','required'))}}
 <br/>
 {{Form::label('nb_chambre',trans('form.enter_nb_chambre'))}}
-{{Form::input('number','nb_chambre',Session::has('input_2') ? Session::get('input_2')['nb_chambre']: '',array('min'=>'1','max'=>'20','required'))}}
+{{Form::input('number','nb_chambre',isset($data->nb_chambre) && Helpers::isOk($data->nb_chambre) ? $data->nb_chambre : (Session::has('input_2') ? Session::get('input_2')['nb_chambre']: ''),array('min'=>'1','max'=>'20','required'))}}
 <br/>
 {{Form::label('nb_sdb',trans('form.enter_nb_sdb'))}}
-{{Form::input('number','nb_sdb',Session::has('input_2') ? Session::get('input_2')['nb_sdb']: '',array('min'=>'0','max'=>'20'))}}
+{{Form::input('number','nb_sdb',isset($data->nb_sdb) && Helpers::isOk($data->nb_sdb) ? $data->nb_sdb :( Session::has('input_2') ? Session::get('input_2')['nb_sdb']: ''),array('min'=>'0','max'=>'20'))}}
 <br/>
 {{Form::label('etage',trans('form.enter_etage'))}}
-{{Form::input('number','etage',Session::has('input_2') ? Session::get('input_2')['etage']: '',array('min'=>'0','max'=> 10,'required'))}}
+{{Form::input('number','etage',isset($data->etage) && Helpers::isOk($data->etage) ? $data->etage : (Session::has('input_2') ? Session::get('input_2')['etage']: ''),array('min'=>'0','max'=> 10,'required'))}}
 
 <br/>
 {{Form::label('taille_interieur',trans('form.enter_int_size'))}}
-{{Form::text('taille_interieur',Session::has('input_2') ? Session::get('input_2')['taille_interieur']: '',array('placeholder'=>'2','required'))}}
+{{Form::text('taille_interieur', isset($data->taille_bien) && Helpers::isOk($data->taille_bien) ? $data->taille_bien : (Session::has('input_2') ? Session::get('input_2')['taille_interieur']: ''),array('placeholder'=>'2','required'))}}
 <span>m²</span>
 <br/>
 {{Form::label('taille_exterieur',trans('form.enter_ext_size'))}}
-{{Form::text('taille_exterieur',Session::has('input_2') ? Session::get('input_2')['taille_exterieur']: '',array('placeholder'=>'2'))}}
+{{Form::text('taille_exterieur',isset($data->taille_terrain) && Helpers::isOk($data->taille_terrain) ? $data->taille_terrain : (Session::has('input_2') ? Session::get('input_2')['taille_exterieur']: ''),array('placeholder'=>'2'))}}
 <span>m²</span>
 <br/>
 {{Form::label('description',trans('form.enter_description'))}}

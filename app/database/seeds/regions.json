@@ -12,6 +12,13 @@
 				 "fr":"Région Wallonne",
 				 "nl":"Wallonië"
 				 },
+				 "slug":
+				 {
+				"de":"wallonien",
+				"es":"valonia",
+				"fr":"region-wallonne",
+				"nl":"wallonie"
+				 	},
 			"description":
 				{
 				"en":"Wallonia may range approximately from the river Meuse basin, European river. With the exception of the province of Walloon Brabant, south of Brussels, and a large part of Hainaut in the west, adjacent to France, the rest of Wallonia - but two or three enclaves, including the side of the Grand-Luxembourg - belongs to the Meuse basin.",
@@ -83,6 +90,12 @@
 				 "fr":"Région Flamande",
 				 "nl":"Vlaanderen"
 				 },
+				 "slug":{
+ 				 "de":"flandern",
+				 "es":"flandes",
+				 "fr":"region-flamande",
+				 "nl":"vlaanderen"
+				 	},
 				 "description":
 					{
 					"en":"Flanders is the front door of Europe. Besides its productive highly skilled population and climate studies and investments, it has a large rail and road network, plus several major ports. Find below the major seaports and the airport of Zaventem.",
@@ -154,6 +167,12 @@
 				 "fr":"Région de Bruxelles-Capitale",
 				 "nl":"Gebied Brussel-Hoofdstad"
 				 },
+				 "slug":{
+ 				 "de":"region-brüssel-hauptstadt",
+				 "es":"región-de-bruselas-capital",
+				 "fr":"région-de-bruxelles-capitale",
+				 "nl":"gebied-brussel-hoofdstad"
+				 	},
 				 "description":
 					{
 					"en":"FCompared to most parts of Europe, it has a relatively small 161 km2 enclave in Flemish territory, but distinct from it. By cons, if one considers that this is an urban complex whose parts are closely integrated with each other in a single district called Brussels, size appears respectable as all form one city which is 1.6 times the area of ​​Paris inside the beltway.",
@@ -191,6 +210,13 @@
 				 "es":"Alsacia",
 				 "fr":"Alsace",
 				 "nl":"Elzas"
+				 },
+				"slug":
+				 {
+				 "de":"elsass",
+				 "es":"alsacia",
+				 "fr":"alsace",
+				 "nl":"elzas"
 				 },
 				 "description":
 					{
@@ -233,6 +259,13 @@
 				 "es":"Aquitania",
 				 "fr":"Aquitaine",
 				 "nl":"Aquitaine"
+				 }, 
+				"slug":
+				 {
+				 "de":"aquitaine",
+				 "es":"aquitania",
+				 "fr":"aquitaine",
+				 "nl":"aquitaine"
 				 },
 				 "description":
 					{
@@ -305,6 +338,13 @@
 				 "fr":"Auvergne",
 				 "nl":"Auvergne"
 				 },
+				 "slug":
+				 {
+				 "de":"auvergne",
+				 "es":"auvergne",
+				 "fr":"auvergne",
+				 "nl":"auvergne"
+				 },
 				 "description":
 					{
 					"en":"At the heart of France, the Auvergne is the land of wide open spaces and volcanism par excellence. The banks of the Allier Cantal peaks, woodlands reliefs Haute-Loire Puy-de-Dome, Auvergne offers the mysterious striking contrasts. Land of fire, but also countries with eleven water spas: Volvic, Saint Yorre Ch&acirc;tel Guyon, Royat ... Its inhabitants, as strong and whole, live in the hollow of volcanic mountains, villages perched on rocky cliffs, dotted with abbeys and castles beautiful. Want to drunkenness and air of authenticity, respond to the invitation Auvergne and discover the pastures, ancient forests, plains and enchanting giant of the Massif Central: volcanoes.<a rel='nofollow' href='http://www.auvergne.jedecouvrelafrance.com/r-22.html'>source</a>",
@@ -365,6 +405,13 @@
 				 "es":"borgoña",
 				 "fr":"Bourgogne",
 				 "nl":"Bourgondië"
+				 }, 
+				 "slug":
+				 {
+				 "de":"burgund",
+				 "es":"borgona",
+				 "fr":"bourgogne",
+				 "nl":"bourgondie"
 				 },
 				 "description":
 					{
@@ -426,6 +473,13 @@
 				 "es":"Bretaña",
 				 "fr":"Bretagne",
 				 "nl":"Bretagne"
+				 }, 
+				 "slug":
+				 {
+				 "de":"bretagne",
+				 "es":"bretana",
+				 "fr":"bretagne",
+				 "nl":"bretagne"
 				 },
 				 "description":
 					{
@@ -484,8 +538,15 @@
 			 "translations":
 				 {
 				 "de":"Zentrum",
-				 "es":"centro",
+				 "es":"Centro",
 				 "fr":"Centre",
+				 "nl":"Centrum"
+				 },
+				 "slug":
+				 {
+				 "de":"zentrum",
+				 "es":"centro",
+				 "fr":"centre",
 				 "nl":"centrum"
 				 },
 				 "description":
@@ -568,6 +629,13 @@
 				 "es":"Champagne-Ardenne",
 				 "fr":"Champagne-Ardenne",
 				 "nl":"Champagne-Ardenne"
+				 }, 
+				 "slug":
+				 {
+				 "de":"champagne-ardenne",
+				 "es":"champagne-ardenne",
+				 "fr":"champagne-ardenne",
+				 "nl":"champagne-ardenne"
 				 },
 				 "description":
 					{
@@ -629,6 +697,13 @@
 				 "es":"Córcega",
 				 "fr":"Corse",
 				 "nl":"Corsica"
+				 }, 
+				 "slug":
+				 {
+				 "de":"korsika",
+				 "es":"corcega",
+				 "fr":"corse",
+				 "nl":"corsica"
 				 },
 				 "description":
 					{
@@ -670,6 +745,13 @@
 				 "es":"Franche-Comté",
 				 "fr":"Franche-Comté",
 				 "nl":"Franche-Comte"
+				 },
+				 "slug":
+				 {
+				 "de":"franche-comte",
+				 "es":"franche-comte",
+				 "fr":"franche-comte",
+				 "nl":"franche-comte"
 				 },
 				 "description":
 					{
@@ -731,6 +813,13 @@
 				 "es":"Guadalupe",
 				 "fr":"Guadeloupe",
 				 "nl":"Guadeloupe"
+				 }, 
+				"slug":
+				 {
+				 "de":"guadeloupe",
+				 "es":"guadalupe",
+				 "fr":"guadeloupe",
+				 "nl":"guadeloupe"
 				 },
 				 "description":
 					{
@@ -754,6 +843,13 @@
 				 "fr":"Guyane",
 				 "nl":"Guyane"
 				 },
+			 "slug":
+				 {
+				 "de":"guyana",
+				 "es":"guayana",
+				 "fr":"guyane",
+				 "nl":"guyane"
+				 },
 				 "description":
 					{
 					"en":"",
@@ -775,6 +871,13 @@
 				 "es":"Ile-de-France",
 				 "fr":"Île-de-France",
 				 "nl":"Ile-de-France"
+				 },
+			 "translations":
+				 {
+				 "de":"ile-de-france",
+				 "es":"ile-de-france",
+				 "fr":"ile-de-France",
+				 "nl":"ile-de-france"
 				 },
 				 "description":
 					{
@@ -877,6 +980,13 @@
 				 "fr":"Languedoc-Roussillon",
 				 "nl":"Languedoc-Roussillon"
 				 },
+			 "translations":
+				 {
+				 "de":"languedoc-roussillon",
+				 "es":"languedoc-roussillon",
+				 "fr":"languedoc-roussillon",
+				 "nl":"languedoc-roussillon"
+				 },
 				 "description":
 					{
 					"en":"If you are looking for a land of contrasts, the Languedoc Roussillon brings you. The five departments that make up this region are as different as complementary. Gard, H&eacute;rault, Aude and Pyrenees Orientales oriented Big Blue ... Some 200 kilometers of coastline housing as well as the modern marinas Grande Motte and small towns of character: S&egrave;te or Aigues Mortes. Only Loz&egrave;re has no coastline, but retains some small treasures and the Aven Armand and the Gorges du Tarn. Rich in history, the region cultivates its differences flirting with Provence and the Pays Catalan ... The Cathar castles, the university Montpellier, N&icirc;mes Roman, anchovies from Collioure, Canigou ... This is the Languedoc Roussillon!<a rel='nofollow' href='http://www.languedoc-roussillon.jedecouvrelafrance.com/r-16.html'>source</a>",
@@ -948,6 +1058,13 @@
 				 "fr":"Limousin",
 				 "nl":"Limousin"
 				 },
+			 "slug":
+				 {
+				 "de":"limousin",
+				 "es":"limousin",
+				 "fr":"limousin",
+				 "nl":"limousin"
+				 },
 				 "description":
 					{
 					"en":"Limousin is composed of Corr&egrave;ze, Creuse and Haute-Vienne, three departments which have preserved their charm and authenticity. Located on the steps of the Massif Central, Limousin is a land of trees and water, oaks and chestnut trees, meadows and deep valleys, springs and secret paths. The Millevaches Vassivi&egrave;re Lake through the valleys of the Dordogne and the Vezere, Limousin offers the spectacle of a plural nature paradise for hikers and fishermen. Romanesque churches, medieval villages, Collonges-la-Rouge, Curemonte ... not fail to seduce lovers of heritage. Limousin is also a land of gastronomy. The region that gave birth to the clafoutis welcomes its generous kitchen tables where the piece is made with beef Limousin! It offers a warm welcome, fun walks in the fresh air is combined with the pleasures of the table.<a rel='nofollow' href='http://www.limousin.jedecouvrelafrance.com/r-18.html'>source</a>",
@@ -998,6 +1115,13 @@
 				 "es":"Lorraine",
 				 "fr":"Lorraine",
 				 "nl":"Lotharingen"
+				 },
+			 "slug":
+				 {
+				 "de":"lorraine",
+				 "es":"lorraine",
+				 "fr":"lorraine",
+				 "nl":"lotharingen"
 				 },
 				 "description":
 					{
@@ -1060,6 +1184,13 @@
 				 "fr":"Martinique",
 				 "nl":"Martinique"
 				 },
+			 "slug":
+				 {
+				 "de":"martinique",
+				 "es":"martinica",
+				 "fr":"martinique",
+				 "nl":"martinique"
+				 },
 				 "description":
 					{
 					"en":"",
@@ -1080,6 +1211,13 @@
 				 "es":"Mayotte",
 				 "fr":"Mayotte",
 				 "nl":"Mayotte"
+				 },
+			 "slug":
+				 {
+				 "de":"mayotte",
+				 "es":"mayotte",
+				 "fr":"mayotte",
+				 "nl":"mayotte"
 				 },
 				 "description":
 					{
@@ -1102,6 +1240,13 @@
 				 "es":"Midi-Pyrénées",
 				 "fr":"Midi-Pyrénées",
 				 "nl":"Midi-Pyrenees"
+				 },
+			 "slug":
+				 {
+				 "de":"midi-pyrenees",
+				 "es":"midi-pyrenees",
+				 "fr":"midi-pyrenees",
+				 "nl":"midi-pyrenees"
 				 },
 				 "description":
 					{
@@ -1194,6 +1339,13 @@
 				 "fr":"Nord-Pas-de-Calais",
 				 "nl":"Nord-Pas-de-Calais"
 				 },
+			 "slug":
+				 {
+				 "de":"nord-pas-de-calais",
+				 "es":"nord-pas-de-calais",
+				 "fr":"nord-pas-de-calais",
+				 "nl":"nord-pas-de-calais"
+				 },
 				 "description":
 					{
 					"en":"Northernmost region, the Nord Pas de Calais is a land of meeting and sharing: the Nord department turned to Belgium, Holland and Germany, in the Pas de Calais to England ... Despite a lot of ideas, the Nord Pas de Calais is one of the most visited regions: the stations &quot;Belle Epoque&quot; of the sea, Le Touquet, Merlimont; architectural treasures in cities like Lille, Arras and the importance port cities, Calais, Dunkirk and the weight of history, annexations in the county of Flanders and at home in Spain, the German occupation ... The landscapes of farmland in Avesnois those heaps around Lens ... Everything is important, nothing is superficial ... This depth, you'll also find in &quot;People of the North&quot;: they give you a warm welcome, the sense of fun that you transmit, and friendship ... unwavering ... Are there more wealth?<a rel='nofollow' href='http://www.nord-pas-de-calais.jedecouvrelafrance.com/r-8.html'>source</a>",
@@ -1234,6 +1386,13 @@
 				 "es":"Basse-Normandie",
 				 "fr":"Basse-Normandie",
 				 "nl":"Lotharingen"
+				 },
+			 "slug":
+				 {
+				 "de":"basse-normandie",
+				 "es":"basse-normandie",
+				 "fr":"basse-normandie",
+				 "nl":"lotharingen"
 				 },
 				 "description":
 					{
@@ -1286,6 +1445,13 @@
 				 "fr":"Haute-Normandie",
 				 "nl":"Haute-Normandie"
 				 },
+			 "slug":
+				 {
+				 "de":"haute-normandie",
+				 "es":"haute-normandie",
+				 "fr":"haute-normandie",
+				 "nl":"haute-normandie"
+				 },
 				 "description":
 					{
 					"en":"If the Upper Normandy only two departments, Eure and Seine-Maritime, it is nonetheless a powerful economic region. Its advantages are many: grain production, industrial area, commercial ports, advanced technology ... Also predominant are its cultural, environmental and recreational activities: many museums and theaters, parks and gardens, exploiting forests, restoration of architectural heritage ... In addition to being economically powerful, it is essential touristically! The foundation of the great abbeys at birth of Impressionism, through Etretat, Dieppe, Rouen and Evreux, without neglecting the beautiful countryside, its apples and dairy products; Upper Normandy is a guarantee of quality. Nature, culture, history and friendliness await you!<a rel='nofollow' href='http://www.haute-normandie.jedecouvrelafrance.com/r-6.html'>source</a>",
@@ -1326,6 +1492,13 @@
 				 "es":"Pays de la Loire",
 				 "fr":"Pays de la Loire",
 				 "nl":"Pays de la Loire"
+				 },
+			 "slug":
+				 {
+				 "de":"pays-de-la-loire",
+				"es":"pays-de-la-loire",
+				"fr":"pays-de-la-loire",
+				"nl":"pays-de-la-loire"
 				 },
 				 "description":
 					{
@@ -1398,6 +1571,13 @@
 				 "fr":"Picardie",
 				 "nl":"Picardie"
 				 },
+			 "slug":
+				 {
+				 "de":"picardie",
+				 "es":"picardie",
+				 "fr":"picardie",
+				 "nl":"picardie"
+				 },
 				 "description":
 					{
 					"en":"Tourist Guide Picardy Picardy is comprised of the departments of Aisne, the Oise and the Somme. This historically rich land has experienced all the great times, more or less glorious in the history of France. Aisne and its cities as Laon and Soissons, capital of the kingdom of France, large farmlands have been destroyed during the first war. Tour to England, the Somme is a land of marshes in protected coastal areas, with large spaces with the Somme Bay and Bay Authie. The Oise is a land of castles, Chantilly and cathedrals Ermenonville, Noyon and Beauvais, also land of kings since Clovis at Soissons to Napoleon III Compi&egrave;gne ... and forests, among the most beautiful in France ... Whichever way one turns, as long as you have a little time, Picardy likes to be discovered: its wealth and its world-famous treasures hidden nature of the sea and windswept campaign experienced by the wounds of war ...<a rel='nofollow' href='http://www.picardie.jedecouvrelafrance.com/r-7.html'>source</a>",
@@ -1448,6 +1628,13 @@
 				 "es":"Poitou-Charentes",
 				 "fr":"Poitou-Charentes",
 				 "nl":"Poitou-Charentes"
+				 },
+			 "slug":
+				 {
+				 "de":"poitou-charentes",
+				 "es":"poitou-charentes",
+				 "fr":"poitou-charentes",
+				 "nl":"poitou-charentes"
 				 },
 				 "description":
 					{
@@ -1509,6 +1696,13 @@
 				 "es":"Provence-Alpes-Côte d'Azur",
 				 "fr":"Provence-Alpes-Côte d'Azur",
 				 "nl":"Provence-Alpes-Côte d'Azur"
+				 },
+			 "slug":
+				 {
+				 "de":"provence-alpes-cote-d-azur",
+				 "es":"provence-alpes-cote-d-azur",
+				 "fr":"provence-alpes-cote-d-azur",
+				 "nl":"provence-alpes-cote-d-azur"
 				 },
 				 "description":
 					{
@@ -1591,6 +1785,13 @@
 				 "fr":"Île de La Réunion",
 				 "nl":"Reunion Island"
 				 },
+			 "slug":
+				 {
+				 "de":"insel-la-reunion",
+				 "es":"isla-de-la-reunion",
+				 "fr":"ile-de-la-reunion",
+				 "nl":"reunion-island"
+				 },
 				 "description":
 					{
 					"en":"Réunion is an island in the southwest Indian Ocean which forms a department and overseas French region (DROM). It is located in the Mascarene archipelago about 700 kilometers east of Madagascar and 170 kilometers south-west of Mauritius, the nearest land island.",
@@ -1612,6 +1813,13 @@
 				 "es":"Ródano-Alpes",
 				 "fr":"Rhône-Alpes",
 				 "nl":"Rhône-Alpes"
+				 },
+			 "slug":
+				 {
+				 "de":"rhone-alpes",
+				 "es":"rodano-alpes",
+				 "fr":"rhone-alpes",
+				 "nl":"rhone-alpes"
 				 },
 				 "description":
 					{

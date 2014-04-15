@@ -14,6 +14,7 @@ class CreateSousRegionsTable extends Migration {
 	{
 		Schema::create('sous_regions', function(Blueprint $table) {
 			$table->increments('id');
+			$table->boolean('statut');
 			$table->integer('region_id')->unsigned();
 			$table->foreign('region_id')->references('id')->on('regions');
 			

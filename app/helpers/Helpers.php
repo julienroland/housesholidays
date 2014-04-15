@@ -2,8 +2,24 @@
 
 use Carbon\Carbon;
 
+
 class Helpers {
 
+	protected $iniDay = array(
+		'Monday',
+		'Tues',
+		);
+	public static function toHumanTimestamp( $timestamp ){
+
+		setlocale(LC_TIME, App::getLocale());  
+
+		return $timestamp->formatLocalized('%e %A %B %Y %k:%M:%S');
+	}
+	public static function createCarbonTimestamp( $timestamp, $type='us',  $separator = '-' ){
+
+		Helpers::toHumanTimestamp($timestamp);
+
+	}
 	public static function getDateBetween( $start, $end ){
 		$dateBetween  = array();
 		$start = Helpers::createCarbonDate( $start);
@@ -174,17 +190,24 @@ class Helpers {
 			$class= '';
 			$dataId = '';
 
-			foreach($listDatesBetween as $datesBetween){
-				foreach($datesBetween as $dateBetween){
-					$dateBetween  = Helpers::createCarbonDate($dateBetween);
-					if($dateCarbon->eq($dateBetween)){
+			if( isset($listDatesBetween) && Helpers::isOk( $listDatesBetween ) ){
 
-						$class='busy';
-						$dataId = $calendrier->id;
+				foreach($listDatesBetween as $datesBetween){
 
+					foreach($datesBetween as $dateBetween){
+
+						$dateBetween  = Helpers::createCarbonDate($dateBetween);
+
+						if($dateCarbon->eq($dateBetween)){
+
+							$class='busy';
+							$dataId = $calendrier->id;
+
+						}
 					}
 				}
 			}
+
 			if($currentDayRel == $today_date ){  
 
 				$calendar .= "<td class='day today $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
@@ -367,9 +390,16 @@ class Helpers {
 	* Convertis une string vers une string sluge (informations très personnelles => informations-tres-personnelles)
 	*
 	**/
-	public static function toSlug( $string ){
+	public static function toSlug( $string, $charset = 'utf-8' ){
+		
 
-		return str_replace(' ' , '-' , strtolower( $string ) );
+		$string = htmlentities($string, ENT_NOQUOTES, $charset);
+		$string = preg_replace('#&([A-za-z])(?:acute|cedil|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $string);
+		$string = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $string); 
+		$string = preg_replace('#&[^;]+;#', '', $string); 
+		$string = strtolower( $string );
+
+		return str_replace(' ' , '-' , $string );
 
 	}
 	/**

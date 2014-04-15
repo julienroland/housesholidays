@@ -1,10 +1,5 @@
 <?php 
 return array(
-
-	'connexion'=>'Connectez-vous',
-	'inscription'=>'Inscrivez-vous',
-	'deconnexion'=>'Déconnectez-vous',
-	'compte'=>'Mon Compte',
 	'annonce'=>'Mes annonces',
 	'promo'=>'Promotions',
 	'facture'=>'Factures',
@@ -14,11 +9,13 @@ return array(
 	'nuits'=>'nuits',
 	'introuvable'=>'Page introuvable',
 	//lang
-	'fr'=>'Français',
-	'en'=>'Anglais',
-	'nl'=>'Néerlandais',
-	'de'=>'Allemand',
-	'es'=>'Espagnol',
+	'lang'=>array(
+		'fr'=>'Français',
+		'en'=>'Anglais',
+		'nl'=>'Néerlandais',
+		'de'=>'Allemand',
+		'es'=>'Espagnol',
+		),
 	//jours
 	'jours'=>array(
 		'1'=>'Lundi',
@@ -44,4 +41,14 @@ return array(
 		'11'=>'Novembre',
 		'12'=>'Décembre',
 		),
+	'personne'=>'personne',
+	'personnes'=>'personnes',
+	'chambre'=>'chambre',
+	'chambres'=>'chambres',
+	'superficie'=>'superficie',
+	'sdbs'=>'salles d\'eau',
+	'sdb'=>'salle d\'eau',
+	'logo_alt'=>'Locations de vacances Housesholiday',
+	'locationsVacances'=>'locations-de-vacances',
+
 	);

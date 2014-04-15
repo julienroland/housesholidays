@@ -12,10 +12,10 @@ class InscriptionController extends BaseController {
 	public function index(){
 
 		$paysList = Pays::getListForm();
+		dd(Page::with(array('pageTraduction'))->whereHook('login')->get());
+		/*$regionList = Region::getListForm();
 
-		$regionList = Region::getListForm();
-
-		$sousRegionList = SousRegion::getListForm();
+		$sousRegionList = SousRegion::getListForm();*/
 
 		/**
 		*
@@ -32,7 +32,7 @@ class InscriptionController extends BaseController {
 		Session::put('currentEtape', 1 );
 
 		return View::make('inscription.index', array('page'=>'inscription_etape1','widget'=>array('select')))
-		->with(compact(array('paysList', 'regionList', 'sousRegionList')));
+		->with(compact(array('paysList')));
 
 	}
 
@@ -140,8 +140,16 @@ class InscriptionController extends BaseController {
 	/*===============================
 	=            ETAPE 2            =
 	===============================*/
-	public function indexBatiment( ){
+	public function indexBatiment( $data ){
 
+		$edit = false;
+
+		if(is_object($data)){
+
+			$edit = true;
+			$data = $data->with(array('proprieteTraduction','option'))->whereId($data->id)->first(); 
+			dd(Propriete::getOption( $data->id ));
+		}
 
 			/**
 			*
@@ -162,8 +170,18 @@ class InscriptionController extends BaseController {
 
 				Session::put('currentEtape', 2 );
 
-				return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
-				->with(compact(array('typeBatimentList','listOption')));
+				if( $edit ){
+
+					return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
+					->with(compact(array('typeBatimentList','listOption','data')));
+
+				}
+				else
+				{
+
+					return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
+					->with(compact(array('typeBatimentList','listOption')));
+				}
 			}
 			else{
 				Session::put('currentEtape', 2 );
@@ -243,10 +261,15 @@ class InscriptionController extends BaseController {
 			* Recup des arrays, suppression des lignes vides pour certains plus ajout de type integer
 			*
 			**/
-			
-			$literies = array_filter(array_map('intval',$input['literie']));
-			$interieurs = array_filter($input['interieur']);
-			$exterieurs = array_filter($input['exterieur']);
+			if(isset($input['literie'])){
+				$literies = array_filter(array_map('intval',$input['literie']));
+			}
+			if(isset($input['interieur'])){
+				$interieurs = array_filter($input['interieur']);
+			}
+			if(isset($input['exterieur'])){
+				$exterieurs = array_filter($input['exterieur']);
+			}
 			$descriptions = $input['description'];
 			$titres = $input['titre_propriete'];
 
@@ -297,21 +320,25 @@ class InscriptionController extends BaseController {
 			* @valeur
 			*
 			**/
+			if(isset($literies)){
 
-			foreach( $literies as $key => $literie){
+				foreach( $literies as $key => $literie){
 
-				$propriete->option()->attach($key , array('valeur'=>$literie) );
+					$propriete->option()->attach($key , array('valeur'=>$literie) );
+				}
+
 			}
-
 			/**
 			*
 			* Boucle sur les options de type interieur pour ajouter leurs relation à la table pivot
 			*
 			**/
+			if(isset($interieurs)){
 
-			foreach( $interieurs as $key => $interieur){
+				foreach( $interieurs as $key => $interieur){
 
-				$propriete->option()->attach($key );
+					$propriete->option()->attach($key );
+				}
 			}
 
 			/**
@@ -324,13 +351,23 @@ class InscriptionController extends BaseController {
 			* @valeur
 			*
 			**/
+			if(isset($exterieurs)){
 
-			foreach( $exterieurs as $key => $exterieur){
+				foreach( $exterieurs as $key => $exterieur){
 
-				$propriete->option()->attach($key);
+					$propriete->option()->attach($key);
+				}
 			}
+			if(!Session::has('proprieteId')){
 
-			Session::put('proprieteId', $propriete->id);
+				Session::put('proprieteId', $propriete->id);
+
+			}else{
+
+				Session::forget('proprieteId');
+				Session::put('proprieteId', $propriete->id);				
+
+			}
 
 			/**
 			*
@@ -362,7 +399,7 @@ class InscriptionController extends BaseController {
 		}
 
 	}
-	public function updateBatiment( $Propriete_id ){
+	public function updateBatiment( $slug, $proprieteId ){
 
 		$input = Input::all();
 
@@ -386,8 +423,9 @@ class InscriptionController extends BaseController {
 		$validation = Validator::make($data, Propriete::$rules1);
 
 		if( $validation->passes() ) {
-			dd('toto');
-			$propriete = Propriete::find( $Propriete_id );
+			
+			$propriete = Propriete::find( $proprieteId );
+			$user = User::whereSlug( $slug )->first();
 
 			$propriete->nb_personne = $input['nb_personne'];
 			$propriete->nb_chambre = $input['nb_chambre'];
@@ -410,9 +448,15 @@ class InscriptionController extends BaseController {
 			*
 			**/
 			
-			$literies = array_filter(array_map('intval',$input['literie']));
-			$interieurs = array_filter($input['interieur']);
-			$exterieurs = array_filter($input['exterieur']);
+			if(isset($input['literie'])){
+				$literies = array_filter(array_map('intval',$input['literie']));
+			}
+			if(isset($input['interieur'])){
+				$interieurs = array_filter($input['interieur']);
+			}
+			if(isset($input['exterieur'])){
+				$exterieurs = array_filter($input['exterieur']);
+			}
 			$descriptions = $input['description'];
 			$titres = $input['titre_propriete'];
 
@@ -422,7 +466,7 @@ class InscriptionController extends BaseController {
 			*
 			**/
 
-			ProprieteTraduction::whereProprieteId($id)->whereKey('titre')->delete();
+			ProprieteTraduction::whereProprieteId($propriete->id)->whereCle('titre')->delete();
 			
 			foreach($titres as $key => $titre){
 
@@ -446,7 +490,7 @@ class InscriptionController extends BaseController {
 			* Boucle sur les descriptions pour les ajouters dans la table de traduction
 			*
 			**/
-			ProprieteTraduction::whereProprieteId($id)->whereKey('description')->delete();
+			ProprieteTraduction::whereProprieteId($propriete->id)->whereCle('description')->delete();
 
 			foreach($descriptions as $key => $description){
 
@@ -470,20 +514,25 @@ class InscriptionController extends BaseController {
 			$propriete->option()->detach();
 
 
-			foreach( $literies as $key => $literie){
+			if(isset($literies)){
 
-				$propriete->option()->attach($key , array('valeur'=>$literie) );
+				foreach( $literies as $key => $literie){
+
+					$propriete->option()->attach($key , array('valeur'=>$literie) );
+				}
+
 			}
-
 			/**
 			*
 			* Boucle sur les options de type interieur pour ajouter leurs relation à la table pivot
 			*
 			**/
+			if(isset($interieurs)){
 
-			foreach( $interieurs as $key => $interieur){
+				foreach( $interieurs as $key => $interieur){
 
-				$propriete->option()->attach($key );
+					$propriete->option()->attach($key );
+				}
 			}
 
 			/**
@@ -496,10 +545,12 @@ class InscriptionController extends BaseController {
 			* @valeur
 			*
 			**/
+			if(isset($exterieurs)){
 
-			foreach( $exterieurs as $key => $exterieur){
+				foreach( $exterieurs as $key => $exterieur){
 
-				$propriete->option()->attach($key);
+					$propriete->option()->attach($key);
+				}
 			}
 
 			Session::put('etape2',true);
@@ -522,7 +573,8 @@ class InscriptionController extends BaseController {
 		=            ETAPE3            =
 		==============================*/
 		
-		public function indexLocalisation(){
+		public function indexLocalisation(  ){
+
 
 			/**
 			*
@@ -624,6 +676,8 @@ class InscriptionController extends BaseController {
 				
 				$propriete->save();
 
+				Sluggable::make($propriete,true);
+				$propriete->save();
 				/**
 				*
 				* On attach les clés étrangère dans la table pivot option_propriete
@@ -727,13 +781,18 @@ class InscriptionController extends BaseController {
 				$propriete->adresse = $input['adresse'];
 				$propriete->latlng = $input['latlng'];
 				$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 2;
-
+				
+				
 				/**
 				*
 				* On sauvegarde les modifications
 				*
 				**/
 				
+				$propriete->save();
+
+				Sluggable::make($propriete,true);
+
 				$propriete->save();
 
 				/**
@@ -767,6 +826,7 @@ class InscriptionController extends BaseController {
 				
 				if(Helpers::isOk( $propriete )){
 
+					Sluggable::make($propriete,true);
 					/**
 					*
 					* L'étape est finie
@@ -1109,10 +1169,21 @@ class InscriptionController extends BaseController {
 			$tarif = Tarif::find($id);
 			
 			$tarifSpeciauxWeekend = $tarif->tarifSpeciauxWeekend()->first();
-			$tarifSpeciauxWeekend->jourSemaine()->detach();
-			$tarif = $tarif->delete();
-			$tarifSpeciauxWeekend->delete();
 
+			if( $tarifSpeciauxWeekend ){
+
+				$tarifSpeciauxWeekend->jourSemaine()->detach();
+
+			}
+
+			$tarif = $tarif->delete();
+
+			if( $tarifSpeciauxWeekend ){
+
+				$tarifSpeciauxWeekend->delete();
+
+			}
+			
 			if(Helpers::isOk($tarif)){
 
 				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get();
@@ -1274,6 +1345,7 @@ class InscriptionController extends BaseController {
 	}
 
 	public function updateDispo(){
+
 		$input = Input::all();
 
 		$date_debut = Helpers::createCarbonDate(Helpers::toServerDate($input['date_debut']));
@@ -1317,9 +1389,6 @@ class InscriptionController extends BaseController {
 		$validation = Validator::make($input, $rules);
 
 		if( $validation ){
-
-			/*$propriete = Propriete::find( Session::get('proprieteId') );
-			$statutCalendrier = StatutCalendrier::find(1);*/
 
 			$calendrier = Calendrier::find($input['tarif_id']);
 

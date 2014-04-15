@@ -17,7 +17,8 @@ class Region extends Eloquent {
 
 	public function regionTraduction(){
 
-		return $this->hasMany('RegionTraduction');
+		return $this->hasMany('RegionTraduction')
+		->where(Config::get('var.lang_col'),Session::get('langId'));
 
 	}
 

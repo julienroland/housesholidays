@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*DEBUT ESPAGNE */
+.map_espagne {
+	width:340px;
+	height:277px;
+	background: url(espagne.png) left top no-repeat;
+}
+
+.map_espagne .overlay {
+	width:394px;
+	height:277px;
+	background: url(espagne.png) 394px top no-repeat; 
+}
+/*FIN ESPAGNE */
+
+
+/*DEBUT FRANCE */
+.map_france {
+	width:223px;
+	height:232px;
+	background: url(france.png) left top no-repeat; 
+}
+
+.map_france .overlay {
+	width:223px;
+	height:232px;
+	background: url(france.png) 223px top no-repeat; 
+}
+/*FIN FRANCE */
+
+/*DEBUT ITALIE */
+.map_italie {
+	width:244px;
+	height:306px;
+	background: url(italie.png) left top no-repeat; 
+}
+
+.map_italie .overlay {
+	width:244px;
+	height:306px;
+	background: url(italie.png) left top no-repeat;  
+}
+/*FIN ITALIE */
+
+/* DEBUT COMMUN*/
+.map_espagne, .map_france, .map_italie {
+	position:relative;
+}
+
+.map_espagne .overlay, .map_france .overlay, .map_italie .overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:0;
+}
+
+.map_espagne img, .map_france img, .map_italie img {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+.map_espagne .tooltip, .map_france .tooltip, .map_italie .tooltip {
+	position: fixed;
+	border-radius: 5px;
+	color:#fff;
+	background: #000;
+	padding: 0 10px;
+	display: inline;
+	top:0;
+	left:0;
+	z-index:2;
+	text-align:center;
+}
+/* FIN COMMUN*/

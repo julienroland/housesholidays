@@ -33,12 +33,10 @@
  	sLocalite,
  	lat,
  	lng,
+ 	icon_marker = '/img/marker.png',
  	geocoder = new google.maps.Geocoder();
 
  	$(function(){
-
- 		
- 		
 
  	});
 
@@ -47,8 +45,11 @@
  		displayGoogleMap();
 
  		$('#rechercheMap').on('click', function( e ){
+
  			e.preventDefault();
  			getPosition( 'geocoder' );
+ 			
+
  		});
  		/*if( $adresse.val() !== "" && $adresse.val() !== null){
 
@@ -192,6 +193,8 @@
 
  						if(typeof gMarker === 'undefined'){
 
+ 							$latlng.val( " " );
+ 							$latlng.val( lat + ',' + lng );
  							createMarker( sCurrentPosition );
  							gMap.panTo( sCurrentPosition );
 
@@ -225,8 +228,11 @@
  						else
  						{
 
+ 							$latlng.val( " " );
+ 							$latlng.val( lat + ',' + lng );
  							gMarker.setPosition( sCurrentPosition );
  							gMap.panTo( sCurrentPosition );
+
  							if(sTypePartAdresse === "adresse"){
 
  								gMap.setZoom( nZoomAdresse );
@@ -265,7 +271,6 @@ else
 	$latlng.val( " " );
 	$latlng.val( sPosition.lat() + ',' + sPosition.lng() );
 	gMap.panTo( sPosition );
-	gMap.setZoom( nZoomAdresse );
 }
 
 };
@@ -277,11 +282,18 @@ var createMarker = function( gLatLng ){
 		map : gMap,
 		draggable: true,
 		visible: true,
+		icon: icon_marker
 	});
 
 	google.maps.event.addListener(gMarker, 'dragend', function( e ) {
 
 		getPosition ( "latlng" , new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
+		
+	});
+	google.maps.event.addListener(gMarker, 'click', function( e ) {
+
+		gMap.setZoom(18);
+		gMap.panTo(new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
 		
 	});
 

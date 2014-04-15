@@ -1,268 +1,316 @@
-;(function() {
-    "use strict";
+;(function( $ ) {
+  "use strict";
+  /*http://localhost/pix/housesholidays/public*/
+  var sBasePath = '/',
+  oLang,
+  upload_dir = sBasePath+'uploads/',
+  propriete_dir = 'proprietes',
+  $supprimerImage = $('.supprimerImage'),
+  $calendar = $('.calendar'),
+  $dispoPopup = $('.dispoPopup'),
+  $dispoUpdatePopup = $('.dispoUpdatePopup'),
+  $tarifUpdatePopup = $('.tarifUpdatePopup'),
+  $overlay = $('.overlay'),
+  $popup = $('.popup'),
+  $updateTarif = $('.updateTarif'),
+  $deleteTarif = $('.deleteTarif'),
+  $linkOpAvance = $('.linkOpAvance'),
+  $login = $('#login-trigger'),
+  $loginContent = $('#login-content'),
+  settingsUpload;
 
-    var sBasePath = 'http://localhost/pix/housesholidays/public/',
-    oLang,
-    upload_dir = sBasePath+'uploads/',
-    propriete_dir = 'proprietes',
-    $supprimerImage = $('.supprimerImage'),
-    $calendar = $('.calendar'),
-    $dispoPopup = $('.dispoPopup'),
-    $dispoUpdatePopup = $('.dispoUpdatePopup'),
-    $tarifUpdatePopup = $('.tarifUpdatePopup'),
-    $overlay = $('.overlay'),
-    $popup = $('.popup'),
-    $updateTarif = $('.updateTarif'),
-    $deleteTarif = $('.deleteTarif'),
-    $linkOpAvance = $('.linkOpAvance'),
-    settingsUpload;
 
+  $(function() {
 
-    $(function() {
-        $linkOpAvance.on('click', function(e){
-            e.preventDefault();
-            displayNext( $(this) );
-        });
+    /**
+    *
+    * LOGIN
+    *
+    **/
+    
+    $('#click_login').click(function(){
+      $('#signup_int').hide();
+      $('#forget_int').hide();  
+      $('#signin_int').show();  
+    });  
 
-        $updateTarif.on('click', function(e){
-            e.preventDefault();
-            var sId = $(this).attr('data-id');
-            showUpdateTarifPopup( sId);
-        });
-
-        $deleteTarif.on('click', function(e){
-            e.preventDefault();
-            var sId = $(this).attr('data-id');
-            deleteTarif( sId);
-        });
-
-        $overlay.on('click', function(e){
-            e.stopPropagation();
-            hidePopup($(this));
-        } );
-
-        getTraductions(  );
-
-        if($('#inscription_etape4').length !== 0){
-
-           uploadFile(  );
-
-       }
-
-       $calendar.on('click','a', function(e){
-        e.preventDefault();
-        showDispo( $(this) , e);
+    $('#click_signup').click(function(){
+      $('#signup_int').show();
+      $('#signin_int').hide();  
+      $('#forget_int').hide();  
     });
 
+    $('#click_forget').click(function(){
+      $('#signup_int').hide();
+      $('#signin_int').hide();  
+      $('#forget_int').show();  
+    });    
 
-       $('#addTarif').submit( function(e){
-        e.preventDefault();
-        addTarif( $(this) );
+    $login.on('click', function( e ){
+      e.preventDefault();
+      $loginContent.slideToggle();
+    });
+    /**
+    *
+    * END LOGIN
+    *
+    **/
+    
+    $linkOpAvance.on('click', function(e){
+      e.preventDefault();
+      displayNext( $(this) );
+    });
+
+    $updateTarif.on('click', function(e){
+      e.preventDefault();
+      var sId = $(this).attr('data-id');
+      showUpdateTarifPopup( sId);
+    });
+
+    $deleteTarif.on('click', function(e){
+      e.preventDefault();
+      var sId = $(this).attr('data-id');
+      deleteTarif( sId);
+    });
+
+    $overlay.on('click', function(e){
+      e.stopPropagation();
+      hidePopup($(this));
     } );
 
-       $('#updateTarif').submit( function(e){
-        e.preventDefault();
-        updateTarif( $(this) );
-    } );
+    getTraductions(  );
 
-       $supprimerImage.on('click', function( e ){
-        e.preventDefault();
-        deleteImage( $(this) );
+    if($('#inscription_etape4').length !== 0){
 
-    });
+     uploadFile(  );
 
-       $('#addDispo').submit( function(e){
-        e.preventDefault();
-        addDispo( $(this) );
-    }); 
-       $('#updateDispo').submit( function(e){
-        e.preventDefault();
-        updateDispo( $(this) );
-    });
-       $('#deleteDispo').submit( function(e){
-        e.preventDefault();
-        deleteDispo( $(this) );
-    });
-       var appendTarif = function( oData ){
+   }
 
-          if( $('#tarifTable').length == 0 ){
-
-            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
-
-        }
-        else{
-
-            $('#tarifTable').remove();
-            $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
-
-        }
-
-        for(var i in oData){
-            if(oData[i].prix_weekend != null){var prix_weekend = oData[i].prix_weekend}else{var prix_weekend = ''}
-                $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td>'+prix_weekend+'</td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td><td><a href='+sBasePath+'updateTarif data-id="'+oData[i].id+'" class="updateTarif">'+oLang.form.modifier+'</a> - <a href='+sBasePath+'deleteTarif class="deleteTarif" data-id="'+oData[i].id+'" >'+oLang.form.supprimer+'</a></td></tr>');
-
-        }
-        $('.updateTarif').on('click', function(e){
-            e.preventDefault();
-            var sId = $(this).attr('data-id');
-            showUpdateTarifPopup( sId);
-        });
-
-        $('.deleteTarif').on('click', function(e){
-            e.preventDefault();
-            var sId = $(this).attr('data-id');
-            deleteTarif( sId);
-        });
-    };
-    var deleteTarif = function( sId ){
-
-        $.ajax({
-          type: "get", 
-          url: sBasePath + 'deleteTarif/'+ sId,
-          dataType: "json",
-          success:function( oData ){
-
-            console.log( oData );
-
-            appendTarif( oData );
-
-        }
-    });
-    };
-    var displayNext = function($that){
-        $that.next('.opAvance').slideToggle();
-    };
-    var hidePopup = function( ){
-
-        $popup.fadeOut(function(){
-            $overlay.fadeOut();
-        });
-
-    };
-    var deleteDispo = function( $that ){
-
-       var sData = $that.serialize();
-       $.ajax({
-          type: "get", 
-          data:sData,
-          url: sBasePath + 'deleteDispo',
-          dataType: "json",
-          success:function( oData ){
-
-            $('.calendar td').removeClass('busy');
-
-            for(var i in oData ){
-
-                var between = [],
-                start = oData[i].date_debut,
-                currentDate = new Date(start),
-                end = new Date(oData[i].date_fin);
-
-                while (currentDate <= end) {
-                    var date = {};
-                    var today  = toPhpDate( currentDate );
-                    date['date'] = today;
-                    date['id'] = oData[i].id;
-                    between.push(date);
-                    currentDate.setDate(currentDate.getDate() + 1);
-                }
-
-                showDispoBusy( between );
-
-            }
-            hidePopup();
-        }
-    });
-   };
-   var updateTarif = function( $that ){
-
-       var sData = $that.serialize();
-       $.ajax({
-          type: "get", 
-          data:sData,
-          url: sBasePath + 'updateTarif',
-          dataType: "json",
-          success:function( oData ){
-
-              appendTarif( oData );
-              hidePopup();
-          }
-      });
-   };
-   var updateDispo = function( $that ){
-
-       var sData = $that.serialize();
-       $.ajax({
-          type: "get", 
-          data:sData,
-          url: sBasePath + 'updateDispo',
-          dataType: "json",
-          success:function( oData ){
-            $('.calendar td').removeClass('busy');
-            for(var i in oData ){
-
-                var between = [],
-                start = oData[i].date_debut,
-                currentDate = new Date(start),
-                end = new Date(oData[i].date_fin);
-
-                while (currentDate <= end) {
-                    var date = {};
-                    var today  = toPhpDate( currentDate );
-                    date['date'] = today;
-                    date['id'] = oData[i].id;
-                    between.push(date);
-                    currentDate.setDate(currentDate.getDate() + 1);
-                }
-
-                showDispoBusy( between );
-
-            }
-            hidePopup();
-        }
-    });
-   };
-   var addDispo = function( $that ){
-
-       var sData = $that.serialize();
-
-       $.ajax({
-          type: "get", 
-          data:sData,
-          url: sBasePath + 'addDispo',
-          dataType: "json",
-          success:function( oData ){
-            $('.calendar td').removeClass('busy');
-            for(var i in oData ){
-
-                var between = [],
-                start = oData[i].date_debut,
-                currentDate = new Date(start),
-                end = new Date(oData[i].date_fin);
-
-                while (currentDate <= end) {
-                    var date = {};
-                    var today  = toPhpDate( currentDate );
-                    date['date'] = today;
-                    date['id'] = oData[i].id;
-                    between.push(date);
-                    currentDate.setDate(currentDate.getDate() + 1);
-                }
+   $calendar.on('click','a', function(e){
+    e.preventDefault();
+    showDispo( $(this) , e);
+  });
 
 
-                showDispoBusy( between );
+   $('#addTarif').submit( function(e){
+    e.preventDefault();
+    addTarif( $(this) );
+  } );
 
-            }
-            hidePopup();
-        }
-    });
-   };
-   var showDispoBusy = function( between ){
+   $('#updateTarif').submit( function(e){
+    e.preventDefault();
+    updateTarif( $(this) );
+  } );
 
-    for( var i in between ){
-        $('.calendar a[data-date="'+between[i].date+'"]').attr('data-id',between[i].id).parent().addClass('busy');
+   $supprimerImage.on('click', function( e ){
+    e.preventDefault();
+    deleteImage( $(this) );
+
+  });
+
+   $('#addDispo').submit( function(e){
+    e.preventDefault();
+    addDispo( $(this) );
+  }); 
+   $('#updateDispo').submit( function(e){
+    e.preventDefault();
+    updateDispo( $(this) );
+  });
+   $('#deleteDispo').submit( function(e){
+    e.preventDefault();
+    deleteDispo( $(this) );
+  });
+   var appendTarif = function( oData ){
+
+    if( $('#tarifTable').length == 0 ){
+
+      $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
 
     }
+    else{
+
+      $('#tarifTable').remove();
+      $('#addTarif').after('<table id="tarifTable"><thead><tr><td>'+oLang.form.tarif_1+'</td><td>'+oLang.form.tarif_2+'</td><td>'+oLang.form.tarif_3+'</td><td>'+oLang.form.tarif_4+'</td><td>'+oLang.form.tarif_5+'</td><td>'+oLang.form.tarif_6+'</td><td>'+oLang.form.actions+'</td></tr></thead></table>');
+
+    }
+
+    for(var i in oData){
+      if(oData[i].prix_weekend != null){var prix_weekend = oData[i].prix_weekend}else{var prix_weekend = ''}
+        $('#tarifTable thead').after('<tr><td><div class="saison">'+oData[i].saison+'</div><div class="dates"><span class="debut">'+toEuShortDate(oData[i].date_debut)+'</span><span class="fin">'+toEuShortDate(oData[i].date_fin)+'</span></div></td><td>'+oData[i].prix_nuit+' '+oData[i].monnaie.icon+'</td><td>'+prix_weekend+'</td><td>'+oData[i].prix_semaine+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].prix_mois+' '+oData[i].monnaie.icon+'</td><td>'+oData[i].duree_min+' '+oLang.form.nuit+'</td><td><a href='+sBasePath+'updateTarif data-id="'+oData[i].id+'" class="updateTarif">'+oLang.form.modifier+'</a> - <a href='+sBasePath+'deleteTarif class="deleteTarif" data-id="'+oData[i].id+'" >'+oLang.form.supprimer+'</a></td></tr>');
+
+    }
+    $('.updateTarif').on('click', function(e){
+      e.preventDefault();
+      var sId = $(this).attr('data-id');
+      showUpdateTarifPopup( sId);
+    });
+
+    $('.deleteTarif').on('click', function(e){
+      e.preventDefault();
+      var sId = $(this).attr('data-id');
+      deleteTarif( sId);
+    });
+  };
+  var deleteTarif = function( sId ){
+
+    $.ajax({
+      type: "get", 
+      url: sBasePath + 'deleteTarif/'+ sId,
+      dataType: "json",
+      success:function( oData ){
+
+        console.log( oData );
+
+        appendTarif( oData );
+
+      }
+    });
+  };
+  var displayNext = function($that){
+    $that.next('.opAvance').slideToggle();
+  };
+  var hidePopup = function( ){
+
+    $popup.fadeOut(function(){
+      $overlay.fadeOut();
+    });
+
+  };
+  var deleteDispo = function( $that ){
+
+    var $id = $that.find('.tarif_id').val();
+
+    $calendar.find('a[data-id="'+ $id +'"]').removeAttr('data-id');
+
+    $('.calendar').on('click','a', function(e){
+      e.preventDefault();
+      showDispo( $(this) , e);
+    });
+
+    var sData = $that.serialize();
+    $.ajax({
+      type: "get", 
+      data:sData,
+      url: sBasePath + 'deleteDispo',
+      dataType: "json",
+      success:function( oData ){
+
+        $('.calendar td').removeClass('busy');
+
+        for(var i in oData ){
+
+          var between = [],
+          start = oData[i].date_debut,
+          currentDate = new Date(start),
+          end = new Date(oData[i].date_fin);
+
+          while (currentDate <= end) {
+            var date = {};
+            var today  = toPhpDate( currentDate );
+            date['date'] = today;
+            date['id'] = oData[i].id;
+            between.push(date);
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
+
+          showDispoBusy( between );
+          
+
+        }
+
+        hidePopup();
+      }
+    });
+  };
+  var updateTarif = function( $that ){
+
+   var sData = $that.serialize();
+   $.ajax({
+    type: "get", 
+    data:sData,
+    url: sBasePath + 'updateTarif',
+    dataType: "json",
+    success:function( oData ){
+
+      appendTarif( oData );
+      hidePopup();
+    }
+  });
+ };
+ var updateDispo = function( $that ){
+
+   var sData = $that.serialize();
+   $.ajax({
+    type: "get", 
+    data:sData,
+    url: sBasePath + 'updateDispo',
+    dataType: "json",
+    success:function( oData ){
+      $('.calendar td').removeClass('busy');
+      for(var i in oData ){
+
+        var between = [],
+        start = oData[i].date_debut,
+        currentDate = new Date(start),
+        end = new Date(oData[i].date_fin);
+
+        while (currentDate <= end) {
+          var date = {};
+          var today  = toPhpDate( currentDate );
+          date['date'] = today;
+          date['id'] = oData[i].id;
+          between.push(date);
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        showDispoBusy( between );
+
+      }
+      hidePopup();
+    }
+  });
+ };
+ var addDispo = function( $that ){
+
+   var sData = $that.serialize();
+
+   $.ajax({
+    type: "get", 
+    data:sData,
+    url: sBasePath + 'addDispo',
+    dataType: "json",
+    success:function( oData ){
+      $('.calendar td').removeClass('busy');
+      for(var i in oData ){
+
+        var between = [],
+        start = oData[i].date_debut,
+        currentDate = new Date(start),
+        end = new Date(oData[i].date_fin);
+
+        while (currentDate <= end) {
+          var date = {};
+          var today  = toPhpDate( currentDate );
+          date['date'] = today;
+          date['id'] = oData[i].id;
+          between.push(date);
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+
+        showDispoBusy( between );
+
+      }
+      hidePopup();
+    }
+  });
+ };
+ var showDispoBusy = function( between ){
+
+  for( var i in between ){
+    $('.calendar a[data-date="'+between[i].date+'"]').attr('data-id',between[i].id).parent().addClass('busy');
+
+  }
 };
 var toPhpDate = function( jDate ){
   var dd = jDate.getDate();
@@ -270,12 +318,12 @@ var toPhpDate = function( jDate ){
   var yyyy = jDate.getFullYear();
   if(dd<10){dd='0'+dd}
     if(mm<10){mm='0'+mm}
-        return dd+'-'+mm+'-'+yyyy;
-};
-var parseDate  = function(input, format) {
-  format = format || 'yyyy-mm-dd'; 
-  var parts = input.match(/(\d+)/g), 
-  i = 0, fmt = {};
+      return dd+'-'+mm+'-'+yyyy;
+  };
+  var parseDate  = function(input, format) {
+    format = format || 'yyyy-mm-dd'; 
+    var parts = input.match(/(\d+)/g), 
+    i = 0, fmt = {};
   // extract date-part indexes from the format
   format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
 
@@ -283,155 +331,214 @@ var parseDate  = function(input, format) {
 }
 var showDispo = function( $that, e ){
 
-    if($that.attr('data-id').length > 0){
+  if($that.attr('data-id') && $that.attr('data-id').length > 0){
 
-        showUpdateDatePopup( $that.attr('data-id'), e );
-    }
-    else{
+    showUpdateDatePopup( $that.attr('data-id'), e );
+  }
+  else{
 
-        showDatePopup(  $that.attr('data-date') ,e);
+    showDatePopup(  $that.attr('data-date') ,e);
 
-    }
+  }
 
 };
 var showUpdateTarifPopup = function( sId ){
 
  $.ajax({
-     type: "get", 
-     url: sBasePath + 'ajax/getOneTarif/'+sId,
-     dataType: "json",
-     success:function( oData ){
+   type: "get", 
+   url: sBasePath + 'ajax/getOneTarif/'+sId,
+   dataType: "json",
+   success:function( oData ){
 
-        $tarifUpdatePopup.find('.tarifId').val( oData.id );
-        $tarifUpdatePopup.find('.weekendId').val( oData.tarif_special_weekend_id );
-        
-        $tarifUpdatePopup.find('select[name="monnaie"]').val( oData.monnaie_id );
-        $tarifUpdatePopup.find('input[name="nom_saison"]').val( oData.saison );
-        $tarifUpdatePopup.find('input[name="debut"]').val( toEuNumDate( oData.date_debut,'-') );
-        $tarifUpdatePopup.find('input[name="fin"]').val( toEuNumDate( oData.date_fin,'-' ) );
-        $tarifUpdatePopup.find('select[name="min_nuit"]').val( oData.duree_min );
-        $tarifUpdatePopup.find('input[name="nuit"]').val( oData.prix_nuit );
-        $tarifUpdatePopup.find('input[name="semaine"]').val( oData.prix_semaine );
-        $tarifUpdatePopup.find('input[name="mois"]').val( oData.prix_mois );
-        $tarifUpdatePopup.find('select[name="arrive_popup"]').val( oData.jour_arrive_id );
-        $tarifUpdatePopup.find('.monnaie').html( oData.monnaie.icon );
+    $tarifUpdatePopup.find('.tarifId').val( oData.id );
+    $tarifUpdatePopup.find('.weekendId').val( oData.tarif_special_weekend_id );
+
+    $tarifUpdatePopup.find('select[name="monnaie"]').val( oData.monnaie_id );
+    $tarifUpdatePopup.find('input[name="nom_saison"]').val( oData.saison );
+    $tarifUpdatePopup.find('input[name="debut"]').val( toEuNumDate( oData.date_debut,'-') );
+    $tarifUpdatePopup.find('input[name="fin"]').val( toEuNumDate( oData.date_fin,'-' ) );
+    $tarifUpdatePopup.find('select[name="min_nuit"]').val( oData.duree_min );
+    $tarifUpdatePopup.find('input[name="nuit"]').val( oData.prix_nuit );
+    $tarifUpdatePopup.find('input[name="semaine"]').val( oData.prix_semaine );
+    $tarifUpdatePopup.find('input[name="mois"]').val( oData.prix_mois );
+    $tarifUpdatePopup.find('select[name="arrive_popup"]').val( oData.jour_arrive_id );
+    $tarifUpdatePopup.find('.monnaie').html( oData.monnaie.icon );
 
 
 
-        if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null  || oData.prix_weekend!==null && oData.prix_weekend!=="" ){
+    if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null  || oData.prix_weekend!==null && oData.prix_weekend!=="" ){
 
-            $tarifUpdatePopup.find('input[name="weekend_popup"]').attr('checked', true) ;
+      $tarifUpdatePopup.find('input[name="weekend_popup"]').attr('checked', true) ;
 
-            $tarifUpdatePopup.find('input[name="prix_weekend_popup"]').val( oData.prix_weekend ) ;
-            if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null ){
-                if( oData.tarif_speciaux_weekend.jour_semaine !== "" && oData.tarif_speciaux_weekend.jour_semaine!== null ){
+      $tarifUpdatePopup.find('input[name="prix_weekend_popup"]').val( oData.prix_weekend ) ;
+      if( oData.tarif_speciaux_weekend !== "" &&  oData.tarif_speciaux_weekend !== null ){
+        if( oData.tarif_speciaux_weekend.jour_semaine !== "" && oData.tarif_speciaux_weekend.jour_semaine!== null ){
 
-                    for( var i in oData.tarif_speciaux_weekend.jour_semaine ){
+          for( var i in oData.tarif_speciaux_weekend.jour_semaine ){
 
-                        $tarifUpdatePopup.find('input[name="jour_weekend_popup['+oData.tarif_speciaux_weekend.jour_semaine[i].id+']"]').attr('checked', true) ;
+            $tarifUpdatePopup.find('input[name="jour_weekend_popup['+oData.tarif_speciaux_weekend.jour_semaine[i].id+']"]').attr('checked', true) ;
 
-                    }
+          }
 
-                }
-
-                if( oData.tarif_speciaux_weekend.max_nuit !=="" && oData.tarif_speciaux_weekend !==null ){
-
-                    $tarifUpdatePopup.find('input[name="duree_supp_popup"]').attr('checked', true);
-                    $tarifUpdatePopup.find('select[name="nuit_max_popup"] ').val( oData.tarif_speciaux_weekend.max_nuit );
-
-                }
-            }
-            
-            
-        }
-        else
-        {
-
-            $tarifUpdatePopup.find('.opAvance').hide();
         }
 
-        $("select").trigger("chosen:updated");
-        $overlay.show();
-        var height = $tarifUpdatePopup.height();
-        $tarifUpdatePopup.css({
-            left:0,
-            top:0 +  height/2,
-        }).fadeIn();
-        $tarifUpdatePopup.find('.date_debut ').val();
-        $tarifUpdatePopup.find('.date_fin ').val();
-        $tarifUpdatePopup.find('.tarif_id ').val();
+        if( oData.tarif_speciaux_weekend.max_nuit !=="" && oData.tarif_speciaux_weekend !==null ){
+
+          $tarifUpdatePopup.find('input[name="duree_supp_popup"]').attr('checked', true);
+          $tarifUpdatePopup.find('select[name="nuit_max_popup"] ').val( oData.tarif_speciaux_weekend.max_nuit );
+
+        }
+      }
+
+
     }
+    else
+    {
+
+      $tarifUpdatePopup.find('.opAvance').hide();
+    }
+
+    $("select").trigger("chosen:updated");
+    $overlay.show();
+    var height = $tarifUpdatePopup.height();
+    $tarifUpdatePopup.css({
+      left:0,
+      top:0 +  height/2,
+    }).fadeIn();
+    $tarifUpdatePopup.find('.date_debut ').val();
+    $tarifUpdatePopup.find('.date_fin ').val();
+    $tarifUpdatePopup.find('.tarif_id ').val();
+  }
 });
 
 
 };
 var showUpdateDatePopup = function( sId, e){
-    $.ajax({
-     type: "get", 
-     url: sBasePath + 'ajax/getOneDispo/'+sId,
-     dataType: "json",
-     success:function( oData ){
+  $.ajax({
+   type: "get", 
+   url: sBasePath + 'ajax/getOneDispo/'+sId,
+   dataType: "json",
+   success:function( oData ){
 
-        $overlay.show();
-        var height = $dispoPopup.height();
-        $dispoUpdatePopup.css({
-            left:e.pageX + 24,
-            top:e.pageY - height/2,
-        }).fadeIn();
-        $dispoUpdatePopup.find('.date_debut ').val( toEuNumDate(oData.date_debut, '-') );
-        $dispoUpdatePopup.find('.date_fin ').val( toEuNumDate(oData.date_fin, '-') );
-        $dispoUpdatePopup.find('.tarif_id ').val( oData.id );
-    }
+    $overlay.show();
+    var height = $dispoPopup.height();
+
+    var top = checkPopupPosition( e.pageY - height/2 );
+    $dispoUpdatePopup.css({
+      left:e.pageX + 24,
+      top:top,
+    }).fadeIn();
+    $dispoUpdatePopup.find('.date_debut ').val( toEuNumDate(oData.date_debut, '-') );
+    $dispoUpdatePopup.find('.date_fin ').val( toEuNumDate(oData.date_fin, '-') );
+    $dispoUpdatePopup.find('.tarif_id ').val( oData.id );
+  }
 });
+
+};
+var checkPopupPosition = function( $selector, data ){
+
+ if( data  > 0){
+
+  if( data > $(window).height() -  $selector.height()){
+
+    return $(window).height()  -  $selector.height();
+
+  }
+  else
+  {
+    return data;
+  }
+}
+else{
+
+  return 0;
+
+}
+
 
 };
 var showDatePopup = function( sParam, e){
 
-    $overlay.show();
-    var height = $dispoPopup.height();
-    $dispoPopup.css({
-        left:e.pageX + 24,
-        top:e.pageY - height/2,
-    }).fadeIn();
-    $dispoPopup.find('.date_debut ').val( sParam );
-       /* var dates = $(".date_fin").datepicker({
-            dateFormat: "yy-mm-dd",
-            minDate: sParam,
+  $overlay.show();
 
-        });*/
+  var height = $dispoPopup.height();
+
+  var top = checkPopupPosition( $dispoPopup, e.pageY - height/2 );
+
+  $dispoPopup.css({
+    left:e.pageX + 24,
+    top:top,
+  }).fadeIn();
+
+  $dispoPopup.find('.date_debut ').val( sParam );
+  console.log(parseDate(sParam));
+
+  $('body').on('focus',".date_fin", function(){
+    console.log($(this).datepicker({ minDate: -20 }));
+  });
+
+  console.log($dispoPopup.find('.date_fin ').datepicker({ minDate: parseDate(sParam) }));
+  var dates = $(".date_fin").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: -20,
+
+  });
+
+/*  $( ".date_debut" ).datepicker({
+    dateFormat: "dd/mm/yy",
+    defaultDate: "+1w",
+    minDate:0,
+    onClose: function( selectedDate ) {
+     $( ".date_fin" ).datepicker( "option", "minDate", selectedDate );
+     var from = $(this).val();
+     var startdatum = from.substr(6,4)+'-'+from.substr(3,2)+'-'+from.substr(0,2);
+     $(".date_debut").val(startdatum);
+   }
+ });
+  $( ".date_fin" ).datepicker({
+    dateFormat: "dd/mm/yy",
+    defaultDate: "+1w",
+    minDate:+1,
+    onClose: function( selectedDate ) {
+     $( ".date_debut" ).datepicker( "option", "maxDate", selectedDate );
+     var to = $(this).val();
+     var einddatum = to.substr(6,4)+'-'+to.substr(3,2)+'-'+to.substr(0,2);
+     $(".date_fin").val(einddatum);
+   }
+ });*/
 };
 var toEuNumDate = function( $date, sSeprateur ){
 
-    if(typeof sSeprateur === "undefined"){
+  if(typeof sSeprateur === "undefined"){
 
-        var sSeprateur = '/';
-    }
+    var sSeprateur = '/';
+  }
 
-    var sSplit = $date.split('-');
-    return sSplit['2']+sSeprateur+sSplit['1']+sSeprateur+sSplit['0'];
+  var sSplit = $date.split('-');
+  return sSplit['2']+sSeprateur+sSplit['1']+sSeprateur+sSplit['0'];
 
 };
 var toEuShortDate = function( $date ){
 
-    var sSplit = $date.split('-');
+  var sSplit = $date.split('-');
 
-    var mois_id =parseInt(sSplit['1']);
-    return parseInt(sSplit['2'])+' '+oLang.general.mois[mois_id]+' '+sSplit['0'];
+  var mois_id =parseInt(sSplit['1']);
+  return parseInt(sSplit['2'])+' '+oLang.general.mois[mois_id]+' '+sSplit['0'];
 
 };
 var addTarif = function( $that ){
 
-    var sData = $that.serialize();
+  var sData = $that.serialize();
 
-    $.ajax({
-      type: "get", 
-      data:sData,
-      url: sBasePath + 'addTarif',
-      dataType: "json",
-      success:function( oData ){
+  $.ajax({
+    type: "get", 
+    data:sData,
+    url: sBasePath + 'addTarif',
+    dataType: "json",
+    success:function( oData ){
 
-         appendTarif( oData );
-     }
+     appendTarif( oData );
+   }
  });
 
 
@@ -441,26 +548,26 @@ var visualReplacement = $('.chosen-container');
 $(this).after(visualReplacement).hide();
             //bind the visual element to the API element
             webshims.addShadowDom(this, visualReplacement);
-        });
+          });
 
 $('.submit_form').click(function() {
 
-    var validate = $("#myform").validationEngine('validate');
+  var validate = $("#myform").validationEngine('validate');
             var has_file = $(".ajax-file-upload-statusbar").length //check if there files need upload
 
             if(validate){
 
-                if(has_file != false){
+              if(has_file != false){
 
-                    settingsUpload.startUpload();
+                settingsUpload.startUpload();
 
-                }else{
+              }else{
 
-                    $('#myform').submit();
+                $('#myform').submit();
 
-                }
+              }
             }
-        });
+          });
 
 /*$('#file').on('change', saveFile );*/
 
@@ -470,10 +577,10 @@ $('.submit_form').click(function() {
     *
     **/
     $('form').on('firstinvalid', function(e){
-        webshims.validityAlert.showFor(e.target); 
+      webshims.validityAlert.showFor(e.target); 
             //remove native validation
             return false;
-        });
+          });
     if($(".paysAjax").length !== 0){
     /**
     *
@@ -482,11 +589,11 @@ $('.submit_form').click(function() {
     **/
     $(".paysAjax").chosen().change( function(){
 
-        loadChildSelect( 'pays', $(this) );
+      loadChildSelect( 'pays', $(this) );
 
     });
-}
-if($(".regionAjax").length !== 0){
+  }
+  if($(".regionAjax").length !== 0){
     /**
     *
     * Get les sous_regions en fonction dde la region
@@ -495,10 +602,10 @@ if($(".regionAjax").length !== 0){
 
     $(".regionAjax").chosen().change( function(){
 
-        loadChildSelect( 'region', $(this) );
+      loadChildSelect( 'region', $(this) );
 
     });
-}
+  }
     /**
     *
     * Supprimer l'image 
@@ -507,20 +614,20 @@ if($(".regionAjax").length !== 0){
     
     var deleteImage = function( $that ){
 
-        $.ajax({
-            type: "get", 
-            async:   false,
-            url: sBasePath + 'deleteImage/'+ $that.attr('data-id'),
-            dataType: "json",
-            success:function( oData ){
+      $.ajax({
+        type: "get", 
+        async:   false,
+        url: sBasePath + 'deleteImage/'+ $that.attr('data-id'),
+        dataType: "json",
+        success:function( oData ){
 
-                if( oData ==='success'){
-                    $that.parent().fadeOut( 'fast', function(){
-                        $(this).remove();   
-                    });
-                }
-            }
-        });
+          if( oData ==='success'){
+            $that.parent().fadeOut( 'fast', function(){
+              $(this).remove();   
+            });
+          }
+        }
+      });
     }
     /**
     *
@@ -529,76 +636,74 @@ if($(".regionAjax").length !== 0){
     **/
     var getTraductions = function(  ) {
 
-       $.ajax({
+     $.ajax({
 
-        type: "get", 
-        async:   false,
-        url: sBasePath+'getAllLang',
-        dataType: "json",
-        success:function( oData ){
-            oLang = oData;
-            console.log(oData);
-            return true;
-        }
+      type: "get", 
+      async:   false,
+      url: sBasePath+'getAllLang',
+      dataType: "json",
+      success:function( oData ){
+        oLang = oData;
+        console.log(oData);
+        return true;
+      }
     });
    };
    var getProprietePhoto = function( userId, proprieteId ){
 
     if( userId && proprieteId ){
 
-        $.ajax({
-           type: "get", 
-           url: sBasePath+'getPhotoPropriete/'+ proprieteId,
-           dataType: "json",
-           success:function( oData ){
-            console.log('ok');
-            oData = oData.data;
-            if( oData ){
+      $.ajax({
+       type: "get", 
+       url: sBasePath+'getPhotoPropriete/'+ proprieteId,
+       dataType: "json",
+       success:function( oData ){
 
-                if($('#images').length == 0){
+        oData = oData.data;
+        if( oData ){
 
-                    $('#baseForm').after('<div id="images"><ul></ul></div>');
+          if($('#images').length == 0){
 
-                }
-                $('#images').find('li').remove();
+            $('#baseForm').after('<div id="images"><ul></ul></div>');
 
-            }
-            for( var i in oData ){
+          }
+          $('#images').find('li').remove();
+
+        }
+        for( var i in oData ){
 
                 $('#images ul').append('<li><div class="image"><img src="'+ upload_dir + userId + '/' + propriete_dir + '/' + proprieteId + '/' + oData[i].url +'"></div><a href="" class="supprimerImage" data-id="'+oData[i].id+'" title="'+oLang.form.supp+'">'+oLang.form.supp_image+'</a></li>'); //userId/ProprieteId/
 
                 $('.supprimerImage').on('click', function( e ){
-                    e.preventDefault();
-                    deleteImage( $(this) );
+                  e.preventDefault();
+                  deleteImage( $(this) );
 
                 });
                 /*$("#sortable").sortable("refresh");*/
-
+                sortable();
+              }
+              sortable();
             }
-            sortable();
-
-
-        }
-    });
+          });
 
 }
 
 }
 var sortable = function(){
 
-    console.log($('#sortable').sortable({
-       create: function(event, ui) {
-          var data = {};
+  $('#sortable').sortable({
+   create: function(event, ui) {
+    var data = {};
 
-          $("#sortable li").each(function(i, el){
-            var p = $(el).find('a').attr('data-id');
-            data[p]=$(el).index()+1;
-        });
+    $("#sortable li").each(function(i, el){
+      var p = $(el).find('a').attr('data-id');
+      data[p]=$(el).index()+1;
+    });
 
-          $("form > [name='image_order']").val(JSON.stringify(data));
+    $("form > [name='image_order']").val(JSON.stringify(data));
 
-      }
-  }));
+  }
+});
 
 }
    /**
@@ -610,44 +715,44 @@ var sortable = function(){
    var uploadFile = function(){
 
     settingsUpload = $("#mulitplefileuploader").uploadFile({
-        url: sBasePath + "ajax/uploadImage",
-        method: "post",
-        allowedTypes:"jpg,gif,bmp",
-        fileName: "file",
-        autoSubmit:true,
-        multiple:true,
-        showStatusAfterSuccess:false,
-        dragDropStr: "<span><b>"+oLang.form.dragDrop+"</b></span>",
-        abortStr:oLang.form.abandonner,
-        cancelStr:oLang.form.stop,
-        doneStr:oLang.form.ok,
-        multiDragErrorStr:oLang.form.multiDrag,
-        extErrorStr:oLang.form.ext_pas_autorise,
-        sizeErrorStr:oLang.form.taille_pas_autorise,
-        uploadErrorStr:oLang.form.upload_pas_autorise,
-        onSubmit:function(files)
-        {
-            $('<input>').attr({
-                type: 'text',
-                name: 'file[]',
-                value: files
-            }).appendTo('#myform');
+      url: sBasePath + "ajax/uploadImage",
+      method: "post",
+      allowedTypes:"jpg,gif,bmp",
+      fileName: "file",
+      autoSubmit:true,
+      multiple:true,
+      showStatusAfterSuccess:false,
+      dragDropStr: "<span><b>"+oLang.form.dragDrop+"</b></span>",
+      abortStr:oLang.form.abandonner,
+      cancelStr:oLang.form.stop,
+      doneStr:oLang.form.ok,
+      multiDragErrorStr:oLang.form.multiDrag,
+      extErrorStr:oLang.form.ext_pas_autorise,
+      sizeErrorStr:oLang.form.taille_pas_autorise,
+      uploadErrorStr:oLang.form.upload_pas_autorise,
+      onSubmit:function(files)
+      {
+        $('<input>').attr({
+          type: 'text',
+          name: 'file[]',
+          value: files
+        }).appendTo('#myform');
 
-        },
+      },
 
-        onSuccess:function(files,data,xhr)
-        {
+      onSuccess:function(files,data,xhr)
+      {
 
-            $('#myform').submit();
+        $('#myform').submit();
 
-            getProprietePhoto( $('form').attr('data-userId'), $('form').attr('data-proprieteId') );
-        },
+        getProprietePhoto( $('form').attr('data-userId'), $('form').attr('data-proprieteId') );
+      },
 
-        onError: function(files,status,errMsg)
-        {
-            console.log(files+'.'+status+'.'+errMsg);
-            $("#status").html("<font color='green'>Something Wrong</font>");
-        }
+      onError: function(files,status,errMsg)
+      {
+        console.log(files+'.'+status+'.'+errMsg);
+        $("#status").html("<font color='green'>Something Wrong</font>");
+      }
 
     });
 
@@ -660,94 +765,94 @@ var sortable = function(){
     **/
     var loadChildSelect = function( sType , that){
 
-        var nId = Number(that.val());
+      var nId = Number(that.val());
 
-        if( sType ==='pays'){
+      if( sType ==='pays'){
 
-            $.ajax({
-                type: "get", 
-                url: sBasePath+'getDataSelect/region/pays/'+ nId,
-                dataType: "json",
-                success:function( jData ){
+        $.ajax({
+          type: "get", 
+          url: sBasePath+'getDataSelect/region/pays/'+ nId,
+          dataType: "json",
+          success:function( jData ){
 
-                    if($('#region')){
+            if($('#region')){
 
-                        var $region = $('#region');
+              var $region = $('#region');
 
-                        $region.find('option').each( function(){
+              $region.find('option').each( function(){
 
-                            $(this).remove();
-                        });
+                $(this).remove();
+              });
 
-                        $region.append('<option value="">'+oLang.form.enter_region+'</option');
+              $region.append('<option value="">'+oLang.form.enter_region+'</option');
 
-                        for(var i in jData ){
+              for(var i in jData ){
 
-                            $region.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
-                        }
+                $region.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
+              }
 
-                        $region.trigger("chosen:updated");
-                    }
-                }
-            });
+              $region.trigger("chosen:updated");
+            }
+          }
+        });
 
-            $.ajax({
-                type: "get", 
-                url: sBasePath+'getChildDataSelect/sousRegion/region/pays/null/'+ nId,
-                dataType: "json",
-                success:function( jData ){
+        $.ajax({
+          type: "get", 
+          url: sBasePath+'getChildDataSelect/sousRegion/region/pays/null/'+ nId,
+          dataType: "json",
+          success:function( jData ){
 
-                    if($('#sous_region')){
+            if($('#sous_region')){
 
-                        var $sousRegion = $('#sous_region');
+              var $sousRegion = $('#sous_region');
 
-                        $sousRegion.find('option').each( function(){
+              $sousRegion.find('option').each( function(){
 
-                            $(this).remove();
-                        });
+                $(this).remove();
+              });
 
-                        $sousRegion.append('<option value="">'+oLang.form.enter_sousRegion+'</option');
+              $sousRegion.append('<option value="">'+oLang.form.enter_sousRegion+'</option');
 
-                        for(var i in jData ){
+              for(var i in jData ){
 
-                            $sousRegion.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
-                        }
+                $sousRegion.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
+              }
 
-                        $sousRegion.trigger("chosen:updated");
-                    }
-                },
-                error:function(jqXHR, textStatus, errorThrown){
-                    console.log(errorThrown);
-                }
-            });
+              $sousRegion.trigger("chosen:updated");
+            }
+          },
+          error:function(jqXHR, textStatus, errorThrown){
+            console.log(errorThrown);
+          }
+        });
 
-        }else if( sType === 'region'){
-            $.ajax({
-                type: "get", 
-                url: sBasePath+'getDataSelect/sousRegion/region/'+ nId,
-                dataType: "json",
-                success:function( jData ){
+      }else if( sType === 'region'){
+        $.ajax({
+          type: "get", 
+          url: sBasePath+'getDataSelect/sousRegion/region/'+ nId,
+          dataType: "json",
+          success:function( jData ){
 
-                    if($('#region')){
+            if($('#region')){
 
-                        var $region = $('#sous_region');
+              var $region = $('#sous_region');
 
-                        $region.find('option').each( function(){
+              $region.find('option').each( function(){
 
-                            $(this).remove();
-                        });
+                $(this).remove();
+              });
 
-                        $region.append('<option value="">'+oLang.form.enter_sousRegion+'</option');
+              $region.append('<option value="">'+oLang.form.enter_sousRegion+'</option');
 
-                        for(var i in jData ){
+              for(var i in jData ){
 
-                            $region.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
-                        }
+                $region.append('<option value="'+ jData[i].id+'">'+ jData[i].val +'</option');
+              }
 
-                        $region.trigger("chosen:updated");
-                    }
-                }
-            });
-        }
+              $region.trigger("chosen:updated");
+            }
+          }
+        });
+      }
     }; 
-}).call( this, jQuery );
+  }).call( this, jQuery );

@@ -16,7 +16,7 @@
 		
 		{{Form::text('date_debut','',array('class'=>'date date_debut','placeholder'=>trans('form.date_debut')))}}
 
-		{{Form::text('date_fin','',array('autofocus','class'=>'date date_fin','placeholder'=>trans('form.date_fin')))}}
+		{{Form::text('date_fin','',array('autofocus','class'=>'date_fin','placeholder'=>trans('form.date_fin')))}}
 		
 		{{Form::submit(trans('form.button_valid'))}}
 

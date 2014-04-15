@@ -22,7 +22,7 @@
 
 <br>
 {{link_to('','Options avancées',array('class'=>'linkOpAvance'))}}
-<br>
+
 
 <div class="opAvance">
 

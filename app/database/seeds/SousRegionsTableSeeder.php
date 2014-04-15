@@ -21,7 +21,7 @@ class SousRegionsTableSeeder extends Seeder {
 					
 					foreach($region['subregions'] as $subregions){
 
-							array_push($sous_regions_traductions,array('region_id'=>$p));
+							array_push($sous_regions_traductions,array('region_id'=>$p,'statut'=>1));
 
 					}//end foreach subregion
 					$p++;

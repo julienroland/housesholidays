@@ -27,6 +27,7 @@ class CreateProprietesTable extends Migration {
 			$table->boolean('statut');
 			$table->float('caution')->nullable();
 			$table->integer('nb_visite');
+			$table->timestamp('last_visite');
 			$table->string('slug');
 			$table->string('web');
 			$table->string('etape');

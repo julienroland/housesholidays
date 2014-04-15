@@ -23,7 +23,7 @@ return array(
     'i_etape4'=>'tarifs',
     'i_etape5'=>'disponibilites',
     'i_etape6'=>'paiement',
-    'i_list_pasfinie'=>'inscription-incomplete',
+    'i_listLocations'=>'liste-de-vos-locations',
 
 
     );

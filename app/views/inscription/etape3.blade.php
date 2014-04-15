@@ -17,19 +17,19 @@
 @endif
 
 {{Form::label('pays',trans('form.enter_country'))}}
-{{Form::select('pays',$paysList, Session::has('input_3') ? Session::get('input_3')['pays']: '',array('class'=>'select paysAjax','data-placeholder'=>trans('form.enter_country')))}}
+{{Form::select('pays',$paysList, Session::has('input_3') ? Session::get('input_3')['pays']: '',array('required','class'=>'select paysAjax','data-placeholder'=>trans('form.enter_country')))}}
 <br/>
 
 {{Form::label('region',trans('form.enter_region'))}}
-{{Form::select('region',$regionList, Session::has('input_3') ? Session::get('input_3')['region']: '',array('class'=>'select regionAjax','data-placeholder'=>trans('form.enter_region')))}}
+{{Form::select('region',$regionList, Session::has('input_3') ? Session::get('input_3')['region']: '',array('required','class'=>'select regionAjax','data-placeholder'=>trans('form.enter_region')))}}
 <br/>
 
 {{Form::label('sous_region',trans('form.enter_sousRegion'))}}
-{{Form::select('sous_region',$sousRegionList, Session::has('input_3') ? Session::get('input_3')['sous_region']: '',array('class'=>'select','data-placeholder'=>trans('form.enter_sousRegion')))}}
+{{Form::select('sous_region',$sousRegionList, Session::has('input_3') ? Session::get('input_3')['sous_region']: '',array('required','class'=>'select','data-placeholder'=>trans('form.enter_sousRegion')))}}
 <br/>
 
 {{Form::label('localite',trans('form.enter_localite'))}}
-{{Form::select('localite',$localiteList, Session::has('input_3') ? Session::get('input_3')['localite']: '',array('class'=>'select','data-placeholder'=>trans('form.enter_localite')))}}
+{{Form::select('localite',$localiteList, Session::has('input_3') ? Session::get('input_3')['localite']: '',array('required','class'=>'select','data-placeholder'=>trans('form.enter_localite')))}}
 <br/>
 
 {{Form::label('adresse',trans('form.enter_adresse'))}}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map map_file="ammap/spain/espagne.swf" tl_long="6.6254" tl_lat="47.0925" br_long="18.52" br_lat="35.4913" zoom="100%" zoom_x="0%" zoom_y="0%">
+  <areas>
+    <area title="Zamora" mc_name="ES_Zamora" color="#696969" url="locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Zamora&Destination=&pax=&action=1+logements"></area>
+	<area title="Vallalolid" mc_name="ES_Vallalolid" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Valladolid&Destination=&pax=&action=1+logements"></area>
+    <area title="Valence" mc_name="ES_Valence" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Valencia&Destination=&pax=&action=10+logements"></area>
+	<area title="Tolède" mc_name="ES_Tolede" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Toledo&Destination=&pax=&action=6+logements"></area>
+	<area title="Teruel" mc_name="ES_Teruel" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Teruel&Destination=&pax=&action=0+logements"></area>
+	<area title="Tarragone" mc_name="ES_Tarragone" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Tarragona&Destination=&pax=&action=58+logements"></area>
+	<area title="Soria" mc_name="ES_Soria" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Soria&Destination=&pax=&action=6+logements"></area>
+	<area title="Séville" mc_name="ES_Seville" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Sevilla&Destination=&pax=&action=6+logements"></area>
+	<area title="Ségovie" mc_name="ES_Segovie" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Segovia&Destination=&pax=&action=3+logements"></area>
+	<area title="Saragosse" mc_name="ES_Saragosse" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Zaragoza&Destination=&pax=&action=1+logements"></area>
+	<area title="Santa Cruz de Ténérife" mc_name="ES_SantaCruzdeTenerife" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Tenerife&Destination=&pax=&action=27+logements"></area>
+	<area title="Salamanque" mc_name="ES_Salamanque" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Salamanca&Destination=&pax=&action=5+logements"></area>
+	<area title="La Rioja" mc_name="ES_LaRioja" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=La+Rioja&pax=&action=1+logements"></area>
+	<area title="Pontevedra" mc_name="ES_Pontevedra" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Pontevedra&Destination=&pax=&action=6+logements"></area>
+	<area title="Las Palmas de Gran Canaria" mc_name="ES_LasPalmas" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Las+palmas+de+Gran+canrias&pax=&action=0+logements"></area>
+	<area title="Palencia" mc_name="ES_Palencia" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Palencia&Destination=&pax=&action=4+logements"></area>
+	<area title="Orense" mc_name="ES_Orense" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Orense&Destination=&pax=&action=1+logements"></area>
+	<area title="Navarre" mc_name="ES_Navarre" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Navarra&Destination=&pax=&action=8+logements"></area>
+	<area title="Murcie" mc_name="ES_Murcie" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Murcia&Destination=&pax=&action=4+logements"></area>
+	<area title="Malaga" mc_name="ES_Malaga" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Malaga&Destination=&pax=&action=37+logements"></area>
+	<area title="Madrid" mc_name="ES_Madrid" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Madrid&Destination=&pax=&action=2+logements"></area>
+	<area title="Lugo" mc_name="ES_Lugo" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Lugo&Destination=&pax=&action=1+logements"></area>
+	<area title="Lleida" mc_name="ES_Lleida" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Lerida&Destination=&pax=&action=4+logements"></area>
+	<area title="Leon" mc_name="ES_Leon" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Leon&Destination=&pax=&action=8+logements"></area>
+	<area title="Jaen" mc_name="ES_Jaen" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Jaen&Destination=&pax=&action=4+logements"></area>
+	<area title="Huesca" mc_name="ES_Huesca" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Huesca&Destination=&pax=&action=8+logements"></area>
+	<area title="Huelva" mc_name="ES_Huelva" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Huelva&Destination=&pax=&action=11+logements"></area>
+	<area title="Guipuscoa" mc_name="ES_Guipuscoa" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Guipuzcoa&Destination=&pax=&action=2+logements"></area>
+	<area title="Guadalajara" mc_name="ES_Guadalajara" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Guadalajara&Destination=&pax=&action=2+logements"></area>
+	<area title="Grenade" mc_name="ES_Grenade" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Granada&Destination=&pax=&action=30+logements"></area>
+	<area title="Gérone" mc_name="ES_Gerone" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Gerona&Destination=&pax=&action=74+logements"></area>
+	<area title="Cuenca" mc_name="ES_Cuenca" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Cuenca&Destination=&pax=&action=0+logements"></area>
+	<area title="La Corogne" mc_name="ES_LaCorogne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=La+Coru%C3%B1a&Destination=&pax=&action=6+logements"></area>
+	<area title="Cordoue" mc_name="ES_Cordoue" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Cordoba&Destination=&pax=&action=4+logements"></area>
+	<area title="Ciudad Real" mc_name="ES_CiudadReal" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Ciudad+Real&Destination=&pax=&action=6+logements"></area>
+	<area title="Castellon" mc_name="ES_Castellon" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Castellon&Destination=&pax=&action=12+logements"></area>
+	<area title="Cantabrie" mc_name="ES_Cantabrie" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Cantabria&Destination=&pax=&action=12+logements"></area>
+	<area title="Cadix" mc_name="ES_Cadix" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Cadiz&Destination=&pax=&action=17+logements"></area>
+	<area title="Caceres" mc_name="ES_Caceres" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Caceres&Destination=&pax=&action=10+logements"></area>
+	<area title="Burgos" mc_name="ES_Burgos" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Burgos&Destination=&pax=&action=0+logements"></area>
+	<area title="Biscaye" mc_name="ES_Biscaye" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Viscaya&Destination=&pax=&action=2+logements"></area>
+	<area title="Barcelone" mc_name="ES_Barcelone" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Barcelona&Destination=&pax=&action=22+logements"></area>
+	<area title="Iles Baléares" mc_name="ES_IlesBaleares" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Islas+Baleares&Destination=&pax=&action=22+logements"></area>
+	<area title="Badajoz" mc_name="ES_Badajoz" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Badajoz&Destination=&pax=&action=2+logements"></area>
+	<area title="Avila" mc_name="ES_Avila" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Avila&Destination=&pax=&action=10+logements"></area>
+	<area title="Asturies" mc_name="ES_Asturies" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Asturias&Destination=&pax=&action=19+logements"></area>
+	<area title="Almeria" mc_name="ES_Almeria" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Almeria&Destination=&pax=&action=16+logements"></area>
+	<area title="Alicante" mc_name="ES_Alicante" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Alicante&Destination=&pax=&action=387+logements"></area>
+	<area title="Albacete" mc_name="ES_Albacete" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Albacete&Destination=&pax=&action=0+logements"></area>
+	<area title="Alava" mc_name="ES_Alava" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=Spain&Province=Alava&Destination=&pax=&action=2+logements"></area>
+	
+	   
+    <!-- countries -->
+    <area mc_name="FR" color="#696969" balloon="false" alpha="0"></area>
+    <area mc_name="AD" color="#696969" balloon="false" alpha="0"></area>
+    <area mc_name="PT" color="#696969" balloon="false" alpha="0"></area>
+  </areas>
+  
+  <movies>
+    <movie title="Madrid" file="target" color="#e77d28" width="10" height="10" long="13.6883" lat="42.1829" fixed_size="true"></movie>
+  </movies>
+   
+  <labels>
+    <label x="8" y="20" text_size="14" color="#696969" remain="false">
+      <text>Spain</text>
+    </label>
+  </labels>  
+</map>

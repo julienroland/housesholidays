@@ -10,34 +10,16 @@ class CompteController extends BaseController {
         ->with(compact('nbInscriptionProprietePasFinie'));
     }
 
-    public function listInscriptionIncomplete(  ){
+    public function listLocation(  ){
 
         //todo afficher la liste des locations pas finie, voir requete au dessus
-        $user = User::find( Auth::user()->id );
 
-        $proprietesDump = $user
-        ->propriete(  )
-        ->with(array('proprieteTraduction'=>function($query){
+        $proprietes = Propriete::getLocations();
 
-            $query->where(Config::get('var.lang_col'),Session::get('langId'));
+        $imageType = imageType::whereNom(Config::get('var.image_standard'))->first();
 
-        }))
-        ->where( 'etape','!=','8' )
-        ->where( 'etape','!=','' )
-        ->get(  );
-
-        $data = array(
-            'data'=>array(
-                ),
-            );
-
-        foreach( $proprietesDump as $propriete ){
-            dd($propriete);
-
-            $propriete->proprieteTraduction[0];
-        }
-        return View::make('compte.inscription_nonfinie')
-        ->with( compact('proprietes') );
+        return View::make('compte.listLocation', array('page'=>'listLocation'))
+        ->with( compact(array('proprietes','imageType')) );
         
     }
 }

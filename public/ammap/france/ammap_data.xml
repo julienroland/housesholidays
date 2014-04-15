@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map map_file="ammap/france/france.swf" tl_long="-5.142757" tl_lat="51.088329" br_long="9.560176" br_lat="41.363571" zoom="100%" zoom_x="20%" zoom_y="0%">
+
+  <areas>
+    <area mc_name="FR_AI" title="Ain" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Ain&pax=&action=1+logements"></area>
+    <area mc_name="FR_AS" title="Aisne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Aisne&pax=&action=1+logements"></area>
+    <area mc_name="FR_AL" title="Allier" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Allier&pax=&action=2+logements"></area>
+    <area mc_name="FR_AP" title="Alpes-de-Haute-Provence" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Alpes+de+Haute+Provence&pax=&action=9+logements"></area>
+    <area mc_name="FR_AM" title="Alpes-Maritimes" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Alpes+Maritimes&pax=&action=48+logements"></area>
+    <area mc_name="FR_AH" title="Ardèche" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Ardeche&pax=&action=8+logements"></area>
+    <area mc_name="FR_AN" title="Ardennes" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Ardennes&pax=&action=1+logements"></area>
+    <area mc_name="FR_AG" title="Ariège" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Ariege&pax=&action=9+logements"></area>
+    <area mc_name="FR_AB" title="Aube" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Aube&pax=&action=4+logements"></area>
+    <area mc_name="FR_AD" title="Aude" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Aude&pax=&action=17+logements"></area>
+    <area mc_name="FR_AV" title="Aveyron" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Aveyron&pax=&action=9+logements"></area>
+    <area mc_name="FR_BR" title="Bas-Rhin" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Bas+Rhin&pax=&action=7+logements"></area>
+    <area mc_name="FR_BD" title="Bouches-du-Rhône" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Bouches+du+Rhone&pax=&action=22+logements"></area>
+    <area mc_name="FR_CV" title="Calvados" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Calvados&pax=&action=12+logements"></area>
+    <area mc_name="FR_CL" title="Cantal" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Cantal&pax=&action=1+logements"></area>
+    <area mc_name="FR_CT" title="Charente" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Charente&pax=&action=3+logements"></area>
+    <area mc_name="FR_CM" title="Charente-Maritime" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Charente+Maritime&pax=&action=14+logements"></area>
+    <area mc_name="FR_CH" title="Cher" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Cher&pax=&action=1+logements"></area>
+    <area mc_name="FR_CZ" title="Corrèze" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Correze&pax=&action=6+logements"></area>
+    <area mc_name="FR_CS" title="Corse-du-Sud" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Corse+du+Sud&pax=&action=11+logements"></area>
+    <area mc_name="FR_CO" title="Côte-d'Or" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=C%C3%B4te-d%27Or&pax=&action=2+logements"></area>
+    <area mc_name="FR_CA" title="Côtes-d'Armor" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=C%C3%B4tes+d%C2%B4Armor&pax=&action=14+logements"></area>
+    <area mc_name="FR_CR" title="Creuse" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Creuse&pax=&action=4+logements"></area>
+    <area mc_name="FR_DS" title="Deux-Sèvres" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Deux+Sevres&pax=&action=4+logements"></area>
+    <area mc_name="FR_DD" title="Dordogne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Dordogne&pax=&action=28+logements"></area>
+    <area mc_name="FR_DB" title="Doubs" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Doubs&pax=&action=5+logements"></area>
+    <area mc_name="FR_DM" title="Drôme" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Drome&pax=&action=5+logements"></area>
+    <area mc_name="FR_ES" title="Essonne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Esonne&pax=&action=0+logements"></area>
+    <area mc_name="FR_EU" title="Eure" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Eure&pax=&action=3+logements"></area>
+    <area mc_name="FR_EL" title="Eure-et-Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Eure+et+Loire&pax=&action=2+logements"></area>
+    <area mc_name="FR_FI" title="Finistère" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Finistere&pax=&action=32+logements"></area>
+    <area mc_name="FR_GA" title="Gard" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Gard&pax=&action=25+logements"></area>
+    <area mc_name="FR_GE" title="Gers" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Gers&pax=&action=14+logements"></area>
+    <area mc_name="FR_GI" title="Gironde" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Gironde&pax=&action=25+logements"></area>
+    <area mc_name="FR_HC" title="Haute-Corse" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Corse&pax=&action=5+logements"></area>
+    <area mc_name="FR_HG" title="Haute-Garonne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Garonne&pax=&action=7+logements"></area>
+    <area mc_name="FR_HL" title="Haute-Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Loire&pax=&action=5+logements"></area>
+    <area mc_name="FR_HM" title="Haute-Marne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Marne&pax=&action=3+logements"></area>
+    <area mc_name="FR_HA" title="Hautes-Alpes" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Hautes+Alpes&pax=&action=7+logements"></area>
+    <area mc_name="FR_HN" title="Haute-Saône" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Saone&pax=&action=1+logements"></area>
+    <area mc_name="FR_HS" title="Haute-Savoie" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Savoie&pax=&action=20+logements"></area>
+    <area mc_name="FR_HP" title="Hautes-Pyrénées" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Pyrenees&pax=&action=16+logements"></area>
+    <area mc_name="FR_HV" title="Haute-Vienne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haute+Vienne&pax=&action=0+logements"></area>
+    <area mc_name="FR_HR" title="Haut-Rhin" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Haut+Rhin&pax=&action=6+logements"></area>
+    <area mc_name="FR_HD" title="Hauts-de-Seine" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Hauts+de+Seine&pax=&action=1+logements"></area>
+    <area mc_name="FR_HE" title="Hérault" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Herault&pax=&action=18+logements"></area>
+    <area mc_name="FR_IV" title="Ille-et-Vilaine" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Ile+et+Vilaine&pax=&action=4+logements"></area>
+    <area mc_name="FR_IN" title="Indre" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Indre&pax=&action=3+logements"></area>
+    <area mc_name="FR_IL" title="Indre-et-Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Indre+et+Loire&pax=&action=7+logements"></area>
+    <area mc_name="FR_IS" title="Isère" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Isere&pax=&action=11+logements"></area>
+    <area mc_name="FR_JU" title="Jura" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Jura&pax=&action=1+logements"></area>
+    <area mc_name="FR_LD" title="Landes" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Landes&pax=&action=12+logements"></area>
+    <area mc_name="FR_LR" title="Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Loire&pax=&action=3+logements"></area>
+    <area mc_name="FR_LA" title="Loire-Atlantique" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Loire+Atlantique&pax=&action=7+logements"></area>
+    <area mc_name="FR_LT" title="Loiret" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Loiret&pax=&action=2+logements"></area>
+    <area mc_name="FR_LC" title="Loir-et-Cher" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Loir+et+Cher&pax=&action=6+logements"></area>
+    <area mc_name="FR_LO" title="Lot" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Lot&pax=&action=16+logements"></area>
+    <area mc_name="FR_LG" title="Lot-et-Garonne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Lot+et+Garonne&pax=&action=9+logements"></area>
+    <area mc_name="FR_LZ" title="Lozère" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Lozere&pax=&action=1+logements"></area>
+    <area mc_name="FR_ML" title="Maine-et-Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Maine+et+Loire&pax=&action=4+logements"></area>
+    <area mc_name="FR_MH" title="Manche" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Manche&pax=&action=17+logements"></area>
+    <area mc_name="FR_MR" title="Marne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Marne&pax=&action=2+logements"></area>
+    <area mc_name="FR_MY" title="Mayenne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Mayenne&pax=&action=0+logements"></area>
+    <area mc_name="FR_MM" title="Meurthe-et-Moselle" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Meuthe+et+Moselle&pax=&action=0+logements"></area>
+    <area mc_name="FR_MS" title="Meuse" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Meuse&pax=&action=1+logements"></area>
+    <area mc_name="FR_MB" title="Morbihan" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Morbihan&pax=&action=20+logements"></area>
+    <area mc_name="FR_MO" title="Moselle" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Moselle&pax=&action=3+logements"></area>
+    <area mc_name="FR_NI" title="Nièvre" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Nievre&pax=&action=1+logements"></area>
+    <area mc_name="FR_NO" title="Nord" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Nord&pax=&action=2+logements"></area>
+    <area mc_name="FR_OI" title="Oise" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Oise&pax=&action=2+logements"></area>
+    <area mc_name="FR_OR" title="Orne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Orne&pax=&action=2+logements"></area>
+    <area mc_name="FR_PC" title="Pas-de-Calais" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Pas+de+Calais&pax=&action=3+logements"></area>
+    <area mc_name="FR_PD" title="Puy-de-Dôme" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Puy+de+Dome&pax=&action=5+logements"></area>
+    <area mc_name="FR_PA" title="Pyrénées-Atlantiques" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Pyrenees+Atlantiques&pax=&action=14+logements"></area>
+    <area mc_name="FR_PO" title="Pyrénées-Orientales" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Pyrenees+Orientales&pax=&action=18+logements"></area>
+    <area mc_name="FR_RH" title="Rhône" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Rhone&pax=&action=4+logements"></area>
+    <area mc_name="FR_SL" title="Saône-et-Loire" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Saone+et+Loire&pax=&action=2+logements"></area>
+    <area mc_name="FR_ST" title="Sarthe" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Sarthe&pax=&action=5+logements"></area>
+    <area mc_name="FR_SV" title="Savoie" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Savoie&pax=&action=17+logements"></area>
+    <area mc_name="FR_SE" title="Seine-et-Marne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Seine+et+Marne&pax=&action=3+logements"></area>
+    <area mc_name="FR_SM" title="Seine-Maritime" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Seine+Maritime&pax=&action=10+logements"></area>
+    <area mc_name="FR_SS" title="Seine-Saint-Denis" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Seine+Saint+Denis&pax=&action=0+logements"></area>
+    <area mc_name="FR_SO" title="Somme" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Somme&pax=&action=2+logements"></area>
+    <area mc_name="FR_TA" title="Tarn" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Tarn&pax=&action=7+logements"></area>
+    <area mc_name="FR_TG" title="Tarn-et-Garonne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Tarn+et+Garonne&pax=&action=6+logements"></area>
+    <area mc_name="FR_TB" title="Territoire de Belfort" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Territoire+de+Belfort&pax=&action=0+logements"></area>
+    <area mc_name="FR_VM" title="Val-de-Marne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Val+de+Marne&pax=&action=1+logements"></area>
+    <area mc_name="FR_VO" title="Val-d'Oise" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Val+d+Oise&pax=&action=0+logements"></area>
+    <area mc_name="FR_VR" title="Var" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Var&pax=&action=37+logements"></area>
+    <area mc_name="FR_VC" title="Vaucluse" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Vaucluse&pax=&action=24+logements"></area>
+    <area mc_name="FR_VD" title="Vendée" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Vendee&pax=&action=19+logements"></area>
+    <area mc_name="FR_VN" title="Vienne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Vienne&pax=&action=10+logements"></area>
+    <area mc_name="FR_VP" title="Ville de Paris" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Paris&pax=&action=9+logements"></area>
+    <area mc_name="FR_VG" title="Vosges" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Vosges&pax=&action=17+logements"></area>
+    <area mc_name="FR_YO" title="Yonne" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Yonne&pax=&action=3+logements"></area>
+    <area mc_name="FR_YV" title="Yvelines" color="#696969" url="/locations-de-vacances.php?searchtype=precisesearch&housing_type=&Country=France&Province=Yvelines&pax=&action=3+logements"></area>
+    <area mc_name="borders" title="borders" color="#FFFFFF" balloon="false"></area>
+  </areas>
+
+  <movies>
+    <movie title="Paris" file="target" color="#e77d28" height="10" width="10" lat="48.856925" long="2.34121" fixed_size="true"></movie>
+  </movies>
+
+  <labels>
+    <label x="8" y="20" text_size="14" color="#696969" remain="false">
+      <text>France</text>
+    </label>
+  </labels>
+</map>

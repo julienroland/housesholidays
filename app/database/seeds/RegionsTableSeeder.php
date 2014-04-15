@@ -17,6 +17,7 @@ class RegionsTableSeeder extends Seeder {
 
 				array_push($regions, array(
 					'id'=>$i,
+					'statut'=>1,
 					'pays_id'=>$data["country_id"]));
 
 				$i++;

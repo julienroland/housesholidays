@@ -8,7 +8,7 @@
 
 @if(Helpers::isOk($nbInscriptionProprietePasFinie))
 
-{{link_to_route('listInscriptionPasFinie','Voir les annonces non finie',Auth::user()->slug)}}
+{{link_to_route('listLocationPropri',trans('compte.listLocation'),Auth::user()->slug)}}
 
 @endif
 

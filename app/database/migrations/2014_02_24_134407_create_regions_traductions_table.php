@@ -16,6 +16,7 @@ class CreateRegionsTraductionsTable extends Migration {
 			$table->increments('id');
 			$table->string('nom');
 			$table->text('description');
+			$table->string('slug');
 			$table->integer('langage_id')->unsigned();
 			$table->foreign('langage_id')->references('id')->on('langages');
 			$table->integer('region_id')->unsigned();

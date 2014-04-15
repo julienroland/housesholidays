@@ -39,9 +39,8 @@
 </div>
 
 @endif
-
 {{Form::label('video',trans('form.video'))}}
-{{Form::text('video','',array('placeholder'=>trans('form.video')))}}
+{{Form::text('video',isset(Session::get('input_4')['video']) && Helpers::isOk( Session::get('input_4')['video'] ) ? Session::get('input_4')['video'] : '' ,array('placeholder'=>trans('form.video')))}}
 
 {{Form::hidden('image_order','')}}
 {{Form::submit(trans('form.button_valid'))}}

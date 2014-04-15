@@ -132,7 +132,7 @@ if( Helpers::isOk($image) ) {
 public function deletePhoto( $imageId ){
 
   $photo = PhotoPropriete::find($imageId);
-
+  
 /**
 *
 * Si la photo existe bien en bdd
