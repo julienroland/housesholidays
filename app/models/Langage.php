@@ -16,4 +16,10 @@ class Langage extends Eloquent {
 
 	}
 
+	public function user(){
+
+		return $this->belongsToMany('User','users_langages_traductions');
+		
+	}
+
 }

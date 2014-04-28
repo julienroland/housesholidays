@@ -1,3 +1,5 @@
+<body id="{{isset($page) ? $page : ''}}">
+
 <div id="container">
 	<div id="menu">
 		<div id="menu-content">
@@ -55,15 +57,6 @@
 
 						<span>▼</span> </a>
 						<div id="login-content">
-						<!-- 	<form name="login_user_frm" action="newad.php?action=login" method="post">
-								<fieldset id="inputs">
-									<input id="username_top" type="email" name="email" class="clearOnFocus" value="E-mail" required>
-									<input id="password_top" type="password" name="password" class="clearOnFocus" value="Password" required>
-								</fieldset>
-								<fieldset id="actions">
-									<input type="submit" id="submit" value="{{trans('form.button_send')}}">
-								</fieldset>
-							</form> -->
 
 							{{Form::open(array('route'=>'connexion'))}}
 
@@ -86,9 +79,9 @@
 										))}}
 
 									</fieldset>
-
+	
 									<fieldset id="actions">
-										{{Form::checkbox('remember','ok', Helpers::isOk(Cookie::get('rememberEmail')['remember']) ? true  : false)}}
+										{{Form::checkbox('remember','ok', Helpers::isOk(Cookie::get('rememberEmail')['remember']) ? true  : false,array('id'=>'remember'))}}
 										{{Form::label('remember',trans('form.remember'))}}
 										
 									</fieldset>

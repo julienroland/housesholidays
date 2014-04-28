@@ -116,6 +116,24 @@ Route::filter('auth', function()
 	};
 });
 
+Route::filter('admin', function()
+{	
+
+	if(Auth::check()){
+		
+		if(Auth::user()->role_id != 2){
+
+			return Redirect::to('/');
+		}
+
+	}else{
+
+		return View::make('admin.login',array('page'=>'admin'));
+
+	}
+
+});
+
 Route::filter('inscription_propriete', function()
 {	
 
@@ -163,10 +181,10 @@ Route::filter('guest', function()
 				- probleme avec la redirection  
 				- Second todo item
 			
-			**/
-			
-		}
-		else{
+				**/
+
+			}
+			else{
 
 				/**
 				*

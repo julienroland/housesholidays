@@ -17,13 +17,18 @@ class CreateUsersTable extends Migration {
 			$table->string('nom');
 			$table->string('prenom');
 			$table->string('email');
+			$table->string('fax')->nullable();
 			$table->string('adresse')->nullable();
 			$table->integer('postal')->nullable();
+			$table->string('personne_contact')->nullable();
+			$table->string('site_web')->nullable();
 			$table->boolean('valide');
 			$table->string('key',64)->unique()->nullable();
 			//$table->string('fax')->nullable();
 			$table->string('password');
 			$table->string('slug')->nullable();
+			$table->integer('role_id')->unsigned()->nullable();
+			$table->foreign('role_id')->references('id')->on('roles');
 			$table->integer('maternelle_id')->unsigned()->nullable();
 			$table->foreign('maternelle_id')->references('id')->on('langages');
 			$table->integer('localite_id')->unsigned()->nullable();

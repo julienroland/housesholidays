@@ -1,0 +1,57 @@
+body { padding-top: 70px; }
+.main{
+	padding-left:30px;
+	padding-right:30px;
+}
+.empty{
+	font-style: italic;
+	color:grey;
+	font-size: 0.9em;
+}
+.jumbotron .container.connexion input[type="submit"]:focus{
+	outline: 0;
+}
+.jumbotron .container.connexion input[type="submit"]{
+	width: 200px;
+	font-size: 18px;
+	height: 50px;
+}
+.jumbotron .container.connexion .input-group{
+	margin: 1em 0;
+}
+.jumbotron .container.connexion form{
+	max-width: 400px;
+	display: block;
+	margin: auto;
+	text-align: left;
+}
+.jumbotron .container.connexion{
+	max-width: 600px;
+	text-align: center;
+}
+.hyperliens{
+	padding:0.5em 1em;
+	margin:1em 0;
+}
+.infosSupp{
+	padding-bottom: 3em;
+	padding-top: 1em;
+	background-color: #F1F1F1;
+}
+.container{
+	padding-bottom: 3em;
+}
+#tabs a:focus{
+	outline:0;
+}
+.ui-tabs-active a{
+	margin-right: 0px!important;
+}
+.ui-tabs-active{
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	cursor: default;
+
+}

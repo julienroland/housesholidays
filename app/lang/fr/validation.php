@@ -94,6 +94,8 @@ return array(
         'step3'=> 'Vos informations sur la localisation de votre batiment de l\'étape précédente ont bien été enregistrées',
         'step4'=> 'Vos photos et videos de l\'étape précédente ont bien été enregistrées',
         'step5'=> 'Vos informations sur les tarifs de votre batiment de l\'étape précédente ont bien été enregistrées',
+        'step6'=> 'Vos informations sur les disponibilites de votre batiment de l\'étape précédente ont bien été enregistrées',
+        'step7'=> 'Vos coordonnées de l\'étape précédente ont bien été enregistrées',
         ),
 
     /*

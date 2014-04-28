@@ -207,43 +207,43 @@ class OptionsTraductionsTableSeeder extends Seeder {
 					),
 				array(
 					'key' => 'nb-db',
-					'valeur' => 'Nombre de salles de bains',
+					'valeur' => 'salles de bains',
 					
 					),
 				array(
 					'key' => 'nb-wc',
-					'valeur' => 'Nombre de WC',
+					'valeur' => 'WC',
 					
 					),
 				//
 				array(
 					'key' => 'nb-chambres',
-					'valeur' => 'Nombre de chambres',
+					'valeur' => 'chambres',
 					
 					),
 				array(
 					'key' => 'nb-lits-doubles',
-					'valeur' => 'Nombre de lits doubles',
+					'valeur' => 'lits doubles',
 					
 					),
 				array(
 					'key' => 'nb-de-lit-enfant',
-					'valeur' => 'Nombre de lit enfant',
+					'valeur' => 'lit enfant',
 					
 					),
 				array(
 					'key' =>'nb-de-couchages',
-					'valeur' =>'Nombre de couchages',
+					'valeur' =>'couchages',
 					
 					),
 				array(
 					'key' => 'nb-de-lits-simples',
-					'valeur' => 'Nombre de lits simples',
+					'valeur' => 'lits simples',
 					
 					),
 				array(
 					'key' => 'nb-de-canape-lit',
-					'valeur' => 'Nombre de canapé-lit',
+					'valeur' => 'canapé-lit',
 					
 					),
 				//

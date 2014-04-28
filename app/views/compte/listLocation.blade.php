@@ -8,10 +8,10 @@
 
 <div class="liste-resultat">
 	<a href="">
-		@if(Helpers::isOk($propriete->photoPropriete[0]->url))
-		<img src="/{{Config::get('var.upload_folder')}}/{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}">
+		@if(isset($propriete->photoPropriete[0]) && Helpers::isOk($propriete->photoPropriete[0]))
+		<a href="{{route('showPropriete',$propriete->id)}}"><img src="/{{Config::get('var.upload_folder')}}{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}"></a>
 		@else
-		<img src="/images/noimage.jpg" alt="{{trans('listLocation.noImage')}}">
+		<img src="{{Config::get('var.image_folder')}}noimage.jpg" alt="{{trans('listLocation.noImage')}}">
 		@endif
 		<h3 aria-level="3" role="heading" class="titre-resultat">
 
@@ -29,23 +29,27 @@
 
 			
 			<span>
+			@if(isset($propriete->localite->nom) || isset($propriete->sousRegion->sousRegionTraduction[0]->nom) || isset($propriete->region->regionTraduction[0]->nom) || isset($propriete->pays->paysTraduction[0]->nom))
 				(
-				@if(Helpers::isOk($propriete->localite->nom)) 
+				@if(isset($propriete->localite->nom) && Helpers::isOk($propriete->localite->nom)) 
 				{{$propriete->localite->nom}}
 				@endif
 
-				@if(Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom)) 
+				@if(isset($propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom)) 
 				- {{$propriete->sousRegion->sousRegionTraduction[0]->nom}}
 				@endif
 
-				@if(Helpers::isOk($propriete->region->regionTraduction[0]->nom)) 
+				@if(isset($propriete->region->regionTraduction[0]->nom) && Helpers::isOk($propriete->region->regionTraduction[0]->nom)) 
 				- {{$propriete->region->regionTraduction[0]->nom}}
 				@endif
 
-				@if(Helpers::isOk($propriete->pays->paysTraduction[0]->nom)) 
+				@if(isset($propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($propriete->pays->paysTraduction[0]->nom)) 
 				- {{$propriete->pays->paysTraduction[0]->nom}}
 				@endif
 				)
+				@else
+				{{trans('locationList.noLocation')}}
+				@endif
 			</span>
 			
 		</h3>
@@ -64,17 +68,17 @@
 		<ul class="caract-resultat">
 			<li class="personne">
 				@if($propriete->nb_personne)
-				{{$propriete->nb_personne}} @if(count($propriete->nb_personne) > 1) {{trans('general.personnes')}} @else {{trans('general.personne')}} @endif
+				{{$propriete->nb_personne}} @if($propriete->nb_personne > 1) {{trans('general.personnes')}} @else {{trans('general.personne')}} @endif
 				@endif
 			</li>
-			<li class="chambre">{{$propriete->nb_chambre}}  @if(count($propriete->nb_chambre) > 1) {{trans('general.chambres')}} @else {{trans('general.chambre')}} @endif</li>
+			<li class="chambre">{{$propriete->nb_chambre}}  @if($propriete->nb_chambre > 1) {{trans('general.chambres')}} @else {{trans('general.chambre')}} @endif</li>
 			<li class="detail-douche"> 
-				{{$propriete->nb_sdb}} @if(count($propriete->nb_sdb) > 1) {{trans('general.sdbs')}} @else {{trans('general.sdb')}} @endif
+				{{$propriete->nb_sdb}} @if($propriete->nb_sdb > 1) {{trans('general.sdbs')}} @else {{trans('general.sdb')}} @endif
 			</li>
 			<li class="superficie">
 				@if(Helpers::isOk( $propriete->taille_bien ))
 
-				{{$propriete->taille_bien}} {{trans('general.superficie')}}
+				{{round($propriete->taille_bien)}} {{trans('general.superficie')}}
 				m<sup>2</sup>
 
 				@endif
@@ -101,12 +105,14 @@
 		<span>{{trans('locationList.last_update')}}: @if(Helpers::isOk($propriete->updated_at)){{Helpers::toHumanTimestamp($propriete->updated_at)}} @else {{trans('locationList.noData')}} @endif</span>
 		<ul>
 		
-			<li>{{link_to_route('showPropriete',trans('form.voir'), array($propriete->slug, Helpers::toSlug($propriete->typeBatiment->typeBatimentTraduction[0]->nom) , Helpers::toSlug( $propriete->pays->paysTraduction[0]->nom), Helpers::toSlug($propriete->region->regionTraduction[0]->nom), Helpers::toSlug($propriete->sousRegion->sousRegionTraduction[0]->nom), Helpers::toSlug($propriete->localite->nom)))}}</li>
-			<li>{{link_to_route('editPropriete',trans('form.modifier'), $propriete->slug)}}</li>
+			<li>{{link_to_route('showPropriete',trans('form.voir'), $propriete->id)}}</li>
+			<li>{{link_to_route('editPropriete1',trans('form.modifier'), $propriete->id)}}</li>
+			<li>{{link_to_route('RefreshAnnonce',trans('locationList.refreshAnnonce'), $propriete->id,array('data-id'=>$propriete->id,'class'=>'refreshAnnonce'))}}</li>
 		</ul>
 	</div>
 </div>
-
+<!-- array($propriete->slug, Helpers::toSlug($propriete->typeBatiment->typeBatimentTraduction[0]->nom) , Helpers::toSlug( $propriete->pays->paysTraduction[0]->nom), Helpers::toSlug($propriete->region->regionTraduction[0]->nom), Helpers::toSlug($propriete->sousRegion->sousRegionTraduction[0]->nom), Helpers::toSlug($propriete->localite->nom)))}}</li>
+			 -->
 @endforeach
 
 @else

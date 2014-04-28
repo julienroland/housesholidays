@@ -24,9 +24,13 @@
 </div>
 @endif
 
-@if(Session::get('etape2') && Helpers::isOk(Session::get('proprieteId') || isset($data) && Helpers::isOk( $data )))
+@if(Session::get('etape2') && Session::has('proprieteId') )
 
 {{Form::open(array('method'=>'put','route'=>array('inscription_etape1_update',Auth::user()->slug,Session::get('proprieteId'))))}}
+
+@elseif( isset($data) && is_object($data) && Helpers::isOk( $data ) && !Session::has('proprieteId'))
+
+{{Form::open(array('method'=>'put','route'=>array('storePropriete1',$data->id)))}}
 
 @else
 
@@ -49,23 +53,23 @@
 	</ul>
 	<div id="fragment-1">
 		<span>{{trans('general.lang.fr')}}</span>
-		{{Form::text('titre_propriete[1]', Session::has('input_2') && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][1]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
+		{{Form::text('titre_propriete[1]', isset($titre->data) ? $titre->data[1] : (Session::has('input_2') && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][1]: '') ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-2">
 		<span>{{trans('general.lang.en')}}</span>
-		{{Form::text('titre_propriete[2]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][2]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
+		{{Form::text('titre_propriete[2]',isset($titre->data) ? $titre->data[2] : ( Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][2]: '') ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 	<div id="fragment-3">
 		<span>{{trans('general.lang.nl')}}</span>
-		{{Form::text('titre_propriete[3]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][3]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
+		{{Form::text('titre_propriete[3]',isset($titre->data) ? $titre->data[3] : ( Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][3]: '') ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-4">
 		<span>{{trans('general.lang.de')}}</span>
-		{{Form::text('titre_propriete[4]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][4]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
+		{{Form::text('titre_propriete[4]', isset($titre->data) ? $titre->data[4] : (Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][4]: '') ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div> 
 	<div id="fragment-5">
 		<span>{{trans('general.lang.es')}}</span>
-		{{Form::text('titre_propriete[5]', Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][5]: '' ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
+		{{Form::text('titre_propriete[5]',isset($titre->data) ? $titre->data[5] : ( Session::has('input_2')  && isset(Session::get('input_2')['titre_propriete']) ? Session::get('input_2')['titre_propriete'][5]: '') ,array('placeholder'=>trans('form.enter_annonce_placeholder')))}}
 	</div>
 </div>
 <br/>
@@ -95,7 +99,9 @@
 {{Form::text('taille_exterieur',isset($data->taille_terrain) && Helpers::isOk($data->taille_terrain) ? $data->taille_terrain : (Session::has('input_2') ? Session::get('input_2')['taille_exterieur']: ''),array('placeholder'=>'2'))}}
 <span>m²</span>
 <br/>
-{{Form::label('description',trans('form.enter_description'))}}
+{{Form::label('exposition',trans('form.exposition'))}}
+{{Form::select('exposition',trans('form.expositionList'),isset($data->exposition_id) && Helpers::isOk($data->exposition_id) ? $data->exposition_id : ( Session::has('input_2') ? Session::get('input_2')['exposition']: ''))}}
+{{Form::label('description',trans('form.enter_description'),array('required'))}}
 <div class="tabs">
 	<ul>
 		<li><a href="#fragment-1">FR</a></li>
@@ -106,23 +112,23 @@
 	</ul>
 	<div id="fragment-1">
 		<span>{{trans('general.lang.fr')}}</span>
-		{{Form::textarea('description[1]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][1]: '')}}
+		{{Form::textarea('description[1]',isset($description->data) ? $description->data[1] : (Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][1]: ''))}}
 	</div>
 	<div id="fragment-2">
 		<span>{{trans('general.lang.en')}}</span>
-		{{Form::textarea('description[2]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][2]: '')}}
+		{{Form::textarea('description[2]',isset($description->data) ? $description->data[2] : (Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][2]: ''))}}
 	</div>
 	<div id="fragment-3">
 		<span>{{trans('general.lang.nl')}}</span>
-		{{Form::textarea('description[3]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][3]: '')}}
+		{{Form::textarea('description[3]',isset($description->data) ? $description->data[3] : (Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][3]: ''))}}
 	</div> 
 	<div id="fragment-4">
 		<span>{{trans('general.lang.de')}}</span>
-		{{Form::textarea('description[4]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][4]: '')}}
+		{{Form::textarea('description[4]',isset($description->data) ? $description->data[4] : (Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][4]: ''))}}
 	</div> 
 	<div id="fragment-5">
 		<span>{{trans('general.lang.es')}}</span>
-		{{Form::textarea('description[5]',Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][5]: '')}}
+		{{Form::textarea('description[5]',isset($description->data) ? $description->data[5] : (Session::has('input_2') && isset(Session::get('input_2')['description']) ? Session::get('input_2')['description'][5]: ''))}}
 	</div>
 </div>
 
@@ -130,36 +136,78 @@
 
 
 @foreach( $listOption->literie as $key => $literie )
-
 {{Form::label('literie_'.$literie->id,$literie->valeur)}}
+
+@if(isset($options) && isset($options->data[$literie->id]))
+
+{{Form::input('number','literie['.$literie->id.']', isset($options->data[$literie->id]) ? $options->data[$literie->id] : (Session::has('input_2') && Session::get('input_2')['literie'][$literie->id] ? Session::get('input_2')['literie'][$literie->id]: ''), array('min'=> 0, 'max'=> 20))}}
+
+@else
+
 {{Form::input('number','literie['.$literie->id.']', Session::has('input_2') && Session::get('input_2')['literie'][$literie->id] ? Session::get('input_2')['literie'][$literie->id]: '', array('min'=> 0, 'max'=> 20))}}
+
+@endif
 <br/>
 
-
 @endforeach
+<div class="interieur">
+	<h2 aria-level="2" role="heading">{{trans('form.title_interieur')}}</h2>
 
-<h2 aria-level="2" role="heading">{{trans('form.title_interieur')}}</h2>
+	@foreach( $listOption->interieur as $key => $interieur )
 
-@foreach( $listOption->interieur as $key => $interieur )
+	{{Form::label('interieur_'.$interieur->id,$interieur->valeur)}}
 
-{{Form::label('interieur_'.$interieur->id,$interieur->valeur)}}
-{{Form::checkbox('interieur['.$interieur->id.']','true',Session::has('input_2') && isset(Session::get('input_2')['interieur'][$interieur->id]) ? Session::get('input_2')['interieur'][$interieur->id]: '',array('id'=>'interieur_'.$interieur->id))}}
+	@if(isset($options) && isset($options->data[$interieur->id]))
 
+	@if($interieur->id == '35' || $interieur->id == '36' || $interieur->id == '37')
+	
+	<div class="group">
 
+		@endif
+		{{Form::checkbox('interieur['.$interieur->id.']','', isset($options->data[$interieur->id]) ? true : (Session::has('input_2') && isset(Session::get('input_2')['interieur'][$interieur->id]) ? Session::get('input_2')['interieur'][$interieur->id]: ''),array('id'=>'interieur_'.$interieur->id))}}
 
-@endforeach
-<br/>
+		@if($interieur->id == '35' || $interieur->id == '36' || $interieur->id == '37')
 
+		{{Form::input('number','interieur['.$interieur->id.']','',array('class'=>'valeur','style'=>'display:block;','placeholder'=>trans('form.enter_number_of',array('nom'=>$interieur->valeur)),'style'=>'display:none;'))}}
+	</div>
+	@endif
+	@else
+	
+	@if($interieur->id == '35' || $interieur->id == '36' || $interieur->id == '37')
+	<div class="group">
+		@endif
+		{{Form::checkbox('interieur['.$interieur->id.']','',Session::has('input_2') && isset(Session::get('input_2')['interieur'][$interieur->id]) ? Session::get('input_2')['interieur'][$interieur->id]: '',array('id'=>'interieur_'.$interieur->id))}}
+
+		@if($interieur->id == '35' || $interieur->id == '36' || $interieur->id == '37')
+
+		{{Form::input('number','interieur['.$interieur->id.']','',array('class'=>'valeur','placeholder'=>trans('form.enter_number_of',array('nom'=>$interieur->valeur)),'style'=>'display:none;'))}}
+	</div>
+	@endif
+	@endif
+
+	@endforeach
+
+</div>
 <h2 aria-level="2" role="heading">{{trans('form.title_exterieur')}}</h2>
 
 @foreach( $listOption->exterieur as $key => $exterieur )
 
 {{Form::label('exterieur_'.$exterieur->id,$exterieur->valeur)}}
+
+@if(isset($options) && isset($options->data[$exterieur->id]))
+
+{{Form::checkbox('exterieur['.$exterieur->id.']','true',isset($options->data[$exterieur->id]) ? true : ( Session::has('input_2') && isset(Session::get('input_2')['exterieur'][$exterieur->id]) ? Session::get('input_2')['exterieur'][$exterieur->id]: ''), array('id'=>'exterieur_'.$exterieur->id))}}
+
+@else
+
 {{Form::checkbox('exterieur['.$exterieur->id.']','true',Session::has('input_2') && isset(Session::get('input_2')['exterieur'][$exterieur->id]) ? Session::get('input_2')['exterieur'][$exterieur->id]: '', array('id'=>'exterieur_'.$exterieur->id))}}
 
 
+@endif
+
 @endforeach
 <br/>
+
 {{Form::submit(trans('form.button_valid'))}}
 {{Form::close()}}
 @stop

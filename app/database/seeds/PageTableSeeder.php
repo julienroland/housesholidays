@@ -11,6 +11,7 @@ class PageTableSeeder extends Seeder {
 			'id'=>1,
 			'hook'=>'login',
 			'statut'=>1,
+			'nom'=>'Pourquoi s\'inscrire',
 
 			);
 

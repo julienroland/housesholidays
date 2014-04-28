@@ -22,14 +22,46 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'password'=>'required|min:3',
 		);
 
+	public static $coordonneRules = array(
+		'prenom'=>'required|min:2|alpha|not_in:null',
+		'nom'=>'required|min:2|alpha|not_in:null',
+		'email'=>'unique:users,email|email|required|not_in:null', 
+		'pays'=>'required|not_in:null',
+		'sous_region'=>'required|not_in:null',
+		'localite'=>'required|not_in:null',
+		'adresse'=>'required|not_in:null',
+		'postal'=>'required|not_in:null',
+		'maternelle'=>'required|not_in:null',
+		);
+
 	public static $sluggable = array(
 		'build_from' => 'fullname',
 		'save_to'    => 'slug',
 		);
+	public static function getLangages( $id ){
 
+		$user = User::find($id);
+
+		$dataDump = $user->langage()->get()->toArray();
+		
+		$data = array();
+
+		foreach($dataDump as $datas){
+
+			$data[$datas['id']] = $datas['nom'];
+		}
+
+		return $data;
+	}
 	public function propriete(){
 
 		return $this->hasMany('Propriete');
+		
+	}
+
+	public function telephone(){
+
+		return $this->hasMany('UserTelephone');
 		
 	}
 
@@ -38,6 +70,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsTo('Pays');
 		
 	}
+
+	public function langage(){
+
+		return $this->belongsToMany('Langage','users_langages_traductions');
+		
+	}
+
 	public function getFullnameAttribute() {
 		return $this->prenom . ' ' . $this->nom;
 	}

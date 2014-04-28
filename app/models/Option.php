@@ -101,7 +101,6 @@ class Option extends Eloquent {
 			$data = array(
 
 				'situation'=> array(
-					'' => '',
 					),
 				'situationId'=>array(
 					'id'=>$t['b_situation_geographique'][0][0]->option_id
@@ -117,6 +116,7 @@ class Option extends Eloquent {
 			}
 
 		}
+		
 	/**
 	*
 	* Return une array pour les selects dans les formulaires

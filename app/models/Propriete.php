@@ -11,7 +11,7 @@ class Propriete extends Eloquent {
 	public static $rules1 =  array(
 
 		'titre_propriete'=> 'required',
-		'nom_propriete'=> 'required|alpha',
+		'nom_propriete'=> 'required',
 		'type_propriete'=> 'required|integer',
 		'nb_personne'=> 'required|integer',
 		'nb_chambre'=> 'required|integer',
@@ -38,12 +38,25 @@ class Propriete extends Eloquent {
 
 	public function getFullnameAttribute() {
 
-		$propriete = Propriete::getLocations(Session::get('proprieteId'));
+		if(Session::has('proprieteId')){
 
-		if(isset( $propriete->nom ) && isset( $propriete->pays->paysTraduction[0]->nom ) && isset( $propriete->region->regionTraduction[0]->nom ) && isset( $propriete->sousRegion->sousRegionTraduction[0] ) && isset( $propriete->localite->nom )){
+			$propriete = Propriete::getLocations( Session::get('proprieteId') );
 
-			return $propriete->nom . ' ' . $propriete->pays->paysTraduction[0]->nom . '  ' . $propriete->region->regionTraduction[0]->nom . ' ' . $propriete->sousRegion->sousRegionTraduction[0]->nom . ' ' .$propriete->localite->nom;
-			
+			if(isset($propriete->proprieteTraduction[0]->cle) && $propriete->proprieteTraduction[0]->cle ==='titre'){
+
+				$titre = $propriete->proprieteTraduction[0]->valeur;
+
+			}else{
+
+				$titre = '';
+			}
+
+			if(isset( $propriete->typeBatiment->typeBatimentTraduction[0]->nom ) && isset( $propriete->localite->nom ) && isset( $titre )){
+
+				return $propriete->typeBatiment->typeBatimentTraduction[0]->nom . ' ' .$propriete->localite->nom . ' ' . $titre;
+
+			}
+
 		}
 
 	}
@@ -143,10 +156,11 @@ class Propriete extends Eloquent {
 				'tarif',
 				'typeBatiment.typeBatimentTraduction',
 				'photoPropriete'=>function($query){
-					$query->whereAccroche('1');
+					$query->whereOrdre('1');
 				},
 				))
 			->where( 'etape','!=','' )
+			->orderBy('created_at','desc')
 			->get(  );
 
 		}else{
@@ -160,9 +174,7 @@ class Propriete extends Eloquent {
 				'pays.paysTraduction',
 				'tarif',
 				'typeBatiment.typeBatimentTraduction',
-				'photoPropriete'=>function($query){
-					$query->whereAccroche('1');
-				},
+				'photoPropriete',
 				))
 			->where( 'etape','!=','' )
 			->whereId($proprieteId)
@@ -170,9 +182,40 @@ class Propriete extends Eloquent {
 
 		}
 
+
+
 		return $proprieteDump;
 	}
 
+	public static function getMinTarif( $proprieteId, $col = null){
+
+		if(Helpers::isNotOk($col)){
+
+			$col = Config::get('var.semaine_col');
+		}
+
+		$propriete = Propriete::find($proprieteId);
+
+		$getMinDump = $propriete->tarif()->min($col);
+
+		return $getMinDump;
+
+	}
+
+	public static function getMaxTarif( $proprieteId, $col = null){
+
+		if(Helpers::isNotOk($col)){
+
+			$col = Config::get('var.semaine_col');
+		}
+
+		$propriete = Propriete::find($proprieteId);
+
+		$getMaxDump = $propriete->tarif()->max($col);
+
+		return $getMaxDump;
+
+	}
 	public static function getPhoto( $proprieteId , $type = null, $output = null ) {
 
 		if(!isset($type) && Helpers::isNotOk( $type ))
@@ -223,50 +266,200 @@ class Propriete extends Eloquent {
     }
 
     public static function getOption($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
-/**
+
+		/**
 		*
 		* Select les option AVEC les traductions en fonction du type d'option, fetch un tableau (laravel collection)
 		*
 		**/
+
+
 		$data = array(
-			'exterieur'=> array(
+			'data'=>array(),
+			/*'exterieur'=> array(
 				),
 			'interieur'=> array(
 				),
 			'literie'=> array(
-				),
-			);
+				),*/
+		);
 
 		$d = array('b_literie','b_interieur','b_exterieur');
 
 
 		foreach($d as $typeOption){
 
-			$optionDump = Propriete::find( $proprieteId )->with(array('option.typeOption'=>function($query) use($typeOption){
+			$optionDump = Propriete::whereId( $proprieteId )->with(array('option'))->first();
 
-				$query->whereNom($typeOption);
-
-			}))->get();
 			/*->whereNom('b_interieur')->whereNom('b_exterieur')*/
 
 			$t= array();
 
-			foreach($optionDump as $options){
+			foreach($optionDump->option as $options){
 
-				$t[$typeOption] = $options->option;
+				$data['data'][$options->id] = $options->pivot->valeur;
 
 			}
 
-			foreach($t[$typeOption] as $dataArr){
+			/*foreach($t[$typeOption] as $dataArr){
 
 				
 				$data[str_replace('b_','',$typeOption)][$dataArr->pivot->option_id] = (object)array('id'=>$dataArr->pivot->option_id,'valeur' =>$dataArr->pivot->valeur);
-			}
-
-
+			}*/
 			
 		}
-		dd($data);	
+
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
+public static function getOptions($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+
+	$optionsDump = 
+	Propriete::with(array('option.optionTraduction'))
+	->whereId($proprieteId)->first();
+
+	$data = array(
+		'data'=>array(
+			),
+		'count'=>'',
+		);
+	
+	foreach($optionsDump->option as $option){
+
+		if($option !=='situation'){
+
+			$data['data'][$option->optionTraduction[0]->cle] = array('nom'=>$option->optionTraduction[0]->valeur,'id'=> $option->id, 'valeur'=>$option->pivot->valeur);
+
+		}
+	}
+
+	$data['count'] = count($optionsDump->option);
+	$data['data'] = (object)$data['data'];
+
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
+public static function getSituations($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+
+	$situationDump = 
+	Propriete::with(array('option'=>function($query){
+		$query->where('options.id', 44 );
+	}))
+	->whereId($proprieteId)->first();
+
+	$d = array();
+
+	foreach($situationDump->option as $situation){
+		array_push($d, $situation->pivot->valeur);
+	}
+
+	$traductionDump = OptionTraduction::find( $d );
+
+	$data = array(
+		'data'=>array(),
+		'count'=>'',
+		);
+
+	foreach($traductionDump as $situation){
+
+		array_push($data['data'] , (object)array('id'=>$situation->id, 'nom'=>$situation->valeur,'valeur'=>''));
+	}
+	
+	$data['count'] = count($traductionDump);
+
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
+
+public static function getLiterie($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+	$literieDump = 
+	Propriete::with(array('option'=>function($query){
+		$query->where( 'type_option_id', Config::get('var.literie_col') );
+	},'option.optionTraduction'))
+	->whereId($proprieteId)->first();
+	
+	$data = array(
+		'data'=>array(),
+		'count'=>'',
+		);
+
+	foreach($literieDump->option as $literie){
+
+		array_push($data['data'] , (object)array('id'=>$literie->optionTraduction[0]->id, 'nom'=>$literie->optionTraduction[0]->valeur,'valeur'=>$literie->pivot->valeur));
+	}
+	
+	$data['count'] = count($literieDump->option);
+
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
+
+public static function getExterieur($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+	$exterieurDump = 
+	Propriete::with(array('option'=>function($query){
+		$query->where( 'type_option_id', Config::get('var.exterieur_col') );
+	},'option.optionTraduction'))
+	->whereId($proprieteId)->first();
+	
+	$data = array(
+		'data'=>array(),
+		'count'=>'',
+		);
+
+	foreach($exterieurDump->option as $exterieur){
+
+		array_push($data['data'], (object)array('id'=>$exterieur->optionTraduction[0]->id, 'nom'=>$exterieur->optionTraduction[0]->valeur,'valeur'=>$exterieur->pivot->valeur));
+	}
+	
+	$data['count'] = count($exterieurDump->option);
+	/**
+	*
+	* Return une array pour les selects dans les formulaires
+	*
+	**/
+
+	return (object)$data;
+}
+
+public static function getInterieur($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+	$interieurDump = 
+	Propriete::with(array('option'=>function($query){
+		$query->where( 'type_option_id', Config::get('var.interieur_col') );
+	},'option.optionTraduction'))
+	->whereId($proprieteId)->first();
+	
+	$data = array(
+		'data'=>array(),
+		'count'=>'',
+		);
+
+	foreach($interieurDump->option as $interieur){
+
+		array_push($data['data'] , (object)array('id'=>$interieur->optionTraduction[0]->id, 'nom'=>$interieur->optionTraduction[0]->valeur,'valeur'=>$interieur->pivot->valeur));
+	}
+	
+	$data['count'] = count($interieurDump->option);
+
 	/**
 	*
 	* Return une array pour les selects dans les formulaires

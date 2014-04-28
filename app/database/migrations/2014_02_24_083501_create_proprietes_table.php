@@ -35,7 +35,7 @@ class CreateProprietesTable extends Migration {
 			$table->boolean('commentaire_statut');
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->string('orientation_vue',50);
+			$table->integer('exposition')->nullable();
 			$table->tinyInteger('etage');
 			$table->text('condition_paiement')->nullable();
 			$table->text('note_paiement')->nullable();

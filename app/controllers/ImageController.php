@@ -4,26 +4,23 @@ use Carbon\Carbon;
 
 class ImageController extends BaseController {
 
-	public function postImage()
+	public function postImage( $id )
 	{
 
-    if(Session::has('proprieteId')){
+    if(Helpers::isOk( $id )){
 
-      $nb_photos = Propriete::find(Session::get('proprieteId'))->photoPropriete()->count();
+      $nb_photos = Propriete::find($id)->photoPropriete()->count();
        
       if( $nb_photos >= 15 ){
 
         return Response::json(trans('validation.custom.tropImage'),500);
       }
 
-      $destinationPath = Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.Session::get('proprieteId').'/';
+      $destinationPath = Config::get('var.upload_folder').Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.$id.'/';
 
       $timestamp = date('dmYhis');
     } 
-    else
-    {
-     $destinationPath = public_path(). '/'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/';
-   }
+  
 
    File::exists( $destinationPath ) or File::makeDirectory( $destinationPath , 0777, true);
    
@@ -57,7 +54,7 @@ class ImageController extends BaseController {
 
       $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(), null, $extension,  $timestamp ));
 
-      $nb_ordre = Propriete::find(Session::get('proprieteId'))->photoPropriete()->max('ordre') + 1;
+      $nb_ordre = Propriete::find($id)->photoPropriete()->max('ordre') + 1;
 
       $photoPropriete = new PhotoPropriete;
 
@@ -65,7 +62,7 @@ class ImageController extends BaseController {
 
       $photoPropriete->ordre = $nb_ordre;
 
-      $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
+      $photoPropriete = Propriete::find( $id )->photoPropriete()->save($photoPropriete);
 
       $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
 
@@ -73,7 +70,7 @@ class ImageController extends BaseController {
 
         $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-        $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
+        $image->resize( $type->width, $type->height, false )->save( $destinationPath.$filename );
 
       }
     }
@@ -89,7 +86,7 @@ else //single file
 
   $filename = Helpers::toSlug(Helpers::addTimestamp( $file->getClientOriginalName(), null, $extension,  $timestamp ));
 
-  $nb_ordre = Propriete::find(Session::get('proprieteId'))->photoPropriete()->max('ordre') + 1;
+  $nb_ordre = Propriete::find($id)->photoPropriete()->max('ordre') + 1;
 
   $photoPropriete = new PhotoPropriete;
 
@@ -97,7 +94,7 @@ else //single file
 
   $photoPropriete->ordre = $nb_ordre;
 
-  $photoPropriete = Propriete::find( Session::get('proprieteId') )->photoPropriete()->save($photoPropriete);
+  $photoPropriete = Propriete::find( $id )->photoPropriete()->save($photoPropriete);
 
   $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
 
@@ -105,7 +102,7 @@ else //single file
 
     $filename = Helpers::toSlug(Helpers::addTimestamp( $file->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-    $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
+    $image->resize( $type->width, $type->height, false )->save( $destinationPath.$filename );
 
   }
 
@@ -113,7 +110,7 @@ else //single file
 
 if( Helpers::isOk($image) ) {
 
-  $propriete = Propriete::find(Session::get('proprieteId'));
+  $propriete = Propriete::find($id);
 
   $propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 3;
 
@@ -129,7 +126,7 @@ if( Helpers::isOk($image) ) {
 }
 }
 
-public function deletePhoto( $imageId ){
+public function deletePhoto( $imageId, $proprieteId ){
 
   $photo = PhotoPropriete::find($imageId);
   
@@ -140,13 +137,14 @@ public function deletePhoto( $imageId ){
 **/
 
 if( $photo ){
+  
 /**
 *
 * défini le chemin 
 *
 **/
 
-$destinationPath = public_path(). '/'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.Session::get('proprieteId').'/';
+$destinationPath = public_path(). '/'.Config::get('var.upload_folder').'/'.Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.$proprieteId.'/';
 
 /**
 *

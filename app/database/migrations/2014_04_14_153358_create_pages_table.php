@@ -16,6 +16,7 @@ class CreatePagesTable extends Migration {
 			$table->increments('id');
 			$table->boolean('statut');
 			$table->string('hook');
+			$table->string('nom');
 
 			$table->timestamps();
 		});

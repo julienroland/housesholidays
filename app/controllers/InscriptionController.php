@@ -59,7 +59,7 @@ class InscriptionController extends BaseController {
 		* Sauvegarde les inputs si jamais il refresh ou autre
 		*
 		**/
-		Session::put('input_1',$input);
+		/*Session::put('input_1',$input);*/
 		
 		$validation = Validator::make($input,$rules);
 		/**
@@ -79,6 +79,7 @@ class InscriptionController extends BaseController {
 			$user->prenom = $input['prenom'];
 			$user->nom = $input['nom'];
 			$user->email = $input['email'];
+			$user->role = 1;
 			$user->pays_id = (int)$input['pays'];
 			$user->password = Hash::make($input['password']);
 			$user->key = sha1(mt_rand(10000,99999).date('dmyhms').$user->email);
@@ -136,7 +137,40 @@ class InscriptionController extends BaseController {
 
 		}
 	}
+	/*====================================
+	=            CHECKSESSION            =
+	====================================*/
 
+	public function checkSession(){
+
+		if(Session::has('proprieteId')){
+
+			Session::forget('proprieteId');
+
+			Session::forget('currentEtape');
+		}
+
+		for( $i = 1; $i <= Config::get('var.etape'); $i++ ){
+
+			if(Session::has('input_'.$i)){
+
+				Session::forget('input_'.$i);
+			}
+
+			if(Session::has('etape'.$i)){
+
+				Session::forget('etape'.$i);
+			}
+		}
+
+		return Redirect::route('etape1Index', Auth::user()->slug);
+
+	}
+	
+	
+	/*-----  End of CHECKSESSION  ------*/
+	
+	
 	/*-----  End of ETAPE 1  ------*/
 
 	/*===============================
@@ -146,11 +180,31 @@ class InscriptionController extends BaseController {
 
 		$edit = false;
 
-		if(is_object($data)){
+		if(is_object($data) || Session::has('proprieteId')){
 
-			$edit = true;
-			$data = $data->with(array('proprieteTraduction','option'))->whereId($data->id)->first(); 
-			dd(Propriete::getOption( $data->id ));
+			
+			if(!is_object($data)){
+
+				$edit = false;
+				$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+			}else{
+
+				$edit = true;
+			}
+
+			$data = $data->with(array('option'))->whereId($data->id)->first();
+
+			$titre =  ProprieteTraduction::getTitle( $data->id );
+			$description = ProprieteTraduction::getDescription( $data->id );
+
+			$options = Propriete::getOption( $data->id );
+
+		}
+		else{
+
+			Session::forget('proprieteId');
+
 		}
 
 			/**
@@ -175,14 +229,13 @@ class InscriptionController extends BaseController {
 				if( $edit ){
 
 					return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
-					->with(compact(array('typeBatimentList','listOption','data')));
+					->with(compact(array('typeBatimentList','listOption','data','edit','titre','description','options')));
 
 				}
 				else
-				{
-
+				{	
 					return View::make('inscription.etape2',array('page'=>'inscription_etape2','widget'=>array('select','tab')))
-					->with(compact(array('typeBatimentList','listOption')));
+					->with(compact(array('typeBatimentList','listOption','data','edit','titre','description','options')));
 				}
 			}
 			else{
@@ -243,6 +296,7 @@ class InscriptionController extends BaseController {
 			$propriete->etage = $input['etage'];
 			$propriete->type_batiment_id = $input['type_propriete'];
 			$propriete->annonce_payee_id = 1;
+			$propriete->exposition = $input['exposition'];
 			$propriete->commentaire_statut = 1;
 			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 1;
 			$propriete->nom = $input['nom_propriete'];
@@ -267,8 +321,9 @@ class InscriptionController extends BaseController {
 				$literies = array_filter(array_map('intval',$input['literie']));
 			}
 			if(isset($input['interieur'])){
-				$interieurs = array_filter($input['interieur']);
+				$interieurs = $input['interieur'];
 			}
+
 			if(isset($input['exterieur'])){
 				$exterieurs = array_filter($input['exterieur']);
 			}
@@ -339,7 +394,7 @@ class InscriptionController extends BaseController {
 
 				foreach( $interieurs as $key => $interieur){
 
-					$propriete->option()->attach($key );
+					$propriete->option()->attach($key, array('valeur' => $interieur) );
 				}
 			}
 
@@ -401,7 +456,20 @@ class InscriptionController extends BaseController {
 		}
 
 	}
-	public function updateBatiment( $slug, $proprieteId ){
+	public function updateBatiment( $id, $proprieteId = null ){
+
+		if(Helpers::isNotOk( $proprieteId )){
+
+			$proprieteId = $id->id;
+		}
+
+		
+		$edit = false;
+
+		if(is_object($id) && !Session::has('proprieteId')){
+
+			$edit = true;
+		}
 
 		$input = Input::all();
 
@@ -427,7 +495,7 @@ class InscriptionController extends BaseController {
 		if( $validation->passes() ) {
 			
 			$propriete = Propriete::find( $proprieteId );
-			$user = User::whereSlug( $slug )->first();
+			$user = Auth::user();
 
 			$propriete->nb_personne = $input['nb_personne'];
 			$propriete->nb_chambre = $input['nb_chambre'];
@@ -436,13 +504,14 @@ class InscriptionController extends BaseController {
 			$propriete->taille_terrain = $input['taille_exterieur'];
 			$propriete->etage = $input['etage'];
 			$propriete->type_batiment_id = $input['type_propriete'];
+			$propriete->exposition = $input['exposition'];
 			$propriete->annonce_payee_id = 1;
 			$user->commentaire_statut = 1;
+			
 			$user->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 1;
 			$propriete->nom = $input['nom_propriete'];
 
 			$propriete->save();
-
 
 			/**
 			*
@@ -454,7 +523,7 @@ class InscriptionController extends BaseController {
 				$literies = array_filter(array_map('intval',$input['literie']));
 			}
 			if(isset($input['interieur'])){
-				$interieurs = array_filter($input['interieur']);
+				$interieurs = $input['interieur'];
 			}
 			if(isset($input['exterieur'])){
 				$exterieurs = array_filter($input['exterieur']);
@@ -505,6 +574,32 @@ class InscriptionController extends BaseController {
 
 			/**
 			*
+			* On detach les options de l'étape2 on les rataches ensuite
+			*
+			**/
+			
+			$typeOptions  = TypeOption::whereId(3)->with('enfant')->first();
+
+			$listOption = array();
+
+			foreach($typeOptions->enfant as $typeOption){
+
+				foreach($typeOption->option()->get() as $option){
+
+					array_push($listOption, $option->id);
+				}
+
+			}
+
+			
+			foreach($listOption as $option){
+
+				$propriete->option()->detach( $option );
+			}
+
+
+			/**
+			*
 			* Boucle sur les options de type lit pour ajouter leurs relation à la table pivot
 			* @propriete belongsToMany option
 			* @option belongsToMany propriete
@@ -512,9 +607,7 @@ class InscriptionController extends BaseController {
 			* @option_id
 			* @valeur
 			*
-			**/
-			$propriete->option()->detach();
-
+			**/ 
 
 			if(isset($literies)){
 
@@ -529,11 +622,12 @@ class InscriptionController extends BaseController {
 			* Boucle sur les options de type interieur pour ajouter leurs relation à la table pivot
 			*
 			**/
+
 			if(isset($interieurs)){
 
 				foreach( $interieurs as $key => $interieur){
 
-					$propriete->option()->attach($key );
+					$propriete->option()->attach($key , array('valeur'=>$interieur));
 				}
 			}
 
@@ -558,15 +652,35 @@ class InscriptionController extends BaseController {
 			Session::put('etape2',true);
 			Session::put('currentEtape', 2 );
 
-			return Redirect::route( 'etape2Index' , Auth::user()->slug )
-			->with(array('success',Lang::get('validation.custom.step2')));
+			if( $edit ){
+
+				return Redirect::route( 'editPropriete2' , $propriete->id )
+				->with(array('success',Lang::get('validation.custom.step2')));
+
+			}else{
+
+				return Redirect::route( 'etape2Index' , Auth::user()->slug )
+				->with(array('success',Lang::get('validation.custom.step2')));
+
+			}
 		}else{
 
 			Session::put('etape1',false);
 			Session::put('currentEtape', 2 );
-			return Redirect::route( 'etape1Index', Auth::user()->slug )
-			->withInput()
-			->withErrors($validation);
+
+			if($edit){
+
+				return Redirect::route( 'editPropriete1', $data->id )
+				->withInput()
+				->withErrors($validation);
+
+			}else{
+
+				return Redirect::route( 'etape1Index', Auth::user()->slug )
+				->withInput()
+				->withErrors($validation);
+
+			}
 		}
 	}
 	/*-----  End of ETAPE 2  ------*/
@@ -575,8 +689,51 @@ class InscriptionController extends BaseController {
 		=            ETAPE3            =
 		==============================*/
 		
-		public function indexLocalisation(  ){
+		public function indexLocalisation(  $data = null){
 
+			$edit = false;
+
+			if(is_object($data) || Session::has('proprieteId')){
+
+				if(!is_object($data)){
+
+					$edit = false;
+
+					$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+				}else{
+
+					$edit = true;
+				}
+
+				$paysId = $data->pays_id;
+
+				$regionId = $data->region_id;
+
+				$sousRegionId = $data->sous_region_id;
+
+				$localiteId = $data->localite_id;
+
+				$situations = Propriete::find($data->id)->option()->whereOptionId(44)->get()->toArray();
+
+				$latlng = Propriete::find($data->id)->latlng;
+
+				$distanceData = Propriete::find($data->id)->option()->whereOptionId(45)->first();
+
+				if(Helpers::isOk($distanceData)){
+
+					$distanceData = $distanceData->pivot->valeur;
+				}
+
+				$situationData = array();
+
+				foreach($situations as $situation){
+					
+					array_push($situationData, $situation['pivot']['valeur']);
+
+				}
+
+			}	
 
 			/**
 			*
@@ -612,9 +769,19 @@ class InscriptionController extends BaseController {
 			
 			Session::put('currentEtape', 3 );
 
-			return View::make('inscription.etape3', array('page'=>'inscription_etape3','widget'=>array('select')))
+			if( $edit && !Session::has('proprieteId') ){
 
-			->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList','situationId','distanceId')));
+				return View::make('inscription.etape3', array('page'=>'inscription_etape3','widget'=>array('select')))
+
+				->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList','data','situationId','distanceId','paysId','regionId','sousRegionId','localiteId','situation','situationData','distanceData','latlng')));
+
+			}else{
+
+				return View::make('inscription.etape3', array('page'=>'inscription_etape3','widget'=>array('select')))
+
+				->with(compact(array('paysList','regionList','sousRegionList','localiteList','situationList','situationId','data','distanceId','paysId','regionId','sousRegionId','localiteId','situation','situationData','distanceData','latlng')));
+
+			}
 
 		}
 
@@ -635,7 +802,7 @@ class InscriptionController extends BaseController {
 			*
 			**/
 			
-			Session::put('input_3', $input );
+			/*Session::put('input_3', $input );*/
 
 			/**
 			*
@@ -680,6 +847,7 @@ class InscriptionController extends BaseController {
 				$propriete->save();
 
 				Sluggable::make($propriete,true);
+
 				$propriete->save();
 				/**
 				*
@@ -734,8 +902,14 @@ class InscriptionController extends BaseController {
 			
 		}
 
-		public function updateLocalisation(){
+		public function updateLocalisation( $data = null){
 
+			$edit = false;
+
+			if(is_object($data)){
+
+				$edit = true;
+			}
 			/**
 			*
 			* Get all input
@@ -750,7 +924,7 @@ class InscriptionController extends BaseController {
 			*
 			**/
 			
-			Session::put('input_3', $input );
+			/*Session::put('input_3', $input );*/
 
 			/**
 			*
@@ -769,8 +943,15 @@ class InscriptionController extends BaseController {
 				* Trouvé la propriete en question via l'id stocké
 				*
 				**/
-				
-				$propriete = Propriete::find( Session::get('proprieteId') );
+				if(isset($data) && is_object($data)){
+
+					$propriete = $data;
+
+				}else{
+
+					$propriete = Propriete::find( Session::get('proprieteId') );
+
+				}
 
 				/**
 				*
@@ -783,9 +964,14 @@ class InscriptionController extends BaseController {
 				$propriete->sous_region_id = $input['sous_region'];
 				$propriete->localite_id = $input['localite'];
 				$propriete->adresse = $input['adresse'];
-				$propriete->latlng = $input['latlng'];
+
+				if(isset($input['latlng']) && Helpers::isOk($input['latlng'])){
+
+					$propriete->latlng = $input['latlng'];
+
+				}
+
 				$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 2;
-				
 				
 				/**
 				*
@@ -795,9 +981,10 @@ class InscriptionController extends BaseController {
 				
 				$propriete->save();
 
-				Sluggable::make($propriete,true);
+				Sluggable::make( $propriete, true );
 
 				$propriete->save();
+
 
 				/**
 				*
@@ -829,8 +1016,12 @@ class InscriptionController extends BaseController {
 				**/
 				
 				if(Helpers::isOk( $propriete )){
-
+					
 					Sluggable::make($propriete,true);
+
+					$propriete->save();
+
+
 					/**
 					*
 					* L'étape est finie
@@ -844,9 +1035,18 @@ class InscriptionController extends BaseController {
 					* Etape suivante avec message de success
 					*
 					**/
-					
-					return Redirect::route('etape3Index', Auth::user()->slug)
-					->with(array('success',Lang::get('validation.custom.step3')));
+
+					if($edit){
+
+						return Redirect::route('editPropriete3', $data->id)
+						->with(array('success',Lang::get('validation.custom.step3')));
+
+					}else{
+
+						return Redirect::route('etape3Index', Auth::user()->slug)
+						->with(array('success',Lang::get('validation.custom.step3')));
+
+					}
 				}
 			}
 			else
@@ -854,9 +1054,20 @@ class InscriptionController extends BaseController {
 
 				Session::put('etape3',false);
 				Session::put('currentEtape', 3 );
-				return Redirect::route( 'etape2Index', Auth::user()->slug )
-				->withInput()
-				->withErrors($validation);
+
+				if($edit){
+
+					return Redirect::route( 'editPropriete2', $data->id )
+					->withInput()
+					->withErrors($validation);
+
+				}else{
+
+					return Redirect::route( 'etape2Index', Auth::user()->slug )
+					->withInput()
+					->withErrors($validation);
+
+				}
 			}
 			
 		}
@@ -867,14 +1078,49 @@ class InscriptionController extends BaseController {
 		/*===============================
 		=            ETAPE 4            =
 		===============================*/
-		public function indexPhoto(){
+		public function indexPhoto( $data ){
 
-			$photosPropriete = Propriete::getPhoto( Session::get('proprieteId'), Config::get('var.image_thumbnail'));
+			$edit = false;
+
+			if(is_object($data) || Session::has('proprieteId')){
+
+
+				if(!is_object($data)){
+
+					$edit = false;
+					$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+				}else{
+
+					$edit = true;
+				}
+
+				
+			}
+
+			if(is_object($data)){
+
+				$photosPropriete = Propriete::getPhoto( $data->id, Config::get('var.image_thumbnail'));
+
+			}else{
+
+				$photosPropriete = Propriete::getPhoto( Session::get('proprieteId'), Config::get('var.image_thumbnail'));
+
+			}
 
 			Session::put('currentEtape', 4 );
 
-			return View::make('inscription.etape4', array('page'=>'inscription_etape4','widget'=>array('sortable','upload')))
-			->with(compact('photosPropriete'));
+			if($edit){
+
+				return View::make('inscription.etape4', array('page'=>'inscription_etape4','widget'=>array('sortable','upload')))
+				->with(compact('photosPropriete','data'));
+
+			}else{
+
+				return View::make('inscription.etape4', array('page'=>'inscription_etape4','widget'=>array('sortable','upload')))
+				->with(compact('photosPropriete','data'));
+
+			}
 		}
 		
 		public function savePhoto(){
@@ -904,7 +1150,7 @@ class InscriptionController extends BaseController {
 				$propriete->video = $input['video'];
 				$propriete->save();
 
-				Session::put('input_4', $input);
+				/*Session::put('input_4', $input);*/
 				Session::put('etape4',true);
 				Session::put('currentEtape', 4 );
 
@@ -922,14 +1168,111 @@ class InscriptionController extends BaseController {
 			}
 
 		}
-		
+
+		public function updatePhoto($data){
+
+			$edit = false;
+
+			if(is_object( $data )){
+
+				$edit = true;
+
+			}
+
+			$input = Input::all();
+			$orders = (array)json_decode($input['image_order']);
+			$rules = array('video'=>'url');
+
+			$validation  = Validator::make($input, $rules);
+
+			if( $validation ){
+				
+				foreach($orders as $key => $order){
+
+					$photo = PhotoPropriete::find($key);	
+
+					if($order == 1){
+
+						$photo->accroche = 1;
+					}
+					
+					$photo->ordre = $order;
+					$photo->save();
+				}
+				if($edit){
+
+					$propriete = $data;
+
+				}else{
+
+					$propriete = Propriete::find(Session::get('proprieteId'));
+
+				}
+
+				$propriete->video = $input['video'];
+				$propriete->save();
+
+				/*Session::put('input_4', $input);*/
+				Session::put('etape4',true);
+				Session::put('currentEtape', 4 );
+				if( $edit ){
+
+					return Redirect::route('editPropriete4', $data->id)
+					->with(array('success',Lang::get('validation.custom.step4')));
+
+				}else{
+
+					return Redirect::route('etape4Index',Auth::user()->slug)
+					->with(array('success',Lang::get('validation.custom.step4')));
+				}
+			}
+			else
+			{
+
+				Session::put('etape4',false);
+				Session::put('currentEtape', 4 );
+
+				if($edit){
+
+					return Redirect::route( 'editPropriete3', $data->id )
+					->withInput()
+					->withErrors($validation);
+
+				}else{
+
+					return Redirect::route( 'etape3Index', Auth::user()->slug )
+					->withInput()
+					->withErrors($validation);
+
+				}
+			}
+
+		}
 		/*-----  End of ETAPE 4  ------*/
 		
 		/*==============================
 		=            ETAPE5            =
 		==============================*/
 		
-		public function indexTarif(){
+		public function indexTarif( $data ){
+
+			$edit = false;
+
+			if(is_object($data) || Session::has('proprieteId')){
+				/*Session::forget('input_3');*/
+
+				if(!is_object($data)){
+
+					$edit = false;
+					$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+				}else{
+
+					$edit = true;
+				}
+
+
+			}
 
 			$nuits = array(
 				''=>''
@@ -943,12 +1286,28 @@ class InscriptionController extends BaseController {
 
 			$jours = JourSemaine::getList();
 
-			$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','asc')->get();
+			if($edit){
+
+				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',$data->id)->orderBy('id','asc')->get();
+
+			}else{
+
+				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','asc')->get();
+			}
 
 			Session::put('currentEtape', 5 );
 
-			return View::make('inscription.etape5', array('page'=>'inscription_etape5','widget'=>array('datepicker','select')))
-			->with(compact('nuits','monnaies','jours','tarifs'));
+			if($edit){
+
+				return View::make('inscription.etape5', array('page'=>'inscription_etape5','widget'=>array('datepicker','select')))
+				->with(compact('nuits','monnaies','jours','tarifs','data'));
+
+			}else{
+
+				return View::make('inscription.etape5', array('page'=>'inscription_etape5','widget'=>array('datepicker','select')))
+				->with(compact('nuits','monnaies','jours','tarifs','data'));
+
+			}
 		}
 		/**
 		*
@@ -967,7 +1326,7 @@ class InscriptionController extends BaseController {
 			*
 			**/
 			
-			Session::put('input_4', $input );
+			/*Session::put('input_5', $input );*/
 
 			/**
 			*
@@ -977,8 +1336,16 @@ class InscriptionController extends BaseController {
 			
 			Session::put('currentEtape', 5);
 
+			if(isset($input['proprieteId']) && Helpers::isOk($input['proprieteId'])){
 
-			$propriete = Propriete::find(Session::get('proprieteId'));
+				$propriete = Propriete::find((int)$input['proprieteId']);
+
+			}
+			else{
+
+				$propriete = Propriete::find(Session::get('proprieteId'));
+
+			}
 
 			if(isset($input['monnaie']) && Helpers::isOk($input['monnaie'])){
 
@@ -995,6 +1362,7 @@ class InscriptionController extends BaseController {
 			$tarif->prix_nuit = $input['nuit'];
 			$tarif->prix_semaine = $input['semaine'];
 			$tarif->prix_mois = $input['mois'];
+			$tarif->disponibilite = 1;
 			$tarif->prix_weekend = $input['prix_weekend']; 
 
 			if(isset($input['arrive']) && Helpers::isOk( $input['arrive'])){
@@ -1034,7 +1402,17 @@ class InscriptionController extends BaseController {
 
 			$tarif->save();
 
-			$propriete = Propriete::find(Session::get('proprieteId'));
+			if(isset($input['proprieteId']) && Helpers::isOk($input['proprieteId'])){
+
+				$propriete = Propriete::find((int)$input['proprieteId']);
+
+			}
+			else{
+
+				$propriete = Propriete::find(Session::get('proprieteId'));
+
+			}
+			
 
 			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 5;
 
@@ -1042,7 +1420,7 @@ class InscriptionController extends BaseController {
 
 			if(Helpers::isOk($tarif)){
 
-				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get(), 200);
+				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',$propriete->id)->orderBy('id','desc')->get(), 200);
 
 			} else {
 
@@ -1050,11 +1428,10 @@ class InscriptionController extends BaseController {
 			}
 
 		}
-		public function updateTarif(  ){			
+		public function updateTarif( ){			
 
 			$input = Input::all();
-
-			$propriete = Propriete::find(Session::get('proprieteId'));
+			
 
 			if(isset($input['monnaie']) && Helpers::isOk($input['monnaie'])){
 
@@ -1063,6 +1440,7 @@ class InscriptionController extends BaseController {
 			}
 
 			$tarif = Tarif::find($input['tarifId']);
+			$propriete = $tarif->propriete()->first();
 
 			$tarif->date_debut = Helpers::toServerDate( $input['debut'] );
 			$tarif->date_fin = Helpers::toServerDate( $input['fin'] );
@@ -1084,7 +1462,7 @@ class InscriptionController extends BaseController {
 			$tarif = $monnaie->tarif()->save($tarif);
 
 			$tarifSpeciaux = TarifSpeciauxWeekend::find($input['weekendId']);
-			/*dd($input);*/
+
 			if(isset($input['weekend_popup']) && Helpers::isOK( $input['weekend_popup'] )){
 
 				
@@ -1152,7 +1530,7 @@ class InscriptionController extends BaseController {
 
 			
 
-			$propriete = Propriete::find(Session::get('proprieteId'));
+			$propriete = $tarif->propriete()->first();
 
 			$propriete->etape = Helpers::isOk(Propriete::getCurrentStep()) ? Propriete::getCurrentStep() : 5;
 
@@ -1160,7 +1538,7 @@ class InscriptionController extends BaseController {
 
 			if(Helpers::isOk($tarif)){
 
-				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get(), 200);
+				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',$propriete->id)->orderBy('id','desc')->get(), 200);
 
 			} else {
 
@@ -1172,6 +1550,8 @@ class InscriptionController extends BaseController {
 			
 			$tarif = Tarif::find($id);
 			
+			$propriete = $tarif->propriete()->first();
+
 			$tarifSpeciauxWeekend = $tarif->tarifSpeciauxWeekend()->first();
 
 			if( $tarifSpeciauxWeekend ){
@@ -1190,7 +1570,7 @@ class InscriptionController extends BaseController {
 			
 			if(Helpers::isOk($tarif)){
 
-				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',Session::get('proprieteId'))->orderBy('id','desc')->get();
+				$tarifs = Tarif::with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',$propriete->id)->orderBy('id','desc')->get();
 				if(Helpers::isOk( $tarifs )){
 
 					return Response::json($tarifs, 200);	
@@ -1214,7 +1594,7 @@ class InscriptionController extends BaseController {
 			*
 			**/
 			
-			Session::put('input_4bis', $input );
+			/*Session::put('input_5bis', $input );*/
 
 			/**
 			*
@@ -1259,6 +1639,69 @@ class InscriptionController extends BaseController {
 				}
 			}
 		}
+		public function updateTarif2( $data ){
+			
+			$input = Input::all();
+
+			/**
+			*
+			* On ajout les inputs à la session
+			*
+			**/
+			
+			/*Session::put('input_5bis', $input );*/
+
+			/**
+			*
+			* On est toujours à l'étape 5
+			*
+			**/
+			
+			Session::put('currentEtape', 5);
+
+			$rules = array(
+				'nettoyage'=>'numeric',
+				'acompte'=>'numeric',
+				);
+
+			$validation = Validator::make( $input, $rules );
+
+			if( $validation ){
+
+				if(is_object($data)){
+
+					$propriete = $data;
+
+				}else{
+
+					$propriete = Propriete::find(Session::get('proprieteId'));
+
+				}
+
+				$propriete->caution = $input['accompte'];
+				$propriete->condition_paiement = $input['conditions'];
+				$propriete->nettoyage = $input['nettoyage'];
+				$propriete->etape = Propriete::getCurrentStep();
+
+				$propriete->save();
+
+				Session::put('etape5',true);
+
+				if( is_object( $data )){
+
+					return Redirect::route('editPropriete5', $data->id)
+					->with(array('success'=>trans('validation.custom.step5')));
+				}
+				else
+				{	
+					Session::put('etape5',false);
+
+					return Redirect::route('etape5Index',Auth::user()->slug)
+					->withInput()
+					->withErrors($validation);
+				}
+			}
+		}
 
 		public function getOneTarif( $id ){
 
@@ -1272,57 +1715,65 @@ class InscriptionController extends BaseController {
 		/*===============================
 		=            ETAPE 6            =
 		===============================*/
-		public function indexDisponibilite(){
-			/**
-			
-				TODO:
-				- Ajouter orientation dans saveBatiment
-			
-				**/
-				//$calendrier = Calendrier::whereProprieteId( Session::get('proprieteId'))->get();
+		public function indexDisponibilite($data){
 
-				$currentDate = Carbon::now(); 
-				$date = date('n');
-				return View::make('inscription.etape6', array('page'=>'inscription_etape6','widget'=>array('datepicker')))
-				->with(compact(array('date','currentDate')));
+			$currentDate = Carbon::now(); 
+
+			$edit = false;
+			
+			if(!is_object($data)){
+
+				$data = Calendrier::whereProprieteId( Session::get('proprieteId') )->get();
+				
+				$edit = true;
+
+			}else{
+
+				$edit = false;
+
 			}
 
-			public function addDispo(){
+			$date = date('n');
+			return View::make('inscription.etape6', array('page'=>'inscription_etape6','widget'=>array('datepicker')))
+			->with(compact(array('date','currentDate','data')));
+		}
 
-				$input = Input::all();
-				$rules = array(
-					'date_debut'=>'date',
-					'date_fin'=>'date|min:'.$input['date_debut'],
-					);
+		public function addDispo(){
 
-				$validation = Validator::make($input, $rules);
+			$input = Input::all();
 
-				if( $validation ){
+			$rules = array(
+				'date_debut'=>'date',
+				'date_fin'=>'date|min:'.$input['date_debut'],
+				);
 
-					$calendrier = new Calendrier;
+			$validation = Validator::make($input, $rules);
 
-					$calendrier->date_debut = Helpers::toServerDate($input['date_debut']);
-					$calendrier->date_fin = Helpers::toServerDate($input['date_fin']);
-					$calendrier->propriete_id = Session::get('proprieteId');
-					// $calendrier->statut_calendrier_id = 1;
-					$calendrier->save();
+			if( $validation ){
 
-					$propriete = Propriete::find( Session::get('proprieteId') );
-					$propriete->etape = Propriete::getCurrentStep();
-					$propriete->save();
+				$calendrier = new Calendrier;
 
-					Session::put('etape6',true);
+				$calendrier->date_debut = Helpers::toServerDate($input['date_debut']);
+				$calendrier->date_fin = Helpers::toServerDate($input['date_fin']);
+				$calendrier->propriete_id = $input['proprieteId'];
+				$calendrier->save();
 
-					if($calendrier){
+				$propriete = Propriete::find( (int)$input['proprieteId'] );
+				$propriete->etape = Propriete::getCurrentStep();
+				$propriete->save();
 
-						return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+				Session::put('etape6',true);
 
-					}
-					
+				if($calendrier){
+
+					return Response::json( Calendrier::whereProprieteId($propriete->id)->get(), 200 );
+
 				}
 
-				return Response::json('error', 400);
 			}
+
+			return Response::json('error', 400);
+		}
 
 	/**
 	*
@@ -1344,8 +1795,6 @@ class InscriptionController extends BaseController {
 		}
 
 		return Response::json('error', 400);
-
-
 	}
 
 	public function updateDispo(){
@@ -1373,9 +1822,11 @@ class InscriptionController extends BaseController {
 
 			$calendrier->save();
 
+			$propriete = $calendrier->propriete()->first();
+
 			if($calendrier){
 
-				return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+				return Response::json( Calendrier::whereProprieteId($propriete->id)->get(), 200 );
 
 			} 
 			
@@ -1395,13 +1846,13 @@ class InscriptionController extends BaseController {
 		if( $validation ){
 
 			$calendrier = Calendrier::find($input['tarif_id']);
-
+			$propriete = $calendrier->propriete()->first();
 			$calendrier->delete();
 
 
 			if($calendrier){
 
-				return Response::json( Calendrier::whereProprieteId(Session::get('proprieteId'))->get(), 200 );
+				return Response::json( Calendrier::whereProprieteId($propriete->id)->get(), 200 );
 
 			} 
 			
@@ -1411,9 +1862,236 @@ class InscriptionController extends BaseController {
 	}
 	/*-----  End of ETAPE 6  ------*/
 
+	/*===============================
+	=            ETAPE 7            =
+	===============================*/
+
+	public function indexCoordonne($data){
+		
+		$edit = false;
+
+		if(is_object($data) || Session::has('proprieteId')){
+
+			if(!is_object($data)){
+
+				$edit = false;
+
+				$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+			}else{
+
+				$edit = true;
+			}
+
+			$paysId = $data->pays_id;
+
+			$regionId = $data->region_id;
+
+			$sousRegionId = $data->sous_region_id;
+
+			$localiteId = $data->localite_id;
+
+			
+
+			/*$latlng = Propriete::find($data->id)->latlng;*/
+
+		}	
+
+		$user = $data->user()->first();
+
+		$tel1 = $user->telephone()->whereOrdre(1)->get();
+		$tel2 = $user->telephone()->whereOrdre(2)->get();
+
+		$langue = User::getLangages( $user->id );
+		
+			/**
+			*
+			* Preparation des listes pour les selects
+			*
+			**/
+			
+			$paysList = Pays::getListForm();
+
+			$regionList = Region::getListForm();
+
+			$sousRegionList = SousRegion::getListForm();
+
+			$localiteList = Localite::getListForm();
+			
+
+			/**
+			*
+			* On est toujours à l'étape 7
+			*
+			**/
+			
+			Session::put('currentEtape', 7 );
+
+			if( $edit && !Session::has('proprieteId') ){
+
+				return View::make('inscription.etape7', array('page'=>'inscription_etape7','widget'=>array('select')))
+
+				->with(compact(array('user','paysList','regionList','sousRegionList','localiteList','data','paysId','regionId','sousRegionId','localiteId','langue','tel1','tel2')));
+
+			}else{
+
+				return View::make('inscription.etape7', array('page'=>'inscription_etape7','widget'=>array('select')))
+
+				->with(compact(array('user','paysList','regionList','sousRegionList','localiteList','data','paysId','regionId','sousRegionId','localiteId','langue','tel1','tel2')));
+
+			}
+		}
+		public function updateCoordonne( $data ){
+
+			$input = Input::all();
+
+			$edit = false;
+
+			if(is_object($data) || Session::has('proprieteId')){
+
+				if(!is_object($data)){
+
+					$edit = false;
+
+					$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+				}else{
+
+					$edit = true;
+
+					$propriete = $data;
+				}
+			}
+
+			User::$coordonneRules['email'] = 'unique:users,email,'. Auth::user()->id .'| required | email';
+
+			$validator = Validator::make($input, User::$coordonneRules);
+
+			Session::put('input_7', $input);
+
+			if($validator->passes()){
+
+				$user = Auth::user();	
+
+				$tel1 = UserTelephone::whereUserId($user->id)->whereOrdre('1')->first();
+				$tel2 = UserTelephone::whereUserId($user->id)->whereOrdre('2')->first();
+				
+				$langages = $user->langage()->get();
+
+				$user->prenom = $input['prenom'];
+				$user->nom = $input['nom'];
+				$user->email = $input['email'];
+				$user->site_web = $input['site'];
+				$user->personne_contact = $input['contact'];
+				$user->pays_id = $input['pays'];
+				$user->sous_region_id = $input['sous_region'];
+				$user->localite_id = $input['localite'];
+				$user->region_id = $input['region'];
+				$user->adresse = $input['adresse'];
+				$user->postal = $input['postal'];
+				$user->fax = $input['fax'];
+				$user->maternelle_id = 1;
+
+				if(Helpers::isOk($tel1)){
+
+					$tel1->numero = $input['tel1'];
+					$tel1->heure = $input['heure1'];
+					$tel1->ordre = 1;
+					$user->telephone()->save($tel1);
+
+				}else{
+
+					$tel1 = new UserTelephone;
+					$tel1->numero = $input['tel1'];
+					$tel1->heure = $input['heure1'];
+					$tel1->ordre = 1;
+					$user->telephone()->save($tel1);
+				}
+
+				if(Helpers::isOk($tel2)){
+
+					$tel2->numero = $input['tel2'];
+					$tel2->heure = $input['heure2'];
+					$tel2->ordre = 2;
+					$user->telephone()->save($tel2);
+
+				}else{
+
+					$tel2 = new UserTelephone;
+					$tel2->numero = $input['tel2'];
+					$tel2->heure = $input['heure2'];
+					$tel2->ordre = 2;
+					$user->telephone()->save($tel2);
+				}
+
+				if($langages){
+
+					$user->langage()->detach();
+
+					foreach($input['autre'] as $key => $valeur){
+						
+						$user->langage()->attach($key);
+
+					}
+
+				}else{
+
+					foreach($input['autre'] as $key => $valeur){
+
+						$user->langage()->attach($key);
+
+					}
+
+				}
+
+				$user->save();
+
+				if($user){
+
+					Session::put('etape7',true);
+
+					if( $edit ){
+
+						return Redirect::route( 'editPropriete7' , $propriete->id )
+						->with(array('success', Lang::get('validation.custom.step7')));
+
+					}else{
+
+						return Redirect::route( 'etape7Index' , Auth::user()->slug )
+						->with(array('success', Lang::get('validation.custom.step7')));
+
+					}
+				}
+
+				
+			}
+			else{
+
+				dd($validator->failed());
+				if( $edit ){
+
+					return Redirect::route( 'editPropriete6' , $data->id )
+					->with(array('success',Lang::get('validation.custom.step2')));
+
+				}else{
+
+					return Redirect::route( 'etape6Index' , Auth::user()->slug )
+					->with(array('success',Lang::get('validation.custom.step2')));
+
+				}
+
+			}
 
 
-	public function activation( $key ){
+
+
+		}
+
+		/*-----  End of ETAPE 7  ------*/
+
+
+
+		public function activation( $key ){
 
 		/**
 		*

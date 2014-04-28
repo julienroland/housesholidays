@@ -89,7 +89,17 @@
 
 
  	};
+ 	var getLatLng = function( value, type ){
 
+ 		if(type ==='lat'){
+
+ 			return value.split(',')[0];
+
+ 		}else if(type ==='lng'){
+
+ 			return value.split(',')[1];
+ 		}
+ 	}
  	var displayGoogleMap = function(){
 
  		gMap = new google.maps.Map(document.getElementById('gmap'),{
@@ -99,6 +109,17 @@
  			scrollwheel:false,
  			mapTypeId:google.maps.MapTypeId.ROADMAP,
  		});
+
+ 		if($latlng && $latlng.val().length > 0){
+ 			var lat = getLatLng($latlng.val(), 'lat');
+ 			var lng = getLatLng($latlng.val(), 'lng');
+
+ 			var latLng = new google.maps.LatLng(lat, lng);
+ 			createMarker(latLng);
+ 			gMap.setCenter(latLng);
+ 			gMap.setZoom(nZoomLocalite);
+
+ 		}
 
  	};
 

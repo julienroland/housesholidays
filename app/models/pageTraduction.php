@@ -10,6 +10,12 @@ class PageTraduction extends Eloquent {
 	 */
 	protected $table = 'pages_traductions';
 
+	public static $sluggable = array(
+		'build_from' => 'titre',
+		'save_to'    => 'slug',
+		);
+
+
 	public function page(){
 
 		return $this->belongsTo('Page');

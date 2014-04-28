@@ -49,6 +49,14 @@ return array(
 	'sdbs'=>'salles d\'eau',
 	'sdb'=>'salle d\'eau',
 	'logo_alt'=>'Locations de vacances Housesholiday',
-	'locationsVacances'=>'locations-de-vacances',
+	'locationsVacancesSlug'=>'locations-de-vacances',
+	'locationsVacances'=>'Locations de vacances',
+	'suivant'=>'suivant',
+	'precedent'=>'précédent',
+	'pas_payee'=>'Vous devez payer pour avoir accès à cette fonctionnalitée',
+	'en_attente'=>'Vous devez payer pour avoir accès à cette fonctionnalitée, votre payement est en attente de validation',
+	'à'=>'à',
+	'back'=>'retour',
+	'refreshDone'=>'Votre annonce à bien été rafraîchi',
 
 	);

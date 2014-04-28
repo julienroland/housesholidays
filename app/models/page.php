@@ -8,10 +8,12 @@ class Page extends Eloquent {
 	 *
 	 * @var string
 	 */
+	protected static $rules = array(
+		);
 
 	public function pageTraduction(){
 
-		return $this->hasMany('pageTraduction');
+		return $this->hasMany('PageTraduction');
 	}
 
 	public function seo(){

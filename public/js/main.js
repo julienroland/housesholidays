@@ -17,10 +17,42 @@
   $linkOpAvance = $('.linkOpAvance'),
   $login = $('#login-trigger'),
   $loginContent = $('#login-content'),
+  $refreshAnnonce = $('.refreshAnnonce'),
   settingsUpload;
 
 
   $(function() {
+    /**
+    *
+    * Inscription interieur valeur
+    *
+    **/
+    $('.interieur input[type="checkbox"]').on('change', function(){
+      toggleValeur($(this));
+    });
+    /**
+    *
+    * TABS
+    *
+    **/
+
+    // tr
+    $("#tab3 table tr:even").css( "background-color", "#ddd");
+    $("#tab3 table tr td:first-child").css( "color", "#000");
+
+  /*  $('#quisommesnous .tab_container div').hide();
+    $('#quisommesnous .tab_container div:first').show();
+    $('#quisommesnous ul li a:first').addClass('active');
+
+    $('#quisommesnous ul.tabs li a').click(function(){
+      $('#quisommesnous ul.tabs li a').removeClass('active');
+      $(this).addClass('active');
+      var currentTab = $(this).attr('href');
+      $('#quisommesnous .tab_container div').hide();
+      $('div#'+currentTab).show();
+      $('div#'+currentTab+' div').show();
+      return false;
+    });*/
 
     /**
     *
@@ -50,6 +82,12 @@
       e.preventDefault();
       $loginContent.slideToggle();
     });
+    $refreshAnnonce.on('click', function( e ){
+      e.preventDefault();
+      refreshAnnonce( $(this) );
+
+    });
+
     /**
     *
     * END LOGIN
@@ -120,6 +158,50 @@
     e.preventDefault();
     deleteDispo( $(this) );
   });
+ var toggleValeurs = function(  ){
+
+    $.each($('input[type="checkbox"]'), function(){
+      console.log('ok');
+      if($(this).is(':checked')){
+        $(this).parent().find('.valeur').show();
+
+      }
+
+    })
+  };
+  var toggleValeur = function( $that ){
+
+    if($that.is(':checked')){
+      $that.parent().find('.valeur').show();
+      
+    }else{
+      $that.parent().find('.valeur').hide().val('');
+    }
+
+  };
+   var refreshAnnonce = function($that){
+     $.ajax({
+      type: "get", 
+      url: sBasePath + 'refreshAnnonce/'+ $that.attr('data-id'),
+      dataType: "json",
+      success:function( oData ){
+        console.log(oData);
+        if(oData){
+
+          alert(oData);
+          return true;
+
+        }else{
+
+          alert(oData);
+          return false;
+
+        }
+
+      }
+    });
+
+   }
    var appendTarif = function( oData ){
 
     if( $('#tarifTable').length == 0 ){
@@ -158,8 +240,6 @@
       url: sBasePath + 'deleteTarif/'+ sId,
       dataType: "json",
       success:function( oData ){
-
-        console.log( oData );
 
         appendTarif( oData );
 
@@ -476,12 +556,19 @@ var showDatePopup = function( sParam, e){
  /* $('body').on('focus',".date_fin", function(){
     $(this).datepicker({ minDate: -20 });
   });*/
+$dispoPopup.find('.date_debut').datepicker({
+  minDate: 0,
+  numberOfMonths: 1,
+  onSelect: function(selected) {
+    $(".date_fin").datepicker("option","minDate", selected);
+  }
+});
 
 $dispoPopup.find('.date_fin ').datepicker({ 
   dateFormat: "dd-mm-yy",
   minDate:parseDate( $(".date_debut").val(),"dd-mm-yyyy"),
   onSelect: function(selected) {
-    $(".date_debut").datepicker("option","mDate", selected);
+    $(".date_debut").datepicker("option","maxDate", selected);
   }
 });
 
@@ -512,7 +599,7 @@ var addTarif = function( $that ){
   $.ajax({
     type: "get", 
     data:sData,
-    url: sBasePath + 'addTarif',
+    url: sBasePath + 'addTarif/',
     dataType: "json",
     success:function( oData ){
 
@@ -596,7 +683,7 @@ $('.submit_form').click(function() {
       $.ajax({
         type: "get", 
         async:   false,
-        url: sBasePath + 'deleteImage/'+ $that.attr('data-id'),
+        url: sBasePath + 'deleteImage/'+ $that.attr('data-id')+'/'+$that.attr('data-proprieteId'),
         dataType: "json",
         success:function( oData ){
 
@@ -651,7 +738,7 @@ $('.submit_form').click(function() {
         }
         for( var i in oData ){
 
-                $('#images ul').append('<li><div class="image"><img src="'+ upload_dir + userId + '/' + propriete_dir + '/' + proprieteId + '/' + oData[i].url +'"></div><a href="" class="supprimerImage" data-id="'+oData[i].id+'" title="'+oLang.form.supp+'">'+oLang.form.supp_image+'</a></li>'); //userId/ProprieteId/
+                $('#images ul').append('<li><div class="image"><img src="'+ upload_dir + userId + '/' + propriete_dir + '/' + proprieteId + '/' + oData[i].url +'"></div><a href="" class="supprimerImage" data-id="'+oData[i].id+'" data-proprieteId="'+proprieteId+'" title="'+oLang.form.supp+'">'+oLang.form.supp_image+'</a></li>'); //userId/ProprieteId/
 
                 $('.supprimerImage').on('click', function( e ){
                   e.preventDefault();
@@ -666,26 +753,26 @@ $('.submit_form').click(function() {
           });
 
 
-    }
+}
+
+}
+var sortable = function(){
+
+  $('#sortable').sortable({
+   create: function(event, ui) {
+    var data = {};
+
+    $("#sortable li").each(function(i, el){
+      var p = $(el).find('a').attr('data-id');
+      data[p]=$(el).index()+1;
+    });
+
+    $("form > [name='image_order']").val(JSON.stringify(data));
 
   }
-  var sortable = function(){
+});
 
-    $('#sortable').sortable({
-     create: function(event, ui) {
-      var data = {};
-
-      $("#sortable li").each(function(i, el){
-        var p = $(el).find('a').attr('data-id');
-        data[p]=$(el).index()+1;
-      });
-
-      $("form > [name='image_order']").val(JSON.stringify(data));
-
-    }
-  });
-
-  }
+}
    /**
    *
    * Param du plugins uploadFile
@@ -694,8 +781,10 @@ $('.submit_form').click(function() {
    
    var uploadFile = function(){
 
-    settingsUpload = $("#mulitplefileuploader").uploadFile({
-      url: sBasePath + "ajax/uploadImage",
+     var nProprieteId = $('form').attr('data-proprieteId');
+
+     settingsUpload = $("#mulitplefileuploader").uploadFile({
+      url: sBasePath + "ajax/uploadImage/"+nProprieteId,
       method: "post",
       allowedTypes:"jpg,gif,bmp",
       fileName: "file",

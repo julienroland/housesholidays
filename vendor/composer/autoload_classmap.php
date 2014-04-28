@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Admin_BaseController' => $baseDir . '/app/controllers/admin/Admin_BaseController.php',
     'AnnoncePaye' => $baseDir . '/app/models/AnnoncePaye.php',
     'AnnoncesPayeesTableSeeder' => $baseDir . '/app/database/seeds/AnnoncesPayeesTableSeeder.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
@@ -64,7 +65,7 @@ return array(
     'CreateProprietesTraductionsTable' => $baseDir . '/app/database/migrations/2014_02_24_133817_create_proprietes_traductions_table.php',
     'CreateRegionsTable' => $baseDir . '/app/database/migrations/2014_02_24_081217_create_regions_table.php',
     'CreateRegionsTraductionsTable' => $baseDir . '/app/database/migrations/2014_02_24_134407_create_regions_traductions_table.php',
-    'CreateRolesTable' => $baseDir . '/app/database/migrations/2014_02_24_133331_create_roles_table.php',
+    'CreateRolesTable' => $baseDir . '/app/database/migrations/2013_02_24_133331_create_roles_table.php',
     'CreateSeoTable' => $baseDir . '/app/database/migrations/2014_04_15_064219_create_seo_table.php',
     'CreateSeoTraductionsTable' => $baseDir . '/app/database/migrations/2014_04_15_064232_create_seoTraductions_table.php',
     'CreateSousRegionsTable' => $baseDir . '/app/database/migrations/2014_02_24_081309_create_sous_regions_table.php',
@@ -750,6 +751,10 @@ return array(
     'PHPParser_TemplateLoader' => $vendorDir . '/nikic/php-parser/lib/PHPParser/TemplateLoader.php',
     'PHPParser_Unserializer' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer.php',
     'PHPParser_Unserializer_XML' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer/XML.php',
+    'Page' => $baseDir . '/app/models/page.php',
+    'PageTableSeeder' => $baseDir . '/app/database/seeds/PageTableSeeder.php',
+    'PageTraduction' => $baseDir . '/app/models/pageTraduction.php',
+    'PageTraductionTableSeeder' => $baseDir . '/app/database/seeds/PageTraductionTableSeeder.php',
     'PaiementStatut' => $baseDir . '/app/models/PaiementStatuts.php',
     'PaiementsStatutsTableSeeder' => $baseDir . '/app/database/seeds/PaiementsStatutsTableSeeder.php',
     'Patchwork\\PHP\\Shim\\Iconv' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Iconv.php',
@@ -1037,6 +1042,7 @@ return array(
     'RegionTraduction' => $baseDir . '/app/models/RegionTraduction.php',
     'RegionsTableSeeder' => $baseDir . '/app/database/seeds/RegionsTableSeeder.php',
     'RegionsTraductionsTableSeeder' => $baseDir . '/app/database/seeds/RegionsTraductionsTableSeeder.php',
+    'RoleTableSeeder' => $baseDir . '/app/database/seeds/RoleTableSeeder.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'SousRegion' => $baseDir . '/app/models/SousRegion.php',
     'SousRegionTraduction' => $baseDir . '/app/models/SousRegionTraduction.php',

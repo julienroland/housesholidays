@@ -13,6 +13,10 @@ class CompteController extends BaseController {
     public function listLocation(  ){
 
         //todo afficher la liste des locations pas finie, voir requete au dessus
+        if(Session::has('proprieteId')){
+            
+            Session::forget('proprieteId');
+        }
 
         $proprietes = Propriete::getLocations();
 

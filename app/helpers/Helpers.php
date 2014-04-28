@@ -5,15 +5,43 @@ use Carbon\Carbon;
 
 class Helpers {
 
-	protected $iniDay = array(
-		'Monday',
-		'Tues',
-		);
+	public static function isLast( $current, $total ){
+		if($current >= $total){
+			return true;
+		}
+		else{
+			
+			return false;
+		}
+	}	
+	public static function isNotLast( $current, $total ){
+
+		if($current >= $total){
+			
+			return false;
+
+		}
+		else{
+
+			return true;
+
+		}
+	}
+	public static function isActive( $page, $current ){
+		
+		if(isset($page) && Helpers::isOk($page) && isset($current) && Helpers::isOk($current)){
+
+			if( $page === $current || $page == $current ){
+
+				return 'class="active"';
+			}
+		}
+	}
 	public static function toHumanTimestamp( $timestamp ){
 
 		setlocale(LC_TIME, App::getLocale());  
 
-		return $timestamp->formatLocalized('%e %A %B %Y %k:%M:%S');
+		return $timestamp->formatLocalized('%e %B %Y %k:%M:%S');
 	}
 	public static function createCarbonTimestamp( $timestamp, $type='us',  $separator = '-' ){
 
@@ -37,7 +65,7 @@ class Helpers {
 		return $dateBetween;
 	}
 
-	public static function build_calendar($month = null, $year = null, $dateArray = null) {
+	public static function build_calendar($month = null, $year = null, $fromId = null , $dateArray = null) {
 
 		if(Helpers::isNotOk( $month )){
 
@@ -50,7 +78,11 @@ class Helpers {
 			$year = date('y');
 			
 		}
-		$calendriers = Calendrier::whereProprieteId( Session::get('proprieteId'))->get();
+		if(Helpers::isOk($fromId)){
+
+			$calendriers = Calendrier::whereProprieteId( $fromId )->get();
+			
+		}
 
 		$today_date = date("d");
 		$today_date = ltrim($today_date, '0');
@@ -154,7 +186,7 @@ class Helpers {
 
 			$end = $calendrier->date_fin;
 
-			$listDatesBetween[] = Helpers::getDateBetween( $start, $end );
+			$listDatesBetween[] = (object)array('id'=>$calendrier->id, 'dates'=>Helpers::getDateBetween( $start, $end ));
 			/*var_dump($listDatesBetween);*/
 		/*	if($calendrier->date_debut == $serverDate){
 				$class='busy';
@@ -193,15 +225,15 @@ class Helpers {
 			if( isset($listDatesBetween) && Helpers::isOk( $listDatesBetween ) ){
 
 				foreach($listDatesBetween as $datesBetween){
-
-					foreach($datesBetween as $dateBetween){
+					
+					foreach($datesBetween->dates as $dateBetween){
 
 						$dateBetween  = Helpers::createCarbonDate($dateBetween);
 
 						if($dateCarbon->eq($dateBetween)){
 
 							$class='busy';
-							$dataId = $calendrier->id;
+							$dataId = $datesBetween->id;
 
 						}
 					}
