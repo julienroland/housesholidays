@@ -58,5 +58,12 @@ return array(
 	'à'=>'à',
 	'back'=>'retour',
 	'refreshDone'=>'Votre annonce à bien été rafraîchi',
+	'nom'=>'Nom',
+	'phone'=>'Téléphone',
+	'langue_parle'=>'Langues parlées',
+	'vous_devez_connecter'=>'Vous devez être connecter.',
+	'message_send'=>'Message bien envoyé',
+	'message_not_send'=>'Le message n\'a pas été envoyé',
+	'location_en'=>'Location de vacances en',
 
 	);

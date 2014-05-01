@@ -92,17 +92,13 @@
 		<span>
 
 		</span>
-		<a href="" class="favoris">
-			<img src="{{Config::get('var.image_folder')}}/ico.coeur.png" alt="">
-			<span>{{trans('locationList.favoris')}}</span>
-		</a>
 	</p>
-
+{{var_dump($propriete->statut)}}
 	<div class="admin">
 		<span>{{trans('locationList.total_visite')}}: @if($propriete->nb_visite > 0){{$propriete->nb_visite}} @else {{trans('locationList.noData')}} @endif</span>
 		<span>{{trans('locationList.statut')}}: @if($propriete->statut == 0){{trans('locationList.inactive')}} @else {{trans('locationList.active')}} @endif</span>
 		<span>{{trans('locationList.last_visite')}}: @if($propriete->nb_visite == 0){{trans('locationList.noData')}} @else {{$propriete->last_visite}} @endif</span>
-		<span>{{trans('locationList.last_update')}}: @if(Helpers::isOk($propriete->updated_at)){{Helpers::toHumanTimestamp($propriete->updated_at)}} @else {{trans('locationList.noData')}} @endif</span>
+		<span>{{trans('locationList.last_update')}}: @if(Helpers::isOk($propriete->updated_at)){{Helpers::toHumanDiff($propriete->updated_at)}} @else {{trans('locationList.noData')}} @endif</span>
 		<ul>
 		
 			<li>{{link_to_route('showPropriete',trans('form.voir'), $propriete->id)}}</li>

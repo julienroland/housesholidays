@@ -15,5 +15,8 @@
 	'semaine'=>'semaine',
 	'de'=>'De',
 	'propriétaire'=>'Propriétaire',
-	
+	'comm_co'=>'Vous devez être connectez pour poster un commentaire',
+	'note'=>'Note',
+	'publie_par'=>'Publié par',
+	'poste'=>'Posté',
 	);

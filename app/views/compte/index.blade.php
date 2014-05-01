@@ -6,12 +6,11 @@
 
 {{link_to_route('checkSession','Ajout d\'une annonce',Auth::user()->slug)}}
 
-@if(Helpers::isOk($nbInscriptionProprietePasFinie))
 
 {{link_to_route('listLocationPropri',trans('compte.listLocation'),Auth::user()->slug)}}
 
-@endif
+{{link_to_route('listCommentaires',trans('compte.listCommentaires'),Auth::user()->slug)}}
 
-liste d'annonces
 
 @stop
+

@@ -14,14 +14,20 @@ class CreateMessagesTable extends Migration {
 	{
 		Schema::create('messages', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('titre');
+			$table->string('titre')->nullable();
 			$table->text('texte');
-			$table->date('date');
-			$table->integer('de_user_id')->unsigned();
+			$table->date('arrive');
+			$table->date('depart');
+			$table->string('nom');
+			$table->string('prenom');
+			$table->string('email');
+			$table->string('telephone');
+			$table->string('adresse');
+			$table->integer('de_user_id')->unsigned()->nullable();
 			$table->foreign('de_user_id')->references('id')->on('users');
 			$table->integer('vers_user_id')->unsigned();
 			$table->foreign('vers_user_id')->references('id')->on('users');
-			$table->integer('reponse_id')->unsigned();
+			$table->integer('reponse_id')->unsigned()->nullable();
 			$table->foreign('reponse_id')->references('id')->on('messages');
 			$table->integer('propriete_id')->unsigned();
 			$table->foreign('propriete_id')->references('id')->on('proprietes');

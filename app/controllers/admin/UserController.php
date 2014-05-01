@@ -14,6 +14,7 @@ class Admin_UserController extends \Admin_BaseController
 		* Tous les champs
 		*
 		**/
+
 		$input = Input::all();
 
 
@@ -22,6 +23,7 @@ class Admin_UserController extends \Admin_BaseController
 		* Les règles de validation
 		*
 		**/
+		
 		$rules = array(
 			'email'=>'required|exists:users,email|email|min:5',
 			'password' => 'required|min:3|alpha_num',
@@ -32,6 +34,7 @@ class Admin_UserController extends \Admin_BaseController
 		* Si valide
 		*
 		**/
+
 		$validation = Validator::make( $input , $rules );
 
 		if($validation->passes()){
@@ -45,7 +48,6 @@ class Admin_UserController extends \Admin_BaseController
 
 			if(Auth::attempt(array('email'=>$input['email'], 'password'=> $input['password']), isset($input['remember']) ? true: false)) {
 
-				
 				if(isset($input['remember'])){
 					return Redirect::route('getIndexAdmin')
 					->with('success',trans('validation.custom.connect'))
@@ -59,6 +61,7 @@ class Admin_UserController extends \Admin_BaseController
 				}
 			}
 			else{
+
 				/**
 				*
 				* On revient a la page de connexion avec les bonnes valeurs entrées et les erreurs

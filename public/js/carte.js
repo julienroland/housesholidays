@@ -34,7 +34,7 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 			var pays=$('#tab_container_search_map>div').attr('class');
 			$('#tab_container_search_map>div').css({'width':'223px'});	
 			var nom_pays=pays.substr(4);
-			$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
+			$('#tab_container_search_map>div').load('../map/'+nom_pays+'.php');
 			changeMap(pays);
 		}
 	});	
@@ -43,7 +43,7 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 		$('#tab_container_search_map>div').unbind();
 		var pays=$('#tab_container_search_map>div').attr('class');
 		var nom_pays=pays.substr(4);
-		$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
+		$('#tab_container_search_map>div').load('/'+nom_pays);
 		changeMap(pays);
 	}
 });	

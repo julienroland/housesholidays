@@ -19,11 +19,11 @@ class CreateCommentairesTable extends Migration {
 			$table->date('date_sejour');
 			$table->boolean('statut');
 			$table->integer('note');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users');
-			$table->integer('proprietes_id')->unsigned();
-			$table->foreign('proprietes_id')->references('id')->on('proprietes');
-			$table->integer('reponse_id')->unsigned();
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->integer('propriete_id')->unsigned();
+			$table->foreign('propriete_id')->references('id')->on('proprietes');
+			$table->integer('reponse_id')->unsigned()->nullable();
 			$table->foreign('reponse_id')->references('id')->on('commentaires');
 			$table->timestamps();
 		});

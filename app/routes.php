@@ -37,6 +37,19 @@ if (in_array($lang, Config::get('app.available_locales')))
 
 	}
 }
+/**
+*
+* Carte
+*
+**/
+Route::get('france', function(){
+
+	$pays = Helpers::cache(Pays::whereId(77)->with(array('PaysTraduction'))->remember(60)->first(),'france_regions');
+	/*dd($carte->region);*/
+	$regions = Pays::listById( 77 );
+	return View::make('carte.france', array('page'=>'carte'))
+	->with(compact('regions','pays'));
+});
 
 /**
 *
@@ -131,6 +144,24 @@ Route::get('ajax/getOneDispo/{id}', array('as'=>'getOneDispo', 'uses'=>'Inscript
 **/
 Route::get('getAllLang',array('uses'=>'LangController@getAll'));
 
+/**
+*
+* Send de messages
+* @ajax
+*
+**/
+
+Route::get( 'envoyeMessage' , array('as'=>'sendMessage','uses'=>'UserController@sendMessage'));
+
+/**
+*
+* Add favoris
+* @ajax
+*
+**/
+
+Route::get( 'addFavoris/{userId}/{proprieteId}' , array('as'=>'addFavoris','uses'=>'UserController@addFavoris'));
+
 /*============================
 =            test            =
 ============================*/
@@ -166,9 +197,28 @@ Route::get('toto', function(){
 
 	 Route::group(array('prefix'=>'admin'), function(){
 
+
+
 	 	Route::post('connecter', array('as'=>'connecter','uses'=>'Admin_UserController@connecter'));
 
 	 	Route::group(array('before'=>'admin'), function(){
+
+	 	/**
+	 	*
+	 	* Desactiver annonce
+	 	*
+	 	**/
+	 	
+	 	Route::get('desactiver/{id}',array('as'=>'desactiver_propriete', 'uses'=>'Admin_ProprieteController@desactiver'));
+
+	 	/**
+	 	*
+	 	* Deverifier annonce
+	 	*
+	 	**/
+	 	
+	 	Route::get('Deverifier/{id}',array('as'=>'deverifier_propriete', 'uses'=>'Admin_ProprieteController@deverifier'));
+
 		/**
 		*
 		* Home
@@ -249,8 +299,14 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		});
 
-
 		Route::get('/', array('uses'=>'HomeController@index'));
+
+		/**
+		*
+		* Recherche via la carte
+		*
+		**/
+		Route::get(trans('routes.locations_vacances').'/'.trans('routes.location').'-{pays}-{region}', array('as'=>'rechercheCarte','uses'=>'RechercheController@carte'));
 
 		/**
 		*
@@ -259,6 +315,15 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		**/
 		Route::group(array('before'=>'auth'),function(){
 
+
+			/**
+			*
+			* Envoye de commentaires sur annonce
+			*
+			**/
+
+			Route::post( trans('routes.send_commentaire'), array('as'=>'sendCommentaire','uses'=>'UserController@sendCommentaire') );
+			
 			/**
 			*
 			* Doit se faire après un filtre qui test si annonce payée !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -375,6 +440,8 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6'), array('as'=>'etape6Index', 'uses'=>'InscriptionController@indexCoordonne'));
 
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6'), array('as'=>'inscription_etape6', 'uses'=>'InscriptionController@saveCoordonne'));
+
 		/**
 		*
 		* Paiement
@@ -393,10 +460,100 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_listLocations'), array('as'=>'listLocationPropri', 'uses'=>'CompteController@listLocation'));
 
-
+		/**
+		*
+		* Commentaires de l'utilisateurs
+		*
+		**/
+		
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.i_listCommentaires'),array( 'as'=>'listCommentaires','uses'=>'CompteController@listCommentaires' ));
 		/*-----  End of PROFIL  ------*/
 
+		/**
+		*
+		* Location
+		*
+		**/
 
+		/*==========  Voir  ==========*/
+
+		Route::get(Lang::get('routes.voir').'/{id}', array('as'=>'showPropriete', 'uses'=>'ProprieteController@show'));
+
+		/*==========  Delete  ==========*/
+
+		Route::get(Lang::get('routes.delete').'/{id}', array('as'=>'deletePropriete', 'uses'=>'ProprieteController@delete'));
+
+		/*==========  Edit  ==========*/
+
+		/**
+		*
+		* Inscription du bien
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'editPropriete1', 'uses'=>'InscriptionController@indexBatiment'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'storePropriete1','uses'=>'InscriptionController@updateBatiment'));
+
+		/**
+		*
+		* Localisation
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'editPropriete2', 'uses'=>'InscriptionController@indexLocalisation'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'storePropriete2','uses'=>'InscriptionController@updateLocalisation'));
+
+		/**
+		*
+		* Photos videos
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'editPropriete3', 'uses'=>'InscriptionController@indexPhoto'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'storePropriete3','uses'=>'InscriptionController@updatePhoto'));
+
+		/**
+		*
+		* Tarifs
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'editPropriete4', 'uses'=>'InscriptionController@indexTarif'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'storePropriete4','uses'=>'InscriptionController@updateTarif2'));
+
+		/**
+		*
+		* Dispo
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'editPropriete5', 'uses'=>'InscriptionController@indexDisponibilite'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'storePropriete5','uses'=>'InscriptionController@updateDispo'));
+
+		/**
+		*
+		* Coordonnées
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'editPropriete6', 'uses'=>'InscriptionController@indexCoordonne'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'storePropriete6','uses'=>'InscriptionController@updateCoordonne'));
+
+		/**
+		*
+		* Paiement
+		*
+		**/
+		
+		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'editPropriete7', 'uses'=>'InscriptionController@indexLocalisation'));
+
+		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'storePropriete7','uses'=>'InscriptionController@updateLocalisation'));
 
 	});//end connecté
 
@@ -481,87 +638,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		Route::get( Lang::get('general.locationsVacances').'/{pays_slug}/{region_slug}', array('as'=>'getLocationsFormPaysAndRegion','uses'=>'HomeController@getList'));
 		
 		
-		/**
-		*
-		* Location
-		*
-		**/
-
-		/*==========  Voir  ==========*/
-
-		Route::get(Lang::get('routes.voir').'/{id}', array('as'=>'showPropriete', 'uses'=>'ProprieteController@show'));
-
-		/*==========  Edit  ==========*/
-
-		/**
-		*
-		* Inscription du bien
-		*
-		**/
 		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'editPropriete1', 'uses'=>'InscriptionController@indexBatiment'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'storePropriete1','uses'=>'InscriptionController@updateBatiment'));
-
-		/**
-		*
-		* Localisation
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'editPropriete2', 'uses'=>'InscriptionController@indexLocalisation'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'storePropriete2','uses'=>'InscriptionController@updateLocalisation'));
-
-		/**
-		*
-		* Photos videos
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'editPropriete3', 'uses'=>'InscriptionController@indexPhoto'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'storePropriete3','uses'=>'InscriptionController@updatePhoto'));
-
-		/**
-		*
-		* Tarifs
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'editPropriete4', 'uses'=>'InscriptionController@indexTarif'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'storePropriete4','uses'=>'InscriptionController@updateTarif2'));
-
-		/**
-		*
-		* Dispo
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'editPropriete5', 'uses'=>'InscriptionController@indexDisponibilite'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'storePropriete5','uses'=>'InscriptionController@updateDispo'));
-
-		/**
-		*
-		* Coordonnées
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'editPropriete6', 'uses'=>'InscriptionController@indexCoordonne'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'storePropriete6','uses'=>'InscriptionController@updateCoordonne'));
-
-		/**
-		*
-		* Paiement
-		*
-		**/
-		
-		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'editPropriete7', 'uses'=>'InscriptionController@indexLocalisation'));
-
-		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'storePropriete7','uses'=>'InscriptionController@updateLocalisation'));
 
 	});
 /*-----  End of EN FONCTION DE LA LANGUE  ------*/

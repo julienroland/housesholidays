@@ -121,7 +121,7 @@ Route::filter('admin', function()
 
 	if(Auth::check()){
 		
-		if(Auth::user()->role_id != 2){
+		if(Auth::user()->role_id <= 1){
 
 			return Redirect::to('/');
 		}

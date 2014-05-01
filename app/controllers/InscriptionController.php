@@ -79,7 +79,7 @@ class InscriptionController extends BaseController {
 			$user->prenom = $input['prenom'];
 			$user->nom = $input['nom'];
 			$user->email = $input['email'];
-			$user->role = 1;
+			$user->role_id = 1;
 			$user->pays_id = (int)$input['pays'];
 			$user->password = Hash::make($input['password']);
 			$user->key = sha1(mt_rand(10000,99999).date('dmyhms').$user->email);
@@ -1186,18 +1186,21 @@ class InscriptionController extends BaseController {
 			$validation  = Validator::make($input, $rules);
 
 			if( $validation ){
-				
+
 				foreach($orders as $key => $order){
 
-					$photo = PhotoPropriete::find($key);	
+					$photo = PhotoPropriete::find($key);
 
-					if($order == 1){
+					if($photo){
 
-						$photo->accroche = 1;
+						if($order == 1){
+
+							$photo->accroche = 1;
+						}
+
+						$photo->ordre = $order;
+						$photo->save();
 					}
-					
-					$photo->ordre = $order;
-					$photo->save();
 				}
 				if($edit){
 
@@ -1296,6 +1299,7 @@ class InscriptionController extends BaseController {
 			}
 
 			Session::put('currentEtape', 5 );
+
 
 			if($edit){
 
@@ -1419,6 +1423,8 @@ class InscriptionController extends BaseController {
 			$propriete->save();
 
 			if(Helpers::isOk($tarif)){
+
+				Session::put('etape5', true);
 
 				return Response::json($tarif->with(array('monnaie','tarifSpeciauxWeekend'))->where('propriete_id',$propriete->id)->orderBy('id','desc')->get(), 200);
 
@@ -1720,14 +1726,15 @@ class InscriptionController extends BaseController {
 			$currentDate = Carbon::now(); 
 
 			$edit = false;
-			
+
 			if(!is_object($data)){
 
-				$data = Calendrier::whereProprieteId( Session::get('proprieteId') )->get();
+				$data = Propriete::whereId( Session::get('proprieteId') )->first();
 				
 				$edit = true;
 
 			}else{
+
 
 				$edit = false;
 
@@ -1899,8 +1906,8 @@ class InscriptionController extends BaseController {
 
 		$user = $data->user()->first();
 
-		$tel1 = $user->telephone()->whereOrdre(1)->get();
-		$tel2 = $user->telephone()->whereOrdre(2)->get();
+		$tel1 = $user->telephone()->whereOrdre(1)->first();
+		$tel2 = $user->telephone()->whereOrdre(2)->first();
 
 		$langue = User::getLangages( $user->id );
 		
@@ -1941,6 +1948,149 @@ class InscriptionController extends BaseController {
 
 			}
 		}
+		public function saveCoordonne( $data ){
+
+			$input = Input::all();
+
+			$edit = false;
+
+
+			if(!is_object($data)){
+
+				$edit = false;
+
+				$data = Propriete::findOrFail(Session::get('proprieteId'));
+
+			}else{
+
+				$edit = true;
+
+				$propriete = $data;
+			}
+
+			User::$coordonneRules['email'] = 'unique:users,email,'. Auth::user()->id .'| required | email';
+
+			$validator = Validator::make($input, User::$coordonneRules);
+
+			Session::put('input_7', $input);
+
+			if($validator->passes()){
+
+				$user = Auth::user();	
+
+				$tel1 = UserTelephone::whereUserId($user->id)->whereOrdre('1')->first();
+				$tel2 = UserTelephone::whereUserId($user->id)->whereOrdre('2')->first();
+				
+				$langages = $user->langage()->get();
+
+				$user->prenom = $input['prenom'];
+				$user->nom = $input['nom'];
+				$user->email = $input['email'];
+				$user->site_web = $input['site'];
+				$user->personne_contact = $input['contact'];
+				$user->pays_id = $input['pays'];
+				$user->sous_region_id = $input['sous_region'];
+				$user->localite_id = $input['localite'];
+				$user->region_id = $input['region'];
+				$user->adresse = $input['adresse'];
+				$user->postal = $input['postal'];
+				$user->fax = $input['fax'];
+				$user->maternelle_id = 1;
+
+				if(Helpers::isOk($tel1)){
+
+					$tel1->numero = $input['tel1'];
+					$tel1->heure = $input['heure1'];
+					$tel1->ordre = 1;
+					$user->telephone()->save($tel1);
+
+				}else{
+
+					$tel1 = new UserTelephone;
+					$tel1->numero = $input['tel1'];
+					$tel1->heure = $input['heure1'];
+					$tel1->ordre = 1;
+					$user->telephone()->save($tel1);
+				}
+
+				if(Helpers::isOk($tel2)){
+
+					$tel2->numero = $input['tel2'];
+					$tel2->heure = $input['heure2'];
+					$tel2->ordre = 2;
+					$user->telephone()->save($tel2);
+
+				}else{
+
+					$tel2 = new UserTelephone;
+					$tel2->numero = $input['tel2'];
+					$tel2->heure = $input['heure2'];
+					$tel2->ordre = 2;
+					$user->telephone()->save($tel2);
+				}
+
+				if($langages){
+
+					$user->langage()->detach();
+
+					foreach($input['autre'] as $key => $valeur){
+						
+						$user->langage()->attach($key);
+
+					}
+
+				}else{
+
+					foreach($input['autre'] as $key => $valeur){
+
+						$user->langage()->attach($key);
+
+					}
+
+				}
+
+				$user->save();
+
+				if($user){
+
+					Session::put('etape7',true);
+
+					if( $edit ){
+
+						return Redirect::route( 'etape7Index' , $propriete->id )
+						->with(array('success', Lang::get('validation.custom.step7')));
+
+					}else{
+
+						return Redirect::route( 'etape7Index' , Auth::user()->slug )
+						->with(array('success', Lang::get('validation.custom.step7')));
+
+					}
+				}
+
+				
+			}
+			else{
+
+				if( $edit ){
+
+					return Redirect::route( 'etape6Index' , $data->id )
+					->with(array('success',Lang::get('validation.custom.step2')));
+
+				}else{
+
+					return Redirect::route( 'etape6Index' , Auth::user()->slug )
+					->with(array('success',Lang::get('validation.custom.step2')));
+
+				}
+
+			}
+
+
+
+
+		}
+
 		public function updateCoordonne( $data ){
 
 			$input = Input::all();

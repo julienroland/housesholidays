@@ -14,7 +14,7 @@
 @endif
 @if(Session::get('etape7') && Helpers::isOk(Session::get('proprieteId')) )
 
-{{Form::open(array('method'=>'put','route'=>array('inscription_etape6_update',Auth::user()->slug)))}}
+{{Form::open(array('method'=>'put','route'=>array('editPropriete6',Auth::user()->slug)))}}
 
 @elseif(isset($data) && is_object($data) && Helpers::isOk($data) && !Session::has('proprieteId'))
 
@@ -99,7 +99,7 @@
 @foreach(Config::get('var.langId') as $key => $lang)
 
 {{Form::label('autre['.$key.']', $lang)}}
-{{Form::checkbox('autre['.$key.']','true', Helpers::isOk($langue) && isset($langue[$key]) ? true : (Session::has('input_7') && isset(Session::get('input_7')['autre['.$key.']']) ? true: false))}}
+{{Form::checkbox('autre['.$key.']','true',  isset($langue[$key]) && Helpers::isOk($langue[$key]) ? true : (Session::has('input_7') && isset(Session::get('input_7')['autre'][$key]) ? true: false))}}
 
 @endforeach
 <br>

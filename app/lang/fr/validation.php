@@ -87,6 +87,7 @@ return array(
         'already_disonnect'=> 'Vous êtes déjà déconnecté',
         'invalid'=> 'La clé ne correspond pas',
         'account_already_active'=> 'Compte déjà activé',
+        'send_message_to_you'=>'Vous ne pouvez vous envoyer un message à vous même',
         'key_invalid'=> 'Format de la clé invalide',
         'tropImage'=> 'Vous ne pouvez ajouter plus de :number images',
         'step1'=> 'Vos informations de l\'étape précédente ont bien été enregistrées',
@@ -96,6 +97,9 @@ return array(
         'step5'=> 'Vos informations sur les tarifs de votre batiment de l\'étape précédente ont bien été enregistrées',
         'step6'=> 'Vos informations sur les disponibilites de votre batiment de l\'étape précédente ont bien été enregistrées',
         'step7'=> 'Vos coordonnées de l\'étape précédente ont bien été enregistrées',
+        'favoris_add'=>'Favoris ajouté !',
+        'favoris_not_add'=>'Erreur, favoris non ajouté !',
+        'favoris_exist_deja'=>'Ce favoris existe déjà !'
         ),
 
     /*

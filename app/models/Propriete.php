@@ -135,6 +135,23 @@ class Propriete extends Eloquent {
 
 	}
 
+	public function message(){
+
+		return $this->hasMany('Message');
+
+	}
+
+	public function favoris(){
+
+		return $this->hasMany('Favoris');
+
+	}
+	public function commentaire(){
+
+		return $this->hasMany('Commentaire');
+		
+	}
+
 	public static function getCurrentStep(){
 
 		return Session::has('currentEtape') ? Session::get('currentEtape') : 1;
@@ -161,6 +178,7 @@ class Propriete extends Eloquent {
 				))
 			->where( 'etape','!=','' )
 			->orderBy('created_at','desc')
+			->remember(60 * 24, 'proprietes')
 			->get(  );
 
 		}else{
@@ -172,12 +190,13 @@ class Propriete extends Eloquent {
 				'sousRegion.sousRegionTraduction',
 				'region.regionTraduction',
 				'pays.paysTraduction',
-				'tarif',
 				'typeBatiment.typeBatimentTraduction',
 				'photoPropriete',
 				))
 			->where( 'etape','!=','' )
+			->where('user_id', Auth::user()->id )
 			->whereId($proprieteId)
+			->remember(60 * 24, 'proprietes')
 			->first(  );
 
 		}
@@ -187,14 +206,13 @@ class Propriete extends Eloquent {
 		return $proprieteDump;
 	}
 
-	public static function getMinTarif( $proprieteId, $col = null){
+	public static function getMinTarif( $propriete, $col = null){
 
 		if(Helpers::isNotOk($col)){
 
 			$col = Config::get('var.semaine_col');
 		}
 
-		$propriete = Propriete::find($proprieteId);
 
 		$getMinDump = $propriete->tarif()->min($col);
 
@@ -202,14 +220,13 @@ class Propriete extends Eloquent {
 
 	}
 
-	public static function getMaxTarif( $proprieteId, $col = null){
+	public static function getMaxTarif( $propriete, $col = null){
 
 		if(Helpers::isNotOk($col)){
 
 			$col = Config::get('var.semaine_col');
 		}
 
-		$propriete = Propriete::find($proprieteId);
 
 		$getMaxDump = $propriete->tarif()->max($col);
 
@@ -355,7 +372,7 @@ public static function getSituations($proprieteId = null,  $orderBy='valeur', $o
 	Propriete::with(array('option'=>function($query){
 		$query->where('options.id', 44 );
 	}))
-	->whereId($proprieteId)->first();
+	->whereId($proprieteId)->remember(60 * 24)->first();
 
 	$d = array();
 
@@ -391,7 +408,7 @@ public static function getLiterie($proprieteId = null,  $orderBy='valeur', $orde
 	Propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.literie_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->first();
+	->whereId($proprieteId)->remember(60 * 24)->first();
 	
 	$data = array(
 		'data'=>array(),
@@ -419,7 +436,7 @@ public static function getExterieur($proprieteId = null,  $orderBy='valeur', $or
 	Propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.exterieur_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->first();
+	->whereId($proprieteId)->remember(60 * 24)->first();
 	
 	$data = array(
 		'data'=>array(),
@@ -446,7 +463,7 @@ public static function getInterieur($proprieteId = null,  $orderBy='valeur', $or
 	Propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.interieur_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->first();
+	->whereId($proprieteId)->remember(60 * 24)->first();
 	
 	$data = array(
 		'data'=>array(),

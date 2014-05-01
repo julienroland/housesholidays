@@ -1,5 +1,7 @@
 <?php
 
+Use Carbon\Carbon;
+
 class CompteController extends BaseController {
 
 	public function index() {
@@ -25,5 +27,13 @@ class CompteController extends BaseController {
         return View::make('compte.listLocation', array('page'=>'listLocation'))
         ->with( compact(array('proprietes','imageType')) );
         
+    }
+
+    public function listCommentaires(  ){
+
+        dd(Auth::user()->with('commentaire')->get());
+
+        return View::make('compte.commentaires', array('page'=>'commentaires'))
+        ->with(compact('commentaires'));
     }
 }

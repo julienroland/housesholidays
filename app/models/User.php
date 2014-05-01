@@ -34,15 +34,29 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'maternelle'=>'required|not_in:null',
 		);
 
+	public static $comm_rules = array(
+		'titre'=>'required',
+		'date'=>'required',
+		'note'=>'required',
+		'commentaire'=>'required',
+		);
+
+	public static $mess_rules = array(
+		'nom'=>'required | alpha',
+		'prenom'=>'required | alpha',
+		'email'=>'required |email',
+		'message'=>'required',
+		'sender_id'=>'integer',
+		'receiver_id'=>'required |different:sender_id',
+		);
+
 	public static $sluggable = array(
 		'build_from' => 'fullname',
 		'save_to'    => 'slug',
 		);
-	public static function getLangages( $id ){
+	public static function getLangages( $user ){
 
-		$user = User::find($id);
-
-		$dataDump = $user->langage()->get()->toArray();
+		$dataDump = $user->langage()->remember(60 * 24)->get()->toArray();
 		
 		$data = array();
 
@@ -59,6 +73,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		
 	}
 
+	public function commentaire(){
+
+		return $this->hasMany('Commentaire');
+		
+	}
+
+
+	public function favoris(){
+
+		return $this->hasMany('Favoris');
+
+	}
+
+	
 	public function telephone(){
 
 		return $this->hasMany('UserTelephone');

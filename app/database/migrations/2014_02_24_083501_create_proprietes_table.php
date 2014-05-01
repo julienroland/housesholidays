@@ -25,6 +25,7 @@ class CreateProprietesTable extends Migration {
 			$table->integer('annonce_payee_id')->unsigned()->nullable();
 			$table->foreign('annonce_payee_id')->references('id')->on('annonces_payees');
 			$table->boolean('statut');
+			$table->boolean('verifier');
 			$table->float('caution')->nullable();
 			$table->integer('nb_visite');
 			$table->timestamp('last_visite');

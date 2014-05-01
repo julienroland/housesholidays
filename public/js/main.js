@@ -22,6 +22,29 @@
 
 
   $(function() {
+    $('#sendMessage').on('submit',function(e){
+      e.preventDefault();
+      sendMessage($(this))
+    });
+
+    $('.addFavoris').on('click', function(e){
+      e.preventDefault();
+      addFavoris( $(this) );
+    } );
+
+    $('.note_propriete input').on('change',function(){
+
+      $(this).parent().siblings().removeClass('checked');
+
+      if($(this).is(':checked')){
+
+        $(this).parent().addClass('checked');
+        $(this).parent().prevAll().addClass('checked');
+
+      }
+
+    });
+
     /**
     *
     * Inscription interieur valeur
@@ -30,6 +53,8 @@
     $('.interieur input[type="checkbox"]').on('change', function(){
       toggleValeur($(this));
     });
+
+
     /**
     *
     * TABS
@@ -158,28 +183,85 @@
     e.preventDefault();
     deleteDispo( $(this) );
   });
- var toggleValeurs = function(  ){
+   var addFavoris  = function($that){
 
-    $.each($('input[type="checkbox"]'), function(){
-      console.log('ok');
-      if($(this).is(':checked')){
-        $(this).parent().find('.valeur').show();
+    var user = $that.attr('data-userId');
 
+    var propriete = $that.attr('data-proprieteId');
+
+    $.ajax({
+      type: "get", 
+      url: sBasePath + 'addFavoris/'+user+'/'+propriete,
+      dataType: "json",
+      success:function( oData ){
+        console.log(oData);
+        alert(oData);
+      },
+    });
+  };
+    var tableColors = function(){
+
+      var $tr = $('.description_propriete').find('tr');
+
+      $tr.each(function(i){
+
+        if(i == 0 || i % 2 == 0){
+
+          $(this).css('background-color','#DDDDDD');
+
+        }
+
+      });
+    };
+    tableColors();
+    var toggleValeurs = function(  ){
+
+      $.each($('input[type="checkbox"]'), function(){
+        console.log('ok');
+        if($(this).is(':checked')){
+          $(this).parent().find('.valeur').show();
+
+        }
+
+      })
+    };
+    var sendMessage = function( $that ){
+
+      console.log($that.serialize());
+      $.ajax({
+        type: "get", 
+        url: sBasePath + 'envoyeMessage/',
+        dataType: "json",
+        data:$that.serialize(),
+        success:function( oData ){
+          $('#contact').append('<div class="errors">'+oData+'</div>');
+        },
+      }).fail(function(error, text){
+        $('#contact').append('<div class="errors"></div>');
+        var data = JSON.parse(error.responseText);
+        for( var i in data ){
+          for( var e in data[i] ){
+
+            $('#contact .errors').append(data[i][e]);
+
+          }
+        }
+        $('#contact .errors')
+
+      });
+
+    };
+    var toggleValeur = function( $that ){
+
+      if($that.is(':checked')){
+        $that.parent().find('.valeur').show();
+
+      }else{
+        $that.parent().find('.valeur').hide().val('');
       }
 
-    })
-  };
-  var toggleValeur = function( $that ){
-
-    if($that.is(':checked')){
-      $that.parent().find('.valeur').show();
-      
-    }else{
-      $that.parent().find('.valeur').hide().val('');
-    }
-
-  };
-   var refreshAnnonce = function($that){
+    };
+    var refreshAnnonce = function($that){
      $.ajax({
       type: "get", 
       url: sBasePath + 'refreshAnnonce/'+ $that.attr('data-id'),
@@ -294,7 +376,7 @@
           }
 
           showDispoBusy( between );
-          
+
 
         }
 

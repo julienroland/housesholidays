@@ -1711,12 +1711,12 @@ class Carbon extends DateTime
 
       // 4 weeks per month, 365 days per year... good enough!!
       $divs = array(
-         'second' => self::SECONDS_PER_MINUTE,
-         'minute' => self::MINUTES_PER_HOUR,
-         'hour'   => self::HOURS_PER_DAY,
-         'day'    => self::DAYS_PER_WEEK,
-         'week'   => 4,
-         'month'  => self::MONTHS_PER_YEAR
+         trans('date.second') => self::SECONDS_PER_MINUTE,
+         trans('date.minute') => self::MINUTES_PER_HOUR,
+         trans('date.hour')   => self::HOURS_PER_DAY,
+         trans('date.day')    => self::DAYS_PER_WEEK,
+         trans('date.week')   => 4,
+         trans('date.month')  => self::MONTHS_PER_YEAR
       );
 
       $unit = 'year';
@@ -1739,17 +1739,17 @@ class Carbon extends DateTime
 
       if ($isNow) {
          if ($isFuture) {
-            return $txt . ' from now';
+            return  trans('date.form_now', array('date'=>$txt));
          }
 
-         return $txt . ' ago';
+         return  trans('date.ago', array('date'=>$txt));
       }
 
       if ($isFuture) {
-         return $txt . ' after';
+         return  trans('date.after', array('date'=>$txt));
       }
 
-      return $txt . ' before';
+      return trans('date.before', array('date'=>$txt));
    }
 
    ///////////////////////////////////////////////////////////////////

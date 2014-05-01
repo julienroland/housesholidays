@@ -1,60 +1,187 @@
 <?php
 
+use Carbon\Carbon;
+
 class ProprieteController extends BaseController {
 
 	public function show( $id ){
 
-		$propriete = Propriete::getLocations( $id );
+		$propriete = Helpers::cache(Propriete::getLocations( $id ),'propriete'.$id);
+		$date = date('n');
+		$today = Carbon::now();
 
-		$user = Propriete::find($id)->user()->first();
+		if(!Cache::has('calendrier')){
 
-		$minPrice = Propriete::getMinTarif( $id, Config::get('var.semaine_col'));
+			$calendrier = '';
 
-		$maxPrice = Propriete::getMaxTarif( $id, Config::get('var.semaine_col'));
+			for($i = $date; $i < ($date +Config::get('var.mois')); $i++ ){
 
-		$imageAccrocheType = imageType::whereNom(Config::get('var.image_standard'))->first();
+				$calendrier = $calendrier.Helpers::build_calendar( $today->month, $today->year, $propriete->id );
 
-		$imageSliderType = imageType::whereNom(Config::get('var.image_thumbnail'))->first();
+				$today = $today->addMonth();
+			}
+
+			Cache::put('calendrier'.$id, $calendrier, 60 * 24);
+
+		}
+		else{
+
+			$calendrier = Cache::get('calendrier'.$id);
+
+		}
+		
+		$user = Helpers::cache($propriete->user()->first(), 'user'.$propriete->user()->pluck('id'));
+
+		$tel1 = Helpers::cache($user->telephone()->whereOrdre(1)->first(),'tel1'.$user->id);
+
+		/*$tel2 = $user->telephone()->whereOrdre(2)->first();*/
+
+		$langues = Helpers::cache(User::getLangages( $user ),'langues'.$user->id);
+
+		$maternelle = Helpers::cache(Langage::find( $user->maternelle_id ),'maternelle'.$user->id);
+
+		$commentaires = Commentaire::with('user')->whereProprieteId( $propriete->id)->whereStatut(1)->remember( 60 * 24 , 'commentaires'.$propriete->id )->get();
+
+		$minPrice = Helpers::cache(Propriete::getMinTarif( $propriete, Config::get('var.semaine_col')),'minPrice'.$propriete->id);
+
+		$maxPrice = Helpers::cache(Propriete::getMaxTarif( $propriete, Config::get('var.semaine_col')),'maxPrice'.$propriete->id);
+
+		$imageAccrocheType = Helpers::cache(imageType::whereNom(Config::get('var.image_standard'))->remember(60 * 24)->first(), 'imageAccrocheType'.$propriete->id);
+
+		$imageSliderType = Helpers::cache(imageType::whereNom(Config::get('var.image_thumbnail'))->remember(60 * 24)->first(), 'imageSliderType'.$propriete->id);
 
 		/*$options = Propriete::getOptions( $id );*/
 
-		$situations = Propriete::getSituations( $id );
+		$tarifs = Helpers::cache($propriete->with('tarif')->whereId($propriete->id)->remember(60 * 24 )->first(), 'tarifs'.$propriete->id);
+		
+		$jour_arrive = 0;
 
-		$literies = Propriete::getLiterie( $id );
+		$currentTarif = null;
 
-		$exterieurs = Propriete::getExterieur( $id );
+		foreach($tarifs->tarif as $tarif){
 
-		$interieurs = Propriete::getInterieur( $id );
+			$debut = Helpers::createCarbonDate($tarif->date_debut);
+			$fin = Helpers::createCarbonDate($tarif->date_fin);
 
-		return View::make('propriete.show', array('page'=>'showPropriete','widget'=>array('carousel','tabs')))
-		->with(compact(array('propriete','imageType','imageAccrocheType','imageSliderType','minPrice','maxPrice','user','options','situations','literies','exterieurs','interieurs')));
-	}
+			if(Helpers::isOk($tarif->date_debut) && Helpers::isOk($tarif->date_debut))
 
-	public function getPhoto( $proprieteId ){
+				if(Helpers::isOk($debut) && Helpers::isOk($fin)){
 
-		return Propriete::getPhoto( $proprieteId, null, 'json' );
-	}
+					if($today->between($debut, $fin)){
 
-	public function refresh ($data){
+						$currentTarif = $tarif;
+						$jour_arrive = $currentTarif->jour_arrive_id;
+					}
+				}
+			}			
 
-		if($data->annonce_payee_id == 3){
+			$situations = Helpers::cache(Propriete::getSituations( $id ),'situations'.$propriete->id);
 
-			$touch = $data->touch();
+			$literies = Helpers::cache(Propriete::getLiterie( $id ),'literie'.$propriete->id);
 
-			if($touch){
+			$exterieurs = Helpers::cache(Propriete::getExterieur( $id ),'exterieurs'.$propriete->id);
 
-				return Response::json(trans('general.refreshDone'), 200);
+			$interieurs = Helpers::cache(Propriete::getInterieur( $id ),'interieur'.$propriete->id);
+
+
+			return View::make('propriete.show', array(
+				'page'=>'showPropriete',
+				'widget'=>array(
+					'carousel',
+					'showMap',
+					'tab',
+					'datepicker',
+					'lightbox')))
+			->with(compact(array(
+				'propriete',
+				'imageType',
+				'imageAccrocheType',
+				'imageSliderType',
+				'minPrice',
+				'maxPrice',
+				'user',
+				'options',
+				'situations',
+				'literies',
+				'exterieurs',
+				'interieurs',
+				'tel1',
+				'langues',
+				'jour_arrive',
+				'today',
+				'date',
+				'commentaires',
+				'maternelle',
+				'calendrier',
+				)));
+		}
+		public function delete( $id ){
+
+			$propriete = Propriete::find($id);
+
+			$user_id = $propriete->user()->pluck('id');
+
+			if( Auth::user()->id === $propriete->user_id  || Auth::user()->role_id > 1){
+
+				$propriete->option()->detach();
+
+				$propriete->calendrier()->delete();
+
+				$propriete->commentaire()->delete();
+
+				$propriete->tarif()->delete();
+
+				$propriete->photoPropriete()->delete();
+
+				$propriete->favoris()->delete();
+
+				$propriete->message()->delete();
+
+				ProprieteTraduction::whereProprieteId( $propriete->id )->delete();
+
+				$propriete->delete();
+
+				File::deleteDirectory( Config::get('var.upload_folder').$user_id.'/proprietes/'.$propriete->id );
+
+				Cache::forget('proprietes');
+
+				Propriete::getLocations();
+
+				return Redirect::intended('/');
+
 			}
+			else{
 
-		}elseif($data->annonce_payee_id == 2){
+				return Redirect::intended('/');
+			}
+			
 
-			return Response::json(trans('general.en_attente'), 200);
+		}
+		public function getPhoto( $proprieteId ){
 
-		}elseif($data->annonce_payee_id == 1){
-
-			return Response::json(trans('general.pas_payee'), 200);
+			return Propriete::getPhoto( $proprieteId, null, 'json' );
 		}
 
-		
+		public function refresh ($data){
+
+			if($data->annonce_payee_id == 3){
+
+				$touch = $data->touch();
+
+				if($touch){
+
+					return Response::json(trans('general.refreshDone'), 200);
+				}
+
+			}elseif($data->annonce_payee_id == 2){
+
+				return Response::json(trans('general.en_attente'), 200);
+
+			}elseif($data->annonce_payee_id == 1){
+
+				return Response::json(trans('general.pas_payee'), 200);
+			}
+
+
+		}
 	}
-}

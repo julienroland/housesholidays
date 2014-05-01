@@ -19,10 +19,10 @@ return array(
 	'description'=>'description',
 	'langId'=>array(
 		'1'=>'Français',
-		'2'=>'Anglais',
-		'3'=>'Néerlandais',
-		'4'=>'Allemand',
-		'5'=>'Espagnol',
+		'2'=>'English',
+		'3'=>'Nederlands',
+		'4'=>'Deutsch',
+		'5'=>'Español',
 		),
 	'semaine_col'=>'prix_semaine',
 	);		

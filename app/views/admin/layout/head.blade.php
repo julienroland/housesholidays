@@ -10,9 +10,6 @@
  {{HTML::style('css/chosen.css')}}
  @endif
 
-
-
-
  @if(isset($widget) && Helpers::isOk($widget) && in_array('upload', $widget))
  {{HTML::style('css/uploadfile.css')}}
  @endif

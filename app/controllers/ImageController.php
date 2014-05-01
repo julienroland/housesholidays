@@ -70,7 +70,7 @@ class ImageController extends BaseController {
 
         $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-        $image->resize( $type->width, $type->height, false )->save( $destinationPath.$filename );
+        $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
 
       }
     }
@@ -102,7 +102,7 @@ else //single file
 
     $filename = Helpers::toSlug(Helpers::addTimestamp( $file->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-    $image->resize( $type->width, $type->height, false )->save( $destinationPath.$filename );
+    $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
 
   }
 

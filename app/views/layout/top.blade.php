@@ -41,7 +41,7 @@
 					<li>
 						{{link_to_route('compte', trans('menu.admin'),array(Auth::user()->slug))}}
 					</li>
-					<li id="login"> 
+					<li> 
 						
 						{{link_to(Lang::get('routes.deconnexion'),trans('form.logout'),array('id'=>'login-trigger'))}}
 					</li>

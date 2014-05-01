@@ -5,7 +5,58 @@ use Carbon\Carbon;
 
 class Helpers {
 
+	public static function cache( $query, $name, $time = 1440 ){
+
+		if (!Cache::has($name)) {
+
+			$cache = Cache::remember($name, $time , function() use($query)
+			{
+				return $query;
+			});
+
+			return $cache;
+
+		} else {
+
+			return Cache::get($name);
+
+		}
+
+	}
+	public static function wellDisplayPhone( $string ){
+
+		if( strlen( $string ) === 9){
+
+			$prefix = str_split($string, 3)[0];
+			$num = str_split(str_split($string, 3)[1].str_split($string, 3)[2], 2);
+
+			return $prefix.' '.$num[0].' '.$num[1].' '.$num[1];
+
+		}else if(strlen( $string ) === 10){
+
+			$prefix = str_split($string, 4)[0];
+			$num = str_split(str_split($string, 4)[1].str_split($string, 4)[2], 2);
+
+			return $prefix.' '.$num[0].' '.$num[1].' '.$num[1];
+
+		}else{
+
+			$strings =  str_split( $string , 2);
+			$stringToReturn = '';
+
+			foreach ( $strings as $string ){
+
+				$stringToReturn = $stringToReturn.$string.' ';
+
+			}
+
+			return $stringToReturn;
+		}
+
+	}
+
 	public static function isLast( $current, $total ){
+
 		if($current >= $total){
 			return true;
 		}
@@ -37,6 +88,10 @@ class Helpers {
 			}
 		}
 	}
+	public static function toHumanDiff( $timestamp ){
+
+		return $timestamp->diffForHumans(Carbon::now());
+	}
 	public static function toHumanTimestamp( $timestamp ){
 
 		setlocale(LC_TIME, App::getLocale());  
@@ -52,16 +107,16 @@ class Helpers {
 		$dateBetween  = array();
 		$start = Helpers::createCarbonDate( $start);
 		$end = Helpers::createCarbonDate( $end);
+		if(Helpers::isOk($start) && Helpers::isOk($end)){
+			$diff = $start->diffInDays($end);
 
-		$diff = $start->diffInDays($end);
+			for($a=0;$a <= $diff; $a++){
 
-		for($a=0;$a <= $diff; $a++){
+				array_push($dateBetween , $start->toDateString());
 
-			array_push($dateBetween , $start->toDateString());
-
-			$start->addDay();
+				$start->addDay();
+			}
 		}
-
 		return $dateBetween;
 	}
 
@@ -80,7 +135,7 @@ class Helpers {
 		}
 		if(Helpers::isOk($fromId)){
 
-			$calendriers = Calendrier::whereProprieteId( $fromId )->get();
+			$calendriers = Helpers::cache(Calendrier::whereProprieteId( $fromId )->get(),'calendrier');
 			
 		}
 
@@ -187,6 +242,7 @@ class Helpers {
 			$end = $calendrier->date_fin;
 
 			$listDatesBetween[] = (object)array('id'=>$calendrier->id, 'dates'=>Helpers::getDateBetween( $start, $end ));
+
 			/*var_dump($listDatesBetween);*/
 		/*	if($calendrier->date_debut == $serverDate){
 				$class='busy';
@@ -215,7 +271,8 @@ class Helpers {
 			
 			$date = "$currentDayRel-$month-$year";
 			$serverDate = "$year-$month-$currentDayRel";
-			$dateCarbon = $serverDate = Helpers::createCarbonDate( $serverDate );
+
+			$dateCarbon =  Helpers::createCarbonDate( $serverDate );
 
 			/*print_r(in_array($serverDate, $listDatesBetween));*/
 
@@ -253,24 +310,7 @@ class Helpers {
 			if(isset($dateArray[mktime(0, 0, 0, $month, $currentDay, $year)])){
 				$calendar.=$dateArray[mktime(0, 0, 0, $month, $currentDay, $year)];
 			}
-			/*foreach($sceances as $sceance){
 
-				if($sceance->date === $date){
-					$duree = "h-".substr($sceance->duree, 0, 1);
-
-					$calendar .='<ol class="sceances">';
-
-					$calendar .="<li class='$duree oneSceance' data-cours='$sceance->coursSlug' data-sceance='$sceance->sceancesId'>";
-					$calendar .="<span>$sceance->coursNom</span>";
-
-					$calendar .='</li>';
-
-					$calendar .='</ol>';
-
-
-				}
-
-			}*/
 			$calendar.="</a></td>";
           // Increment counters
 
@@ -635,20 +675,22 @@ public static function dateNaForm( $date , $separator = '-'){
 
 public static function createCarbonDate( $date , $type = 'us', $separator = '-' ){
 
-	if($type === 'us'){
+	if(isset($date) && Helpers::isOk($date)){
 
-		$dateExplode = explode($separator,$date);
+		if($type === 'us'){
 
-		return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
+			$dateExplode = explode($separator,$date);
 
+			return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
+
+		}
+		elseif( $type === 'eu'){
+
+			$dateExplode = explode($separator,$date);
+
+			return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
+		}
 	}
-	elseif( $type === 'eu'){
-
-		$dateExplode = explode($separator,$date);
-
-		return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
-	}
-
 }
 
 /**

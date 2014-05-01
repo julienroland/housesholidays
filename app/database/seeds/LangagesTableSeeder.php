@@ -20,7 +20,7 @@ class LangagesTableSeeder extends Seeder {
 				'initial'=>'nl'
 				),
 			array(
-				'nom'=>'Deutschland',
+				'nom'=>'Deutsch',
 				'initial'=>'de'
 				),
 			array(
