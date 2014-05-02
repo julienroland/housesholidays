@@ -46,9 +46,9 @@ class ProprieteController extends BaseController {
 
 		$maxPrice = Helpers::cache(Propriete::getMaxTarif( $propriete, Config::get('var.semaine_col')),'maxPrice'.$propriete->id);
 
-		$imageAccrocheType = Helpers::cache(imageType::whereNom(Config::get('var.image_standard'))->remember(60 * 24)->first(), 'imageAccrocheType'.$propriete->id);
+		$imageAccrocheType = Helpers::cache(imageType::whereNom(Config::get('var.image_standard'))->remember(60 * 24)->first(), 'imageAccrocheType');
 
-		$imageSliderType = Helpers::cache(imageType::whereNom(Config::get('var.image_thumbnail'))->remember(60 * 24)->first(), 'imageSliderType'.$propriete->id);
+		$imageSliderType = Helpers::cache(imageType::whereNom(Config::get('var.image_thumbnail'))->remember(60 * 24)->first(), 'imageSliderType');
 
 		/*$options = Propriete::getOptions( $id );*/
 

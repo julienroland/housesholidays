@@ -153,6 +153,8 @@ Route::get('getAllLang',array('uses'=>'LangController@getAll'));
 
 Route::get( 'envoyeMessage' , array('as'=>'sendMessage','uses'=>'UserController@sendMessage'));
 
+Route::get( 'repondreMessage' , array('as'=>'repondreMessage','uses'=>'UserController@repondreMessage'));
+
 /**
 *
 * Add favoris
@@ -161,6 +163,15 @@ Route::get( 'envoyeMessage' , array('as'=>'sendMessage','uses'=>'UserController@
 **/
 
 Route::get( 'addFavoris/{userId}/{proprieteId}' , array('as'=>'addFavoris','uses'=>'UserController@addFavoris'));
+
+/**
+*
+* Delete favoris
+* @ajax
+*
+**/
+
+Route::get( 'deleteFavoris/{userId}/{proprieteId}' , array('as'=>'deleteFavoris','uses'=>'UserController@deleteFavoris'));
 
 /*============================
 =            test            =
@@ -466,7 +477,30 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		*
 		**/
 		
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.i_listCommentaires'),array( 'as'=>'listCommentaires','uses'=>'CompteController@listCommentaires' ));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listCommentaires'),array( 'as'=>'listCommentaires','uses'=>'UserController@listCommentaires' ));
+
+		Route::get(Lang::get('routes.compte').'/{user_slug}/'.trans('routes.desactive_commentaires').'/{id}', array('as'=>'desactiverCommentaire', 'uses'=>'UserController@desactiverCommentaire'));
+
+		Route::get(Lang::get('routes.compte').'/{user_slug}/'.trans('routes.active_commentaires').'/{id}', array('as'=>'activerCommentaire', 'uses'=>'UserController@activerCommentaire'));
+
+		/**
+		*
+		* Messages
+		*
+		**/
+
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listMessages'),array( 'as'=>'listMessages','uses'=>'UserController@listMessage' ));
+
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.repondreMessage').'/{id}',array( 'as'=>'repondre_message','uses'=>'UserController@repondreMessage' ));
+		
+		/**
+		*
+		* Favoris
+		*
+		**/
+
+		Route::get(Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listFavoris'), array('as'=>'listFavoris','uses'=>'UserController@listFavoris'));
+		
 		/*-----  End of PROFIL  ------*/
 
 		/**

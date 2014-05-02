@@ -194,7 +194,7 @@ class Propriete extends Eloquent {
 				'photoPropriete',
 				))
 			->where( 'etape','!=','' )
-			->where('user_id', Auth::user()->id )
+			->where('user_id', 	Propriete::find($proprieteId)->user()->pluck('id') )
 			->whereId($proprieteId)
 			->remember(60 * 24, 'proprietes')
 			->first(  );

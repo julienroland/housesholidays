@@ -1739,7 +1739,7 @@ class Carbon extends DateTime
 
       if ($isNow) {
          if ($isFuture) {
-            return  trans('date.form_now', array('date'=>$txt));
+            return  trans('date.from_now', array('date'=>$txt));
          }
 
          return  trans('date.ago', array('date'=>$txt));

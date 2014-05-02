@@ -117,4 +117,5 @@
 	'phone'=>'Téléphone',
 	'adresse'=>'Adresse',
 	'message'=>'Message à envoyer',
+	'reponse'=>'Réponse à envoyer',
 	);

@@ -10,7 +10,9 @@
 				<li><a href="{{url('/')}}">{{trans('menu.accueil')}}</a></li>
 				<li><a href="quisommesnous.php">{{trans('menu.apropos')}}</a></li>
 				<li><a href="offres-speciales.php">{{trans('menu.offres')}}</a></li>
-				<li class="last"><a href="favorites.php">{{trans('menu.favoris')}}</a></li>
+				@if(Auth::check())
+				<li class="last"><a href="{{route('listFavoris', Auth::user()->slug)}}">{{trans('menu.favoris')}}</a></li>
+				@endif
 			</ul>
 
 			<!-- Langs -->

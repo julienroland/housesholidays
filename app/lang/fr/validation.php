@@ -98,7 +98,8 @@ return array(
         'step6'=> 'Vos informations sur les disponibilites de votre batiment de l\'étape précédente ont bien été enregistrées',
         'step7'=> 'Vos coordonnées de l\'étape précédente ont bien été enregistrées',
         'favoris_add'=>'Favoris ajouté !',
-        'favoris_not_add'=>'Erreur, favoris non ajouté !',
+        'favoris_delete'=>'Favoris supprimé !',
+        'favoris_not_delete'=>'Erreur, favoris non supprimé !',
         'favoris_exist_deja'=>'Ce favoris existe déjà !'
         ),
 

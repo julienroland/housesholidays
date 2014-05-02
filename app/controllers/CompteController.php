@@ -29,11 +29,4 @@ class CompteController extends BaseController {
         
     }
 
-    public function listCommentaires(  ){
-
-        dd(Auth::user()->with('commentaire')->get());
-
-        return View::make('compte.commentaires', array('page'=>'commentaires'))
-        ->with(compact('commentaires'));
-    }
 }

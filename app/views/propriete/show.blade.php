@@ -117,10 +117,11 @@
 				<p>{{round($minPrice)}} &euro;<span>/{{trans('locationList.semaine')}}</span></p>
 
 				@endif
-
+				@if(Auth::check())
+				<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
+				@endif
 			</div>
-
-			<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
+			
 		</div>
 
 		<div id="proprietaire"> <span id="titre-proprietaire">{{trans('locationList.propriétaire')}} :</span>

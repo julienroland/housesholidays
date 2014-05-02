@@ -22,9 +22,15 @@
 
 
   $(function() {
+
     $('#sendMessage').on('submit',function(e){
       e.preventDefault();
-      sendMessage($(this))
+      sendMessage($(this));
+    });
+
+    $('#repondreMessage').on('submit',function(e){
+      e.preventDefault();
+      repondreMessage($(this));
     });
 
     $('.addFavoris').on('click', function(e){
@@ -227,7 +233,6 @@
     };
     var sendMessage = function( $that ){
 
-      console.log($that.serialize());
       $.ajax({
         type: "get", 
         url: sBasePath + 'envoyeMessage/',
@@ -235,6 +240,7 @@
         data:$that.serialize(),
         success:function( oData ){
           $('#contact').append('<div class="errors">'+oData+'</div>');
+          $('#cboxOverlay').click();
         },
       }).fail(function(error, text){
         $('#contact').append('<div class="errors"></div>');
@@ -245,8 +251,28 @@
             $('#contact .errors').append(data[i][e]);
 
           }
+          
         }
-        $('#contact .errors')
+
+
+      });
+
+    }; 
+    var repondreMessage = function( $that ){
+
+console.log($that.serialize());
+      $.ajax({
+        type: "get", 
+        url: sBasePath + 'repondreMessage/',
+        dataType: "json",
+        data:$that.serialize(),
+        success:function( oData ){
+          $('#contact').append('<div class="errors">'+oData+'</div>');
+          $('#cboxOverlay').click();
+        },
+      }).fail(function(error, text){
+      
+
 
       });
 

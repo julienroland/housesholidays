@@ -5,6 +5,79 @@ use Carbon\Carbon;
 
 class Helpers {
 
+	public static function isFavoris($propriete_id, $user_id ){
+
+		$favoris = Favoris::whereProprieteId( $propriete_id )->whereUserId( $user_id)->first();
+
+		if($favoris){
+
+			return true;
+
+		}else{
+
+			return false;
+
+		}
+	}
+	public static function isNotFavoris($propriete_id, $user_id ){
+
+		$favoris = Favoris::whereProprieteId( $propriete_id )->whereUserId( $user_id)->first();
+
+		if($favoris){
+
+			return false;
+
+		}else{
+
+			return true;
+
+		}
+	}
+	public static function displayHumanDate( $date , $format = '$d $nd $M $y $h:$m:$s' ){
+
+		$result = array(
+			'y' => $date->year,
+			'M' => trans('general.mois')[$date->month],
+			'nd' => $date->day === 1 ? $date->day.'<sup>'.trans('general.first_day').'</sup>' : $date->day,
+			'd' => trans('general.jours')[$date->dayOfWeek],
+			'h' => $date->hour,
+			'm' => $date->minute < 10 ? '0'.$date->minute :$date->minute,
+			's' => $date->second < 10 ? '0'.$date->second : $date->second,
+			);
+
+		$date = str_replace('$d', $result['d'], $format);
+
+		$date = str_replace('$nd', $result['nd'], $date);
+
+		$date = str_replace('$M', $result['M'], $date);
+
+		$date = str_replace('$y', $result['y'], $date);
+
+		$date = str_replace('$h', $result['h'], $date);
+
+		$date = str_replace('$m', $result['m'], $date);
+
+		$date = str_replace('$s', $result['s'], $date);
+
+		return $date;
+
+	}
+	public static function beTime( $timestamp ,  $format = '$d $nd $M $y $h:$m:$s'){
+
+		return Helpers::displayHumanDate($timestamp->setTimezone('Europe/Brussels'), $format );
+	}
+
+	public static function isOwnerOrAdmin( $id ){
+
+		if(Auth::user()->id == $id || Auth::user()->role > 1){
+
+			return true;
+
+		}else{
+
+			return false;
+		}
+	}
 	public static function cache( $query, $name, $time = 1440 ){
 
 		if (!Cache::has($name)) {

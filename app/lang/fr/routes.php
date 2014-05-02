@@ -28,11 +28,16 @@ return array(
     'i_etape6'=>'coordonnes',
     'i_etape7'=>'paiement',
     'i_listLocations'=>'liste-de-vos-locations',
-    'i_listCommentaires'=>'liste-de-vos-commentaires',
+    'listCommentaires'=>'liste-de-vos-commentaires',
+    'listMessages'=>'liste-de-vos-messages',
+    'listFavoris'=>'liste-de-vos-favoris',
+    'repondreMessage'=>'repondre-au-message',
     'send_commentaire'=>'envoye-de-commentaire',
     'envoye_message'=>'envoye-de-message',
     'locations_vacances'=>'locations-de-vacances',
     'location'=>'location',
+    'desactive_commentaires'=>'desactiver-commentaire',
+    'active_commentaires'=>'active-commentaire',
 
 
     );

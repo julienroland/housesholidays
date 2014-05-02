@@ -49,6 +49,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'sender_id'=>'integer',
 		'receiver_id'=>'required |different:sender_id',
 		);
+	public static $messRep_rules = array(
+		'message'=>'required',
+		'sender_id'=>'integer',
+		'receiver_id'=>'required |different:sender_id',
+		'message_id'=>'required',
+		);
 
 	public static $sluggable = array(
 		'build_from' => 'fullname',
@@ -76,6 +82,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function commentaire(){
 
 		return $this->hasMany('Commentaire');
+		
+	}
+
+	public function messageReceive(){
+
+		return $this->hasMany('Message','vers_user_id')
+		->whereNull('reponse_id');
+		
+	}
+
+	/*public function messageReponse(){
+
+		return $this->hasMany('Message','vers_user_id')
+		->whereNotNull('reponse_id');
+		
+	}*/
+
+	public function messageSend(){
+
+		return $this->hasMany('Message','de_user_id');
 		
 	}
 

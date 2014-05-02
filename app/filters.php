@@ -42,8 +42,10 @@ Route::filter('lang', function(){
 	if (in_array($lang, Config::get('app.available_locales')))
 	{
 
-		Session::put('lang',$lang );
+		Session::put('lang', $lang );
+
 		Session::put('langId', Langage::whereInitial($lang)->first(['id'])->id);	
+
 		if(App::getLocale() !== $lang){
 
 			App::setLocale($lang);
@@ -73,7 +75,7 @@ Route::filter('lang', function(){
 			if (in_array($langue, Config::get('app.available_locales')))
 			{
 				Session::put('lang',$langue );
-				Session::put('langId',Langage::whereInitial($langue)->first(['id'])->id);
+				Session::put('langId',Langage::whereInitial($langue)->remember(60)->first(['id'])->id);
 				App::setLocale($langue);
 				$lang = null;
 			}

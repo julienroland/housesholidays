@@ -19,4 +19,5 @@
 	'note'=>'Note',
 	'publie_par'=>'Publié par',
 	'poste'=>'Posté',
+
 	);

@@ -11,6 +11,9 @@
 
 {{link_to_route('listCommentaires',trans('compte.listCommentaires'),Auth::user()->slug)}}
 
+{{link_to_route('listMessages',trans('compte.listMessages'),Auth::user()->slug)}}
+
+{{link_to(Lang::get('routes.deconnexion'),trans('form.logout'),array('id'=>'login-trigger'))}}
 
 @stop
 

@@ -65,5 +65,14 @@ return array(
 	'message_send'=>'Message bien envoyé',
 	'message_not_send'=>'Le message n\'a pas été envoyé',
 	'location_en'=>'Location de vacances en',
+	'desactiver'=>'Désactiver',
+	'repondre'=>'Répondre',
+	'activer'=>'Activer',
+	'commentaire_desactiver'=>'Commentaire bien désactivé',
+	'commentaire_activer'=>'Commentaire bien activé',
+	'new_message'=>'Vous avez reçus un nouveau message',
+	'reponse_message'=>'Vous avez reçus une réponse à un de vos messages',
+	'home'=>'Accueil',
+	'supprimer'=>'Supprimer',
 
 	);

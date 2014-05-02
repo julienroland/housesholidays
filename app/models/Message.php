@@ -19,6 +19,12 @@ class Message extends Eloquent {
 		return $this->belongsTo('User','vers_user_id');
 	}
 
+	public function reponse(){
+
+		return $this->belongsTo('Message','reponse_id')
+		->whereNotNull('reponse_id');
+	}
+
 	public function propriete(){
 
 		return $this->belongsTo('Propriete');

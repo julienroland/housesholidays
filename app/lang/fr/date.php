@@ -3,7 +3,7 @@
 return array(
 'ago'=>'Il y a :date',
 'before'=>'Il y a :date',
-'from_now'=> ':date à partir de maintenant',
+'from_now'=> 'dans :date',
 'after'=> 'dans :date',
 'second'=>' seconde',
 'minute'=>' minute',
