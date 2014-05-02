@@ -14,10 +14,13 @@ class RegionsTableSeeder extends Seeder {
 		foreach($oData as $data){
 
 			foreach($data['regions'] as $region){		
-
+				if(isset($region["coords"])){
+					$coords = $region["coords"];
+				}
 				array_push($regions, array(
 					'id'=>$i,
 					'statut'=>1,
+					'coords'=>$coords,
 					'pays_id'=>$data["country_id"]));
 
 				$i++;

@@ -107,11 +107,13 @@
 	@if(Helpers::isNotFavoris($favori->propriete->id, Auth::user()->id))
 	<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$favori->propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
 	@else
-	<a href="{{route('deleteFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$favori->propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('general.supprimer')}}</span></a>
+	<a href="{{route('deleteFavoris')}}" class="favoris deleteFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$favori->propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span class="delfav">{{trans('general.supprimer')}}</span></a>
 	@endif
 
 </div>
 @endforeach
+@else 
+<p>{{trans('general.aucun_favoris')}}</p>
 @endif
 
 @stop

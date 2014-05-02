@@ -188,6 +188,8 @@ public function addFavoris($user_id = null, $propriete_id = null){
 				$favoris->save();
 
 				if($favoris){
+					
+					Cache::forget('favoris'.$user_id);
 
 					return Response::json(trans('validation.custom.favoris_add'), 200);
 
@@ -217,6 +219,8 @@ public function deleteFavoris($user_id = null, $propriete_id = null){
 			$favoris = Favoris::whereProprieteId( $propriete_id )->whereUserId( $user_id)->delete();
 
 			if($favoris){
+
+				Cache::forget('favoris'.$user_id);
 
 				return Response::json(trans('validation.custom.favoris_delete'), 200);
 

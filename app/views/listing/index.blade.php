@@ -89,31 +89,49 @@
 	</a>
 	
 	<p class="priceSem">
-		<span>
+		<?php $minPrice = Helpers::cache(Propriete::getMinTarif( $propriete, Config::get('var.semaine_col')),'minPrice'.$propriete->id);
 
+		$maxPrice = Helpers::cache(Propriete::getMaxTarif( $propriete, Config::get('var.semaine_col')),'maxPrice'.$propriete->id); ?>
+		<span>
+			@if($minPrice != $maxPrice)
+
+			{{trans('locationList.de')}} {{round($minPrice)}} &agrave; {{round($maxPrice)}} &euro;<span>/{{trans('locationList.semaine')}}</span>
+
+			@else
+
+			{{round($minPrice)}} &euro;<span>/{{trans('locationList.semaine')}}</span>
+
+			@endif
 		</span>
-		@if(Auth::check())
-		<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>	
 	</p>
+	@if(Helpers::isNotFavoris($propriete->id, Auth::user()->id))
+	<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
+	@else
+	<a href="{{route('deleteFavoris')}}" class="favoris deleteFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span class="delfav">{{trans('general.supprimer')}}</span></a>
 	@endif
 
-	<div class="admin">
-		<span>{{trans('locationList.total_visite')}}: @if($propriete->nb_visite > 0){{$propriete->nb_visite}} @else {{trans('locationList.noData')}} @endif</span>
-		<span>{{trans('locationList.statut')}}: @if($propriete->statut == 0){{trans('locationList.inactive')}} @else {{trans('locationList.active')}} @endif</span>
-		<span>{{trans('locationList.last_visite')}}: @if($propriete->nb_visite == 0){{trans('locationList.noData')}} @else {{$propriete->last_visite}} @endif</span>
-		<span>{{trans('locationList.last_update')}}: @if(Helpers::isOk($propriete->updated_at)){{Helpers::toHumanDiff($propriete->updated_at)}} @else {{trans('locationList.noData')}} @endif</span>
-		<ul>
-			
-			<li>{{link_to_route('showPropriete',trans('form.voir'), $propriete->id)}}</li>
-			<li>{{link_to_route('editPropriete1',trans('form.modifier'), $propriete->id)}}</li>
-			<li>{{link_to_route('RefreshAnnonce',trans('locationList.refreshAnnonce'), $propriete->id,array('data-id'=>$propriete->id,'class'=>'refreshAnnonce'))}}</li>
-		</ul>
-	</div>
 </div>
 <!-- array($propriete->slug, Helpers::toSlug($propriete->typeBatiment->typeBatimentTraduction[0]->nom) , Helpers::toSlug( $propriete->pays->paysTraduction[0]->nom), Helpers::toSlug($propriete->region->regionTraduction[0]->nom), Helpers::toSlug($propriete->sousRegion->sousRegionTraduction[0]->nom), Helpers::toSlug($propriete->localite->nom)))}}</li>
 -->
 @endforeach
 
+{{$proprietes->links()}}
+
+<div class="fil-recherche-bas">
+	<span>{{trans('general.affichage')}}</span>
+	1-10 {{trans('general.sur')}} {{$proprietes->count()}}
+
+	@if( $proprietes->count() > 1 )
+
+	<span>{{trans('general.resultats')}}</span>
+
+	@else 
+
+	<span>{{trans('general.resultat')}}</span>
+
+	@endif
+
+</div>
 @else
 
 <p>Aucune locations disponible</p>

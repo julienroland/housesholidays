@@ -44,7 +44,7 @@ if (in_array($lang, Config::get('app.available_locales')))
 **/
 Route::get('france', function(){
 
-	$pays = Helpers::cache(Pays::whereId(77)->with(array('PaysTraduction'))->remember(60)->first(),'france_regions');
+	$pays = Helpers::cache(Pays::whereId(77)->with(array('PaysTraduction'))->remember(60,'france_regions')->first(),'france_regions');
 	/*dd($carte->region);*/
 	$regions = Pays::listById( 77 );
 	return View::make('carte.france', array('page'=>'carte'))

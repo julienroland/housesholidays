@@ -2,7 +2,7 @@
 
 class RechercheController extends BaseController {
 
-	public function carte($pays = null, $region = null){
+	public function carte($pays = null, $region = null, $paginate = 10){
 
 
 		$pays_id = PaysTraduction::whereNom( $pays )->pluck('pays_id');
@@ -20,12 +20,12 @@ class RechercheController extends BaseController {
 			}
 			))
 		->where( 'etape','!=','' )
-		->whereStatut(1)
-		->where( 'pays_id', 23 )
-		->where( 'region_id', 1 )
+		->whereStatut( 1 )
+		->where( 'pays_id', 23 )//23 $pays_id
+		->where( 'region_id', 1 )//1 $region_id
 		->orderBy('created_at','desc')
 		->remember(60 * 24)
-		->get();
+		->paginate( $paginate );
 
 		$imageType = imageType::whereNom(Config::get('var.image_standard'))->first();
 

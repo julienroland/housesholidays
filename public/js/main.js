@@ -36,7 +36,12 @@
     $('.addFavoris').on('click', function(e){
       e.preventDefault();
       addFavoris( $(this) );
-    } );
+    });
+
+    $('.deleteFavoris').on('click', function(e){
+      e.preventDefault();
+      deleteFavoris( $(this) );
+    });
 
     $('.note_propriete input').on('change',function(){
 
@@ -200,8 +205,27 @@
       url: sBasePath + 'addFavoris/'+user+'/'+propriete,
       dataType: "json",
       success:function( oData ){
-        console.log(oData);
         alert(oData);
+      },
+    });
+  }; 
+  var deleteFavoris  = function($that){
+
+    var user = $that.attr('data-userId');
+
+    var propriete = $that.attr('data-proprieteId');
+
+    $.ajax({
+      type: "get", 
+      url: sBasePath + 'deleteFavoris/'+user+'/'+propriete,
+      dataType: "json",
+      success:function( oData ){
+        alert(oData);
+          if($('body#favoris').length > 0){
+
+          window.location.reload();
+          
+        }
       },
     });
   };

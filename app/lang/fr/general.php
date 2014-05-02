@@ -74,5 +74,10 @@ return array(
 	'reponse_message'=>'Vous avez reçus une réponse à un de vos messages',
 	'home'=>'Accueil',
 	'supprimer'=>'Supprimer',
+	'aucun_favoris'=>'Vous n\'avez aucun favoris',
+	'affichage'=>'Affichage',
+	'sur'=>'sur',
+	'resultat'=>'resultat',
+	'resultats'=>'resultats',
 
 	);
