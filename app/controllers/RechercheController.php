@@ -7,7 +7,7 @@ class RechercheController extends BaseController {
 
 		$pays_id = PaysTraduction::whereNom( $pays )->pluck('pays_id');
 		$region_id = RegionTraduction::whereNom( $region )->pluck('region_id');
-		
+
 		$proprietes = Propriete::with(array('proprieteTraduction',
 			'localite',
 			'sousRegion.sousRegionTraduction',
@@ -21,17 +21,18 @@ class RechercheController extends BaseController {
 			))
 		->where( 'etape','!=','' )
 		->whereStatut( 1 )
-		->where( 'pays_id', 23 )//23 $pays_id
-		->where( 'region_id', 1 )//1 $region_id
+		->where( 'pays_id', $pays_id )//23 $pays_id
+		->where( 'region_id', $region_id )//1 $region_id
 		->orderBy('created_at','desc')
-		->remember(60 * 24)
+/*		->get();*/
 		->paginate( $paginate );
+
 
 		$imageType = imageType::whereNom(Config::get('var.image_standard'))->first();
 
 		return View::make('listing.index',array('page'=>'listing'))
 		->with(compact('proprietes','imageType'));
-		
+
 	}
 
 }

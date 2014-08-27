@@ -48,7 +48,7 @@
 
  			e.preventDefault();
  			getPosition( 'geocoder' );
- 			
+
 
  		});
  		/*if( $adresse.val() !== "" && $adresse.val() !== null){
@@ -141,7 +141,7 @@
  				}
  				else if( sTypePartAdresse === "region" ){
 
- 					sRegion = $region.find('option:selected').text();	
+ 					sRegion = $region.find('option:selected').text();
 
  				}
  				else if( sTypePartAdresse === "sous_region" ){
@@ -287,7 +287,7 @@
 }
 }
 else
-{	
+{
 
 	$latlng.val( " " );
 	$latlng.val( sPosition.lat() + ',' + sPosition.lng() );
@@ -309,13 +309,13 @@ var createMarker = function( gLatLng ){
 	google.maps.event.addListener(gMarker, 'dragend', function( e ) {
 
 		getPosition ( "latlng" , new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
-		
+
 	});
 	google.maps.event.addListener(gMarker, 'click', function( e ) {
 
 		gMap.setZoom(18);
 		gMap.panTo(new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
-		
+
 	});
 
 

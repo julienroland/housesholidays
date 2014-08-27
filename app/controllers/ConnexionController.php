@@ -7,7 +7,7 @@ class ConnexionController extends BaseController {
 
 
 		return View::make('connexion.index', array('page'=>'connexion'));
-	} 
+	}
 
 	public function connectUser(  ){
 
@@ -25,7 +25,7 @@ class ConnexionController extends BaseController {
 		*
 		**/
 		$rules = array(
-			'email'=>'required|exists:users,email|email|min:5',
+			'email'=>'required|email|min:5',
 			'password' => 'required|min:3|alpha_num',
 			);
 
@@ -47,7 +47,7 @@ class ConnexionController extends BaseController {
 
 			if(Auth::attempt(array('email'=>$input['email'], 'password'=> $input['password']), isset($input['remember']) ? true: false)) {
 
-				
+
 				if(isset($input['remember'])){
 					return Redirect::route('compte', Auth::user()->slug)
 					->with('success',trans('validation.custom.connect'))
@@ -61,16 +61,16 @@ class ConnexionController extends BaseController {
 				}
 			}
 			else{
-				
+
 				/**
 				*
 				* On revient a la page de connexion avec les bonnes valeurs entrées et les erreurs
 				*
 				**/
-				
+
 				return Redirect::to(Lang::get('routes.connexion'))
 				->withInput()
-				->withErrors($validation);
+				->withErrors(trans('validation.custom.loginFailed'));
 			}
 		}
 		else
@@ -106,7 +106,7 @@ class ConnexionController extends BaseController {
 			* Suppression du cookie
 			*
 			**/
-			
+
 
 			$message = trans('validation.custom.disconnect');
 		}

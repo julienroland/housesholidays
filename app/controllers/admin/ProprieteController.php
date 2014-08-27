@@ -4,14 +4,30 @@ class Admin_ProprieteController extends \Admin_BaseController
 {
 	public function index()
 	{
+		$input = Input::all();
+
 		$proprietes = Propriete::with(array(
 			'proprieteTraduction',
 			'user',
-			))
+			));
+
+		if(isset( $input['filtre']) ) {
+			$proprietes = $proprietes
+			->orderBy($input["filtre"], $input['ordre']);
+		}
+
+		if(isset( $input['q']) ) {
+			$proprietes = $proprietes
+			->where('id', 'LIKE' , '%'.$input['q'].'%')
+			->orWhere('nom', 'LIKE' , '%'.$input['q'].'%')
+			->orWhere('slug', 'LIKE' , '%'.$input['q'].'%');
+		}
+
+		$proprietes = $proprietes
 		->where( 'etape','!=','' )
-		->orderBy('created_at','desc')
-		->remember(60 * 24)
-		->get(  );
+		->orderBy('created_at','desc');
+		$proprietes = $proprietes
+		->paginate( 3 );
 
 		return View::make('admin.propriete.index')
 		->with(compact('proprietes'));
@@ -26,13 +42,28 @@ class Admin_ProprieteController extends \Admin_BaseController
 			$propriete->statut = 0;
 			$propriete->save();
 
-			return Redirect::route('listLocations')
-			->with(array('success'=>'Propriete bien désactive'));
+			return Response::json(array('success'=>'Propriete bien désactive'));
 		}
 		else{
 
-			return Redirect::route('listLocations')
-			->with(array('error'=>'Erreur interne'));
+			return Response::json(array('error'=>'Erreur interne'));
+
+		}
+	}
+	public function activer( $id ){
+
+		$propriete = Propriete::findOrFail( $id );
+
+		if( $propriete ){
+
+			$propriete->statut = 1;
+			$propriete->save();
+
+			return Response::json(array('success'=>'Propriete bien activé'));
+		}
+		else{
+
+			return Response::json(array('error'=>'Erreur interne'));
 
 		}
 	}
@@ -46,13 +77,29 @@ class Admin_ProprieteController extends \Admin_BaseController
 			$propriete->verifier = 0;
 			$propriete->save();
 
-			return Redirect::route('listLocations')
-			->with(array('success'=>'Annulation de la vérification de la propriete bien effectuée '));
+			return Response::json(array('success'=>'Annulation de la vérification de la propriete bien effectuée '));
 		}
 		else{
 
-			return Redirect::route('listLocations')
-			->with(array('error'=>'Erreur interne'));
+			return Response::json(array('error'=>'Erreur interne'));
+
+		}
+	}
+
+	public function verifier( $id ){
+
+		$propriete = Propriete::find( $id );
+
+		if( $propriete ){
+
+			$propriete->verifier = 1;
+			$propriete->save();
+
+			return Response::json(array('success'=>'Activation de la vérification de la propriete bien effectuée '));
+		}
+		else{
+
+			return Response::json(array('error'=>'Erreur interne'));
 
 		}
 	}

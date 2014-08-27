@@ -1,18 +1,18 @@
 ;(function( $ ){
-$(function(){
-console.log('ok');
+	$(function(){
+
 $('#italy-btn>a').click(function(){ // Si click sur italie
 	if(!$('#tab_container_search_map>div').hasClass('map_italie')){
 		$('#tab_container_search_map>div').empty();
 		$('#tab_container_search_map>div').unbind();
 		$('#tab_container_search_map>div').attr('class','map_italie');
 		var pays=$('#tab_container_search_map>div').attr('class');
-		$('#tab_container_search_map>div').css({'width':'244px'});	
+		$('#tab_container_search_map>div').css({'width':'244px'});
 		var nom_pays=pays.substr(4);
 		$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
 		changeMap(pays);
 	}
-});	
+});
 	$('#spain-btn>a').click(function(){ // Si click sur espagne
 
 		if(!$('#tab_container_search_map>div').hasClass('map_espagne')){
@@ -20,79 +20,79 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 			$('#tab_container_search_map>div').unbind();
 			$('#tab_container_search_map>div').attr('class','map_espagne');
 			var pays=$('#tab_container_search_map>div').attr('class');
-			$('#tab_container_search_map>div').css({'width':'369px'});	
+			$('#tab_container_search_map>div').css({'width':'369px'});
 			var nom_pays=pays.substr(4);
 			$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
 			changeMap(pays);
 		}
-	});	
+	});
 	$('#france-btn>a').click(function(){ // Si click sur france
 		if(!$('#tab_container_search_map>div').hasClass('map_france')){
 			$('#tab_container_search_map>div').empty();
 			$('#tab_container_search_map>div').unbind();
 			$('#tab_container_search_map>div').attr('class','map_france');
 			var pays=$('#tab_container_search_map>div').attr('class');
-			$('#tab_container_search_map>div').css({'width':'223px'});	
+			$('#tab_container_search_map>div').css({'width':'223px'});
 			var nom_pays=pays.substr(4);
-			$('#tab_container_search_map>div').load('../map/'+nom_pays+'.php');
+			$('#tab_container_search_map>div').load(nom_pays);
 			changeMap(pays);
 		}
-	});	
+	});
 	if(!pays){ // Chargement de la page, en gros, si pas de click
 		$('#tab_container_search_map>div').empty();
 		$('#tab_container_search_map>div').unbind();
 		var pays=$('#tab_container_search_map>div').attr('class');
 		var nom_pays=pays.substr(4);
-		$('#tab_container_search_map>div').load('/'+nom_pays);
+		$('#tab_container_search_map>div').load(nom_pays);
 		changeMap(pays);
 	}
-});	
+});
 
-	var prechangeMap = function (pays)
-	{
-		switch(pays){
-			case "map_espagne":	
-			if(!$('#tab_container_search_map>div').hasClass('map_espagne')){
+var prechangeMap = function (pays)
+{
+	switch(pays){
+		case "map_espagne":
+		if(!$('#tab_container_search_map>div').hasClass('map_espagne')){
+			$('#tab_container_search_map>div').empty();
+			$('#tab_container_search_map>div').unbind();
+			$('#tab_container_search_map>div').attr('class','map_espagne');
+			var pays=$('#tab_container_search_map>div').attr('class');
+			$('#tab_container_search_map>div').css({'width':'369px'});
+			var nom_pays=pays.substr(4);
+			$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
+			changeMap(pays);}
+			break;
+			case "map_italie":
+			if(!$('#tab_container_search_map>div').hasClass('map_italie')){
 				$('#tab_container_search_map>div').empty();
 				$('#tab_container_search_map>div').unbind();
-				$('#tab_container_search_map>div').attr('class','map_espagne');
+				$('#tab_container_search_map>div').attr('class','map_italie');
 				var pays=$('#tab_container_search_map>div').attr('class');
-				$('#tab_container_search_map>div').css({'width':'369px'});	
+				$('#tab_container_search_map>div').css({'width':'244px'});
 				var nom_pays=pays.substr(4);
 				$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
-				changeMap(pays);}		
+				changeMap(pays);	}
 				break;
-				case "map_italie":
-				if(!$('#tab_container_search_map>div').hasClass('map_italie')){
+				case "map_france":
+				if(!$('#tab_container_search_map>div').hasClass('map_france')){
 					$('#tab_container_search_map>div').empty();
 					$('#tab_container_search_map>div').unbind();
-					$('#tab_container_search_map>div').attr('class','map_italie');
+					$('#tab_container_search_map>div').attr('class','map_france');
 					var pays=$('#tab_container_search_map>div').attr('class');
-					$('#tab_container_search_map>div').css({'width':'244px'});	
+					$('#tab_container_search_map>div').css({'width':'223px'});
 					var nom_pays=pays.substr(4);
 					$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
-					changeMap(pays);	}	
+					changeMap(pays);}
 					break;
-					case "map_france":
-					if(!$('#tab_container_search_map>div').hasClass('map_france')){
-						$('#tab_container_search_map>div').empty();
-						$('#tab_container_search_map>div').unbind();
-						$('#tab_container_search_map>div').attr('class','map_france');
-						var pays=$('#tab_container_search_map>div').attr('class');
-						$('#tab_container_search_map>div').css({'width':'223px'});	
-						var nom_pays=pays.substr(4);
-						$('#tab_container_search_map>div').load('../map/'+nom_pays+'.html');
-						changeMap(pays);}
-						break;
-					}
 				}
+			}
 
-				var changeMap = function (pays){
-					switch(pays){
-						case "map_espagne":
+			var changeMap = function (pays){
+				switch(pays){
+					case "map_espagne":
 			// !!! NE PAS CHANGER L'ORDRE !!!
 			$('.map_espagne .tooltip').hide();
-			var regions = [ 
+			var regions = [
 			{name : 'Galice', slug: 'Galice'},
 			{name : 'Asturies', slug: 'Asturies'},
 			{name : 'Cantabrie', slug: 'Cantabrie'},
@@ -110,7 +110,7 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 			{name : 'La Rojia', slug: 'La Rojia'},
 			{name : 'Canaries', slug: 'Canaries'},
 			{name : 'Baleares', slug: 'Baleares'},
-			
+
 			];
 
 			// "info-bulle" qui suit la souris
@@ -120,29 +120,29 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 					left:e.pageX-$('.map_espagne .tooltip').width()/2-10
 				});
 			});
-			
-			// "region" qui change en fct de la souris	
+
+			// "region" qui change en fct de la souris
 			$('.map_espagne').on('mouseover','#Map area',function(){
 				var index = $(this).index();
 				var left = -index * 369 - 369;
-				$('.map_espagne .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);	 
+				$('.map_espagne .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);
 				$('.map_espagne .overlay').css({
-					backgroundPosition : left+"px 0px"		 
-				}); 
+					backgroundPosition : left+"px 0px"
+				});
 			});
 
-			// "region" qui disparait quand la souris sort de l'img	
+			// "region" qui disparait quand la souris sort de l'img
 			$('.map_espagne').on('mouseout','#Map area',function(){
 				$('.map_espagne .overlay').css({
-					backgroundPosition : "369px 0px"		 
-				}); 
+					backgroundPosition : "369px 0px"
+				});
 				$('.map_espagne .tooltip').stop().fadeTo(500,0);
-			});		
+			});
 			break;
 			case "map_italie":
 			// !!! NE PAS CHANGER L'ORDRE !!!
 			$('.map_italie .tooltip').hide();
-			var regions = [ 
+			var regions = [
 			{name : 'Valle d&acute;Aoste', slug: 'valle-d-aoste'},
 			{name : 'Piemonte', slug: 'piemonte'},
 			{name : 'Lombardia', slug: 'lombardia'},
@@ -173,51 +173,51 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 					left:e.pageX-$('.map_italie .tooltip').width()/2-10
 				});
 			});
-			
-			// "region" qui change en fct de la souris	
+
+			// "region" qui change en fct de la souris
 			$('.map_italie').on('mouseover','#Map area',function(){
 				var index = $(this).index();
 				var left = -index * 244 - 244;
-				$('.map_italie .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);	 
+				$('.map_italie .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);
 				$('.map_italie .overlay').css({
-					backgroundPosition : left+"px 0px"		 
+					backgroundPosition : left+"px 0px"
 				});
 			});
 
-			// "region" qui disparait quand la souris sort de l'img	
+			// "region" qui disparait quand la souris sort de l'img
 			$('.map_italie').on('mouseout','#Map area',function(){
 				$('.map_italie .overlay').css({
-					backgroundPosition : "244px 0px"		 
-				}); 
+					backgroundPosition : "244px 0px"
+				});
 				$('.map_italie .tooltip').stop().fadeTo(500,0);
 			});
 			break;
 			case "map_france":
 			// !!! NE PAS CHANGER L'ORDRE !!!
 			$('.map_france .tooltip').hide();
-			var regions = [ 
-			{name : 'Nord-Pas de Calais', slug: 'nord-pas-de-calais'},
-			{name : 'Picardie', slug: 'picardie'},	 
-			{name : 'Haute-Normandie', slug: 'haute-normandie'},
-			{name : 'Champagne-Adrenne', slug: 'champagne-adrenne'},
-			{name : 'Lorraine', slug: 'lorraine'},
+			var regions = [
 			{name : 'Alsace', slug: 'alsace'},
-			{name : 'Basse-Normandie', slug: 'basse-normandie'},
-			{name : 'Centre', slug: 'centre'},
-			{name : 'Île de France', slug: 'ile-de-france'},
-			{name : 'Bretagne', slug: 'bretagne'},
-			{name : 'Pays de la Loire', slug: 'pays-de-la-loire'},
-			{name : 'Bourgogne', slug: 'bourgogne'},
-			{name : 'Franche-Comté', slug: 'franche-comte'},
-			{name : 'Poitou-Charentes', slug: 'poitou-charentes'},
-			{name : 'Limousin', slug: 'limousin'},
-			{name : 'Auvergne', slug: 'auvergne'},
-			{name : 'Rhône-Alpes', slug: 'rhone-alpes'},
 			{name : 'Aquitaine', slug: 'aquitaine'},
-			{name : 'Midi-Pyrénées', slug: 'midi-pyrenees'},
+			{name : 'Auvergne', slug: 'auvergne'},
+			{name : 'Bourgogne', slug: 'bourgogne'},
+			{name : 'Bretagne', slug: 'bretagne'},
+			{name : 'Centre', slug: 'centre'},
+			{name : 'Champagne-Adrenne', slug: 'champagne-adrenne'},
+			{name : 'Corse', slug: 'corse'},
+			{name : 'Franche-Comté', slug: 'franche-comte'},
+			{name : 'Île de France', slug: 'ile-de-france'},
 			{name : 'Languedoc-Roussillon', slug: 'languedoc-roussillon'},
+			{name : 'Limousin', slug: 'limousin'},
+			{name : 'Lorraine', slug: 'lorraine'},
+			{name : 'Midi-Pyrénées', slug: 'midi-pyrenees'},
+			{name : 'Nord-Pas de Calais', slug: 'nord-pas-de-calais'},
+			{name : 'Basse-Normandie', slug: 'basse-normandie'},
+			{name : 'Haute-Normandie', slug: 'haute-normandie'},
+			{name : 'Pays de la Loire', slug: 'pays-de-la-loire'},
+			{name : 'Picardie', slug: 'picardie'},
+			{name : 'Poitou-Charentes', slug: 'poitou-charentes'},
 			{name : 'Provence-Alpes Cote d&acute;Azur', slug: 'provence-alpes-cote-d-azur'},
-			{name : 'Corse', slug: 'corse'}
+			{name : 'Rhône-Alpes', slug: 'rhone-alpes'}
 			];
 
 			// "info-bulle" qui suit la souris
@@ -227,26 +227,27 @@ $('#italy-btn>a').click(function(){ // Si click sur italie
 					left:e.pageX-$('.map_france .tooltip').width()/2-10
 				});
 			});
-			
-			// "region" qui change en fct de la souris	
+
+			// "region" qui change en fct de la souris
 			$('.map_france').on('mouseover','#Map area',function(){
 				var index = $(this).index();
+
 				var left = -index * 223 - 223;
-				$('.map_france .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);	 
+				$('.map_france .tooltip').html(regions[index].name).stop().fadeTo(500,0.6);
 				$('.map_france .overlay').css({
-					backgroundPosition : left+"px 0px"		 
-				}); 
+					backgroundPosition : left+"px 0px"
+				});
 			});
 
-			// "region" qui disparait quand la souris sort de l'img	
+			// "region" qui disparait quand la souris sort de l'img
 			$('.map_france').on('mouseout','#Map area',function(){
 				$('.map_france .overlay').css({
-					backgroundPosition : "223px 0px"		 
-				}); 
+					backgroundPosition : "223px 0px"
+				});
 				$('.map_france .tooltip').stop().fadeTo(500,0);
-			});	
+			});
 			break;
 		}
-	}	
+	}
 
 }).call(this, jQuery);

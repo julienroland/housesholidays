@@ -4,9 +4,16 @@ use Carbon\Carbon;
 
 class ProprieteController extends BaseController {
 
-	public function show( $id ){
+	public function show( $idOrSlug ){
 
-		$propriete = Helpers::cache(Propriete::getLocations( $id ),'propriete'.$id);
+		Cache::forget('propriete'.$idOrSlug);
+
+		if(!is_object($idOrSlug)) {
+
+			$idOrSlug = Propriete::whereSlug($idOrSlug)->firstOrFail();
+		}
+		$propriete = Helpers::cache(Propriete::getLocations( $idOrSlug ),'propriete'.$idOrSlug);
+
 		$date = date('n');
 		$today = Carbon::now();
 
@@ -21,16 +28,25 @@ class ProprieteController extends BaseController {
 				$today = $today->addMonth();
 			}
 
-			Cache::put('calendrier'.$id, $calendrier, 60 * 24);
+			Cache::put('calendrier'.$idOrSlug, $calendrier, 60 * 24);
 
 		}
 		else{
 
-			$calendrier = Cache::get('calendrier'.$id);
+			$calendrier = Cache::get('calendrier'.$idOrSlug);
 
 		}
-		
-		$user = Helpers::cache($propriete->user()->first(), 'user'.$propriete->user()->pluck('id'));
+
+		$user = Helpers::cache($propriete->user()->with('langage')->first(), 'user'.$propriete->user()->pluck('id'));
+
+		/**
+
+			TODO:
+			- bug ici
+			- Second todo item
+
+		**/
+
 
 		$tel1 = Helpers::cache($user->telephone()->whereOrdre(1)->first(),'tel1'.$user->id);
 
@@ -50,10 +66,10 @@ class ProprieteController extends BaseController {
 
 		$imageSliderType = Helpers::cache(imageType::whereNom(Config::get('var.image_thumbnail'))->remember(60 * 24)->first(), 'imageSliderType');
 
-		/*$options = Propriete::getOptions( $id );*/
+		/*$options = Propriete::getOptions( $idOrSlug );*/
 
 		$tarifs = Helpers::cache($propriete->with('tarif')->whereId($propriete->id)->remember(60 * 24 )->first(), 'tarifs'.$propriete->id);
-		
+
 		$jour_arrive = 0;
 
 		$currentTarif = null;
@@ -73,15 +89,15 @@ class ProprieteController extends BaseController {
 						$jour_arrive = $currentTarif->jour_arrive_id;
 					}
 				}
-			}			
+			}
 
-			$situations = Helpers::cache(Propriete::getSituations( $id ),'situations'.$propriete->id);
+			$situations = Helpers::cache(Propriete::getSituations( $idOrSlug ),'situations'.$propriete->id);
 
-			$literies = Helpers::cache(Propriete::getLiterie( $id ),'literie'.$propriete->id);
+			$literies = Helpers::cache(Propriete::getLiterie( $idOrSlug ),'literie'.$propriete->id);
 
-			$exterieurs = Helpers::cache(Propriete::getExterieur( $id ),'exterieurs'.$propriete->id);
+			$exterieurs = Helpers::cache(Propriete::getExterieur( $idOrSlug ),'exterieurs'.$propriete->id);
 
-			$interieurs = Helpers::cache(Propriete::getInterieur( $id ),'interieur'.$propriete->id);
+			$interieurs = Helpers::cache(Propriete::getInterieur( $idOrSlug ),'interieur'.$propriete->id);
 
 
 			return View::make('propriete.show', array(
@@ -147,14 +163,14 @@ class ProprieteController extends BaseController {
 
 				Propriete::getLocations();
 
-				return Redirect::intended('/');
+				return Redirect::back();
 
 			}
 			else{
 
-				return Redirect::intended('/');
+				return Redirect::back();
 			}
-			
+
 
 		}
 		public function getPhoto( $proprieteId ){

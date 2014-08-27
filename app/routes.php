@@ -18,38 +18,27 @@
 /*                lang                   */
 /*****************************************/
 
-
 $lang = Request::segment(1);
 
 if (in_array($lang, Config::get('app.available_locales')))
 {
 	App::setLocale($lang);
 
-	
+	Session::put('lang', $lang);
+
+
 
 }else{
 
 	$lang = null;
 
-	if(!Session::has('langId')){
+	/*if(!Session::has('langId')){
 
-		
 
-	}
+
+	}*/
 }
-/**
-*
-* Carte
-*
-**/
-Route::get('france', function(){
 
-	$pays = Helpers::cache(Pays::whereId(77)->with(array('PaysTraduction'))->remember(60,'france_regions')->first(),'france_regions');
-	/*dd($carte->region);*/
-	$regions = Pays::listById( 77 );
-	return View::make('carte.france', array('page'=>'carte'))
-	->with(compact('regions','pays'));
-});
 
 /**
 *
@@ -192,11 +181,11 @@ Route::get('toto', function(){
 
 		/**
 		*
-		* Lier le modele Propriete au parametre {id} 
+		* Lier le modele Propriete au parametre {id}
 		*
 		**/
 		Route::bind('propriete_id', function($value, $route)
-		{	
+		{
 
 			return Propriete::findOrFail($value);
 
@@ -213,29 +202,40 @@ Route::get('toto', function(){
 	 	Route::post('connecter', array('as'=>'connecter','uses'=>'Admin_UserController@connecter'));
 
 	 	Route::group(array('before'=>'admin'), function(){
+		/**
+		*
+		* Traductions statiques
+		*
+		**/
+
+		Route::controller('traductions/statiques', 'Barryvdh\TranslationManager\Controller');
 
 	 	/**
 	 	*
-	 	* Desactiver annonce
+	 	* Desactiver/activer annonce
 	 	*
 	 	**/
-	 	
-	 	Route::get('desactiver/{id}',array('as'=>'desactiver_propriete', 'uses'=>'Admin_ProprieteController@desactiver'));
+
+	 	Route::get('propriete/desactiver/{id}', array('as'=>'desactiver_propriete', 'uses'=>'Admin_ProprieteController@desactiver'));
+
+	 	Route::get('propriete/activer/{id}', array('as'=>'activer_propriete', 'uses'=>'Admin_ProprieteController@activer'));
 
 	 	/**
 	 	*
-	 	* Deverifier annonce
+	 	* Deverifier/verifier annonce
 	 	*
 	 	**/
-	 	
-	 	Route::get('Deverifier/{id}',array('as'=>'deverifier_propriete', 'uses'=>'Admin_ProprieteController@deverifier'));
+
+	 	Route::get('propriete/deverifier/{id}',array('as'=>'deverifier_propriete', 'uses'=>'Admin_ProprieteController@deverifier'));
+
+	 	Route::get('propriete/verifier/{id}',array('as'=>'verifier_propriete', 'uses'=>'Admin_ProprieteController@verifier'));
 
 		/**
 		*
 		* Home
 		*
 		**/
-		
+
 		Route::get('/', array('as'=>'getIndexAdmin','uses'=>'Admin_BaseController@index'));
 
 		Route::get('deconnecter', array('as'=>'deconnexion','uses'=>'Admin_UserController@deconnecter'));
@@ -263,7 +263,7 @@ Route::get('toto', function(){
 		* Edit
 		*
 		**/
-		
+
 
 		/*Route::get('pages',array('as'=>'listPages','uses'=>'Admin_PageController@index'));*/
 
@@ -276,7 +276,9 @@ Route::get('toto', function(){
 		Route::get('traductions',array('as'=>'listTraductions','uses'=>'Admin_TraductionsController@index'));
 
 	});
-});
+}); /*==========  END ADMIN  ==========*/
+
+
 /**
 *
 * Activation compte via mail
@@ -303,8 +305,10 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 	/*================================================
 	=            EN FONCTION DE LA LANGUE            =
-	================================================*/	
+	================================================*/
 	Route::group(array('before' => 'lang'), function(){
+
+		App::setLocale(Helpers::isOk(Session::get('lang')) ? Session::get('lang') : Config::get('app.locale'));
 
 		Route::get('test',function(  ){
 
@@ -317,7 +321,39 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Recherche via la carte
 		*
 		**/
-		Route::get(trans('routes.locations_vacances').'/'.trans('routes.location').'-{pays}-{region}', array('as'=>'rechercheCarte','uses'=>'RechercheController@carte'));
+
+		Route::get(trans('routes.locations_vacances').'/'.trans('routes.location').'-{pays}-{region}', array('as'=>'rechercheCarte', 'uses'=>'RechercheController@carte'));
+
+		/**
+		*
+		* Carte
+		*
+		**/
+
+		Route::get('france', function(){
+
+			$pays = Helpers::cache(Pays::whereId(77)->with(array('PaysTraduction'))->first(),'france_regions');
+			$regions = Pays::listById( 77 );
+
+			return View::make('carte.france', array('page'=>'carte'))
+			->with(compact('regions','pays'));
+		});
+
+		/**
+		*
+		* Voir une location
+		*
+		**/
+
+		Route::get(trans('routes.locations_vacances').'/{slug}', array('as'=>'displayPropriete', 'uses'=>'ProprieteController@show'));
+
+		/**
+		*
+		* Changer la langue
+		*
+		**/
+
+		Route::get('changelangue', array('as'=>'changeLangue','uses'=>'LangController@change'));
 
 		/**
 		*
@@ -334,13 +370,13 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 			**/
 
 			Route::post( trans('routes.send_commentaire'), array('as'=>'sendCommentaire','uses'=>'UserController@sendCommentaire') );
-			
+
 			/**
 			*
 			* Doit se faire après un filtre qui test si annonce payée !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			*
 			**/
-			
+
 
 			Route::get('refreshAnnonce/{propriete_id}', array('as'=>'RefreshAnnonce','uses'=>'ProprieteController@refresh'));
 
@@ -349,22 +385,22 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 			* END Filtre Annonce payé
 			*
 			**/
-			
+
 
 		/*===================================
 		=            DECONNEXION            =
 		===================================*/
-		
-		
-		Route::get(Lang::get('routes.deconnexion'), array('uses'=>'ConnexionController@deconnecter'));
+
+
+		Route::get(Lang::get('routes.deconnexion'), array('as'=>'deconnexion','uses'=>'ConnexionController@deconnecter'));
 
 
 		/*-----  End of DECONNEXION  ------*/
 
 
-		
+
 		/*-----  End of ADMIN  ------*/
-		
+
 
 		/*==============================
 		=            PROFIL            =
@@ -382,6 +418,20 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Suppression des anciennes sessions d'ancienne création de propriete
 		*
 		**/
+		Route::bind('propriete_id', function($value, $route){
+
+			$isOwner = Auth::user()->propriete()->whereId($value)->first();
+
+			if(Helpers::isNotOk($isOwner) && Auth::user()->role_id < Config::get('var.admin_role')){
+
+				throw new NotFoundHttpException;
+			}
+			/*if(Helpers::isNotOk($isOwner)){
+				$isOwner = Propriete::findOrFail($value);
+			}
+*/
+			return $isOwner;
+		});
 
 		Route::get(Lang::get('routes.compte').'/{user_slug}/checkSession', array('as'=>'checkSession','uses'=>'InscriptionController@checkSession'));
 
@@ -390,11 +440,11 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Inscription du batiment
 		*
 		**/
-		Route::get(Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1'), array('as'=>'etape1Index','uses'=>'InscriptionController@indexBatiment'));
-		
-		Route::post(Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1'), array('as'=>'inscription_etape1','uses'=>'InscriptionController@saveBatiment'));
+		Route::get(Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1').'/{propriete_id?}', array('as'=>'etape1Index','uses'=>'InscriptionController@indexBatiment'));
 
-		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1').'/{id}', array('as'=>'inscription_etape1_update', 'uses'=>'InscriptionController@updateBatiment'));
+		Route::post(Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1').'/{propriete_id?}', array('as'=>'inscription_etape1','uses'=>'InscriptionController@saveBatiment'));
+
+		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape1').'/{propriete_id}', array('as'=>'inscription_etape1_update', 'uses'=>'InscriptionController@updateBatiment'));
 
 
 		/**
@@ -403,37 +453,37 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		*
 		**/
 
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2'), array('as'=>'etape2Index', 'uses'=>'InscriptionController@indexLocalisation'));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2').'/{propriete_id}', array('as'=>'etape2Index', 'uses'=>'InscriptionController@indexLocalisation'));
 
-		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2'), array('as'=>'inscription_etape2', 'uses'=>'InscriptionController@saveLocalisation'));
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2').'/{propriete_id}', array('as'=>'inscription_etape2', 'uses'=>'InscriptionController@saveLocalisation'));
 
-		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2'), array('as'=>'inscription_etape2_update', 'uses'=>'InscriptionController@updateLocalisation'));
+		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape2').'/{propriete_id}', array('as'=>'inscription_etape2_update', 'uses'=>'InscriptionController@updateLocalisation'));
 
 		/**
 		*
 		* Photos
 		*
 		**/
-		
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3'), array('as'=>'etape3Index', 'uses'=>'InscriptionController@indexPhoto'));
 
-		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3'), array('uses'=>'UploadController@postImage'));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3').'/{propriete_id}', array('as'=>'etape3Index', 'uses'=>'InscriptionController@indexPhoto'));
 
-		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3'), array('as'=>'inscription_etape3', 'uses'=>'InscriptionController@savePhoto'));
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3').'/{propriete_id}', array('uses'=>'UploadController@postImage'));
 
-		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3'), array('as'=>'inscription_etape3_update', 'uses'=>'InscriptionController@updatePhoto'));
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3').'/{propriete_id}', array('as'=>'inscription_etape3', 'uses'=>'InscriptionController@savePhoto'));
+
+		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape3').'/{propriete_id}', array('as'=>'inscription_etape3_update', 'uses'=>'InscriptionController@updatePhoto'));
 
 		/**
 		*
 		* Tarif
 		*
 		**/
-		
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4'), array('as'=>'etape4Index', 'uses'=>'InscriptionController@indexTarif'));
 
-		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4'), array('as'=>'inscription_etape4', 'uses'=>'InscriptionController@saveTarif'));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4').'/{propriete_id}', array('as'=>'etape4Index', 'uses'=>'InscriptionController@indexTarif'));
 
-		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4'), array('as'=>'inscription_etape4_update', 'uses'=>'InscriptionController@updateTarif2'));
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4').'/{propriete_id}', array('as'=>'inscription_etape4', 'uses'=>'InscriptionController@saveTarif'));
+
+		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape4').'/{propriete_id}', array('as'=>'inscription_etape4_update', 'uses'=>'InscriptionController@updateTarif2'));
 
 		/**
 		*
@@ -441,7 +491,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		*
 		**/
 
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape5'), array('as'=>'etape5Index', 'uses'=>'InscriptionController@indexDisponibilite'));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape5').'/{propriete_id}', array('as'=>'etape5Index', 'uses'=>'InscriptionController@indexDisponibilite'));
 
 		/**
 		*
@@ -449,18 +499,20 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		*
 		**/
 
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6'), array('as'=>'etape6Index', 'uses'=>'InscriptionController@indexCoordonne'));
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6').'/{propriete_id}', array('as'=>'etape6Index', 'uses'=>'InscriptionController@indexCoordonne'));
 
-		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6'), array('as'=>'inscription_etape6', 'uses'=>'InscriptionController@saveCoordonne'));
+		Route::post( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6').'/{propriete_id}', array('as'=>'inscription_etape6', 'uses'=>'InscriptionController@saveCoordonne'));
+
+		Route::put( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape6').'/{propriete_id}', array('as'=>'inscription_etape6_update', 'uses'=>'InscriptionController@updateCoordonne'));
 
 		/**
 		*
 		* Paiement
 		*
 		**/
-		
-		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape7'), array('as'=>'etape7Index', 'uses'=>'InscriptionController@indexPaiement'));
-		
+
+		Route::get( Lang::get('routes.compte').'/{user_slug}/'.Lang::get('routes.i_etape7').'/{propriete_id}', array('as'=>'etape7Index', 'uses'=>'InscriptionController@indexPaiement'));
+
 
 
 		/**
@@ -476,7 +528,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Commentaires de l'utilisateurs
 		*
 		**/
-		
+
 		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listCommentaires'),array( 'as'=>'listCommentaires','uses'=>'UserController@listCommentaires' ));
 
 		Route::get(Lang::get('routes.compte').'/{user_slug}/'.trans('routes.desactive_commentaires').'/{id}', array('as'=>'desactiverCommentaire', 'uses'=>'UserController@desactiverCommentaire'));
@@ -492,7 +544,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listMessages'),array( 'as'=>'listMessages','uses'=>'UserController@listMessage' ));
 
 		Route::get( Lang::get('routes.compte').'/{user_slug}/'.trans('routes.repondreMessage').'/{id}',array( 'as'=>'repondre_message','uses'=>'UserController@repondreMessage' ));
-		
+
 		/**
 		*
 		* Favoris
@@ -500,7 +552,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		**/
 
 		Route::get(Lang::get('routes.compte').'/{user_slug}/'.trans('routes.listFavoris'), array('as'=>'listFavoris','uses'=>'UserController@listFavoris'));
-		
+
 		/*-----  End of PROFIL  ------*/
 
 		/**
@@ -509,22 +561,26 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		*
 		**/
 
+
+
 		/*==========  Voir  ==========*/
 
-		Route::get(Lang::get('routes.voir').'/{id}', array('as'=>'showPropriete', 'uses'=>'ProprieteController@show'));
+		Route::get(Lang::get('routes.voir').'/{propriete_id}', array('as'=>'showPropriete', 'uses'=>'ProprieteController@show'));
 
 		/*==========  Delete  ==========*/
 
-		Route::get(Lang::get('routes.delete').'/{id}', array('as'=>'deletePropriete', 'uses'=>'ProprieteController@delete'));
+		Route::get(Lang::get('routes.delete').'/{propriete_id}', array('as'=>'deletePropriete', 'uses'=>'ProprieteController@delete'));
 
 		/*==========  Edit  ==========*/
+
+
 
 		/**
 		*
 		* Inscription du bien
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'editPropriete1', 'uses'=>'InscriptionController@indexBatiment'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape1'), array('as'=>'storePropriete1','uses'=>'InscriptionController@updateBatiment'));
@@ -534,7 +590,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Localisation
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'editPropriete2', 'uses'=>'InscriptionController@indexLocalisation'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape2'), array('as'=>'storePropriete2','uses'=>'InscriptionController@updateLocalisation'));
@@ -544,7 +600,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Photos videos
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'editPropriete3', 'uses'=>'InscriptionController@indexPhoto'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape3'), array('as'=>'storePropriete3','uses'=>'InscriptionController@updatePhoto'));
@@ -554,7 +610,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Tarifs
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'editPropriete4', 'uses'=>'InscriptionController@indexTarif'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape4'), array('as'=>'storePropriete4','uses'=>'InscriptionController@updateTarif2'));
@@ -564,7 +620,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Dispo
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'editPropriete5', 'uses'=>'InscriptionController@indexDisponibilite'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape5'), array('as'=>'storePropriete5','uses'=>'InscriptionController@updateDispo'));
@@ -574,7 +630,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Coordonnées
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'editPropriete6', 'uses'=>'InscriptionController@indexCoordonne'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape6'), array('as'=>'storePropriete6','uses'=>'InscriptionController@updateCoordonne'));
@@ -584,7 +640,7 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		* Paiement
 		*
 		**/
-		
+
 		Route::get(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'editPropriete7', 'uses'=>'InscriptionController@indexLocalisation'));
 
 		Route::put(strtolower(Lang::get('form.modifier')).'/{propriete_id}/'.Lang::get('routes.i_etape7'), array('as'=>'storePropriete7','uses'=>'InscriptionController@updateLocalisation'));
@@ -593,8 +649,8 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		/*==================================================
 		=            Quand on est déconnecté...            =
-		==================================================*/		
-		
+		==================================================*/
+
 		Route::group(array('before'=>'guest'),function(){
 
 
@@ -629,8 +685,8 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		Route::post(Lang::get('routes.inscription'),array('as'=>'inscription','uses'=>'InscriptionController@saveUser'));
 
-		
-		
+
+
 
 		/*-----  End of INSCRIPTION  ------*/
 
@@ -639,12 +695,12 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		/**
 		*
-		* Lier le modele Pays au parametre {slug} 
+		* Lier le modele Pays au parametre {slug}
 		*
 		**/
 
 		Route::bind('pays_slug', function($value, $route)
-		{	
+		{
 
 			return Pays::where('initial_2', $value)->firstOrFail();
 
@@ -652,12 +708,12 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 
 		/**
 		*
-		* Lier le modele Region au parametre {slug} 
+		* Lier le modele Region au parametre {slug}
 		*
 		**/
 
 		Route::bind('region_slug', function($value, $route)
-		{	
+		{
 
 			return RegionTraduction::where(Config::get('var.lang_col'), Session::get('langId'))->where('slug', $value)->firstOrFail();
 
@@ -670,9 +726,9 @@ Route::group(array('prefix' => $lang), function() use($lang) {
 		**/
 
 		Route::get( Lang::get('general.locationsVacances').'/{pays_slug}/{region_slug}', array('as'=>'getLocationsFormPaysAndRegion','uses'=>'HomeController@getList'));
-		
-		
-		
+
+
+
 
 	});
 /*-----  End of EN FONCTION DE LA LANGUE  ------*/

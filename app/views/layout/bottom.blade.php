@@ -86,6 +86,7 @@
 	});
 </script>
 @endif
+
 @if(isset($widget) && Helpers::isOk($widget) && in_array('sortable', $widget))
 <script>
 	$(function(){
@@ -142,6 +143,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDTG91JrczloADLMwqPBbgPEGjOjOTX9o&sensor=false"></script>
 {{HTML::script('js/showMap.js')}}
 @endif
+
 {{HTML::script('js/jquery-ui-1.10.4.custom.min.js')}}
 @if( isset($widget) && Helpers::isOk($widget) && in_array('tab', $widget)  )
 <script> $( ".tabs" ).tabs();</script>
@@ -161,9 +163,6 @@
 @endif
 
 {{HTML::script('js/main.js')}}
-
-
-
 
 </body>
 </html>

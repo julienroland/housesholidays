@@ -17,7 +17,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'prenom'=>'required|min:2|alpha',
 		'nom'=>'required|min:2|alpha',
-		'email'=>'unique:users,email|email|required', 
+		'email'=>'unique:users,email|email|required',
 		'pays'=>'required',
 		'password'=>'required|min:3',
 		);
@@ -25,7 +25,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static $coordonneRules = array(
 		'prenom'=>'required|min:2|alpha|not_in:null',
 		'nom'=>'required|min:2|alpha|not_in:null',
-		'email'=>'unique:users,email|email|required|not_in:null', 
+		'email'=>'unique:users,email|email|required|not_in:null',
 		'pays'=>'required|not_in:null',
 		'sous_region'=>'required|not_in:null',
 		'localite'=>'required|not_in:null',
@@ -47,12 +47,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'email'=>'required |email',
 		'message'=>'required',
 		'sender_id'=>'integer',
-		'receiver_id'=>'required |different:sender_id',
+		/*'receiver_id'=>'required |different:sender_id',*/
+		'receiver_id'=>'required',
 		);
 	public static $messRep_rules = array(
 		'message'=>'required',
 		'sender_id'=>'integer',
-		'receiver_id'=>'required |different:sender_id',
+		/*'receiver_id'=>'required |different:sender_id',*/
+		'receiver_id'=>'required',
 		'message_id'=>'required',
 		);
 
@@ -63,7 +65,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static function getLangages( $user ){
 
 		$dataDump = $user->langage()->remember(60 * 24)->get()->toArray();
-		
+
 		$data = array();
 
 		foreach($dataDump as $datas){
@@ -76,33 +78,33 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function propriete(){
 
 		return $this->hasMany('Propriete');
-		
+
 	}
 
 	public function commentaire(){
 
 		return $this->hasMany('Commentaire');
-		
+
 	}
 
 	public function messageReceive(){
 
 		return $this->hasMany('Message','vers_user_id')
 		->whereNull('reponse_id');
-		
+
 	}
 
 	/*public function messageReponse(){
 
 		return $this->hasMany('Message','vers_user_id')
 		->whereNotNull('reponse_id');
-		
+
 	}*/
 
 	public function messageSend(){
 
 		return $this->hasMany('Message','de_user_id');
-		
+
 	}
 
 
@@ -112,23 +114,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	}
 
-	
+
 	public function telephone(){
 
 		return $this->hasMany('UserTelephone');
-		
+
 	}
 
 	public function pays(){
 
 		return $this->belongsTo('Pays');
-		
+
 	}
 
 	public function langage(){
 
 		return $this->belongsToMany('Langage','users_langages_traductions');
-		
+
 	}
 
 	public function getFullnameAttribute() {

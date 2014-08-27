@@ -31,7 +31,7 @@ class CreateProprietesTable extends Migration {
 			$table->timestamp('last_visite');
 			$table->string('slug');
 			$table->string('web');
-			$table->string('etape');
+			$table->integer('etape')->default(1);
 			$table->float('nettoyage');
 			$table->boolean('commentaire_statut');
 			$table->integer('user_id')->unsigned();
@@ -52,7 +52,7 @@ class CreateProprietesTable extends Migration {
 			$table->integer('type_batiment_id')->unsigned();
 			$table->foreign('type_batiment_id')->references('id')->on('types_batiments');
 
-			
+
 			$table->timestamps();
 		});
 }

@@ -10,7 +10,7 @@ class ImageController extends BaseController {
     if(Helpers::isOk( $id )){
 
       $nb_photos = Propriete::find($id)->photoPropriete()->count();
-       
+
       if( $nb_photos >= 15 ){
 
         return Response::json(trans('validation.custom.tropImage'),500);
@@ -18,18 +18,18 @@ class ImageController extends BaseController {
 
       $destinationPath = Config::get('var.upload_folder').Auth::user()->id.'/'.Config::get('var.propriete_folder').'/'.$id.'/';
 
-      $timestamp = date('dmYhis');
-    } 
-  
+      $timestamp = Carbon::now()->timestamp;
+    }
+
 
    File::exists( $destinationPath ) or File::makeDirectory( $destinationPath , 0777, true);
-   
+
    if(Input::hasFile('file')){
 
-    $file = Input::file('file'); 
+    $file = Input::file('file');
 
                 // Declare the rules for the form validation.
-    $rules = array('file'  => 'image|max:2000,mimes:jpg,jpeg,bmp');
+    $rules = array('file'  => 'image|max:2000,mimes:jpg,jpeg,bmp,jpeg,png');
 
     $data = array('file' => Input::file('file'));
 
@@ -37,12 +37,12 @@ class ImageController extends BaseController {
     $validation = Validator::make($data, $rules);
 
     if ($validation->fails())
-    {	
+    {
      return Response::json('error', 400);
    }
 
    if(is_array($file))
-   {	
+   {
 
      foreach($file as $part) {
 
@@ -64,19 +64,19 @@ class ImageController extends BaseController {
 
       $photoPropriete = Propriete::find( $id )->photoPropriete()->save($photoPropriete);
 
-      $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
+      $image->resize( 1200, 800, true )->save( $destinationPath.$filename )->encode('jpg', Config::get('var.img_quality'));
 
       foreach( $imageType as $type){
 
         $filename = Helpers::toSlug(Helpers::addTimestamp( $part->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-        $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
+        $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename )->encode('jpg', Config::get('var.img_quality'));
 
       }
     }
   }
 else //single file
-{   
+{
 
   $imageType = ImageType::orderBy('width','desc')->get();
 
@@ -96,13 +96,13 @@ else //single file
 
   $photoPropriete = Propriete::find( $id )->photoPropriete()->save($photoPropriete);
 
-  $image->resize( 1200, 800, true )->save( $destinationPath.$filename );
+  $image->resize( 1200, 800, true )->save( $destinationPath.$filename )->encode('jpg', Config::get('var.img_quality'));
 
   foreach( $imageType as $type){
 
     $filename = Helpers::toSlug(Helpers::addTimestamp( $file->getClientOriginalName(),'-'.$type->nom ,$type->extension , $timestamp));
 
-    $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename );
+    $image->resize( $type->width, $type->height, true )->save( $destinationPath.$filename )->encode('jpg', Config::get('var.img_quality'));
 
   }
 
@@ -129,7 +129,7 @@ if( Helpers::isOk($image) ) {
 public function deletePhoto( $imageId, $proprieteId ){
 
   $photo = PhotoPropriete::find($imageId);
-  
+
 /**
 *
 * Si la photo existe bien en bdd
@@ -137,10 +137,10 @@ public function deletePhoto( $imageId, $proprieteId ){
 **/
 
 if( $photo ){
-  
+
 /**
 *
-* défini le chemin 
+* défini le chemin
 *
 **/
 
@@ -167,7 +167,7 @@ if(File::exists( $destinationPath.$photo->url )){
   * On le supprime
   *
   **/
-  
+
   File::delete( $destinationPath.$photo->url );
 
 }

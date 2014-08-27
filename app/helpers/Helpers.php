@@ -134,14 +134,14 @@ class Helpers {
 			return true;
 		}
 		else{
-			
+
 			return false;
 		}
-	}	
+	}
 	public static function isNotLast( $current, $total ){
 
 		if($current >= $total){
-			
+
 			return false;
 
 		}
@@ -152,7 +152,7 @@ class Helpers {
 		}
 	}
 	public static function isActive( $page, $current ){
-		
+
 		if(isset($page) && Helpers::isOk($page) && isset($current) && Helpers::isOk($current)){
 
 			if( $page === $current || $page == $current ){
@@ -167,7 +167,7 @@ class Helpers {
 	}
 	public static function toHumanTimestamp( $timestamp ){
 
-		setlocale(LC_TIME, App::getLocale());  
+		setlocale(LC_TIME, App::getLocale());
 
 		return $timestamp->formatLocalized('%e %B %Y %k:%M:%S');
 	}
@@ -204,12 +204,12 @@ class Helpers {
 		if(Helpers::isNotOk( $year )){
 
 			$year = date('y');
-			
+
 		}
 		if(Helpers::isOk($fromId)){
 
-			$calendriers = Helpers::cache(Calendrier::whereProprieteId( $fromId )->get(),'calendrier');
-			
+			$calendriers = Calendrier::whereProprieteId( $fromId )->get();
+
 		}
 
 		$today_date = date("d");
@@ -285,7 +285,7 @@ class Helpers {
 		foreach($daysOfWeek as $day) {
 
 			$calendar .= "<th class='header'><span class='jour'>$day</span></th>";
-		} 
+		}
 
      // Create the rest of the calendar
 
@@ -300,9 +300,9 @@ class Helpers {
      // display consists of exactly 7 columns.
 
 		if ($dayOfWeek > 0) {
-			for($i = 0;$i<$dayOfWeek;$i++){ 
+			for($i = 0;$i<$dayOfWeek;$i++){
 				// colspan='$dayOfWeek'
-				$calendar .= "<td class='day old'>&nbsp;</td>"; 
+				$calendar .= "<td class='day old'>&nbsp;</td>";
 			}
 		}
 
@@ -341,7 +341,7 @@ class Helpers {
 
 			$currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
 
-			
+
 			$date = "$currentDayRel-$month-$year";
 			$serverDate = "$year-$month-$currentDayRel";
 
@@ -355,7 +355,7 @@ class Helpers {
 			if( isset($listDatesBetween) && Helpers::isOk( $listDatesBetween ) ){
 
 				foreach($listDatesBetween as $datesBetween){
-					
+
 					foreach($datesBetween->dates as $dateBetween){
 
 						$dateBetween  = Helpers::createCarbonDate($dateBetween);
@@ -370,14 +370,14 @@ class Helpers {
 				}
 			}
 
-			if($currentDayRel == $today_date ){  
+			if($currentDayRel == $today_date ){
 
 				$calendar .= "<td class='day today $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
-			} 
+			}
 
-			else { 
+			else {
 
-				$calendar .= "<td class='day $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>"; 
+				$calendar .= "<td class='day $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
 			}
 
 			if(isset($dateArray[mktime(0, 0, 0, $month, $currentDay, $year)])){
@@ -395,10 +395,10 @@ class Helpers {
 
      // Complete the row of the last week in month, if necessary
 
-		if ($dayOfWeek != 7) { 
+		if ($dayOfWeek != 7) {
 
 			$remainingDays = 7 - $dayOfWeek;
-			$calendar .= "<td colspan='$remainingDays'>&nbsp;</td>"; 
+			$calendar .= "<td colspan='$remainingDays'>&nbsp;</td>";
 
 		}
 
@@ -421,7 +421,7 @@ class Helpers {
 	* Convertis une date fr format dd/mm/yy vers une date serveur format yy-mm-dd
 	*
 	**/
-	
+
 	public static function toServerDate( $date ){
 
 		if( explode('-', $date) ){
@@ -476,11 +476,11 @@ class Helpers {
 
 			if( Helpers::isNotOk( $timestamp )){
 
-				$name = $imageEx[0].date('dmYhis'); 
+				$name = $imageEx[0].date('dmYhis');
 			}
 			else{
-				
-				$name = $imageEx[0].$timestamp; 
+
+				$name = $imageEx[0].$timestamp;
 			}
 
 			if( Helpers::isOk( $ext )){
@@ -489,7 +489,7 @@ class Helpers {
 			}
 			else
 			{
-				$extension = $imageEx[1]; 
+				$extension = $imageEx[1];
 
 			}
 			if( Helpers::isOk( $type )){
@@ -498,9 +498,9 @@ class Helpers {
 			}
 			else
 			{
-				return $name. '.' .$extension;	
+				return $name. '.' .$extension;
 			}
-			
+
 		}
 		else
 		{
@@ -510,11 +510,11 @@ class Helpers {
 		}
 	}
 
-	
+
 
 	/**
 	*
-	* Retourne l'id d'une langue sous base de son initial ( 'fr' retournera l'id 1) 
+	* Retourne l'id d'une langue sous base de son initial ( 'fr' retournera l'id 1)
 	*
 	**/
 	public static function getLangId( $langId )
@@ -536,12 +536,12 @@ class Helpers {
 	*
 	**/
 	public static function toSlug( $string, $charset = 'utf-8' ){
-		
+
 
 		$string = htmlentities($string, ENT_NOQUOTES, $charset);
 		$string = preg_replace('#&([A-za-z])(?:acute|cedil|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $string);
-		$string = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $string); 
-		$string = preg_replace('#&[^;]+;#', '', $string); 
+		$string = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $string);
+		$string = preg_replace('#&[^;]+;#', '', $string);
 		$string = strtolower( $string );
 
 		return str_replace(' ' , '-' , $string );
@@ -567,8 +567,8 @@ class Helpers {
 				return  (int)$explode[0];
 		}
 		elseif(
-			$type === 'lng' 
-			|| $type === 'Lng' 
+			$type === 'lng'
+			|| $type === 'Lng'
 			|| $type == '0'
 			){
 
@@ -603,7 +603,7 @@ public static function isOk ( $data , $type = ""){
 				&& $data !== "undefined"
 				&& $data!== null
 				&& count($data) > 0
-				&& $data === $type	
+				&& $data === $type
 				&& !empty( $data )
 				){
 
@@ -650,7 +650,7 @@ public static function isNotOk ( $data , $type = ""){
 	if(!empty( $type )){
 
 		if( isset($data->errors) ){
-			
+
 			return true;
 		}else{
 
@@ -659,7 +659,7 @@ public static function isNotOk ( $data , $type = ""){
 				|| empty( $data )
 				|| $data === null
 				|| count($data) <= 0
-				|| $data !== $type	
+				|| $data !== $type
 				){
 
 				return true;
@@ -713,7 +713,7 @@ public static function dateEu( $date ){
 
 /**
 *
-* Convertis en pourcentage 
+* Convertis en pourcentage
 *
 **/
 public static function toPercent( $value , $on )
@@ -768,7 +768,7 @@ public static function createCarbonDate( $date , $type = 'us', $separator = '-' 
 
 /**
 *
-* Convertis le numero des jours en texte 
+* Convertis le numero des jours en texte
 *
 **/
 public static function humanDay( $date ){

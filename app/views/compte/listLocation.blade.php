@@ -17,7 +17,7 @@
 
 			@foreach($propriete->proprieteTraduction as $titre)
 
-			@if($titre->cle === Config::get('var.titre') )	
+			@if($titre->cle === Config::get('var.titre') )
 			@if(Helpers::isOk($titre->cle))
 			{{$titre->valeur}}
 			@else
@@ -27,23 +27,23 @@
 			@endif
 			@endforeach
 
-			
+
 			<span>
 			@if(isset($propriete->localite->nom) || isset($propriete->sousRegion->sousRegionTraduction[0]->nom) || isset($propriete->region->regionTraduction[0]->nom) || isset($propriete->pays->paysTraduction[0]->nom))
 				(
-				@if(isset($propriete->localite->nom) && Helpers::isOk($propriete->localite->nom)) 
+				@if(isset($propriete->localite->nom) && Helpers::isOk($propriete->localite->nom))
 				{{$propriete->localite->nom}}
 				@endif
 
-				@if(isset($propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom)) 
+				@if(isset($propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom))
 				- {{$propriete->sousRegion->sousRegionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($propriete->region->regionTraduction[0]->nom) && Helpers::isOk($propriete->region->regionTraduction[0]->nom)) 
+				@if(isset($propriete->region->regionTraduction[0]->nom) && Helpers::isOk($propriete->region->regionTraduction[0]->nom))
 				- {{$propriete->region->regionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($propriete->pays->paysTraduction[0]->nom)) 
+				@if(isset($propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($propriete->pays->paysTraduction[0]->nom))
 				- {{$propriete->pays->paysTraduction[0]->nom}}
 				@endif
 				)
@@ -51,11 +51,11 @@
 				{{trans('locationList.noLocation')}}
 				@endif
 			</span>
-			
+
 		</h3>
 		<p class="p-resultat">
 			@foreach($propriete->proprieteTraduction as $description)
-			@if($description->cle === Config::get('var.description'))	
+			@if($description->cle === Config::get('var.description'))
 			@if(Helpers::isOk($titre->cle))
 			{{$description->valeur}}
 			@else
@@ -72,7 +72,7 @@
 				@endif
 			</li>
 			<li class="chambre">{{$propriete->nb_chambre}}  @if($propriete->nb_chambre > 1) {{trans('general.chambres')}} @else {{trans('general.chambre')}} @endif</li>
-			<li class="detail-douche"> 
+			<li class="detail-douche">
 				{{$propriete->nb_sdb}} @if($propriete->nb_sdb > 1) {{trans('general.sdbs')}} @else {{trans('general.sdb')}} @endif
 			</li>
 			<li class="superficie">
@@ -87,22 +87,22 @@
 		</ul>
 
 	</a>
-	
+
 	<p class="priceSem">
 		<span>
 
 		</span>
 	</p>
-{{var_dump($propriete->statut)}}
+
 	<div class="admin">
 		<span>{{trans('locationList.total_visite')}}: @if($propriete->nb_visite > 0){{$propriete->nb_visite}} @else {{trans('locationList.noData')}} @endif</span>
 		<span>{{trans('locationList.statut')}}: @if($propriete->statut == 0){{trans('locationList.inactive')}} @else {{trans('locationList.active')}} @endif</span>
 		<span>{{trans('locationList.last_visite')}}: @if($propriete->nb_visite == 0){{trans('locationList.noData')}} @else {{$propriete->last_visite}} @endif</span>
 		<span>{{trans('locationList.last_update')}}: @if(Helpers::isOk($propriete->updated_at)){{Helpers::toHumanDiff($propriete->updated_at)}} @else {{trans('locationList.noData')}} @endif</span>
 		<ul>
-		
+
 			<li>{{link_to_route('showPropriete',trans('form.voir'), $propriete->id)}}</li>
-			<li>{{link_to_route('editPropriete1',trans('form.modifier'), $propriete->id)}}</li>
+			<li>{{link_to_route('etape1Index',trans('form.modifier'), array(Auth::user()->slug, $propriete->id))}}</li>
 			<li>{{link_to_route('RefreshAnnonce',trans('locationList.refreshAnnonce'), $propriete->id,array('data-id'=>$propriete->id,'class'=>'refreshAnnonce'))}}</li>
 		</ul>
 	</div>

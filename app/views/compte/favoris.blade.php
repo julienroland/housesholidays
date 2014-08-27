@@ -8,8 +8,9 @@
 
 <div class="liste-resultat">
 	<a href="">
+
 		@if(isset($favori->propriete->photoPropriete[0]) && Helpers::isOk($favori->propriete->photoPropriete[0]))
-		<a href="{{route('showPropriete',$favori->propriete->id)}}"><img src="/{{Config::get('var.upload_folder')}}{{$favori->propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$favori->propriete->id}}/{{Helpers::addBeforeExtension($favori->propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$favori->propriete->photoPropriete[0]->alt}}"></a>
+		<a href="{{route('displayPropriete',array('slug'=>$favori->propriete->slug))}}"><img src="/{{Config::get('var.upload_folder')}}{{$favori->propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$favori->propriete->id}}/{{Helpers::addBeforeExtension($favori->propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$favori->propriete->photoPropriete[0]->alt}}"></a>
 		@else
 		<img src="{{Config::get('var.image_folder')}}noimage.jpg" alt="{{trans('listLocation.noImage')}}">
 		@endif
@@ -17,7 +18,7 @@
 
 			@foreach($favori->propriete->proprieteTraduction as $titre)
 
-			@if($titre->cle === Config::get('var.titre') )	
+			@if($titre->cle === Config::get('var.titre') )
 			@if(Helpers::isOk($titre->cle))
 			{{$titre->valeur}}
 			@else
@@ -27,23 +28,23 @@
 			@endif
 			@endforeach
 
-			
+
 			<span>
 				@if(isset($favori->propriete->localite->nom) || isset($favori->propriete->sousRegion->sousRegionTraduction[0]->nom) || isset($favori->propriete->region->regionTraduction[0]->nom) || isset($favori->propriete->pays->paysTraduction[0]->nom))
 				(
-				@if(isset($favori->propriete->localite->nom) && Helpers::isOk($favori->propriete->localite->nom)) 
+				@if(isset($favori->propriete->localite->nom) && Helpers::isOk($favori->propriete->localite->nom))
 				{{$favori->propriete->localite->nom}}
 				@endif
 
-				@if(isset($favori->propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($favori->propriete->sousRegion->sousRegionTraduction[0]->nom)) 
+				@if(isset($favori->propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($favori->propriete->sousRegion->sousRegionTraduction[0]->nom))
 				- {{$favori->propriete->sousRegion->sousRegionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($favori->propriete->region->regionTraduction[0]->nom) && Helpers::isOk($favori->propriete->region->regionTraduction[0]->nom)) 
+				@if(isset($favori->propriete->region->regionTraduction[0]->nom) && Helpers::isOk($favori->propriete->region->regionTraduction[0]->nom))
 				- {{$favori->propriete->region->regionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($favori->propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($favori->propriete->pays->paysTraduction[0]->nom)) 
+				@if(isset($favori->propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($favori->propriete->pays->paysTraduction[0]->nom))
 				- {{$favori->propriete->pays->paysTraduction[0]->nom}}
 				@endif
 				)
@@ -51,11 +52,11 @@
 				{{trans('locationList.noLocation')}}
 				@endif
 			</span>
-			
+
 		</h3>
 		<p class="p-resultat">
 			@foreach($favori->propriete->proprieteTraduction as $description)
-			@if($description->cle === Config::get('var.description'))	
+			@if($description->cle === Config::get('var.description'))
 			@if(Helpers::isOk($titre->cle))
 			{{$description->valeur}}
 			@else
@@ -72,7 +73,7 @@
 				@endif
 			</li>
 			<li class="chambre">{{$favori->propriete->nb_chambre}}  @if($favori->propriete->nb_chambre > 1) {{trans('general.chambres')}} @else {{trans('general.chambre')}} @endif</li>
-			<li class="detail-douche"> 
+			<li class="detail-douche">
 				{{$favori->propriete->nb_sdb}} @if($favori->propriete->nb_sdb > 1) {{trans('general.sdbs')}} @else {{trans('general.sdb')}} @endif
 			</li>
 			<li class="superficie">
@@ -87,7 +88,7 @@
 		</ul>
 
 	</a>
-	
+
 	<p class="priceSem">
 		<?php $minPrice = Helpers::cache(Propriete::getMinTarif( $favori->propriete, Config::get('var.semaine_col')),'minPrice'.$favori->propriete->id);
 
@@ -112,7 +113,7 @@
 
 </div>
 @endforeach
-@else 
+@else
 <p>{{trans('general.aucun_favoris')}}</p>
 @endif
 

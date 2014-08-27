@@ -33,7 +33,7 @@
 	{{Form::checkbox('weekend','true',isset(Session::get('input_5')['weekend']) && Helpers::isOk(Session::get('input_5')['weekend']) ? true : false)}}
 
 	{{Form::label('prix_weeekend','Prix par nuit de')}}
-	{{Form::input('number','prix_weekend',isset(Session::get('input_5')['prix_weekend']) && Helpers::isOk(Session::get('input_5')['prix_weekend']) ? Session::get('input_5')['prix_weekend']: '' ,array('placeholder'=>'Entrez la valeur'))}}
+	{{Form::input('number','prix_weekend',isset(Session::get('input_5')['prix_weekend']) && Helpers::isOk(Session::get('input_5')['prix_weekend']) ? Session::get('input_5')['prix_weekend']: '' ,array('placeholder'=>'Entrez la valeur','id'=>'prix_weeekend'))}}
 
 	{{Form::label('jour_weekend[5]','Vendredi')}}
 	{{Form::checkbox('jour_weekend[5]','true',isset(Session::get('input_5')['jour_weekend'][5]) && Helpers::isOk(Session::get('input_5')['jour_weekend'][5]) ? true : false)}}
@@ -84,7 +84,7 @@
 		<td>{{$tarif->prix_mois}} {{$tarif->monnaie->icon}}</td>
 		<td>{{$tarif->duree_min}} {{trans('form.nuit')}}</td>
 		<td>{{link_to_route('updateTarif',trans('form.modifier'),array(),array('data-id'=>$tarif->id,'class'=>'updateTarif'))}} - {{link_to_route('deleteTarif',trans('form.supprimer'),array(),array('class'=>'deleteTarif','data-id'=>$tarif->id))}}</td>
-		
+
 	</tr>
 	@endforeach
 </table>
@@ -92,27 +92,23 @@
 {{Form::close()}}
 @if(Session::get('etape3') && Helpers::isOk(Session::get('proprieteId')) )
 
-{{Form::open(array('method'=>'put','route'=>array('inscription_etape4_update',Auth::user()->slug)))}}
+{{Form::open(array('method'=>'put','route'=>array('inscription_etape4_update', Auth::user()->slug, $propriete->id)))}}
 
-@elseif(isset($data) && is_object($data) && Helpers::isOk($data) && !Session::has('proprieteId'))
+@else
 
-{{Form::open(array('method'=>'put','route'=>array('editPropriete4',$data->id)))}}
-
-@else 
-
-{{Form::open(array('route'=>array('inscription_etape4',Auth::user()->slug)))}}
+{{Form::open(array('route'=>array('inscription_etape4', Auth::user()->slug, $propriete->id)))}}
 
 @endif
 
 {{Form::label('nettoyage',trans('form.nettoyage'))}}
-{{Form::input('number','nettoyage', isset($data->nettoyage) ? $data->nettoyage : (isset(Session::get('input_5bis')['nettoyage']) ? Session::get('input_5bis')['nettoyage'] :''))}}
+{{Form::input('number','nettoyage', isset($propriete->nettoyage) ? $propriete->nettoyage : (isset(Session::get('input_5bis')['nettoyage']) ? Session::get('input_5bis')['nettoyage'] :''))}}
 <br>
 
 {{Form::label('accompte',trans('form.acompte'))}}
-{{Form::input('number','accompte',isset($data->caution) ? $data->caution : (isset(Session::get('input_5bis')['accompte']) ? Session::get('input_5bis')['accompte'] :''))}}
+{{Form::input('number','accompte',isset($propriete->caution) ? $propriete->caution : (isset(Session::get('input_5bis')['accompte']) ? Session::get('input_5bis')['accompte'] :''))}}
 <br>
 {{Form::label('conditions',trans('form.condition'))}}
-{{Form::textarea('conditions',isset($data->condition_paiement) ? $data->condition_paiement : (isset(Session::get('input_5bis')['conditions']) ? Session::get('input_5bis')['conditions'] :''))}}
+{{Form::textarea('conditions',isset($propriete->condition_paiement) ? $propriete->condition_paiement : (isset(Session::get('input_5bis')['conditions']) ? Session::get('input_5bis')['conditions'] :''))}}
 
 {{Form::submit(trans('form.button_valid'))}}
 {{Form::close()}}

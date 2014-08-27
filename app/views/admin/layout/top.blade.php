@@ -29,9 +29,12 @@
           </li>
           <li {{Helpers::isActive('locations', Request::segment(2))}}>
             {{link_to_route('listLocations','Locations')}}
-          </li> 
+          </li>
           <li {{Helpers::isActive('traductions', Request::segment(2))}}>
             {{link_to_route('listTraductions','Traductions')}}
+          </li>
+            <li {{Helpers::isActive('traductions', Request::segment(2))}}>
+            {{link_to('admin/traductions/statiques','Traductions statiques')}}
           </li>
           <li {{Helpers::isActive('databases', Request::segment(2))}}>
             {{link_to_route('listDatabases','Ajout à la base de donnée')}}

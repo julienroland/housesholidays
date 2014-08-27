@@ -17,7 +17,7 @@ class LangController extends BaseController {
 		* Tous les fichiers de langs
 		*
 		**/
-		
+
 		$langages = File::directories(base_path().'/app/lang/');
 
 		/**
@@ -41,7 +41,7 @@ class LangController extends BaseController {
 		* @return array [$nom-fichier => $valeur]
 		*
 		**/
-		
+
 		foreach( File::files($langages[$pathId]) as $key => $files ){
 
 			$ex = explode('/', $files);
@@ -50,15 +50,27 @@ class LangController extends BaseController {
 
 
 			$langs[$fileName] = File::getRequire( $files );
-			
+
 		}
-		
+
 		/**
 		*
 		* @return json
 		*
 		**/
 		return json_encode($langs);
+	}
+
+	public function change() {
+
+		$input = Input::all();
+
+		Session::put('lang', $input['lang']);
+
+		App::setLocale($input['lang']);
+
+		return Redirect::to('/'.$input['lang']);
+
 	}
 
 }

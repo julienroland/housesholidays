@@ -1,46 +1,47 @@
-<div class="etapes">
-	
-	@for($i=2; $i<=Config::get('var.etape');$i++)
 
-	@if(Session::get('etape'.($i-1))  && $page != 'inscription_etape'.$i  && !Session::has('etape'.$i) )
-	
-	@if(isset($data) && is_object($data) && !Session::has('proprieteId'))
+<nav class="etapes">
+	<ol>
+		@for($i=2; $i<=Config::get('var.etape');$i++)
+		@if(Helpers::isOk($propriete))
+		<li class="{{ $page === 'inscription_etape'.$i ? 'current':''}} {{$propriete->etape >= $i ? 'done' : 'notdone'}}">
 
-	{{link_to_route('editPropriete'.($i-1), trans('form.aller_etape',array('numero'=>$i)),$data->id)}}
+			@if($propriete->etape <= $i-1  && $page != 'inscription_etape'.$i  && !$propriete->etape >= $i )
 
-	@else
+			{{link_to_route('etape'.($i-1).'Index', trans('form.aller_etape',array('numero'=>$i)), array(Auth::user()->slug, $propriete->id ))}}
 
-	{{link_to_route('etape'.($i-1).'Index', trans('form.aller_etape',array('numero'=>$i)),Auth::user()->slug)}}
+			@else
 
-	@endif
-	
-	@else
+			@if($propriete->etape >= $i  && $page != 'inscription_etape'.$i )
 
-	@if(Session::get('etape'.$i) && $page != 'inscription_etape'.$i )
-	
-	@if(isset($data) && is_object($data) && !Session::has('proprieteId'))
+			{{link_to_route('etape'.($i-1).'Index', trans('form.revenir_etape',array('numero'=>$i)), array(Auth::user()->slug, $propriete->id ))}}
 
-	{{link_to_route('editPropriete'.($i-1), trans('form.revenir_etape',array('numero'=>$i)),$data->id)}}
+			@elseif( $page === 'inscription_etape'.$i)
 
-	@else
+			<span class="current">{{trans('form.etape', array('numero'=>$i))}}</span>
 
-	{{link_to_route('etape'.($i-1).'Index', trans('form.revenir_etape',array('numero'=>$i)),Auth::user()->slug)}}
+			@else
 
-	@endif
+			<span>{{trans('form.etape', array('numero'=>$i))}}</span>
 
-	@elseif( $page === 'inscription_etape'.$i)
+			@endif
 
-	<span class="current">{{trans('form.etape', array('numero'=>$i))}}</span>
+			@endif
+		</li>
+		@else
+		<li>
+			@if($i==2)
 
-	@else
+			<span class="current">{{trans('form.etape', array('numero'=>$i))}}</span>
 
-	<span>{{trans('form.etape', array('numero'=>$i))}}</span>
+			@else
 
-	@endif
+			<span>{{trans('form.etape', array('numero'=>$i))}}</span>
 
-	@endif
+			@endif
+		</li>
+		@endif
+		@endfor
 
-	@endfor
 
-
-</div>
+	</ol>
+</nav>

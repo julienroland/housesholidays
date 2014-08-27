@@ -7,7 +7,7 @@
 @endif
 @for($i = $date; $i < ($date +Config::get('var.mois')); $i++ )
 
-{{Helpers::build_calendar($currentDate->month, $currentDate->year, $data->id)}}
+{{Helpers::build_calendar($currentDate->month, $currentDate->year, $propriete->id)}}
 
 <?php $currentDate = $currentDate->addMonth();?>
 
@@ -48,16 +48,8 @@
 		{{Form::close()}}
 	</div>
 </div>
-@if(Session::get('etape5') && Helpers::isOk(Session::get('proprieteId')) )
 
+{{link_to_route('etape6Index',trans('form.button_valid'), array(Auth::user()->slug, $propriete->id))}}
 
-
-@elseif(isset($data) && is_object($data) && Helpers::isOk($data) && !Session::has('proprieteId'))
-
-{{link_to_route('storePropriete6',trans('form.button_valid'),$data->id)}}
-
-@else
-{{link_to_route('etape6Index',trans('form.button_valid'),Auth::user()->slug)}}
-@endif
 <div class="overlay"></div>
 @stop

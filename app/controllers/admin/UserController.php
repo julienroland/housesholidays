@@ -23,7 +23,7 @@ class Admin_UserController extends \Admin_BaseController
 		* Les règles de validation
 		*
 		**/
-		
+
 		$rules = array(
 			'email'=>'required|exists:users,email|email|min:5',
 			'password' => 'required|min:3|alpha_num',
@@ -38,7 +38,7 @@ class Admin_UserController extends \Admin_BaseController
 		$validation = Validator::make( $input , $rules );
 
 		if($validation->passes()){
-			
+
 			/**
 			*
 			* Tentative de connexion
@@ -67,7 +67,7 @@ class Admin_UserController extends \Admin_BaseController
 				* On revient a la page de connexion avec les bonnes valeurs entrées et les erreurs
 				*
 				**/
-				
+
 				return Redirect::route('getIndexAdmin')
 				->withInput()
 				->withErrors($validation);
@@ -97,11 +97,11 @@ class Admin_UserController extends \Admin_BaseController
 			return Redirect::guest('/');
 
 		}
-		
+
 	}
 
 	public function leave()
 	{
-		return View::make('admin.user.index');
+		return Redirect::to('/');
 	}
 }

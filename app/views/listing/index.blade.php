@@ -9,7 +9,7 @@
 <div class="liste-resultat">
 	<a href="">
 		@if(isset($propriete->photoPropriete[0]) && Helpers::isOk($propriete->photoPropriete[0]))
-		<a href="{{route('showPropriete',$propriete->id)}}"><img src="/{{Config::get('var.upload_folder')}}{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}"></a>
+		<a href="{{route('displayPropriete',array('slug'=>$propriete->slug))}}"><img src="/{{Config::get('var.upload_folder')}}{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}"></a>
 		@else
 		<img src="{{Config::get('var.image_folder')}}noimage.jpg" alt="{{trans('listLocation.noImage')}}">
 		@endif
@@ -17,7 +17,7 @@
 
 			@foreach($propriete->proprieteTraduction as $titre)
 
-			@if($titre->cle === Config::get('var.titre') )	
+			@if($titre->cle === Config::get('var.titre') )
 			@if(Helpers::isOk($titre->cle))
 			{{$titre->valeur}}
 			@else
@@ -27,23 +27,23 @@
 			@endif
 			@endforeach
 
-			
+
 			<span>
 				@if(isset($propriete->localite->nom) || isset($propriete->sousRegion->sousRegionTraduction[0]->nom) || isset($propriete->region->regionTraduction[0]->nom) || isset($propriete->pays->paysTraduction[0]->nom))
 				(
-				@if(isset($propriete->localite->nom) && Helpers::isOk($propriete->localite->nom)) 
+				@if(isset($propriete->localite->nom) && Helpers::isOk($propriete->localite->nom))
 				{{$propriete->localite->nom}}
 				@endif
 
-				@if(isset($propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom)) 
+				@if(isset($propriete->sousRegion->sousRegionTraduction[0]->nom) && Helpers::isOk($propriete->sousRegion->sousRegionTraduction[0]->nom))
 				- {{$propriete->sousRegion->sousRegionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($propriete->region->regionTraduction[0]->nom) && Helpers::isOk($propriete->region->regionTraduction[0]->nom)) 
+				@if(isset($propriete->region->regionTraduction[0]->nom) && Helpers::isOk($propriete->region->regionTraduction[0]->nom))
 				- {{$propriete->region->regionTraduction[0]->nom}}
 				@endif
 
-				@if(isset($propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($propriete->pays->paysTraduction[0]->nom)) 
+				@if(isset($propriete->pays->paysTraduction[0]->nom) && Helpers::isOk($propriete->pays->paysTraduction[0]->nom))
 				- {{$propriete->pays->paysTraduction[0]->nom}}
 				@endif
 				)
@@ -51,11 +51,11 @@
 				{{trans('locationList.noLocation')}}
 				@endif
 			</span>
-			
+
 		</h3>
 		<p class="p-resultat">
 			@foreach($propriete->proprieteTraduction as $description)
-			@if($description->cle === Config::get('var.description'))	
+			@if($description->cle === Config::get('var.description'))
 			@if(Helpers::isOk($titre->cle))
 			{{$description->valeur}}
 			@else
@@ -72,7 +72,7 @@
 				@endif
 			</li>
 			<li class="chambre">{{$propriete->nb_chambre}}  @if($propriete->nb_chambre > 1) {{trans('general.chambres')}} @else {{trans('general.chambre')}} @endif</li>
-			<li class="detail-douche"> 
+			<li class="detail-douche">
 				{{$propriete->nb_sdb}} @if($propriete->nb_sdb > 1) {{trans('general.sdbs')}} @else {{trans('general.sdb')}} @endif
 			</li>
 			<li class="superficie">
@@ -87,7 +87,7 @@
 		</ul>
 
 	</a>
-	
+
 	<p class="priceSem">
 		<?php $minPrice = Helpers::cache(Propriete::getMinTarif( $propriete, Config::get('var.semaine_col')),'minPrice'.$propriete->id);
 
@@ -104,10 +104,12 @@
 			@endif
 		</span>
 	</p>
+	@if(Auth::check())
 	@if(Helpers::isNotFavoris($propriete->id, Auth::user()->id))
 	<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
 	@else
 	<a href="{{route('deleteFavoris')}}" class="favoris deleteFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span class="delfav">{{trans('general.supprimer')}}</span></a>
+	@endif
 	@endif
 
 </div>
@@ -125,7 +127,7 @@
 
 	<span>{{trans('general.resultats')}}</span>
 
-	@else 
+	@else
 
 	<span>{{trans('general.resultat')}}</span>
 

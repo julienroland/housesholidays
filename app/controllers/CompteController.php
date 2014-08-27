@@ -21,7 +21,7 @@ class CompteController extends BaseController {
         }
 
         $proprietes = Propriete::getLocations();
-
+        
         $imageType = imageType::whereNom(Config::get('var.image_standard'))->first();
 
         return View::make('compte.listLocation', array('page'=>'listLocation'))

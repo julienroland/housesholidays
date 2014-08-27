@@ -16,6 +16,7 @@ return array(
 	'etape'=>8,
 	'mois'=>12,
 	'titre'=>'titre',
+	'admin_role'=>'3',
 	'description'=>'description',
 	'langId'=>array(
 		'1'=>'Français',
@@ -25,4 +26,7 @@ return array(
 		'5'=>'Español',
 		),
 	'semaine_col'=>'prix_semaine',
-	);		
+	'img_quality'=>100,
+	);
+
+

@@ -31,13 +31,20 @@ class Pays extends Eloquent {
 
 	public static function listById( $pays_id ){
 
-		$paysDump = Pays::whereId( $pays_id )->with('region.regionTraduction')->first();
+		$paysDump = Pays::whereId( $pays_id )->with(array('region'=>function($query){
+			$query->whereNotNull('coords');
+		
+		},'region.regionTraduction'))->first();
 
 		$data = array();
 
 		foreach($paysDump->region as $regions){
 	
-			$data[$regions->id] = (object)array('nom'=> $regions->regionTraduction[0]->nom, 'description'=>$regions->regionTraduction[0]->description);
+			$data[$regions->id] = (object)array(
+				'nom'=> $regions->regionTraduction[0]->nom,
+				'coords'=> $regions->coords,
+				'description'=>$regions->regionTraduction[0]->description
+				);
 
 		}
 

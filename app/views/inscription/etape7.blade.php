@@ -12,17 +12,13 @@
 	</ul>
 </div>
 @endif
-@if(Session::get('etape7') && Helpers::isOk(Session::get('proprieteId')) )
+@if(Session::get('etape7') && Helpers::isOk($propriete) )
 
-{{Form::open(array('method'=>'put','route'=>array('editPropriete6',Auth::user()->slug)))}}
+{{Form::open(array('method'=>'put','route'=>array('inscription_etape6_update',Auth::user()->slug, $propriete->id)))}}
 
-@elseif(isset($data) && is_object($data) && Helpers::isOk($data) && !Session::has('proprieteId'))
+@else
 
-{{Form::open(array('method'=>'put','route'=>array('editPropriete6',$data->id)))}}
-
-@else 
-
-{{Form::open(array('route'=>array('inscription_etape6',Auth::user()->slug)))}}
+{{Form::open(array('route'=>array('inscription_etape6', Auth::user()->slug, $propriete->id)))}}
 
 @endif
 
@@ -51,14 +47,15 @@
 	{{Form::label('pays',trans('form.enter_country'))}}
 	{{Form::select('pays',$paysList,isset($user) && Helpers::isOk($user->pays_id)? $user->pays_id :(isset($paysList,Session::get('input_7','')['pays']) ? Session::get('input_7','')['pays']:''),array('class'=>'select','data-placeholder'=>trans('form.country'),'required'))}}
 </div>
-<div class="field">
-	{{Form::label('sous_region',trans('form.enter_sousRegion'))}}
-	{{Form::select('sous_region',isset($sousRegionList)? $sousRegionList :array(''), isset($user->sous_region_id) ? $user->sous_region_id :(Session::has('input_7') ? Session::get('input_7')['sous_region']: '') ,array('class'=>'select','data-placeholder'=>trans('form.enter_sousRegion'),'required'))}}
-</div>
 
 <div class="field">
 	{{Form::label('region',trans('form.enter_region'))}}
 	{{Form::select('region',isset($regionList) ? $regionList :array(''), isset($user->region_id) ? $user->region_id :(Session::has('input_7') && isset(Session::get('input_7')['region']) ? Session::get('input_7')['region']: '') ,array('class'=>'select','data-placeholder'=>trans('form.enter_region'),'required'))}}
+</div>
+
+<div class="field">
+	{{Form::label('sous_region',trans('form.enter_sousRegion'))}}
+	{{Form::select('sous_region',isset($sousRegionList)? $sousRegionList :array(''), isset($user->sous_region_id) ? $user->sous_region_id :(Session::has('input_7') ? Session::get('input_7')['sous_region']: '') ,array('class'=>'select','data-placeholder'=>trans('form.enter_sousRegion'),'required'))}}
 </div>
 
 {{Form::label('localite',trans('form.enter_localite'))}}

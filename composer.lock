@@ -1,10 +1,58 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "c391e1642ce625b6ad0c99fb7457e14f",
+    "hash": "39c6c098d6ee87f7b17aae4099c9b475",
     "packages": [
+        {
+            "name": "barryvdh/laravel-translation-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-translation-manager.git",
+                "reference": "6437a4b0a3ab99304f2384f63eb89b3fd40fa650"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-translation-manager/zipball/6437a4b0a3ab99304f2384f63eb89b3fd40fa650",
+                "reference": "6437a4b0a3ab99304f2384f63eb89b3fd40fa650",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.1",
+                "illuminate/translation": "~4.1",
+                "php": ">=5.3.0",
+                "symfony/finder": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Barryvdh\\TranslationManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Manage Laravel Translations",
+            "keywords": [
+                "laravel",
+                "translations",
+                "translator"
+            ],
+            "time": "2014-08-14 14:12:48"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "dev-master",
@@ -1736,6 +1784,7 @@
     "stability-flags": {
         "intervention/image": 20
     },
+    "prefer-stable": false,
     "platform": [
 
     ],

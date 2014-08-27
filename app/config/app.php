@@ -110,6 +110,7 @@ return array(
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		'Barryvdh\TranslationManager\ManagerServiceProvider',
 
 	),
 
@@ -178,6 +179,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 		'Image' 		  => 'Intervention\Image\Facades\Image',
+
+		'Collection'      => 'Illuminate\Database\Eloquent\Collection',
 
 	),
 

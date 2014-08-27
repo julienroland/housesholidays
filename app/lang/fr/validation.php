@@ -26,7 +26,7 @@ return array(
         "file"    => "Le fichier :attribute doit avoir une taille entre :min et :max kilobytes.",
         "string"  => "Le texte :attribute doit avoir entre :min et :max caractères.",
         "array"   => "Le champ :attribute doit avoir entre :min - :max éléments."
-    ),
+        ),
     "confirmed"        => "Le champ de confirmation :attribute ne correspond pas.",
     "date"             => "Le champ :attribute n'est pas une date valide.",
     "date_format"      => "Le champ :attribute ne correspond pas au format :format.",
@@ -44,14 +44,14 @@ return array(
         "file"    => "Le fichier :attribute ne peut être plus gros que :max kilobytes.",
         "string"  => "Le texte de :attribute ne peut contenir plus de :max caractères.",
         "array"   => "Le champ :attribute ne peut avoir plus de :max éléments.",
-    ),
+        ),
     "mimes"            => "Le champ :attribute doit être un fichier de type : :values.",
     "min"              => array(
         "numeric" => "La valeur de :attribute doit être supérieur à :min.",
         "file"    => "Le fichier :attribute doit être plus que gros que :min kilobytes.",
         "string"  => "Le texte :attribute doit contenir au moins :min caractères.",
         "array"   => "Le champ :attribute doit avoir au moins :min éléments."
-    ),
+        ),
     "not_in"           => "Le champ :attribute sélectionné n'est pas valide.",
     "numeric"          => "Le champ :attribute doit contenir un nombre.",
     "regex"            => "Le format du champ :attribute est invalide.",
@@ -65,7 +65,7 @@ return array(
         "file"    => "La taille du fichier de :attribute doit être de :size kilobytes.",
         "string"  => "Le texte de :attribute doit contenir :size caractères.",
         "array"   => "Le champ :attribute doit contenir :size éléments."
-    ),
+        ),
     "unique"           => "La valeur du champ :attribute est déjà utilisée.",
     "url"              => "Le format de l'URL de :attribute n'est pas valide.",
 
@@ -100,7 +100,8 @@ return array(
         'favoris_add'=>'Favoris ajouté !',
         'favoris_delete'=>'Favoris supprimé !',
         'favoris_not_delete'=>'Erreur, favoris non supprimé !',
-        'favoris_exist_deja'=>'Ce favoris existe déjà !'
+        'favoris_exist_deja'=>'Ce favoris existe déjà !',
+        'loginFailed'=>'Utilisateur ou mot de passe incorrect',
         ),
 
     /*
@@ -160,6 +161,6 @@ return array(
         "etage" => "etage",
         "taille_interieur" => "Surface intérieur",
         "taille_exterieur" => "Surface extérieur",
-    ),
+        ),
 
 );

@@ -1780,5 +1780,54 @@
             "thumbnail",
             "watermark"
         ]
+    },
+    {
+        "name": "barryvdh/laravel-translation-manager",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-translation-manager.git",
+            "reference": "6437a4b0a3ab99304f2384f63eb89b3fd40fa650"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barryvdh/laravel-translation-manager/zipball/6437a4b0a3ab99304f2384f63eb89b3fd40fa650",
+            "reference": "6437a4b0a3ab99304f2384f63eb89b3fd40fa650",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~4.1",
+            "illuminate/translation": "~4.1",
+            "php": ">=5.3.0",
+            "symfony/finder": "~2.3"
+        },
+        "time": "2014-08-14 14:12:48",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "src/migrations"
+            ],
+            "psr-0": {
+                "Barryvdh\\TranslationManager\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "Manage Laravel Translations",
+        "keywords": [
+            "laravel",
+            "translations",
+            "translator"
+        ]
     }
 ]

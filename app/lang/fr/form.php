@@ -36,7 +36,7 @@
 	//inscription etape2
 	'enter_batiment_name' => 'Entrez le nom du bien',
 	'enter_pContact' => 'Entrez la personne de contact',
-	'enter_tel' => 'Numero de téléphone n°:num',
+	'enter_tel' => 'Numero de téléphone n°:num (uniquement des chiffres, ex: 0499001122)',
 	'enter_maternelle' => 'Entrez votre langue maternelle',
 	'enter_site' => 'Entrez votre site web',
 	'enter_comm' => 'Entrez votre commentaire',

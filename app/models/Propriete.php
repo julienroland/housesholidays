@@ -8,6 +8,7 @@ class Propriete extends Eloquent {
 	 *
 	 * @var string
 	 */
+
 	public static $rules1 =  array(
 
 		'titre_propriete'=> 'required',
@@ -75,6 +76,11 @@ class Propriete extends Eloquent {
 	}
 
 	public function photoPropriete(){
+
+		return $this->hasMany('PhotoPropriete');
+
+	}
+	public function photo(){
 
 		return $this->hasMany('PhotoPropriete');
 
@@ -149,7 +155,7 @@ class Propriete extends Eloquent {
 	public function commentaire(){
 
 		return $this->hasMany('Commentaire');
-		
+
 	}
 
 	public static function getCurrentStep(){
@@ -158,9 +164,9 @@ class Propriete extends Eloquent {
 
 	}
 
-	public static function getLocations( $proprieteId = null){
+	public static function getLocations( $propriete = null){
 
-		if(Helpers::isNotOk( $proprieteId)){
+		if(Helpers::isNotOk( $propriete)){
 
 			$proprieteDump = User::find( Auth::user()->id )
 			->propriete(  )
@@ -178,11 +184,29 @@ class Propriete extends Eloquent {
 				))
 			->where( 'etape','!=','' )
 			->orderBy('created_at','desc')
-			->remember(60 * 24, 'proprietes')
+			/*->remember(60 * 24, 'proprietes'.Auth::user()->id)*/
 			->get(  );
 
 		}else{
 
+			if(is_object($propriete)) {
+
+			$proprieteDump = $propriete
+			->with(array(
+				'proprieteTraduction',
+				'localite',
+				'sousRegion.sousRegionTraduction',
+				'region.regionTraduction',
+				'pays.paysTraduction',
+				'typeBatiment.typeBatimentTraduction',
+				'photoPropriete',
+				))
+			->where( 'etape','!=','' )
+			->where('user_id', $propriete->user_id )
+			->where('id', $propriete->id )
+			->first(  );
+
+		}else{
 			$proprieteDump = Propriete::
 			with(array(
 				'proprieteTraduction',
@@ -194,10 +218,10 @@ class Propriete extends Eloquent {
 				'photoPropriete',
 				))
 			->where( 'etape','!=','' )
-			->where('user_id', 	Propriete::find($proprieteId)->user()->pluck('id') )
-			->whereId($proprieteId)
-			->remember(60 * 24, 'proprietes')
+			/*->where('user_id', $propriete->user_id )*/
+			->where('id', $propriete )
 			->first(  );
+		}
 
 		}
 
@@ -239,7 +263,7 @@ class Propriete extends Eloquent {
 		{
 			$type = Config::get('var.image_thumbnail');
 		}
-		
+
         /**
         *
         * Get propriete par son id et le user
@@ -255,7 +279,7 @@ class Propriete extends Eloquent {
 
         foreach( $proprietes as $propriete){
 
-        	array_push($data['data'], (object)array( 
+        	array_push($data['data'], (object)array(
 
         		'url'=>Helpers::addBeforeExtension($propriete->url, $type),
         		'ordre'=>$propriete->ordre,
@@ -270,11 +294,11 @@ class Propriete extends Eloquent {
         }
 
         $data['count'] = count( $proprietes );
-        
+
         if( $output==='json' ){
 
         	return json_encode((object)$data);
-        	
+
         }
         else
         {
@@ -320,10 +344,10 @@ class Propriete extends Eloquent {
 
 			/*foreach($t[$typeOption] as $dataArr){
 
-				
+
 				$data[str_replace('b_','',$typeOption)][$dataArr->pivot->option_id] = (object)array('id'=>$dataArr->pivot->option_id,'valeur' =>$dataArr->pivot->valeur);
 			}*/
-			
+
 		}
 
 	/**
@@ -336,7 +360,7 @@ class Propriete extends Eloquent {
 }
 public static function getOptions($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
 
-	$optionsDump = 
+	$optionsDump =
 	Propriete::with(array('option.optionTraduction'))
 	->whereId($proprieteId)->first();
 
@@ -345,7 +369,7 @@ public static function getOptions($proprieteId = null,  $orderBy='valeur', $orde
 			),
 		'count'=>'',
 		);
-	
+
 	foreach($optionsDump->option as $option){
 
 		if($option !=='situation'){
@@ -366,13 +390,13 @@ public static function getOptions($proprieteId = null,  $orderBy='valeur', $orde
 
 	return (object)$data;
 }
-public static function getSituations($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
+public static function getSituations($propriete = null,  $orderBy='valeur', $orderWay='asc'){
 
-	$situationDump = 
-	Propriete::with(array('option'=>function($query){
+	$situationDump =
+	$propriete::with(array('option'=>function($query){
 		$query->where('options.id', 44 );
 	}))
-	->whereId($proprieteId)->remember(60 * 24)->first();
+	->first();
 
 	$d = array();
 
@@ -391,7 +415,7 @@ public static function getSituations($proprieteId = null,  $orderBy='valeur', $o
 
 		array_push($data['data'] , (object)array('id'=>$situation->id, 'nom'=>$situation->valeur,'valeur'=>''));
 	}
-	
+
 	$data['count'] = count($traductionDump);
 
 	/**
@@ -403,13 +427,14 @@ public static function getSituations($proprieteId = null,  $orderBy='valeur', $o
 	return (object)$data;
 }
 
-public static function getLiterie($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
-	$literieDump = 
-	Propriete::with(array('option'=>function($query){
+public static function getLiterie($propriete = null,  $orderBy='valeur', $orderWay='asc'){
+
+	$literieDump =
+	$propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.literie_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->remember(60 * 24)->first();
-	
+	->first();
+
 	$data = array(
 		'data'=>array(),
 		'count'=>'',
@@ -419,7 +444,7 @@ public static function getLiterie($proprieteId = null,  $orderBy='valeur', $orde
 
 		array_push($data['data'] , (object)array('id'=>$literie->optionTraduction[0]->id, 'nom'=>$literie->optionTraduction[0]->valeur,'valeur'=>$literie->pivot->valeur));
 	}
-	
+
 	$data['count'] = count($literieDump->option);
 
 	/**
@@ -431,13 +456,14 @@ public static function getLiterie($proprieteId = null,  $orderBy='valeur', $orde
 	return (object)$data;
 }
 
-public static function getExterieur($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
-	$exterieurDump = 
-	Propriete::with(array('option'=>function($query){
+public static function getExterieur($propriete = null,  $orderBy='valeur', $orderWay='asc'){
+
+	$exterieurDump =
+	$propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.exterieur_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->remember(60 * 24)->first();
-	
+	->first();
+
 	$data = array(
 		'data'=>array(),
 		'count'=>'',
@@ -447,7 +473,7 @@ public static function getExterieur($proprieteId = null,  $orderBy='valeur', $or
 
 		array_push($data['data'], (object)array('id'=>$exterieur->optionTraduction[0]->id, 'nom'=>$exterieur->optionTraduction[0]->valeur,'valeur'=>$exterieur->pivot->valeur));
 	}
-	
+
 	$data['count'] = count($exterieurDump->option);
 	/**
 	*
@@ -458,13 +484,14 @@ public static function getExterieur($proprieteId = null,  $orderBy='valeur', $or
 	return (object)$data;
 }
 
-public static function getInterieur($proprieteId = null,  $orderBy='valeur', $orderWay='asc'){
-	$interieurDump = 
-	Propriete::with(array('option'=>function($query){
+public static function getInterieur($propriete = null,  $orderBy='valeur', $orderWay='asc'){
+
+	$interieurDump =
+	$propriete::with(array('option'=>function($query){
 		$query->where( 'type_option_id', Config::get('var.interieur_col') );
 	},'option.optionTraduction'))
-	->whereId($proprieteId)->remember(60 * 24)->first();
-	
+	->first();
+
 	$data = array(
 		'data'=>array(),
 		'count'=>'',
@@ -474,7 +501,7 @@ public static function getInterieur($proprieteId = null,  $orderBy='valeur', $or
 
 		array_push($data['data'] , (object)array('id'=>$interieur->optionTraduction[0]->id, 'nom'=>$interieur->optionTraduction[0]->valeur,'valeur'=>$interieur->pivot->valeur));
 	}
-	
+
 	$data['count'] = count($interieurDump->option);
 
 	/**

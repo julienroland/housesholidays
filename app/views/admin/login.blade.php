@@ -4,7 +4,7 @@
 		<div class="container connexion">
 			<h1>Connectez-vous !</h1>
 			@if ($errors->any())
-			<div class="alert alert-dange">
+			<div class="alert alert-danger">
 				<ul>
 					{{ implode('', $errors->all('<li class="error">:message</li>')) }}
 				</ul>

@@ -18,7 +18,6 @@
 		</ul>
 	</div> 
 	<!--end pays-->
-
 	<div id="moteur-recherche">
 		<form action="locations-de-vacances.php" method="get">
 			<!-- DROPDOWN TYPE -->

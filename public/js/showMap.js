@@ -26,6 +26,7 @@
  	$localite = $('#localite'),
  	$sousRegion = $('#sous_region'),
  	$latlng = $('#latlng'),
+ 	$mapTab = $('.localisation'),
  	sAdresse,
  	sPays,
  	sRegion,
@@ -37,7 +38,10 @@
  	geocoder = new google.maps.Geocoder();
 
  	$(function(){
+ 		$mapTab.on('click', function(){
 
+ 			displayGoogleMap();
+ 		});
  	});
 
  	var initialize = function(){
@@ -73,43 +77,43 @@
  		});
 
 
- 			createMarker(gStartPosition);
- 			gMap.setCenter(gStartPosition);
- 			gMap.setZoom(15);
+ 		createMarker(gStartPosition);
+ 		gMap.setCenter(gStartPosition);
+ 		gMap.setZoom(15);
 
 
  	};
 
  	var getPosition = function( sType , sPosition, sTypePartAdresse ){
 
- 		
-};
-var createMarker = function( gLatLng ){
 
-	gMarker = new google.maps.Marker({
-		position:gLatLng,
-		animation: google.maps.Animation.DROP,
-		map : gMap,
-		visible: true,
-		icon: icon_marker
-	});
+ 	};
+ 	var createMarker = function( gLatLng ){
 
-	google.maps.event.addListener(gMarker, 'click', function( e ) {
+ 		gMarker = new google.maps.Marker({
+ 			position:gLatLng,
+ 			animation: google.maps.Animation.DROP,
+ 			map : gMap,
+ 			visible: true,
+ 			icon: icon_marker
+ 		});
 
-		gMap.setZoom(18);
-		gMap.panTo(new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
-		
-	});
+ 		google.maps.event.addListener(gMarker, 'click', function( e ) {
 
+ 			gMap.setZoom(18);
+ 			gMap.panTo(new google.maps.LatLng( e.latLng.lat() , e.latLng.lng() ));
 
-};
-var updatePosition = function(  ){
-	var gMyPosition = new google.maps.LatLng( oMyPosition.latitude , oMyPosition.longitude );
-	gMap.panTo( gMyPosition );
-
-};
+ 		});
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+ 	};
+ 	var updatePosition = function(  ){
+ 		var gMyPosition = new google.maps.LatLng( oMyPosition.latitude , oMyPosition.longitude );
+ 		gMap.panTo( gMyPosition );
 
-}).call(this,jQuery);
+ 	};
+
+
+ 	google.maps.event.addDomListener(window, 'load', initialize);
+
+ }).call(this,jQuery);

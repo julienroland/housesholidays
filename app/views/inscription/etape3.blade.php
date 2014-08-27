@@ -13,17 +13,13 @@
 </div>
 @endif
 
-@if(Session::get('etape3') && Helpers::isOk(Session::get('proprieteId')) )
+@if(Session::get('etape3') && Helpers::isOk($propriete) )
 
-{{Form::open(array('method'=>'put','route'=>array('inscription_etape2_update',Auth::user()->slug)))}}
-
-@elseif(isset($data) && is_object($data) && Helpers::isOk($data) && !Session::has('proprieteId'))
-
-{{Form::open(array('method'=>'put','route'=>array('editPropriete2',$data->id)))}}
+{{Form::open(array('method'=>'put','route'=>array('inscription_etape2_update',Auth::user()->slug, $propriete->id)))}}
 
 @else 
 
-{{Form::open(array('route'=>array('inscription_etape2',Auth::user()->slug)))}}
+{{Form::open(array('route'=>array('inscription_etape2', Auth::user()->slug, $propriete->id)))}}
 
 @endif
 
@@ -44,7 +40,7 @@
 <br/>
 
 {{Form::label('adresse',trans('form.enter_adresse'))}}
-{{Form::text('adresse',isset($data->adresse) ? $data->adresse :(Session::has('input_3') ? Session::get('input_3')['adresse']: ''),array('placeholder'=>trans('form.enter_adresse')))}}
+{{Form::text('adresse',isset($propriete->adresse) ? $propriete->adresse :(Session::has('input_3') ? Session::get('input_3')['adresse']: ''),array('placeholder'=>trans('form.enter_adresse')))}}
 <br/>
 
 {{Form::label('situation',trans('form.enter_situation'))}}

@@ -16,7 +16,7 @@ class CreateRegionsTable extends Migration {
 			$table->increments('id');
 			$table->integer('nb_vue');
 			$table->boolean('statut');
-			$table->string('coords');
+			$table->string('coords')->nullable();
 			$table->integer('pays_id')->unsigned();
 			$table->foreign('pays_id')->references('id')->on('pays');
 			

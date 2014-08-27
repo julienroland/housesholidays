@@ -16,7 +16,7 @@ class UserController extends BaseController {
 			$commentaire->date_sejour = Helpers::toServerDate($input['date']);
 			$commentaire->note = $input['note'];
 			$commentaire->text = $input['commentaire'];
-			$commentaire->user_id = $input['user_id']; 
+			$commentaire->user_id = $input['user_id'];
 			$commentaire->propriete_id = $input['propriete_id'];
 			$commentaire->statut = 1;
 
@@ -27,7 +27,10 @@ class UserController extends BaseController {
 				Cache::forget('commentaires'.$input['propriete_id']);
 
 			}
+			if(Input::has('url')){
 
+				return Redirect::to(Input::get('url'));
+			}
 			return Redirect::route('showPropriete', $input['propriete_id']);
 
 		}else{
@@ -37,7 +40,7 @@ class UserController extends BaseController {
 			->withErrors( $validator );
 
 		}
-		
+
 
 	}
 
@@ -78,7 +81,7 @@ class UserController extends BaseController {
 
 			$message->vers_user_id = $input['receiver_id'];
 			$message->propriete_id = $input['propriete_id'];
-			
+
 			$message->save();
 
 			$user = User::find((int)$input['receiver_id']);
@@ -188,7 +191,7 @@ public function addFavoris($user_id = null, $propriete_id = null){
 				$favoris->save();
 
 				if($favoris){
-					
+
 					Cache::forget('favoris'.$user_id);
 
 					return Response::json(trans('validation.custom.favoris_add'), 200);
@@ -236,7 +239,7 @@ public function deleteFavoris($user_id = null, $propriete_id = null){
 
 public function listCommentaires(  ){
 
-	$commentaires = Auth::user()->commentaire()->get();
+	$commentaires = Auth::user()->propriete()->with('commentaire')->get();
 
 	return View::make('compte.commentaires', array('page'=>'commentaires'))
 	->with(compact('commentaires'));
@@ -313,7 +316,7 @@ public function listFavoris(){
 
 	$imageType = Helpers::cache(imageType::whereNom(Config::get('var.image_thumbnail'))->remember(60 * 24)->first(), 'image_thumbnail');
 
-	
+
 
 	return View::make('compte.favoris', array('page'=>'favoris'))
 	->with(compact(array('favoris','imageType')));

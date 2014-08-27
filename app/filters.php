@@ -30,6 +30,8 @@ App::error(function(ModelNotFoundException $e)
 	return Response::make(Lang::get('general.introuvable'), 404);
 });
 
+
+
 /**
 *
 * Filtre de langue
@@ -44,7 +46,7 @@ Route::filter('lang', function(){
 
 		Session::put('lang', $lang );
 
-		Session::put('langId', Langage::whereInitial($lang)->first(['id'])->id);	
+		Session::put('langId', Langage::whereInitial($lang)->first(['id'])->id);
 
 		if(App::getLocale() !== $lang){
 
@@ -63,11 +65,11 @@ Route::filter('lang', function(){
 
 
 	}
-	else 
+	else
 	{
 		$langNav = Request::server('HTTP_ACCEPT_LANGUAGE');
 
-		if (helpers::isOk($langNav)) 
+		if (helpers::isOk($langNav))
 		{
 			$langue = explode(',',$langNav);
 			$langue = strtolower(substr(chop($langue[1]),0,2));
@@ -106,23 +108,23 @@ Route::filter('lang', function(){
 */
 
 Route::filter('auth', function()
-{	
-	
-	if (Auth::guest() && Helpers::isNotOk(Cookie::get('remember'))){ 
+{
 
-		return Redirect::guest('/'); 
+	if (Auth::guest() && Helpers::isNotOk(Cookie::get('remember'))){
+
+		return Redirect::guest('/');
 
 	}elseif(Auth::guest() && Helpers::isOk(Cookie::get('remember'))){
 
-		return Redirect::action('ConnexionController@connectUser', Cookie::get('remember')); 
+		return Redirect::action('ConnexionController@connectUser', Cookie::get('remember'));
 	};
 });
 
 Route::filter('admin', function()
-{	
+{
 
 	if(Auth::check()){
-		
+
 		if(Auth::user()->role_id <= 1){
 
 			return Redirect::to('/');
@@ -137,11 +139,11 @@ Route::filter('admin', function()
 });
 
 Route::filter('inscription_propriete', function()
-{	
+{
 
-	if (!Session::has('proprieteId') && Helpers::isNotOk( Session::get('proprieteId'))){ 
+	if (!Session::has('proprieteId') && Helpers::isNotOk( Session::get('proprieteId'))){
 
-		return Redirect::to(Lang::get('routes.compte')); 
+		return Redirect::to(Lang::get('routes.compte'));
 
 	}
 });
@@ -166,11 +168,11 @@ Route::filter('auth.basic', function()
 Route::filter('guest', function()
 {
 
-	if (Auth::check()){ 
+	if (Auth::check()){
 
 		return Redirect::to(trans('routes.index'));
 
-	}elseif(!Auth::check() && Helpers::isOk(Cookie::get('remember'))){ 
+	}elseif(!Auth::check() && Helpers::isOk(Cookie::get('remember'))){
 
 		if(Auth::attempt(array('email'=>Cookie::get('remember')['email'], 'password'=> Cookie::get('remember')['password']), isset(Cookie::get('remember')['remember']) ? true: false)) {
 
@@ -178,11 +180,11 @@ Route::filter('guest', function()
 			return Redirect::route('compte', Auth::user()->slug)
 			->with('success',trans('validation.custom.connect'));
 			/**
-			
+
 				TODO:
-				- probleme avec la redirection  
+				- probleme avec la redirection
 				- Second todo item
-			
+
 				**/
 
 			}
