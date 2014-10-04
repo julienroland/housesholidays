@@ -115,7 +115,7 @@ class ConnexionController extends BaseController {
 			$message = trans('validation.custom.already_disonnect');
 		}
 
-		return Redirect::to(trans('routes.index'))
+		return Redirect::route('home')
 		->withCookie(Cookie::forget('remember'))
 		->with(compact('message'));
 	}

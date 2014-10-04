@@ -53,6 +53,8 @@ return array(
 	*/
 	'available_locales' => array('fr', 'en', 'nl', 'es', 'de'),
 
+	'default_locale' => 'en',
+
 	'locale' => 'fr',
 
 	/*

@@ -79,5 +79,8 @@ return array(
 	'sur'=>'sur',
 	'resultat'=>'resultat',
 	'resultats'=>'resultats',
+    'aucun_resultat_recherche'=>'Aucun résultat pour cette recherche',
+    'monde'=>'Monde',
+    'trouverUneLocation'=>'Trouvez une location de vacances',
 
 	);

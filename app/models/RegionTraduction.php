@@ -15,6 +15,11 @@ class RegionTraduction extends Eloquent {
 		return $this->belongsTo('Region');
 
 	}
+
+    public function scopeLang($query)
+    {
+        $query->where(Config::get('var.lang_col'), Session::get('langId'));
+    }
 	
 	public function langage(){
 

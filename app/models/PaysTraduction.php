@@ -15,7 +15,10 @@ class PaysTraduction extends Eloquent {
 		return $this->belongsTo('Pays');
 
 	}
-
+    public function scopeLang($query)
+    {
+        $query->where(Config::get('var.lang_col'), Session::get('langId'));
+    }
 	public function langage(){
 
 		return $this->belongsTo('Langage');

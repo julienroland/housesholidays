@@ -15,4 +15,9 @@ class ImageType extends Eloquent {
 
 		return $this->hasMany('PhotoPropriete');
 	}
+
+    public function findFormType($type)
+    {
+        return imageType::whereNom($type)->first();
+    }
 }

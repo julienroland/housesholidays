@@ -3,110 +3,141 @@
 
 class Region extends Eloquent {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
 
-	public function user(){
+    public function user()
+    {
 
-		return $this->hasMany('User');
+        return $this->hasMany('User');
 
-	}
+    }
 
-	public function regionTraduction(){
+    public function propriete()
+    {
 
-		return $this->hasMany('RegionTraduction')
-		->where(Config::get('var.lang_col'),Session::get('langId'));
+        return $this->hasMany('Propriete');
 
-	}
+    }
 
-	public function pays(){
+    public function regionTraduction()
+    {
 
-		return $this->belongsTo('Pays');
+        return $this->hasMany('RegionTraduction')
+            ->where(Config::get('var.lang_col'), Session::get('langId'));
 
-	}
+    }
+    public function sousRegion() 
+    {
+        return $this->hasMany('SousRegion');
+    }
 
-	/**
-	*
-	* Avoir la liste des pays sous forme d'array associative $key => value
-	*
-	**/
-	public static function getListForm( $where = null, $whereId = null, $json = false, $orderBy = 'nom', $orderWay = 'asc' ){
+    public function getProprieteCountAttribute()
+    {
+        return $this->proprieteCountRelation->count;
+    }
 
-	/**
-	*
-	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
-	*
-	**/
-	if(Helpers::isNotOk($where) && Helpers::isNotOk($whereId)) {
+    public function proprieteCountRelation()
+    {
+        return $this->hasMany('Propriete')->where('statut', 1)->selectRaw('region_id, count(*) as count')
+            ->groupBy('region_id');
+    }
 
-		$regionDump = DB::table('regions')
-		->join('regions_traductions','regions.id','=','region_id')
-		->where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay )
-		->get(array('nom','region_id'));
+    public function pays()
+    {
 
-	}
-	else{
+        return $this->belongsTo('Pays');
 
-		$regionDump = DB::table('regions')
-		->join('regions_traductions','regions.id','=','region_id')
-		->where($where.'_id', $whereId) 
-		->where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay )
-		->get(array('nom','region_id'));
-	}
-	/*dd(DB::getQueryLog());*/
-	
-	/**
-	*
-	* Retravaille l'output de manière à avoir id => nom
-	*
-	**/
-	if(Helpers::isOk($json) && $json === true){
+    }
 
-		$regionList = array();
+    /**
+     *
+     * Avoir la liste des pays sous forme d'array associative $key => value
+     *
+     **/
+    public static function getListForm($where = null, $whereId = null, $json = false, $orderBy = 'nom', $orderWay = 'asc')
+    {
 
-		foreach($regionDump as $region){
+        /**
+         *
+         * Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
+         *
+         **/
+        if (Helpers::isNotOk($where) && Helpers::isNotOk($whereId))
+        {
 
-			array_push($regionList , array(
-				'id'=>$region->region_id,
-				'val'=>$region->nom
-				));
-		}
+            $regionDump = DB::table('regions')
+                ->join('regions_traductions', 'regions.id', '=', 'region_id')
+                ->where(Config::get('var.lang_col'), Session::get('langId'))
+                ->orderBy($orderBy, $orderWay)
+                ->get(array('nom', 'region_id'));
 
-	}
-	else{
+        } else
+        {
 
-		$regionList = array(
-			''=>''
-			);
+            $regionDump = DB::table('regions')
+                ->join('regions_traductions', 'regions.id', '=', 'region_id')
+                ->where($where . '_id', $whereId)
+                ->where(Config::get('var.lang_col'), Session::get('langId'))
+                ->orderBy($orderBy, $orderWay)
+                ->get(array('nom', 'region_id'));
+        }
+        /*dd(DB::getQueryLog());*/
 
-		foreach($regionDump as $region){
+        /**
+         *
+         * Retravaille l'output de manière à avoir id => nom
+         *
+         **/
+        if (Helpers::isOk($json) && $json === true)
+        {
 
-			$regionList[$region->region_id]  = $region->nom;
+            $regionList = array();
 
-		}
-	}
+            foreach ($regionDump as $region)
+            {
 
-	
+                array_push($regionList, array(
+                    'id' => $region->region_id,
+                    'val' => $region->nom
+                ));
+            }
 
-	/**
-	*
-	* Return une array pour les selects dans les formulaires
-	*
-	**/
-	if(Helpers::isOk($json) && $json === true){
+        } else
+        {
 
-		return json_encode($regionList);
+            $regionList = array(
+                '' => ''
+            );
 
-	}else{
+            foreach ($regionDump as $region)
+            {
 
-		return $regionList;
+                $regionList[$region->region_id] = $region->nom;
 
-	}
-}
+            }
+        }
+
+
+        /**
+         *
+         * Return une array pour les selects dans les formulaires
+         *
+         **/
+        if (Helpers::isOk($json) && $json === true)
+        {
+
+            return json_encode($regionList);
+
+        } else
+        {
+
+            return $regionList;
+
+        }
+    }
 
 }

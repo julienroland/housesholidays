@@ -118,4 +118,19 @@
 	'adresse'=>'Adresse',
 	'message'=>'Message à envoyer',
 	'reponse'=>'Réponse à envoyer',
-	);
+    'homeQuickSearch'=>'Recherche Pays Région',
+    'typeHebergement'=>'Type d\'hébergement',
+    'pays'=>'Pays',
+    'region'=>'Region',
+    'sous_region'=>'Département/Province',
+    'start_date'=>'Date d\'arrivé',
+    'end_date'=>'Date de départ',
+    'rechercher'=>'Recherche',
+    'ref'=>'N° de réf.',
+    'min'=>'Min.',
+    'max'=>'Max.',
+    'euro_parsemaine'=>'€/semaine',
+    'Chambres'=>'Chambres',
+    'Literie'=>'Literie',
+    'plus_options'=>'Afficher plus d\'options'
+);

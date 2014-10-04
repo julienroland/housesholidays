@@ -20,7 +20,7 @@
 				<div class="language-select">
 					{{Form::open(array('method'=>'get','route'=>'changeLangue','class'=>'changeLang'))}}
 
-					{{Form::select('lang',trans('general.lang'),'')}}
+					{{Form::select('lang',trans('general.lang'), Session::get('lang'))}}
 
 					{{Form::close()}}
 

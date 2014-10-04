@@ -2,16 +2,33 @@
 
 @section('container')
 
+@include('listing.advsearch')
+
+
+<div id="resultat-recherche">
+
+@include('listing.header')
+
 @if( isset($proprietes ) && Helpers::isOk( $proprietes ))
 
 @foreach( $proprietes as $propriete )
 
+@foreach($propriete->proprieteTraduction as $traduction)
+
+			@if($traduction->cle === Config::get('var.titre') )
+			@if(Helpers::isOk($traduction->cle))
+			<?php $titre = Helpers::transOrDefault('ProprieteTraduction','key', Config::get('var.titre'), $traduction->valeur); ?>
+			@endif
+			@endif
+@endforeach
+
 <div class="liste-resultat">
 	<a href="">
 		@if(isset($propriete->photoPropriete[0]) && Helpers::isOk($propriete->photoPropriete[0]))
-		<a href="{{route('displayPropriete',array('slug'=>$propriete->slug))}}"><img src="/{{Config::get('var.upload_folder')}}{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}"></a>
+		<a href="{{route('displayPropriete',array('slug'=>$propriete->slug))}}">
+		<img src="/{{Config::get('var.upload_folder')}}{{$propriete->user_id}}/{{Config::get('var.propriete_folder')}}/{{$propriete->id}}/{{Helpers::addBeforeExtension($propriete->photoPropriete[0]->url,$imageType->nom)}}" width="{{$imageType->width}}" height="{{$imageType->height}}" class="photo-resultat" alt="{{$propriete->photoPropriete[0]->alt}}"></a>
 		@else
-		<img src="{{Config::get('var.image_folder')}}noimage.jpg" alt="{{trans('listLocation.noImage')}}">
+		<img src="{{Config::get('var.image_folder')}}noimage.jpg" alt="{{trans('listLocation.noImage')}}" class="photo-resultat" >
 		@endif
 		<h3 aria-level="3" role="heading" class="titre-resultat">
 
@@ -103,14 +120,14 @@
 
 			@endif
 		</span>
+		@if(Auth::check())
+        	@if(Helpers::isNotFavoris($propriete->id, Auth::user()->id))
+        	<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
+        	@else
+        	<a href="{{route('deleteFavoris')}}" class="favoris deleteFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span class="delfav">{{trans('general.supprimer')}}</span></a>
+        	@endif
+        	@endif
 	</p>
-	@if(Auth::check())
-	@if(Helpers::isNotFavoris($propriete->id, Auth::user()->id))
-	<a href="{{route('addFavoris')}}" class="favoris addFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span>{{trans('locationList.favoris')}}</span></a>
-	@else
-	<a href="{{route('deleteFavoris')}}" class="favoris deleteFavoris" data-userId="{{Auth::user()->id}}" data-proprieteId="{{$propriete->id}}" ><img src="{{Config::get('var.image_folder')}}ico.coeur.png" alt="" /> <span class="delfav">{{trans('general.supprimer')}}</span></a>
-	@endif
-	@endif
 
 </div>
 <!-- array($propriete->slug, Helpers::toSlug($propriete->typeBatiment->typeBatimentTraduction[0]->nom) , Helpers::toSlug( $propriete->pays->paysTraduction[0]->nom), Helpers::toSlug($propriete->region->regionTraduction[0]->nom), Helpers::toSlug($propriete->sousRegion->sousRegionTraduction[0]->nom), Helpers::toSlug($propriete->localite->nom)))}}</li>
@@ -134,10 +151,16 @@
 	@endif
 
 </div>
+
+<div class="selection-page-bas">
+@include('listing.pagination')
+</div>
 @else
 
 <p>Aucune locations disponible</p>
 
 @endif
+
+</div>
 
 @stop

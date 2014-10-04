@@ -67,7 +67,7 @@ class NamespacedItemResolver {
 		// a specific item out of a groups and will need to return the item name
 		// as well as the group so we know which item to pull from the arrays.
 		else
-		{
+            {
 			$item = implode('.', array_slice($segments, 1));
 
 			return array(null, $group, $item);

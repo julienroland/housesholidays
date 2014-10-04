@@ -27,6 +27,29 @@ return array(
 		),
 	'semaine_col'=>'prix_semaine',
 	'img_quality'=>100,
+    'min_price'=>array(
+        '0€',
+        '500€',
+        '1000€',
+        '1500€',
+        '2000€',
+    ),
+    'max_price'=>array(
+        '0€',
+        '500€',
+        '1000€',
+        '1500€',
+        '2000€',
+        '2500€',
+        '5000€',
+    ),
+    'nombre_chambres'=>array(
+        0,
+        1,
+        2,
+        3,
+        4
+    ),
 	);
 
 

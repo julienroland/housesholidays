@@ -5,799 +5,962 @@ use Carbon\Carbon;
 
 class Helpers {
 
-	public static function isFavoris($propriete_id, $user_id ){
 
-		$favoris = Favoris::whereProprieteId( $propriete_id )->whereUserId( $user_id)->first();
+    public static function isFavoris($propriete_id, $user_id)
+    {
 
-		if($favoris){
+        $favoris = Favoris::whereProprieteId($propriete_id)->whereUserId($user_id)->first();
 
-			return true;
+        if ($favoris)
+        {
 
-		}else{
+            return true;
 
-			return false;
+        } else
+        {
 
-		}
-	}
-	public static function isNotFavoris($propriete_id, $user_id ){
+            return false;
 
-		$favoris = Favoris::whereProprieteId( $propriete_id )->whereUserId( $user_id)->first();
+        }
+    }
 
-		if($favoris){
+    /**
+     * Each on collection
+     *
+     * @param \Illuminate\Collection $data
+     * @param array $idValue
+     * @param string $default
+     * @return array
+     */
 
-			return false;
+    public static function each($data, array $idValue, $default = null)
+    {
 
-		}else{
+        $array = array();
 
-			return true;
+        $idEx = explode('.', $idValue[0]);
+        $valueEx = explode('.', $idValue[1]);
 
-		}
-	}
-	public static function displayHumanDate( $date , $format = '$d $nd $M $y $h:$m:$s' ){
+        foreach ($data as $collection)
+        {
+            $id = self::itinerateObject($collection, $idEx);
+            $value = self::itinerateObject($collection, $valueEx);
 
-		$result = array(
-			'y' => $date->year,
-			'M' => trans('general.mois')[$date->month],
-			'nd' => $date->day === 1 ? $date->day.'<sup>'.trans('general.first_day').'</sup>' : $date->day,
-			'd' => trans('general.jours')[$date->dayOfWeek],
-			'h' => $date->hour,
-			'm' => $date->minute < 10 ? '0'.$date->minute :$date->minute,
-			's' => $date->second < 10 ? '0'.$date->second : $date->second,
-			);
+            $array[$id] = $value;
+        }
 
-		$date = str_replace('$d', $result['d'], $format);
 
-		$date = str_replace('$nd', $result['nd'], $date);
+        if (Helpers::isOk($default))
+        {
+            return array('0' => $default) + $array;
+        }
 
-		$date = str_replace('$M', $result['M'], $date);
+        return $array;
+    }
 
-		$date = str_replace('$y', $result['y'], $date);
+    protected static function itinerateObject($obj, $itinerant)
+    {
 
-		$date = str_replace('$h', $result['h'], $date);
+        for ($i = 0; $i < count($itinerant); $i++)
+        {
+            $obj = $obj{$itinerant[$i]};
+        }
 
-		$date = str_replace('$m', $result['m'], $date);
+        return $obj;
+    }
 
-		$date = str_replace('$s', $result['s'], $date);
+    public static function isNotFavoris($propriete_id, $user_id)
+    {
 
-		return $date;
+        $favoris = Favoris::whereProprieteId($propriete_id)->whereUserId($user_id)->first();
 
-	}
-	public static function beTime( $timestamp ,  $format = '$d $nd $M $y $h:$m:$s'){
+        if ($favoris)
+        {
 
-		return Helpers::displayHumanDate($timestamp->setTimezone('Europe/Brussels'), $format );
-	}
+            return false;
 
-	public static function isOwnerOrAdmin( $id ){
+        } else
+        {
 
-		if(Auth::user()->id == $id || Auth::user()->role > 1){
+            return true;
 
-			return true;
+        }
+    }
 
-		}else{
+    public static function displayHumanDate($date, $format = '$d $nd $M $y $h:$m:$s')
+    {
 
-			return false;
-		}
-	}
-	public static function cache( $query, $name, $time = 1440 ){
+        $result = array(
+            'y' => $date->year,
+            'M' => trans('general.mois')[$date->month],
+            'nd' => $date->day === 1 ? $date->day . '<sup>' . trans('general.first_day') . '</sup>' : $date->day,
+            'd' => trans('general.jours')[$date->dayOfWeek],
+            'h' => $date->hour,
+            'm' => $date->minute < 10 ? '0' . $date->minute : $date->minute,
+            's' => $date->second < 10 ? '0' . $date->second : $date->second,
+        );
 
-		if (!Cache::has($name)) {
+        $date = str_replace('$d', $result['d'], $format);
 
-			$cache = Cache::remember($name, $time , function() use($query)
-			{
-				return $query;
-			});
+        $date = str_replace('$nd', $result['nd'], $date);
 
-			return $cache;
+        $date = str_replace('$M', $result['M'], $date);
 
-		} else {
+        $date = str_replace('$y', $result['y'], $date);
 
-			return Cache::get($name);
+        $date = str_replace('$h', $result['h'], $date);
 
-		}
+        $date = str_replace('$m', $result['m'], $date);
 
-	}
-	public static function wellDisplayPhone( $string ){
+        $date = str_replace('$s', $result['s'], $date);
 
-		if( strlen( $string ) === 9){
+        return $date;
 
-			$prefix = str_split($string, 3)[0];
-			$num = str_split(str_split($string, 3)[1].str_split($string, 3)[2], 2);
+    }
 
-			return $prefix.' '.$num[0].' '.$num[1].' '.$num[1];
+    public static function beTime($timestamp, $format = '$d $nd $M $y $h:$m:$s')
+    {
 
-		}else if(strlen( $string ) === 10){
+        return Helpers::displayHumanDate($timestamp->setTimezone('Europe/Brussels'), $format);
+    }
 
-			$prefix = str_split($string, 4)[0];
-			$num = str_split(str_split($string, 4)[1].str_split($string, 4)[2], 2);
+    public static function isOwnerOrAdmin($id)
+    {
 
-			return $prefix.' '.$num[0].' '.$num[1].' '.$num[1];
+        if (Auth::user()->id == $id || Auth::user()->role > 1)
+        {
 
-		}else{
+            return true;
 
-			$strings =  str_split( $string , 2);
-			$stringToReturn = '';
+        } else
+        {
 
-			foreach ( $strings as $string ){
+            return false;
+        }
+    }
 
-				$stringToReturn = $stringToReturn.$string.' ';
+    public static function cache($query, $name, $time = 1440)
+    {
 
-			}
+        if ( !Cache::has($name))
+        {
 
-			return $stringToReturn;
-		}
+            $cache = Cache::remember($name, $time, function () use ($query)
+            {
+                return $query;
+            });
 
-	}
+            return $cache;
 
-	public static function isLast( $current, $total ){
+        } else
+        {
 
-		if($current >= $total){
-			return true;
-		}
-		else{
+            return Cache::get($name);
 
-			return false;
-		}
-	}
-	public static function isNotLast( $current, $total ){
+        }
 
-		if($current >= $total){
+    }
 
-			return false;
+    public static function wellDisplayPhone($string)
+    {
 
-		}
-		else{
+        if (strlen($string) === 9)
+        {
 
-			return true;
+            $prefix = str_split($string, 3)[0];
+            $num = str_split(str_split($string, 3)[1] . str_split($string, 3)[2], 2);
 
-		}
-	}
-	public static function isActive( $page, $current ){
+            return $prefix . ' ' . $num[0] . ' ' . $num[1] . ' ' . $num[1];
 
-		if(isset($page) && Helpers::isOk($page) && isset($current) && Helpers::isOk($current)){
+        } else if (strlen($string) === 10)
+        {
 
-			if( $page === $current || $page == $current ){
+            $prefix = str_split($string, 4)[0];
+            $num = str_split(str_split($string, 4)[1] . str_split($string, 4)[2], 2);
 
-				return 'class="active"';
-			}
-		}
-	}
-	public static function toHumanDiff( $timestamp ){
+            return $prefix . ' ' . $num[0] . ' ' . $num[1] . ' ' . $num[1];
 
-		return $timestamp->diffForHumans(Carbon::now());
-	}
-	public static function toHumanTimestamp( $timestamp ){
+        } else
+        {
 
-		setlocale(LC_TIME, App::getLocale());
+            $strings = str_split($string, 2);
+            $stringToReturn = '';
 
-		return $timestamp->formatLocalized('%e %B %Y %k:%M:%S');
-	}
-	public static function createCarbonTimestamp( $timestamp, $type='us',  $separator = '-' ){
+            foreach ($strings as $string)
+            {
 
-		Helpers::toHumanTimestamp($timestamp);
+                $stringToReturn = $stringToReturn . $string . ' ';
 
-	}
-	public static function getDateBetween( $start, $end ){
-		$dateBetween  = array();
-		$start = Helpers::createCarbonDate( $start);
-		$end = Helpers::createCarbonDate( $end);
-		if(Helpers::isOk($start) && Helpers::isOk($end)){
-			$diff = $start->diffInDays($end);
+            }
 
-			for($a=0;$a <= $diff; $a++){
+            return $stringToReturn;
+        }
 
-				array_push($dateBetween , $start->toDateString());
+    }
 
-				$start->addDay();
-			}
-		}
-		return $dateBetween;
-	}
+    public static function isLast($current, $total)
+    {
 
-	public static function build_calendar($month = null, $year = null, $fromId = null , $dateArray = null) {
+        if ($current >= $total)
+        {
+            return true;
+        } else
+        {
 
-		if(Helpers::isNotOk( $month )){
+            return false;
+        }
+    }
 
-			$month = date('n');
+    public static function isNotLast($current, $total)
+    {
 
-		}
+        if ($current >= $total)
+        {
 
-		if(Helpers::isNotOk( $year )){
+            return false;
 
-			$year = date('y');
+        } else
+        {
 
-		}
-		if(Helpers::isOk($fromId)){
+            return true;
 
-			$calendriers = Calendrier::whereProprieteId( $fromId )->get();
+        }
+    }
 
-		}
+    public static function isActive($page, $current)
+    {
 
-		$today_date = date("d");
-		$today_date = ltrim($today_date, '0');
-     // Create array containing abbreviations of days of week.
+        if (isset($page) && Helpers::isOk($page) && isset($current) && Helpers::isOk($current))
+        {
 
-		$daysOfWeek = array('Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche');
+            if ($page === $current || $page == $current)
+            {
 
-     // What is the first day of the month in question?
-		$firstDayOfMonth = mktime(0,0,0,$month,1,$year);
+                return 'class="active"';
+            }
+        }
+    }
 
-     // How many days does this month contain?
-		$numberDays = date('t',$firstDayOfMonth);
+    public static function toHumanDiff($timestamp)
+    {
 
-     // Retrieve some information about the first day of the
-     // month in question.
-		$dateComponents = getdate($firstDayOfMonth);
+        return $timestamp->diffForHumans(Carbon::now());
+    }
 
-     // What is the name of the month in question?
-		$monthName = $dateComponents['month'];
-		switch ($monthName) {
-			case "January":
-			$monthName =  "Janvier";
-			break;
-			case "February":
-			$monthName =  "Février";
-			break;
-			case "March":
-			$monthName =  "Mars";
-			break;
-			case "April":
-			$monthName =  "Avril";
-			break;
-			case "May":
-			$monthName =  "Mai";
-			break;
-			case "June":
-			$monthName =  "Juin";
-			break;
-			case "July":
-			$monthName =  "Juillet";
-			break;
-			case "August":
-			$monthName =  "Août";
-			break;
-			case "September":
-			$monthName =  "Septembre";
-			break;
-			case "October":
-			$monthName =  "Octobre";
-			break;
-			case "November":
-			$monthName =  "Novembre";
-			break;
-			case "December":
-			$monthName =  "Décembre";
-			break;
-		}
-     // What is the index value (0-6) of the first day of the
-     // month in question.
-		$dayOfWeek = $dateComponents['wday']-1;
-		if ($dayOfWeek < 0) {
-			$dayOfWeek = 6;
-		}
-     // Create the table tag opener and day headers
+    public static function toHumanTimestamp($timestamp)
+    {
 
-		$calendar = "<table class='calendar'>";
-		$calendar .= "<caption>$monthName $year</caption>";
-		$calendar .= "<tr>";
+        setlocale(LC_TIME, App::getLocale());
 
-     // Create the calendar headers
+        return $timestamp->formatLocalized('%e %B %Y %k:%M:%S');
+    }
 
-		foreach($daysOfWeek as $day) {
+    public static function createCarbonTimestamp($timestamp, $type = 'us', $separator = '-')
+    {
 
-			$calendar .= "<th class='header'><span class='jour'>$day</span></th>";
-		}
+        Helpers::toHumanTimestamp($timestamp);
 
-     // Create the rest of the calendar
+    }
 
-     // Initiate the day counter, starting with the 1st.
+    public static function getDateBetween($start, $end)
+    {
+        $dateBetween = array();
+        $start = Helpers::createCarbonDate($start);
+        $end = Helpers::createCarbonDate($end);
+        if (Helpers::isOk($start) && Helpers::isOk($end))
+        {
+            $diff = $start->diffInDays($end);
 
-		$currentDay = 1;
+            for ($a = 0; $a <= $diff; $a++)
+            {
 
-		$calendar .= "</tr><tr>";
+                array_push($dateBetween, $start->toDateString());
 
-     // The variable $dayOfWeek is used to
-     // ensure that the calendar
-     // display consists of exactly 7 columns.
+                $start->addDay();
+            }
+        }
 
-		if ($dayOfWeek > 0) {
-			for($i = 0;$i<$dayOfWeek;$i++){
-				// colspan='$dayOfWeek'
-				$calendar .= "<td class='day old'>&nbsp;</td>";
-			}
-		}
+        return $dateBetween;
+    }
 
-		$month = str_pad($month, 2, "0", STR_PAD_LEFT);
+    public static function build_calendar($month = null, $year = null, $fromId = null, $dateArray = null)
+    {
 
-		foreach($calendriers as $calendrier ){
+        if (Helpers::isNotOk($month))
+        {
 
-			$start = $calendrier->date_debut;
+            $month = date('n');
 
-			$end = $calendrier->date_fin;
+        }
 
-			$listDatesBetween[] = (object)array('id'=>$calendrier->id, 'dates'=>Helpers::getDateBetween( $start, $end ));
+        if (Helpers::isNotOk($year))
+        {
 
-			/*var_dump($listDatesBetween);*/
-		/*	if($calendrier->date_debut == $serverDate){
-				$class='busy';
-				$dataId = $calendrier->id;
-			}
-			else
-			{
-				$class= '';
-				$dataId = '';
-			}*/
-		}
+            $year = date('y');
 
-		while ($currentDay <= $numberDays) {
+        }
+        if (Helpers::isOk($fromId))
+        {
 
-          // Seventh column (Saturday) reached. Start a new row.
+            $calendriers = Calendrier::whereProprieteId($fromId)->get();
 
-			if ($dayOfWeek == 7) {
+        }
 
-				$dayOfWeek = 0;
-				$calendar .= "</tr><tr>";
+        $today_date = date("d");
+        $today_date = ltrim($today_date, '0');
+        // Create array containing abbreviations of days of week.
 
-			}
+        $daysOfWeek = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 
-			$currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
+        // What is the first day of the month in question?
+        $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
 
+        // How many days does this month contain?
+        $numberDays = date('t', $firstDayOfMonth);
 
-			$date = "$currentDayRel-$month-$year";
-			$serverDate = "$year-$month-$currentDayRel";
+        // Retrieve some information about the first day of the
+        // month in question.
+        $dateComponents = getdate($firstDayOfMonth);
 
-			$dateCarbon =  Helpers::createCarbonDate( $serverDate );
+        // What is the name of the month in question?
+        $monthName = $dateComponents['month'];
+        switch ($monthName)
+        {
+            case "January":
+                $monthName = "Janvier";
+                break;
+            case "February":
+                $monthName = "Février";
+                break;
+            case "March":
+                $monthName = "Mars";
+                break;
+            case "April":
+                $monthName = "Avril";
+                break;
+            case "May":
+                $monthName = "Mai";
+                break;
+            case "June":
+                $monthName = "Juin";
+                break;
+            case "July":
+                $monthName = "Juillet";
+                break;
+            case "August":
+                $monthName = "Août";
+                break;
+            case "September":
+                $monthName = "Septembre";
+                break;
+            case "October":
+                $monthName = "Octobre";
+                break;
+            case "November":
+                $monthName = "Novembre";
+                break;
+            case "December":
+                $monthName = "Décembre";
+                break;
+        }
+        // What is the index value (0-6) of the first day of the
+        // month in question.
+        $dayOfWeek = $dateComponents['wday'] - 1;
+        if ($dayOfWeek < 0)
+        {
+            $dayOfWeek = 6;
+        }
+        // Create the table tag opener and day headers
 
-			/*print_r(in_array($serverDate, $listDatesBetween));*/
+        $calendar = "<table class='calendar'>";
+        $calendar .= "<caption>$monthName $year</caption>";
+        $calendar .= "<tr>";
 
-			$class= '';
-			$dataId = '';
+        // Create the calendar headers
 
-			if( isset($listDatesBetween) && Helpers::isOk( $listDatesBetween ) ){
+        foreach ($daysOfWeek as $day)
+        {
 
-				foreach($listDatesBetween as $datesBetween){
+            $calendar .= "<th class='header'><span class='jour'>$day</span></th>";
+        }
 
-					foreach($datesBetween->dates as $dateBetween){
+        // Create the rest of the calendar
 
-						$dateBetween  = Helpers::createCarbonDate($dateBetween);
+        // Initiate the day counter, starting with the 1st.
 
-						if($dateCarbon->eq($dateBetween)){
+        $currentDay = 1;
 
-							$class='busy';
-							$dataId = $datesBetween->id;
+        $calendar .= "</tr><tr>";
 
-						}
-					}
-				}
-			}
+        // The variable $dayOfWeek is used to
+        // ensure that the calendar
+        // display consists of exactly 7 columns.
 
-			if($currentDayRel == $today_date ){
+        if ($dayOfWeek > 0)
+        {
+            for ($i = 0; $i < $dayOfWeek; $i++)
+            {
+                // colspan='$dayOfWeek'
+                $calendar .= "<td class='day old'>&nbsp;</td>";
+            }
+        }
 
-				$calendar .= "<td class='day today $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
-			}
+        $month = str_pad($month, 2, "0", STR_PAD_LEFT);
 
-			else {
+        foreach ($calendriers as $calendrier)
+        {
 
-				$calendar .= "<td class='day $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
-			}
+            $start = $calendrier->date_debut;
 
-			if(isset($dateArray[mktime(0, 0, 0, $month, $currentDay, $year)])){
-				$calendar.=$dateArray[mktime(0, 0, 0, $month, $currentDay, $year)];
-			}
+            $end = $calendrier->date_fin;
 
-			$calendar.="</a></td>";
-          // Increment counters
+            $listDatesBetween[] = (object) array('id' => $calendrier->id, 'dates' => Helpers::getDateBetween($start, $end));
 
-			$currentDay++;
-			$dayOfWeek++;
+            /*var_dump($listDatesBetween);*/
+            /*	if($calendrier->date_debut == $serverDate){
+                    $class='busy';
+                    $dataId = $calendrier->id;
+                }
+                else
+                {
+                    $class= '';
+                    $dataId = '';
+                }*/
+        }
 
-		}
+        while ($currentDay <= $numberDays)
+        {
 
+            // Seventh column (Saturday) reached. Start a new row.
 
-     // Complete the row of the last week in month, if necessary
+            if ($dayOfWeek == 7)
+            {
 
-		if ($dayOfWeek != 7) {
+                $dayOfWeek = 0;
+                $calendar .= "</tr><tr>";
 
-			$remainingDays = 7 - $dayOfWeek;
-			$calendar .= "<td colspan='$remainingDays'>&nbsp;</td>";
+            }
 
-		}
+            $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
 
-		$calendar .= "</tr>";
 
-		$calendar .= "</table>";
+            $date = "$currentDayRel-$month-$year";
+            $serverDate = "$year-$month-$currentDayRel";
 
-		return $calendar;
+            $dateCarbon = Helpers::createCarbonDate($serverDate);
 
-	}
-	public static function toEuShortDate( $date ){
+            /*print_r(in_array($serverDate, $listDatesBetween));*/
 
-		$ex = explode( '-', $date );
-		$mois_id =(int)($ex['1']);
-		return (int)($ex['2']).' '.trans('general.mois')[$mois_id].' '.$ex['0'];
+            $class = '';
+            $dataId = '';
 
-	}
-	/**
-	*
-	* Convertis une date fr format dd/mm/yy vers une date serveur format yy-mm-dd
-	*
-	**/
+            if (isset($listDatesBetween) && Helpers::isOk($listDatesBetween))
+            {
 
-	public static function toServerDate( $date ){
+                foreach ($listDatesBetween as $datesBetween)
+                {
 
-		if( explode('-', $date) ){
+                    foreach ($datesBetween->dates as $dateBetween)
+                    {
 
-			$dateEx = explode('-', $date);
+                        $dateBetween = Helpers::createCarbonDate($dateBetween);
 
-			return $dateEx[2].'-'.$dateEx[1].'-'.$dateEx[0];
+                        if ($dateCarbon->eq($dateBetween))
+                        {
 
-		}
-		elseif( explode('/', $date) )
-		{
-			$dateEx = explode('/', $date);
+                            $class = 'busy';
+                            $dataId = $datesBetween->id;
 
-			return $dateEx[2].'-'.$dateEx[1].'-'.$dateEx[0];
-		}
-	}
-	/**
-	*
-	* Images
-	*
-	**/
-	public static function replaceExtension( $string, $extension ){
+                        }
+                    }
+                }
+            }
 
-		$stringEx = explode( '.', $string );
+            if ($currentDayRel == $today_date)
+            {
 
-		return $stringEx[0].'.'.$extension;
-	}
+                $calendar .= "<td class='day today $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
+            } else
+            {
 
-	public static function getLangRoute( $route ){
+                $calendar .= "<td class='day $class' ><a data-date='$date' data-id='$dataId' data-day='$day' href=''><span class='number'>$currentDay</span>";
+            }
 
-		return Lang::get('routes.'.str_replace(App::getLocale().'/','',$route));
-	}
+            if (isset($dateArray[mktime(0, 0, 0, $month, $currentDay, $year)]))
+            {
+                $calendar .= $dateArray[mktime(0, 0, 0, $month, $currentDay, $year)];
+            }
 
-	public static function addBeforeExtension( $stringWithExt, $string ){
+            $calendar .= "</a></td>";
+            // Increment counters
 
-		$stringEx = explode( '.', $stringWithExt );
+            $currentDay++;
+            $dayOfWeek++;
 
-		return Helpers::toSlug( $stringEx[0].' '.$string.'.'.$stringEx[1] );
+        }
 
-	}
-	/**
-	*
-	* Ajoute le timestamp dans le nom de l'image
-	*
-	**/
 
-	public static function addTimestamp( $image , $type = null , $ext = null, $timestamp = null ){
+        // Complete the row of the last week in month, if necessary
 
-		if(Helpers::isOk( $image )  &&  explode( '.', $image )){
+        if ($dayOfWeek != 7)
+        {
 
-			$imageEx = explode( '.', $image );
+            $remainingDays = 7 - $dayOfWeek;
+            $calendar .= "<td colspan='$remainingDays'>&nbsp;</td>";
 
-			if( Helpers::isNotOk( $timestamp )){
+        }
 
-				$name = $imageEx[0].date('dmYhis');
-			}
-			else{
+        $calendar .= "</tr>";
 
-				$name = $imageEx[0].$timestamp;
-			}
+        $calendar .= "</table>";
 
-			if( Helpers::isOk( $ext )){
+        return $calendar;
 
-				$extension = $ext;
-			}
-			else
-			{
-				$extension = $imageEx[1];
+    }
 
-			}
-			if( Helpers::isOk( $type )){
+    public static function toEuShortDate($date)
+    {
 
-				return $name.$type. '.' .$extension;
-			}
-			else
-			{
-				return $name. '.' .$extension;
-			}
+        $ex = explode('-', $date);
+        $mois_id = (int) ($ex['1']);
 
-		}
-		else
-		{
+        return (int) ($ex['2']) . ' ' . trans('general.mois')[$mois_id] . ' ' . $ex['0'];
 
-			return false;
+    }
 
-		}
-	}
+    /**
+     *
+     * Convertis une date fr format dd/mm/yy vers une date serveur format yy-mm-dd
+     *
+     **/
 
+    public static function toServerDate($date)
+    {
 
+        if (explode('-', $date))
+        {
 
-	/**
-	*
-	* Retourne l'id d'une langue sous base de son initial ( 'fr' retournera l'id 1)
-	*
-	**/
-	public static function getLangId( $langId )
-	{
-		if(Helpers::isOk( $langId , 'int'))
-		{
+            $dateEx = explode('-', $date);
 
-			return $langId;
+            return $dateEx[2] . '-' . $dateEx[1] . '-' . $dateEx[0];
 
-		}else{
+        } elseif (explode('/', $date))
+        {
+            $dateEx = explode('/', $date);
 
-			return (int)Language::whereShort(Config::get('app.locale'))->first(['id'])->id;
-		}
-	}
+            return $dateEx[2] . '-' . $dateEx[1] . '-' . $dateEx[0];
+        }
+    }
 
-	/**
-	*
-	* Convertis une string vers une string sluge (informations très personnelles => informations-tres-personnelles)
-	*
-	**/
-	public static function toSlug( $string, $charset = 'utf-8' ){
+    /**
+     *
+     * Images
+     *
+     **/
+    public static function replaceExtension($string, $extension)
+    {
 
+        $stringEx = explode('.', $string);
 
-		$string = htmlentities($string, ENT_NOQUOTES, $charset);
-		$string = preg_replace('#&([A-za-z])(?:acute|cedil|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $string);
-		$string = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $string);
-		$string = preg_replace('#&[^;]+;#', '', $string);
-		$string = strtolower( $string );
+        return $stringEx[0] . '.' . $extension;
+    }
 
-		return str_replace(' ' , '-' , $string );
+    public static function getLangRoute($route)
+    {
 
-	}
-	/**
-	*
-	* Extrait la latitude ou longitude du texte de format (lat,lng)
-	*
-	**/
-	public static function extractLatLng( $latlng , $type ){
+        return Lang::get('routes.' . str_replace(App::getLocale() . '/', '', $route));
+    }
 
-		if(Helpers::isOk( $latlng )){
+    public static function addBeforeExtension($stringWithExt, $string)
+    {
 
-			$explode = explode(',' , $latlng);
+        $stringEx = explode('.', $stringWithExt);
 
-			if(
-				$type === 'lat'
-				|| $type === 'Lat'
-				||$type == '0'
-				){
+        return Helpers::toSlug($stringEx[0] . ' ' . $string . '.' . $stringEx[1]);
 
-				return  (int)$explode[0];
-		}
-		elseif(
-			$type === 'lng'
-			|| $type === 'Lng'
-			|| $type == '0'
-			){
+    }
 
-			return (int)$explode[1];
-	}
-}else{
+    /**
+     *
+     * Ajoute le timestamp dans le nom de l'image
+     *
+     **/
 
-	return false;
-}
+    public static function addTimestamp($image, $type = null, $ext = null, $timestamp = null)
+    {
 
+        if (Helpers::isOk($image) && explode('.', $image))
+        {
 
+            $imageEx = explode('.', $image);
 
-}
+            if (Helpers::isNotOk($timestamp))
+            {
 
-/**
-*
-* Test si la valeur est bonne, return true, sinon false
-*
-**/
-public static function isOk ( $data , $type = ""){
+                $name = $imageEx[0] . date('dmYhis');
+            } else
+            {
 
-	if(!empty( $type )){
+                $name = $imageEx[0] . $timestamp;
+            }
 
-		if( isset($data->errors) ){
+            if (Helpers::isOk($ext))
+            {
 
-			return false;
-		}
-		else{
+                $extension = $ext;
+            } else
+            {
+                $extension = $imageEx[1];
 
-			if(
-				isset($data)
-				&& $data !== "undefined"
-				&& $data!== null
-				&& count($data) > 0
-				&& $data === $type
-				&& !empty( $data )
-				){
+            }
+            if (Helpers::isOk($type))
+            {
 
-				return true;
+                return $name . $type . '.' . $extension;
+            } else
+            {
+                return $name . '.' . $extension;
+            }
 
-		}else{
+        } else
+        {
 
-			return false;
+            return false;
 
-		}
-	}
-}else{
+        }
+    }
 
-	if( isset($data->errors) ){
-		return false;
-	}else{
 
-		if(
-			isset($data)
-			&& $data !== "undefined"
-			&& $data!== null
-			&& count($data) > 0
-			&& !empty( $data )
-			){
+    /**
+     *
+     * Retourne l'id d'une langue sous base de son initial ( 'fr' retournera l'id 1)
+     *
+     **/
+    public static function getLangId($langId)
+    {
+        if (Helpers::isOk($langId, 'int'))
+        {
 
-			return true;
+            return $langId;
 
-	}else{
+        } else
+        {
 
-		return false;
+            return (int) Language::whereShort(Config::get('app.locale'))->first(['id'])->id;
+        }
+    }
 
-	}
-}
-}
-}
+    /**
+     *
+     * Convertis une string vers une string sluge (informations très personnelles => informations-tres-personnelles)
+     *
+     **/
+    public static function toSlug($string, $charset = 'utf-8')
+    {
 
-/**
-*
-* Test si la valeur n'est pas bonne, return true, sinon false
-*
-**/
-public static function isNotOk ( $data , $type = ""){
 
-	if(!empty( $type )){
+        $string = htmlentities($string, ENT_NOQUOTES, $charset);
+        $string = preg_replace('#&([A-za-z])(?:acute|cedil|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $string);
+        $string = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $string);
+        $string = preg_replace('#&[^;]+;#', '', $string);
+        $string = strtolower($string);
 
-		if( isset($data->errors) ){
+        return str_replace(' ', '-', $string);
 
-			return true;
-		}else{
+    }
 
-			if(
-				!isset($data)
-				|| empty( $data )
-				|| $data === null
-				|| count($data) <= 0
-				|| $data !== $type
-				){
+    /**
+     *
+     * Extrait la latitude ou longitude du texte de format (lat,lng)
+     *
+     **/
+    public static function extractLatLng($latlng, $type)
+    {
 
-				return true;
+        if (Helpers::isOk($latlng))
+        {
 
-		}else{
+            $explode = explode(',', $latlng);
 
-			return false;
+            if (
+                $type === 'lat'
+                || $type === 'Lat'
+                || $type == '0'
+            )
+            {
 
-		}
-	}
+                return (int) $explode[0];
+            } elseif (
+                $type === 'lng'
+                || $type === 'Lng'
+                || $type == '0'
+            )
+            {
 
-}else{
+                return (int) $explode[1];
+            }
+        } else
+        {
 
-	if( isset($data->errors) ){
+            return false;
+        }
 
-		return true;
 
-	}else{
+    }
 
-		if(
-			!isset($data)
-			|| $data === null
-			|| empty( $data )
-			|| count($data) <= 0
-			){
+    /**
+     *
+     * Test si la valeur est bonne, return true, sinon false
+     *
+     **/
+    public static function isOk($data, $type = "")
+    {
 
-			return true;
+        if ( !empty($type))
+        {
 
-	}else{
+            if (isset($data->errors))
+            {
 
-		return false;
+                return false;
+            } else
+            {
 
-	}
-}
+                if (
+                    isset($data)
+                    && $data !== "undefined"
+                    && $data !== null
+                    && count($data) > 0
+                    && $data === $type
+                    && !empty($data)
+                )
+                {
 
-}
+                    return true;
 
-}
-/**
-*
-* Convertis date de format NA en format Eu
-*
-**/
+                } else
+                {
 
-public static function dateEu( $date ){
+                    return false;
 
-	$dateExplode = explode('-',$date);
+                }
+            }
+        } else
+        {
 
-	return $dateExplode[2].'/'. $dateExplode[1].'/'.$dateExplode[0];
-}
+            if (isset($data->errors))
+            {
+                return false;
+            } else
+            {
 
-/**
-*
-* Convertis en pourcentage
-*
-**/
-public static function toPercent( $value , $on )
-{
-	if($on != 0){
-		return ($value / $on ) * 100;
-	}
-	else{
+                if (
+                    isset($data)
+                    && $data !== "undefined"
+                    && $data !== null
+                    && count($data) > 0
+                    && !empty($data)
+                )
+                {
 
-		return NULL;
-	}
+                    return true;
 
-}
+                } else
+                {
 
-/**
-*
-* Convertis les dates Eu en versio Na
-*
-**/
-public static function dateNaForm( $date , $separator = '-'){
+                    return false;
 
-	$dateExplode = explode($separator,$date);
+                }
+            }
+        }
+    }
 
-	return $dateExplode[2].$separator.$dateExplode[1].$separator.$dateExplode[0];
-}
+    /**
+     *
+     * Test si la valeur n'est pas bonne, return true, sinon false
+     *
+     **/
+    public static function isNotOk($data, $type = "")
+    {
 
-/**
-*
-* Creer une instance de Carbon avec une date
-*
-**/
+        if ( !empty($type))
+        {
 
-public static function createCarbonDate( $date , $type = 'us', $separator = '-' ){
+            if (isset($data->errors))
+            {
 
-	if(isset($date) && Helpers::isOk($date)){
+                return true;
+            } else
+            {
 
-		if($type === 'us'){
+                if (
+                    !isset($data)
+                    || empty($data)
+                    || $data === null
+                    || count($data) <= 0
+                    || $data !== $type
+                )
+                {
 
-			$dateExplode = explode($separator,$date);
+                    return true;
 
-			return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
+                } else
+                {
 
-		}
-		elseif( $type === 'eu'){
+                    return false;
 
-			$dateExplode = explode($separator,$date);
+                }
+            }
 
-			return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
-		}
-	}
-}
+        } else
+        {
 
-/**
-*
-* Convertis le numero des jours en texte
-*
-**/
-public static function humanDay( $date ){
+            if (isset($data->errors))
+            {
 
-	switch ($date) {
-		case 0:
-		return "Dimanche";
-		break;
-		case 1:
-		return "Lundi";
-		break;
-		case 2:
-		return "Mardi";
-		break;
-		case 3:
-		return "Mercredi";
-		break;
-		case 4:
-		return "Jeudi";
-		break;
-		case 5:
-		return "Vendredi";
-		break;
-		case 6:
-		return "Samedi";
-		break;
+                return true;
 
-	}
-}
+            } else
+            {
+
+                if (
+                    !isset($data)
+                    || $data === null
+                    || empty($data)
+                    || count($data) <= 0
+                )
+                {
+
+                    return true;
+
+                } else
+                {
+
+                    return false;
+
+                }
+            }
+
+        }
+
+    }
+
+    /**
+     *
+     * Convertis date de format NA en format Eu
+     *
+     **/
+
+    public static function dateEu($date)
+    {
+
+        $dateExplode = explode('-', $date);
+
+        return $dateExplode[2] . '/' . $dateExplode[1] . '/' . $dateExplode[0];
+    }
+
+    /**
+     *
+     * Convertis en pourcentage
+     *
+     **/
+    public static function toPercent($value, $on)
+    {
+        if ($on != 0)
+        {
+            return ($value / $on) * 100;
+        } else
+        {
+
+            return null;
+        }
+
+    }
+
+    /**
+     *
+     * Convertis les dates Eu en versio Na
+     *
+     **/
+    public static function dateNaForm($date, $separator = '-')
+    {
+
+        $dateExplode = explode($separator, $date);
+
+        return $dateExplode[2] . $separator . $dateExplode[1] . $separator . $dateExplode[0];
+    }
+
+    /**
+     *
+     * Creer une instance de Carbon avec une date
+     *
+     **/
+
+    public static function createCarbonDate($date, $type = 'us', $separator = '-')
+    {
+
+        if (isset($date) && Helpers::isOk($date))
+        {
+
+            if ($type === 'us')
+            {
+
+                $dateExplode = explode($separator, $date);
+
+                return Carbon::createFromDate($dateExplode[0], $dateExplode[1], $dateExplode[2]);
+
+            } elseif ($type === 'eu')
+            {
+
+                $dateExplode = explode($separator, $date);
+
+                return Carbon::createFromDate($dateExplode[2], $dateExplode[1], $dateExplode[0]);
+            }
+        }
+    }
+
+    /**
+     *
+     * Convertis le numero des jours en texte
+     *
+     **/
+    public static function humanDay($date)
+    {
+
+        switch ($date)
+        {
+            case 0:
+                return "Dimanche";
+                break;
+            case 1:
+                return "Lundi";
+                break;
+            case 2:
+                return "Mardi";
+                break;
+            case 3:
+                return "Mercredi";
+                break;
+            case 4:
+                return "Jeudi";
+                break;
+            case 5:
+                return "Vendredi";
+                break;
+            case 6:
+                return "Samedi";
+                break;
+
+        }
+    }
+
+    public static function transOrDefault($model, $key, $attribute, $value)
+    {
+
+        if(Helpers::isOk($value)) return $value;
+
+
+    }
 
 
 }

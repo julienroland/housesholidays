@@ -15,6 +15,11 @@ class SousRegionTraduction extends Eloquent {
 		return $this->belongsTo('SousRegion');
 
 	}
+
+    public function scopeLang($query)
+    {
+        $query->where(Config::get('var.lang_col'), Session::get('langId'));
+    }
 	
 	public function langage(){
 

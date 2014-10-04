@@ -2,6 +2,7 @@
 
 class LangController extends BaseController {
 
+
 	public function getAll( ){
 
 		/**

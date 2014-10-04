@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ Session::get('lang') }}">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>

@@ -3,137 +3,172 @@
 
 class Pays extends Eloquent {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'pays';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'pays';
 
-	public function user(){
+    public function user()
+    {
 
-		return $this->hasMany('User');
+        return $this->hasMany('User');
 
-	}
+    }
 
-	public function paysTraduction(){
+    public function paysTraduction()
+    {
 
-		return $this->hasMany('PaysTraduction')
-		->where(Config::get('var.lang_col'),Session::get('langId'));
+        return $this->hasMany('PaysTraduction')
+            ->where(Config::get('var.lang_col'), Session::get('langId'));
 
-	}
+    }
 
-	public function region(){
+    public function region()
+    {
 
-		return $this->hasMany('Region');
+        return $this->hasMany('Region');
 
-	}
+    }
 
-	public static function listById( $pays_id ){
+    public function propriete()
+    {
 
-		$paysDump = Pays::whereId( $pays_id )->with(array('region'=>function($query){
-			$query->whereNotNull('coords');
-		
-		},'region.regionTraduction'))->first();
+        return $this->hasMany('Propriete');
 
-		$data = array();
+    }
 
-		foreach($paysDump->region as $regions){
-	
-			$data[$regions->id] = (object)array(
-				'nom'=> $regions->regionTraduction[0]->nom,
-				'coords'=> $regions->coords,
-				'description'=>$regions->regionTraduction[0]->description
-				);
+    public function getProprieteCountAttribute()
+    {
+        return $this->proprieteCountRelation->count;
+    }
 
-		}
+    public function proprieteCountRelation()
+    {
+        return $this->hasMany('Propriete')->where('statut', 1)->selectRaw('pays_id, count(*) as count')
+            ->groupBy('pays_id');
+    }
 
-		return $data;
+    public static function selectList(){
+        $paysList = array(0 => trans('form.pays'));
+        $paysDump = PaysTraduction::where('langage_id', Session::get('langId'))->orderBy('nom', 'asc')->get()->lists('nom','pays_id');
+        $paysList = $paysList + $paysDump;
+        return $paysList;
 
-	}
-	/**
-	*
-	* Avoir la liste des pays sous forme d'array associative $key => value
-	*
-	**/
+    }
+    public static function listById($pays_id)
+    {
 
-	public static function getListForm( $orderBy = 'nom', $orderWay = 'asc' )
-	{
+        $paysDump = Pays::whereId($pays_id)->with(array('region' => function ($query)
+        {
+            $query->whereNotNull('coords');
 
-	/**
-	*
-	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
-	*
-	**/
-	$paysDump = PaysTraduction::
-		  where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay )
-		->get();
+        }, 'region.regionTraduction'))->first();
 
-	/**
-	*
-	* Retravaille l'output de manière à avoir id => nom
-	*
-	**/
-	$paysList = array(
-		''=>''
-		);
+        $data = array();
 
-	foreach($paysDump as $pays){
+        foreach ($paysDump->region as $regions)
+        {
 
-		$paysList[$pays->pays_id] = $pays->nom;
+            $data[$regions->id] = (object) array(
+                'nom' => $regions->regionTraduction[0]->nom,
+                'coords' => $regions->coords,
+                'description' => $regions->regionTraduction[0]->description
+            );
 
-	}
+        }
 
-	/**
-	*
-	* Return une array pour les selects dans les formulaires
-	*
-	**/
+        return $data;
 
-	return $paysList;
-	}
-	/**
-	*
-	* Avoir la liste d'enfants des pays sous forme d'array associative $key => value
-	*
-	**/
+    }
 
-	public static function getChildListForm( $orderBy = 'nom', $orderWay = 'asc' )
-	{
+    /**
+     *
+     * Avoir la liste des pays sous forme d'array associative $key => value
+     *
+     **/
 
-	/**
-	*
-	* Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
-	*
-	**/
-	$paysDump = PaysTraduction::
-		  where(Config::get('var.lang_col'),Session::get('langId'))
-		->orderBy( $orderBy , $orderWay )
-		->get();
+    public static function getListForm($orderBy = 'nom', $orderWay = 'asc')
+    {
 
-	/**
-	*
-	* Retravaille l'output de manière à avoir id => nom
-	*
-	**/
-	$paysList = array(
-		''=>''
-		);
+        /**
+         *
+         * Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
+         *
+         **/
+        $paysDump = PaysTraduction::
+        where(Config::get('var.lang_col'), Session::get('langId'))
+            ->orderBy($orderBy, $orderWay)
+            ->get();
 
-	foreach($paysDump as $pays){
+        /**
+         *
+         * Retravaille l'output de manière à avoir id => nom
+         *
+         **/
+        $paysList = array(
+            '' => ''
+        );
 
-		$paysList[$pays->pays_id] = $pays->nom;
+        foreach ($paysDump as $pays)
+        {
 
-	}
+            $paysList[$pays->pays_id] = $pays->nom;
 
-	/**
-	*
-	* Return une array pour les selects dans les formulaires
-	*
-	**/
+        }
 
-	return $paysList;
-	}
+        /**
+         *
+         * Return une array pour les selects dans les formulaires
+         *
+         **/
+
+        return $paysList;
+    }
+
+    /**
+     *
+     * Avoir la liste d'enfants des pays sous forme d'array associative $key => value
+     *
+     **/
+
+    public static function getChildListForm($orderBy = 'nom', $orderWay = 'asc')
+    {
+
+        /**
+         *
+         * Select les pays AVEC les traductions OU l'id de lang est X, fetch un tableau (laravel collection)
+         *
+         **/
+        $paysDump = PaysTraduction::
+        where(Config::get('var.lang_col'), Session::get('langId'))
+            ->orderBy($orderBy, $orderWay)
+            ->get();
+
+        /**
+         *
+         * Retravaille l'output de manière à avoir id => nom
+         *
+         **/
+        $paysList = array(
+            '' => ''
+        );
+
+        foreach ($paysDump as $pays)
+        {
+
+            $paysList[$pays->pays_id] = $pays->nom;
+
+        }
+
+        /**
+         *
+         * Return une array pour les selects dans les formulaires
+         *
+         **/
+
+        return $paysList;
+    }
 
 }

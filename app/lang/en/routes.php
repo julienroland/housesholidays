@@ -34,7 +34,7 @@ return array(
     'repondreMessage'=>'repondre-au-message',
     'send_commentaire'=>'envoye-de-commentaire',
     'envoye_message'=>'envoye-de-message',
-    'locations_vacances'=>'locations-de-vacances',
+    'locations_vacances'=>'vacation-rentals',
     'location'=>'location',
     'desactive_commentaires'=>'desactiver-commentaire',
     'active_commentaires'=>'active-commentaire',
